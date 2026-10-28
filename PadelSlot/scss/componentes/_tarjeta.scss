@@ -1,0 +1,32 @@
+@use '../colores';
+@use '../espaciados';
+@use '../fuentes';
+
+.tarjeta {
+    background-color: colores.$color-secundario;
+    border-radius: espaciados.$radio-m;
+    border: 1px solid rgba(colores.$color-titulo,0.08);
+    padding: espaciados.$espacio-m;
+    transition: transform espaciados.$transicion, box-shadow espaciados.$transicion;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(colores.$color-titulo,0.06);
+    }
+
+    &__cabecera {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: espaciados.$espacio-s;
+    }
+
+    &__titulo {
+        font-size: fuentes.$tamano-h4;
+        color: colores.$color-titulo;
+    }
+
+    &__cuerpo {
+        color: colores.$color-texto;
+    }
+}

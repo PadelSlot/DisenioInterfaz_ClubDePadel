@@ -1,0 +1,60 @@
+@use '../colores';
+@use '../fuentes';
+@use '../espaciados';
+@use '../mixins';
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: espaciados.$espacio-xs;
+    padding: mixins.rem(11) mixins.rem(20);
+    border: 2px solid transparent;
+    border-radius: espaciados.$radio-s;
+    font-weight: fuentes.$peso-medio;
+    cursor: pointer;
+    transition: background-color espaciados.$transicion, border-color espaciados.$transicion, color espaciados.$transicion;
+
+    &__icono {
+        font-size: 1.2rem;
+    }
+
+        // Modificador Primario
+        &--primario {
+            background-color: colores.$color-primario;
+            color: colores.$color-secundario;
+
+            &:hover {
+                background-color: darken(colores.$color-primario, 5%);
+            }
+        }
+
+        // Modificador Terciario
+        &--terciario,
+        &--disponibilidad,
+        &--solicitud {
+            background-color: colores.$color-terciario;
+            color: colores.$color-titulo;
+            font-weight: fuentes.$peso-negrita;
+
+            &:hover {
+                background-color: darken(colores.$color-terciario, 8%);
+            }
+        }
+
+        // Modificador Contorno
+        &--contorno {
+            background-color: transparent;
+            border-color: colores.$color-primario;
+            color: colores.$color-primario;
+
+            &:hover {
+                background-color: colores.$color-primario;
+                color: colores.$color-secundario;
+            }
+        }
+
+        &--bloque {
+            width: 100%;
+        }
+}

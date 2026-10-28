@@ -1,0 +1,28 @@
+@use '../colores';
+@use '../espaciados';
+@use '../mixins';
+
+.pie {
+    background-color: colores.$color-primario;
+    color: colores.$color-secundario;
+    margin-top: espaciados.$espacio-xxl;
+    padding-block: espaciados.$espacio-xl;
+
+    &__contenido {
+        @include mixins.contenedor;
+        display: grid;
+        gap: espaciados.$espacio-l;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__legal {
+        text-align: center;
+        border-top: 1px solid rgba(colores.$color-titulo,0.1);
+        padding-top: espaciados.$espacio-m;
+        margin-top: espaciados.$espacio-l;
+        font-size: 0.875rem;
+    }
+}

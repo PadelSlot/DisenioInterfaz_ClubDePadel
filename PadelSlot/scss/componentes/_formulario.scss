@@ -1,0 +1,33 @@
+@use '../colores';
+@use '../espaciados';
+@use '../fuentes';
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: espaciados.$espacio-m;
+
+    &__grupo {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-xs;
+    }
+
+    &__etiqueta {
+        font-size: fuentes.$tamano-pequeno;
+        font-weight: fuentes.$peso-medio;
+        color: colores.$color-titulo;
+    }
+
+    &__campo {
+        padding: espaciados.$espacio-s;
+        border: 1px solid rgba(colores.$color-titulo,0.15);
+        border-radius: espaciados.$radio-s;
+        background-color: colores.$color-secundario;
+        color: colores.$color-titulo;
+
+        &:focus {
+            border-color: colores.$color-primario;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@use '../colores';
+@use '../espaciados';
+
+.barra-lateral {
+    width: 100%;
+    background-color: colores.$color-secundario;
+    border-right: 1px solid rgba(colores.$color-titulo,0.08);
+    padding: espaciados.$espacio-m;
+
+    @include mixins.desde(escritorio) {
+        width: 16rem;
+        min-height: calc(100vh - 4rem);
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-xs;
+    }
+
+    &__item {
+        padding: espaciados.$espacio-s espaciados.$espacio-m;
+        border-radius: espaciados.$radio-s;
+        color: colores.$color-texto;
+
+        &:hover,
+        &--activo {
+            background-color: rgba(colores.$color-primario, 0.08);
+            color: colores.$color-primario;
+            font-weight: fuentes.$peso-medio;
+        }
+    }
+}

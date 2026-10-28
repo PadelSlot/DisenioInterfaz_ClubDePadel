@@ -1,0 +1,26 @@
+@use '../colores';
+@use '../fuentes';
+@use '../espaciados';
+
+.etiqueta {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: espaciados.$radio-pastilla;
+    font-size: 0.75rem;
+    font-weight: fuentes.$peso-negrita;
+
+    &--terciario {
+    background-color: colores.$color-terciario;
+    color: colores.$color-titulo;
+    }
+
+    &--primario {
+    background-color: colores.$color-primario;
+    color: colores.$color-secundario;
+    }
+
+    &--suave {
+    background-color: rgba(colores.$color-primario, 0.1);
+    color: colores.$color-primario;
+    }
+}

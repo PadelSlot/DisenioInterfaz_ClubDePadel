@@ -1,0 +1,53 @@
+@use '../colores';
+@use '../fuentes';
+@use '../espaciados';
+@use '../mixins';
+
+.cabecera {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: colores.$color-primario;
+    color: colores.$color-secundario;
+    box-shadow: 0 2px 10px rgba(colores.$color-titulo, 0.1);
+
+    &__contenido {
+        @include mixins.contenedor;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: espaciados.$espacio-s;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        color: colores.$color-secundario;
+        font-family: fuentes.$fuente-titulo;
+        font-weight: fuentes.$peso-negrita;
+        font-size: fuentes.$tamano-h3;
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-l;
+    }
+
+    &__enlace {
+        color: colores.$color-secundario;
+        font-weight: fuentes.$peso-medio;
+        transition: color espaciados.$transicion;
+
+        &:hover, &--activo {
+            color: colores.$color-terciario;
+        }
+    }
+
+    &__acciones {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+    }
+}
