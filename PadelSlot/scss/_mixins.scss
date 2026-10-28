@@ -1,0 +1,36 @@
+@use 'sass:map';
+@use 'sass:math';
+
+// Mapa con los puntos de interrupción (responsive)
+$puntos: (
+    tablet: 48rem,
+    escritorio: 64rem
+);
+
+// Convierte valores de pixeles a unidades rem
+
+@function rem($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+// Aplica estilos responsive a partir del breakpoint indicado anteriormente
+@mixin desde($punto) {
+    @media (min-width: map.get($puntos, $punto)) {
+        @content;
+    }
+}
+
+// Centra todo el contenido
+@mixin flex-centrado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Limita y centra el ancho del contenedor principal
+@mixin contenedor {
+    width: 100%;
+    max-width: 75rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
