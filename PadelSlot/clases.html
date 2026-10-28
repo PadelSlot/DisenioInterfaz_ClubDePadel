@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuela y Clases - Portal del Socio | PadelSlot</title>
+
+    <!-- Fuente tipográfica principal -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <!-- Iconos de la interfaz -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="cuerpo">
+
+    <!-- Barra de información superior del sistema -->
+    <aside class="barra-sistema">
+        <section class="barra-interior">
+            <section class="barra-izq">
+                <span class="barra-etiqueta">SAAS MULTI-CLUB</span>
+                <span class="barra-texto">Instalación activa: <strong class="barra-club">Club de Pádel Sevilla</strong></span>
+            </section>
+            <section class="barra-der">
+                <span class="barra-texto">Solución tecnológica marca blanca para clubes</span>
+                <span class="barra-modulos"><i class="ph-fill ph-circles-four"></i> 4 módulos activados</span>
+            </section>
+        </section>
+    </aside>
+
+    <!-- Encabezado principal de la web -->
+    <header class="cabecera">
+        <section class="cabecera-interior">
+
+            <!-- Logotipo del club -->
+            <a href="#" class="marca">
+                <figure class="marca-logo">P</figure>
+                <section class="marca-texto">
+                    <h1 class="marca-nombre">Club de Pádel Sevilla</h1>
+                    <p class="marca-sub">Portal Oficial · PadelSlot</p>
+                </section>
+            </a>
+
+            <!-- Menú de navegación principal -->
+            <nav class="menu">
+                <a href="#" class="menu-enlace">Inicio</a>
+                <a href="#" class="menu-enlace">Reservar pista</a>
+                <a href="#" class="menu-enlace">Escuela y clases</a>
+                <a href="#" class="menu-enlace">Membresía</a>
+                <a href="#" class="menu-enlace">Servicios del club</a>
+            </nav>
+
+            <!-- Menú del usuario autenticado -->
+            <section class="usuario-menu">
+                <button aria-label="Notificaciones" class="notif-boton">
+                    <i class="ph ph-bell"></i>
+                    <span class="notif-punto"></span>
+                </button>
+                <section class="usuario">
+                    <section class="usuario-datos">
+                        <strong class="usuario-nombre">Laura Méndez</strong>
+                        <span class="usuario-estado"><span class="estado-punto"></span> Socia activa #1042</span>
+                    </section>
+                    <img src="https://placehold.co/100x100/e2e8f0/64748b?text=LM" alt="Avatar Laura" class="avatar">
+                </section>
+            </section>
+        </section>
+    </header>
+
+    <!-- Contenido principal de la página -->
+    <main class="principal">
+
+        <!-- Migas de pan (Ruta de navegación) -->
+        <nav aria-label="breadcrumb" class="migas">
+            <i class="ph ph-lock-key"></i>
+            <span class="miga">Portal del socio</span> / <span class="miga-actual">Escuela y Clases</span>
+        </nav>
+
+        <!-- Distintivos oficiales de la escuela -->
+        <section class="distintivos">
+            <span class="distintivo"><i class="ph-fill ph-seal-check"></i> Dirección técnica colegiada</span>
+            <span class="distintivo-temporada">Temporada Oficial 2025</span>
+        </section>
+
+        <!-- Cabecera de la sección de escuela -->
+        <header class="encabezado">
+            <section class="encabezado-texto">
+                <h2 class="titulo">Escuela Deportiva y Clases Oficiales</h2>
+                <p class="descripcion">Grupos dirigidos, entrenamientos técnicos por nivel y clases particulares con monitores oficiales titulados. Exclusivo para socias y socios del Club de Pádel Sevilla.</p>
+            </section>
+            <nav class="encabezado-acciones">
+                <button class="boton-primario"><i class="ph ph-user-plus"></i> Reservar Particular</button>
+                <button class="boton-sec"><i class="ph ph-users-three"></i> Ver Grupos Abiertos</button>
+            </nav>
+        </header>
+
+        <!-- Tarjeta de resumen deportivo del usuario -->
+        <section class="resumen">
+            <!-- Perfil del socio -->
+            <article class="perfil">
+                <section class="perfil-info">
+                    <img src="https://placehold.co/128x128/e2e8f0/64748b?text=LM" alt="Avatar Laura Grande" class="perfil-avatar">
+                    <section class="perfil-datos">
+                        <h3 class="perfil-nombre">Laura Méndez <span class="perfil-socio">Socia #1042</span></h3>
+                        <p class="perfil-nivel">Nivel oficial auditado: <strong class="perfil-nivel-valor">3.5 (Intermedio Avanzado)</strong></p>
+                        <section class="progreso">
+                            <progress max="100" value="70" class="progreso-barra"></progress>
+                            <span class="progreso-texto">70% hacia Nivel 4.0 Pro</span>
+                        </section>
+                    </section>
+                </section>
+            </article>
+
+            <!-- Monitor preferente asignado -->
+            <article class="tarjeta-dato">
+                <header class="tarjeta-cab">
+                    <span class="tarjeta-etiqueta">MONITOR PREFERENTE</span>
+                    <i class="ph ph-whistle"></i>
+                </header>
+                <section class="tarjeta-cuerpo">
+                    <h4 class="tarjeta-titulo">Carlos Rodríguez</h4>
+                    <p class="tarjeta-texto">Nivel II FEP · Entrenador Titular</p>
+                </section>
+            </article>
+
+            <!-- Próxima clase reservada -->
+            <article class="tarjeta-dato">
+                <header class="tarjeta-cab">
+                    <span class="tarjeta-etiqueta">PRÓXIMA SESIÓN FIJADA</span>
+                    <i class="ph-fill ph-calendar-check"></i>
+                </header>
+                <section class="tarjeta-cuerpo">
+                    <h4 class="tarjeta-titulo">Jueves 31 Oct - 18:30 h</h4>
+                    <p class="tarjeta-texto">Pista 2 Cubierta · Particular</p>
+                </section>
+            </article>
+        </section>
+
+        <!-- Sección: Catálogo de clases grupales -->
+        <section class="seccion">
+            <header class="seccion-cab">
+                <span class="seccion-etiqueta">INSCRIPCIÓN INMEDIATA POR SESIÓN</span>
+                <section class="seccion-fila">
+                    <section class="seccion-texto">
+                        <h3 class="seccion-titulo">Sesiones Grupales Abiertas</h3>
+                        <p class="seccion-desc">Plazas limitadas a un ratio estricto de máximo 4 jugadores para garantizar intensidad y ritmo de juego.</p>
+                    </section>
+                    <aside class="tiempo-real">
+                        <span class="tiempo-real-punto"></span> Actualizado en tiempo real
+                    </aside>
+                </section>
+            </header>
+
+            <!-- Filtros para buscar clases -->
+            <menu class="filtros">
+                <form class="buscador" action="#">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar por monitor, golpe técnico..." class="buscador-input">
+                </form>
+                <button class="filtro">Todas las modalidades</button>
+                <button class="filtro">Grupos Dirigidos (máx 4)</button>
+                <button class="filtro">Clases Particulares 1 a 1</button>
+                <button class="filtro">Físico y Táctico</button>
+
+                <button class="filtro-nivel">Tu nivel: Intermedio (3.0 - 4.0) <i class="ph ph-caret-down"></i></button>
+            </menu>
+
+            <!-- Cuadrícula de tarjetas de clases grupales -->
+            <section class="clases">
+
+                <!-- Tarjeta de Clase 1 -->
+                <article class="clase">
+                    <header class="clase-cab">
+                        <span class="clase-nivel">Nivel 3.0 - 4.0</span>
+                        <span class="clase-plazas"><span class="plazas-punto"></span> 3 plazas libres</span>
+                    </header>
+                    <h4 class="clase-titulo">Técnica de Bandeja y Víbora</h4>
+                    <p class="clase-desc">Punto de impacto alto, armado de brazo corto y aceleración con efecto cortado.</p>
+                    <ul class="clase-datos">
+                        <li class="clase-dato"><i class="ph ph-clock"></i> <strong class="dato-dia">Jueves</strong> <time class="dato-hora">31 Oct - 18:30 h</time></li>
+                        <li class="clase-dato"><i class="ph ph-map-pin"></i> <span class="dato-texto">Pista 2 Cubierta</span></li>
+                        <li class="clase-dato"><i class="ph ph-user"></i> <span class="dato-texto">Monitor: <strong class="dato-nombre">Carlos R.</strong> (Nivel II)</span></li>
+                    </ul>
+                    <button class="boton-inscribir">Inscribirme</button>
+                </article>
+
+                <!-- Tarjeta de Clase 2 -->
+                <article class="clase">
+                    <aside class="etiqueta-demanda">¡ALTA DEMANDA!</aside>
+                    <header class="clase-cab">
+                        <span class="clase-nivel">Nivel 3.5 - 4.5</span>
+                        <span class="clase-plazas"><span class="plazas-punto"></span> Última plaza libre</span>
+                    </header>
+                    <h4 class="clase-titulo">Partido Dirigido y Transiciones</h4>
+                    <p class="clase-desc">Simulación con corrección táctica en tiempo real, cambio de ritmo y subida a la red.</p>
+                    <ul class="clase-datos">
+                        <li class="clase-dato"><i class="ph ph-clock"></i> <strong class="dato-dia">Sábado</strong> <time class="dato-hora">02 Nov - 10:00 h</time></li>
+                        <li class="clase-dato"><i class="ph ph-map-pin"></i> <span class="dato-texto">Pista 1 Central Panorámica</span></li>
+                        <li class="clase-dato"><i class="ph ph-user"></i> <span class="dato-texto">Monitora: <strong class="dato-nombre">Marta S.</strong> (Ex WPT)</span></li>
+                    </ul>
+                    <button class="boton-inscribir">Inscribirme</button>
+                </article>
+
+                <!-- Tarjeta de Clase 3 (Completa) -->
+                <article class="clase">
+                    <header class="clase-cab">
+                        <span class="clase-nivel">Nivel 2.5 - 3.5</span>
+                        <span class="clase-plazas"><span class="plazas-punto"></span> Completa (4/4)</span>
+                    </header>
+                    <h4 class="clase-titulo">Golpeo y Salida de Pared</h4>
+                    <p class="clase-desc">Lectura de trayectoria, giro de hombros, rebote en cristal de fondo y doble pared.</p>
+                    <ul class="clase-datos">
+                        <li class="clase-dato"><i class="ph ph-clock"></i> <strong class="dato-dia">Domingo</strong> <time class="dato-hora">03 Nov - 11:30 h</time></li>
+                        <li class="clase-dato"><i class="ph ph-map-pin"></i> <span class="dato-texto">Pista 4 Cubierta</span></li>
+                        <li class="clase-dato"><i class="ph ph-user"></i> <span class="dato-texto">Monitor: <strong class="dato-nombre">Álex P.</strong></span></li>
+                    </ul>
+                    <button class="boton-espera"><i class="ph ph-list-plus"></i> Lista de espera</button>
+                </article>
+
+                <!-- Tarjeta de Clase 4 -->
+                <article class="clase">
+                    <header class="clase-cab">
+                        <span class="clase-nivel">Todos los niveles</span>
+                        <span class="clase-plazas"><span class="plazas-punto"></span> 3 plazas libres</span>
+                    </header>
+                    <h4 class="clase-titulo">Físico Específico de Pádel</h4>
+                    <p class="clase-desc">Desplazamientos laterales, potencia de salto para remate y prevención de lesiones.</p>
+                    <ul class="clase-datos">
+                        <li class="clase-dato"><i class="ph ph-clock"></i> <strong class="dato-dia">Martes</strong> <time class="dato-hora">05 Nov - 19:30 h</time></li>
+                        <li class="clase-dato"><i class="ph ph-map-pin"></i> <span class="dato-texto">Pista 6 Exterior Césped Pro</span></li>
+                        <li class="clase-dato"><i class="ph ph-user"></i> <span class="dato-texto">Preparador: <strong class="dato-nombre">Roberto G.</strong> (CAFD)</span></li>
+                    </ul>
+                    <button class="boton-inscribir">Inscribirme</button>
+                </article>
+            </section>
+        </section>
+
+        <!-- Sección: Reserving clases particulares -->
+        <section class="seccion">
+            <header class="seccion-cab">
+                <span class="seccion-etiqueta">ENTRENAMIENTO INDIVIDUAL 1 A 1</span>
+                <section class="seccion-fila">
+                    <section class="seccion-texto">
+                        <h3 class="seccion-titulo">Clases Particulares</h3>
+                        <p class="seccion-desc">Acelera tu progresión con atención exclusiva. Elige tu monitor colegiado, selecciona un pack con tarifa bonificada y reserva el día en pista.</p>
+                    </section>
+                </section>
+            </header>
+
+            <!-- Proceso de reserva en 2 pasos -->
+            <section class="pasos">
+
+                <!-- Paso 1: Selección de Monitor -->
+                <article class="paso">
+                    <header class="paso-cab">
+                        <h4 class="paso-titulo">1. Selecciona tu Monitor</h4>
+                        <span class="paso-nota">3 monitores disponibles</span>
+                    </header>
+
+                    <menu class="monitores">
+                        <article class="monitor">
+                            <img src="https://placehold.co/100x100/1e3c31/d8f44d?text=CR" alt="Carlos" class="monitor-foto">
+                            <h5 class="monitor-nombre">Carlos Rodríguez</h5>
+                            <span class="monitor-rol">Nivel II FEP</span>
+                            <p class="monitor-desc">Especialista en juego aéreo y defensa</p>
+                        </article>
+                        <article class="monitor">
+                            <img src="https://placehold.co/100x100/e2e8f0/64748b?text=MS" alt="Marta" class="monitor-foto">
+                            <h5 class="monitor-nombre">Marta Sánchez</h5>
+                            <span class="monitor-rol">Ex Jugadora WPT</span>
+                            <p class="monitor-desc">Táctica de parejas y ritmo de volea</p>
+                        </article>
+                        <article class="monitor">
+                            <img src="https://placehold.co/100x100/e2e8f0/64748b?text=AP" alt="Álex" class="monitor-foto">
+                            <h5 class="monitor-nombre">Álex Pérez</h5>
+                            <span class="monitor-rol">Técnico Nacional</span>
+                            <p class="monitor-desc">Iniciación y salida de doble pared</p>
+                        </article>
+                    </menu>
+                </article>
+
+                <!-- Paso 2: Selección de día, hora y confirmación -->
+                <article class="paso">
+                    <header class="paso-cab">
+                        <section class="paso-texto">
+                            <h4 class="paso-titulo">3. Elige Día y Franja</h4>
+                            <span class="paso-sub">Con <strong class="paso-sub-nombre">Carlos Rodríguez</strong> · Pistas Cubiertas</span>
+                        </section>
+                        <span class="paso-mes">Noviembre 2025</span>
+                    </header>
+
+                    <!-- Carrusel de selección de días -->
+                    <menu class="dias">
+                        <button class="dia">
+                            <span class="dia-nombre">Jue</span>
+                            <strong class="dia-numero">31</strong>
+                            <span class="dia-marca">•</span>
+                        </button>
+                        <button class="dia">
+                            <span class="dia-nombre">Vie</span>
+                            <strong class="dia-numero">01</strong>
+                            <span class="dia-marca">•</span>
+                        </button>
+                        <button class="dia">
+                            <span class="dia-nombre">Sab</span>
+                            <strong class="dia-numero">02</strong>
+                            <span class="dia-marca">•</span>
+                        </button>
+                        <button class="dia">
+                            <span class="dia-nombre">Dom</span>
+                            <strong class="dia-numero">03</strong>
+                            <span class="dia-marca">+</span>
+                        </button>
+                        <button class="dia">
+                            <span class="dia-nombre">Lun</span>
+                            <strong class="dia-numero">04</strong>
+                            <span class="dia-marca">•</span>
+                        </button>
+                    </menu>
+
+                    <span class="huecos-titulo">HUECOS LIBRES JUEVES 31 OCT:</span>
+
+                    <!-- Selección de franjas horarias -->
+                    <menu class="horas">
+                        <button class="hora">
+                            <span class="hora-rango"><i class="ph-fill ph-check-circle"></i> 18:30 – 19:30</span>
+                            <span class="hora-pista">Pista 2</span>
+                        </button>
+                        <button class="hora">
+                            <span class="hora-rango">19:30 – 20:30</span>
+                            <span class="hora-pista">Pista 3</span>
+                        </button>
+                        <button class="hora">
+                            <span class="hora-rango">20:30 – 21:30</span>
+                            <span class="hora-pista">Pista 2</span>
+                        </button>
+                        <button class="hora" disabled="">
+                            <span class="hora-rango">21:30 – 22:30</span>
+                            <span class="hora-pista">OCUPADO</span>
+                        </button>
+                    </menu>
+
+                    <!-- Resumen del coste y horario -->
+                    <article class="resumen-reserva">
+                        <section class="resumen-fila">
+                            <span class="resumen-label">Sesión seleccionada:</span>
+                            <strong class="resumen-valor">Jue 31 Oct · 18:30 h</strong>
+                        </section>
+                        <section class="resumen-fila">
+                            <span class="resumen-label">Monitor:</span>
+                            <strong class="resumen-valor">Carlos Rodríguez (Titular)</strong>
+                        </section>
+                        <section class="resumen-fila">
+                            <span class="resumen-label">Consumo de saldo:</span>
+                            <strong class="resumen-valor">Descontar 1 de tu Bono Activo (restarán 2)</strong>
+                        </section>
+                    </article>
+
+                    <button class="boton-confirmar"><i class="ph ph-lock-key"></i> Confirmar Reserva</button>
+                </article>
+            </section>
+        </section>
+
+        <!-- Bloque informativo de garantías de calidad -->
+        <aside class="garantias">
+            <article class="garantias-cab">
+                <figure class="garantias-icono"><i class="ph-fill ph-shield-check"></i></figure>
+                <section class="garantias-texto">
+                    <h4 class="garantias-titulo">Garantías Pedagógicas del Club</h4>
+                    <p class="garantias-desc">Estándares oficiales de calidad avalados por el comité deportivo del Club de Pádel Sevilla.</p>
+                </section>
+            </article>
+
+            <section class="garantia">
+                <article class="garantia-item">
+                    <i class="ph ph-calendar-x"></i>
+                    <p class="garantia-texto">Cancelación gratuita hasta<br><strong class="garantia-destacado">24h antes</strong></p>
+                </article>
+            </section>
+            <section class="garantia">
+                <article class="garantia-item">
+                    <i class="ph ph-users"></i>
+                    <p class="garantia-texto">Ratio estricto: <strong class="garantia-destacado">máx 4 alumnos</strong><br>por pista</p>
+                </article>
+            </section>
+            <section class="garantia">
+                <article class="garantia-item">
+                    <i class="ph ph-tennis-ball"></i>
+                    <p class="garantia-texto">Bolas presurizadas y cajones<br><strong class="garantia-destacado">oficiales</strong></p>
+                </article>
+            </section>
+        </aside>
+
+    </main>
+
+    <!-- Pie de página general -->
+    <footer class="pie">
+        <section class="pie-interior">
+            <section class="pie-columnas">
+
+                <!-- Información corporativa -->
+                <section class="pie-marca">
+                    <header class="pie-logo-fila">
+                        <figure class="pie-logo">P</figure> PadelSlot
+                    </header>
+                    <p class="pie-desc">Plataforma tecnológica marca blanca SaaS para clubes y centros deportivos de pádel. Permite a cada club personalizar y activar sus propios módulos de pistas, escuela, miembros y servicios.</p>
+                </section>
+
+                <!-- Menú del socio -->
+                <nav aria-label="Portal del Socio" class="pie-menu">
+                    <h5 class="pie-titulo">PORTAL DEL SOCIO</h5>
+                    <ul class="pie-lista">
+                        <li class="pie-item"><a href="#" class="pie-enlace">Inicio del Club</a></li>
+                        <li class="pie-item"><a href="#" class="pie-enlace">Reservar pista</a></li>
+                        <li class="pie-item"><a href="#" class="pie-enlace">Escuela y clases</a></li>
+                        <li class="pie-item"><a href="#" class="pie-enlace">Membresía y cuotas</a></li>
+                        <li class="pie-item"><a href="#" class="pie-enlace">Servicios del club</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Menú de ayuda y atención -->
+                <nav aria-label="Atención y Centro" class="pie-menu">
+                    <h5 class="pie-titulo">ATENCIÓN Y CENTRO</h5>
+                    <ul class="pie-lista">
+                        <li class="pie-item"><a href="#" class="pie-enlace">Preguntas Frecuentes (FAQ)</a></li>
+                        <li class="pie-item"><a href="#" class="pie-enlace">Contacto de recepción</a></li>
+                        <li class="pie-item"><a href="#" class="pie-enlace">Reglamento interno de pistas</a></li>
+                        <li class="pie-item"><a href="#" class="pie-enlace">Política de cancelaciones</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Ubicación e instalación activa -->
+                <address class="pie-direccion">
+                    <h5 class="pie-titulo">INSTALACIÓN ACTUAL</h5>
+                    <section class="pie-sede">
+                        <h6 class="pie-sede-nombre"><i class="ph-fill ph-map-pin"></i> Club de Pádel Sevilla</h6>
+                        <p class="pie-sede-texto">Ctra. de Carmona, km 4, Sevilla</p>
+                        <p class="pie-sede-texto">Horario: Lun - Dom | 07:00 - 23:30</p>
+                        <span class="pie-version">
+                            <figure class="pie-version-punto"></figure> SaaS Ver. 2.4 Active
+                        </span>
+                    </section>
+                </address>
+            </section>
+
+            <!-- Derechos y enlaces legales -->
+            <section class="pie-legal">
+                <p class="pie-copy">© 2025 PadelSlot SaaS. Diseñado para clubes de pádel. Todos los derechos reservados.</p>
+                <nav aria-label="Información legal" class="pie-legal-menu">
+                    <a href="#" class="pie-legal-enlace">Aviso Legal</a>
+                    <a href="#" class="pie-legal-enlace">Privacidad</a>
+                    <a href="#" class="pie-legal-enlace">Términos del Servicio</a>
+                    <a href="#" class="pie-legal-enlace">Soporte</a>
+                </nav>
+            </section>
+        </section>
+    </footer>
+
+</body>
+</html>

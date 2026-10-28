@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Crear Reserva de Pista - PadelSlot Admin</title>
+
+    <!-- Fuentes tipográficas -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+</head>
+<body class="cuerpo">
+
+    <!-- Barra lateral de navegación del sistema de administración -->
+    <aside class="barra-lateral">
+        <section class="barra-superior">
+
+            <!-- Logotipo del sistema -->
+            <header class="marca">
+                <figure class="marca-logo">
+                    <span class="icono">sports_tennis</span>
+                </figure>
+                <section class="marca-texto">
+                    <strong class="marca-nombre">PadelSlot</strong>
+                    <span class="marca-sub">MANAGER</span>
+                </section>
+            </header>
+
+            <section class="menu-titulo">
+                <span class="menu-titulo-texto">Gestión de Club</span>
+            </section>
+
+            <!-- Menú de enlaces principales -->
+            <nav class="menu">
+                <a href="#" class="menu-enlace">
+                    <span class="icono">grid_view</span>
+                    <span class="menu-texto">Panel general</span>
+                </a>
+                <a href="#" class="menu-enlace">
+                    <span class="icono">calendar_today</span>
+                    <span class="menu-texto">Pistas y reservas</span>
+                </a>
+                <a href="#" class="menu-enlace">
+                    <span class="icono">school</span>
+                    <span class="menu-texto">Escuela deportiva</span>
+                </a>
+                <a href="#" class="menu-enlace">
+                    <span class="icono">groups</span>
+                    <span class="menu-texto">Socios y abonados</span>
+                </a>
+                <a href="#" class="menu-enlace">
+                    <span class="icono">payments</span>
+                    <span class="menu-texto">Cobros y cuotas</span>
+                </a>
+                <a href="#" class="menu-enlace">
+                    <span class="icono">local_convenience_store</span>
+                    <span class="menu-texto">Servicios (Parking, Bar, Tienda)</span>
+                </a>
+                <a href="#" class="menu-enlace">
+                    <span class="icono">report_problem</span>
+                    <span class="menu-texto">Incidencias</span>
+                </a>
+                <a href="#" class="menu-enlace">
+                    <span class="icono">tune</span>
+                    <span class="menu-texto">Configuración SaaS</span>
+                </a>
+            </nav>
+        </section>
+
+        <!-- Indicador de ocupación de pistas en tiempo real -->
+        <section class="ocupacion">
+            <header class="ocupacion-cab">
+                <section class="ocupacion-info">
+                    <figure class="ocupacion-punto">
+                        <span class="punto-onda"></span>
+                        <span class="punto-fijo"></span>
+                    </figure>
+                    <span class="ocupacion-titulo">Ocupación en vivo</span>
+                </section>
+                <strong class="ocupacion-valor">88%</strong>
+            </header>
+
+            <figure class="ocupacion-barra">
+                <section class="ocupacion-relleno"></section>
+            </figure>
+
+            <footer class="ocupacion-pie">
+                <span class="pie-texto">14 pistas activas</span>
+                <span class="pie-texto">2 libres</span>
+            </footer>
+        </section>
+    </aside>
+
+    <!-- Área de trabajo general del administrador -->
+    <section class="contenedor">
+
+        <!-- Encabezado superior fijo (Buscador y perfil) -->
+        <header class="cabecera">
+            <section class="buscador">
+                <section class="buscador-caja">
+                    <span class="icono">search</span>
+                    <input class="buscador-input" placeholder="Buscar reserva, socio, pista..." type="text">
+                    <kbd class="atajo">⌘K</kbd>
+                </section>
+            </section>
+
+            <nav class="cabecera-acciones">
+                <section class="cabecera-espacio"></section>
+                <section class="notif">
+                    <button type="button" class="notif-boton">
+                        <span class="icono">notifications</span>
+                    </button>
+                    <span class="notif-punto"></span>
+                </section>
+
+                <figure class="separador"></figure>
+
+                <section class="usuario">
+                    <figure class="avatar">
+                        <span class="icono">person</span>
+                    </figure>
+                    <section class="usuario-datos">
+                        <strong class="usuario-nombre">Marta R.</strong>
+                        <span class="usuario-rol">Administradora</span>
+                    </section>
+                </section>
+            </nav>
+        </header>
+
+        <!-- Contenido principal: Proceso de creación de reserva -->
+        <main class="principal">
+            <section class="pagina">
+                <section class="pagina-interior">
+
+                    <!-- Migas de pan e información del operador -->
+                    <header class="migas-cab">
+                        <nav class="migas">
+                            <a href="#" class="miga">
+                                <span class="icono">sports_tennis</span>
+                                Pistas y reservas
+                            </a>
+                            <span class="miga-sep">/</span>
+                            <a href="#" class="miga">Cuadrante en vivo</a>
+                            <span class="miga-sep">/</span>
+                            <strong class="miga-actual">Nueva Reserva Manual</strong>
+                        </nav>
+                        <section class="operador">
+                            <span class="operador-etiqueta">
+                                <figure class="operador-punto"></figure>
+                                OPERACIÓN MOSTRADOR · RECEPCIÓN
+                            </span>
+                            <figure class="separador"></figure>
+                            <span class="operador-texto">Operador: <strong class="operador-nombre">Marta R. (Turno Tarde)</strong></span>
+                        </section>
+                    </header>
+
+                    <!-- Encabezado principal y selector rápido de fecha -->
+                    <section class="encabezado">
+                        <section class="encabezado-texto">
+                            <section class="titulo-fila">
+                                <h1 class="titulo">Crear Reserva de Pista</h1>
+                                <span class="estado-tpv">TPV Activo</span>
+                            </section>
+                            <p class="descripcion">
+                                Asignación exprés de pista cubierta, control de socios federados, cobro de suplementos e integración domótica de accesos.
+                            </p>
+                        </section>
+
+                        <!-- Widget para seleccionar la fecha de la reserva -->
+                        <nav class="fecha">
+                            <button title="Día anterior" type="button" class="fecha-boton">
+                                <span class="icono">chevron_left</span>
+                            </button>
+                            <section class="fecha-actual">
+                                <span class="icono">calendar_month</span>
+                                <strong class="fecha-texto">Hoy, Jueves 1 Octubre 2025</strong>
+                            </section>
+                            <button title="Día siguiente" type="button" class="fecha-boton">
+                                <span class="icono">chevron_right</span>
+                            </button>
+                        </nav>
+                    </section>
+
+                    <!-- Zona de trabajo principal estructurada en dos columnas -->
+                    <section class="columnas">
+
+                        <!-- COLUMNA IZQUIERDA: Formulario de reserva y selección de pistas -->
+                        <section class="formulario">
+
+                            <!-- PASO 1: Identificación del titular de la reserva -->
+                            <article class="bloque">
+                                <header class="bloque-cab">
+                                    <section class="bloque-titulo">
+                                        <figure class="bloque-num">1</figure>
+                                        <section class="bloque-texto">
+                                            <h2 class="bloque-h2">Titular de la Reserva</h2>
+                                            <p class="bloque-desc">Identifique si el titular dispone de carnet activo de club</p>
+                                        </section>
+                                    </section>
+
+                                    <!-- Conmutador: Socio o Invitado -->
+                                    <menu class="conmutador">
+                                        <button id="btn-socio" type="button" class="conmutador-boton">
+                                            <span class="icono">verified</span>
+                                            Socio Registrado
+                                        </button>
+                                        <button id="btn-invitado" type="button" class="conmutador-boton">
+                                            <span class="icono">person_outline</span>
+                                            Invitado / No Socio
+                                        </button>
+                                    </menu>
+                                </header>
+
+                                <!-- Buscador rápido de socios -->
+                                <section class="campo">
+                                    <label class="campo-label">Buscar por Nombre, DNI o Nº de Carnet</label>
+                                    <section class="campo-caja">
+                                        <span class="icono">badge</span>
+                                        <input value="Laura Méndez #1042 - Socia Oro" placeholder="Laura Méndez #1042" type="text" class="input">
+                                        <span class="campo-validado">
+                                            <span class="icono">check_circle</span>
+                                            Validada
+                                        </span>
+                                    </section>
+                                </section>
+
+                                <!-- Ficha resumen del socio seleccionado -->
+                                <article class="ficha">
+                                    <section class="ficha-info">
+                                        <figure class="iniciales">LM</figure>
+                                        <section class="ficha-texto">
+                                            <strong class="ficha-nombre">Laura Méndez García</strong>
+                                            <span class="ficha-socio">Socia #1042&nbsp;</span>
+                                            <span class="ficha-telefono">
+                                                <span class="icono">call</span>
+                                                +34 654 890 123
+                                            </span>
+                                        </section>
+                                    </section>
+
+                                    <!-- Saldo disponible -->
+                                    <section class="ficha-dato">
+                                        <span class="ficha-label">Monedero Virtual</span>
+                                        <section class="ficha-fila">
+                                            <strong class="ficha-valor">38,50 €</strong>
+                                            <span class="ficha-nota">Disponible</span>
+                                        </section>
+                                        <span class="ficha-pie">Última recarga: Ayer 12:40h</span>
+                                    </section>
+
+                                    <!-- Nivel deportivo y estado de pago -->
+                                    <section class="ficha-dato">
+                                        <span class="ficha-label">Nivel de Juego &amp; Estado</span>
+                                        <section class="ficha-fila">
+                                            <span class="etiqueta-nivel">Nivel 4.25</span>
+                                            <span class="etiqueta-pago">Al corriente de pago</span>
+                                        </section>
+                                        <span class="ficha-pie">3 reservas este mes (Límite: 8)</span>
+                                    </section>
+                                </article>
+                            </article>
+
+                            <!-- PASO 2: Selección de pistas y horarios -->
+                            <article class="bloque">
+                                <header class="bloque-cab">
+                                    <section class="bloque-titulo">
+                                        <figure class="bloque-num">2</figure>
+                                        <section class="bloque-texto">
+                                            <h2 class="bloque-h2">Selección de Pista y Franja</h2>
+                                            <p class="bloque-desc">Superficie reglamentaria WPT y control climático</p>
+                                        </section>
+                                    </section>
+
+                                    <!-- Selector de duración de partida -->
+                                    <menu class="duraciones">
+                                        <span class="duraciones-label">Duración:</span>
+                                        <button type="button" class="duracion">60 min</button>
+                                        <button type="button" class="duracion">90 min</button>
+                                        <button type="button" class="duracion">120 min</button>
+                                    </menu>
+                                </header>
+
+                                <!-- Cuadrícula de selección de pistas -->
+                                <section class="pistas">
+                                    <header class="pistas-cab">
+                                        <span class="pistas-titulo">Pista Seleccionada</span>
+                                        <span class="pistas-nota">Todas con cristal templado 12mm</span>
+                                    </header>
+
+                                    <section class="pistas-lista">
+                                        <!-- Pista 1 -->
+                                        <article class="pista">
+                                            <header class="pista-cab">
+                                                <h3 class="pista-nombre">Pista 1</h3>
+                                                <span class="pista-tipo">Panorámica</span>
+                                            </header>
+                                            <footer class="pista-pie">
+                                                <span class="pista-detalle">Mondo Supercourt</span>
+                                                <strong class="pista-estado">Libre 19:00</strong>
+                                            </footer>
+                                        </article>
+
+                                        <!-- Pista 2 (Seleccionada) -->
+                                        <article class="pista pista-activa">
+                                            <figure class="decoracion"></figure>
+                                            <header class="pista-cab">
+                                                <section class="pista-titulo">
+                                                    <h3 class="pista-nombre">Pista 2</h3>
+                                                    <span class="icono">check_circle</span>
+                                                </section>
+                                                <span class="pista-tipo">Central Cubierta</span>
+                                            </header>
+                                            <footer class="pista-pie">
+                                                <span class="pista-detalle">Climatizada · Césped Azul</span>
+                                                <strong class="pista-estado">Seleccionada</strong>
+                                            </footer>
+                                        </article>
+
+                                        <!-- Pista 3 -->
+                                        <article class="pista">
+                                            <header class="pista-cab">
+                                                <h3 class="pista-nombre">Pista 3</h3>
+                                                <span class="pista-tipo">Estándar Cubierta</span>
+                                            </header>
+                                            <footer class="pista-pie">
+                                                <span class="pista-detalle">Césped Texturado</span>
+                                                <strong class="pista-estado">Ocupada hasta 20:00</strong>
+                                            </footer>
+                                        </article>
+
+                                        <!-- Pista 5 -->
+                                        <article class="pista">
+                                            <header class="pista-cab">
+                                                <h3 class="pista-nombre">Pista 5</h3>
+                                                <span class="pista-tipo">Exterior WPT</span>
+                                            </header>
+                                            <footer class="pista-pie">
+                                                <span class="pista-detalle">Iluminación LED Pro</span>
+                                                <strong class="pista-estado">Libre 18:30</strong>
+                                            </footer>
+                                        </article>
+                                    </section>
+                                </section>
+
+                                <!-- Franjas horarias disponibles para la pista elegida -->
+                                <section class="franjas">
+                                    <span class="franjas-titulo">Horarios en Pista 2 (Jueves 1 Oct)</span>
+
+                                    <section class="franjas-lista">
+                                        <!-- Franja 1: Ocupada -->
+                                        <article class="franja franja-ocupada">
+                                            <section class="franja-info">
+                                                <strong class="franja-hora">17:00 - 18:30</strong>
+                                                <span class="franja-nota">Escuela Competición</span>
+                                            </section>
+                                            <span class="icono">lock</span>
+                                        </article>
+
+                                        <!-- Franja 2: Seleccionada -->
+                                        <article class="franja franja-activa">
+                                            <section class="franja-info">
+                                                <section class="franja-fila">
+                                                    <strong class="franja-hora">18:30 - 20:00</strong>
+                                                    <figure class="franja-punto"></figure>
+                                                </section>
+                                                <span class="franja-nota">Franja Premium (90 min)</span>
+                                            </section>
+                                            <figure class="franja-check">
+                                                <span class="icono">done</span>
+                                            </figure>
+                                        </article>
+
+                                        <!-- Franja 3: Libre -->
+                                        <article class="franja">
+                                            <section class="franja-info">
+                                                <strong class="franja-hora">20:00 - 21:30</strong>
+                                                <span class="franja-nota">Libre inmediata</span>
+                                            </section>
+                                            <span class="icono">add_circle</span>
+                                        </article>
+                                    </section>
+                                </section>
+                            </article>
+
+                            <!-- PASO 3: Asignación de los 4 jugadores -->
+                            <article class="bloque">
+                                <header class="bloque-cab">
+                                    <section class="bloque-titulo">
+                                        <figure class="bloque-num">3</figure>
+                                        <section class="bloque-texto">
+                                            <h2 class="bloque-h2">Participantes y Suplementos</h2>
+                                            <p class="bloque-desc">Identifique los 4 jugadores para aplicar tarifas personalizadas</p>
+                                        </section>
+                                    </section>
+                                    <span class="bloque-etiqueta">Modalidad: Dobles (4 Pax)</span>
+                                </header>
+
+                                <!-- Lista de los 4 jugadores de la partida -->
+                                <section class="jugadores">
+
+                                    <!-- Jugador 1 -->
+                                    <article class="jugador">
+                                        <section class="jugador-info">
+                                            <figure class="jugador-num">1</figure>
+                                            <section class="jugador-texto">
+                                                <strong class="jugador-nombre">Laura Méndez</strong>
+                                                <span class="jugador-detalle">Titular&nbsp;</span>
+                                            </section>
+                                        </section>
+                                        <strong class="jugador-precio">0,00 €</strong>
+                                    </article>
+
+                                    <!-- Jugador 2 -->
+                                    <article class="jugador">
+                                        <section class="jugador-info">
+                                            <figure class="jugador-num">2</figure>
+                                            <section class="jugador-texto">
+                                                <strong class="jugador-nombre">Carlos Gómez</strong>
+                                                <span class="jugador-detalle">Socio #88</span>
+                                            </section>
+                                        </section>
+                                        <strong class="jugador-precio">0,00 €</strong>
+                                    </article>
+
+                                    <!-- Jugador 3 (Invitado) -->
+                                    <article class="jugador jugador-invitado">
+                                        <section class="jugador-info">
+                                            <figure class="jugador-num">3</figure>
+                                            <section class="jugador-texto">
+                                                <strong class="jugador-nombre">Miguel Sanz</strong>
+                                                <span class="jugador-detalle">Invitado no socio (+Supl.)</span>
+                                            </section>
+                                        </section>
+                                        <strong class="jugador-precio">+3,00 €</strong>
+                                    </article>
+
+                                    <!-- Jugador 4 (Pendiente) -->
+                                    <article class="jugador jugador-libre">
+                                        <section class="jugador-info">
+                                            <figure class="jugador-num">4</figure>
+                                            <section class="jugador-texto">
+                                                <strong class="jugador-nombre">Plaza Abierta / Split</strong>
+                                                <span class="jugador-detalle">Por definir en pista</span>
+                                            </section>
+                                        </section>
+                                        <button type="button" class="boton-mini">
+                                            <span class="icono">add</span>
+                                            Asignar
+                                        </button>
+                                    </article>
+                                </section>
+
+                                <!-- Opción de envío de notificación -->
+                                <label class="aviso-check">
+                                    <input checked="" type="checkbox" class="casilla">
+                                    <section class="aviso-check-info">
+                                        <span class="icono">mark_email_read</span>
+                                        <span class="aviso-check-texto">
+                                            Enviar confirmación instantánea por WhatsApp y SMS con clave PIN de acceso al torno y luces
+                                        </span>
+                                    </section>
+                                </label>
+                            </article>
+
+                            <!-- PASO 4: Extras adicionales -->
+                            <article class="bloque">
+                                <header class="bloque-cab">
+                                    <figure class="bloque-num">4</figure>
+                                    <section class="bloque-texto">
+                                        <h2 class="bloque-h2">Extras Opcionales de Pista</h2>
+                                        <p class="bloque-desc">Añada consumibles o servicios directos del mostrador</p>
+                                    </section>
+                                </header>
+
+                                <section class="extras">
+
+                                    <!-- Extra 1: Pelotas -->
+                                    <label class="extra">
+                                        <input checked="" type="checkbox" class="casilla">
+                                        <section class="extra-texto">
+                                            <strong class="extra-nombre">Tubo Head Padel Pro</strong>
+                                            <span class="extra-detalle">Bote 3 bolas presurizadas</span>
+                                            <strong class="extra-precio">+4,00 €</strong>
+                                        </section>
+                                    </label>
+
+                                    <!-- Extra 2: Parking -->
+                                    <label class="extra">
+                                        <input checked="" type="checkbox" class="casilla">
+                                        <section class="extra-texto">
+                                            <strong class="extra-nombre">Parking Subterráneo</strong>
+                                            <span class="extra-detalle">Barrera con lectura matrícula</span>
+                                            <strong class="extra-precio">0,00 € (Socio Oro)</strong>
+                                        </section>
+                                    </label>
+
+                                    <!-- Extra 3: Alquiler palas -->
+                                    <label class="extra">
+                                        <input type="checkbox" class="casilla">
+                                        <section class="extra-texto">
+                                            <strong class="extra-nombre">Alquiler 2 Palas Test</strong>
+                                            <span class="extra-detalle">Bullpadel Hack 03 / Vertex</span>
+                                            <strong class="extra-precio">+6,00 €</strong>
+                                        </section>
+                                    </label>
+                                </section>
+                            </article>
+                        </section>
+
+                        <!-- COLUMNA DERECHA: Resumen de liquidación y cobro TPV -->
+                        <aside class="lateral">
+
+                            <!-- Tarjeta de liquidación y desglose del total -->
+                            <article class="liquidacion">
+                                <header class="liquidacion-cab">
+                                    <section class="liquidacion-titulo">
+                                        <span class="icono">receipt_long</span>
+                                        <h3 class="liquidacion-h3">Liquidación de Mostrador</h3>
+                                    </section>
+                                    <code class="liquidacion-codigo">#REC-8841</code>
+                                </header>
+
+                                <!-- Vista previa del ticket -->
+                                <section class="ticket">
+                                    <section class="ticket-info">
+                                        <figure class="ticket-icono">
+                                            <span class="icono">sports_tennis</span>
+                                        </figure>
+                                        <section class="ticket-texto">
+                                            <strong class="ticket-titulo">Pista 2 · Cubierta Central</strong>
+                                            <span class="ticket-detalle">18:30 a 20:00 (90 min)</span>
+                                        </section>
+                                    </section>
+                                    <span class="ticket-dia">Hoy</span>
+                                </section>
+
+                                <!-- Desglose de precios y conceptos -->
+                                <section class="desglose">
+                                    <section class="desglose-fila">
+                                        <span class="desglose-concepto">Alquiler Pista (90 min valle)</span>
+                                        <strong class="desglose-importe">28,00 €</strong>
+                                    </section>
+                                    <section class="desglose-fila">
+                                        <span class="desglose-concepto">Suplemento Invitado Externo</span>
+                                        <strong class="desglose-importe">+3,00 €</strong>
+                                    </section>
+                                    <section class="desglose-fila">
+                                        <span class="desglose-concepto">Bote Head Padel Pro (1 ud.)</span>
+                                        <strong class="desglose-importe">+4,00 €</strong>
+                                    </section>
+                                    <section class="desglose-fila">
+                                        <span class="desglose-concepto">Parking subterráneo bonificado</span>
+                                        <strong class="desglose-importe">0,00 €</strong>
+                                    </section>
+                                    <section class="desglose-fila">
+                                        <span class="desglose-concepto">Descuento fidelización Socia Oro</span>
+                                        <span class="desglose-descuento">-0,00 € (aplicado)</span>
+                                    </section>
+
+                                    <figure class="separador"></figure>
+
+                                    <footer class="total">
+                                        <section class="total-texto">
+                                            <h4 class="total-titulo">Total a Liquidar</h4>
+                                            <span class="total-iva">IVA 21% incluido (6,07 €)</span>
+                                        </section>
+                                        <strong class="total-importe">35,00 €</strong>
+                                    </footer>
+                                </section>
+
+                                <!-- Métodos de pago disponibles en el TPV -->
+                                <section class="pagos">
+                                    <label class="pagos-cab">
+                                        <span class="pagos-titulo">Forma de Pago Inmediata</span>
+                                        <span class="pagos-etiqueta">Mostrador</span>
+                                    </label>
+
+                                    <!-- TPV datáfono -->
+                                    <button type="button" class="pago pago-activo">
+                                        <section class="pago-info">
+                                            <figure class="pago-icono">
+                                                <span class="icono">credit_card</span>
+                                            </figure>
+                                            <section class="pago-texto">
+                                                <strong class="pago-nombre">TPV Físico Datáfono</strong>
+                                                <span class="pago-detalle">Contactless / Chip listo</span>
+                                            </section>
+                                        </section>
+                                        <span class="icono">radio_button_checked</span>
+                                    </button>
+
+                                    <!-- Monedero virtual -->
+                                    <button type="button" class="pago">
+                                        <section class="pago-info">
+                                            <figure class="pago-icono">
+                                                <span class="icono">account_balance_wallet</span>
+                                            </figure>
+                                            <section class="pago-texto">
+                                                <strong class="pago-nombre">Cobrar de Monedero Virtual</strong>
+                                                <span class="pago-detalle">Saldo: 38,50 € (Suficiente)</span>
+                                            </section>
+                                        </section>
+                                        <span class="icono">radio_button_unchecked</span>
+                                    </button>
+
+                                    <!-- Pago en efectivo -->
+                                    <button type="button" class="pago">
+                                        <section class="pago-info">
+                                            <figure class="pago-icono">
+                                                <span class="icono">payments</span>
+                                            </figure>
+                                            <section class="pago-texto">
+                                                <strong class="pago-nombre">Efectivo en Caja</strong>
+                                                <span class="pago-detalle">Cajón portamonedas 1</span>
+                                            </section>
+                                        </section>
+                                        <span class="icono">radio_button_unchecked</span>
+                                    </button>
+
+                                    <!-- Más formas de cobro -->
+                                    <menu class="pagos-extra">
+                                        <button type="button" class="pago-extra">
+                                            <span class="icono">receipt</span>
+                                            Domiciliación SEPA
+                                        </button>
+                                        <button type="button" class="pago-extra">
+                                            <span class="icono">pending</span>
+                                            Cobrar en Pista
+                                        </button>
+                                    </menu>
+                                </section>
+
+                                <!-- Botones de acción principal -->
+                                <nav class="acciones">
+                                    <button type="button" class="boton-confirmar">
+                                        <span class="icono">check_circle</span>
+                                        <span class="boton-texto">Confirmar Reserva y Abrir Pista</span>
+                                    </button>
+                                    <button type="button" class="boton-borrador">
+                                        <span class="icono">save</span>
+                                        <span class="boton-texto">Guardar sin cobrar ahora</span>
+                                    </button>
+                                    <button type="button" class="boton-cancelar">
+                                        Descartar y Volver al Cuadrante
+                                    </button>
+                                </nav>
+                            </article>
+
+                            <!-- Información técnica del control domótico -->
+                            <article class="domotica">
+                                <figure class="domotica-icono">
+                                    <span class="icono">bolt</span>
+                                </figure>
+                                <section class="domotica-texto">
+                                    <strong class="domotica-titulo">Control Domótico de Encendido</strong>
+                                    <span class="domotica-nota">Sin costes añadidos de luz en tramos 18h-22h</span>
+                                </section>
+                            </article>
+                        </aside>
+
+                    </section>
+
+                    <!-- Banner inferior sobre el encendido domótico de luces -->
+                    <article class="banner">
+                        <figure class="decoracion"></figure>
+                        <section class="banner-info">
+                            <figure class="banner-icono">
+                                <span class="icono">lightbulb</span>
+                            </figure>
+                            <section class="banner-texto">
+                                <header class="banner-cab">
+                                    <strong class="banner-titulo">Automatización Domótica Programada</strong>
+                                    <figure class="banner-punto"></figure>
+                                </header>
+                                <p class="banner-desc">
+                                    Los focos LED de la <strong class="destacado">Pista 2</strong> y el torno de acceso norte se activarán automáticamente <strong class="destacado">5 minutos antes (18:25 h)</strong> al completar esta reserva.
+                                </p>
+                            </section>
+                        </section>
+
+                        <footer class="banner-pie">
+                            <section class="banner-potencia">
+                                <span class="banner-label">Potencia Proyectores</span>
+                                <strong class="banner-valor">800 Lux · Modo Competición</strong>
+                            </section>
+                            <button type="button" class="boton-sec">
+                                <span class="icono">settings_remote</span>
+                                Ajustar
+                            </button>
+                        </footer>
+                    </article>
+
+                </section>
+            </section>
+
+            <!-- Script para la conmutación entre Socio e Invitado -->
+            <script>
+              document.addEventListener('DOMContentLoaded', () => {
+                const btnSocio = document.getElementById('btn-socio');
+                const btnInvitado = document.getElementById('btn-invitado');
+
+                if (btnSocio && btnInvitado) {
+                  btnInvitado.addEventListener('click', () => {
+                    btnInvitado.classList.add('activo');
+                    btnSocio.classList.remove('activo');
+                  });
+
+                  btnSocio.addEventListener('click', () => {
+                    btnSocio.classList.add('activo');
+                    btnInvitado.classList.remove('activo');
+                  });
+                }
+              });
+            </script>
+        </main>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Cuadrante de Pistas - PadelSlot Admin</title>
+
+    <!-- Fuentes tipográficas -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+</head>
+<body class="cuerpo">
+
+    <!-- Barra lateral de navegación del sistema de administración -->
+    <aside class="barra-lateral">
+        <section class="barra-superior">
+
+            <!-- Logotipo del sistema -->
+            <header class="marca">
+                <figure class="marca-logo">
+                    <span class="icono">sports_tennis</span>
+                </figure>
+                <section class="marca-texto">
+                    <strong class="marca-nombre">PadelSlot</strong>
+                    <span class="marca-sub">MANAGER</span>
+                </section>
+            </header>
+
+            <section class="menu-titulo">
+                <span class="menu-titulo-texto">Gestión de Club</span>
+            </section>
+
+            <!-- Menú de enlaces principales -->
+            <nav class="menu">
+                <a href="#" data-path="panel-general" class="menu-enlace">
+                    <span class="icono">grid_view</span>
+                    <span class="menu-texto">Panel general</span>
+                </a>
+                <a href="#" data-path="pistas-y-reservas" class="menu-enlace">
+                    <span class="icono">calendar_today</span>
+                    <span class="menu-texto">Pistas y reservas</span>
+                </a>
+                <a href="#" data-path="escuela-deportiva" class="menu-enlace">
+                    <span class="icono">school</span>
+                    <span class="menu-texto">Escuela deportiva</span>
+                </a>
+                <a href="#" data-path="socios-y-abonados" class="menu-enlace">
+                    <span class="icono">groups</span>
+                    <span class="menu-texto">Socios y abonados</span>
+                </a>
+                <a href="#" data-path="cobros-y-cuotas" class="menu-enlace">
+                    <span class="icono">payments</span>
+                    <span class="menu-texto">Cobros y cuotas</span>
+                </a>
+                <a href="#" data-path="servicios" class="menu-enlace">
+                    <span class="icono">local_convenience_store</span>
+                    <span class="menu-texto">Servicios (Parking, Bar, Tienda)</span>
+                </a>
+                <a href="#" data-path="incidencias" class="menu-enlace">
+                    <span class="icono">report_problem</span>
+                    <span class="menu-texto">Incidencias</span>
+                </a>
+                <a href="#" data-path="configuracion-saas" class="menu-enlace">
+                    <span class="icono">tune</span>
+                    <span class="menu-texto">Configuración SaaS</span>
+                </a>
+            </nav>
+        </section>
+
+        <!-- Indicador de ocupación de pistas en tiempo real -->
+        <section class="ocupacion">
+            <header class="ocupacion-cab">
+                <section class="ocupacion-info">
+                    <figure class="ocupacion-punto">
+                        <span class="punto-onda"></span>
+                        <span class="punto-fijo"></span>
+                    </figure>
+                    <span class="ocupacion-titulo">Ocupación en vivo</span>
+                </section>
+                <strong class="ocupacion-valor">88%</strong>
+            </header>
+
+            <figure class="ocupacion-barra">
+                <section class="ocupacion-relleno"></section>
+            </figure>
+
+            <footer class="ocupacion-pie">
+                <span class="pie-texto">14 pistas activas</span>
+                <span class="pie-texto">2 libres</span>
+            </footer>
+        </section>
+    </aside>
+
+    <!-- Área de trabajo general del administrador -->
+    <section class="contenedor">
+
+        <!-- Encabezado superior fijo (Buscador y perfil) -->
+        <header class="cabecera">
+            <section class="buscador">
+                <section class="buscador-caja">
+                    <span class="icono">search</span>
+                    <input class="buscador-input" placeholder="Buscar reserva, socio, pista..." type="text">
+                    <kbd class="atajo">⌘K</kbd>
+                </section>
+            </section>
+
+            <nav class="cabecera-acciones">
+                <section class="notif">
+                    <button type="button" class="notif-boton">
+                        <span class="icono">notifications</span>
+                    </button>
+                    <span class="notif-punto"></span>
+                </section>
+
+                <figure class="separador"></figure>
+
+                <section class="usuario">
+                    <figure class="avatar">
+                        <span class="icono">person</span>
+                    </figure>
+                    <section class="usuario-datos">
+                        <strong class="usuario-nombre">Marta R.</strong>
+                        <span class="usuario-rol">Administradora</span>
+                    </section>
+                </section>
+            </nav>
+        </header>
+
+        <!-- Contenido principal: Cuadrante en vivo -->
+        <main class="principal">
+            <section class="pagina">
+
+                <!-- Script de resaltado de enlace activo -->
+                <script>
+                    (function highlightActiveNav() {
+                      const navLinks = document.querySelectorAll('aside nav a');
+                      navLinks.forEach(link => {
+                        link.classList.toggle('activo', link.getAttribute('data-path') === 'pistas-y-reservas');
+                      });
+                    })();
+                </script>
+
+                <!-- Encabezado superior del cuadrante y contexto operativo -->
+                <header class="encabezado">
+
+                    <!-- Migas de pan y estado de conectividad domótica -->
+                    <section class="migas-fila">
+                        <nav class="migas">
+                            <span class="miga">Gestión de Club</span>
+                            <span class="miga-sep">chevron_right</span>
+                            <strong class="miga-actual">Pistas y reservas</strong>
+                            <span class="miga-sep">chevron_right</span>
+                            <span class="miga">En Vivo</span>
+                        </nav>
+
+                        <section class="sync">
+                            <figure class="sync-punto">
+                                <span class="punto-onda"></span>
+                                <span class="punto-fijo"></span>
+                            </figure>
+                            <strong class="sync-titulo">Domótica y Pasarela Sync</strong>
+                            <span class="sync-sep">·</span>
+                            <span class="sync-latencia">Latencia: 42ms</span>
+                        </section>
+                    </section>
+
+                    <!-- Título principal y barra de herramientas de la fecha -->
+                    <section class="titulo-fila">
+                        <section class="titulo-texto">
+                            <h1 class="titulo">Cuadrante Operativo de Pistas en Vivo</h1>
+                            <p class="descripcion">Control de ocupación táctica, encendido domótico de iluminación LED y cobros de pista.</p>
+                        </section>
+
+                        <!-- Navegación de fecha y botones de acción rápida -->
+                        <menu class="herramientas">
+
+                            <!-- Selector de día -->
+                            <section class="selector-dia">
+                                <button title="Día anterior" class="dia-boton">
+                                    <span class="icono">chevron_left</span>
+                                </button>
+                                <section class="dia-actual">
+                                    <span class="icono">event</span>
+                                    <span class="dia-texto">Hoy, Jueves 1 Octubre 2025</span>
+                                </section>
+                                <button title="Día siguiente" class="dia-boton">
+                                    <span class="icono">chevron_right</span>
+                                </button>
+                                <button class="boton-hoy">HOY</button>
+                            </section>
+
+                            <!-- Botón de bloqueo manual -->
+                            <button class="boton-sec">
+                                <span class="icono">lock_clock</span>
+                                <span class="boton-texto">Bloquear Pista</span>
+                            </button>
+
+                            <!-- Botón de crear reserva express -->
+                            <button class="boton-primario">
+                                <span class="icono">add_circle</span>
+                                <span class="boton-texto">+ Crear Reserva Exprés</span>
+                                <span class="atajo">F10</span>
+                            </button>
+                        </menu>
+                    </section>
+
+                    <!-- Resumen de métricas operativas del día -->
+                    <section class="metricas">
+
+                        <!-- Métrica 1: Pistas operativas -->
+                        <article class="metrica">
+                            <figure class="metrica-icono">
+                                <span class="icono">sports_tennis</span>
+                            </figure>
+                            <section class="metrica-texto">
+                                <span class="metrica-label">Pistas Operativas</span>
+                                <strong class="metrica-valor">14 <span class="metrica-nota">/ 14</span></strong>
+                            </section>
+                        </article>
+
+                        <!-- Métrica 2: Ocupación porcentual -->
+                        <article class="metrica">
+                            <figure class="metrica-icono">
+                                <span class="icono">donut_large</span>
+                            </figure>
+                            <section class="metrica-texto">
+                                <span class="metrica-label">Ocupación Hoy</span>
+                                <strong class="metrica-valor">76% <span class="metrica-nota">+8% vs ayer</span></strong>
+                            </section>
+                        </article>
+
+                        <!-- Métrica 3: Confirmadas -->
+                        <article class="metrica">
+                            <figure class="metrica-icono">
+                                <span class="icono">task_alt</span>
+                            </figure>
+                            <section class="metrica-texto">
+                                <span class="metrica-label">Confirmadas</span>
+                                <strong class="metrica-valor">42 <span class="metrica-nota">turnos</span></strong>
+                            </section>
+                        </article>
+
+                        <!-- Métrica 4: Incidencias activas -->
+                        <article class="metrica metrica-alerta">
+                            <figure class="metrica-icono">
+                                <span class="icono">warning</span>
+                            </figure>
+                            <section class="metrica-texto">
+                                <span class="metrica-label">Incidencias Activas</span>
+                                <strong class="metrica-valor">1 <span class="metrica-nota">(Pista 4 Focos)</span></strong>
+                            </section>
+                        </article>
+                    </section>
+
+                    <!-- Segmento de filtros de visualización y leyenda de estados -->
+                    <section class="filtros-fila">
+
+                        <!-- Filtros por tipo de pista -->
+                        <menu class="filtros">
+                            <button class="filtro">Todas las pistas (6 en cuadrante)</button>
+                            <button class="filtro">Pistas cubiertas (3)</button>
+                            <button class="filtro">Pistas exteriores (3)</button>
+                            <button class="filtro">Panorámicas WPT</button>
+                        </menu>
+
+                        <!-- Leyenda de colores por estado -->
+                        <aside class="leyenda">
+                            <section class="leyenda-item">
+                                <span class="leyenda-color leyenda-libre"></span>
+                                <span class="leyenda-texto">Disponible</span>
+                            </section>
+                            <section class="leyenda-item">
+                                <span class="leyenda-color leyenda-socio"></span>
+                                <span class="leyenda-texto">Reserva Socio</span>
+                            </section>
+                            <section class="leyenda-item">
+                                <span class="leyenda-color leyenda-escuela"></span>
+                                <span class="leyenda-texto">Escuela / Clase</span>
+                            </section>
+                            <section class="leyenda-item">
+                                <span class="leyenda-color leyenda-torneo"></span>
+                                <span class="leyenda-texto">Torneo / Liga</span>
+                            </section>
+                            <section class="leyenda-item">
+                                <span class="leyenda-color leyenda-bloqueo"></span>
+                                <span class="leyenda-texto">Bloqueo / Avería</span>
+                            </section>
+                        </aside>
+                    </section>
+                </header>
+
+                <!-- Matriz cuadrante interactiva de pistas en tiempo real -->
+                <section class="cuadrante">
+                    <article class="cuadrante-panel">
+                        <section class="cuadrante-scroll">
+                            <table class="tabla">
+
+                                <!-- Cabecera de pistas (Columnas) -->
+                                <thead class="tabla-head">
+                                    <tr class="fila-cab">
+                                        <th class="col-hora">Horario</th>
+
+                                        <!-- Pista 1 -->
+                                        <th class="col-pista">
+                                            <header class="pista-cab">
+                                                <section class="pista-titulo">
+                                                    <strong class="pista-nombre">Pista 1</strong>
+                                                    <span class="pista-tipo">CUBIERTA</span>
+                                                </section>
+                                                <span class="pista-desc">Panorámica WPT Cristal</span>
+                                            </header>
+                                        </th>
+
+                                        <!-- Pista 2 -->
+                                        <th class="col-pista">
+                                            <header class="pista-cab">
+                                                <section class="pista-titulo">
+                                                    <strong class="pista-nombre">Pista 2 (Central)</strong>
+                                                    <span class="pista-tipo">CUBIERTA</span>
+                                                </section>
+                                                <span class="pista-desc">Nave Climatizada Pro</span>
+                                            </header>
+                                        </th>
+
+                                        <!-- Pista 3 -->
+                                        <th class="col-pista">
+                                            <header class="pista-cab">
+                                                <section class="pista-titulo">
+                                                    <strong class="pista-nombre">Pista 3</strong>
+                                                    <span class="pista-tipo">CUBIERTA</span>
+                                                </section>
+                                                <span class="pista-desc">Estándar Climatizada</span>
+                                            </header>
+                                        </th>
+
+                                        <!-- Pista 4 (Aviso de avería) -->
+                                        <th class="col-pista col-aviso">
+                                            <header class="pista-cab">
+                                                <section class="pista-titulo">
+                                                    <strong class="pista-nombre">Pista 4</strong>
+                                                    <span class="pista-tipo pista-aviso">
+                                                        <span class="icono">build</span> EXT. AVISO
+                                                    </span>
+                                                </section>
+                                                <span class="pista-desc">Exterior Pro LED (Incidencia)</span>
+                                            </header>
+                                        </th>
+
+                                        <!-- Pista 5 -->
+                                        <th class="col-pista">
+                                            <header class="pista-cab">
+                                                <section class="pista-titulo">
+                                                    <strong class="pista-nombre">Pista 5</strong>
+                                                    <span class="pista-tipo">EXTERIOR</span>
+                                                </section>
+                                                <span class="pista-desc">Césped Azul Competición</span>
+                                            </header>
+                                        </th>
+
+                                        <!-- Pista 6 -->
+                                        <th class="col-pista">
+                                            <header class="pista-cab">
+                                                <section class="pista-titulo">
+                                                    <strong class="pista-nombre">Pista 6</strong>
+                                                    <span class="pista-tipo">EXTERIOR</span>
+                                                </section>
+                                                <span class="pista-desc">Exterior Estándar Muro</span>
+                                            </header>
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <!-- Filas por tramos horarios -->
+                                <tbody class="tabla-body">
+
+                                    <!-- FRANJA 1: 08:00 - 09:30 -->
+                                    <tr class="fila">
+                                        <td class="celda-hora">08:00<br><span class="hora-fin">09:30</span></td>
+
+                                        <!-- P1 Reserva Particular -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-particular">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Particular</span>
+                                                    <span title="Pagado con Stripe Online" class="icono">credit_score</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Marc Vidal</strong>
+                                                    <span class="reserva-detalle">4 jugadores · Pista entera</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota"><span class="icono">lightbulb</span> Auto-LED</span>
+                                                    <strong class="reserva-precio">32.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P2 Reserva Socio -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Socio #0840</span>
+                                                    <span class="icono">verified</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Andrés Montero</strong>
+                                                    <span class="reserva-detalle">Tarifa Plana Mañanas</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Torno 1 Validado</span>
+                                                    <strong class="reserva-precio">0.00 € (Cuota)</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P3 Libre -->
+                                        <td class="celda">
+                                            <button class="hueco">
+                                                <span class="icono">add</span>
+                                                <span class="hueco-texto">Libre</span>
+                                                <span class="hueco-tarifa">Tarifa Valle · 24 €</span>
+                                            </button>
+                                        </td>
+
+                                        <!-- P4 Libre -->
+                                        <td class="celda">
+                                            <button class="hueco">
+                                                <span class="icono">add</span>
+                                                <span class="hueco-texto">Libre</span>
+                                                <span class="hueco-tarifa">Tarifa Valle · 20 €</span>
+                                            </button>
+                                        </td>
+
+                                        <!-- P5 Reserva Escuela -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-escuela">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Escuela Adultos</span>
+                                                    <span class="icono">school</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Perfeccionamiento N2</strong>
+                                                    <span class="reserva-detalle">Monitor: Sergi P. (3/4)</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Pista Exterior</span>
+                                                    <strong class="reserva-precio">Abono Escuela</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P6 Libre -->
+                                        <td class="celda">
+                                            <button class="hueco">
+                                                <span class="icono">add</span>
+                                                <span class="hueco-texto">Libre</span>
+                                                <span class="hueco-tarifa">Tarifa Valle · 20 €</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- FRANJA 2: 09:30 - 11:00 -->
+                                    <tr class="fila">
+                                        <td class="celda-hora">09:30<br><span class="hora-fin">11:00</span></td>
+
+                                        <!-- P1 Reserva Socia -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Socia #1209</span>
+                                                    <span class="icono">credit_score</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Beatriz Soler</strong>
+                                                    <span class="reserva-detalle">Partida Femenina Nivel 3.5</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Split Pago 4/4 OK</span>
+                                                    <strong class="reserva-precio">28.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P2 Reserva Socio -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Socio #0312</span>
+                                                    <span class="icono">point_of_sale</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Gonzalo Morales</strong>
+                                                    <span class="reserva-detalle">TPV Pendiente recepción</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Cobro en mostrador</span>
+                                                    <strong class="reserva-precio">32.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P3 Clase Particular -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-clase">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Clase Particular</span>
+                                                    <span class="icono">sports</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Prof. Carlos Ruiz</strong>
+                                                    <span class="reserva-detalle">Alumno: Jorge D. (1 a 1)</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Cubierta Climatizada</span>
+                                                    <strong class="reserva-precio">45.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P4 Libre -->
+                                        <td class="celda">
+                                            <button class="hueco">
+                                                <span class="icono">add</span>
+                                                <span class="hueco-texto">Libre</span>
+                                                <span class="hueco-tarifa">Tarifa Valle · 22 €</span>
+                                            </button>
+                                        </td>
+
+                                        <!-- P5 Libre -->
+                                        <td class="celda">
+                                            <button class="hueco">
+                                                <span class="icono">add</span>
+                                                <span class="hueco-texto">Libre</span>
+                                                <span class="hueco-tarifa">Tarifa Valle · 22 €</span>
+                                            </button>
+                                        </td>
+
+                                        <!-- P6 Reserva Invitado -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-invitado">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">No Socio</span>
+                                                    <span class="icono">credit_score</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Diego Ruiz (+3€ ext)</strong>
+                                                    <span class="reserva-detalle">Invitado externo verificado</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Bizum Web</span>
+                                                    <strong class="reserva-precio">25.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+                                    </tr>
+
+                                    <!-- FRANJA 3: 11:00 - 12:30 -->
+                                    <tr class="fila">
+                                        <td class="celda-hora">11:00<br><span class="hora-fin">12:30</span></td>
+
+                                        <!-- P1 Libre -->
+                                        <td class="celda">
+                                            <button class="hueco">
+                                                <span class="icono">add</span>
+                                                <span class="hueco-texto">Libre</span>
+                                                <span class="hueco-tarifa">Tarifa Estándar · 28 €</span>
+                                            </button>
+                                        </td>
+
+                                        <!-- P2 Torneo -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-torneo">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Liga Otoño FEP</span>
+                                                    <span class="icono">emoji_events</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Jornada 4: Cuartos B</strong>
+                                                    <span class="reserva-detalle">Navarro/Pons vs Rey/Gil</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Árbitro asignado</span>
+                                                    <strong class="reserva-precio">Competición Oficial</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P3 Libre -->
+                                        <td class="celda">
+                                            <button class="hueco">
+                                                <span class="icono">add</span>
+                                                <span class="hueco-texto">Libre</span>
+                                                <span class="hueco-tarifa">Tarifa Estándar · 26 €</span>
+                                            </button>
+                                        </td>
+
+                                        <!-- P4 Libre -->
+                                        <td class="celda">
+                                            <button class="hueco">
+                                                <span class="icono">add</span>
+                                                <span class="hueco-texto">Libre</span>
+                                                <span class="hueco-tarifa">Tarifa Estándar · 22 €</span>
+                                            </button>
+                                        </td>
+
+                                        <!-- P5 Reserva Socio -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Socio #0299</span>
+                                                    <span class="icono">credit_score</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Alfonso Blesa</strong>
+                                                    <span class="reserva-detalle">Partido amistoso nivel 4.0</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">4 jugadores confirmados</span>
+                                                    <strong class="reserva-precio">22.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P6 Libre -->
+                                        <td class="celda">
+                                            <button class="hueco">
+                                                <span class="icono">add</span>
+                                                <span class="hueco-texto">Libre</span>
+                                                <span class="hueco-tarifa">Tarifa Estándar · 20 €</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- FRANJA 4: 17:00 - 18:30 (Tarde - Pico) -->
+                                    <tr class="fila">
+                                        <td class="celda-hora">17:00<br><span class="hora-fin">18:30</span></td>
+
+                                        <!-- P1 Reserva Socio -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Socio #0114</span>
+                                                    <span class="icono">credit_score</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Ignacio Garrido</strong>
+                                                    <span class="reserva-detalle">Pádel Mixto</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota"><span class="icono">wb_incandescent</span> Foco ON</span>
+                                                    <strong class="reserva-precio">36.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P2 Reserva Socio -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Socio #0771</span>
+                                                    <span class="icono">credit_score</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Martín Ceballos</strong>
+                                                    <span class="reserva-detalle">Reto Ranking Club</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Acceso con pulsera</span>
+                                                    <strong class="reserva-precio">36.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P3 Escuela Infantil -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-escuela">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Escuela Menores</span>
+                                                    <span class="icono">school</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Iniciación Infantil (4/4)</strong>
+                                                    <span class="reserva-detalle">Monitora: Alicia V.</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Materiales en carrito 2</span>
+                                                    <strong class="reserva-precio">Grupo Cerrado</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P4 Escuela Adultos -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-escuela">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Escuela Adultos</span>
+                                                    <span class="icono">school</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Técnica de Bandeja N3</strong>
+                                                    <span class="reserva-detalle">Monitor: David S. (4/4)</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Exterior LED</span>
+                                                    <strong class="reserva-precio">Abono Escuela</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P5 Reserva Socia -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Socia #0430</span>
+                                                    <span class="icono">credit_score</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Silvia Carreras</strong>
+                                                    <span class="reserva-detalle">Partida Amistosa</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Pagado 100%</span>
+                                                    <strong class="reserva-precio">28.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P6 Libre -->
+                                        <td class="celda">
+                                            <button class="hueco">
+                                                <span class="icono">add</span>
+                                                <span class="hueco-texto">Libre</span>
+                                                <span class="hueco-tarifa">Tarifa Pico · 28 €</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- FRANJA 5: 18:30 - 20:00 (Selección destacada) -->
+                                    <tr class="fila fila-destacada">
+                                        <td class="celda-hora">18:30<br><span class="hora-fin">20:00</span></td>
+
+                                        <!-- P1 Reserva Socio -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Socio #0056</span>
+                                                    <span class="icono">credit_score</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Javier Almansa</strong>
+                                                    <span class="reserva-detalle">Reto Primera Categoría</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota"><span class="icono">sensors</span> Torno Activo</span>
+                                                    <strong class="reserva-precio">38.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P2 Reserva Seleccionada en el Cuadrante -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio reserva-seleccionada">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">SELECCIONADA</span>
+                                                    <span class="icono">lock_open</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Laura Méndez (Socia #1042)</strong>
+                                                    <span class="reserva-detalle">Padel Femenino Nivel 4.0 · 4 Pax</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota"><span class="icono">bolt</span> Focos Prog. 18:25</span>
+                                                    <strong class="reserva-precio">38.00 € OK</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P3 Reserva Fija -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Socio #0892</span>
+                                                    <span class="icono">credit_score</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Raúl Domínguez</strong>
+                                                    <span class="reserva-detalle">Reserva Fija Semanal</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Recibo domiciliado</span>
+                                                    <strong class="reserva-precio">34.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P4 Pista Bloqueada por Avería -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-bloqueo">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">
+                                                        <span class="icono">lock</span> BLOQUEADA
+                                                    </span>
+                                                    <span class="reserva-id">#INC-2048</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Avería Focos (Torre B)</strong>
+                                                    <span class="reserva-detalle">Técnico electricista avisado</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">No disponible noche</span>
+                                                    <button class="boton-mini">Ver Ficha</button>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P5 Reserva Socio -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Socio #0611</span>
+                                                    <span class="icono">credit_score</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Marcos Senna</strong>
+                                                    <span class="reserva-detalle">Partida Amigos</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota"><span class="icono">wb_incandescent</span> LED Torre A+B</span>
+                                                    <strong class="reserva-precio">30.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P6 Reserva Socio -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Socio #0921</span>
+                                                    <span class="icono">point_of_sale</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Felipe Ortíz</strong>
+                                                    <span class="reserva-detalle">Bote bolas Head Pro adic.</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">+5.50€ tienda bar</span>
+                                                    <strong class="reserva-precio">35.50 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+                                    </tr>
+
+                                    <!-- FRANJA 6: 20:00 - 21:30 (Hora Punta Noche) -->
+                                    <tr class="fila">
+                                        <td class="celda-hora">20:00<br><span class="hora-fin">21:30</span></td>
+
+                                        <!-- P1 Socia -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Socia #0199</span>
+                                                    <span class="icono">credit_score</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Clara San Martín</strong>
+                                                    <span class="reserva-detalle">Equipo Femenino A WPT</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Luz Activada</span>
+                                                    <strong class="reserva-precio">38.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P2 Socio -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Socio #0012</span>
+                                                    <span class="icono">credit_score</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Pablo Hierro</strong>
+                                                    <span class="reserva-detalle">Entrenamiento Avanzado</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Torno desbloqueado</span>
+                                                    <strong class="reserva-precio">38.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P3 Reserva Playtomic -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-particular">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Particular</span>
+                                                    <span class="icono">credit_score</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Rubén Barco</strong>
+                                                    <span class="reserva-detalle">Reserva Playtomic API</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Sincro externa</span>
+                                                    <strong class="reserva-precio">36.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P4 Bloqueada -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-bloqueo">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">
+                                                        <span class="icono">lock</span> BLOQUEADA
+                                                    </span>
+                                                    <span class="reserva-id">Sin Foco Noche</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Seguridad lumínica</strong>
+                                                    <span class="reserva-detalle">Franja nocturna inhabilitada</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Hasta 02/10 09:00</span>
+                                                    <strong class="reserva-precio">Desbloqueo manual</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P5 Socio -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Socio #0744</span>
+                                                    <span class="icono">credit_score</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Víctor Campillo</strong>
+                                                    <span class="reserva-detalle">Pádel Nivel 3.0</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Foco Automático</span>
+                                                    <strong class="reserva-precio">30.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P6 Socia -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Socia #1105</span>
+                                                    <span class="icono">credit_score</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Elena Mármol</strong>
+                                                    <span class="reserva-detalle">Reto Mixto Dobles</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Foco Automático</span>
+                                                    <strong class="reserva-precio">30.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+                                    </tr>
+
+                                    <!-- FRANJA 7: 21:30 - 23:00 (Cierre de jornada) -->
+                                    <tr class="fila">
+                                        <td class="celda-hora">21:30<br><span class="hora-fin">23:00</span></td>
+
+                                        <!-- P1 Socio -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-socio">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">Socio #0044</span>
+                                                    <span class="icono">credit_score</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Julián Peinado</strong>
+                                                    <span class="reserva-detalle">Partida Nocturna Pro</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Apagado prog. 23:05</span>
+                                                    <strong class="reserva-precio">34.00 €</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P2 Libre Última Hora -->
+                                        <td class="celda">
+                                            <button class="hueco">
+                                                <span class="icono">add</span>
+                                                <span class="hueco-texto">Libre Última Hora</span>
+                                                <span class="hueco-tarifa">Tarifa Reducida · 26 €</span>
+                                            </button>
+                                        </td>
+
+                                        <!-- P3 Libre Última Hora -->
+                                        <td class="celda">
+                                            <button class="hueco">
+                                                <span class="icono">add</span>
+                                                <span class="hueco-texto">Libre Última Hora</span>
+                                                <span class="hueco-tarifa">Tarifa Reducida · 24 €</span>
+                                            </button>
+                                        </td>
+
+                                        <!-- P4 Bloqueada por mantenimiento -->
+                                        <td class="celda">
+                                            <article class="reserva reserva-bloqueo">
+                                                <header class="reserva-cab">
+                                                    <span class="reserva-tipo">
+                                                        <span class="icono">lock</span> BLOQUEADA
+                                                    </span>
+                                                    <span class="reserva-id">#INC-2048</span>
+                                                </header>
+                                                <section class="reserva-cuerpo">
+                                                    <strong class="reserva-nombre">Sin Iluminación LED</strong>
+                                                    <span class="reserva-detalle">Revisión de fusibles 08:00</span>
+                                                </section>
+                                                <footer class="reserva-pie">
+                                                    <span class="reserva-nota">Mantenimiento</span>
+                                                    <strong class="reserva-precio">Cerrada</strong>
+                                                </footer>
+                                            </article>
+                                        </td>
+
+                                        <!-- P5 Libre Última Hora -->
+                                        <td class="celda">
+                                            <button class="hueco">
+                                                <span class="icono">add</span>
+                                                <span class="hueco-texto">Libre Última Hora</span>
+                                                <span class="hueco-tarifa">Tarifa Reducida · 22 €</span>
+                                            </button>
+                                        </td>
+
+                                        <!-- P6 Libre Última Hora -->
+                                        <td class="celda">
+                                            <button class="hueco">
+                                                <span class="icono">add</span>
+                                                <span class="hueco-texto">Libre Última Hora</span>
+                                                <span class="hueco-tarifa">Tarifa Reducida · 20 €</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </section>
+                    </article>
+                </section>
+
+                <!-- Panel flotante inferior de acciones rápidas sobre la reserva seleccionada -->
+                <aside class="barra-accion">
+
+                    <!-- Información de la reserva seleccionada -->
+                    <section class="barra-info">
+                        <figure class="barra-iniciales">P2</figure>
+                        <section class="barra-texto">
+                            <header class="barra-cab">
+                                <strong class="barra-nombre">Laura Méndez</strong>
+                                <span class="barra-socio">Socia #1042</span>
+                                <span class="barra-nivel">· Nivel Playtomic 4.0</span>
+                            </header>
+                            <footer class="barra-datos">
+                                <span class="barra-dato"><span class="icono">calendar_today</span> Pista 2 Cubierta Climatizada</span>
+                                <span class="barra-sep">•</span>
+                                <span class="barra-dato"><span class="icono">schedule</span> 18:30 - 20:00 (90 min)</span>
+                                <span class="barra-sep">•</span>
+                                <span class="barra-dato"><span class="icono">payments</span> 38.00 € (Pagado Stripe)</span>
+                            </footer>
+                        </section>
+                    </section>
+
+                    <!-- Estado domótico en tiempo real -->
+                    <section class="barra-domotica">
+                        <section class="domotica-item">
+                            <figure class="domotica-punto"></figure>
+                            <span class="domotica-texto">Focos Nave 2: Prog. 18:25</span>
+                        </section>
+                        <figure class="separador"></figure>
+                        <section class="domotica-item">
+                            <span class="icono">lock_open</span>
+                            <span class="domotica-texto">Torno Acceso: 4/4 Autorizados</span>
+                        </section>
+                    </section>
+
+                    <!-- Acciones directas de recepción sobre la reserva -->
+                    <nav class="barra-botones">
+                        <button type="button" class="boton-accion">
+                            <span class="icono">swap_horiz</span>
+                            <span class="boton-texto">Reubicar</span>
+                        </button>
+                        <button type="button" class="boton-accion">
+                            <span class="icono">add_shopping_cart</span>
+                            <span class="boton-texto">Cobrar TPV</span>
+                        </button>
+                        <button type="button" class="boton-accion boton-cancelar">
+                            <span class="icono">cancel</span>
+                            <span class="boton-texto">Cancelar</span>
+                        </button>
+                        <button type="button" class="boton-accion">
+                            <span class="icono">open_in_new</span>
+                            <span class="boton-texto">Detalles</span>
+                        </button>
+                    </nav>
+                </aside>
+
+            </section>
+        </main>
+    </section>
+
+</body>
+</html>

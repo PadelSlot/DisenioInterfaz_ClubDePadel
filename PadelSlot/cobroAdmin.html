@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Control Financiero y Cobros - PadelSlot Admin</title>
+
+    <!-- Fuentes tipográficas -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+</head>
+<body class="cuerpo">
+
+    <!-- Barra lateral de navegación principal -->
+    <aside class="barra-lateral">
+        <section class="barra-superior">
+
+            <!-- Logotipo del sistema de gestión -->
+            <header class="marca">
+                <figure class="marca-logo">
+                    <span class="icono">sports_tennis</span>
+                </figure>
+                <section class="marca-texto">
+                    <strong class="marca-nombre">PadelSlot</strong>
+                    <span class="marca-sub">MANAGER</span>
+                </section>
+            </header>
+
+            <section class="menu-titulo">
+                <span class="menu-titulo-texto">Gestión de Club</span>
+            </section>
+
+            <!-- Menú de navegación principal -->
+            <nav class="menu">
+                <a href="#" class="menu-enlace"><span class="menu-texto">Cuadrante en vivo de pistas</span></a>
+                <a href="#" class="menu-enlace"><span class="menu-texto">Escuela deportiva</span></a>
+                <a href="#" class="menu-enlace"><span class="menu-texto">Socios y abonados</span></a>
+                <a href="#" class="menu-enlace"><span class="menu-texto">Cobros y cuotas</span></a>
+                <a href="#" class="menu-enlace"><span class="menu-texto">Servicios (Parking, Bar, Tienda)</span></a>
+                <a href="#" class="menu-enlace"><span class="menu-texto">Incidencias</span></a>
+                <a href="#" class="menu-enlace"><span class="menu-texto">Configuración SaaS</span></a>
+            </nav>
+        </section>
+
+        <!-- Indicador de ocupación de pistas -->
+        <section class="ocupacion">
+            <header class="ocupacion-cab">
+                <section class="ocupacion-info">
+                    <figure class="ocupacion-punto">
+                        <span class="punto-onda"></span>
+                        <span class="punto-fijo"></span>
+                    </figure>
+                    <span class="ocupacion-titulo">Ocupación en vivo</span>
+                </section>
+                <strong class="ocupacion-valor">88%</strong>
+            </header>
+
+            <figure class="ocupacion-barra">
+                <section class="ocupacion-relleno"></section>
+            </figure>
+
+            <footer class="ocupacion-pie">
+                <span class="pie-texto">14 pistas activas</span>
+                <span class="pie-texto">2 libres</span>
+            </footer>
+        </section>
+    </aside>
+
+    <!-- Área principal de trabajo -->
+    <section class="contenedor">
+
+        <!-- Encabezado superior (Buscador y sesión de administración) -->
+        <header class="cabecera">
+            <section class="buscador">
+                <section class="buscador-caja">
+                    <span class="icono">search</span>
+                    <input class="buscador-input" placeholder="Buscar reserva, socio, pista..." type="text">
+                    <kbd class="atajo">⌘K</kbd>
+                </section>
+            </section>
+
+            <nav class="cabecera-acciones">
+                <section class="notif">
+                    <button class="notif-boton" type="button">
+                        <span class="icono">notifications</span>
+                    </button>
+                    <span class="notif-punto"></span>
+                </section>
+
+                <figure class="separador"></figure>
+
+                <section class="usuario">
+                    <figure class="avatar">
+                        <span class="icono">person</span>
+                    </figure>
+                    <section class="usuario-datos">
+                        <strong class="usuario-nombre">Marta R.</strong>
+                        <span class="usuario-rol">Administradora</span>
+                    </section>
+                </section>
+            </nav>
+        </header>
+
+        <!-- Panel de control financiero -->
+        <main class="principal">
+            <section class="pagina">
+                <section class="pagina-interior">
+
+                    <!-- Encabezado de la página y botones de acción principal -->
+                    <header class="encabezado">
+                        <section class="encabezado-texto">
+                            <nav class="migas">
+                                <a href="#" class="miga">Gestión de Club</a>
+                                <span class="miga-sep">chevron_right</span>
+                                <strong class="miga-actual">Cobros y Cuotas</strong>
+                                <span class="miga-sep">chevron_right</span>
+                            </nav>
+                            <h1 class="titulo">Control Financiero, Cuotas y Remesas SEPA</h1>
+                            <p class="descripcion">
+                                Gestión automatizada de facturación mensual de abonados, cobros en pasarela online/TPV, emisión de ficheros bancarios ISO 20022 e incidencias de pago.
+                            </p>
+                        </section>
+
+                        <!-- Botones de acciones rápidas -->
+                        <nav class="encabezado-acciones">
+                            <button class="boton-sec" type="button">
+                                <span class="icono">download</span>
+                                <span class="boton-texto">Exportar Contabilidad</span>
+                                <span class="boton-nota">A3 / FacturaE</span>
+                            </button>
+                            <button class="boton-sec" type="button">
+                                <span class="icono">point_of_sale</span>
+                                <span class="boton-texto">Cobro Manual (TPV/Efectivo)</span>
+                            </button>
+                            <button class="boton-primario" type="button">
+                                <span class="icono">add_circle</span>
+                                <strong class="boton-texto">+ Generar Remesa Mensual</strong>
+                            </button>
+                        </nav>
+                    </header>
+
+                    <!-- Resumen estadístico de finanzas del mes (Tarjetas KPI) -->
+                    <section class="kpis">
+
+                        <!-- KPI 1: Facturación total -->
+                        <article class="kpi kpi-principal">
+                            <figure class="decoracion"></figure>
+                            <header class="kpi-cab">
+                                <span class="kpi-titulo">Facturación Octubre</span>
+                                <span class="kpi-subida">
+                                    <span class="icono">trending_up</span>
+                                    +8,4%
+                                </span>
+                            </header>
+                            <section class="kpi-cuerpo">
+                                <strong class="kpi-valor">21.870,00 €</strong>
+                                <span class="kpi-comparativa">
+                                    <figure class="kpi-punto"></figure>
+                                    vs. 20.175,20 € en Septiembre
+                                </span>
+                            </section>
+                        </article>
+
+                        <!-- KPI 2: Cuotas de socios -->
+                        <article class="kpi">
+                            <header class="kpi-cab">
+                                <span class="kpi-titulo">Cuotas Abonados (SEPA)</span>
+                                <figure class="kpi-icono">
+                                    <span class="icono">group</span>
+                                </figure>
+                            </header>
+                            <section class="kpi-cuerpo">
+                                <strong class="kpi-valor">17.460,00 €</strong>
+                                <footer class="kpi-pie">
+                                    <span class="kpi-nota">486 socios activos</span>
+                                    <span class="kpi-etiqueta">80% total</span>
+                                </footer>
+                            </section>
+                        </article>
+
+                        <!-- KPI 3: Pistas y otros servicios -->
+                        <article class="kpi">
+                            <header class="kpi-cab">
+                                <span class="kpi-titulo">Pistas &amp; Extras (TPV/Web)</span>
+                                <figure class="kpi-icono">
+                                    <span class="icono">sports_tennis</span>
+                                </figure>
+                            </header>
+                            <section class="kpi-cuerpo">
+                                <strong class="kpi-valor">4.410,00 €</strong>
+                                <span class="kpi-nota">Partidas sueltas, botes, bar</span>
+                            </section>
+                        </article>
+
+                        <!-- KPI 4: Recibos impagados -->
+                        <article class="kpi kpi-alerta">
+                            <header class="kpi-cab">
+                                <strong class="kpi-titulo">Recibos Devueltos</strong>
+                                <span class="kpi-morosidad">
+                                    <span class="icono">warning</span>
+                                    0,8% Morosidad
+                                </span>
+                            </header>
+                            <section class="kpi-cuerpo">
+                                <section class="kpi-fila">
+                                    <strong class="kpi-valor">178,00 €</strong>
+                                    <span class="kpi-nota">(2 recibos)</span>
+                                </section>
+                                <a href="#recobro" class="kpi-enlace">
+                                    Ver 2 incidencias pendientes
+                                    <span class="icono">pixel_4_4xl_4a_5_5a_5g</span>
+                                </a>
+                            </section>
+                        </article>
+
+                        <!-- KPI 5: Saldo en monederos virtuales -->
+                        <article class="kpi">
+                            <header class="kpi-cab">
+                                <span class="kpi-titulo">Monederos en Custodia</span>
+                                <figure class="kpi-icono">
+                                    <span class="icono">account_balance_wallet</span>
+                                </figure>
+                            </header>
+                            <section class="kpi-cuerpo">
+                                <strong class="kpi-valor">6.420,50 €</strong>
+                                <footer class="kpi-pie">
+                                    <span class="kpi-nota">Saldo acumulado socios</span>
+                                    <span class="kpi-etiqueta">314 monederos</span>
+                                </footer>
+                            </section>
+                        </article>
+                    </section>
+
+                    <!-- Pestañas de navegación por módulos de cobro -->
+                    <nav class="pestanas">
+                        <button class="pestana">
+                            <span class="icono">file_download</span>
+                            <span class="pestana-texto">Remesas SEPA y Cuotas</span>
+                            <strong class="pestana-etiqueta">Octubre</strong>
+                        </button>
+                        <button class="pestana">
+                            <span class="icono">receipt_long</span>
+                            <span class="pestana-texto">Historial Transacciones (TPV / Web)</span>
+                        </button>
+                        <button class="pestana">
+                            <span class="icono">assignment_late</span>
+                            <span class="pestana-texto">Recibos Devueltos y Recobro</span>
+                            <strong class="pestana-etiqueta">2</strong>
+                        </button>
+                        <button class="pestana">
+                            <span class="icono">wallet</span>
+                            <span class="pestana-texto">Monederos Virtuales</span>
+                        </button>
+                        <button class="pestana">
+                            <span class="icono">handshake</span>
+                            <span class="pestana-texto">Liquidación a Monitores y Terceros</span>
+                        </button>
+                    </nav>
+
+                    <!-- Bloque del estado de la remesa bancaria del mes actual -->
+                    <article class="remesa">
+                        <figure class="decoracion"></figure>
+
+                        <!-- Detalles técnicos de la remesa -->
+                        <section class="remesa-info">
+                            <header class="remesa-cab">
+                                <section class="remesa-fila">
+                                    <strong class="remesa-norma">SEPA CORE ISO 20022 (pain.008.001.02)</strong>
+                                    <span class="remesa-estado">
+                                        <figure class="estado-punto"></figure>
+                                        Fichero Cerrado &amp; Procesado
+                                    </span>
+                                </section>
+                                <h2 class="remesa-titulo">Remesa Octubre 2025 - Cuotas Mensuales Ordinarias</h2>
+                                <p class="remesa-desc">
+                                    Generado automáticamente el <time class="remesa-fecha">01/10/2025 a las 06:00 h</time> por el planificador SaaS de PadelSlot.
+                                </p>
+                            </header>
+
+                            <!-- Datos bancarios asociados -->
+                            <section class="remesa-datos">
+                                <article class="dato">
+                                    <span class="dato-label">Entidad Receptora</span>
+                                    <section class="dato-fila">
+                                        <span class="icono">account_balance</span>
+                                        <strong class="dato-valor">Banco Santander</strong>
+                                    </section>
+                                    <code class="dato-codigo">ES91 0049 1500 •••• •••• 8912</code>
+                                </article>
+                                <article class="dato">
+                                    <span class="dato-label">ID Emisor / Sufijo</span>
+                                    <strong class="dato-valor">ES88000B82910384</strong>
+                                    <span class="dato-nota">Sufijo Comercial: 000</span>
+                                </article>
+                                <article class="dato">
+                                    <span class="dato-label">Identificador de Mensaje</span>
+                                    <code class="dato-codigo">PADEL-20251001-REM01</code>
+                                    <span class="dato-nota">Firma SHA-256 Validada</span>
+                                </article>
+                            </section>
+                        </section>
+
+                        <!-- Indicadores visuales del cobro de recibos -->
+                        <aside class="remesa-progreso">
+                            <section class="progreso">
+                                <header class="progreso-cab">
+                                    <span class="progreso-label">Volumen Total Remesado</span>
+                                    <strong class="progreso-valor">17.460,00 €</strong>
+                                </header>
+
+                                <!-- Barra de progreso de ejecución -->
+                                <progress max="100" value="98.9" title="484 cobrados con éxito" class="progreso-barra"></progress>
+
+                                <footer class="progreso-pie">
+                                    <span class="progreso-cobrados"><strong class="progreso-num">484</strong> Cobrados (17.282,00 €)</span>
+                                    <span class="progreso-devueltos"><strong class="progreso-num">2</strong> Devueltos (178,00 €)</span>
+                                </footer>
+                            </section>
+
+                            <nav class="remesa-botones">
+                                <button class="boton-primario" type="button">
+                                    <span class="icono">download</span>
+                                    <span class="boton-texto">Descargar XML SEPA</span>
+                                </button>
+                                <button class="boton-sec" type="button">
+                                    <span class="icono">receipt</span>
+                                    <span class="boton-texto">Ver Órdenes</span>
+                                </button>
+                            </nav>
+                        </aside>
+                    </article>
+
+                    <!-- Zona principal con tabla de operaciones y panel de recobros -->
+                    <section class="columnas">
+
+                        <!-- Tabla de recibos y transacciones recibidas -->
+                        <section class="columna-tabla">
+                            <article class="tabla-panel">
+
+                                <!-- Buscador y herramientas de la tabla -->
+                                <header class="tabla-cab">
+                                    <section class="tabla-titulo">
+                                        <h3 class="tabla-h3">Transacciones y Recibos Recientes</h3>
+                                        <span class="tabla-contador">6 de 512</span>
+                                    </section>
+                                    <menu class="tabla-herramientas">
+                                        <form action="#" class="tabla-buscador">
+                                            <span class="icono">search</span>
+                                            <input placeholder="Buscar por socio, ref..." type="text" class="tabla-input">
+                                        </form>
+                                        <button title="Filtrar por método" class="boton-icono">
+                                            <span class="icono">filter_list</span>
+                                        </button>
+                                        <button title="Descargar vista" class="boton-icono">
+                                            <span class="icono">file_download</span>
+                                        </button>
+                                    </menu>
+                                </header>
+
+                                <!-- Registro estructurado de transacciones -->
+                                <section class="tabla-contenedor">
+                                    <table class="tabla">
+                                        <thead class="tabla-head">
+                                            <tr class="fila">
+                                                <th class="celda-th">Referencia / Factura</th>
+                                                <th class="celda-th">Fecha y Hora</th>
+                                                <th class="celda-th">Socio / Cliente</th>
+                                                <th class="celda-th">Concepto</th>
+                                                <th class="celda-th">Método</th>
+                                                <th class="celda-th">Importe</th>
+                                                <th class="celda-th">Estado</th>
+                                                <th class="celda-th">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="tabla-body">
+
+                                            <!-- Operación 1: Laura Méndez -->
+                                            <tr class="fila">
+                                                <td class="celda-ref">#REC-2025-1042</td>
+                                                <td class="celda-fecha">Hoy, 08:30</td>
+                                                <td class="celda">
+                                                    <article class="socio">
+                                                        <figure class="iniciales">LM</figure>
+                                                        <section class="socio-texto">
+                                                            <strong class="socio-nombre">Laura Méndez</strong>
+                                                            <span class="socio-id">#1042</span>
+                                                        </section>
+                                                    </article>
+                                                </td>
+                                                <td class="celda-concepto">Cuota Preferente Oro Octubre 2025</td>
+                                                <td class="celda-metodo">
+                                                    <span class="icono">account_balance</span>
+                                                    <span class="metodo-texto">SEPA Direct Debit</span>
+                                                </td>
+                                                <td class="celda-importe">45,00 €</td>
+                                                <td class="celda">
+                                                    <span class="estado-cobrado">Cobrado</span>
+                                                </td>
+                                                <td class="celda-acciones">
+                                                    <button title="Descargar Factura PDF" class="boton-icono"><span class="icono">picture_as_pdf</span></button>
+                                                    <button title="Enviar recibo por correo" class="boton-icono"><span class="icono">send</span></button>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Operación 2: Alejandro Ramos -->
+                                            <tr class="fila">
+                                                <td class="celda-ref">#REC-2025-1043</td>
+                                                <td class="celda-fecha">Hoy, 08:30</td>
+                                                <td class="celda">
+                                                    <article class="socio">
+                                                        <figure class="iniciales">AR</figure>
+                                                        <section class="socio-texto">
+                                                            <strong class="socio-nombre">Alejandro Ramos</strong>
+                                                            <span class="socio-id">#1043</span>
+                                                        </section>
+                                                    </article>
+                                                </td>
+                                                <td class="celda-concepto">Cuota Matrícula Promo</td>
+                                                <td class="celda-metodo">
+                                                    <span class="icono">account_balance</span>
+                                                    <span class="metodo-texto">SEPA Direct Debit</span>
+                                                </td>
+                                                <td class="celda-importe">45,00 €</td>
+                                                <td class="celda">
+                                                    <span class="estado-cobrado">Cobrado</span>
+                                                </td>
+                                                <td class="celda-acciones">
+                                                    <button title="Descargar Factura PDF" class="boton-icono"><span class="icono">picture_as_pdf</span></button>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Operación 3: Gonzalo Morales (Devuelto) -->
+                                            <tr class="fila fila-alerta">
+                                                <td class="celda-ref">#REC-2025-0312</td>
+                                                <td class="celda-fecha">Ayer, 14:15</td>
+                                                <td class="celda">
+                                                    <article class="socio">
+                                                        <figure class="iniciales">GM</figure>
+                                                        <section class="socio-texto">
+                                                            <strong class="socio-nombre">Gonzalo Morales</strong>
+                                                            <span class="socio-id">#0312</span>
+                                                        </section>
+                                                    </article>
+                                                </td>
+                                                <td class="celda-concepto"><strong class="concepto-destacado">Cuota Oro + Pista 2 (Suplemento)</strong></td>
+                                                <td class="celda-metodo">
+                                                    <span class="icono">cancel</span>
+                                                    <span class="metodo-texto">SEPA (Rechazado)</span>
+                                                </td>
+                                                <td class="celda-importe">89,00 €</td>
+                                                <td class="celda">
+                                                    <span class="estado-devuelto">
+                                                        <span class="icono">error</span>
+                                                        Devuelto: Sin Saldo
+                                                    </span>
+                                                </td>
+                                                <td class="celda-acciones">
+                                                    <button class="boton-recobrar">Recobrar</button>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Operación 4: Ana Torres Gil -->
+                                            <tr class="fila">
+                                                <td class="celda-ref">#REC-2025-0780</td>
+                                                <td class="celda-fecha">Ayer, 11:20</td>
+                                                <td class="celda">
+                                                    <article class="socio">
+                                                        <figure class="iniciales">AT</figure>
+                                                        <section class="socio-texto">
+                                                            <strong class="socio-nombre">Ana Torres Gil</strong>
+                                                            <span class="socio-id">#0780</span>
+                                                        </section>
+                                                    </article>
+                                                </td>
+                                                <td class="celda-concepto">Cuota</td>
+                                                <td class="celda-metodo">
+                                                    <span class="icono">account_balance</span>
+                                                    <span class="metodo-texto">SEPA Domiciliado</span>
+                                                </td>
+                                                <td class="celda-importe">89,00 €</td>
+                                                <td class="celda">
+                                                    <span class="estado-pendiente">Pendiente Banco</span>
+                                                </td>
+                                                <td class="celda-acciones">
+                                                    <button class="boton-gestionar">Gestionar</button>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Operación 5: Diego Ruiz -->
+                                            <tr class="fila">
+                                                <td class="celda-ref">#TPV-9821</td>
+                                                <td class="celda-fecha">Hoy, 18:02</td>
+                                                <td class="celda">
+                                                    <article class="socio">
+                                                        <figure class="iniciales">DR</figure>
+                                                        <section class="socio-texto">
+                                                            <strong class="socio-nombre">Diego Ruiz</strong>
+                                                            <span class="socio-id">Invitado</span>
+                                                        </section>
+                                                    </article>
+                                                </td>
+                                                <td class="celda-concepto">Alquiler Pista 5 + Suplemento Luz</td>
+                                                <td class="celda-metodo">
+                                                    <span class="icono">contactless</span>
+                                                    <span class="metodo-texto">TPV Mostrador</span>
+                                                </td>
+                                                <td class="celda-importe">25,00 €</td>
+                                                <td class="celda">
+                                                    <span class="estado-cobrado">Cobrado</span>
+                                                </td>
+                                                <td class="celda-acciones">
+                                                    <button title="Imprimir Ticket TPV" class="boton-icono"><span class="icono">receipt</span></button>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Operación 6: Lucía Vega -->
+                                            <tr class="fila">
+                                                <td class="celda-ref">#MON-4412</td>
+                                                <td class="celda-fecha">Hoy, 17:49</td>
+                                                <td class="celda">
+                                                    <article class="socio">
+                                                        <figure class="iniciales">LV</figure>
+                                                        <section class="socio-texto">
+                                                            <strong class="socio-nombre">Lucía Vega</strong>
+                                                            <span class="socio-id">#0412</span>
+                                                        </section>
+                                                    </article>
+                                                </td>
+                                                <td class="celda-concepto">Recarga Monedero Virtual Web</td>
+                                                <td class="celda-metodo">
+                                                    <span class="icono">bolt</span>
+                                                    <span class="metodo-texto">Bizum Pay</span>
+                                                </td>
+                                                <td class="celda-importe">50,00 €</td>
+                                                <td class="celda">
+                                                    <span class="estado-completado">Completado</span>
+                                                </td>
+                                                <td class="celda-acciones">
+                                                    <button title="Detalle Transacción" class="boton-icono"><span class="icono">info</span></button>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </section>
+
+                                <!-- Paginador de registros -->
+                                <footer class="paginador">
+                                    <span class="paginador-texto">Mostrando 6 de 512 transacciones este mes</span>
+                                    <nav class="paginador-botones">
+                                        <button class="pagina-boton">Anterior</button>
+                                        <button class="pagina-boton">1</button>
+                                        <button class="pagina-boton">2</button>
+                                        <button class="pagina-boton">3</button>
+                                        <span class="pagina-puntos">...</span>
+                                        <button class="pagina-boton">Siguiente</button>
+                                    </nav>
+                                </footer>
+
+                            </article>
+                        </section>
+
+                        <!-- COLUMNA DERECHA: Centro de recobro y comisiones bancarias -->
+                        <aside class="lateral">
+
+                            <!-- Bloque 1: Gestión de recibos devueltos -->
+                            <article id="recobro" class="recobro">
+                                <header class="panel-cab">
+                                    <section class="panel-titulo">
+                                        <span class="icono">warning</span>
+                                        <h3 class="panel-h3">Centro de Recobro Activo</h3>
+                                    </section>
+                                    <strong class="panel-total">178,00 €</strong>
+                                </header>
+                                <p class="panel-desc">
+                                    2 recibos devueltos en la remesa de Octubre. Acciones inmediatas sin salir de la plataforma:
+                                </p>
+
+                                <!-- Impagado 1 -->
+                                <article class="impagado">
+                                    <header class="impagado-cab">
+                                        <section class="impagado-texto">
+                                            <strong class="impagado-nombre">Gonzalo Morales (#0312)</strong>
+                                            <span class="impagado-motivo">Motivo: Devolución bancaria por falta de fondos</span>
+                                        </section>
+                                        <strong class="impagado-importe">89,00 €</strong>
+                                    </header>
+                                    <nav class="impagado-acciones">
+                                        <button type="button" class="boton-sec">
+                                            <span class="icono">chat</span>
+                                            <span class="boton-texto">Link por WhatsApp</span>
+                                        </button>
+                                        <button type="button" class="boton-sec">
+                                            <span class="icono">account_balance_wallet</span>
+                                            <span class="boton-texto">Cargar Monedero</span>
+                                        </button>
+                                    </nav>
+                                </article>
+
+                                <!-- Impagado 2 -->
+                                <article class="impagado">
+                                    <header class="impagado-cab">
+                                        <section class="impagado-texto">
+                                            <strong class="impagado-nombre">Carlos Benítez (#0914)</strong>
+                                            <span class="impagado-motivo">Motivo: Cuenta cancelada o IBAN erróneo (MS03)</span>
+                                        </section>
+                                        <strong class="impagado-importe">89,00 €</strong>
+                                    </header>
+                                    <nav class="impagado-acciones">
+                                        <button type="button" class="boton-sec">
+                                            <span class="icono">edit_square</span>
+                                            <span class="boton-texto">Solicitar Nuevo IBAN</span>
+                                        </button>
+                                        <button type="button" class="boton-sec">
+                                            <span class="icono">point_of_sale</span>
+                                            <span class="boton-texto">Cobro Mostrador</span>
+                                        </button>
+                                    </nav>
+                                </article>
+
+                                <footer class="recobro-pie">
+                                    <span class="recobro-label">Bloqueo automático de reservas:</span>
+                                    <span class="recobro-estado">Activado (Regla 48h)</span>
+                                </footer>
+                            </article>
+
+                            <!-- Bloque 2: Gastos por comisiones financieras -->
+                            <article class="comisiones">
+                                <header class="panel-cab">
+                                    <h3 class="panel-h3">Comisiones y Pasarelas</h3>
+                                    <span class="icono">price_change</span>
+                                </header>
+                                <section class="comisiones-lista">
+
+                                    <!-- Tarifa SEPA Banco -->
+                                    <article class="comision">
+                                        <section class="comision-info">
+                                            <span class="icono">account_balance</span>
+                                            <section class="comision-texto">
+                                                <strong class="comision-nombre">SEPA Banco Santander</strong>
+                                                <span class="comision-detalle">486 recibos emitidos</span>
+                                            </section>
+                                        </section>
+                                        <section class="comision-importe">
+                                            <strong class="comision-valor">72,90 €</strong>
+                                            <span class="comision-tarifa">0,15 € / orden</span>
+                                        </section>
+                                    </article>
+
+                                    <!-- Tarifa TPV Físico -->
+                                    <article class="comision">
+                                        <section class="comision-info">
+                                            <span class="icono">point_of_sale</span>
+                                            <section class="comision-texto">
+                                                <strong class="comision-nombre">TPV Físico Mostrador</strong>
+                                                <span class="comision-detalle">2.840 € facturados</span>
+                                            </section>
+                                        </section>
+                                        <section class="comision-importe">
+                                            <strong class="comision-valor">9,94 €</strong>
+                                            <span class="comision-tarifa">0,35% fijada</span>
+                                        </section>
+                                    </article>
+
+                                    <!-- Tarifa Pasarela Online -->
+                                    <article class="comision">
+                                        <section class="comision-info">
+                                            <span class="icono">payment</span>
+                                            <section class="comision-texto">
+                                                <strong class="comision-nombre">Stripe &amp; Bizum Web</strong>
+                                                <span class="comision-detalle">1.570 € facturados</span>
+                                            </section>
+                                        </section>
+                                        <section class="comision-importe">
+                                            <strong class="comision-valor">18,84 €</strong>
+                                            <span class="comision-tarifa">1,2% + 0,18 €</span>
+                                        </section>
+                                    </article>
+
+                                </section>
+                                <footer class="comisiones-pie">
+                                    <span class="comisiones-label">Impacto total comisiones en Octubre:</span>
+                                    <strong class="comisiones-total">101,68 € (0,46%)</strong>
+                                </footer>
+                            </article>
+
+                        </aside>
+
+                    </section>
+                </section>
+            </section>
+        </main>
+    </section>
+
+</body>
+</html>

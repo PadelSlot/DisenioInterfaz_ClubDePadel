@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="es" class="pagina">
+<head class="cabeceraPagina">
+    <meta charset="utf-8" class="configuracionMeta">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" class="configuracionMeta">
+    <meta content="web_dashboard" name="shell-type" class="configuracionMeta">
+    <title class="tituloPagina">Programación Semanal de Clases - PadelSlot Admin</title>
+
+    <!-- Fuentes tipográficas e iconos -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" class="recursoExterno">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" class="recursoExterno">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet" class="recursoExterno">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" class="recursoExterno">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" class="recursoExterno">
+
+    <style>
+        @layer base {
+            html, body { margin: 0; padding: 0; }
+            body { overscroll-behavior: none; }
+        }
+    </style>
+</head>
+
+<body class="cuerpoPagina">
+
+    <!-- Barra superior -->
+    <header class="cabeceraPrincipal">
+        <section class="contenedorCabecera">
+
+            <section class="marca">
+                <figure class="logoMarca">P</figure>
+
+                <section class="datosMarca">
+                    <h1 class="nombreMarca">PadelSlot</h1>
+                    <span class="tipoUsuario">Panel de administración</span>
+                </section>
+            </section>
+
+            <section class="accionesCabecera">
+
+                <button type="button" class="botonNotificaciones">
+                    <span class="material-symbols-outlined iconoNotificacion">notifications</span>
+                </button>
+
+                <section class="perfilUsuario">
+                    <figure class="avatarUsuario">AS</figure>
+
+                    <section class="datosUsuario">
+                        <strong class="nombreUsuario">Administrador</strong>
+                        <span class="rolUsuario">Staff del club</span>
+                    </section>
+                </section>
+
+            </section>
+
+        </section>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenidoPrincipal">
+
+        <!-- Menú lateral -->
+        <aside class="barraLateral">
+
+            <nav class="menuNavegacion">
+
+                <a href="#" class="enlaceMenu">
+                    <span class="material-symbols-outlined iconoMenu">dashboard</span>
+                    Inicio
+                </a>
+
+                <a href="#" class="enlaceMenu">
+                    <span class="material-symbols-outlined iconoMenu">calendar_month</span>
+                    Reservas
+                </a>
+
+                <a href="#" class="enlaceMenu activo">
+                    <span class="material-symbols-outlined iconoMenu">school</span>
+                    Escuela
+                </a>
+
+                <a href="#" class="enlaceMenu">
+                    <span class="material-symbols-outlined iconoMenu">groups</span>
+                    Socios
+                </a>
+
+                <a href="#" class="enlaceMenu">
+                    <span class="material-symbols-outlined iconoMenu">sports_tennis</span>
+                    Pistas
+                </a>
+
+                <a href="#" class="enlaceMenu">
+                    <span class="material-symbols-outlined iconoMenu">payments</span>
+                    Pagos
+                </a>
+
+                <a href="#" class="enlaceMenu">
+                    <span class="material-symbols-outlined iconoMenu">settings</span>
+                    Configuración
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <!-- Zona de trabajo -->
+        <section class="zonaTrabajo">
+
+            <!-- Cabecera de la página -->
+            <header class="cabeceraContenido">
+
+                <section class="tituloContenido">
+
+                    <span class="etiquetaSeccion">
+                        Escuela del club
+                    </span>
+
+                    <h2 class="tituloPrincipal">
+                        Programación semanal de clases
+                    </h2>
+
+                    <p class="descripcionPrincipal">
+                        Gestiona los grupos, horarios, monitores y plazas disponibles.
+                    </p>
+
+                </section>
+
+                <section class="accionesContenido">
+
+                    <button type="button" class="botonSecundario">
+                        <span class="material-symbols-outlined iconoBoton">download</span>
+                        Exportar
+                    </button>
+
+                    <button type="button" class="botonPrincipal">
+                        <span class="material-symbols-outlined iconoBoton">add</span>
+                        Crear grupo
+                    </button>
+
+                </section>
+
+            </header>
+
+            <!-- Resumen -->
+            <section class="resumenSemana">
+
+                <article class="tarjetaResumen">
+                    <section class="iconoResumen">
+                        <span class="material-symbols-outlined">groups</span>
+                    </section>
+
+                    <section class="datosResumen">
+                        <span class="etiquetaResumen">Grupos activos</span>
+                        <strong class="valorResumen">18</strong>
+                    </section>
+                </article>
+
+                <article class="tarjetaResumen">
+                    <section class="iconoResumen">
+                        <span class="material-symbols-outlined">person</span>
+                    </section>
+
+                    <section class="datosResumen">
+                        <span class="etiquetaResumen">Alumnos inscritos</span>
+                        <strong class="valorResumen">126</strong>
+                    </section>
+                </article>
+
+                <article class="tarjetaResumen">
+                    <section class="iconoResumen">
+                        <span class="material-symbols-outlined">event_available</span>
+                    </section>
+
+                    <section class="datosResumen">
+                        <span class="etiquetaResumen">Clases esta semana</span>
+                        <strong class="valorResumen">42</strong>
+                    </section>
+                </article>
+
+                <article class="tarjetaResumen">
+                    <section class="iconoResumen">
+                        <span class="material-symbols-outlined">percent</span>
+                    </section>
+
+                    <section class="datosResumen">
+                        <span class="etiquetaResumen">Ocupación media</span>
+                        <strong class="valorResumen">84%</strong>
+                    </section>
+                </article>
+
+            </section>
+
+            <!-- Filtros -->
+            <section class="panelFiltros">
+
+                <header class="cabeceraFiltros">
+                    <h3 class="tituloFiltros">Filtros</h3>
+
+                    <button type="button" class="botonLimpiar">
+                        Limpiar filtros
+                    </button>
+                </header>
+
+                <section class="listaFiltros">
+
+                    <label class="campoFiltro">
+                        <span class="etiquetaFiltro">Nivel</span>
+                        <select class="selectorFiltro">
+                            <option>Todos los niveles</option>
+                            <option>Iniciación</option>
+                            <option>Intermedio</option>
+                            <option>Avanzado</option>
+                        </select>
+                    </label>
+
+                    <label class="campoFiltro">
+                        <span class="etiquetaFiltro">Monitor</span>
+                        <select class="selectorFiltro">
+                            <option>Todos los monitores</option>
+                            <option>Marta Sánchez</option>
+                            <option>David López</option>
+                            <option>Álvaro García</option>
+                        </select>
+                    </label>
+
+                    <label class="campoFiltro">
+                        <span class="etiquetaFiltro">Pista</span>
+                        <select class="selectorFiltro">
+                            <option>Todas las pistas</option>
+                            <option>Pista 1</option>
+                            <option>Pista 2</option>
+                            <option>Pista 3</option>
+                            <option>Pista 4</option>
+                        </select>
+                    </label>
+
+                    <label class="campoFiltro">
+                        <span class="etiquetaFiltro">Estado</span>
+                        <select class="selectorFiltro">
+                            <option>Todos los estados</option>
+                            <option>Completo</option>
+                            <option>Disponible</option>
+                            <option>Lista de espera</option>
+                        </select>
+                    </label>
+
+                </section>
+
+            </section>
+
+            <!-- Calendario semanal -->
+            <section class="panelCalendario">
+
+                <header class="cabeceraCalendario">
+
+                    <section class="navegacionSemana">
+
+                        <button type="button" class="botonNavegacion">
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+
+                        <strong class="periodoSemana">
+                            28 octubre - 3 noviembre 2026
+                        </strong>
+
+                        <button type="button" class="botonNavegacion">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+
+                    </section>
+
+                    <button type="button" class="botonHoy">
+                        Hoy
+                    </button>
+
+                </header>
+
+                <section class="calendario">
+
+                    <!-- Lunes -->
+                    <article class="columnaDia">
+
+                        <header class="cabeceraDia">
+                            <span class="nombreDia">Lunes</span>
+                            <strong class="numeroDia">28</strong>
+                        </header>
+
+                        <section class="listaClases">
+
+                            <article class="tarjetaClase claseVerde">
+
+                                <header class="cabeceraClase">
+                                    <span class="horaClase">09:00 - 10:00</span>
+                                    <span class="estadoClase">Completo</span>
+                                </header>
+
+                                <h4 class="nombreClase">
+                                    Iniciación Adultos
+                                </h4>
+
+                                <section class="datosClase">
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">person</span>
+                                        Marta Sánchez
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">sports_tennis</span>
+                                        Pista 2
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">groups</span>
+                                        6 / 6 alumnos
+                                    </span>
+
+                                </section>
+
+                            </article>
+
+                            <article class="tarjetaClase claseAzul">
+
+                                <header class="cabeceraClase">
+                                    <span class="horaClase">18:00 - 19:00</span>
+                                    <span class="estadoClase">Disponible</span>
+                                </header>
+
+                                <h4 class="nombreClase">
+                                    Intermedio Adultos
+                                </h4>
+
+                                <section class="datosClase">
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">person</span>
+                                        David López
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">sports_tennis</span>
+                                        Pista 3
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">groups</span>
+                                        4 / 6 alumnos
+                                    </span>
+
+                                </section>
+
+                            </article>
+
+                        </section>
+
+                    </article>
+
+                    <!-- Martes -->
+                    <article class="columnaDia">
+
+                        <header class="cabeceraDia">
+                            <span class="nombreDia">Martes</span>
+                            <strong class="numeroDia">29</strong>
+                        </header>
+
+                        <section class="listaClases">
+
+                            <article class="tarjetaClase claseNaranja">
+
+                                <header class="cabeceraClase">
+                                    <span class="horaClase">10:00 - 11:00</span>
+                                    <span class="estadoClase">Disponible</span>
+                                </header>
+
+                                <h4 class="nombreClase">
+                                    Iniciación Adultos
+                                </h4>
+
+                                <section class="datosClase">
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">person</span>
+                                        Álvaro García
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">sports_tennis</span>
+                                        Pista 1
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">groups</span>
+                                        5 / 6 alumnos
+                                    </span>
+
+                                </section>
+
+                            </article>
+
+                            <article class="tarjetaClase claseMorada">
+
+                                <header class="cabeceraClase">
+                                    <span class="horaClase">19:00 - 20:00</span>
+                                    <span class="estadoClase">Lista de espera</span>
+                                </header>
+
+                                <h4 class="nombreClase">
+                                    Avanzado Competición
+                                </h4>
+
+                                <section class="datosClase">
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">person</span>
+                                        Marta Sánchez
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">sports_tennis</span>
+                                        Pista 4
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">groups</span>
+                                        6 / 6 alumnos
+                                    </span>
+
+                                </section>
+
+                            </article>
+
+                        </section>
+
+                    </article>
+
+                    <!-- Miércoles -->
+                    <article class="columnaDia">
+
+                        <header class="cabeceraDia">
+                            <span class="nombreDia">Miércoles</span>
+                            <strong class="numeroDia">30</strong>
+                        </header>
+
+                        <section class="listaClases">
+
+                            <article class="tarjetaClase claseVerde">
+
+                                <header class="cabeceraClase">
+                                    <span class="horaClase">09:00 - 10:00</span>
+                                    <span class="estadoClase">Completo</span>
+                                </header>
+
+                                <h4 class="nombreClase">
+                                    Intermedio Adultos
+                                </h4>
+
+                                <section class="datosClase">
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">person</span>
+                                        David López
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">sports_tennis</span>
+                                        Pista 2
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">groups</span>
+                                        6 / 6 alumnos
+                                    </span>
+
+                                </section>
+
+                            </article>
+
+                            <article class="tarjetaClase claseAzul">
+
+                                <header class="cabeceraClase">
+                                    <span class="horaClase">17:00 - 18:00</span>
+                                    <span class="estadoClase">Disponible</span>
+                                </header>
+
+                                <h4 class="nombreClase">
+                                    Iniciación Infantil
+                                </h4>
+
+                                <section class="datosClase">
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">person</span>
+                                        Álvaro García
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">sports_tennis</span>
+                                        Pista 3
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">groups</span>
+                                        4 / 8 alumnos
+                                    </span>
+
+                                </section>
+
+                            </article>
+
+                        </section>
+
+                    </article>
+
+                    <!-- Jueves -->
+                    <article class="columnaDia">
+
+                        <header class="cabeceraDia">
+                            <span class="nombreDia">Jueves</span>
+                            <strong class="numeroDia">31</strong>
+                        </header>
+
+                        <section class="listaClases">
+
+                            <article class="tarjetaClase claseNaranja">
+
+                                <header class="cabeceraClase">
+                                    <span class="horaClase">18:00 - 19:00</span>
+                                    <span class="estadoClase">Completo</span>
+                                </header>
+
+                                <h4 class="nombreClase">
+                                    Intermedio Adultos
+                                </h4>
+
+                                <section class="datosClase">
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">person</span>
+                                        Marta Sánchez
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">sports_tennis</span>
+                                        Pista 2
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">groups</span>
+                                        6 / 6 alumnos
+                                    </span>
+
+                                </section>
+
+                            </article>
+
+                            <article class="tarjetaClase claseMorada">
+
+                                <header class="cabeceraClase">
+                                    <span class="horaClase">20:00 - 21:00</span>
+                                    <span class="estadoClase">Disponible</span>
+                                </header>
+
+                                <h4 class="nombreClase">
+                                    Avanzado Competición
+                                </h4>
+
+                                <section class="datosClase">
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">person</span>
+                                        David López
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">sports_tennis</span>
+                                        Pista 4
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">groups</span>
+                                        5 / 6 alumnos
+                                    </span>
+
+                                </section>
+
+                            </article>
+
+                        </section>
+
+                    </article>
+
+                    <!-- Viernes -->
+                    <article class="columnaDia">
+
+                        <header class="cabeceraDia">
+                            <span class="nombreDia">Viernes</span>
+                            <strong class="numeroDia">1</strong>
+                        </header>
+
+                        <section class="listaClases">
+
+                            <article class="tarjetaClase claseVerde">
+
+                                <header class="cabeceraClase">
+                                    <span class="horaClase">09:00 - 10:00</span>
+                                    <span class="estadoClase">Disponible</span>
+                                </header>
+
+                                <h4 class="nombreClase">
+                                    Iniciación Adultos
+                                </h4>
+
+                                <section class="datosClase">
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">person</span>
+                                        Álvaro García
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">sports_tennis</span>
+                                        Pista 1
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">groups</span>
+                                        3 / 6 alumnos
+                                    </span>
+
+                                </section>
+
+                            </article>
+
+                            <article class="tarjetaClase claseAzul">
+
+                                <header class="cabeceraClase">
+                                    <span class="horaClase">18:00 - 19:00</span>
+                                    <span class="estadoClase">Completo</span>
+                                </header>
+
+                                <h4 class="nombreClase">
+                                    Intermedio Adultos
+                                </h4>
+
+                                <section class="datosClase">
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">person</span>
+                                        Marta Sánchez
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">sports_tennis</span>
+                                        Pista 3
+                                    </span>
+
+                                    <span class="datoClase">
+                                        <span class="material-symbols-outlined iconoDato">groups</span>
+                                        6 / 6 alumnos
+                                    </span>
+
+                                </section>
+
+                            </article>
+
+                        </section>
+
+                    </article>
+
+                </section>
+
+            </section>
+
+            <!-- Resumen de ocupación -->
+            <section class="panelOcupacion">
+
+                <header class="cabeceraPanel">
+
+                    <section class="tituloPanel">
+                        <span class="material-symbols-outlined iconoPanel">bar_chart</span>
+
+                        <section class="textoPanel">
+                            <h3 class="tituloSeccion">Ocupación de grupos</h3>
+                            <p class="descripcionSeccion">
+                                Estado actual de las plazas de la escuela.
+                            </p>
+                        </section>
+                    </section>
+
+                    <button type="button" class="botonVerTodo">
+                        Ver todos
+                    </button>
+
+                </header>
+
+                <section class="listaOcupacion">
+
+                    <article class="filaOcupacion">
+
+                        <section class="datosGrupo">
+                            <strong class="nombreGrupo">
+                                Iniciación Adultos
+                            </strong>
+
+                            <span class="detalleGrupo">
+                                Lunes · 09:00 · Pista 2
+                            </span>
+                        </section>
+
+                        <section class="barraGrupo">
+                            <figure class="barraFondo">
+                                <span class="barraLlena" style="width: 100%;"></span>
+                            </figure>
+
+                            <span class="textoOcupacion">
+                                6 / 6
+                            </span>
+                        </section>
+
+                        <span class="estadoOcupacion completo">
+                            Completo
+                        </span>
+
+                    </article>
+
+                    <article class="filaOcupacion">
+
+                        <section class="datosGrupo">
+                            <strong class="nombreGrupo">
+                                Intermedio Adultos
+                            </strong>
+
+                            <span class="detalleGrupo">
+                                Lunes · 18:00 · Pista 3
+                            </span>
+                        </section>
+
+                        <section class="barraGrupo">
+                            <figure class="barraFondo">
+                                <span class="barraLlena" style="width: 66%;"></span>
+                            </figure>
+
+                            <span class="textoOcupacion">
+                                4 / 6
+                            </span>
+                        </section>
+
+                        <span class="estadoOcupacion disponible">
+                            2 plazas
+                        </span>
+
+                    </article>
+
+                    <article class="filaOcupacion">
+
+                        <section class="datosGrupo">
+                            <strong class="nombreGrupo">
+                                Avanzado Competición
+                            </strong>
+
+                            <span class="detalleGrupo">
+                                Martes · 19:00 · Pista 4
+                            </span>
+                        </section>
+
+                        <section class="barraGrupo">
+                            <figure class="barraFondo">
+                                <span class="barraLlena" style="width: 100%;"></span>
+                            </figure>
+
+                            <span class="textoOcupacion">
+                                6 / 6
+                            </span>
+                        </section>
+
+                        <span class="estadoOcupacion espera">
+                            Lista de espera
+                        </span>
+
+                    </article>
+
+                </section>
+
+            </section>
+
+            <!-- Recomendaciones -->
+            <aside class="panelRecomendaciones">
+
+                <header class="cabeceraRecomendaciones">
+
+                    <section class="tituloRecomendaciones">
+
+                        <span class="material-symbols-outlined iconoRecomendacion">
+                            lightbulb
+                        </span>
+
+                        <section class="textoRecomendaciones">
+                            <h3 class="tituloSeccion">
+                                Recomendaciones
+                            </h3>
+
+                            <p class="descripcionSeccion">
+                                Sugerencias para mejorar la ocupación.
+                            </p>
+                        </section>
+
+                    </section>
+
+                </header>
+
+                <article class="tarjetaRecomendacion">
+
+                    <section class="contenidoRecomendacion">
+
+                        <strong class="tituloRecomendacion">
+                            Nuevo grupo recomendado
+                        </strong>
+
+                        <p class="descripcionRecomendacion">
+                            Existe margen para abrir un segundo grupo los Miércoles
+                            19:00h en la Pista 4 con Marta Sánchez.
+                            Aportaría +128€ netos semanales.
+                        </p>
+
+                    </section>
+
+                    <button type="button" class="botonRecomendacion">
+                        Crear grupo recomendado
+                    </button>
+
+                </article>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

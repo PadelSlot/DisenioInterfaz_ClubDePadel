@@ -1,0 +1,2338 @@
+<!DOCTYPE html>
+
+<html class="pagina" lang="es">
+
+<head class="cabeceraHtml">
+
+    <meta charset="utf-8" class="configuracion">
+
+    <meta
+        class="configuracion"
+        content="width=device-width, initial-scale=1.0"
+        name="viewport"
+    >
+
+    <title class="tituloPagina">
+        Panel de Administrador - PadelSlot Club Manager
+    </title>
+
+    <!-- Fuentes tipográficas e iconos -->
+
+    <link
+        class="fuenteTexto"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <script
+        class="iconos"
+        src="https://unpkg.com/@phosphor-icons/web">
+    </script>
+
+    <style>
+
+        /* Variables y Reset */
+
+        :root {
+            --brand-dark: #1e3c31;
+            --brand-accent: #d8f44d;
+            --bg-app: #f8fafc;
+            --bg-sidebar: #ffffff;
+            --bg-card: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+
+            /* Status Colors */
+
+            --status-green: #10b981;
+            --status-green-bg: #d1fae5;
+            --status-yellow: #d8f44d;
+            --status-red: #ef4444;
+            --status-red-bg: #fee2e2;
+            --status-blue: #3b82f6;
+            --status-blue-bg: #e0f2fe;
+            --status-gray: #f1f5f9;
+
+            --radius-md: 8px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-app);
+            color: var(--text-main);
+            font-size: 0.875rem;
+            -webkit-font-smoothing: antialiased;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            border: none;
+            background: none;
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        ul,
+        menu {
+            list-style: none;
+        }
+
+        /* Botones y etiquetas */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            gap: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-dark {
+            background: var(--brand-dark);
+            color: #fff;
+        }
+
+        .btn-yellow {
+            background: var(--brand-accent);
+            color: var(--brand-dark);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-light);
+            color: var(--text-main);
+            background: #fff;
+        }
+
+        .btn-ghost {
+            color: var(--text-main);
+            background: transparent;
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+
+        .btn-ghost:hover {
+            background: var(--bg-app);
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.625rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-red {
+            background: var(--status-red-bg);
+            color: #b91c1c;
+        }
+
+        .badge-yellow {
+            background: var(--brand-accent);
+            color: var(--brand-dark);
+        }
+
+        .badge-blue {
+            background: var(--status-blue-bg);
+            color: #0369a1;
+        }
+
+        .badge-gray {
+            background: var(--status-gray);
+            color: var(--text-muted);
+        }
+
+        .badge-green {
+            background: var(--status-green-bg);
+            color: #047857;
+        }
+
+        /* Barra lateral */
+
+        .barraLateral {
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+            padding: 24px 16px;
+            z-index: 10;
+        }
+
+        .marca {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+            padding: 0 8px;
+        }
+
+        .logoMarca {
+            width: 32px;
+            height: 32px;
+            background: var(--brand-dark);
+            color: var(--brand-accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.125rem;
+        }
+
+        .textoMarca h1 {
+            font-size: 1rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .textoMarca span {
+            font-size: 0.625rem;
+            color: var(--text-muted);
+        }
+
+        .menuPrincipal {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+        }
+
+        .menuPrincipal a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: background 0.2s;
+        }
+
+        .menuPrincipal a i {
+            font-size: 1.25rem;
+        }
+
+        .menuPrincipal a:hover {
+            background: var(--bg-app);
+            color: var(--text-main);
+        }
+
+        .menuPrincipal a.active {
+            background: var(--bg-app);
+            color: var(--brand-dark);
+            font-weight: 700;
+        }
+
+        .menuPrincipal a.active i {
+            color: var(--brand-dark);
+            font-weight: bold;
+        }
+
+        .pieLateral {
+            padding: 16px 8px 0;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .cabeceraOcupacion {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.625rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+
+        .barraOcupacion {
+            height: 6px;
+            background: var(--border-light);
+            border-radius: 99px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .rellenoOcupacion {
+            height: 100%;
+            background: var(--brand-accent);
+            width: 88%;
+        }
+
+        .textoOcupacion {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Contenido principal */
+
+        .contenidoApp {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        /* Barra superior */
+
+        .barraSuperior {
+            background: var(--bg-sidebar);
+            border-bottom: 1px solid var(--border-light);
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .formularioBusqueda {
+            position: relative;
+            width: 400px;
+        }
+
+        .formularioBusqueda i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.25rem;
+        }
+
+        .formularioBusqueda input {
+            width: 100%;
+            background: var(--bg-app);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 10px 10px 10px 40px;
+            font-size: 0.875rem;
+            outline: none;
+        }
+
+        .atajoBusqueda {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.625rem;
+            font-weight: 700;
+            background: #fff;
+            border: 1px solid var(--border-light);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--text-muted);
+        }
+
+        .navegacionUsuario {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .botonNotificaciones {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            position: relative;
+        }
+
+        .botonNotificaciones::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 8px;
+            height: 8px;
+            background: var(--status-red);
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
+        .botonPerfil {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar {
+            width: 36px;
+            height: 36px;
+            background: var(--brand-dark);
+            color: var(--brand-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .infoPerfil {
+            text-align: left;
+        }
+
+        .infoPerfil strong {
+            display: block;
+            font-size: 0.875rem;
+            color: var(--text-main);
+        }
+
+        .infoPerfil span {
+            font-size: 0.625rem;
+            color: var(--text-muted);
+        }
+
+        /* Contenido del panel */
+
+        .contenidoPanel {
+            padding: 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Cabecera del panel */
+
+        .cabeceraPanel {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .tituloPanel .estadoSincronizacion {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--status-blue);
+            background: var(--status-blue-bg);
+            padding: 4px 10px;
+            border-radius: 99px;
+            margin-bottom: 12px;
+        }
+
+        .tituloPanel .estadoSincronizacion span {
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-left: 4px;
+        }
+
+        .tituloPrincipal {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+            letter-spacing: -0.02em;
+        }
+
+        .descripcionPanel {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            max-width: 400px;
+            line-height: 1.4;
+        }
+
+        .accionesPanel {
+            display: flex;
+            gap: 12px;
+        }
+
+        /* Tarjetas KPI */
+
+        .rejillaKpi {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .tarjetaKpi {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            position: relative;
+        }
+
+        .tarjetaKpi.verde {
+            background: var(--brand-dark);
+            color: #fff;
+            border-color: var(--brand-dark);
+        }
+
+        .cabeceraKpi {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .tarjetaKpi.verde .cabeceraKpi {
+            color: #d1d5db;
+        }
+
+        .iconoKpi {
+            width: 32px;
+            height: 32px;
+            background: var(--bg-app);
+            color: var(--text-main);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .tarjetaKpi.verde .iconoKpi {
+            background: rgba(255,255,255,0.1);
+            color: var(--brand-accent);
+        }
+
+        .valorKpi {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .tendenciaKpi {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 500;
+        }
+
+        .tarjetaKpi.verde .tendenciaKpi {
+            color: var(--brand-accent);
+        }
+
+        .progresoMini {
+            height: 4px;
+            background: var(--border-light);
+            border-radius: 2px;
+            width: 100px;
+            margin-top: 8px;
+        }
+
+        .rellenoProgreso {
+            height: 100%;
+            background: var(--brand-dark);
+            width: 76%;
+        }
+
+        /* Distribución principal */
+
+        .distribucionPanel {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+
+        .columnaPrincipal {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .columnaSecundaria {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Tarjetas */
+
+        .tarjeta {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+        }
+
+        .cabeceraTarjeta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .tituloTarjeta {
+            font-size: 1.125rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .subtituloTarjeta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* Cuadrante */
+
+        .leyenda {
+            display: flex;
+            gap: 16px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .elementoLeyenda {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .puntoLeyenda {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .tablaHorarios {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 8px 12px;
+            font-size: 0.75rem;
+            margin-top: -12px;
+        }
+
+        .tablaHorarios th {
+            text-align: left;
+            font-weight: 700;
+            color: var(--text-muted);
+            padding-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 0.625rem;
+            letter-spacing: 0.05em;
+        }
+
+        .infoPista {
+            width: 25%;
+        }
+
+        .infoPista strong {
+            display: block;
+            font-size: 0.875rem;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .infoPista span {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+
+        .infoPista.alerta::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--status-red);
+            border-radius: 50%;
+            margin-right: 4px;
+            vertical-align: middle;
+        }
+
+        .huecoHorario {
+            padding: 12px 8px;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid transparent;
+        }
+
+        .huecoHorario strong {
+            display: block;
+            font-size: 0.875rem;
+            margin-bottom: 2px;
+        }
+
+        .huecoHorario span {
+            font-size: 0.625rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .huecoDisponible {
+            background: var(--status-yellow);
+            color: var(--brand-dark);
+        }
+
+        .huecoReservado {
+            background: var(--brand-dark);
+            color: #fff;
+        }
+
+        .huecoReservado span {
+            color: var(--brand-accent);
+        }
+
+        .huecoClase {
+            background: var(--status-gray);
+            color: var(--text-main);
+            border-color: var(--border-light);
+        }
+
+        .huecoMantenimiento {
+            background: var(--status-red-bg);
+            color: var(--status-red);
+        }
+
+        /* Últimas reservas */
+
+        .tablaReservas {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+
+        .tablaReservas th {
+            text-align: left;
+            padding: 12px 8px;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.625rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .tablaReservas td {
+            padding: 16px 8px;
+            border-bottom: 1px solid var(--border-light);
+            vertical-align: middle;
+        }
+
+        .tablaReservas tr:last-child td {
+            border-bottom: none;
+        }
+
+        .celdaUsuario {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatarUsuario {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .infoUsuario strong {
+            display: block;
+            font-size: 0.875rem;
+        }
+
+        .infoUsuario span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Agenda */
+
+        .listaAgenda {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .elementoAgenda {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .horaAgenda {
+            background: var(--brand-dark);
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .infoAgenda h4 {
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .infoAgenda p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Alertas */
+
+        .listaAlertas {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .alerta {
+            background: var(--status-red-bg);
+            border-radius: var(--radius-md);
+            padding: 12px;
+            border-left: 4px solid var(--status-red);
+        }
+
+        .cabeceraAlerta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            align-items: center;
+        }
+
+        .tituloAlerta {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: #991b1b;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tituloAlerta i {
+            font-size: 1rem;
+        }
+
+        .datoAlerta {
+            font-size: 0.625rem;
+            font-weight: 700;
+            color: #991b1b;
+        }
+
+        .textoAlerta {
+            font-size: 0.75rem;
+            color: #7f1d1d;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        /* Renovaciones */
+
+        .listaRenovaciones {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .renovacion {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+        }
+
+        .infoRenovacion h4 {
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        .infoRenovacion p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        .fechaRenovacion {
+            font-size: 0.625rem;
+            font-weight: 800;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        /* Banner */
+
+        .bannerPromocional {
+            background: var(--brand-dark);
+            color: #fff;
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bannerPromocional h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .bannerPromocional p {
+            font-size: 0.875rem;
+            color: #d1d5db;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        /* Accesos directos */
+
+        .seccionAccesos {
+            padding-bottom: 40px;
+        }
+
+        .seccionAccesos h3 {
+            font-size: 1.125rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .seccionAccesos p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .rejillaAccesos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .tarjetaAcceso {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .tarjetaAcceso:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .cabeceraAcceso {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .iconoAcceso {
+            width: 36px;
+            height: 36px;
+            background: var(--status-blue-bg);
+            color: var(--status-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .tarjetaAcceso i.flechaAcceso {
+            color: var(--border-light);
+        }
+
+        .tarjetaAcceso h4 {
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        .tarjetaAcceso span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+    </style>
+
+</head>
+
+<body class="cuerpo">
+
+    <!-- Menú lateral izquierdo -->
+
+    <aside class="barraLateral">
+
+        <header class="marca">
+
+            <figure class="logoMarca">
+                P
+            </figure>
+
+            <section class="textoMarca">
+
+                <h1 class="tituloMarca">
+                    PadelSlot
+                </h1>
+
+                <span class="textoMarcaSecundario">
+                    SaaS B2B Club
+                    <span class="detalle">
+                        Manager
+                    </span>
+                </span>
+
+            </section>
+
+        </header>
+
+        <!-- Navegación principal -->
+
+        <menu class="menuPrincipal">
+
+            <li class="elementoMenu">
+                <a class="enlaceMenu" href="#">
+                    <i class="icono"></i>
+                    Panel general
+                </a>
+            </li>
+
+            <li class="elementoMenu">
+                <a class="enlaceMenu" href="#">
+                    <i class="icono"></i>
+                    Pistas y reservas
+                </a>
+            </li>
+
+            <li class="elementoMenu">
+                <a class="enlaceMenu" href="#">
+                    <i class="icono"></i>
+                    Escuela deportiva
+                </a>
+            </li>
+
+            <li class="elementoMenu">
+                <a class="enlaceMenu" href="#">
+                    <i class="icono"></i>
+                    Socios y abonados
+                </a>
+            </li>
+
+            <li class="elementoMenu">
+                <a class="enlaceMenu" href="#">
+                    <i class="icono"></i>
+                    Cobros y cuotas
+                </a>
+            </li>
+
+            <li class="elementoMenu">
+                <a class="enlaceMenu" href="#">
+                    <i class="icono"></i>
+                    Servicios (Parking, Bar)
+                </a>
+            </li>
+
+            <li class="elementoMenu">
+                <a class="enlaceMenu" href="#">
+                    <i class="icono"></i>
+                    Incidencias
+                </a>
+            </li>
+
+            <li class="elementoMenu">
+                <a class="enlaceMenu" href="#">
+                    <i class="icono"></i>
+                    Configuración SaaS
+                </a>
+            </li>
+
+        </menu>
+
+        <!-- Indicador de ocupación -->
+
+        <footer class="pieLateral">
+
+            <section class="cabeceraOcupacion">
+                <span class="textoOcupacion">
+                    Ocupación Hoy
+                </span>
+
+                <strong class="valorOcupacion">
+                    88%
+                </strong>
+            </section>
+
+            <figure class="barraOcupacion">
+                <section class="rellenoOcupacion"></section>
+            </figure>
+
+            <span class="textoOcupacion">
+                14 pistas activas
+            </span>
+
+        </footer>
+
+    </aside>
+
+    <!-- Área principal -->
+
+    <section class="contenidoApp">
+
+        <!-- Barra superior -->
+
+        <header class="barraSuperior">
+
+            <form
+                class="formularioBusqueda"
+                onsubmit="event.preventDefault();"
+            >
+
+                <i class="iconoBusqueda"></i>
+
+                <input
+                    class="campoBusqueda"
+                    placeholder="Buscar reserva, socio, pista o cobro..."
+                    type="text"
+                >
+
+                <span class="atajoBusqueda">
+                    ⌘K
+                </span>
+
+            </form>
+
+            <nav class="navegacionUsuario">
+
+                <button
+                    class="botonNotificaciones"
+                    type="button"
+                >
+                    <i class="iconoNotificacion"></i>
+                </button>
+
+                <section class="botonPerfil">
+
+                    <figure class="avatar">
+                        MR
+                    </figure>
+
+                    <section class="infoPerfil">
+
+                        <strong class="nombrePerfil">
+                            Marta R.
+                        </strong>
+
+                        <span class="rolPerfil">
+                            Administradora
+                        </span>
+
+                    </section>
+
+                </section>
+
+            </nav>
+
+        </header>
+
+        <!-- Contenido del dashboard -->
+
+        <main class="contenidoPanel">
+
+            <!-- Cabecera -->
+
+            <header class="cabeceraPanel">
+
+                <section class="tituloPanel">
+
+                    <section class="estadoSincronizacion">
+
+                        <i class="iconoSincronizacion"></i>
+
+                        Sincronización en vivo
+
+                        <span class="detalleSincronizacion">
+                            - Lunes, 5 de Octubre - Actualizado 18:20
+                        </span>
+
+                    </section>
+
+                    <h2 class="tituloPrincipal">
+                        Buenas tardes, Marta
+                    </h2>
+
+                    <p class="descripcionPanel">
+                        La operación de Club de Pádel Sevilla está bajo control.
+                        14 pistas sincronizadas con pasarela TPV.
+                    </p>
+
+                </section>
+
+                <menu class="accionesPanel">
+
+                    <button class="botonAccion">
+                        <i class="iconoAccion"></i>
+                        Bloquear pista
+                    </button>
+
+                    <button class="botonAccion">
+                        <i class="iconoAccion"></i>
+                        Añadir clase
+                    </button>
+
+                    <button class="botonAccion">
+                        <i class="iconoAccion"></i>
+                        Crear reserva
+                    </button>
+
+                    <button class="botonAccion">
+                        <i class="iconoAccion"></i>
+                        Nuevo socio
+                    </button>
+
+                </menu>
+
+            </header>
+
+            <!-- Tarjetas KPI -->
+
+            <section class="rejillaKpi">
+
+                <article class="tarjetaKpi">
+
+                    <header class="cabeceraKpi">
+
+                        <span class="nombreKpi">
+                            Reservas de hoy
+                        </span>
+
+                        <figure class="iconoKpi">
+                            <i class="iconoKpiImagen"></i>
+                        </figure>
+
+                    </header>
+
+                    <strong class="valorKpi">
+                        42
+                    </strong>
+
+                    <footer class="tendenciaKpi">
+                        <i class="icono"></i>
+                        +8 esta mañana (100% online)
+                    </footer>
+
+                </article>
+
+                <article class="tarjetaKpi">
+
+                    <header class="cabeceraKpi">
+
+                        <span class="nombreKpi">
+                            Ocupación general
+                        </span>
+
+                        <figure class="iconoKpi">
+                            <i class="iconoKpiImagen"></i>
+                        </figure>
+
+                    </header>
+
+                    <section class="valorKpi">
+
+                        <strong class="numeroKpi">
+                            76%
+                        </strong>
+
+                        <figure class="progresoMini">
+                            <section class="rellenoProgreso"></section>
+                        </figure>
+
+                    </section>
+
+                    <footer class="tendenciaKpi">
+                        <i class="icono"></i>
+                        +5% vs. semana anterior
+                    </footer>
+
+                </article>
+
+                <article class="tarjetaKpi">
+
+                    <header class="cabeceraKpi">
+
+                        <span class="nombreKpi">
+                            Ingresos de hoy
+                        </span>
+
+                        <figure class="iconoKpi">
+                            <i class="iconoKpiImagen"></i>
+                        </figure>
+
+                    </header>
+
+                    <strong class="valorKpi">
+                        1.284 €
+                    </strong>
+
+                    <footer class="tendenciaKpi">
+                        <span class="datoKpi">
+                            ●
+                        </span>
+                        92% cobrado online &amp; TPV
+                    </footer>
+
+                </article>
+
+                <article class="tarjetaKpi">
+
+                    <header class="cabeceraKpi">
+
+                        <span class="nombreKpi">
+                            Socios activos
+                        </span>
+
+                        <figure class="iconoKpi">
+                            <i class="iconoKpiImagen"></i>
+                        </figure>
+
+                    </header>
+
+                    <strong class="valorKpi">
+                        486
+                    </strong>
+
+                    <footer class="tendenciaKpi">
+                        9 renuevan esta semana
+                        <span class="datoKpi">
+                            SEPA
+                        </span>
+                    </footer>
+
+                </article>
+
+            </section>
+
+            <!-- Distribución en dos columnas -->
+
+            <section class="distribucionPanel">
+
+                <!-- Columna principal -->
+
+                <section class="columnaPrincipal">
+
+                    <!-- Cuadrante -->
+
+                    <article class="tarjeta">
+
+                        <header class="cabeceraTarjeta">
+
+                            <section class="tituloTarjeta">
+
+                                <h3 class="tituloTarjetaTexto">
+                                    Cuadrante por franjas horarias
+                                </h3>
+
+                                <span class="subtituloTarjeta">
+                                    Disponibilidad en tiempo real de las 6 pistas principales
+                                </span>
+
+                            </section>
+
+                            <span class="etiquetaEstado">
+                                6 pistas activas
+                            </span>
+
+                        </header>
+
+                        <!-- Leyenda -->
+
+                        <menu class="leyenda">
+
+                            <li class="elementoLeyenda">
+                                <span class="puntoLeyenda"></span>
+                                Reservada
+                            </li>
+
+                            <li class="elementoLeyenda">
+                                <span class="puntoLeyenda"></span>
+                                Disponible
+                            </li>
+
+                            <li class="elementoLeyenda">
+                                <span class="puntoLeyenda"></span>
+                                Clase dirigida
+                            </li>
+
+                            <li class="elementoLeyenda">
+                                <span class="puntoLeyenda"></span>
+                                Mantenimiento
+                            </li>
+
+                        </menu>
+
+                        <!-- Tabla de horarios -->
+
+                        <table class="tablaHorarios">
+
+                            <thead>
+
+                                <tr class="filaHorario">
+
+                                    <th class="cabeceraHorario">
+                                        Pista / Tipología
+                                    </th>
+
+                                    <th class="cabeceraHorario">
+                                        17:00 - 18:30
+                                    </th>
+
+                                    <th class="cabeceraHorario">
+                                        18:30 - 20:00
+                                    </th>
+
+                                    <th class="cabeceraHorario">
+                                        20:00 - 21:30
+                                    </th>
+
+                                    <th class="cabeceraHorario">
+                                        21:30 - 23:00
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr class="filaHorario">
+
+                                    <td class="infoPista">
+
+                                        <strong class="textoDestacado">
+                                            Pista 1 - Panorámica
+                                        </strong>
+
+                                        <span class="detalle">
+                                            Cristal continuo - Césped pro
+                                        </span>
+
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">17:00</strong>
+                                            <span class="detalleHorario">28 €</span>
+                                        </article>
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">18:30</strong>
+                                            <span class="detalleHorario">Socio #104</span>
+                                        </article>
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">20:00</strong>
+                                            <span class="detalleHorario">Escuela A</span>
+                                        </article>
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">21:30</strong>
+                                            <span class="detalleHorario">24 €</span>
+                                        </article>
+                                    </td>
+
+                                </tr>
+
+                                <tr class="filaHorario">
+
+                                    <td class="infoPista">
+
+                                        <strong class="textoDestacado">
+                                            Pista 2 - Cubierta Central
+                                        </strong>
+
+                                        <span class="detalle">
+                                            Nave climatizada - Altura 11m
+                                        </span>
+
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">17:00</strong>
+                                            <span class="detalleHorario">Socio #412</span>
+                                        </article>
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">18:30</strong>
+                                            <span class="detalleHorario">Perfecc.</span>
+                                        </article>
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">20:00</strong>
+                                            <span class="detalleHorario">28 €</span>
+                                        </article>
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">21:30</strong>
+                                            <span class="detalleHorario">Libre play</span>
+                                        </article>
+                                    </td>
+
+                                </tr>
+
+                                <tr class="filaHorario">
+
+                                    <td class="infoPista">
+
+                                        <strong class="textoDestacado">
+                                            Pista 3 - Cubierta Estándar
+                                        </strong>
+
+                                        <span class="detalle">
+                                            Nave climatizada
+                                        </span>
+
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">17:00</strong>
+                                            <span class="detalleHorario">22 €</span>
+                                        </article>
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">18:30</strong>
+                                            <span class="detalleHorario">26 €</span>
+                                        </article>
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">20:00</strong>
+                                            <span class="detalleHorario">Infantil</span>
+                                        </article>
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">21:30</strong>
+                                            <span class="detalleHorario">Socio #33</span>
+                                        </article>
+                                    </td>
+
+                                </tr>
+
+                                <tr class="filaHorario">
+
+                                    <td class="infoPista">
+
+                                        <strong class="textoDestacado">
+                                            Pista 4 - Focos
+                                        </strong>
+
+                                        <span class="detalle">
+                                            Fallo eléctrico
+                                        </span>
+
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">17:00</strong>
+                                            <span class="detalleHorario">22 €</span>
+                                        </article>
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">18:30</strong>
+                                            <span class="detalleHorario">Bloqueada</span>
+                                        </article>
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">20:00</strong>
+                                            <span class="detalleHorario">En revisión</span>
+                                        </article>
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">21:30</strong>
+                                            <span class="detalleHorario">24 €</span>
+                                        </article>
+                                    </td>
+
+                                </tr>
+
+                                <tr class="filaHorario">
+
+                                    <td class="infoPista">
+
+                                        <strong class="textoDestacado">
+                                            Pista 5 - Exterior WPT
+                                        </strong>
+
+                                        <span class="detalle">
+                                            Foco LED 200W - Outdoor
+                                        </span>
+
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">17:00</strong>
+                                            <span class="detalleHorario">20 €</span>
+                                        </article>
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">18:30</strong>
+                                            <span class="detalleHorario">Socio #554</span>
+                                        </article>
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">20:00</strong>
+                                            <span class="detalleHorario">24 €</span>
+                                        </article>
+                                    </td>
+
+                                    <td class="celdaHorario">
+                                        <article class="huecoHorario">
+                                            <strong class="horaHorario">21:30</strong>
+                                            <span class="detalleHorario">Socio #89</span>
+                                        </article>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                        <footer class="pieTarjeta">
+
+                            <span class="ayudaTarjeta">
+                                Haz clic en cualquier celda libre para crear una reserva rápida.
+                            </span>
+
+                            <a class="enlaceTarjeta" href="#">
+                                Abrir cuadrante completo
+                                <i class="iconoEnlace"></i>
+                            </a>
+
+                        </footer>
+
+                    </article>
+
+                    <!-- Últimas reservas -->
+
+                    <article class="tarjeta">
+
+                        <header class="cabeceraTarjeta">
+
+                            <section class="tituloTarjeta">
+
+                                <h3 class="tituloTarjetaTexto">
+                                    Últimas reservas registradas
+                                </h3>
+
+                                <span class="subtituloTarjeta">
+                                    Transacciones procesadas en pasarela SaaS y recepción
+                                </span>
+
+                            </section>
+
+                            <a class="enlaceTarjeta" href="#">
+                                Ver todas (42)
+                            </a>
+
+                        </header>
+
+                        <table class="tablaReservas">
+
+                            <thead>
+
+                                <tr class="filaReserva">
+
+                                    <th class="cabeceraReserva">
+                                        ID / Hora
+                                    </th>
+
+                                    <th class="cabeceraReserva">
+                                        Titular &amp; Condición
+                                    </th>
+
+                                    <th class="cabeceraReserva">
+                                        Pista &amp; Franja
+                                    </th>
+
+                                    <th class="cabeceraReserva">
+                                        Importe
+                                    </th>
+
+                                    <th class="cabeceraReserva">
+                                        Estado Cobro
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr class="filaReserva">
+
+                                    <td class="celdaReserva">
+                                        <strong class="textoDestacado">
+                                            #RES-2948
+                                        </strong>
+                                        <br>
+                                        <span class="detalleReserva">
+                                            18:14
+                                        </span>
+                                    </td>
+
+                                    <td class="celdaUsuario">
+
+                                        <section class="usuario">
+
+                                            <figure class="avatarUsuario">
+                                                MG
+                                            </figure>
+
+                                            <section class="infoUsuario">
+
+                                                <strong class="nombreUsuario">
+                                                    María González
+                                                </strong>
+
+                                                <span class="detalleUsuario">
+                                                    Socia Oro #104
+                                                </span>
+
+                                            </section>
+
+                                        </section>
+
+                                    </td>
+
+                                    <td class="celdaReserva">
+                                        Pista 1 - Panorámica
+                                        <br>
+                                        <span class="detalleReserva">
+                                            Hoy - 18:30 - 20:00
+                                        </span>
+                                    </td>
+
+                                    <td class="celdaReserva">
+                                        <strong class="textoDestacado">
+                                            28,00 €
+                                        </strong>
+                                    </td>
+
+                                    <td class="celdaReserva">
+                                        <span class="detalleReserva">
+                                            <span class="detalle">
+                                                ●
+                                            </span>
+                                            Pagado online
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+                                <tr class="filaReserva">
+
+                                    <td class="celdaReserva">
+                                        <strong class="textoDestacado">
+                                            #RES-2947
+                                        </strong>
+                                        <br>
+                                        <span class="detalleReserva">
+                                            18:02
+                                        </span>
+                                    </td>
+
+                                    <td class="celdaUsuario">
+
+                                        <section class="usuario">
+
+                                            <figure class="avatarUsuario">
+                                                DR
+                                            </figure>
+
+                                            <section class="infoUsuario">
+
+                                                <strong class="nombreUsuario">
+                                                    Diego Ruiz
+                                                </strong>
+
+                                                <span class="detalleUsuario">
+                                                    No socio (+3 €)
+                                                </span>
+
+                                            </section>
+
+                                        </section>
+
+                                    </td>
+
+                                    <td class="celdaReserva">
+                                        Pista 5 - Exterior WPT
+                                        <br>
+                                        <span class="detalleReserva">
+                                            Mañana - 19:30 - 21:00
+                                        </span>
+                                    </td>
+
+                                    <td class="celdaReserva">
+                                        <strong class="textoDestacado">
+                                            25,00 €
+                                        </strong>
+                                    </td>
+
+                                    <td class="celdaReserva">
+                                        <span class="detalleReserva">
+                                            Pendiente TPV
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+                                <tr class="filaReserva">
+
+                                    <td class="celdaReserva">
+                                        <strong class="textoDestacado">
+                                            #RES-2946
+                                        </strong>
+                                        <br>
+                                        <span class="detalleReserva">
+                                            17:49
+                                        </span>
+                                    </td>
+
+                                    <td class="celdaUsuario">
+
+                                        <section class="usuario">
+
+                                            <figure class="avatarUsuario">
+                                                LV
+                                            </figure>
+
+                                            <section class="infoUsuario">
+
+                                                <strong class="nombreUsuario">
+                                                    Lucía Vega
+                                                </strong>
+
+                                                <span class="detalleUsuario">
+                                                    Socia Plata #412
+                                                </span>
+
+                                            </section>
+
+                                        </section>
+
+                                    </td>
+
+                                    <td class="celdaReserva">
+                                        Pista 2 - Cubierta Central
+                                        <br>
+                                        <span class="detalleReserva">
+                                            Hoy - 17:00 - 18:30
+                                        </span>
+                                    </td>
+
+                                    <td class="celdaReserva">
+                                        <strong class="textoDestacado">
+                                            22,00 €
+                                        </strong>
+                                    </td>
+
+                                    <td class="celdaReserva">
+                                        <span class="detalleReserva">
+                                            <span class="detalle">
+                                                ●
+                                            </span>
+                                            Saldo monedero
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </article>
+
+                </section>
+
+                <!-- Columna derecha -->
+
+                <aside class="columnaSecundaria">
+
+                    <!-- Agenda -->
+
+                    <article class="tarjeta">
+
+                        <header class="cabeceraTarjeta">
+
+                            <h3 class="tituloTarjeta">
+                                <i class="iconoTarjeta"></i>
+                                Agenda de hoy
+                            </h3>
+
+                            <a class="enlaceTarjeta" href="#">
+                                Ver agenda
+                            </a>
+
+                        </header>
+
+                        <ul class="listaAgenda">
+
+                            <li class="elementoAgenda">
+
+                                <time class="horaAgenda">
+                                    18:30
+                                </time>
+
+                                <section class="infoAgenda">
+
+                                    <h4 class="tituloAgenda">
+                                        Clase Bandeja
+                                        <span class="detalle">
+                                            Escuela
+                                        </span>
+                                    </h4>
+
+                                    <p class="detalleAgenda">
+                                        Prof. Carlos R. - Pista 2
+                                    </p>
+
+                                </section>
+
+                            </li>
+
+                            <li class="elementoAgenda">
+
+                                <time class="horaAgenda">
+                                    19:30
+                                </time>
+
+                                <section class="infoAgenda">
+
+                                    <h4 class="tituloAgenda">
+                                        Partido Ranking
+                                        <span class="detalle">
+                                            Reserva
+                                        </span>
+                                    </h4>
+
+                                    <p class="detalleAgenda">
+                                        Laura Martín - Pista 1
+                                    </p>
+
+                                </section>
+
+                            </li>
+
+                            <li class="elementoAgenda">
+
+                                <time class="horaAgenda">
+                                    20:00
+                                </time>
+
+                                <section class="infoAgenda">
+
+                                    <h4 class="tituloAgenda">
+                                        Iniciación Adultos
+                                        <span class="detalle">
+                                            Escuela
+                                        </span>
+                                    </h4>
+
+                                    <p class="detalleAgenda">
+                                        Profª. Elena Blanco - Pista 3
+                                    </p>
+
+                                </section>
+
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+                    <!-- Alertas -->
+
+                    <article class="tarjeta">
+
+                        <header class="cabeceraTarjeta">
+
+                            <h3 class="tituloTarjeta">
+                                <i class="iconoTarjeta"></i>
+                                Alertas urgentes
+                            </h3>
+
+                            <span class="contadorAlertas">
+                                3
+                            </span>
+
+                        </header>
+
+                        <ul class="listaAlertas">
+
+                            <li class="alerta">
+
+                                <header class="cabeceraAlerta">
+
+                                    <h4 class="tituloAlerta">
+                                        <i class="iconoAlerta"></i>
+                                        2 pagos devueltos
+                                    </h4>
+
+                                    <span class="datoAlerta">
+                                        178 € total
+                                    </span>
+
+                                </header>
+
+                                <p class="textoAlerta">
+                                    Remesa cuota mensual rebotada.
+                                </p>
+
+                                <button class="botonAlerta">
+                                    Reintentar cargo
+                                </button>
+
+                            </li>
+
+                            <li class="alerta">
+
+                                <header class="cabeceraAlerta">
+
+                                    <h4 class="tituloAlerta">
+                                        <i class="iconoAlerta"></i>
+                                        Incidencia luces
+                                    </h4>
+
+                                    <span class="datoAlerta">
+                                        Técnico avisado
+                                    </span>
+
+                                </header>
+
+                                <p class="textoAlerta">
+                                    Foco 2 desconectado en pista 4.
+                                </p>
+
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+                    <!-- Renovaciones -->
+
+                    <article class="tarjeta">
+
+                        <header class="cabeceraTarjeta">
+
+                            <h3 class="tituloTarjeta">
+                                <i class="iconoTarjeta"></i>
+                                Renovaciones cuotas
+                            </h3>
+
+                            <span class="contadorRenovaciones">
+                                9 esta semana
+                            </span>
+
+                        </header>
+
+                        <ul class="listaRenovaciones">
+
+                            <li class="renovacion">
+
+                                <time class="fechaRenovacion">
+                                    HOY
+                                </time>
+
+                                <section class="infoRenovacion">
+
+                                    <h4 class="nombreRenovacion">
+                                        Ana Torres Gil
+                                    </h4>
+
+                                    <p class="detalleRenovacion">
+                                        Plan Familiar ·
+                                        <span class="detalle">
+                                            Pendiente
+                                        </span>
+                                    </p>
+
+                                </section>
+
+                                <strong class="importeRenovacion">
+                                    89 €
+                                </strong>
+
+                            </li>
+
+                            <li class="renovacion">
+
+                                <time class="fechaRenovacion">
+                                    MAR
+                                </time>
+
+                                <section class="infoRenovacion">
+
+                                    <h4 class="nombreRenovacion">
+                                        Javier León Ramos
+                                    </h4>
+
+                                    <p class="detalleRenovacion">
+                                        Plan Oro ·
+                                        <span class="detalle">
+                                            Automática
+                                        </span>
+                                    </p>
+
+                                </section>
+
+                                <strong class="importeRenovacion">
+                                    45 €
+                                </strong>
+
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+                </aside>
+
+            </section>
+
+            <!-- Banner promocional -->
+
+            <section class="bannerPromocional">
+
+                <section class="contenidoBanner">
+
+                    <span class="etiquetaBanner">
+                        SAAS MODULAR TODO CONECTADO
+                    </span>
+
+                    <h3 class="tituloBanner">
+                        Sustituye reservas, CRM, cobros y hojas de cálculo.
+                    </h3>
+
+                    <p class="textoBanner">
+                        Una única ficha por socio y liquidaciones automáticas en tiempo real.
+                    </p>
+
+                </section>
+
+                <button class="botonBanner">
+
+                    <i class="iconoBanner"></i>
+
+                    Configurar módulos
+
+                </button>
+
+            </section>
+
+            <!-- Accesos directos -->
+
+            <section class="seccionAccesos">
+
+                <span class="etiquetaAccesos">
+                    ACCESOS DIRECTOS
+                </span>
+
+                <h3 class="tituloAccesos">
+                    Gestiona cada área operativa del club
+                </h3>
+
+                <section class="rejillaAccesos">
+
+                    <!-- Acceso a pistas -->
+
+                    <article class="tarjetaAcceso">
+
+                        <header class="cabeceraAcceso">
+
+                            <figure class="iconoAcceso">
+                                <i class="imagenIcono"></i>
+                            </figure>
+
+                            <i class="flechaAcceso"></i>
+
+                        </header>
+
+                        <section class="contenidoAcceso">
+
+                            <h4 class="tituloAcceso">
+                                Pistas
+                            </h4>
+
+                            <span class="detalleAcceso">
+                                14 pistas · 1 incidencia
+                            </span>
+
+                        </section>
+
+                    </article>
+
+                    <!-- Acceso a escuela -->
+
+                    <article class="tarjetaAcceso">
+
+                        <header class="cabeceraAcceso">
+
+                            <figure class="iconoAcceso">
+                                <i class="imagenIcono"></i>
+                            </figure>
+
+                            <i class="flechaAcceso"></i>
+
+                        </header>
+
+                        <section class="contenidoAcceso">
+
+                            <h4 class="tituloAcceso">
+                                Escuela deportiva
+                            </h4>
+
+                            <span class="detalleAcceso">
+                                7 grupos hoy · 46 alumnos
+                            </span>
+
+                        </section>
+
+                    </article>
+
+                    <!-- Acceso a socios -->
+
+                    <article class="tarjetaAcceso">
+
+                        <header class="cabeceraAcceso">
+
+                            <figure class="iconoAcceso">
+                                <i class="imagenIcono"></i>
+                            </figure>
+
+                            <i class="flechaAcceso"></i>
+
+                        </header>
+
+                        <section class="contenidoAcceso">
+
+                            <h4 class="tituloAcceso">
+                                Socios y CRM
+                            </h4>
+
+                            <span class="detalleAcceso">
+                                486 abonados activos
+                            </span>
+
+                        </section>
+
+                    </article>
+
+                    <!-- Acceso a cobros -->
+
+                    <article class="tarjetaAcceso">
+
+                        <header class="cabeceraAcceso">
+
+                            <figure class="iconoAcceso">
+                                <i class="imagenIcono"></i>
+                            </figure>
+
+                            <i class="flechaAcceso"></i>
+
+                        </header>
+
+                        <section class="contenidoAcceso">
+
+                            <h4 class="tituloAcceso">
+                                Cobros y cuotas
+                            </h4>
+
+                            <span class="detalleAcceso">
+                                1.284 € hoy · SEPA B2B
+                            </span>
+
+                        </section>
+
+                    </article>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </section>
+
+</body>
+
+</html>

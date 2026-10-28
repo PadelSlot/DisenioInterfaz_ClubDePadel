@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es" class="paginaAdmin">
+<head class="cabeceraPagina">
+    <meta charset="utf-8" class="metadato">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" class="metadato">
+    <title class="tituloPagina">Incidencias y Mantenimiento - PadelSlot Admin</title>
+
+    <!-- Fuentes tipográficas -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" class="fuenteWeb">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" class="conexionFuente">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet" class="fuenteWeb">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" class="fuenteWeb">
+</head>
+<body class="cuerpoPagina">
+
+    <!-- Barra lateral de navegación del sistema de administración -->
+    <aside class="panelLateral">
+        <section class="seccionContenido">
+
+            <!-- Logotipo del sistema -->
+            <header class="cabeceraSeccion">
+                <figure class="bloqueVisual">
+                    <span class="iconoPadel">sports_tennis</span>
+                </figure>
+                <section class="seccionContenido">
+                    <strong class="textoDestacado">PadelSlot</strong>
+                    <span class="rolAdmin">MANAGER</span>
+                </section>
+            </header>
+
+            <section class="seccionContenido">
+                <span class="textoAuxiliar">Gestión de Club</span>
+            </section>
+
+            <!-- Menú de enlaces principales -->
+            <nav class="menuNavegacion">
+                <a href="#" data-path="padelslot-manager-cuadrante-en-vivo-de-pistas" class="enlaceCuadrante">
+                    <span class="textoAuxiliar">Cuadrante en vivo de pistas</span>
+                </a>
+                <a href="#" data-path="escuela-deportiva" class="enlaceEscuela">
+                    <span class="textoAuxiliar">Escuela deportiva</span>
+                </a>
+                <a href="#" data-path="socios-y-abonados" class="enlaceSocios">
+                    <span class="textoAuxiliar">Socios y abonados</span>
+                </a>
+                <a href="#" data-path="cobros-y-cuotas" class="enlaceCobros">
+                    <span class="textoAuxiliar">Cobros y cuotas</span>
+                </a>
+                <a href="#" data-path="servicios" class="enlaceServicios">
+                    <span class="textoAuxiliar">Servicios (Parking, Bar, Tienda)</span>
+                </a>
+                <a href="#" data-path="incidencias" class="enlaceIncidencias">
+                    <span class="textoAuxiliar">Incidencias</span>
+                </a>
+                <a href="#" data-path="configuracion-saas" class="enlaceConfiguracion">
+                    <span class="textoAuxiliar">Configuración SaaS</span>
+                </a>
+            </nav>
+        </section>
+
+        <!-- Indicador de ocupación de pistas en tiempo real -->
+        <section class="panelOcupacion">
+            <header class="cabeceraOcupacion">
+                <section class="datosOcupacion">
+                    <figure class="indicadorOcupacion">
+                        <span class="puntoOcupacion"></span>
+                        <span class="animacionOcupacion"></span>
+                    </figure>
+                    <span class="textoOcupacion">Ocupación en vivo</span>
+                </section>
+                <strong class="porcentajeOcupacion">88%</strong>
+            </header>
+
+            <figure class="barraOcupacion">
+                <section class="progresoOcupacion"></section>
+            </figure>
+
+            <footer class="pieOcupacion">
+                <span class="pistasActivas">14 pistas activas</span>
+                <span class="pistasLibres">2 libres</span>
+            </footer>
+        </section>
+    </aside>
+
+    <!-- Área de trabajo general del administrador -->
+    <section class="areaTrabajo">
+
+        <!-- Encabezado superior fijo (Buscador y perfil) -->
+        <header class="cabeceraSuperior">
+            <section class="zonaBusqueda">
+                <section class="buscadorGlobal">
+                    <span class="iconoBusqueda">search</span>
+                    <input class="campoBusqueda" placeholder="Buscar reserva, socio, pista..." type="text">
+                    <kbd class="atajoBusqueda">⌘K</kbd>
+                </section>
+            </section>
+
+            <nav class="menuSuperior">
+                <section class="zonaNotificaciones">
+                    <button type="button" class="botonNotificaciones">
+                        <span class="iconoNotificaciones">notifications</span>
+                    </button>
+                    <span class="indicadorNotificaciones"></span>
+                </section>
+
+                <figure class="separadorPerfil"></figure>
+
+                <section class="perfilAdmin">
+                    <figure class="imagenPerfil">
+                        <span class="iconoUsuario">person</span>
+                    </figure>
+                    <section class="datosPerfil">
+                        <strong class="nombreAdmin">Marta R.</strong>
+                        <span class="cargoAdmin">Administradora</span>
+                    </section>
+                </section>
+            </nav>
+        </header>
+
+        <!-- Contenido principal: Panel de Incidencias Técnicas -->
+        <main class="contenidoPrincipal">
+            <section class="seccionIncidencias">
+                <section class="contenedorIncidencias">
+
+                    <!-- Migas de pan y título de sección -->
+                    <header class="cabeceraIncidencias">
+                        <nav class="migasPan">
+                            <span class="textoAuxiliar">Gestión de Club</span>
+                            <span class="separadorMigas">/</span>
+                            <strong class="tituloMigas">Incidencias y Mantenimiento Técnico</strong>
+                        </nav>
+
+                        <section class="resumenIncidencias">
+                            <section class="introduccionIncidencias">
+                                <h1 class="tituloPrincipal">Gestión y Resolución de Incidencias Técnicas</h1>
+                                <p class="descripcionPrincipal">Control centralizado de averías en pistas, incidencias de domótica y tornos, luminarias LED, mantenimiento de pistas y siniestros.</p>
+                            </section>
+
+                            <!-- Botones de acción rápida -->
+                            <menu class="accionesRapidas">
+                                <button type="button" class="botonMantenimiento">
+                                    <span class="iconoMantenimiento">engineering</span>
+                                    <span class="textoBoton">Programar Mantenimiento</span>
+                                </button>
+                                <button type="button" class="botonSoporte">
+                                    <span class="iconoSoporte">support_agent</span>
+                                    <span class="textoBoton">Soporte 24/7</span>
+                                </button>
+                                <button type="button" class="botonNuevaIncidencia">
+                                    <span class="iconoAlerta">add_alert</span>
+                                    <span class="textoBoton">+ Reportar Nueva Incidencia</span>
+                                </button>
+                            </menu>
+                        </section>
+                    </header>
+
+                    <!-- Resumen de métricas de incidencias en tiempo real -->
+                    <section class="resumenMetricas">
+
+                        <!-- Métrica 1: Incidencias activas -->
+                        <article class="tarjetaMetrica">
+                            <header class="cabeceraMetrica">
+                                <span class="nombreMetrica">Incidencias Activas</span>
+                                <figure class="iconoMetrica">
+                                    <span class="iconoAlerta">warning</span>
+                                </figure>
+                            </header>
+                            <section class="datosMetrica">
+                                <strong class="valorMetrica">3</strong>
+                                <span class="datoCritico">1 Crítica</span>
+                                <span class="datoLeve">2 Leves</span>
+                            </section>
+                            <footer class="pieMetrica">
+                                <figure class="indicadorMetrica"></figure>
+                                <span class="detalleMetrica">1 bloqueo parcial de pista</span>
+                            </footer>
+                        </article>
+
+                        <!-- Métrica 2: Pistas afectadas -->
+                        <article class="tarjetaMetrica">
+                            <header class="cabeceraMetrica">
+                                <span class="nombreMetrica">Pistas Afectadas</span>
+                                <figure class="iconoMetrica">
+                                    <span class="iconoPadel">sports_tennis</span>
+                                </figure>
+                            </header>
+                            <section class="datosMetrica">
+                                <strong class="valorMetrica">Pista 4</strong>
+                                <span class="detalleMetrica">(Exterior)</span>
+                            </section>
+                            <footer class="pieMetrica">
+                                <span class="iconoHorario">bedtime</span>
+                                <span class="detalleMetrica">Inhabilitada en nocturno (Torre B)</span>
+                            </footer>
+                        </article>
+
+                        <!-- Métrica 3: Tiempo medio de resolución (MTTR) -->
+                        <article class="tarjetaMetrica">
+                            <header class="cabeceraMetrica">
+                                <span class="nombreMetrica">Tiempo Medio Resolución</span>
+                                <figure class="iconoMetrica">
+                                    <span class="iconoTiempo">timer</span>
+                                </figure>
+                            </header>
+                            <section class="datosMetrica">
+                                <strong class="valorMetrica">3h 15m</strong>
+                            </section>
+                            <footer class="pieMetrica">
+                                <span class="iconoTendencia">trending_down</span>
+                                <span class="detalleMetrica">-40 min vs media club 2024</span>
+                            </footer>
+                        </article>
+
+                        <!-- Métrica 4: Gasto acumulado del mes -->
+                        <article class="tarjetaMetrica">
+                            <header class="cabeceraMetrica">
+                                <span class="nombreMetrica">Gasto Mantenimiento Mes</span>
+                                <figure class="iconoMetrica">
+                                    <span class="iconoPago">payments</span>
+                                </figure>
+                            </header>
+                            <section class="datosMetrica">
+                                <strong class="valorMetrica">420,00 €</strong>
+                            </section>
+                            <footer class="pieMetrica">
+                                <span class="detalleMetrica">Presupuesto mensual: 1.200 €</span>
+                                <strong class="porcentajeGasto">35%</strong>
+                            </footer>
+                        </article>
+                    </section>
+
+                    <!-- Zona principal estructurada en dos columnas -->
+                    <section class="zonaIncidencias">
+
+                        <!-- COLUMNA IZQUIERDA: Lista de Incidencias Activas y Controles (8 Columnas) -->
+                        <section class="columnaIncidencias">
+
+                            <!-- Pestañas de filtrado de incidencias -->
+                            <menu class="menuFiltros">
+                                <section class="pestanasFiltros">
+                                    <button type="button" class="filtroTodas">Todas (3)</button>
+                                    <button type="button" class="filtroCriticas">
+                                        <figure class="indicadorCritico"></figure>
+                                        <span class="textoFiltro">Críticas / Bloqueo (1)</span>
+                                    </button>
+                                    <button type="button" class="filtroCurso">En Curso (2)</button>
+                                    <button type="button" class="filtroResueltas">Resueltas (14)</button>
+                                    <button type="button" class="filtroPreventivo">
+                                        <span class="iconoFiltro">tune</span>
+                                        <span class="textoFiltro">Preventivo</span>
+                                    </button>
+                                </section>
+
+                                <section class="accionesFiltros">
+                                    <button title="Filtrar" type="button" class="botonFiltrar">
+                                        <span class="iconoFiltro">filter_list</span>
+                                    </button>
+                                    <button title="Actualizar" type="button" class="botonActualizar">
+                                        <span class="iconoActualizar">refresh</span>
+                                    </button>
+                                </section>
+                            </menu>
+
+                            <!-- INCIDENCIA 1: Crítica / Bloqueo activo -->
+                            <article class="tarjetaIncidencia incidenciaCritica">
+                                <figure class="bordeIncidencia"></figure>
+                                <header class="cabeceraIncidencia">
+                                    <section class="datosIncidencia">
+                                        <section class="etiquetasIncidencia">
+                                            <span class="codigoIncidencia">#INC-2048</span>
+                                            <span class="estadoIncidencia">
+                                                <figure class="indicadorEstado"></figure>
+                                                <span class="textoEstado">En Reparación / Técnico In Situ</span>
+                                            </span>
+                                            <span class="prioridadAlta">Prioridad Alta · Bloqueo Parcial</span>
+                                        </section>
+                                        <h2 class="tituloIncidencia">Fallo eléctrico en Torreta B de Focos LED - Pista 4 (Exterior)</h2>
+                                        <p class="descripcionIncidencia">Disparo recurrente de diferencial térmico trifásico tras encendido automático de 18:00 h. Sin iluminación en mitad oeste de la pista.</p>
+                                    </section>
+
+                                    <figure class="ubicacionIncidencia">
+                                        <strong class="numeroPista">P4</strong>
+                                        <span class="tipoPista">Exterior</span>
+                                    </figure>
+                                </header>
+
+                                <!-- Banner de impacto y plan de contingencia -->
+                                <article class="panelContingencia">
+                                    <section class="datosContingencia">
+                                        <span class="iconoContingencia">swap_horiz</span>
+                                        <section class="textoContingencia">
+                                            <strong class="tituloContingencia">Plan de contingencia aplicado con éxito</strong>
+                                            <span class="descripcionContingencia">2 reservas de las 19:00 y 20:30 h reubicadas a Pista 6 y Pista 2. Socios notificados por SMS.</span>
+                                        </section>
+                                    </section>
+                                    <span class="contadorReclamaciones">0 Reclamaciones</span>
+                                </article>
+
+                                <!-- Información de la llamada al proveedor -->
+                                <footer class="pieIncidencia">
+                                    <section class="datoIncidencia">
+                                        <span class="iconoUsuario">person</span>
+                                        <span class="textoDato">Notificado: Marta R. (Hace 45 min)</span>
+                                    </section>
+                                    <section class="datoIncidencia">
+                                        <span class="iconoTiempo">schedule</span>
+                                        <span class="textoDato">Llegada estimada: 19:15 h</span>
+                                    </section>
+                                    <section class="datoIncidencia">
+                                        <span class="iconoProveedor">domain</span>
+                                        <span class="textoDato">Iberdrola Instalaciones Pro</span>
+                                    </section>
+                                </footer>
+
+                                <!-- Botones de gestión técnica -->
+                                <menu class="accionesIncidencia">
+                                    <section class="botonesGestion">
+                                        <button type="button" class="botonOrdenTrabajo">Ver Orden de Trabajo</button>
+                                        <button type="button" class="botonActualizarEstado">Actualizar Estado</button>
+                                    </section>
+                                    <button type="button" class="botonResolver">
+                                        <span class="iconoConfirmacion">check_circle</span>
+                                        <span class="textoBoton">Dar por Resuelta y Desbloquear Pista</span>
+                                    </button>
+                                </menu>
+                            </article>
+
+                            <!-- INCIDENCIA 2: Leve / Media -->
+                            <article class="tarjetaIncidencia incidenciaMedia">
+                                <figure class="bordeIncidencia"></figure>
+                                <header class="cabeceraIncidencia">
+                                    <section class="datosIncidencia">
+                                        <section class="etiquetasIncidencia">
+                                            <span class="codigoIncidencia">#INC-2047</span>
+                                            <span class="estadoRevision">Pendiente de Revisión</span>
+                                            <span class="prioridadMedia">Prioridad Media · QR Operativo</span>
+                                        </section>
+                                        <h2 class="tituloIncidencia">Descalibración lector NFC en Torno Acceso Vestuarios Masculinos</h2>
+                                        <p class="descripcionIncidencia">Lector RFID rechaza pulseras silicona 13.56MHz con parpadeo ámbar continuo. Acceso provisional garantizado por código QR de carnet digital.</p>
+                                    </section>
+
+                                    <figure class="ubicacionIncidencia">
+                                        <span class="iconoAcceso">door_sliding</span>
+                                        <span class="nombreEquipo">Torno 2</span>
+                                    </figure>
+                                </header>
+
+                                <footer class="pieIncidencia">
+                                    <section class="datoIncidencia">
+                                        <span class="iconoTiempo">schedule</span>
+                                        <span class="textoDato">Reportado por: Limpieza / Recepción (Hoy 14:10 h)</span>
+                                    </section>
+                                    <section class="datoIncidencia">
+                                        <span class="iconoHerramienta">build</span>
+                                        <span class="textoDato">Asignado: Soporte PadelSlot Hardware</span>
+                                    </section>
+                                </footer>
+
+                                <menu class="accionesIncidencia">
+                                    <button type="button" class="botonReiniciar">
+                                        <span class="iconoReinicio">restart_alt</span>
+                                        <span class="textoBoton">Reiniciar Lector Remotamente</span>
+                                    </button>
+                                    <button type="button" class="botonAsignarTecnico">Asignar Técnico</button>
+                                </menu>
+                            </article>
+
+                            <!-- INCIDENCIA 3: Mantenimiento / Baja -->
+                            <article class="tarjetaIncidencia incidenciaBaja">
+                                <figure class="bordeIncidencia"></figure>
+                                <header class="cabeceraIncidencia">
+                                    <section class="datosIncidencia">
+                                        <section class="etiquetasIncidencia">
+                                            <span class="codigoIncidencia">#INC-2045</span>
+                                            <span class="estadoPieza">Pieza Solicitada</span>
+                                            <span class="prioridadBaja">Prioridad Baja · Pista Operativa</span>
+                                        </section>
+                                        <h2 class="tituloIncidencia">Tensor de red flojo y rozadura en malla metálica - Pista 3</h2>
+                                        <p class="descripcionIncidencia">Tornillería del cabestrante desgastada por tensión. Cable interno intacto. Pista apta para partidos sin competición oficial.</p>
+                                    </section>
+
+                                    <figure class="ubicacionIncidencia">
+                                        <strong class="numeroPista">P3</strong>
+                                        <span class="tipoPista">Panorám</span>
+                                    </figure>
+                                </header>
+
+                                <footer class="pieIncidencia">
+                                    <section class="datoIncidencia">
+                                        <span class="iconoAviso">badge</span>
+                                        <span class="textoDato">Notificado por: Carlos Rodríguez (Monitor) · Ayer 19:40 h</span>
+                                    </section>
+                                    <strong class="estadoRepuesto">Repuesto: Envío GLS en tránsito</strong>
+                                </footer>
+                            </article>
+
+                            <!-- Tabla histórica de incidencias resueltas recientemente -->
+                            <article class="tarjetaHistorial">
+                                <header class="cabeceraHistorial">
+                                    <section class="tituloHistorial">
+                                        <span class="iconoHistorial">history</span>
+                                        <h3 class="tituloSeccion">Historial de Incidencias Resueltas Recientemente</h3>
+                                    </section>
+                                    <a href="#" class="enlaceHistorial">Ver registro completo</a>
+                                </header>
+
+                                <section class="contenedorTabla">
+                                    <table class="tablaIncidencias">
+                                        <thead class="cabeceraTabla">
+                                            <tr class="filaCabecera">
+                                                <th class="columnaId">ID</th>
+                                                <th class="columnaUbicacion">Ubicación / Elemento</th>
+                                                <th class="columnaAveria">Tipo Avería</th>
+                                                <th class="columnaTiempo">Tiempo Res.</th>
+                                                <th class="columnaCoste">Coste</th>
+                                                <th class="columnaFecha">Fecha</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="cuerpoTabla">
+                                            <tr class="filaIncidencia">
+                                                <td class="celdaId">#INC-2042</td>
+                                                <td class="celdaUbicacion">Pista 1 (Central)</td>
+                                                <td class="celdaAveria">Sustitución vidrio templado 12mm</td>
+                                                <td class="celdaTiempo"><span class="tiempoResolucion">5h 45m</span></td>
+                                                <td class="celdaCoste">380,00 €</td>
+                                                <td class="celdaFecha">14 Mayo</td>
+                                            </tr>
+                                            <tr class="filaIncidencia">
+                                                <td class="celdaId">#INC-2039</td>
+                                                <td class="celdaUbicacion">Pistas 7 a 10</td>
+                                                <td class="celdaAveria">Descompactado y recebo arena sílice</td>
+                                                <td class="celdaTiempo"><span class="tiempoResolucion">2h 10m</span></td>
+                                                <td class="celdaCoste">40,00 €</td>
+                                                <td class="celdaFecha">12 Mayo</td>
+                                            </tr>
+                                            <tr class="filaIncidencia">
+                                                <td class="celdaId">#INC-2036</td>
+                                                <td class="celdaUbicacion">Torno Parking Principal</td>
+                                                <td class="celdaAveria">Actualización firmware OCR matrículas</td>
+                                                <td class="celdaTiempo"><span class="tiempoResolucion">25m</span></td>
+                                                <td class="celdaCoste">0,00 € (Garantía)</td>
+                                                <td class="celdaFecha">09 Mayo</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
+                            </article>
+                        </section>
+
+                        <!-- COLUMNA DERECHA: Telemetría Domótica y Contactos de Emergencia (4 Columnas) -->
+                        <aside class="columnaLateral">
+
+                            <!-- Bloque de diagnóstico domótico en vivo -->
+                            <article class="tarjetaDomotica">
+                                <header class="cabeceraTarjeta">
+                                    <section class="tituloTarjeta">
+                                        <figure class="iconoTarjeta"></figure>
+                                        <h3 class="tituloSeccion">Diagnóstico Domótica Club</h3>
+                                    </section>
+                                    <span class="estadoTelemetria">LIVE TELEMETRY</span>
+                                </header>
+
+                                <ul class="listaEquipos">
+
+                                    <!-- Elemento 1: Gateway -->
+                                    <li class="elementoEquipo">
+                                        <section class="datosEquipo">
+                                            <span class="iconoRed">router</span>
+                                            <section class="descripcionEquipo">
+                                                <strong class="nombreEquipo">Gateway Domótica Central</strong>
+                                                <span class="detalleEquipo">Conectividad Fibra Club #1</span>
+                                            </section>
+                                        </section>
+                                        <section class="estadoEquipo">
+                                            <span class="estadoOnline">Online</span>
+                                            <span class="tiempoRespuesta">18 ms</span>
+                                        </section>
+                                    </li>
+
+                                    <!-- Elemento 2: Tornos -->
+                                    <li class="elementoEquipo">
+                                        <section class="datosEquipo">
+                                            <span class="iconoAcceso">badge</span>
+                                            <section class="descripcionEquipo">
+                                                <strong class="nombreEquipo">Tornos de Acceso Pistas</strong>
+                                                <span class="detalleEquipo">14 unidades en red</span>
+                                            </section>
+                                        </section>
+                                        <section class="estadoEquipo">
+                                            <span class="estadoCorrecto">13/14 OK</span>
+                                            <span class="estadoAviso">1 en backup QR</span>
+                                        </section>
+                                    </li>
+
+                                    <!-- Elemento 3: Focos LED -->
+                                    <li class="elementoEquipo">
+                                        <section class="datosEquipo">
+                                            <span class="iconoElectricidad">bolt</span>
+                                            <section class="descripcionEquipo">
+                                                <strong class="nombreEquipo">Cuadros Focos LED Pistas</strong>
+                                                <span class="detalleEquipo">Control DALI &amp; Relés</span>
+                                            </section>
+                                        </section>
+                                        <section class="estadoEquipo">
+                                            <span class="estadoAlerta">Alerta Cuadro 2</span>
+                                            <span class="detalleAlerta">Disparo térmico</span>
+                                        </section>
+                                    </li>
+
+                                    <!-- Elemento 4: Barreras Parking -->
+                                    <li class="elementoEquipo">
+                                        <section class="datosEquipo">
+                                            <span class="iconoParking">local_parking</span>
+                                            <section class="descripcionEquipo">
+                                                <strong class="nombreEquipo">Barreras Parking &amp; LPR</strong>
+                                                <span class="detalleEquipo">Lectura matrículas en bucle</span>
+                                            </section>
+                                        </section>
+                                        <section class="estadoEquipo">
+                                            <span class="estadoOnline">Online</span>
+                                            <span class="porcentajeExito">99.4% éxito</span>
+                                        </section>
+                                    </li>
+                                </ul>
+
+                                <button type="button" class="botonTestRed">
+                                    <span class="iconoConectividad">cell_tower</span>
+                                    <span class="textoBoton">Test General de Conectividad</span>
+                                </button>
+                            </article>
+
+                            <!-- Proveedores de servicio homologados 24/7 -->
+                            <article class="tarjetaProveedores">
+                                <header class="cabeceraTarjeta">
+                                    <span class="iconoTelefono">call</span>
+                                    <h3 class="tituloSeccion">Proveedores Homologados 24/7</h3>
+                                </header>
+                                <p class="descripcionProveedores">Llamada prioritaria directa para incidencias que interrumpan la actividad del club.</p>
+
+                                <ul class="listaProveedores">
+
+                                    <!-- Proveedor 1 -->
+                                    <li class="elementoProveedor">
+                                        <section class="datosProveedor">
+                                            <strong class="nombreProveedor">Cristalería Templada Express</strong>
+                                            <span class="detalleProveedor">Vidrios 10/12mm · Reposición &lt; 6h</span>
+                                        </section>
+                                        <a href="tel:+34900112233" title="Llamar" class="enlaceTelefono">
+                                            <span class="iconoTelefono">phone</span>
+                                        </a>
+                                    </li>
+
+                                    <!-- Proveedor 2 -->
+                                    <li class="elementoProveedor">
+                                        <section class="datosProveedor">
+                                            <strong class="nombreProveedor">Electricidad &amp; Focos 24 Horas</strong>
+                                            <span class="detalleProveedor">Iberdrola Instalaciones Balastos</span>
+                                        </section>
+                                        <a href="tel:+34900887766" title="Llamar" class="enlaceTelefono">
+                                            <span class="iconoTelefono">phone</span>
+                                        </a>
+                                    </li>
+
+                                    <!-- Proveedor 3 -->
+                                    <li class="elementoProveedor">
+                                        <section class="datosProveedor">
+                                            <strong class="nombreProveedor">Césped Deportivo &amp; Malla</strong>
+                                            <span class="detalleProveedor">Mantenimiento de sílice &amp; fibras</span>
+                                        </section>
+                                        <a href="tel:+34900445566" title="Llamar" class="enlaceTelefono">
+                                            <span class="iconoTelefono">phone</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </article>
+
+                            <!-- Tarjeta de mantenimiento preventivo programado -->
+                            <article class="tarjetaMantenimiento">
+                                <header class="cabeceraMantenimiento">
+                                    <span class="iconoCalendario">calendar_month</span>
+                                    <span class="tituloMantenimiento">Mantenimiento Programado</span>
+                                </header>
+                                <section class="datosMantenimiento">
+                                    <h3 class="tituloTarea">Repasadora y Cepillado de Césped</h3>
+                                    <p class="descripcionTarea">Pistas 1 a 6 · Lunes próximo (07:00 a 09:00 h). Bloqueo de agenda configurado.</p>
+                                </section>
+                                <footer class="pieMantenimiento">
+                                    <span class="frecuenciaMantenimiento">Frecuencia Quincenal</span>
+                                    <button type="button" class="botonModificarFecha">Modificar fecha</button>
+                                </footer>
+                            </article>
+                        </aside>
+
+                    </section>
+
+                </section>
+            </section>
+        </main>
+    </section>
+
+</body>
+</html>

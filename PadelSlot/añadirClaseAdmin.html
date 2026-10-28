@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Añadir Clase - PadelSlot Admin</title>
+
+    <!-- Fuentes tipográficas -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+</head>
+<body class="cuerpo">
+
+    <!-- Barra lateral de navegación del panel de administración -->
+    <aside class="barra-lateral">
+        <section class="barra-superior">
+
+            <!-- Logotipo y nombre del panel -->
+            <header class="marca">
+                <figure class="marca-logo">
+                    <span class="icono">sports_tennis</span>
+                </figure>
+                <section class="marca-texto">
+                    <strong class="marca-nombre">PadelSlot</strong>
+                    <span class="marca-sub">MANAGER</span>
+                </section>
+            </header>
+
+            <section class="menu-titulo">
+                <span class="menu-titulo-texto">Gestión de Club</span>
+            </section>
+
+            <!-- Menú principal de enlaces -->
+            <nav class="menu">
+                <a href="#" class="menu-enlace">
+                    <span class="icono">grid_view</span>
+                    <span class="menu-texto">Panel general</span>
+                </a>
+                <a href="#" class="menu-enlace">
+                    <span class="icono">calendar_today</span>
+                    <span class="menu-texto">Pistas y reservas</span>
+                </a>
+                <a href="#" class="menu-enlace">
+                    <span class="icono">school</span>
+                    <span class="menu-texto">Escuela deportiva</span>
+                </a>
+                <a href="#" class="menu-enlace">
+                    <span class="icono">groups</span>
+                    <span class="menu-texto">Socios y abonados</span>
+                </a>
+                <a href="#" class="menu-enlace">
+                    <span class="icono">payments</span>
+                    <span class="menu-texto">Cobros y cuotas</span>
+                </a>
+                <a href="#" class="menu-enlace">
+                    <span class="icono">local_convenience_store</span>
+                    <span class="menu-texto">Servicios (Parking, Bar, Tienda)</span>
+                </a>
+                <a href="#" class="menu-enlace">
+                    <span class="icono">report_problem</span>
+                    <span class="menu-texto">Incidencias</span>
+                </a>
+                <a href="#" class="menu-enlace">
+                    <span class="icono">tune</span>
+                    <span class="menu-texto">Configuración SaaS</span>
+                </a>
+            </nav>
+        </section>
+
+        <!-- Widget informativo sobre la ocupación actual -->
+        <section class="ocupacion">
+            <header class="ocupacion-cab">
+                <section class="ocupacion-info">
+                    <figure class="ocupacion-punto">
+                        <span class="punto-onda"></span>
+                        <span class="punto-fijo"></span>
+                    </figure>
+                    <span class="ocupacion-titulo">Ocupación en vivo</span>
+                </section>
+                <strong class="ocupacion-valor">88%</strong>
+            </header>
+
+            <!-- Barra de progreso visual -->
+            <figure class="ocupacion-barra">
+                <section class="ocupacion-relleno"></section>
+            </figure>
+
+            <footer class="ocupacion-pie">
+                <span class="pie-texto">14 pistas activas</span>
+                <span class="pie-texto">2 libres</span>
+            </footer>
+        </section>
+    </aside>
+
+    <!-- Contenedor general del lado derecho -->
+    <section class="contenedor">
+
+        <!-- Barra superior (Buscador y perfil) -->
+        <header class="cabecera">
+
+            <!-- Barra de búsqueda -->
+            <section class="buscador">
+                <section class="buscador-caja">
+                    <span class="icono">search</span>
+                    <input class="buscador-input" placeholder="Buscar reserva, socio, pista..." type="text">
+                    <kbd class="atajo">⌘K</kbd>
+                </section>
+            </section>
+
+            <!-- Notificaciones y perfil de usuario -->
+            <nav class="cabecera-acciones">
+                <section class="notif">
+                    <button class="notif-boton" type="button">
+                        <span class="icono">notifications</span>
+                    </button>
+                    <span class="notif-punto"></span>
+                </section>
+
+                <figure class="separador"></figure> <!-- Separador visual -->
+
+                <section class="usuario">
+                    <figure class="avatar">
+                        <span class="icono">person</span>
+                    </figure>
+                    <section class="usuario-datos">
+                        <strong class="usuario-nombre">Marta R.</strong>
+                        <span class="usuario-rol">Administradora</span>
+                    </section>
+                </section>
+            </nav>
+        </header>
+
+        <!-- Área de contenido principal -->
+        <main class="principal">
+            <section class="pagina">
+                <section class="pagina-interior">
+
+                    <!-- Migas de pan (Navegación contextual) y etiqueta de temporada -->
+                    <header class="migas-cab">
+                        <nav class="migas">
+                            <span class="miga">Escuela deportiva</span>
+                            <span class="miga-sep">chevron_right</span>
+                            <span class="miga">Programación Semanal</span>
+                            <span class="miga-sep">chevron_right</span>
+                            <strong class="miga-actual">Añadir Nueva Clase o Grupo</strong>
+                        </nav>
+
+                        <aside class="temporada">
+                            <span class="temporada-etiqueta">
+                                <figure class="temporada-punto"></figure>
+                                Escuela Oficial Temporada 2025/2026
+                            </span>
+                            <span class="temporada-cod">COD: ESC-2025-VIB</span>
+                        </aside>
+                    </header>
+
+                    <!-- Cabecera del formulario y selector de modalidad -->
+                    <section class="encabezado">
+                        <header class="encabezado-texto">
+                            <section class="titulo-fila">
+                                <h1 class="titulo">Programar Nueva Clase Dirigida</h1>
+                                <strong class="estado-borrador">Borrador Activo</strong>
+                            </section>
+                            <p class="descripcion">
+                                Configura los parámetros pedagógicos, asignación de monitor federado y disponibilidad de pista para abrir inscripciones en el portal de socios.
+                            </p>
+                        </header>
+
+                        <!-- Botones para alternar el tipo de clase -->
+                        <nav class="modalidad">
+                            <button class="modalidad-boton" type="button">
+                                <span class="icono">groups</span>
+                                <span class="modalidad-texto">Clase Grupal Abierta</span>
+                            </button>
+                            <button class="modalidad-boton" type="button">
+                                <span class="icono">person</span>
+                                <span class="modalidad-texto"> Particular 1 a 1</span>
+                            </button>
+                        </nav>
+
+                        <figure class="decoracion"></figure> <!-- Elemento decorativo -->
+                    </section>
+
+                    <!-- Contenedor dividido en dos columnas para el panel de configuración -->
+                    <section class="columnas">
+
+                        <!-- COLUMNA IZQUIERDA: Formulario de configuración -->
+                        <section class="formulario">
+
+                            <!-- Sección 1: Información básica y nivel -->
+                            <article class="bloque">
+                                <header class="bloque-cab">
+                                    <section class="bloque-titulo">
+                                        <figure class="bloque-num">1</figure>
+                                        <h2 class="bloque-h2">Información y Modalidad de Clase</h2>
+                                    </section>
+                                    <span class="bloque-etiqueta">Metodología FEP</span>
+                                </header>
+
+                                <section class="bloque-cuerpo">
+                                    <!-- Nombre de la sesión -->
+                                    <section class="campo">
+                                        <label class="campo-label">Nombre técnico de la sesión</label>
+                                        <section class="campo-input">
+                                            <input class="input" type="text" value="Técnica de Víbora, Bandeja y Aceleración de Remate">
+                                            <span class="icono-ok">check_circle</span>
+                                        </section>
+                                    </section>
+
+                                    <!-- Selector de nivel deportivo -->
+                                    <section class="campo">
+                                        <header class="campo-cab">
+                                            <label class="campo-label">Nivel deportivo recomendado</label>
+                                            <span class="campo-nota">Rango Playtomic / FEP</span>
+                                        </header>
+                                        <menu class="niveles">
+                                            <button class="nivel" type="button">
+                                                <strong class="nivel-nombre">Iniciación</strong>
+                                                <span class="nivel-rango">1.0 - 2.5</span>
+                                            </button>
+                                            <button class="nivel" type="button">
+                                                <strong class="nivel-nombre">Intermedio</strong>
+                                                <span class="nivel-rango">3.0 - 3.5</span>
+                                                <span class="nivel-check">✓</span>
+                                            </button>
+                                            <button class="nivel" type="button">
+                                                <strong class="nivel-nombre">Avanzado</strong>
+                                                <span class="nivel-rango">4.0 - 4.5</span>
+                                            </button>
+                                            <button class="nivel" type="button">
+                                                <strong class="nivel-nombre">Competición</strong>
+                                                <span class="nivel-rango">5.0 +</span>
+                                            </button>
+                                        </menu>
+                                    </section>
+
+                                    <!-- Opciones de enfoque de la clase -->
+                                    <section class="campo">
+                                        <label class="campo-label">Enfoque pedagógico principal</label>
+                                        <nav class="enfoques">
+                                            <button class="enfoque" type="button">
+                                                <span class="icono">sports_score</span>
+                                                <span class="enfoque-texto">Técnico de Golpeo</span>
+                                            </button>
+                                            <button class="enfoque" type="button">
+                                                <span class="icono">radar</span>
+                                                <span class="enfoque-texto">Táctico &amp; Posicionamiento</span>
+                                            </button>
+                                            <button class="enfoque" type="button">
+                                                <span class="icono">fitness_center</span>
+                                                <span class="enfoque-texto">Físico específico de pádel</span>
+                                            </button>
+                                        </nav>
+                                    </section>
+                                </section>
+                            </article>
+
+                            <!-- Sección 2: Asignación de monitor y pista -->
+                            <article class="bloque">
+                                <header class="bloque-cab">
+                                    <figure class="bloque-num">2</figure>
+                                    <h2 class="bloque-h2">Monitor Titular y Asignación de Recursos</h2>
+                                </header>
+                                <section class="bloque-cuerpo bloque-doble">
+
+                                    <!-- Selección de monitor -->
+                                    <section class="campo">
+                                        <label class="campo-label">Entrenador titular asignado</label>
+                                        <article class="tarjeta">
+                                            <section class="tarjeta-info">
+                                                <figure class="iniciales">CR</figure>
+                                                <section class="tarjeta-texto">
+                                                    <strong class="tarjeta-nombre">Carlos Rodríguez</strong>
+                                                    <span class="tarjeta-detalle">Nivel II FEP · Titular</span>
+                                                </section>
+                                            </section>
+                                            <aside class="estado">
+                                                <figure class="estado-punto"></figure>
+                                                <span class="estado-texto">Libre</span>
+                                            </aside>
+                                        </article>
+                                        <footer class="suplentes">
+                                            <span class="suplentes-label">Suplentes:</span>
+                                            <a class="suplente">Marta Sánchez</a>
+                                            <span class="punto-medio">·</span>
+                                            <a class="suplente">Álex Pérez</a>
+                                        </footer>
+                                    </section>
+
+                                    <!-- Selección de pista -->
+                                    <section class="campo">
+                                        <label class="campo-label">Pista de juego bloqueada</label>
+                                        <article class="tarjeta">
+                                            <section class="tarjeta-info">
+                                                <figure class="pista-icono">
+                                                    <span class="icono">stadium</span>
+                                                </figure>
+                                                <section class="tarjeta-texto">
+                                                    <strong class="tarjeta-nombre">Pista 2 · Central</strong>
+                                                    <span class="tarjeta-detalle">Cubierta · Cristal Panorámico</span>
+                                                </section>
+                                            </section>
+                                            <span class="icono">expand_more</span>
+                                        </article>
+                                        <footer class="ayuda-pista">
+                                            <span class="icono">verified</span>
+                                            <span class="ayuda-texto">Pista libre y climatizada en este horario</span>
+                                        </footer>
+                                    </section>
+
+                                </section>
+                            </article>
+
+                            <!-- Sección 3: Configuración de horarios -->
+                            <article class="bloque">
+                                <header class="bloque-cab">
+                                    <figure class="bloque-num">3</figure>
+                                    <h2 class="bloque-h2">Calendario, Frecuencia y Horario</h2>
+                                </header>
+                                <section class="bloque-cuerpo bloque-doble">
+                                    <section class="campo">
+                                        <label class="campo-label">Tipo de programación</label>
+                                        <nav class="opciones">
+                                            <button class="opcion" type="button">
+                                                <span class="icono">event</span>
+                                                <span class="opcion-texto">Sesión Única</span>
+                                            </button>
+                                            <button class="opcion" type="button">
+                                                <span class="icono">repeat</span>
+                                                <span class="opcion-texto">Recurrente Semanal</span>
+                                            </button>
+                                        </nav>
+                                    </section>
+                                    <section class="campo">
+                                        <label class="campo-label">Franja horaria y duración</label>
+                                        <article class="horario">
+                                            <section class="horario-fecha">
+                                                <span class="icono">schedule</span>
+                                                <strong class="horario-dia">Jueves 1 Octubre</strong>
+                                            </section>
+                                            <aside class="horario-hora">
+                                                <strong class="horario-rango">18:30 - 20:00 h</strong>
+                                                <span class="horario-duracion">(90 min)</span>
+                                            </aside>
+                                        </article>
+                                    </section>
+                                </section>
+                            </article>
+
+                            <!-- Sección 4: Configuración de plazas -->
+                            <article class="bloque">
+                                <header class="bloque-cab">
+                                    <figure class="bloque-num">4</figure>
+                                    <h2 class="bloque-h2">Aforo y Ratio Alumno / Pista</h2>
+                                </header>
+                                <section class="aforo">
+                                    <section class="aforo-info">
+                                        <strong class="aforo-titulo">Aforo máximo por clase</strong>
+                                        <p class="aforo-nota">Recomendación metodológica: Máximo 4 alumnos para optimizar toques y corrección técnica.</p>
+                                    </section>
+                                    <aside class="contador">
+                                        <button class="contador-boton" type="button">-</button>
+                                        <strong class="contador-valor">4</strong>
+                                        <button class="contador-boton" type="button">+</button>
+                                    </aside>
+                                </section>
+
+                                <label class="espera">
+                                    <input checked="" class="casilla" type="checkbox">
+                                    <section class="espera-texto">
+                                        <strong class="espera-titulo">Activar lista de espera inteligente automática</strong>
+                                        <p class="espera-nota">Al completarse las 4 plazas, los socios en espera recibirán una notificación push con 15 minutos de reserva prioritaria si alguien cancela.</p>
+                                    </section>
+                                </label>
+                            </article>
+
+                            <!-- Sección 5: Precios -->
+                            <article class="bloque">
+                                <header class="bloque-cab">
+                                    <figure class="bloque-num">5</figure>
+                                    <h2 class="bloque-h2">Tarifas y Bonificaciones</h2>
+                                </header>
+                                <section class="bloque-cuerpo bloque-doble">
+                                    <section class="campo">
+                                        <label class="campo-label">Precio Alumno Socio / Abonado</label>
+                                        <section class="precio">
+                                            <input class="precio-input" type="text" value="14,00">
+                                            <span class="precio-unidad">€ / clase</span>
+                                        </section>
+                                    </section>
+                                    <section class="campo">
+                                        <label class="campo-label">Precio Alumno No Socio / Invitado</label>
+                                        <section class="precio">
+                                            <input class="precio-input" type="text" value="18,00">
+                                            <span class="precio-unidad">€ / clase</span>
+                                        </section>
+                                    </section>
+                                </section>
+
+                                <article class="bono">
+                                    <section class="bono-info">
+                                        <span class="icono">confirmation_number</span>
+                                        <section class="bono-texto">
+                                            <strong class="bono-titulo">Admite canje de Bonos de Escuela</strong>
+                                            <span class="bono-nota">Descontar 1 crédito de packs 'Bono 5 / 10 Clases Dirigidas'</span>
+                                        </section>
+                                    </section>
+                                    <input checked="" class="casilla" type="checkbox">
+                                </article>
+                            </article>
+
+                        </section>
+
+                        <!-- COLUMNA DERECHA: Resumen, vista de app y acciones -->
+                        <aside class="lateral">
+
+                            <!-- Panel de control de alumnos asignados -->
+                            <article class="panel">
+                                <header class="panel-cab">
+                                    <section class="panel-titulo">
+                                        <h3 class="panel-h3">Alumnos Asignados</h3>
+                                        <span class="plazas">2 / 4 plazas</span>
+                                    </section>
+                                    <button class="boton-mini" type="button">+ Lista rápida</button>
+                                </header>
+
+                                <!-- Lista de plazas -->
+                                <ul class="alumnos">
+                                    <!-- Plaza ocupada 1 -->
+                                    <li class="alumno">
+                                        <section class="alumno-info">
+                                            <figure class="iniciales">LM</figure>
+                                            <section class="alumno-texto">
+                                                <header class="alumno-fila">
+                                                    <strong class="alumno-nombre">Laura Méndez</strong>
+                                                    <span class="alumno-id">#1042</span>
+                                                </header>
+                                                <span class="alumno-detalle">Nivel 3.5 Intermedio · Bono Escuela (3 rest.)</span>
+                                            </section>
+                                        </section>
+                                        <span class="alumno-estado">Confirmado</span>
+                                    </li>
+
+                                    <!-- Plaza ocupada 2 -->
+                                    <li class="alumno">
+                                        <section class="alumno-info">
+                                            <figure class="iniciales">DR</figure>
+                                            <section class="alumno-texto">
+                                                <header class="alumno-fila">
+                                                    <strong class="alumno-nombre">Diego Ruiz</strong>
+                                                    <span class="alumno-id">Invitado</span>
+                                                </header>
+                                                <span class="alumno-detalle">Nivel 3.0 · Abonado TPV (18,00 €)</span>
+                                            </section>
+                                        </section>
+                                        <span class="alumno-estado">Confirmado</span>
+                                    </li>
+
+                                    <!-- Acción para añadir alumno manualmente -->
+                                    <li class="alumno-nuevo">
+                                        <button class="boton-inscribir" type="button">
+                                            <span class="icono">person_add</span>
+                                            <span class="boton-texto">Inscribir Socio / Buscar por DNI o Apellidos</span>
+                                        </button>
+                                    </li>
+
+                                    <!-- Plaza libre disponible para la App -->
+                                    <li class="plaza-libre">
+                                        <section class="plaza-libre-info">
+                                            <span class="icono">smartphone</span>
+                                            <span class="plaza-libre-texto">Plaza 4: Disponible para reserva pública en App</span>
+                                        </section>
+                                        <figure class="plaza-libre-punto"></figure>
+                                    </li>
+                                </ul>
+                            </article>
+
+                            <!-- Simulador de vista de la App para el socio -->
+                            <article class="vista-app">
+                                <header class="vista-cab">
+                                    <span class="vista-etiqueta">Vista en tiempo real</span>
+                                    <section class="vista-ojo">
+                                        <span class="icono">visibility</span>
+                                        <span class="vista-texto">App del Socio</span>
+                                    </section>
+                                </header>
+
+                                <!-- Interfaz del teléfono móvil simulada -->
+                                <section class="movil">
+                                    <header class="movil-cab">
+                                        <span class="movil-nivel">Nivel Intermedio · 3.0 - 3.5</span>
+                                        <strong class="movil-precio">14,00 €</strong>
+                                    </header>
+
+                                    <section class="movil-cuerpo">
+                                        <h4 class="movil-titulo">Técnica de Víbora, Bandeja y Aceleración</h4>
+                                        <p class="movil-hora">
+                                            <span class="icono">schedule</span>
+                                            Jueves 1 Octubre · 18:30 - 20:00 h
+                                        </p>
+                                    </section>
+
+                                    <footer class="movil-pie">
+                                        <section class="movil-monitor">
+                                            <figure class="iniciales-mini">CR</figure>
+                                            <span class="movil-monitor-nombre">Carlos Rodríguez (FEP)</span>
+                                        </section>
+                                        <aside class="movil-plazas">
+                                            <figure class="punto-verde"></figure>
+                                            <span class="movil-plazas-texto">2 plazas libres</span>
+                                        </aside>
+                                    </footer>
+
+                                    <button class="movil-boton" type="button">
+                                        <span class="movil-boton-texto">Inscribirme en esta clase</span>
+                                        <span class="icono">arrow_forward</span>
+                                    </button>
+                                </section>
+                            </article>
+
+                            <!-- Widget estadístico de rentabilidad de la clase -->
+                            <article class="balance">
+                                <header class="balance-cab">
+                                    <span class="balance-titulo">Balance de Rentabilidad</span>
+                                    <span class="icono">trending_up</span>
+                                </header>
+
+                                <section class="balance-cifras">
+                                    <article class="cifra">
+                                        <span class="cifra-label">Ingresos Brutos</span>
+                                        <strong class="cifra-valor">64,00 €</strong>
+                                        <span class="cifra-nota">Aforo completo</span>
+                                    </article>
+                                    <article class="cifra">
+                                        <span class="cifra-label">Monitor</span>
+                                        <strong class="cifra-valor">-30,00 €</strong>
+                                        <span class="cifra-nota">Honorario 90'</span>
+                                    </article>
+                                    <article class="cifra">
+                                        <span class="cifra-label">Margen Club</span>
+                                        <strong class="cifra-valor">+34,00 €</strong>
+                                        <span class="cifra-nota">53.1% Margen</span>
+                                    </article>
+                                </section>
+
+                                <!-- Barra de equilibrio -->
+                                <figure class="balance-barra">
+                                    <section class="balance-relleno"></section>
+                                </figure>
+
+                                <footer class="balance-pie">
+                                    <span class="balance-equilibrio">Punto de equilibrio: 2 alumnos (Cubierto)</span>
+                                    <strong class="balance-estado">Beneficio activo</strong>
+                                </footer>
+
+                                <figure class="decoracion"></figure> <!-- Elemento decorativo de fondo -->
+                            </article>
+
+                            <!-- Panel inferior o flotante con las acciones de guardado -->
+                            <section class="acciones">
+                                <button class="boton-publicar" type="button">
+                                    <span class="icono">publish</span>
+                                    <strong class="boton-texto">Publicar Clase y Abrir Inscripciones</strong>
+                                </button>
+                                <nav class="acciones-sec">
+                                    <button class="boton-sec" type="button">Guardar borrador interno</button>
+                                    <button class="boton-sec" type="button">Cancelar</button>
+                                </nav>
+                            </section>
+
+                        </aside>
+
+                    </section>
+                </section>
+            </section>
+        </main>
+    </section>
+
+</body>
+</html>

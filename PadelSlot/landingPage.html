@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es" class="pagina">
+<head class="cabeceraPagina">
+    <meta charset="utf-8" class="configuracionMeta">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" class="configuracionMeta">
+    <title class="tituloPagina">Acceso Socios - PadelSlot Plataforma de Clubes</title>
+    
+    <!-- CDN de Tailwind CSS con plugins de formularios y contenedores -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries" class="scriptTailwind"></script>
+    
+    <!-- Configuración personalizada de Tailwind -->
+    <script data-purpose="tailwind-config" class="configuracionTailwind">
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                brand: {
+                  forest: '#134e3a',
+                  forestHover: '#0e3b2c',
+                  lime: '#d2f822',
+                  softLime: '#f2fce2',
+                  cardBg: '#f0f3fd',
+                  lightGray: '#f8fafc',
+                  borderLight: '#e4e7ec',
+                }
+              },
+              fontFamily: {
+                sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+              }
+            }
+          }
+        }
+    </script>
+    
+    <!-- Estilos de decoración personalizada -->
+    <style data-purpose="custom-decorations" class="estilosDecoracion">
+        .crosshair-pattern {
+          background-image: 
+            radial-gradient(circle, #e2e8f0 1.5px, transparent 1.5px),
+            linear-gradient(to right, rgba(226, 232, 240, 0.4) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
+          background-size: 24px 24px, 48px 48px, 48px 48px;
+        }
+        .custom-shadow-panel {
+          box-shadow: 0 4px 25px -4px rgba(19, 78, 58, 0.05), 0 2px 10px -2px rgba(0, 0, 0, 0.03);
+        }
+        .custom-shadow-card {
+          box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04), 0 4px 12px -2px rgba(0, 0, 0, 0.02);
+        }
+    </style>
+</head>
+
+<body class="cuerpoPagina">
+
+    <!-- Encabezado superior principal de la plataforma -->
+    <header data-purpose="site-header" class="cabeceraPrincipal">
+        <section class="contenedorCabecera">
+            
+            <!-- Logotipo y nombre de la marca -->
+            <section class="marca">
+                <figure class="logoMarca">
+                    <figure class="iconoMarca">P</figure>
+                    <span class="nombreMarca">PadelSlot</span>
+                </figure>
+                <figure class="separadorMarca"></figure>
+                <span class="tipoPlataforma">Plataforma de Clubes</span>
+            </section>
+            
+            <!-- Menú de navegación principal -->
+            <nav aria-label="Navegación principal" class="menuNavegacion">
+                <a href="#portal-publico" class="enlaceNavegacion">Portal Público</a>
+                <a href="#ayuda" class="enlaceNavegacion">Ayuda</a>
+                <a aria-label="Perfil de usuario" href="#acceso" class="enlacePerfil">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="iconoPerfil">
+                        <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="trazoIcono"></path>
+                    </svg>
+                </a>
+            </nav>
+        </section>
+    </header>
+
+    <!-- Área de contenido principal -->
+    <main class="contenidoPrincipal">
+        
+        <!-- Barra superior de estado y migas de pan -->
+        <header data-purpose="status-bar" class="barraEstado">
+            <nav aria-label="Breadcrumb" class="migasPan">
+                <section class="ubicacionPortal">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="iconoBusqueda">
+                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="trazoIcono"></path>
+                    </svg>
+                    <strong class="nombrePortal">Portal Oficial</strong>
+                </section>
+                <span class="separadorRuta">/</span>
+                <span class="versionSistema">Sincronizado v2.4</span>
+            </nav>
+            <section class="estadoSistema">
+                <figure class="indicadorEstado">
+                    <span class="puntoEstado"></span>
+                    <span class="textoEstado"></span>
+                </figure>
+            </section>
+        </header>
+
+        <!-- Distribución principal en dos columnas -->
+        <section class="contenidoDosColumnas">
+            
+            <!-- COLUMNA IZQUIERDA: Formulario de inicio de sesión de socio -->
+            <section aria-labelledby="member-login-title" class="columnaAcceso">
+                
+                <!-- Pestañas de conmutación: Socio vs Administrador -->
+                <menu data-purpose="role-selector-tabs" class="selectorRoles">
+                    <button aria-current="page" type="button" class="botonSocioActivo">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="iconoSocio">
+                            <circle cx="12" cy="12" r="10" class="circuloSocio"></circle>
+                            <path d="M5.3 5.3c3.5 3.5 3.5 9.9 0 13.4" class="trazoSocio"></path>
+                            <path d="M18.7 5.3c-3.5-3.5-3.5-9.9 0 13.4" class="trazoSocio"></path>
+                        </svg>
+                        <span class="nombreRol">Socio del Club</span>
+                        <span class="estadoRol">Activo</span>
+                    </button>
+                    <a href="#" class="enlaceAdministrador">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="iconoAdministrador">
+                            <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="trazoIcono"></path>
+                        </svg>
+                        <span class="nombreAdministrador">Administrador / Staff</span>
+                        <span class="seguridadDosFactores">2FA</span>
+                    </a>
+                </menu>
+
+                <!-- Tarjeta contenedora del formulario -->
+                <article data-purpose="member-login-card" class="tarjetaAcceso">
+                    
+                    <!-- Encabezado del formulario -->
+                    <header class="cabeceraAcceso">
+                        <section class="tituloAcceso">
+                            <h1 id="member-login-title" class="tituloFormulario">Acceso Socios del Club</h1>
+                            <p class="subtituloFormulario">Identificación de abonados y federados</p>
+                        </section>
+                        <span class="versionPortal">Portal de Socios v3.8</span>
+                    </header>
+
+                    <!-- Aviso informativo sobre ventajas de socio -->
+                    <aside class="avisoSocio">
+                        <figure class="iconoAviso">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="iconoTarjeta">
+                                <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="trazoIcono"></path>
+                            </svg>
+                        </figure>
+                        <section class="contenidoAviso">
+                            <strong class="tituloAviso">Área privada para socios con carnet en vigor</strong>
+                            Reserva anticipada con tarifa bonificada, acceso por matrícula a parking, recarga de monedero de pistas y partidos abiertos.
+                        </section>
+                    </aside>
+
+                    <!-- Formulario de autenticación -->
+                    <form action="#" data-purpose="member-auth-form" method="POST" class="formularioAcceso">
+                        
+                        <!-- Campo 1: Identificador de socio -->
+                        <section class="grupoCampo">
+                            <label for="member-identifier" class="etiquetaCampo">Nº de Socio o Correo Electrónico</label>
+                            <section class="contenedorCampo">
+                                <figure class="iconoCampo">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="iconoUsuario">
+                                        <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" class="trazoIcono"></path>
+                                    </svg>
+                                </figure>
+                                <input id="member-identifier" name="member-identifier" placeholder="socio@padelsevilla.es o Nº 1042" required="" type="text" class="campoIdentificador">
+                            </section>
+                        </section>
+
+                        <!-- Campo 2: Contraseña -->
+                        <section class="grupoCampo">
+                            <header class="cabeceraCampo">
+                                <label for="member-password" class="etiquetaCampo">Contraseña de Socio</label>
+                                <a href="#recuperar-password" class="enlaceRecuperar">¿Olvidaste tu contraseña o PIN?</a>
+                            </header>
+                            <section class="contenedorCampo">
+                                <figure class="iconoCampo">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="iconoPassword">
+                                        <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" class="trazoIcono"></path>
+                                    </svg>
+                                </figure>
+                                <input id="member-password" name="member-password" placeholder="••••••••" required="" type="password" value="password123" class="campoPassword">
+                                <button aria-label="Mostrar contraseña" type="button" class="botonMostrarPassword">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="iconoMostrarPassword">
+                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" class="trazoIcono"></path>
+                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" class="trazoIcono"></path>
+                                    </svg>
+                                </button>
+                            </section>
+                        </section>
+
+                        <!-- Opción de recordar sesión -->
+                        <section class="opcionSesion">
+                            <label class="etiquetaSesion">
+                                <input checked="" type="checkbox" class="casillaSesion">
+                                <span class="textoSesion">Mantener mi sesión iniciada en este equipo</span>
+                            </label>
+                        </section>
+
+                        <!-- Aviso de acceso rápido mediante QR -->
+                        <aside class="avisoQr">
+                            <section class="contenidoQr">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="iconoQr">
+                                    <path d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="trazoQr"></path>
+                                </svg>
+                                <span class="textoQr">¿Prefieres entrar desde tu móvil?</span>
+                            </section>
+                            <a href="#qr-login" class="enlaceQr">
+                                Escanear Carnet QR
+                                <span class="flechaQr">→</span>
+                            </a>
+                        </aside>
+
+                        <!-- Botón de envío principal -->
+                        <button type="submit" class="botonAcceso">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="iconoAcceso">
+                                <circle cx="12" cy="12" r="10" class="circuloAcceso"></circle>
+                                <path d="M12 8v8m-4-4h8" class="trazoAcceso"></path>
+                            </svg>
+                            <span class="textoBotonAcceso">Entrar a mi Portal de Socio</span>
+                        </button>
+                    </form>
+                </article>
+
+                <!-- Tarjeta alternativa para jugadores invitados -->
+                <article data-purpose="guest-fallback-card" class="tarjetaInvitado">
+                    <section class="contenidoInvitado">
+                        <figure class="iconoInvitado">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="iconoUsuarioInvitado">
+                                <path d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="trazoIcono"></path>
+                            </svg>
+                        </figure>
+                        <section class="textoInvitado">
+                            <strong class="tituloInvitado">¿No eres socio ni deseas registrarte hoy?</strong>
+                            <p class="descripcionInvitado">Puedes alquilar pistas libres como jugador invitado.</p>
+                        </section>
+                    </section>
+                    <a href="#reserva-invitado" class="enlaceInvitado">
+                        <span class="textoReservaInvitado">Reservar como invitado</span>
+                        <span class="precioInvitado">(+3 €)</span>
+                        <span class="flechaInvitado">→</span>
+                    </a>
+                </article>
+            </section>
+
+            <!-- COLUMNA DERECHA: Presentación del club y características SaaS -->
+            <aside aria-label="Información del Club" class="columnaInformacion">
+                
+                <!-- Panel de propuesta de valor -->
+                <article data-purpose="club-info-panel" class="panelClub">
+                    
+                    <!-- Elemento decorativo de fondo -->
+                    <figure class="decoracionPanel">
+                        <figure class="formaDecorativa"></figure>
+                        <figure class="formaDecorativa"></figure>
+                        <figure class="formaDecorativa"></figure>
+                    </figure>
+                    
+                    <section class="contenidoPanel">
+                        <!-- Badge de categoría -->
+                        <section class="etiquetaPlataforma">
+                            <span class="puntoPlataforma"></span>
+                            <span class="nombrePlataforma">PadelSlot Enterprise Suite</span>
+                        </section>
+
+                        <!-- Título de impacto -->
+                        <h2 class="tituloPanel">Tu club de pádel, digitalizado y conectado en un solo lugar.</h2>
+                        
+                        <p class="descripcionPanel">Accede a tus reservas de pista en tiempo real, seguimiento técnico de la escuela deportiva, bonos de clases y control de acceso inteligente.</p>
+
+                        <!-- Tarjeta de característica 1: Tarifa bonificada -->
+                        <article class="tarjetaCaracteristica">
+                            <section class="contenidoCaracteristica">
+                                <figure class="iconoCaracteristica">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="iconoPago">
+                                        <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="trazoIcono"></path>
+                                    </svg>
+                                </figure>
+                                <section class="textoCaracteristica">
+                                    <header class="cabeceraCaracteristica">
+                                        <strong class="tituloCaracteristica">Portal del Socio</strong>
+                                        <span class="etiquetaTarifa">Tarifa Bonificada</span>
+                                    </header>
+                                    <p class="descripcionCaracteristica">Carnet virtual NFC y ranking mensual del club.</p>
+                                </section>
+                            </section>
+                            <span class="flechaCaracteristica">›</span>
+                        </article>
+
+                        <!-- Tarjeta de característica 2: Monitor de ocupación en vivo -->
+                        <article class="tarjetaOcupacion">
+                            <header class="cabeceraOcupacion">
+                                <section class="tituloOcupacion">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="iconoOcupacion">
+                                        <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="trazoIcono"></path>
+                                    </svg>
+                                    <strong class="nombreOcupacion">Monitor en Vivo del Club</strong>
+                                </section>
+                                <span class="porcentajeOcupacion">Ocupación hoy 76%</span>
+                            </header>
+
+                            <!-- Barra de progreso -->
+                            <figure class="barraProgreso">
+                                <section class="progresoOcupacion"></section>
+                            </figure>
+
+                            <!-- Indicadores del sistema -->
+                            <footer class="indicadoresSistema">
+                                <span class="indicadorSistema"><span class="puntoVerde"></span> Tornos • Auto</span>
+                                <span class="indicadorSistema"><span class="puntoVerde"></span> Focos LED • Sincro</span>
+                                <span class="indicadorSistema"><span class="puntoVerde"></span> Domiciliación SEPA</span>
+                            </footer>
+                        </article>
+
+                        <!-- Imagen de las instalaciones del club -->
+                        <figure class="imagenClub">
+                            <img alt="Instalaciones del Club de Pádel Sevilla" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6yt4HiW0O_UGj6folHHOysrnaNd5QJfvvToOLulc_6SelTvr4e71Hyhj7Q3OQNEv37KyFqau550RG8P35VuSWD6_AP0GY5frjRvPP4QqFw-07hUj8Ti1-uo3sNQitWHx0EddsuxlKOyLKw1XT6nG-UjMRBXSmDN6JIx6mqDg8zoBTXc4CDvohzlScZDGBLZRjQL-oNC42ySV8tyRfL7xXn0ZjL7hqqQdlIAcmwGzqoZI7v0bxd8_l6xPcw8vNwSy_IQ" class="fotoClub">
+                            <figcaption class="pieImagen">
+                                <h3 class="tituloImagen">Club de Pádel Sevilla • 14 Pistas Pro</h3>
+                                <p class="descripcionImagen">Más de 480 socios activos compitiendo esta semana.</p>
+                            </figcaption>
+                        </figure>
+
+                        <!-- Garantía de seguridad -->
+                        <footer class="garantiaSeguridad">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="iconoSeguridad">
+                                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="trazoSeguridad"></path>
+                            </svg>
+                            <span class="textoSeguridad">Cifrado SSL 256 bits • Conforme RGPD • Pasarela SEPA / Redsys</span>
+                        </footer>
+                    </section>
+                </article>
+
+                <!-- Tarjeta de atención telefónica / soporte -->
+                <article data-purpose="reception-support-card" class="tarjetaSoporte">
+                    <section class="contenidoSoporte">
+                        <figure class="iconoSoporte">?</figure>
+                        <section class="textoSoporte">
+                            <strong class="tituloSoporte">¿Dudas con tu carnet o contraseña?</strong>
+                            <p class="descripcionSoporte">Llama a recepción de pista: <strong class="telefonoSoporte">+34 954 00 12 34</strong></p>
+                        </section>
+                    </section>
+                    <a href="tel:+34954001234" class="enlaceSoporte">Soporte</a>
+                </article>
+            </aside>
+
+        </section>
+    </main>
+
+    <!-- Pie de página de la plataforma -->
+    <footer data-purpose="site-footer" class="piePagina">
+        <section class="contenedorPie">
+            
+            <!-- Derechos de autor -->
+            <section class="derechosAutor">
+                <p>© 2025 PadelSlot SaaS. <span class="descripcionCopyright">Plataforma de gestión club white-label.</span></p>
+            </section>
+            
+            <!-- Enlaces legales -->
+            <nav aria-label="Enlaces legales y de soporte" class="enlacesLegales">
+                <a href="#soporte" class="enlaceLegal">Soporte</a>
+                <a href="#privacidad" class="enlaceLegal">Privacidad</a>
+                <a href="#terminos" class="enlaceLegal">Términos de servicio</a>
+                <a href="#estado" class="enlaceLegal">Estado del sistema</a>
+            </nav>
+        </section>
+    </footer>
+
+</body>
+</html>
