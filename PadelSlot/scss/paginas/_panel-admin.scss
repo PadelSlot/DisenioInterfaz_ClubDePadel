@@ -1,0 +1,16 @@
+@use '../mixins';
+@use '../espaciados';
+
+.panel-admin {
+    display: flex;
+    flex-direction: column;
+
+    @include mixins.desde(escritorio) {
+        flex-direction: row;
+    }
+
+    &__contenido {
+        flex: 1;
+        padding: espaciados.$espacio-l;
+    }
+}

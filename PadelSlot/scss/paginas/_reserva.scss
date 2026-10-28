@@ -1,0 +1,14 @@
+@use '../mixins';
+@use '../espaciados';
+@use '../colores';
+
+.reserva {
+    @include mixins.contenedor;
+    padding-block: espaciados.$espacio-l;
+
+    &__cuadrante {
+        display: grid;
+        gap: espaciados.$espacio-m;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}

@@ -1,0 +1,7 @@
+@use '../mixins';
+@use '../espaciados';
+
+.inicio-socio {
+    @include mixins.contenedor;
+    padding-block: espaciados.$espacio-l;
+}

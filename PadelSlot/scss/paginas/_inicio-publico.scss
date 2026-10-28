@@ -1,0 +1,10 @@
+@use '../mixins';
+@use '../espaciados';
+
+.inicio-publico {
+    &__hero {
+        @include mixins.contenedor;
+        padding-block: espaciados.$espacio-xxl;
+        text-align: center;
+    }
+}
