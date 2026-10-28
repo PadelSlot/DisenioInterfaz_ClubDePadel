@@ -1,5 +1,7 @@
 @use '../colores';
 @use '../espaciados';
+@use '../mixins';
+@use '../fuentes';
 
 .barra-lateral {
     width: 100%;

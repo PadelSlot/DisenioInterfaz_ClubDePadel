@@ -1,0 +1,125 @@
+@use '../colores';
+@use '../fuentes';
+@use '../espaciados';
+@use '../mixins';
+
+// BLOQUE pie
+.pie {
+  --color-foco: #{colores.$color-terciario};
+  margin-top: espaciados.$espacio-xxl;
+  background: colores.$color-primario;
+  color: colores.$color-secundario;
+
+  &__contenido {
+    @include mixins.contenedor;
+    display: grid;
+    gap: espaciados.$espacio-xl;
+    padding-block: espaciados.$espacio-xl;
+  }
+
+  &__columnas {
+    display: grid;
+    gap: espaciados.$espacio-xl;
+
+    @include mixins.desde(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mixins.desde(escritorio) {
+      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+    }
+  }
+
+  &__info,
+  &__enlaces,
+  &__contacto {
+    display: grid;
+    align-content: start;
+    gap: espaciados.$espacio-s;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: espaciados.$espacio-xs;
+    font-family: fuentes.$fuente-titulo;
+    font-size: 1.2rem;
+    font-weight: fuentes.$peso-negrita;
+  }
+
+  &__logo-icono {
+    @include mixins.flex-centrado;
+    width: mixins.rem(32);
+    height: mixins.rem(32);
+    border-radius: espaciados.$radio-s;
+    background: colores.$color-terciario;
+    color: colores.$color-titulo;
+  }
+
+  &__descripcion,
+  &__dato {
+    font-size: fuentes.$tamano-pequeno;
+  }
+
+  &__titulo {
+    font-size: 1rem;
+    color: colores.$color-terciario;
+  }
+
+  &__lista {
+    display: grid;
+    gap: espaciados.$espacio-xs;
+  }
+
+  &__enlace,
+  &__enlace-legal {
+    transition: color espaciados.$transicion;
+
+    &:hover {
+      color: colores.$color-terciario;
+      text-decoration: underline;
+    }
+  }
+
+  &__enlace {
+    font-size: fuentes.$tamano-pequeno;
+  }
+
+  &__dato {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  &__icono-contacto {
+    color: colores.$color-terciario;
+  }
+
+  &__version {
+    justify-self: start;
+    padding: 0.15rem 0.65rem;
+    border: 1px solid colores.$color-terciario;
+    border-radius: espaciados.$radio-pastilla;
+    font-size: 0.75rem;
+    color: colores.$color-terciario;
+  }
+
+  &__legal {
+    display: flex;
+    flex-direction: column;
+    gap: espaciados.$espacio-s;
+    padding-top: espaciados.$espacio-m;
+    border-top: 1px solid colores.$color-claro-hover;
+    font-size: 0.8rem;
+
+    @include mixins.desde(tablet) {
+      @include mixins.flex-entre;
+      flex-direction: row;
+    }
+  }
+
+  &__enlaces-legales {
+    display: flex;
+    flex-wrap: wrap;
+    gap: espaciados.$espacio-m;
+  }
+}

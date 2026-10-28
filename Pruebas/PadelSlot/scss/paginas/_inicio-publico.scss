@@ -1,0 +1,348 @@
+@use '../colores';
+@use '../fuentes';
+@use '../espaciados';
+@use '../mixins';
+
+// ---------- Sección 1: ventajas para socios y pistas de hoy ----------
+
+// BLOQUE ventajas
+.ventajas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: espaciados.$espacio-m;
+
+  &__titulo {
+    font-size: 2.25rem;
+
+    @include mixins.desde(escritorio) {
+      font-size: fuentes.$tamano-h1;
+    }
+  }
+
+  &__texto {
+    max-width: 38rem;
+  }
+
+  &__destacado {
+    font-weight: fuentes.$peso-medio;
+    color: colores.$color-titulo;
+  }
+
+  &__lista {
+    display: grid;
+    gap: espaciados.$espacio-xs;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: espaciados.$espacio-xs;
+    color: colores.$color-titulo;
+  }
+
+  &__icono {
+    font-size: 1.25rem;
+    color: colores.$color-primario;
+  }
+
+  &__aviso {
+    display: flex;
+    align-items: flex-start;
+    gap: espaciados.$espacio-xs;
+    padding: espaciados.$espacio-s espaciados.$espacio-m;
+    border-radius: espaciados.$radio-s;
+    background: colores.$color-terciario;
+    font-size: fuentes.$tamano-pequeno;
+    color: colores.$color-titulo;
+  }
+
+  &__icono-aviso {
+    flex-shrink: 0;
+    font-size: 1.25rem;
+  }
+}
+
+// BLOQUE pistas-hoy
+.pistas-hoy {
+  @include mixins.tarjeta;
+  display: flex;
+  flex-direction: column;
+  gap: espaciados.$espacio-m;
+  padding: espaciados.$espacio-l;
+
+  &__cabecera {
+    @include mixins.flex-entre;
+  }
+
+  &__titulo {
+    font-family: fuentes.$fuente-titulo;
+    font-size: 1.15rem;
+    font-weight: fuentes.$peso-negrita;
+    color: colores.$color-titulo;
+  }
+
+  &__lista {
+    display: grid;
+    gap: espaciados.$espacio-s;
+  }
+}
+
+// ---------- Sección 2: pilares de valor ----------
+
+// BLOQUE imagen-app
+.imagen-app {
+  overflow: hidden;
+  border: 1px solid colores.$color-borde;
+  border-radius: espaciados.$radio-l;
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// BLOQUE pilares: la lista numera sus elementos con un pseudoelemento
+.pilares {
+  display: flex;
+  flex-direction: column;
+  gap: espaciados.$espacio-l;
+
+  &__lista {
+    display: grid;
+    gap: espaciados.$espacio-m;
+    counter-reset: pilar;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 3rem;
+    counter-increment: pilar;
+
+    &::before {
+      content: counter(pilar);
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include mixins.flex-centrado;
+      width: mixins.rem(32);
+      height: mixins.rem(32);
+      border-radius: 50%;
+      background: colores.$color-primario;
+      font-weight: fuentes.$peso-negrita;
+      color: colores.$color-secundario;
+    }
+  }
+
+  &__titulo {
+    font-size: 1.05rem;
+  }
+
+  &__texto {
+    font-size: fuentes.$tamano-pequeno;
+  }
+}
+
+// ---------- Sección 5: información comercial ----------
+
+// BLOQUE comercial (sobre fondo verde oscuro)
+.comercial {
+  display: flex;
+  flex-direction: column;
+  gap: espaciados.$espacio-m;
+
+  &__etiqueta {
+    font-size: 0.875rem;
+    font-weight: fuentes.$peso-negrita;
+    color: colores.$color-terciario;
+  }
+
+  &__titulo,
+  &__texto {
+    color: colores.$color-secundario;
+  }
+
+  &__beneficios {
+    display: grid;
+    gap: espaciados.$espacio-m;
+
+    @include mixins.desde(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: espaciados.$espacio-s;
+  }
+}
+
+// BLOQUE beneficio
+.beneficio {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: espaciados.$espacio-s;
+  align-items: start;
+
+  &__icono {
+    grid-row: span 2;
+    font-size: 1.6rem;
+    color: colores.$color-terciario;
+  }
+
+  &__titulo,
+  &__texto {
+    color: colores.$color-secundario;
+  }
+
+  &__texto {
+    font-size: fuentes.$tamano-pequeno;
+  }
+}
+
+// BLOQUE panel: ejemplo visual del panel de administración
+.panel {
+  @include mixins.tarjeta;
+  display: flex;
+  flex-direction: column;
+  gap: espaciados.$espacio-m;
+  padding: espaciados.$espacio-l;
+
+  &__titulo {
+    font-size: 1.1rem;
+  }
+
+  &__estado {
+    display: grid;
+    gap: espaciados.$espacio-s;
+    padding: espaciados.$espacio-m;
+    border-radius: espaciados.$radio-m;
+    background: colores.$color-fondo-suave;
+  }
+
+  &__cabecera {
+    @include mixins.flex-entre;
+    flex-wrap: wrap;
+    gap: espaciados.$espacio-xs;
+  }
+
+  &__subtitulo {
+    font-size: fuentes.$tamano-pequeno;
+    color: colores.$color-titulo;
+  }
+
+  &__lista {
+    display: grid;
+    gap: espaciados.$espacio-xs;
+  }
+
+  &__fila {
+    @include mixins.flex-entre;
+    flex-wrap: wrap;
+    gap: espaciados.$espacio-xs;
+    padding: 0.6rem 0.8rem;
+    border-radius: espaciados.$radio-s;
+    background: colores.$color-secundario;
+    font-size: fuentes.$tamano-pequeno;
+  }
+
+  &__nombre {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: colores.$color-titulo;
+  }
+
+  &__icono {
+    color: colores.$color-primario;
+  }
+
+  &__accion {
+    font-weight: fuentes.$peso-medio;
+    color: colores.$color-primario;
+  }
+}
+
+// ---------- Sección 6: preguntas frecuentes ----------
+
+// BLOQUE preguntas: contenedor de la lista
+.preguntas {
+  display: grid;
+  gap: espaciados.$espacio-s;
+  justify-self: center;
+  width: 100%;
+  max-width: 48rem;
+}
+
+// BLOQUE pregunta: <details> desplegable
+.pregunta {
+  @include mixins.tarjeta;
+  padding-inline: espaciados.$espacio-m;
+
+  &__titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: espaciados.$espacio-m;
+    padding-block: espaciados.$espacio-m;
+    font-weight: fuentes.$peso-medio;
+    color: colores.$color-titulo;
+    list-style: none;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: '+';
+      font-size: 1.5rem;
+      line-height: 1;
+      color: colores.$color-primario;
+    }
+  }
+
+  &[open] &__titulo::after {
+    content: '\2212';
+  }
+
+  &__respuesta {
+    padding-bottom: espaciados.$espacio-m;
+  }
+}
+
+// ---------- Sección 7: accesos directos ----------
+
+// BLOQUE acceso: los modificadores cambian el color, los elementos lo heredan
+.acceso {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: espaciados.$espacio-m;
+  padding: espaciados.$espacio-xl;
+  border-radius: espaciados.$radio-l;
+
+  &__etiqueta,
+  &__titulo,
+  &__descripcion {
+    color: inherit;
+  }
+
+  &__etiqueta {
+    font-size: 0.875rem;
+    font-weight: fuentes.$peso-negrita;
+  }
+
+  &--jugador {
+    background: colores.$color-terciario;
+    color: colores.$color-titulo;
+  }
+
+  &--gestor {
+    --color-foco: #{colores.$color-terciario};
+    background: colores.$color-primario;
+    color: colores.$color-secundario;
+  }
+}

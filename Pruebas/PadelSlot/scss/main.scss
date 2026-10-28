@@ -1,0 +1,15 @@
+// Punto de entrada: solo carga los parciales (el orden determina el del CSS final)
+
+// Base
+@use 'reset';
+
+// Componentes reutilizables
+@use 'componentes/seccion';
+@use 'componentes/boton';
+@use 'componentes/etiqueta';
+@use 'componentes/cabecera';
+@use 'componentes/tarjeta';
+@use 'componentes/pie';
+
+// Páginas
+@use 'paginas/inicio-publico';

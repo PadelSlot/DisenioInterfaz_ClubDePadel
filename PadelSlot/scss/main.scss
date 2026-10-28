@@ -1,1 +1,16 @@
 @use 'reseteo';
+
+// Componentes Reutilizables BEM
+@use 'componentes/boton';
+@use 'componentes/tarjeta';
+@use 'componentes/etiqueta';
+@use 'componentes/formulario';
+@use 'componentes/cabecera';
+@use 'componentes/barra-lateral';
+@use 'componentes/pie';
+
+// Páginas
+@use 'paginas/inicio-publico';
+@use 'paginas/inicio-socio';
+@use 'paginas/panel-admin';
+@use 'paginas/reserva';

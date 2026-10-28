@@ -1,4 +1,5 @@
 @use '../colores';
+@use 'sass:color';
 @use '../fuentes';
 @use '../espaciados';
 @use '../mixins';
@@ -38,7 +39,7 @@
             font-weight: fuentes.$peso-negrita;
 
             &:hover {
-                background-color: darken(colores.$color-terciario, 8%);
+                background-color: color.adjust(colores.$color-terciario, $lightness: -8%);
             }
         }
 
