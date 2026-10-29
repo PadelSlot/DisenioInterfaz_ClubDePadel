@@ -40,7 +40,7 @@ Todas las vistas se han maquetado bajo el estándar HTML5 Semántico, eliminando
 
 * **Propósito:** Panel de control personal para el socio autenticado dentro de una instalación de marca blanca.  
 * **Estructura Técnica:**  
-  * barraInformativa: Identifica la instalación activa dentro del entorno multi-tenant SaaS (*Club de Pádel Sevilla*).  
+  * barraInformativa: Identifica la instalación activa dentro del entorno multi-tenant SaaS (*Racket Club Sevilla*).  
   * bannerAcceso: Avisador diferenciador de políticas para jugadores no socios e invitados frente a abonados.  
   * tarjetaMembresia: Resumen de estado del socio que integra el valor de la cuota mensual, fecha de renovación y saldo actualizado del monedero virtual.  
   * seccionReservas: Módulo interactivo con filtro lateral de fechas y cuadrante con tarifas desglosadas por condición (Precio No Socio vs. Precio Socio).
