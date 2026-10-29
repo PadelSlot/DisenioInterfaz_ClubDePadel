@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir clase · PádelSlot Manager</title>
+
+    <!-- Fuentes: Space Grotesk (títulos) e Inter (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+    <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <link rel="stylesheet" href="scss/main.css">
+</head>
+
+<body class="panel-admin fondo-suave">
+
+    <!-- ============ BARRA LATERAL (escritorio) ============ -->
+    <aside class="barra-lateral panel-admin__lateral" aria-label="Menú del administrador">
+        <a href="inicioAdmin.html" class="panel-admin__marca">
+            <span class="logotipo logotipo--verde">P</span>
+            PádelSlot
+        </a>
+
+        <div class="panel-admin__club">
+            <span class="panel-admin__antetitulo">Club activo</span>
+            <strong class="panel-admin__club-nombre">Club de Pádel Sevilla</strong>
+            <span>Alcalá de Guadaíra</span>
+        </div>
+
+        <nav class="barra-lateral__menu">
+            <a href="inicioAdmin.html" class="barra-lateral__item">Inicio</a>
+            <a href="cuadranteAdmin.html" class="barra-lateral__item">Reservas y pistas</a>
+            <a href="progSemanalAdmin.html" class="barra-lateral__item barra-lateral__item--activo" aria-current="page">Escuela y clases</a>
+            <a href="sociosAdmin.html" class="barra-lateral__item">Socios</a>
+            <a href="cobroAdmin.html" class="barra-lateral__item">Pagos</a>
+            <a href="#" class="barra-lateral__item">Torneos y ligas</a>
+            <a href="serviciosAdmin.html" class="barra-lateral__item">Parking</a>
+            <a href="serviciosAdmin.html#bar" class="barra-lateral__item">Bar y restauración</a>
+            <a href="#" class="barra-lateral__item">Empleo</a>
+            <a href="incidenciasAdmin.html" class="barra-lateral__item">Incidencias</a>
+            <a href="#" class="barra-lateral__item">Informes</a>
+            <a href="configAdmin.html" class="barra-lateral__item">Configuración</a>
+        </nav>
+
+        <div class="panel-admin__promo">
+            <i class="ph ph-sparkle panel-admin__promo-icono" aria-hidden="true"></i>
+            <strong class="panel-admin__promo-titulo">Una sola plataforma</strong>
+            <p>Activa solo los módulos que necesita tu club.</p>
+        </div>
+    </aside>
+
+    <!-- ============ CONTENIDO ============ -->
+    <div class="panel-admin__contenido">
+
+        <!-- Barra superior -->
+        <header class="panel-admin__barra-superior">
+            <a href="inicioAdmin.html" class="panel-admin__marca panel-admin__marca--movil">
+                <span class="logotipo logotipo--verde">P</span>
+                PádelSlot
+            </a>
+
+            <form class="panel-admin__buscador" role="search">
+                <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" class="panel-admin__buscador-campo" placeholder="Buscar reserva, socio o pago…" aria-label="Buscar reserva, socio o pago">
+                <kbd class="panel-admin__atajo">⌘ K</kbd>
+            </form>
+
+            <div class="panel-admin__barra-acciones">
+                <a href="crearReservaAdmin.html" class="boton boton--primario navegacion-escritorio">
+                    <i class="ph ph-plus boton__icono" aria-hidden="true"></i>
+                    Crear reserva
+                </a>
+                <button type="button" class="boton-icono" aria-label="Notificaciones">
+                    <i class="ph ph-bell" aria-hidden="true"></i>
+                </button>
+                <div class="usuario">
+                    <span class="avatar">MR</span>
+                    <p class="usuario__datos">
+                        <span class="usuario__nombre">Marta R.</span>
+                        <span class="usuario__rol">Administradora</span>
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <main class="panel-admin__principal">
+            <header class="cabecera-pagina">
+                <div>
+                    <nav class="cabecera-pagina__migas" aria-label="Estás aquí">
+                        <a href="progSemanalAdmin.html" class="cabecera-pagina__miga">Escuela deportiva</a>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <a href="progSemanalAdmin.html" class="cabecera-pagina__miga">Programación semanal</a>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <span class="cabecera-pagina__miga cabecera-pagina__miga--actual" aria-current="page">Añadir clase o grupo</span>
+                    </nav>
+                    <span class="etiqueta etiqueta--suave">Temporada 2025/2026 · Código ESC-2025-VIB</span>
+                    <h1 class="cabecera-pagina__titulo">Programar nueva clase dirigida</h1>
+                    <p class="cabecera-pagina__texto">Configura el nivel, el monitor y la pista para abrir las inscripciones en el portal de socios.</p>
+                </div>
+                <div class="cabecera-pagina__acciones">
+                    <span class="etiqueta etiqueta--terciario">Borrador</span>
+                </div>
+            </header>
+
+            <form class="panel-admin__dos-columnas" action="progSemanalAdmin.html">
+
+                <div class="panel-admin__pila">
+
+                    <fieldset class="chips">
+                        <legend class="solo-lector">Tipo de clase</legend>
+                        <label class="chips__opcion"><input type="radio" class="chips__control" name="tipo-clase" checked><i class="ph ph-users-three" aria-hidden="true"></i> Clase grupal abierta</label>
+                        <label class="chips__opcion"><input type="radio" class="chips__control" name="tipo-clase"><i class="ph ph-user" aria-hidden="true"></i> Particular 1 a 1</label>
+                    </fieldset>
+
+                    <!-- 1. Información -->
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="paso-info">
+                        <div class="panel-admin__seccion-cabecera">
+                            <h2 class="panel-admin__seccion-titulo" id="paso-info"><span class="paso-numero">1</span> Información y modalidad</h2>
+                            <span class="etiqueta etiqueta--suave">Metodología FEP</span>
+                        </div>
+                        <div class="formulario">
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="nombre-clase">Nombre de la sesión</label>
+                                <input class="formulario__campo" type="text" id="nombre-clase" value="Técnica de víbora, bandeja y aceleración de remate">
+                            </div>
+                        </div>
+                        <fieldset class="chips chips--cuadradas">
+                            <legend class="formulario__etiqueta">Nivel recomendado</legend>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="nivel">Iniciación 1.0 – 2.5</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="nivel" checked>Intermedio 3.0 – 3.5</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="nivel">Avanzado 4.0 – 4.5</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="nivel">Competición 5.0+</label>
+                        </fieldset>
+                        <fieldset class="chips chips--cuadradas">
+                            <legend class="formulario__etiqueta">Enfoque principal</legend>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="enfoque" checked><i class="ph ph-target" aria-hidden="true"></i> Técnico de golpeo</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="enfoque"><i class="ph ph-strategy" aria-hidden="true"></i> Táctico y posicionamiento</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="enfoque"><i class="ph ph-barbell" aria-hidden="true"></i> Físico específico</label>
+                        </fieldset>
+                    </section>
+
+                    <!-- 2. Monitor y pista -->
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="paso-monitor">
+                        <div class="panel-admin__seccion-cabecera">
+                            <h2 class="panel-admin__seccion-titulo" id="paso-monitor"><span class="paso-numero">2</span> Monitor y pista</h2>
+                        </div>
+                        <div class="formulario panel-admin__campos">
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="monitor">Entrenador titular</label>
+                                <select class="formulario__campo" id="monitor">
+                                    <option selected>Carlos Rodríguez · Nivel II FEP (libre)</option>
+                                    <option>Marta Sánchez · ex WPT</option>
+                                    <option>Álex Pérez · Técnico nacional</option>
+                                </select>
+                                <p class="panel-admin__texto-pequeno">Suplentes: Marta Sánchez · Álex Pérez</p>
+                            </div>
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="pista">Pista reservada</label>
+                                <select class="formulario__campo" id="pista">
+                                    <option selected>Pista 2 · central cubierta · cristal</option>
+                                    <option>Pista 1 · panorámica</option>
+                                    <option>Pista 3 · cubierta estándar</option>
+                                </select>
+                                <p class="panel-admin__texto-pequeno"><i class="ph ph-seal-check" aria-hidden="true"></i> Pista libre y climatizada en este horario</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 3. Calendario -->
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="paso-calendario">
+                        <div class="panel-admin__seccion-cabecera">
+                            <h2 class="panel-admin__seccion-titulo" id="paso-calendario"><span class="paso-numero">3</span> Calendario y horario</h2>
+                            <fieldset class="chips">
+                                <legend class="solo-lector">Frecuencia</legend>
+                                <label class="chips__opcion"><input type="radio" class="chips__control" name="frecuencia"><i class="ph ph-calendar-blank" aria-hidden="true"></i> Sesión única</label>
+                                <label class="chips__opcion"><input type="radio" class="chips__control" name="frecuencia" checked><i class="ph ph-repeat" aria-hidden="true"></i> Semanal</label>
+                            </fieldset>
+                        </div>
+                        <div class="formulario panel-admin__campos">
+                            <div class="formulario__grupo panel-admin__campo-ancho">
+                                <label class="formulario__etiqueta" for="fecha-clase">Primer día</label>
+                                <input class="formulario__campo" type="date" id="fecha-clase" value="2026-10-01">
+                            </div>
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="hora-inicio">Hora de inicio</label>
+                                <input class="formulario__campo" type="time" id="hora-inicio" value="18:30">
+                            </div>
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="hora-fin">Hora de fin (90 min)</label>
+                                <input class="formulario__campo" type="time" id="hora-fin" value="20:00">
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 4. Aforo -->
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="paso-aforo">
+                        <div class="panel-admin__seccion-cabecera">
+                            <h2 class="panel-admin__seccion-titulo" id="paso-aforo"><span class="paso-numero">4</span> Aforo por pista</h2>
+                        </div>
+                        <div class="formulario panel-admin__campos">
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="aforo">Aforo máximo por clase</label>
+                                <input class="formulario__campo" type="number" id="aforo" value="4" min="1" max="8">
+                                <p class="panel-admin__texto-pequeno">Recomendado: máximo 4 alumnos para optimizar toques y corrección técnica.</p>
+                            </div>
+                        </div>
+                        <label class="casilla">
+                            <input type="checkbox" class="casilla__control" checked>
+                            <span class="casilla__texto"><strong>Activar lista de espera automática</strong> Si alguien cancela, los socios en espera reciben un aviso con 15 minutos de prioridad para reservar.</span>
+                        </label>
+                    </section>
+
+                    <!-- 5. Tarifas -->
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="paso-tarifas">
+                        <div class="panel-admin__seccion-cabecera">
+                            <h2 class="panel-admin__seccion-titulo" id="paso-tarifas"><span class="paso-numero">5</span> Tarifas y bonos</h2>
+                        </div>
+                        <div class="formulario panel-admin__campos">
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="precio-socio">Precio alumno socio</label>
+                                <div class="panel-admin__campo-con-sufijo">
+                                    <input class="formulario__campo" type="number" id="precio-socio" value="14.00" step="0.5"> € / clase
+                                </div>
+                            </div>
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="precio-invitado">Precio alumno no socio</label>
+                                <div class="panel-admin__campo-con-sufijo">
+                                    <input class="formulario__campo" type="number" id="precio-invitado" value="18.00" step="0.5"> € / clase
+                                </div>
+                            </div>
+                        </div>
+                        <label class="casilla">
+                            <input type="checkbox" class="casilla__control" checked>
+                            <span class="casilla__texto"><strong>Admite bonos de escuela</strong> Descuenta 1 crédito de los bonos de 5 o 10 clases dirigidas.</span>
+                        </label>
+                    </section>
+                </div>
+
+                <!-- Columna derecha -->
+                <aside class="panel-admin__pila panel-admin__lateral-fijo">
+
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="titulo-alumnos">
+                        <div class="tarjeta__cabecera">
+                            <h2 class="tarjeta__titulo" id="titulo-alumnos">Alumnos asignados</h2>
+                            <span class="etiqueta etiqueta--terciario">2 / 4 plazas</span>
+                        </div>
+                        <ul class="panel-admin__lista">
+                            <li class="panel-admin__evento">
+                                <span class="avatar">LM</span>
+                                <p class="panel-admin__evento-texto"><strong>Laura Méndez #1042</strong> Nivel 3.5 · bono escuela (quedan 3)</p>
+                                <span class="etiqueta etiqueta--suave">Confirmada</span>
+                            </li>
+                            <li class="panel-admin__evento">
+                                <span class="avatar">DR</span>
+                                <p class="panel-admin__evento-texto"><strong>Diego Ruiz · invitado</strong> Nivel 3.0 · pagado en TPV (18,00 €)</p>
+                                <span class="etiqueta etiqueta--suave">Confirmado</span>
+                            </li>
+                        </ul>
+                        <button type="button" class="boton boton--contorno boton--bloque">
+                            <i class="ph ph-user-plus boton__icono" aria-hidden="true"></i>
+                            Inscribir socio (DNI o apellidos)
+                        </button>
+                        <p class="panel-admin__texto-pequeno"><i class="ph ph-device-mobile" aria-hidden="true"></i> Plazas 3 y 4: disponibles para reserva pública en la app.</p>
+                    </section>
+
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="titulo-vista">
+                        <div class="tarjeta__cabecera">
+                            <h2 class="tarjeta__titulo" id="titulo-vista">Vista en la app del socio</h2>
+                            <i class="ph ph-eye" aria-hidden="true"></i>
+                        </div>
+                        <div class="panel-admin__mini panel-admin__mini--suave">
+                            <div class="panel-admin__mini-cabecera">
+                                <span class="etiqueta etiqueta--suave">Intermedio · 3.0 – 3.5</span>
+                                <strong>14,00 €</strong>
+                            </div>
+                            <strong>Técnica de víbora, bandeja y aceleración</strong>
+                            <span><i class="ph ph-clock" aria-hidden="true"></i> Jueves 1 octubre · 18:30 – 20:00</span>
+                            <div class="panel-admin__mini-cabecera">
+                                <span class="panel-admin__persona"><span class="avatar">CR</span> Carlos Rodríguez (FEP)</span>
+                                <span class="etiqueta etiqueta--terciario">2 plazas libres</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="titulo-balance">
+                        <div class="tarjeta__cabecera">
+                            <h2 class="tarjeta__titulo" id="titulo-balance">Balance de rentabilidad</h2>
+                            <i class="ph ph-trend-up" aria-hidden="true"></i>
+                        </div>
+                        <dl class="lista-datos">
+                            <div class="lista-datos__fila"><dt>Ingresos (aforo completo)</dt><dd>64,00 €</dd></div>
+                            <div class="lista-datos__fila"><dt>Honorario monitor (90 min)</dt><dd>−30,00 €</dd></div>
+                            <div class="lista-datos__fila lista-datos__fila--total"><dt>Margen del club (53,1%)</dt><dd>+34,00 €</dd></div>
+                        </dl>
+                        <progress class="progreso" max="100" value="53">53%</progress>
+                        <p class="panel-admin__texto-pequeno">Punto de equilibrio: 2 alumnos (cubierto).</p>
+                    </section>
+
+                    <div class="panel-admin__botones">
+                        <button type="submit" class="boton boton--primario boton--bloque">
+                            <i class="ph ph-upload-simple boton__icono" aria-hidden="true"></i>
+                            Publicar clase y abrir inscripciones
+                        </button>
+                        <button type="button" class="boton boton--contorno boton--bloque">Guardar borrador</button>
+                        <a href="progSemanalAdmin.html" class="panel-admin__enlace-centrado">Cancelar</a>
+                    </div>
+                </aside>
+            </form>
+        </main>
+    </div>
+
+    <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
+    <nav class="navegacion-movil" aria-label="Navegación del administrador en móvil">
+        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-squares-four" aria-hidden="true"></i>Inicio</a>
+        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-calendar" aria-hidden="true"></i>Agenda</a>
+        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar-check" aria-hidden="true"></i>Reservas</a>
+        <a href="configAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-sidebar" aria-hidden="true"></i>Gestión</a>
+    </nav>
+
+</body>
+</html>

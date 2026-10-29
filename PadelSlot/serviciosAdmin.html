@@ -1,1081 +1,340 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="web_dashboard" name="shell-type">
-    <title>Servicios Admin - PadelSlot SaaS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios del club · PádelSlot Manager</title>
+
+    <!-- Fuentes: Space Grotesk (títulos) e Inter (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+    <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <link rel="stylesheet" href="scss/main.css">
 </head>
 
-<body class="cuerpoPagina">
+<body class="panel-admin fondo-suave">
 
-    <!-- Barra lateral fija (Sidebar) con menú de navegación -->
-    <aside class="barraLateral">
-        <section class="contenedor">
-            <!-- Logotipo y nombre de la plataforma -->
-            <header class="cabecera">
-                <figure class="figura">
-                    <em class="icono">sports_tennis</em>
-                </figure>
+    <!-- ============ BARRA LATERAL (escritorio) ============ -->
+    <aside class="barra-lateral panel-admin__lateral" aria-label="Menú del administrador">
+        <a href="inicioAdmin.html" class="panel-admin__marca">
+            <span class="logotipo logotipo--verde">P</span>
+            PádelSlot
+        </a>
 
-                <section class="contenedor">
-                    <span class="nombreMarca">PadelSlot</span>
-                    <span class="rolMarca">MANAGER</span>
-                </section>
-            </header>
+        <div class="panel-admin__club">
+            <span class="panel-admin__antetitulo">Club activo</span>
+            <strong class="panel-admin__club-nombre">Club de Pádel Sevilla</strong>
+            <span>Alcalá de Guadaíra</span>
+        </div>
 
-            <section class="contenedor">
-                <span class="tituloNavegacion">Gestión de Club</span>
-            </section>
+        <nav class="barra-lateral__menu">
+            <a href="inicioAdmin.html" class="barra-lateral__item">Inicio</a>
+            <a href="cuadranteAdmin.html" class="barra-lateral__item">Reservas y pistas</a>
+            <a href="progSemanalAdmin.html" class="barra-lateral__item">Escuela y clases</a>
+            <a href="sociosAdmin.html" class="barra-lateral__item">Socios</a>
+            <a href="cobroAdmin.html" class="barra-lateral__item">Pagos</a>
+            <a href="#" class="barra-lateral__item">Torneos y ligas</a>
+            <a href="serviciosAdmin.html" class="barra-lateral__item barra-lateral__item--activo" aria-current="page">Parking</a>
+            <a href="serviciosAdmin.html#bar" class="barra-lateral__item">Bar y restauración</a>
+            <a href="#" class="barra-lateral__item">Empleo</a>
+            <a href="incidenciasAdmin.html" class="barra-lateral__item">Incidencias</a>
+            <a href="#" class="barra-lateral__item">Informes</a>
+            <a href="configAdmin.html" class="barra-lateral__item">Configuración</a>
+        </nav>
 
-            <!-- Enlaces de navegación principal -->
-            <nav class="navegacion">
-                <a href="#" class="enlaceCuadrante">
-                    <span class="texto">Cuadrante en vivo de pistas</span>
-                </a>
-
-                <a href="#" class="enlaceEscuela">
-                    <span class="texto">Escuela deportiva</span>
-                </a>
-
-                <a href="#" class="enlaceSocios">
-                    <span class="texto">Socios y abonados</span>
-                </a>
-
-                <a href="#" class="enlaceCobros">
-                    <span class="texto">Cobros y cuotas</span>
-                </a>
-
-                <a href="#" class="enlaceServicios">
-                    <span class="texto">Servicios (Parking, Bar, Tienda)</span>
-                </a>
-
-                <a href="#" class="enlaceIncidencias">
-                    <span class="texto">Incidencias</span>
-                </a>
-
-                <a href="#" class="enlaceConfiguracion">
-                    <span class="texto">Configuración SaaS</span>
-                </a>
-            </nav>
-        </section>
-
-        <!-- Indicador de estado del club -->
-        <article class="estadoClub">
-            <header class="cabecera">
-                <section class="contenedor">
-                    <span class="indicadorOcupacion">
-                        <span class="puntoOcupado"></span>
-                        <span class="puntoEstado"></span>
-                    </span>
-
-                    <span class="estadoOcupacion">Ocupación en vivo</span>
-                </section>
-
-                <span class="porcentajeOcupacion">88%</span>
-            </header>
-
-            <figure class="barraOcupacion">
-                <span class="rellenoOcupacion" style="width: 88%"></span>
-            </figure>
-
-            <footer class="pieEstado">
-                <span class="texto">14 pistas activas</span>
-                <span class="texto">2 libres</span>
-            </footer>
-        </article>
+        <div class="panel-admin__promo">
+            <i class="ph ph-sparkle panel-admin__promo-icono" aria-hidden="true"></i>
+            <strong class="panel-admin__promo-titulo">Una sola plataforma</strong>
+            <p>Activa solo los módulos que necesita tu club.</p>
+        </div>
     </aside>
 
-    <section class="zonaAdmin">
+    <!-- ============ CONTENIDO ============ -->
+    <div class="panel-admin__contenido">
 
-        <!-- Cabecera superior fija -->
-        <header class="cabeceraPrincipal">
-            <section class="zonaBusqueda">
-                <form class="buscador">
-                    <em class="icono">search</em>
-                    <input class="campoBusqueda" placeholder="Buscar reserva, socio, pista..." type="text">
-                    <kbd class="atajoTeclado">⌘K</kbd>
-                </form>
-            </section>
+        <!-- Barra superior -->
+        <header class="panel-admin__barra-superior">
+            <a href="inicioAdmin.html" class="panel-admin__marca panel-admin__marca--movil">
+                <span class="logotipo logotipo--verde">P</span>
+                PádelSlot
+            </a>
 
-            <aside class="zonaUsuario">
-                <section class="accionesUsuario">
-                    <button class="botonNotificacion" type="button">
-                        <em class="icono">notifications</em>
-                    </button>
+            <form class="panel-admin__buscador" role="search">
+                <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" class="panel-admin__buscador-campo" placeholder="Buscar reserva, socio o pago…" aria-label="Buscar reserva, socio o pago">
+                <kbd class="panel-admin__atajo">⌘ K</kbd>
+            </form>
 
-                    <span class="indicadorNotificacion"></span>
-                </section>
-
-                <span class="separadorUsuario"></span>
-
-                <section class="perfilUsuario">
-                    <figure class="fotoUsuario">
-                        <em class="icono">person</em>
-                    </figure>
-
-                    <article class="datosUsuario">
-                        <span class="nombreUsuario">Marta R.</span>
-                        <span class="rolUsuario">Administradora</span>
-                    </article>
-                </section>
-            </aside>
+            <div class="panel-admin__barra-acciones">
+                <a href="crearReservaAdmin.html" class="boton boton--primario navegacion-escritorio">
+                    <i class="ph ph-plus boton__icono" aria-hidden="true"></i>
+                    Crear reserva
+                </a>
+                <button type="button" class="boton-icono" aria-label="Notificaciones">
+                    <i class="ph ph-bell" aria-hidden="true"></i>
+                </button>
+                <div class="usuario">
+                    <span class="avatar">MR</span>
+                    <p class="usuario__datos">
+                        <span class="usuario__nombre">Marta R.</span>
+                        <span class="usuario__rol">Administradora</span>
+                    </p>
+                </div>
+            </div>
         </header>
 
-        <!-- Contenedor principal -->
-        <main class="contenidoPrincipal">
-            <section class="contenedorPagina">
+        <main class="panel-admin__principal">
+            <header class="cabecera-pagina">
+                <div>
+                    <nav class="cabecera-pagina__migas" aria-label="Estás aquí">
+                        <a href="inicioAdmin.html" class="cabecera-pagina__miga">Gestión del club</a>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <span class="cabecera-pagina__miga cabecera-pagina__miga--actual" aria-current="page">Servicios e instalaciones</span>
+                    </nav>
+                    <span class="etiqueta etiqueta--terciario">Sincronización en vivo</span>
+                    <h1 class="cabecera-pagina__titulo">Gestión operativa de servicios</h1>
+                    <p class="cabecera-pagina__texto">Accesos al parking por matrícula, cafetería, stock de la tienda y asignación de taquillas en tiempo real.</p>
+                </div>
+                <div class="cabecera-pagina__acciones">
+                    <a href="#" class="boton boton--contorno"><i class="ph ph-download-simple boton__icono" aria-hidden="true"></i> Exportar informe</a>
+                    <a href="#" class="boton boton--contorno"><i class="ph ph-cash-register boton__icono" aria-hidden="true"></i> Cierre de caja</a>
+                    <a href="#" class="boton boton--primario"><i class="ph ph-plus boton__icono" aria-hidden="true"></i> Nuevo servicio</a>
+                </div>
+            </header>
 
-                <!-- Encabezado de la página -->
-                <header class="cabeceraPagina">
+            <section class="panel-admin__kpis" aria-label="Indicadores de servicios">
+                <article class="tarjeta panel-admin__kpi panel-admin__kpi--destacado">
+                    <div class="tarjeta__cabecera">
+                        <h2 class="panel-admin__kpi-titulo">Ingresos servicios hoy</h2>
+                        <i class="ph ph-trend-up panel-admin__kpi-icono" aria-hidden="true"></i>
+                    </div>
+                    <p class="panel-admin__kpi-valor">1.126 €</p>
+                    <p class="panel-admin__kpi-detalle">+14,2% · bar 684 € · tienda 342 € · parking 100 €</p>
+                </article>
+                <article class="tarjeta panel-admin__kpi">
+                    <div class="tarjeta__cabecera">
+                        <h2 class="panel-admin__kpi-titulo">Parking</h2>
+                        <i class="ph ph-car panel-admin__kpi-icono" aria-hidden="true"></i>
+                    </div>
+                    <p class="panel-admin__kpi-valor">28 / 40</p>
+                    <progress class="progreso" max="40" value="28">28 de 40</progress>
+                    <p class="panel-admin__kpi-detalle">70% · 12 plazas libres</p>
+                </article>
+                <article class="tarjeta panel-admin__kpi">
+                    <div class="tarjeta__cabecera">
+                        <h2 class="panel-admin__kpi-titulo">Taquillas</h2>
+                        <i class="ph ph-lock-key panel-admin__kpi-icono" aria-hidden="true"></i>
+                    </div>
+                    <p class="panel-admin__kpi-valor">34 / 48</p>
+                    <progress class="progreso" max="48" value="34">34 de 48</progress>
+                    <p class="panel-admin__kpi-detalle">71% · 14 disponibles</p>
+                </article>
+                <article class="tarjeta panel-admin__kpi">
+                    <div class="tarjeta__cabecera">
+                        <h2 class="panel-admin__kpi-titulo">Alertas Pro-Shop</h2>
+                        <i class="ph ph-bell-ringing panel-admin__kpi-icono" aria-hidden="true"></i>
+                    </div>
+                    <p class="panel-admin__kpi-valor">2</p>
+                    <p class="panel-admin__kpi-detalle">productos en stock mínimo</p>
+                </article>
+            </section>
 
-                    <section class="encabezadoContenido">
+            <!-- ============ PARKING ============ -->
+            <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado servicios-admin__seccion" id="parking" aria-labelledby="titulo-parking">
+                <div class="panel-admin__seccion-cabecera">
+                    <div>
+                        <h2 class="panel-admin__seccion-titulo" id="titulo-parking"><i class="ph ph-car" aria-hidden="true"></i> Accesos al parking en tiempo real</h2>
+                        <p class="panel-admin__subtitulo">Lectura de matrículas conectada a las reservas de pista y a las membresías.</p>
+                    </div>
+                    <div class="panel-admin__acciones">
+                        <button type="button" class="boton boton--contorno"><i class="ph ph-arrow-up boton__icono" aria-hidden="true"></i> Abrir entrada</button>
+                        <button type="button" class="boton boton--contorno"><i class="ph ph-arrow-down boton__icono" aria-hidden="true"></i> Abrir salida</button>
+                        <button type="button" class="boton boton--terciario">Modo evento</button>
+                    </div>
+                </div>
+                <div class="panel-admin__tabla-scroll">
+                    <table class="panel-admin__tabla panel-admin__tabla-cabecera">
+                        <caption class="solo-lector">Últimas lecturas de matrícula</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Matrícula</th>
+                                <th scope="col">Conductor</th>
+                                <th scope="col">Registro</th>
+                                <th scope="col">Regla de acceso y tarifa</th>
+                                <th scope="col">Barrera</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="servicios-admin__matricula">5421-KTY</span> <span class="panel-admin__texto-pequeno">Cámara A1</span></td>
+                                <td class="panel-admin__celda-nombre">Laura Méndez (#1042)</td>
+                                <td>Entrada 18:15 (hace 8 min)</td>
+                                <td>Autorizado · 2 h de cortesía por membresía</td>
+                                <td><span class="etiqueta etiqueta--terciario">Abierta</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="servicios-admin__matricula">4820-LMK</span> <span class="panel-admin__texto-pequeno">Cámara A1</span></td>
+                                <td class="panel-admin__celda-nombre">Alejandro Ramos (#1043)</td>
+                                <td>Entrada 18:22 (hace 1 min)</td>
+                                <td>Autorizado · reserva pista 2 (18:30 – 20:00)</td>
+                                <td><span class="etiqueta etiqueta--terciario">Abierta</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="servicios-admin__matricula">9012-HBT</span> <span class="panel-admin__texto-pequeno">Cámara B (salida)</span></td>
+                                <td class="panel-admin__celda-nombre">Javier Almansa (#0056)</td>
+                                <td>17:45 → 19:20 (1 h 35 min)</td>
+                                <td>Completado · 0,00 € (en franquicia)</td>
+                                <td><span class="etiqueta etiqueta--suave">Cerrada</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="servicios-admin__matricula">3318-KLP</span> <span class="panel-admin__texto-pequeno">Cámara A1</span></td>
+                                <td class="panel-admin__celda-nombre">Diego Ruiz (invitado)</td>
+                                <td>Entrada 18:28 (ahora)</td>
+                                <td>Ticket QR activo (+5,00 € prepago)</td>
+                                <td><span class="etiqueta etiqueta--terciario">Abierta</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-                        <!-- Migas de pan -->
-                        <nav class="migasNavegacion">
-                            <span class="tituloNavegacion">Gestión de Club</span>
-                            <em class="icono">chevron_right</em>
-                            <strong class="textoDestacado">Servicios e Instalaciones</strong>
-                        </nav>
+            <div class="panel-admin__fila servicios-admin__fila">
 
-                        <!-- Título y botones -->
-                        <section class="cabeceraAcciones">
-
-                            <article class="informacionPagina">
-                                <header class="cabeceraTitulo">
-                                    <h1 class="tituloPagina">
-                                        Gestión Operativa de Servicios del Club
-                                    </h1>
-
-                                    <span class="estadoSincronizacion">
-                                        <span class="puntoActivo"></span>
-                                        Sincronización en Vivo
-                                    </span>
-                                </header>
-
-                                <p class="descripcionPagina">
-                                    Control en tiempo real de accesos de parking LPR,
-                                    facturación de cafetería/restaurante, stock de la
-                                    tienda técnica y asignación de taquillas.
-                                </p>
-                            </article>
-
-                            <aside class="accionesPagina">
-                                <button class="botonAccion" type="button">
-                                    <em class="icono">download</em>
-                                    <span class="textoBoton">Exportar Informe</span>
-                                </button>
-
-                                <button class="botonAccion" type="button">
-                                    <em class="icono">point_of_sale</em>
-                                    <span class="textoBoton">Liquidación Diaria TPV</span>
-                                </button>
-
-                                <button class="botonPrincipal" type="button">
-                                    <em class="icono">add_circle</em>
-                                    <span class="textoBoton">Nuevo Servicio</span>
-                                </button>
-                            </aside>
-
-                        </section>
-                    </section>
-                </header>
-
-                <!-- Cuadrícula de KPIs -->
-                <section class="zonaKpis">
-                    <section class="listaKpis">
-
-                        <!-- KPI 1 -->
-                        <article class="tarjetaKpi">
-                            <header class="cabeceraKpi">
-                                <section>
-                                    <span class="tituloKpi">Ingresos Servicios Hoy</span>
-
-                                    <section class="valorKpi">
-                                        <span class="importeKpi">1.126,00 €</span>
-
-                                        <strong class="variacionPositiva">
-                                            <em class="icono">trending_up</em>
-                                            +14.2%
-                                        </strong>
-                                    </section>
-                                </section>
-
-                                <figure class="iconoKpi">
-                                    <em class="icono">payments</em>
-                                </figure>
-                            </header>
-
-                            <section class="detalleKpi">
-                                <article class="filaKpi">
-                                    <span class="texto">
-                                        <span class="puntoServicio"></span>
-                                        Cafetería 'Tercer Tiempo'
-                                    </span>
-                                    <strong class="importe">684,00 €</strong>
-                                </article>
-
-                                <article class="filaKpi">
-                                    <span class="texto">
-                                        <span class="puntoServicio"></span>
-                                        Pro-Shop &amp; Alquiler
-                                    </span>
-                                    <strong class="importe">342,00 €</strong>
-                                </article>
-
-                                <article class="filaKpi">
-                                    <span class="texto">
-                                        <span class="puntoServicio"></span>
-                                        Parking LPR
-                                    </span>
-                                    <strong class="importe">100,00 €</strong>
-                                </article>
-                            </section>
-                        </article>
-
-                        <!-- KPI 2 -->
-                        <article class="tarjetaKpi">
-                            <header class="cabeceraKpi">
-                                <section>
-                                    <span class="tituloKpi">Parking LPR Inteligente</span>
-
-                                    <section class="valorKpi">
-                                        <span class="importeKpi">
-                                            28
-                                            <span class="textoSecundario">/ 40 plazas</span>
-                                        </span>
-                                    </section>
-                                </section>
-
-                                <figure class="iconoKpi">
-                                    <em class="icono">local_parking</em>
-                                </figure>
-                            </header>
-
-                            <section class="detalleKpi">
-                                <header class="cabeceraDetalle">
-                                    <span class="texto">70% ocupación actual</span>
-                                    <strong class="textoDestacado">12 plazas libres</strong>
-                                </header>
-
-                                <figure class="barraParking">
-                                    <span class="parteParking" style="width: 50%"></span>
-                                    <span class="parteParking" style="width: 20%"></span>
-                                    <span class="parteParking" style="width: 30%"></span>
-                                </figure>
-
-                                <p class="avisoKpi">
-                                    <em class="icono">check_circle</em>
-                                    Acceso reservado a socios con pista activa
-                                </p>
-                            </section>
-                        </article>
-
-                        <!-- KPI 3 -->
-                        <article class="tarjetaKpi">
-                            <header class="cabeceraKpi">
-                                <section>
-                                    <span class="tituloKpi">Taquillas Electrónicas</span>
-
-                                    <section class="valorKpi">
-                                        <span class="importeKpi">
-                                            34
-                                            <span class="textoSecundario">/ 48 activas</span>
-                                        </span>
-                                    </section>
-                                </section>
-
-                                <figure class="iconoKpi">
-                                    <em class="icono">lock_open</em>
-                                </figure>
-                            </header>
-
-                            <section class="detalleKpi">
-                                <header class="cabeceraDetalle">
-                                    <span class="texto">71% ocupación de módulos</span>
-                                    <strong class="textoDestacado">14 disponibles</strong>
-                                </header>
-
-                                <figure class="barraTaquillas">
-                                    <span class="rellenoTaquillas" style="width: 71%"></span>
-                                </figure>
-
-                                <footer class="pieKpi">
-                                    <span class="texto">20 fijas abonados</span>
-                                    <span class="texto">Apertura NFC / PIN</span>
-                                </footer>
-                            </section>
-                        </article>
-
-                        <!-- KPI 4 -->
-                        <article class="tarjetaKpi">
-                            <header class="cabeceraKpi">
-                                <section>
-                                    <strong class="tituloKpi">Alertas Pro-Shop</strong>
-
-                                    <section class="valorKpi">
-                                        <span class="importeKpi">
-                                            2
-                                            <span class="textoSecundario">ítems en mínimo</span>
-                                        </span>
-                                    </section>
-                                </section>
-
-                                <figure class="iconoKpi">
-                                    <em class="icono">notification_important</em>
-                                </figure>
-                            </header>
-
-                            <section class="alertasStock">
-                                <article class="alertaStock">
-                                    <section class="datosStock">
-                                        <span class="nombreProducto">Head Padel Pro S (Tubo)</span>
-                                        <strong class="cantidadStock">6 unidades en tienda</strong>
-                                    </section>
-                                    <button class="botonReponer">Reponer</button>
-                                </article>
-
-                                <article class="alertaStock">
-                                    <section class="datosStock">
-                                        <span class="nombreProducto">Overgrips Bullpadel x3</span>
-                                        <strong class="cantidadStock">8 paquetes restantes</strong>
-                                    </section>
-                                    <button class="botonReponer">Reponer</button>
-                                </article>
-                            </section>
-                        </article>
-
-                    </section>
+                <!-- ============ CAFETERÍA ============ -->
+                <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado servicios-admin__seccion" id="bar" aria-labelledby="titulo-bar">
+                    <div class="panel-admin__seccion-cabecera">
+                        <div>
+                            <h2 class="panel-admin__seccion-titulo" id="titulo-bar"><i class="ph ph-fork-knife" aria-hidden="true"></i> Cafetería «Tercer Tiempo»</h2>
+                            <p class="panel-admin__subtitulo">Comandas sincronizadas con el saldo de cada socio.</p>
+                        </div>
+                        <span class="etiqueta etiqueta--suave">8 mesas en terraza</span>
+                    </div>
+                    <div class="panel-admin__rejilla">
+                        <div class="panel-admin__mini panel-admin__mini--suave"><span class="panel-admin__texto-pequeno">Ticket medio</span><span class="panel-admin__valor">14,20 €</span></div>
+                        <div class="panel-admin__mini panel-admin__mini--suave"><span class="panel-admin__texto-pequeno">Pagado con monedero</span><span class="panel-admin__valor">65%</span></div>
+                        <div class="panel-admin__mini panel-admin__mini--suave"><span class="panel-admin__texto-pequeno">Datáfono / contactless</span><span class="panel-admin__valor">35%</span></div>
+                    </div>
+                    <div>
+                        <p class="formulario__etiqueta">Comandas abiertas</p>
+                        <ul class="panel-admin__lista">
+                            <li class="panel-admin__evento">
+                                <span class="panel-admin__evento-hora">T-04</span>
+                                <p class="panel-admin__evento-texto"><strong>Mesa terraza 4 · Carlos V. y amigos</strong> 4 cañas, 1 ración de jamón, 2 aguas</p>
+                                <strong>28,50 €</strong>
+                                <button type="button" class="boton boton--primario">Cobrar</button>
+                            </li>
+                            <li class="panel-admin__evento">
+                                <span class="panel-admin__evento-hora">B-02</span>
+                                <p class="panel-admin__evento-texto"><strong>Barra · Miguel Ángel (#0311)</strong> 1 café solo, 1 zumo de naranja</p>
+                                <strong>4,10 €</strong>
+                                <span class="etiqueta etiqueta--suave">Monedero</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="aviso">
+                        <i class="ph ph-star aviso__icono" aria-hidden="true"></i>
+                        <span class="aviso__texto">Bonificación activa: +10% de saldo en recargas de más de 50 €.</span>
+                        <button type="button" class="boton boton--primario">Recargar saldo</button>
+                    </p>
                 </section>
 
-                <!-- Control de accesos LPR -->
-                <section class="seccionParking">
-                    <article class="panelParking">
-
-                        <header class="cabeceraParking">
-                            <section class="tituloParking">
-                                <figure class="iconoParking">
-                                    <em class="icono">directions_car</em>
-                                </figure>
-
-                                <article class="informacionParking">
-                                    <h2 class="tituloSeccion">
-                                        Monitor de Accesos al Parking LPR en Tiempo Real
-                                    </h2>
-
-                                    <p class="descripcionSeccion">
-                                        Reconocimiento óptico de matrículas conectado a
-                                        reservas activas de pistas y membresías
-                                    </p>
-                                </article>
-                            </section>
-
-                            <aside class="accionesParking">
-                                <button class="botonEntrada" type="button">
-                                    <em class="icono">arrow_upward</em>
-                                    Abrir Barrera Entrada
-                                </button>
-
-                                <button class="botonSalida" type="button">
-                                    <em class="icono">arrow_downward</em>
-                                    Abrir Barrera Salida
-                                </button>
-
-                                <button class="botonEvento" type="button">
-                                    <em class="icono">emergency_home</em>
-                                    Modo Evento / Barreras Libres
-                                </button>
-                            </aside>
-                        </header>
-
-                        <!-- Tabla de vehículos -->
-                        <section class="tablaAccesos">
-                            <table class="tablaParking">
-                                <thead>
-                                    <tr class="cabeceraTabla">
-                                        <th class="celdaCabecera">Lectura Matrícula</th>
-                                        <th class="celdaCabecera">Conductor / Socio</th>
-                                        <th class="celdaCabecera">Horario Registro</th>
-                                        <th class="celdaCabecera">Regla de Acceso &amp; Tarifa</th>
-                                        <th class="celdaCabecera">Estado Barrera</th>
-                                        <th class="celdaCabecera">Acción</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody class="cuerpoTabla">
-
-                                    <tr class="filaTabla">
-                                        <td class="celdaTabla">
-                                            <section class="matricula">
-                                                <span class="textoMatricula">5421-KTY</span>
-                                                <span class="camara">Cámara A1</span>
-                                            </section>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <section class="datosSocio">
-                                                <span class="nombreSocio">
-                                                    Laura Méndez<span>&nbsp;(#1042)</span>
-                                                </span>
-                                            </section>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <section class="horaAcceso">
-                                                <em class="icono">login</em>
-                                                <strong class="hora">18:15h</strong>
-                                                (hace 8 min)
-                                            </section>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <span class="estadoAutorizado">
-                                                <em class="icono">verified</em>
-                                                Autorizado · 2h cortesía Membresía
-                                            </span>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <strong class="barreraAbierta">
-                                                <span class="puntoBarrera"></span>
-                                                Barrera A Abierta
-                                            </strong>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <button class="botonOpciones">
-                                                <em class="icono">more_vert</em>
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    <tr class="filaTabla">
-                                        <td class="celdaTabla">
-                                            <section class="matricula">
-                                                <span class="textoMatricula">4820-LMK</span>
-                                                <span class="camara">Cámara A1</span>
-                                            </section>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <section class="datosSocio">
-                                                <span class="nombreSocio">
-                                                    Alejandro Ramos<span>&nbsp;(#1043)</span>
-                                                </span>
-                                            </section>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <section class="horaAcceso">
-                                                <em class="icono">login</em>
-                                                <strong class="hora">18:22h</strong>
-                                                (hace 1 min)
-                                            </section>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <span class="estadoAutorizado">
-                                                <em class="icono">sports_tennis</em>
-                                                Autorizado · Reserva Pista Cristal 2 (18:30 - 20:00)
-                                            </span>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <strong class="barreraAbierta">
-                                                <span class="puntoBarrera"></span>
-                                                Barrera A Abierta
-                                            </strong>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <button class="botonOpciones">
-                                                <em class="icono">more_vert</em>
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    <tr class="filaTabla">
-                                        <td class="celdaTabla">
-                                            <section class="matricula">
-                                                <span class="textoMatricula">9012-HBT</span>
-                                                <span class="camara">Cámara B (Salida)</span>
-                                            </section>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <section class="datosSocio">
-                                                <span class="nombreSocio">
-                                                    Javier Almansa<span>&nbsp;(#0056)</span>
-                                                </span>
-                                            </section>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <section class="horaAcceso">
-                                                <em class="icono">logout</em>
-                                                <span class="hora">17:45h → 19:20h</span>
-                                                <span class="duracion">(1h 35m)</span>
-                                            </section>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <span class="estadoCompletado">
-                                                <em class="icono">check</em>
-                                                Completado · Tarifa 0,00 € (En franquicia)
-                                            </span>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <span class="barreraCerrada">Cerrada</span>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <button class="botonRecibo">
-                                                <em class="icono">receipt_long</em>
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    <tr class="filaTabla">
-                                        <td class="celdaTabla">
-                                            <section class="matricula">
-                                                <span class="textoMatricula">3318-KLP</span>
-                                                <span class="camara">Cámara A1</span>
-                                            </section>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <section class="datosSocio">
-                                                <span class="nombreSocio">Diego Ruiz</span>
-                                                <strong class="tipoJugador">Jugador Invitado</strong>
-                                            </section>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <section class="horaAcceso">
-                                                <em class="icono">login</em>
-                                                <strong class="hora">18:28h</strong>
-                                                (Ahora)
-                                            </section>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <strong class="ticketActivo">
-                                                <em class="icono">qr_code_2</em>
-                                                Ticket QR Activo (+5,00 € prepago)
-                                            </strong>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <strong class="barreraAbierta">
-                                                <span class="puntoBarrera"></span>
-                                                Barrera A Abierta
-                                            </strong>
-                                        </td>
-
-                                        <td class="celdaTabla">
-                                            <button class="botonOpciones">
-                                                <em class="icono">more_vert</em>
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </section>
-                    </article>
+                <!-- ============ PRO-SHOP ============ -->
+                <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado servicios-admin__seccion" id="tienda" aria-labelledby="titulo-tienda">
+                    <h2 class="panel-admin__seccion-titulo" id="titulo-tienda"><i class="ph ph-shopping-bag" aria-hidden="true"></i> Pro-Shop y préstamos</h2>
+                    <div>
+                        <p class="formulario__etiqueta">Venta rápida de mostrador</p>
+                        <div class="servicios-admin__productos">
+                            <button type="button" class="servicios-admin__producto"><strong>Tubo Head Padel Pro</strong> Bolas oficiales <span>+4,00 €</span></button>
+                            <button type="button" class="servicios-admin__producto"><strong>Overgrip Bullpadel</strong> Unidad <span>+2,50 €</span></button>
+                            <button type="button" class="servicios-admin__producto"><strong>Protector rugoso</strong> Colocación gratis <span>+5,00 €</span></button>
+                            <button type="button" class="servicios-admin__producto"><strong>Bebida isotónica</strong> Aquarius / Powerade <span>+2,00 €</span></button>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="formulario__etiqueta">Palas de test en pista</p>
+                        <ul class="panel-admin__lista">
+                            <li class="panel-admin__evento">
+                                <i class="ph ph-tennis-ball" aria-hidden="true"></i>
+                                <p class="panel-admin__evento-texto"><strong>Bullpadel Hack 03</strong> En test: Laura Méndez (#1042)</p>
+                                <span class="etiqueta panel-admin__etiqueta-neutra">Vuelve 20:00</span>
+                            </li>
+                            <li class="panel-admin__evento">
+                                <i class="ph ph-check-circle" aria-hidden="true"></i>
+                                <p class="panel-admin__evento-texto"><strong>Nox AT10 Genius 18K</strong> Disponible en mostrador</p>
+                                <button type="button" class="boton boton--contorno">Prestar</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="aviso">
+                        <i class="ph ph-warning aviso__icono" aria-hidden="true"></i>
+                        <span class="aviso__texto"><strong class="aviso__titulo">Stock mínimo</strong> Head Padel Pro: 6 tubos · Overgrips Bullpadel: 8 paquetes.</span>
+                    </p>
+                    <a href="#" class="panel-admin__enlace"><i class="ph ph-package" aria-hidden="true"></i> Inventario completo de la tienda</a>
                 </section>
-
-                <!-- Cafetería y tienda -->
-                <section class="seccionServicios">
-                    <section class="listaServicios">
-
-                        <!-- Cafetería -->
-                        <article class="tarjetaServicio">
-                            <section class="contenidoServicio">
-
-                                <header class="cabeceraServicio">
-                                    <section class="tituloServicio">
-                                        <figure class="iconoServicio">
-                                            <em class="icono">restaurant</em>
-                                        </figure>
-
-                                        <article class="informacionServicio">
-                                            <h2 class="tituloSeccion">
-                                                Cafetería &amp; Restaurante 'Tercer Tiempo'
-                                            </h2>
-
-                                            <p class="descripcionSeccion">
-                                                Comandas activas sincronizadas con saldo de cuenta socio
-                                            </p>
-                                        </article>
-                                    </section>
-
-                                    <strong class="estadoMesas">
-                                        8 Mesas Terraza Ocupadas
-                                    </strong>
-                                </header>
-
-                                <section class="resumenCafeteria">
-                                    <article class="datoCafeteria">
-                                        <span class="etiquetaDato">Ticket Medio</span>
-                                        <span class="valorDato">14,20 €</span>
-                                        <strong class="detalleDato">Bebidas y tapeo post-partido</strong>
-                                    </article>
-
-                                    <article class="datoCafeteria">
-                                        <span class="etiquetaDato">Cobro Monedero Virtual</span>
-                                        <span class="valorDato">65%</span>
-                                        <span class="detalleDato">Cargo directo a cuenta socio</span>
-                                    </article>
-
-                                    <article class="datoCafeteria">
-                                        <span class="etiquetaDato">TPV Datáfono</span>
-                                        <span class="valorDato">35%</span>
-                                        <span class="detalleDato">Tarjeta / Contactless</span>
-                                    </article>
-                                </section>
-
-                                <section class="comandas">
-                                    <span class="tituloComandas">Comandas Abiertas de Mesas</span>
-
-                                    <article class="comanda">
-                                        <section class="datosComanda">
-                                            <span class="mesaComanda">T-04</span>
-
-                                            <section class="detalleComanda">
-                                                <span class="clienteComanda">
-                                                    Mesa Terraza 4 · Carlos V. &amp; Amigos
-                                                </span>
-                                                <span class="pedidoComanda">
-                                                    4 Cañas Mahou, 1 Ración Jamón Ibérico, 2 Aguas
-                                                </span>
-                                            </section>
-                                        </section>
-
-                                        <aside class="accionesComanda">
-                                            <strong class="precioComanda">28,50 €</strong>
-                                            <button class="botonCobro">Cobrar a Socio</button>
-                                        </aside>
-                                    </article>
-
-                                    <article class="comanda">
-                                        <section class="datosComanda">
-                                            <span class="mesaComanda">B-02</span>
-
-                                            <section class="detalleComanda">
-                                                <span class="clienteComanda">
-                                                    Barra Mostrador · Miguel Ángel (#0311)
-                                                </span>
-                                                <span class="pedidoComanda">
-                                                    1 Café solo, 1 Zumo Naranja natural
-                                                </span>
-                                            </section>
-                                        </section>
-
-                                        <aside class="accionesComanda">
-                                            <strong class="precioComanda">4,10 €</strong>
-                                            <button class="botonCobro">Monedero (-4,10€)</button>
-                                        </aside>
-                                    </article>
-                                </section>
-                            </section>
-
-                            <aside class="bonificacion">
-                                <section class="mensajeBonificacion">
-                                    <em class="icono">stars</em>
-                                    <span>
-                                        Bonificación activa:
-                                        <strong>+10% saldo extra</strong>
-                                        en recargas de monedero de más de 50 €
-                                    </span>
-                                </section>
-
-                                <button class="botonRecarga">Recargar Saldo Socio</button>
-                            </aside>
-                        </article>
-
-                        <!-- Tienda -->
-                        <article class="tarjetaServicio">
-                            <section class="contenidoServicio">
-
-                                <header class="cabeceraServicio">
-                                    <section class="tituloServicio">
-                                        <figure class="iconoServicio">
-                                            <em class="icono">shopping_bag</em>
-                                        </figure>
-
-                                        <article class="informacionServicio">
-                                            <h2 class="tituloSeccion">Tienda Pro-Shop &amp; Préstamos</h2>
-                                            <p class="descripcionSeccion">
-                                                Venta rápida de pista y test de palas
-                                            </p>
-                                        </article>
-                                    </section>
-                                </header>
-
-                                <span class="tituloVenta">Venta Rápida de Mostrador</span>
-
-                                <section class="productosRapidos">
-
-                                    <button class="productoRapido">
-                                        <article class="datosProducto">
-                                            <span class="nombreProducto">Tubo Head Padel Pro</span>
-                                            <span class="detalleProducto">Bolas oficiales</span>
-                                        </article>
-                                        <strong class="precioProducto">+4,00 €</strong>
-                                    </button>
-
-                                    <button class="productoRapido">
-                                        <article class="datosProducto">
-                                            <span class="nombreProducto">Overgrip Bullpadel</span>
-                                            <span class="detalleProducto">Unidad individual</span>
-                                        </article>
-                                        <strong class="precioProducto">+2,50 €</strong>
-                                    </button>
-
-                                    <button class="productoRapido">
-                                        <article class="datosProducto">
-                                            <span class="nombreProducto">Protector Rugoso</span>
-                                            <span class="detalleProducto">Colocación gratis</span>
-                                        </article>
-                                        <strong class="precioProducto">+5,00 €</strong>
-                                    </button>
-
-                                    <button class="productoRapido">
-                                        <article class="datosProducto">
-                                            <span class="nombreProducto">Bebida Isotónica</span>
-                                            <span class="detalleProducto">Aquarius / Powerade</span>
-                                        </article>
-                                        <strong class="precioProducto">+2,00 €</strong>
-                                    </button>
-
-                                </section>
-
-                                <section class="palasTest">
-                                    <span class="tituloTest">Control de Palas de Test en Pista</span>
-
-                                    <article class="palaTest">
-                                        <section class="datosPala">
-                                            <em class="icono">sports_tennis</em>
-
-                                            <article class="informacionPala">
-                                                <span class="nombrePala">Bullpadel Hack 03 2024</span>
-                                                <span class="usuarioPala">En test por: Laura Méndez (#1042)</span>
-                                            </article>
-                                        </section>
-
-                                        <strong class="horaDevolucion">Devolución: 20:00h</strong>
-                                    </article>
-
-                                    <article class="palaTest">
-                                        <section class="datosPala">
-                                            <em class="icono">check_circle</em>
-
-                                            <article class="informacionPala">
-                                                <span class="nombrePala">Nox AT10 Genius 18K</span>
-                                                <span class="usuarioPala">Disponible en mostrador</span>
-                                            </article>
-                                        </section>
-
-                                        <button class="botonPrestar">Prestar Pala</button>
-                                    </article>
-                                </section>
-                            </section>
-
-                            <footer class="pieTienda">
-                                <button class="botonInventario">
-                                    <em class="icono">inventory_2</em>
-                                    Inventario Completo de Tienda (Catálogo)
-                                </button>
-                            </footer>
-                        </article>
-
-                    </section>
-                </section>
-
-                <!-- Taquillas -->
-                <section class="seccionTaquillas">
-                    <article class="panelTaquillas">
-
-                        <header class="cabeceraTaquillas">
-                            <section class="tituloTaquillas">
-                                <figure class="iconoTaquillas">
-                                    <em class="icono">door_sliding</em>
-                                </figure>
-
-                                <article class="informacionTaquillas">
-                                    <h2 class="tituloSeccion">Taquillas Digitales y Vestuarios</h2>
-                                    <p class="descripcionSeccion">
-                                        Asignación dinámica de códigos de apertura y gestión de abonados de cuota fija
-                                    </p>
-                                </article>
-                            </section>
-
-                            <aside class="leyendaTaquillas">
-                                <section class="itemLeyenda">
-                                    <span class="colorLibre"></span>
-                                    <span>Libre / Disponible</span>
-                                </section>
-
-                                <section class="itemLeyenda">
-                                    <span class="colorAsignada"></span>
-                                    <span>Asignada Hoy (NFC/PIN)</span>
-                                </section>
-
-                                <section class="itemLeyenda">
-                                    <span class="colorFija"></span>
-                                    <span>Cuota Fija Mensual</span>
-                                </section>
-                            </aside>
-                        </header>
-
-                        <!-- Mapa visual de taquillas -->
-                        <section class="mapaTaquillas">
-
-                            <article class="taquillaLibre">
-                                <header class="cabeceraTaquilla">
-                                    <span>01</span>
-                                    <span class="indicadorLibre"></span>
-                                </header>
-                                <span>Libre</span>
-                            </article>
-
-                            <article class="taquillaAsignada">
-                                <header class="cabeceraTaquilla">
-                                    <span>02</span>
-                                    <em class="icono">lock</em>
-                                </header>
-                                <section class="datosTaquilla">
-                                    <span>S. #1042</span>
-                                    <span>Hasta 20:00</span>
-                                </section>
-                            </article>
-
-                            <article class="taquillaAsignada">
-                                <header class="cabeceraTaquilla">
-                                    <span>03</span>
-                                    <em class="icono">lock</em>
-                                </header>
-                                <section class="datosTaquilla">
-                                    <span>S. #1043</span>
-                                    <span>Hasta 19:30</span>
-                                </section>
-                            </article>
-
-                            <article class="taquillaFija">
-                                <header class="cabeceraTaquilla">
-                                    <span>04</span>
-                                    <em class="icono">badge</em>
-                                </header>
-                                <span>Abono Fijo</span>
-                            </article>
-
-                            <article class="taquillaLibre">
-                                <header class="cabeceraTaquilla">
-                                    <span>05</span>
-                                    <span class="indicadorLibre"></span>
-                                </header>
-                                <span>Libre</span>
-                            </article>
-
-                            <article class="taquillaFija">
-                                <header class="cabeceraTaquilla">
-                                    <span>06</span>
-                                    <em class="icono">badge</em>
-                                </header>
-                                <span>Abono Fijo</span>
-                            </article>
-
-                            <article class="taquillaAsignada">
-                                <header class="cabeceraTaquilla">
-                                    <span>07</span>
-                                    <em class="icono">lock</em>
-                                </header>
-                                <section class="datosTaquilla">
-                                    <span>S. #0056</span>
-                                    <span>Hasta 21:00</span>
-                                </section>
-                            </article>
-
-                            <article class="taquillaLibre">
-                                <header class="cabeceraTaquilla">
-                                    <span>08</span>
-                                    <span class="indicadorLibre"></span>
-                                </header>
-                                <span>Libre</span>
-                            </article>
-
-                            <article class="taquillaLibre">
-                                <header class="cabeceraTaquilla">
-                                    <span>09</span>
-                                    <span class="indicadorLibre"></span>
-                                </header>
-                                <span>Libre</span>
-                            </article>
-
-                            <article class="taquillaAsignada">
-                                <header class="cabeceraTaquilla">
-                                    <span>10</span>
-                                    <em class="icono">lock</em>
-                                </header>
-                                <section class="datosTaquilla">
-                                    <span>S. #1089</span>
-                                    <span>Hasta 20:30</span>
-                                </section>
-                            </article>
-
-                            <article class="taquillaFija">
-                                <header class="cabeceraTaquilla">
-                                    <span>11</span>
-                                    <em class="icono">badge</em>
-                                </header>
-                                <span>Abono Fijo</span>
-                            </article>
-
-                            <article class="taquillaLibre">
-                                <header class="cabeceraTaquilla">
-                                    <span>12</span>
-                                    <span class="indicadorLibre"></span>
-                                </header>
-                                <span>Libre</span>
-                            </article>
-
-                            <article class="taquillaLibre">
-                                <header class="cabeceraTaquilla">
-                                    <span>13</span>
-                                    <span class="indicadorLibre"></span>
-                                </header>
-                                <span>Libre</span>
-                            </article>
-
-                            <article class="taquillaAsignada">
-                                <header class="cabeceraTaquilla">
-                                    <span>14</span>
-                                    <em class="icono">lock</em>
-                                </header>
-                                <section class="datosTaquilla">
-                                    <span>Invitado QR</span>
-                                    <span>Hasta 19:30</span>
-                                </section>
-                            </article>
-
-                            <article class="taquillaAsignada">
-                                <header class="cabeceraTaquilla">
-                                    <span>15</span>
-                                    <em class="icono">lock</em>
-                                </header>
-                                <section class="datosTaquilla">
-                                    <span>S. #0821</span>
-                                    <span>Hasta 21:00</span>
-                                </section>
-                            </article>
-
-                            <article class="taquillaFija">
-                                <header class="cabeceraTaquilla">
-                                    <span>16</span>
-                                    <em class="icono">badge</em>
-                                </header>
-                                <span>Abono Fijo</span>
-                            </article>
-
-                            <article class="taquillaAsignada">
-                                <header class="cabeceraTaquilla">
-                                    <span>17</span>
-                                    <em class="icono">lock</em>
-                                </header>
-                                <section class="datosTaquilla">
-                                    <span>S. #0412</span>
-                                    <span>Hasta 20:00</span>
-                                </section>
-                            </article>
-
-                            <article class="taquillaLibre">
-                                <header class="cabeceraTaquilla">
-                                    <span>18</span>
-                                    <span class="indicadorLibre"></span>
-                                </header>
-                                <span>Libre</span>
-                            </article>
-
-                            <article class="taquillaFija">
-                                <header class="cabeceraTaquilla">
-                                    <span>19</span>
-                                    <em class="icono">badge</em>
-                                </header>
-                                <span>Abono Fijo</span>
-                            </article>
-
-                            <article class="taquillaAsignada">
-                                <header class="cabeceraTaquilla">
-                                    <span>20</span>
-                                    <em class="icono">lock</em>
-                                </header>
-                                <section class="datosTaquilla">
-                                    <span>S. #1201</span>
-                                    <span>Hasta 20:30</span>
-                                </section>
-                            </article>
-
-                            <article class="taquillaLibre">
-                                <header class="cabeceraTaquilla">
-                                    <span>21</span>
-                                    <span class="indicadorLibre"></span>
-                                </header>
-                                <span>Libre</span>
-                            </article>
-
-                            <article class="taquillaLibre">
-                                <header class="cabeceraTaquilla">
-                                    <span>22</span>
-                                    <span class="indicadorLibre"></span>
-                                </header>
-                                <span>Libre</span>
-                            </article>
-
-                            <article class="taquillaFija">
-                                <header class="cabeceraTaquilla">
-                                    <span>23</span>
-                                    <em class="icono">badge</em>
-                                </header>
-                                <span>Abono Fijo</span>
-                            </article>
-
-                            <article class="taquillaAsignada">
-                                <header class="cabeceraTaquilla">
-                                    <span>24</span>
-                                    <em class="icono">lock</em>
-                                </header>
-                                <section class="datosTaquilla">
-                                    <span>S. #0954</span>
-                                    <span>Hasta 21:00</span>
-                                </section>
-                            </article>
-
-                        </section>
-
-                        <!-- Acciones finales -->
-                        <footer class="pieTaquillas">
-                            <section class="avisoTaquillas">
-                                <em class="icono">phonelink_lock</em>
-                                <span>
-                                    Desbloqueo máster NFC disponible para recepción
-                                    desde smartphone de conserjería
-                                </span>
-                            </section>
-
-                            <aside class="accionesTaquillas">
-                                <button class="botonAccion">Liberar taquillas caducadas</button>
-                                <button class="botonAccion">Asignar Taquilla Manual</button>
-                            </aside>
-                        </footer>
-
-                    </article>
-                </section>
-
+            </div>
+
+            <!-- ============ TAQUILLAS ============ -->
+            <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado servicios-admin__seccion" id="taquillas" aria-labelledby="titulo-taquillas">
+                <div class="panel-admin__seccion-cabecera">
+                    <div>
+                        <h2 class="panel-admin__seccion-titulo" id="titulo-taquillas"><i class="ph ph-lock-key" aria-hidden="true"></i> Taquillas y vestuarios</h2>
+                        <p class="panel-admin__subtitulo">Códigos de apertura dinámicos y abonados de cuota fija.</p>
+                    </div>
+                    <ul class="servicios-admin__leyenda" aria-label="Leyenda">
+                        <li class="servicios-admin__leyenda-item">Libre</li>
+                        <li class="servicios-admin__leyenda-item servicios-admin__leyenda-item--asignada">Asignada hoy (NFC / PIN)</li>
+                        <li class="servicios-admin__leyenda-item servicios-admin__leyenda-item--fija">Cuota fija mensual</li>
+                    </ul>
+                </div>
+                <ul class="servicios-admin__taquillas" aria-label="Estado de las taquillas 1 a 24">
+                    <li class="servicios-admin__taquilla"><strong>01</strong><span>Libre</span></li>
+                    <li class="servicios-admin__taquilla servicios-admin__taquilla--asignada"><strong>02</strong><span>S. #1042</span><span>Hasta 20:00</span></li>
+                    <li class="servicios-admin__taquilla servicios-admin__taquilla--asignada"><strong>03</strong><span>S. #1043</span><span>Hasta 19:30</span></li>
+                    <li class="servicios-admin__taquilla servicios-admin__taquilla--fija"><strong>04</strong><span>Abono fijo</span></li>
+                    <li class="servicios-admin__taquilla"><strong>05</strong><span>Libre</span></li>
+                    <li class="servicios-admin__taquilla servicios-admin__taquilla--fija"><strong>06</strong><span>Abono fijo</span></li>
+                    <li class="servicios-admin__taquilla servicios-admin__taquilla--asignada"><strong>07</strong><span>S. #0056</span><span>Hasta 21:00</span></li>
+                    <li class="servicios-admin__taquilla"><strong>08</strong><span>Libre</span></li>
+                    <li class="servicios-admin__taquilla"><strong>09</strong><span>Libre</span></li>
+                    <li class="servicios-admin__taquilla servicios-admin__taquilla--asignada"><strong>10</strong><span>S. #1089</span><span>Hasta 20:30</span></li>
+                    <li class="servicios-admin__taquilla servicios-admin__taquilla--fija"><strong>11</strong><span>Abono fijo</span></li>
+                    <li class="servicios-admin__taquilla"><strong>12</strong><span>Libre</span></li>
+                    <li class="servicios-admin__taquilla"><strong>13</strong><span>Libre</span></li>
+                    <li class="servicios-admin__taquilla servicios-admin__taquilla--asignada"><strong>14</strong><span>Invitado QR</span><span>Hasta 19:30</span></li>
+                    <li class="servicios-admin__taquilla servicios-admin__taquilla--asignada"><strong>15</strong><span>S. #0821</span><span>Hasta 21:00</span></li>
+                    <li class="servicios-admin__taquilla servicios-admin__taquilla--fija"><strong>16</strong><span>Abono fijo</span></li>
+                    <li class="servicios-admin__taquilla servicios-admin__taquilla--asignada"><strong>17</strong><span>S. #0412</span><span>Hasta 20:00</span></li>
+                    <li class="servicios-admin__taquilla"><strong>18</strong><span>Libre</span></li>
+                    <li class="servicios-admin__taquilla servicios-admin__taquilla--fija"><strong>19</strong><span>Abono fijo</span></li>
+                    <li class="servicios-admin__taquilla servicios-admin__taquilla--asignada"><strong>20</strong><span>S. #1201</span><span>Hasta 20:30</span></li>
+                    <li class="servicios-admin__taquilla"><strong>21</strong><span>Libre</span></li>
+                    <li class="servicios-admin__taquilla"><strong>22</strong><span>Libre</span></li>
+                    <li class="servicios-admin__taquilla servicios-admin__taquilla--fija"><strong>23</strong><span>Abono fijo</span></li>
+                    <li class="servicios-admin__taquilla servicios-admin__taquilla--asignada"><strong>24</strong><span>S. #0954</span><span>Hasta 21:00</span></li>
+                </ul>
+                <div class="panel-admin__seccion-cabecera">
+                    <p class="panel-admin__texto-pequeno"><i class="ph ph-device-mobile" aria-hidden="true"></i> Desbloqueo maestro NFC disponible para recepción desde el móvil de conserjería.</p>
+                    <div class="panel-admin__acciones">
+                        <button type="button" class="boton boton--contorno">Liberar caducadas</button>
+                        <button type="button" class="boton boton--primario">Asignar taquilla</button>
+                    </div>
+                </div>
             </section>
         </main>
-    </section>
+    </div>
+
+    <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
+    <nav class="navegacion-movil" aria-label="Navegación del administrador en móvil">
+        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-squares-four" aria-hidden="true"></i>Inicio</a>
+        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar" aria-hidden="true"></i>Agenda</a>
+        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar-check" aria-hidden="true"></i>Reservas</a>
+        <a href="configAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-sidebar" aria-hidden="true"></i>Gestión</a>
+    </nav>
 
 </body>
 </html>

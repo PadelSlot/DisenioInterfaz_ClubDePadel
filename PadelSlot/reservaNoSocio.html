@@ -1,944 +1,359 @@
 <!DOCTYPE html>
-<html lang="es" class="estadoDisponibilidad">
-<head class="estadoInvitado">
-    <meta charset="UTF-8" class="metadatos">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" class="metadatos">
-    <title class="estadoInvitado">Reserva de Pista Invitado (No Socio) | PadelSlot</title>
-    
-    <!-- Fuentes tipográficas e iconos -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" class="recursoExterno">
-    <script src="https://unpkg.com/@phosphor-icons/web" class="scriptPagina"></script>
-    
-    <style>
-        :root {
-            --brand-dark: #1e3c31; 
-            --brand-dark-hover: #152922;
-            --brand-accent: #d8f44d; 
-            --brand-accent-hover: #c5e33c;
-            --bg-body: #f8fafc;
-            --bg-surface: #ffffff;
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
-            --border-light: #f1f5f9;
-            
-            --status-green: #10b981;
-            --status-orange: #f59e0b;
-            --status-red: #ef4444;
-            --status-blue-bg: #e0f2fe;
-            --status-blue-text: #0369a1;
-            --status-yellow-bg: #fef08a;
-            --status-yellow-text: #854d0e;
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva tu pista (invitado) · Club de Pádel Sevilla · PádelSlot</title>
 
-            --radius-sm: 6px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-full: 9999px;
-            
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-        }
+    <!-- Fuentes: Space Grotesk (títulos) e Inter (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    <!-- Iconos Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a { text-decoration: none; color: inherit; }
-        ul, ol, menu { list-style: none; padding: 0; margin: 0; }
-        
-        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
-
-        /* Utilidades Flex/Grid */
-        .flex { display: flex; }
-        .flex-col { display: flex; flex-direction: column; }
-        .items-center { align-items: center; }
-        .items-start { align-items: flex-start; }
-        .justify-between { justify-content: space-between; }
-        .justify-center { justify-content: center; }
-        .gap-1 { gap: 4px; } .gap-2 { gap: 8px; } .gap-3 { gap: 12px; } .gap-4 { gap: 16px; } .gap-6 { gap: 24px; }
-        .w-full { width: 100%; }
-
-        /* Botones */
-        .btn {
-            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-            padding: 10px 16px; border-radius: var(--radius-sm);
-            font-size: 0.875rem; font-weight: 600; cursor: pointer;
-            transition: all 0.2s ease; border: 1px solid transparent;
-        }
-        .btn-dark { background-color: var(--brand-dark); color: white; }
-        .btn-dark:hover { background-color: var(--brand-dark-hover); }
-        .btn-yellow { background-color: var(--brand-accent); color: var(--brand-dark); font-weight: 700; }
-        .btn-yellow:hover { background-color: var(--brand-accent-hover); }
-        .btn-outline { background-color: transparent; border-color: var(--border-color); color: var(--text-main); }
-        .btn-outline:hover { background-color: var(--border-light); }
-        .btn-sm { padding: 6px 12px; font-size: 0.75rem; }
-
-        /* Badges */
-        .badge {
-            display: inline-flex; align-items: center; gap: 4px;
-            padding: 4px 10px; border-radius: var(--radius-full);
-            font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.3px; white-space: nowrap;
-        }
-        .badge-accent { background-color: var(--brand-accent); color: var(--brand-dark); }
-        .badge-blue { background-color: var(--status-blue-bg); color: var(--status-blue-text); }
-        .badge-yellow { background-color: var(--status-yellow-bg); color: var(--status-yellow-text); }
-        .badge-outline { border: 1px solid var(--border-color); color: var(--text-muted); }
-
-        /* Barras Superiores */
-        .topbar-public {
-            background-color: var(--brand-dark); color: white;
-            font-size: 0.75rem; padding: 8px 0; font-weight: 500;
-        }
-        .topbar-public .container { display: flex; justify-content: space-between; align-items: center; }
-        .topbar-badge-yellow { background: var(--brand-accent); color: var(--brand-dark); padding: 2px 8px; border-radius: 4px; font-weight: 800; font-size: 0.6875rem; }
-        
-        .header-public { background-color: white; border-bottom: 1px solid var(--border-color); }
-        .header-public .container { display: flex; justify-content: space-between; align-items: center; height: 72px; }
-        .brand-logo { display: flex; align-items: center; gap: 12px; }
-        .brand-icon {
-            width: 36px; height: 36px; background-color: var(--brand-dark); color: var(--brand-accent);
-            display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm);
-            font-weight: 800; font-size: 1.125rem;
-        }
-        .brand-text h1 { font-size: 1rem; font-weight: 800; line-height: 1.2; }
-        .brand-text p { font-size: 0.6875rem; color: var(--text-muted); font-weight: 600; }
-
-        /* Banner Invitado */
-        .guest-alert-banner { background-color: var(--brand-dark); color: white; padding: 12px 0; border-bottom: 2px solid var(--brand-accent); }
-        .guest-alert-banner .container { display: flex; justify-content: space-between; align-items: center; }
-        .guest-alert-info { display: flex; align-items: flex-start; gap: 12px; }
-        .guest-alert-info i { font-size: 1.5rem; color: var(--brand-accent); margin-top: 2px; }
-        .guest-alert-info h3 { font-size: 1rem; font-weight: 700; display: flex; align-items: center; gap: 8px; margin-bottom: 2px; }
-        .guest-badge { font-size: 0.625rem; background: rgba(255,255,255,0.2); padding: 2px 6px; border-radius: 4px; letter-spacing: 0.5px; }
-        .guest-alert-info p { font-size: 0.75rem; color: rgba(255,255,255,0.8); }
-
-        /* Contenido Principal */
-        .page-content { padding: 32px 0 64px 0; }
-        
-        .breadcrumb-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-        .breadcrumb { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); }
-        .breadcrumb strong { color: var(--text-main); }
-        
-        .page-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 32px; }
-        .page-title h2 { font-size: 2rem; font-weight: 800; margin: 0 0 4px 0; letter-spacing: -0.5px; }
-        .page-title p { font-size: 0.875rem; color: var(--text-muted); }
-
-        /* Barra de Progreso */
-        .booking-steps { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; position: relative; }
-        .booking-steps::before { content: ''; position: absolute; top: 12px; left: 24px; right: 24px; height: 2px; background: var(--border-color); z-index: 0; }
-        .step { display: flex; align-items: center; gap: 12px; background: var(--bg-body); padding: 0 16px; position: relative; z-index: 1; }
-        .step-num { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; background: var(--border-color); color: var(--text-muted); }
-        .step.active .step-num { background: var(--brand-dark); color: white; }
-        .step.completed .step-num { background: var(--status-green); color: white; }
-        .step-info h4 { font-size: 0.875rem; font-weight: 700; }
-        .step-info p { font-size: 0.6875rem; color: var(--text-muted); }
-        .step:not(.active) .step-info h4 { color: var(--text-muted); }
-
-        /* Layout Grid 2 Columnas */
-        .booking-layout { display: grid; grid-template-columns: 1fr 400px; gap: 32px; align-items: start; }
-        
-        /* Secciones Izquierda */
-        .booking-section { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 24px; }
-        .section-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
-        .section-header-left span { font-size: 0.6875rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px; }
-        .section-header-left h3 { font-size: 1.25rem; font-weight: 800; }
-        .section-header-right { font-size: 0.75rem; color: var(--text-muted); text-align: right; }
-
-        /* Paso 1: Fecha */
-        .location-selects { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-        .select-box { border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .select-box-info { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; font-weight: 600; }
-        .select-box-info i { color: var(--text-muted); font-size: 1.125rem; }
-        .select-box-sub { font-size: 0.6875rem; color: var(--text-muted); }
-
-        .date-selector-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.875rem; font-weight: 700; }
-        .date-nav { display: flex; gap: 8px; }
-        .date-nav button { width: 28px; height: 28px; border: 1px solid var(--border-color); border-radius: 4px; background: white; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-        .days-row { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px; }
-        .day-card { flex: 1; min-width: 72px; padding: 12px 8px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); text-align: center; cursor: pointer; transition: all 0.2s; }
-        .day-card:hover { border-color: var(--brand-dark); }
-        .day-card.active { background: var(--brand-dark); border-color: var(--brand-dark); color: white; }
-        .day-card.active .d-name { color: rgba(255,255,255,0.7); }
-        .d-name { display: block; font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
-        .d-num { display: block; font-size: 1.125rem; font-weight: 800; }
-
-        /* Paso 2: Pistas y Horarios */
-        .time-toggle { display: inline-flex; background: var(--border-light); border-radius: var(--radius-full); padding: 4px; margin-bottom: 20px; }
-        .time-toggle button { padding: 6px 16px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; border: none; cursor: pointer; background: transparent; color: var(--text-muted); }
-        .time-toggle button.active { background: var(--brand-dark); color: white; }
-
-        .legend-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 0.75rem; font-weight: 600; color: var(--text-muted); }
-        .legend-items { display: flex; gap: 16px; }
-        .legend-item { display: flex; align-items: center; gap: 6px; }
-        .dot { width: 8px; height: 8px; border-radius: 50%; }
-        .dot-green { background: var(--brand-accent); border: 2px solid var(--brand-dark); }
-        .dot-dark { background: var(--brand-dark); }
-        .dot-gray { background: var(--border-color); }
-        .live-status { display: flex; align-items: center; gap: 4px; color: var(--status-green); }
-
-        .courts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-        .court-column { display: flex; flex-direction: column; gap: 8px; }
-        .court-header { text-align: center; padding: 12px 4px; border-radius: var(--radius-sm); background: var(--bg-body); border: 1px solid var(--border-color); min-height: 70px; display: flex; flex-direction: column; justify-content: center; }
-        .court-header h5 { font-size: 0.8125rem; font-weight: 700; margin-bottom: 2px; }
-        .court-header span { font-size: 0.625rem; color: var(--text-muted); }
-        .court-header.premium { background: #fefce8; border-color: #fef08a; }
-        
-        .time-slot { border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 12px 4px; text-align: center; cursor: pointer; transition: all 0.2s; background: white; }
-        .time-slot:hover:not(.occupied) { border-color: var(--brand-dark); }
-        .time-slot.active { background: var(--brand-dark); border-color: var(--brand-accent); color: white; border-width: 2px; padding: 11px 3px; position: relative; }
-        .time-slot.active::after { content: 'Elegida'; position: absolute; top: -10px; right: -10px; background: var(--brand-accent); color: var(--brand-dark); font-size: 0.625rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; z-index: 2; box-shadow: var(--shadow-sm); }
-        .time-slot.occupied { background: var(--bg-body); color: #94a3b8; cursor: not-allowed; border-color: transparent; }
-        .t-time { display: block; font-size: 0.875rem; font-weight: 700; margin-bottom: 2px; }
-        .t-price { display: block; font-size: 0.6875rem; }
-        .time-slot.active .t-time { color: white; }
-        .time-slot.active .t-price { color: var(--brand-accent); font-weight: 700; }
-
-        /* Paso 3: Participantes */
-        .participant-row { display: flex; align-items: center; justify-content: space-between; padding: 16px; border: 1px solid var(--border-color); border-radius: var(--radius-md); margin-bottom: 12px; background: white; }
-        .p-info-left { display: flex; align-items: center; gap: 12px; }
-        .p-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem; }
-        .p-avatar.green { background: var(--brand-dark); color: var(--brand-accent); }
-        .p-avatar.gray { background: var(--border-color); color: var(--text-muted); }
-        .p-avatar.empty { background: var(--border-light); border: 1px dashed var(--text-muted); color: var(--text-muted); }
-        .p-details h5 { font-size: 0.875rem; font-weight: 700; display: flex; align-items: center; gap: 6px; }
-        .p-role { font-size: 0.625rem; padding: 2px 6px; background: var(--border-light); border-radius: 4px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
-        .p-sub { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
-        .p-actions { display: flex; align-items: center; gap: 12px; }
-        
-        .empty-slot-input { border: none; background: transparent; outline: none; font-size: 0.875rem; font-family: inherit; color: var(--text-main); width: 250px; }
-        .empty-slot-input::placeholder { color: #94a3b8; }
-
-        .guest-policy-alert { display: flex; gap: 12px; background: #fefce8; border: 1px solid #fef08a; padding: 16px; border-radius: var(--radius-md); margin-top: 24px; }
-        .guest-policy-alert i { color: var(--status-yellow-text); font-size: 1.25rem; flex-shrink: 0; }
-        .guest-policy-alert p { font-size: 0.75rem; color: var(--status-yellow-text); line-height: 1.5; }
-
-        /* Sidebar Derecha: Resumen y Pago */
-        .summary-sidebar { position: sticky; top: 24px; }
-        .summary-card { background: white; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm); }
-        .summary-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border-light); }
-        .summary-header h3 { font-size: 1.125rem; font-weight: 800; }
-        
-        .s-details-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
-        .s-detail-item { display: flex; gap: 12px; font-size: 0.8125rem; color: var(--text-main); }
-        .s-detail-item i { color: var(--text-muted); font-size: 1.125rem; width: 20px; text-align: center; }
-        
-        .form-group { margin-bottom: 16px; }
-        .form-label { display: block; font-size: 0.6875rem; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; }
-        .form-input { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: var(--radius-sm); font-size: 0.875rem; font-family: inherit; background: #f8fafc; color: var(--text-main); }
-        .form-input:focus { outline: none; border-color: var(--brand-dark); background: white; }
-        
-        .extras-section { margin: 24px 0; padding: 20px 0; border-top: 1px dashed var(--border-color); border-bottom: 1px dashed var(--border-color); }
-        .extras-title { font-size: 0.6875rem; font-weight: 700; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; }
-        .extra-checkbox { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8125rem; cursor: pointer; }
-        .extra-checkbox:last-child { margin-bottom: 0; }
-        .checkbox-label { display: flex; align-items: center; gap: 8px; }
-        .checkbox-custom { width: 16px; height: 16px; border: 1px solid #cbd5e1; border-radius: 4px; display: flex; align-items: center; justify-content: center; }
-        input[type="checkbox"]:checked + .checkbox-label .checkbox-custom { background: var(--brand-dark); border-color: var(--brand-dark); color: white; }
-        input[type="checkbox"] { display: none; }
-        
-        .pricing-breakdown { background: var(--bg-body); padding: 16px; border-radius: var(--radius-md); margin-bottom: 24px; font-size: 0.75rem; }
-        .pricing-row { display: flex; justify-content: space-between; margin-bottom: 8px; color: var(--text-muted); }
-        .pricing-row.total { border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: 12px; margin-bottom: 0; align-items: center; }
-        .pricing-row.total .t-label { font-weight: 800; font-size: 0.875rem; color: var(--text-main); }
-        .pricing-row.total .t-label span { display: block; font-size: 0.625rem; font-weight: 400; color: var(--text-muted); margin-top: 2px; }
-        .pricing-row.total .t-value { font-size: 1.5rem; font-weight: 800; color: var(--text-main); }
-        
-        .payment-methods { margin-bottom: 24px; }
-        .p-methods-title { font-size: 0.625rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; }
-        .p-methods-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-        .p-method-btn { padding: 8px 0; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: white; font-size: 0.6875rem; font-weight: 600; cursor: pointer; text-align: center; }
-        .p-method-btn.active { border-color: var(--brand-dark); background: var(--bg-body); }
-
-        .btn-pay { width: 100%; padding: 16px; font-size: 1rem; border-radius: var(--radius-md); display: flex; justify-content: space-between; }
-        .ssl-info { display: flex; justify-content: center; align-items: center; gap: 6px; font-size: 0.6875rem; color: var(--status-green); margin-top: 12px; font-weight: 600; }
-        .ssl-desc { font-size: 0.6875rem; color: var(--text-muted); text-align: center; margin-top: 8px; line-height: 1.4; }
-
-        .help-box { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px; margin-top: 16px; display: flex; justify-content: space-between; align-items: center; }
-        .help-box-left { display: flex; align-items: center; gap: 12px; }
-        .help-box-left i { font-size: 1.5rem; color: var(--text-muted); }
-        .help-box-left h5 { font-size: 0.8125rem; font-weight: 700; }
-        .help-box-left p { font-size: 0.6875rem; color: var(--text-muted); }
-
-        /* Banners y FAQs Inferiores */
-        .membership-banner { background-color: var(--brand-dark); border-radius: var(--radius-lg); padding: 32px; display: flex; justify-content: space-between; align-items: center; color: white; margin-bottom: 48px; }
-        .membership-banner h3 { font-size: 1.5rem; font-weight: 800; margin-top: 12px; margin-bottom: 8px; }
-        .membership-banner p { font-size: 0.875rem; color: rgba(255,255,255,0.8); max-width: 700px; line-height: 1.6; }
-        .m-badge { background: var(--brand-accent); color: var(--brand-dark); font-size: 0.625rem; font-weight: 800; padding: 4px 12px; border-radius: var(--radius-full); text-transform: uppercase; letter-spacing: 0.5px; }
-        
-        .faq-section { margin-bottom: 64px; }
-        .faq-section-title { font-size: 0.6875rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; }
-        .faq-section h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
-        .faq-section > p { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 24px; }
-        .faq-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .faq-card { background: white; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; }
-        .faq-icon { width: 40px; height: 40px; background: var(--bg-body); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: var(--brand-dark); margin-bottom: 16px; }
-        .faq-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
-        .faq-card p { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.6; }
-
-        .help-banner { background-color: var(--brand-accent); padding: 16px 0; }
-        .help-banner .container { display: flex; justify-content: space-between; align-items: center; }
-        .help-banner-text { font-size: 0.875rem; font-weight: 700; color: var(--brand-dark); display: flex; align-items: center; gap: 8px; }
-
-        /* Footer */
-        .main-footer { background-color: var(--brand-dark); color: white; padding: 48px 0 24px 0; }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 48px; margin-bottom: 48px; }
-        
-        .footer-brand { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 1.125rem; margin-bottom: 16px; }
-        .footer-logo-box { width: 24px; height: 24px; background: var(--brand-accent); color: var(--brand-dark); display: flex; align-items: center; justify-content: center; border-radius: 4px; font-size: 0.75rem; }
-        .footer-col p { font-size: 0.75rem; color: #cbd5e1; line-height: 1.6; margin-bottom: 12px; }
-        
-        .footer-col h5 { font-size: 0.75rem; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
-        .footer-col ul { display: flex; flex-direction: column; gap: 12px; }
-        .footer-col a { font-size: 0.8125rem; color: #cbd5e1; transition: color 0.2s; }
-        .footer-col a:hover { color: white; }
-        
-        .footer-active-install { background: rgba(255,255,255,0.05); padding: 16px; border-radius: var(--radius-sm); }
-        .footer-active-install h6 { font-size: 0.875rem; font-weight: 700; display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
-        .footer-active-install h6 i { color: var(--brand-accent); }
-        .footer-active-install p { margin-bottom: 4px; color: #94a3b8; }
-        
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: #94a3b8; }
-        .footer-links { display: flex; gap: 24px; }
-        .footer-links a:hover { color: white; }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .booking-layout { grid-template-columns: 1fr; }
-            .summary-sidebar { position: static; }
-            .courts-grid { grid-template-columns: repeat(2, 1fr); }
-            .membership-banner { flex-direction: column; text-align: center; gap: 24px; align-items: center; }
-            .faq-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 768px) {
-            .booking-steps { display: none; }
-            .courts-grid { grid-template-columns: 1fr; }
-            .participant-row { flex-direction: column; align-items: flex-start; gap: 12px; }
-            .p-actions { width: 100%; justify-content: space-between; }
-            .empty-slot-input { width: 100%; }
-            .help-banner .container { flex-direction: column; gap: 16px; text-align: center; }
-            .faq-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <link rel="stylesheet" href="scss/main.css">
 </head>
 
-<body class="estadoDisponibilidad">
+<body class="fondo-suave">
 
-    <!-- Barra Superior Informativa para Público -->
-    <aside class="caracteristicasPistas">
-        <section class="caracteristicasPistas">
-            <section class="clubSevilla">
-                <span class="textoInformacion">PADELSLOT PÚBLICO</span>
-                <span class="clubSevilla">Instalación: <strong class="clubSevilla">Club de Pádel Sevilla</strong></span>
-            </section>
-            <section class="caracteristicasPistas">
-                <span class="estadoInvitado">Reservas abiertas a no socios</span>
-                <span class="caracteristicasPistas"><i class="ph-fill ph-check-circle" class="iconoPista"></i> Pistas de cristal y panorámicas</span>
-            </section>
-        </section>
-    </aside>
+    <!-- ============ CABECERA ============ -->
+    <header class="cabecera">
+        <div class="cabecera__contenido">
+            <a href="inicio.html" class="cabecera__logo">
+                <span class="logotipo">P</span>
+                PádelSlot
+            </a>
 
-    <!-- Encabezado Principal de la Página Pública -->
-    <header class="informacionSocio">
-        <section class="informacionSocio">
-            <section class="clubSevilla">
-                <figure class="figuraContenido">P</figure>
-                <section class="clubSevilla">
-                    <h1 class="clubSevilla">Club de Pádel Sevilla</h1>
-                    <p class="textoDescripcion">Acceso Público · PadelSlot</p>
-                </section>
-            </section>
-            <a href="#" class="informacionSocio">Acceso Socios / Iniciar sesión</a>
-        </section>
+            <nav class="cabecera__menu navegacion-escritorio" aria-label="Navegación principal">
+                <a href="inicio.html" class="cabecera__enlace">Inicio</a>
+                <a href="reservaNoSocio.html" class="cabecera__enlace cabecera__enlace--activo" aria-current="page">Reservas y pistas</a>
+            </nav>
+
+            <div class="cabecera__acciones">
+                <button type="button" class="boton-icono" aria-label="Notificaciones">
+                    <i class="ph ph-bell" aria-hidden="true"></i>
+                </button>
+                <span class="avatar">DR</span>
+            </div>
+        </div>
     </header>
 
-    <!-- Banner Informativo de Acceso como Invitado -->
-    <aside class="etiquetaAcceso">
-        <section class="etiquetaAcceso">
-            <section class="etiquetaAcceso">
-                <i class="ph-fill ph-info" class="iconoAcceso"></i>
-                <section class="etiquetaAcceso">
-                    <h3 class="etiquetaAcceso">Estás reservando como INVITADO (No socio) <span class="etiquetaAcceso">ACCESO PÚBLICO PUNTUAL</span></h3>
-                    <p class="informacionSocio">Reserva directa puntual sin cuota mensual ni permanencia. Si ya eres socio registrado en este club, inicia sesión para aplicar tus tarifas bonificadas, parking gratuito y ventana de reserva anticipada de 7 días.</p>
-                </section>
-            </section>
-            <button type="button" class="informacionSocio"><i class="ph ph-user-circle" class="iconoSocio"></i> Identifícame como socio</button>
-        </section>
-    </aside>
-
-    <!-- Área de Contenido Principal -->
-    <main class="estadoDisponibilidad">
-        
-        <!-- Migas de pan y título de página -->
-        <section class="estadoDisponibilidad">
-            <nav aria-label="breadcrumb" class="estadoDisponibilidad">
-                Club de Pádel Sevilla &gt; <strong class="reservaPistas">Reserva de pistas (Invitado)</strong> 
-                <span class="estadoDisponibilidad">3 pistas panorámicas disponibles hoy</span>
+    <!-- ============ INTRO: migas, título y pasos ============ -->
+    <section class="reserva-intro">
+        <div class="reserva-intro__contenido">
+            <nav class="reserva-intro__migas" aria-label="Estás aquí">
+                <a href="inicio.html" class="reserva-intro__miga">Portal del club</a>
+                <i class="ph ph-caret-right" aria-hidden="true"></i>
+                <span class="reserva-intro__miga reserva-intro__miga--actual" aria-current="page">Reservar</span>
             </nav>
-        </section>
-        
-        <header class="tituloReserva">
-            <section class="tituloReserva">
-                <h2 class="tituloReserva">Reserva tu pista de pádel</h2>
-                <p class="textoDescripcion">Reserva rápida sin registro obligatorio. Acceso directo por código QR a tornos inteligentes.</p>
-            </section>
-            <button type="button" class="botonGuia"><i class="ph ph-map-pin-line" class="iconoAcceso"></i> Guía de acceso al club</button>
-        </header>
 
-        <!-- Barra de Progreso del Proceso de Reserva -->
-        <nav aria-label="Progreso de reserva" class="pasoFecha">
-            <ol class="pasoFecha">
-                <li class="pasoFecha">
-                    <span class="textoInformacion">1</span>
-                    <section class="pasoFecha">
-                        <h4 class="pasoFecha">Paso 1: Día y horario</h4>
-                        <p class="textoDescripcion">Seleccionado: Jue 1 - 19:30</p>
-                    </section>
+            <div class="reserva-intro__cabecera">
+                <div>
+                    <h1 class="reserva-intro__titulo">Reserva tu pista</h1>
+                    <p>Reserva pistas, clases y servicios desde tu cuenta del club. Todo en un solo lugar.</p>
+                </div>
+                <div class="reserva-intro__acciones">
+                    <a href="#" class="boton boton--contorno">
+                        <i class="ph ph-calendar-blank boton__icono" aria-hidden="true"></i>
+                        Mis reservas
+                    </a>
+                    <a href="#" class="reserva-intro__enlace">
+                        <i class="ph ph-repeat" aria-hidden="true"></i>
+                        Reserva recurrente
+                    </a>
+                </div>
+            </div>
+
+            <ol class="reserva-intro__pasos">
+                <li class="reserva-intro__paso reserva-intro__paso--hecho">
+                    <span class="reserva-intro__paso-numero"><i class="ph ph-check" aria-hidden="true"></i><span class="solo-lector">Completado:</span></span>
+                    Fecha y horario
                 </li>
-                <li class="pasoJugadores">
-                    <span class="textoInformacion">2</span>
-                    <section class="pasoJugadores">
-                        <h4 class="pasoJugadores">Paso 2: Jugadores y suplemento</h4>
-                        <p class="textoDescripcion">2 de 4 definidos (+3 €/inv)</p>
-                    </section>
+                <li class="reserva-intro__paso reserva-intro__paso--actual" aria-current="step">
+                    <span class="reserva-intro__paso-numero">2</span>
+                    Participantes
                 </li>
-                <li class="pasoPago">
-                    <span class="textoInformacion">3</span>
-                    <section class="pasoPago">
-                        <h4 class="pasoPago">Paso 3: Pago exprés</h4>
-                        <p class="textoDescripcion">Generación de QR instantánea</p>
-                    </section>
+                <li class="reserva-intro__paso">
+                    <span class="reserva-intro__paso-numero">3</span>
+                    Confirmación
                 </li>
             </ol>
-        </nav>
+        </div>
+    </section>
 
-        <!-- Disposición en 2 Columnas: Formularios y Resumen -->
-        <section class="estadoInvitado">
-            
-            <!-- Columna Izquierda: Formulario de Selección -->
-            <section class="estadoInvitado">
-                
-                <!-- SECCIÓN 1: Selección de Fecha e Instalación -->
-                <section class="estadoInvitado">
-                    <header class="estadoInvitado">
-                        <section class="seccionFecha">
-                            <span class="seccionFecha">1. FECHA Y HORARIO</span>
-                            <h3 class="tituloSeccion">Selecciona fecha de reserva</h3>
-                        </section>
-                        <section class="estadoInvitado">
-                            <span class="estadoInvitado">Tarifa pública no socio</span>
-                            <strong class="contenido">Sin cuota mensual</strong>
-                        </section>
-                    </header>
+    <!-- ============ CONTENIDO ============ -->
+    <main class="reserva">
+        <div class="reserva__rejilla">
 
-                    <section class="clubSevilla">
-                        <fieldset class="clubSevilla">
-                            <legend class="instalacion">Instalación deportiva</legend>
-                            <section class="clubSevilla">
-                                <section class="clubSevilla"><i class="ph ph-buildings" class="iconoClub"></i> Club de Pádel Sevilla</section>
-                                <i class="ph ph-lock-key" class="iconoClub"></i>
-                            </section>
-                        </fieldset>
-                        <fieldset class="sedePistas">
-                            <legend class="sedePistas">Sede y pistas</legend>
-                            <section class="datosPista">
-                                <section class="datosPista"><i class="ph ph-map-pin" class="iconoPista"></i> Sede Carmona - 12 pistas</section>
-                                <span class="textoInformacion">6 cubiertas</span>
-                            </section>
-                        </fieldset>
-                    </section>
+            <div class="reserva__pasos">
 
-                    <header class="mesReserva">
-                        <span class="mesReserva">Octubre 2026</span>
-                        <menu class="menuAcciones">
-                            <button type="button" class="botonAccion"><i class="ph ph-caret-left" class="iconoDecorativo"></i></button>
-                            <button type="button" class="botonAccion"><i class="ph ph-caret-right" class="iconoDecorativo"></i></button>
-                        </menu>
-                    </header>
+                <!-- 1. Fecha y horario -->
+                <section class="tarjeta reserva__bloque" aria-labelledby="titulo-fecha">
+                    <span class="reserva__antetitulo">1. Fecha y horario</span>
+                    <h2 class="reserva__titulo" id="titulo-fecha">Fecha y horario</h2>
 
-                    <!-- Carrusel de días -->
-                    <menu class="menuAcciones">
-                        <li class="elementoLista">
-                            <span class="textoInformacion">Mié</span>
-                            <span class="textoInformacion">30</span>
-                        </li>
-                        <li class="elementoLista">
-                            <span class="textoInformacion">Jue</span>
-                            <span class="textoInformacion">1</span>
-                        </li>
-                        <li class="elementoLista">
-                            <span class="textoInformacion">Vie</span>
-                            <span class="textoInformacion">2</span>
-                        </li>
-                        <li class="elementoLista">
-                            <span class="textoInformacion">Sáb</span>
-                            <span class="textoInformacion">3</span>
-                        </li>
-                        <li class="elementoLista">
-                            <span class="textoInformacion">Dom</span>
-                            <span class="textoInformacion">4</span>
-                        </li>
-                        <li class="elementoLista">
-                            <span class="textoInformacion">Lun</span>
-                            <span class="textoInformacion">5</span>
-                        </li>
-                        <li class="elementoLista">
-                            <span class="textoInformacion">Mar</span>
-                            <span class="textoInformacion">6</span>
-                        </li>
-                    </menu>
+                    <div class="formulario">
+                        <div class="reserva__cuadrante">
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="club">Club</label>
+                                <select class="formulario__campo" id="club" name="club">
+                                    <option>Club de Pádel Sevilla</option>
+                                </select>
+                            </div>
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="sede">Sede</label>
+                                <select class="formulario__campo" id="sede" name="sede" aria-describedby="nota-sede">
+                                    <option>Sevilla</option>
+                                </select>
+                                <p class="reserva__nota" id="nota-sede">12 pistas · 8 cubiertas · parking incluido</p>
+                            </div>
+                        </div>
+
+                        <div role="group" aria-labelledby="etiqueta-fecha">
+                            <div class="reserva__fechas-cabecera">
+                                <span class="formulario__etiqueta" id="etiqueta-fecha">Fecha</span>
+                                <div class="reserva__mes">
+                                    <button type="button" class="boton-icono" aria-label="Semana anterior"><i class="ph ph-caret-left" aria-hidden="true"></i></button>
+                                    <strong>Octubre 2026</strong>
+                                    <button type="button" class="boton-icono" aria-label="Semana siguiente"><i class="ph ph-caret-right" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                            <div class="reserva__dias">
+                                <button type="button" class="reserva__dia reserva__dia--pasado" disabled><span>Hoy</span><strong>30</strong></button>
+                                <button type="button" class="reserva__dia reserva__dia--seleccionado" aria-pressed="true"><span>Jue</span><strong>1</strong></button>
+                                <button type="button" class="reserva__dia" aria-pressed="false"><span>Vie</span><strong>2</strong></button>
+                                <button type="button" class="reserva__dia" aria-pressed="false"><span>Sáb</span><strong>3</strong></button>
+                                <button type="button" class="reserva__dia" aria-pressed="false"><span>Dom</span><strong>4</strong></button>
+                                <button type="button" class="reserva__dia" aria-pressed="false"><span>Lun</span><strong>5</strong></button>
+                                <button type="button" class="reserva__dia" aria-pressed="false"><span>Mar</span><strong>6</strong></button>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
-                <!-- SECCIÓN 2: Pistas y Horarios Disponibles -->
-                <section class="opcion90Min">
-                    <header class="opcion90Min">
-                        <section class="datosPista">
-                            <span class="textoInformacion">2. DISPONIBILIDAD EN DIRECTO</span>
-                            <h3 class="tituloSeccion">Elige pista y horario</h3>
-                            <p class="textoDescripcion">Jueves, 1 de octubre · Precios transparentes con suplemento incluido.</p>
-                        </section>
-                        <menu class="opcion90Min">
-                            <button type="button" class="opcion90Min">90 minutos</button>
-                            <button type="button" class="opcion60Min">60 minutos</button>
-                        </menu>
-                    </header>
+                <!-- 2. Disponibilidad -->
+                <section class="tarjeta reserva__bloque" aria-labelledby="titulo-disponibilidad">
+                    <span class="reserva__antetitulo">2. Disponibilidad</span>
+                    <h2 class="reserva__titulo" id="titulo-disponibilidad">Elige pista y hora</h2>
+                    <p class="reserva__subtitulo">Jueves, 1 de octubre · Club de Pádel Sevilla</p>
 
-                    <header class="estadoDisponible">
-                        <ul class="estadoDisponible">
-                            <li class="estadoDisponible"><span class="textoInformacion"></span> Disponible</li>
-                            <li class="estadoSeleccion"><span class="textoInformacion"></span> Tu selección actual</li>
-                            <li class="estadoOcupada"><span class="textoInformacion"></span> Ocupada</li>
-                        </ul>
-                        <aside class="estadoTiempoReal">
-                            <span class="textoInformacion"></span> Actualizado en tiempo real
-                        </aside>
-                    </header>
+                    <div class="formulario">
+                        <div class="reserva__filtros">
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="duracion">Duración</label>
+                                <select class="formulario__campo" id="duracion" name="duracion">
+                                    <option>60 minutos</option>
+                                    <option selected>90 minutos</option>
+                                    <option>120 minutos</option>
+                                </select>
+                            </div>
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="tipo">Tipo de pista</label>
+                                <select class="formulario__campo" id="tipo" name="tipo">
+                                    <option>Cualquiera</option>
+                                    <option>Cubierta</option>
+                                    <option>Exterior</option>
+                                </select>
+                            </div>
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="franja">Franja</label>
+                                <select class="formulario__campo" id="franja" name="franja">
+                                    <option>Mañana · 08:00–14:00</option>
+                                    <option selected>Tarde · 17:00–23:30</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
 
-                    <!-- Cuadrante de pistas y horas -->
-                    <section class="estadoOcupada">
-                        
-                        <!-- Pista 1 -->
-                        <article class="estadoOcupada">
-                            <header class="pistaUno">
-                                <h5 class="pistaUno">Pista 1</h5>
-                                <span class="textoInformacion">Cubierta - Central</span>
-                                <span class="datoPrecio">30 € / 90m</span>
-                            </header>
-                            <button type="button" disabled class="estadoOcupada">
-                                <span class="textoInformacion">18:00</span>
-                                <span class="estadoOcupada">Ocupada</span>
-                            </button>
-                            <button type="button" class="botonAccion">
-                                <span class="textoInformacion">19:30</span>
-                                <span class="datoPrecio">30 €</span>
-                            </button>
-                            <button type="button" class="botonAccion">
-                                <span class="textoInformacion">21:00</span>
-                                <span class="datoPrecio">30 €</span>
-                            </button>
-                            <button type="button" disabled class="estadoOcupada">
-                                <span class="textoInformacion">22:30</span>
-                                <span class="estadoOcupada">Ocupada</span>
-                            </button>
-                        </article>
+                    <ul class="reserva__leyenda">
+                        <li class="reserva__leyenda-item">Disponible</li>
+                        <li class="reserva__leyenda-item reserva__leyenda-item--seleccionada">Seleccionada</li>
+                        <li class="reserva__leyenda-item reserva__leyenda-item--ocupada">No disponible</li>
+                        <li class="reserva__leyenda-item reserva__leyenda-item--nota">Disponibilidad actualizada en tiempo real</li>
+                    </ul>
 
-                        <!-- Pista 2 -->
-                        <article class="estadoOcupada">
-                            <header class="pistaDos">
-                                <h5 class="pistaDos">Pista 2 <i class="ph-fill ph-star" class="iconoPista"></i></h5>
-                                <span class="textoInformacion">Panorámica Premium</span>
-                                <span class="datoPrecio"><span class="datoPrecio">36 € / 90m</span></span>
-                            </header>
-                            <button type="button" class="botonAccion">
-                                <span class="textoInformacion">18:00</span>
-                                <span class="datoPrecio">36 €</span>
-                            </button>
-                            <button type="button" class="botonAccion">
-                                <span class="textoInformacion"><i class="ph-fill ph-check-circle" class="iconoDecorativo"></i> 19:30</span>
-                                <span class="datoPrecio">36,00 €</span>
-                            </button>
-                            <button type="button" disabled class="estadoOcupada">
-                                <span class="textoInformacion">21:00</span>
-                                <span class="estadoOcupada">Ocupada</span>
-                            </button>
-                            <button type="button" class="botonAccion">
-                                <span class="textoInformacion">22:30</span>
-                                <span class="datoPrecio">36 €</span>
-                            </button>
-                        </article>
-
-                        <!-- Pista 3 -->
-                        <article class="estadoOcupada">
-                            <header class="pistaTres">
-                                <h5 class="pistaTres">Pista 3</h5>
-                                <span class="textoInformacion">Exterior Pro</span>
-                                <span class="datoPrecio">32 € / 90m</span>
-                            </header>
-                            <button type="button" class="botonAccion">
-                                <span class="textoInformacion">18:00</span>
-                                <span class="datoPrecio">32 €</span>
-                            </button>
-                            <button type="button" disabled class="estadoOcupada">
-                                <span class="textoInformacion">19:30</span>
-                                <span class="estadoOcupada">Ocupada</span>
-                            </button>
-                            <button type="button" class="botonAccion">
-                                <span class="textoInformacion">21:00</span>
-                                <span class="datoPrecio">32 €</span>
-                            </button>
-                            <button type="button" disabled class="estadoOcupada">
-                                <span class="textoInformacion">22:30</span>
-                                <span class="estadoOcupada">Ocupada</span>
-                            </button>
-                        </article>
-
-                        <!-- Pista 4 -->
-                        <article class="estadoOcupada">
-                            <header class="pistaCuatro">
-                                <h5 class="pistaCuatro">Pista 4</h5>
-                                <span class="textoInformacion">Exterior Césped</span>
-                                <span class="datoPrecio">30 € / 90m</span>
-                            </header>
-                            <button type="button" disabled class="estadoOcupada">
-                                <span class="textoInformacion">18:00</span>
-                                <span class="estadoOcupada">Ocupada</span>
-                            </button>
-                            <button type="button" class="botonAccion">
-                                <span class="textoInformacion">19:30</span>
-                                <span class="datoPrecio">30 €</span>
-                            </button>
-                            <button type="button" disabled class="estadoOcupada">
-                                <span class="textoInformacion">21:00</span>
-                                <span class="estadoOcupada">Ocupada</span>
-                            </button>
-                            <button type="button" class="botonAccion">
-                                <span class="textoInformacion">22:30</span>
-                                <span class="datoPrecio">30 €</span>
-                            </button>
-                        </article>
-                    </section>
+                    <div class="reserva__tabla-scroll">
+                        <table class="reserva__horario">
+                            <caption class="solo-lector">Disponibilidad de pistas por hora</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="reserva__horario-hora">Hora</th>
+                                    <th scope="col">Pista 1 <span>Cubierta</span></th>
+                                    <th scope="col">Pista 2 <span>Cubierta</span></th>
+                                    <th scope="col">Pista 3 <span>Exterior</span></th>
+                                    <th scope="col">Pista 4 <span>Exterior</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">18:00</th>
+                                    <td><button type="button" class="reserva__hueco reserva__hueco--ocupado" disabled>Ocupada</button></td>
+                                    <td><button type="button" class="reserva__hueco">Libre</button></td>
+                                    <td><button type="button" class="reserva__hueco reserva__hueco--solicitado">Libre <span>Muy solicitada</span></button></td>
+                                    <td><button type="button" class="reserva__hueco reserva__hueco--ocupado" disabled>Ocupada</button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">19:30</th>
+                                    <td><button type="button" class="reserva__hueco">Libre</button></td>
+                                    <td><button type="button" class="reserva__hueco reserva__hueco--seleccionado" aria-pressed="true"><i class="ph ph-check" aria-hidden="true"></i> 19:30 · 36 €</button></td>
+                                    <td><button type="button" class="reserva__hueco reserva__hueco--ocupado" disabled>Ocupada</button></td>
+                                    <td><button type="button" class="reserva__hueco reserva__hueco--solicitado">Libre <span>Muy solicitada</span></button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">21:00</th>
+                                    <td><button type="button" class="reserva__hueco">Libre</button></td>
+                                    <td><button type="button" class="reserva__hueco reserva__hueco--ocupado" disabled>Ocupada</button></td>
+                                    <td><button type="button" class="reserva__hueco">Libre</button></td>
+                                    <td><button type="button" class="reserva__hueco reserva__hueco--ocupado" disabled>Ocupada</button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">22:30</th>
+                                    <td><button type="button" class="reserva__hueco reserva__hueco--ocupado" disabled>Ocupada</button></td>
+                                    <td><button type="button" class="reserva__hueco">Libre</button></td>
+                                    <td><button type="button" class="reserva__hueco reserva__hueco--ocupado" disabled>Ocupada</button></td>
+                                    <td><button type="button" class="reserva__hueco">Libre</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
 
-                <!-- SECCIÓN 3: Gestión de Participantes -->
-                <section class="estadoInvitado">
-                    <header class="informacionSocio">
-                        <section class="informacionSocio">
-                            <span class="seccionParticipantes">3. PARTICIPANTES</span>
-                            <h3 class="seccionParticipantes">Añade participantes de la partida</h3>
-                            <p class="informacionSocio">Invita a tus compañeros. El suplemento se ajusta según sean socios registrados o externos.</p>
-                        </section>
-                        <button type="button" class="botonAnadir"><i class="ph ph-user-plus" class="iconoParticipante"></i> Añadir participante</button>
-                    </header>
+                <!-- 3. Participantes (paso actual) -->
+                <section class="tarjeta reserva__bloque reserva__bloque--actual" aria-labelledby="titulo-participantes">
+                    <div class="reserva__bloque-cabecera">
+                        <div>
+                            <span class="reserva__antetitulo">3. Participantes</span>
+                            <h2 class="reserva__titulo" id="titulo-participantes">Añade participantes</h2>
+                            <p class="reserva__subtitulo">Invita a socios, jugadores externos o comparte el enlace para completar la reserva.</p>
+                        </div>
+                        <button type="button" class="boton boton--contorno">
+                            <i class="ph ph-user-plus boton__icono" aria-hidden="true"></i>
+                            Añadir participante
+                        </button>
+                    </div>
 
-                    <section class="estadoInvitado">
-                        <!-- P1: Titular -->
-                        <article class="estadoInvitado">
-                            <section class="participanteTitular">
-                                <figure class="figuraContenido">LM</figure>
-                                <section class="participanteTitular">
-                                    <h5 class="participanteTitular">Laura Martín Serrano <span class="datosTitular">Titular</span></h5>
-                                    <p class="textoDescripcion">laura.martin@email.com · 620 018 234</p>
-                                </section>
-                            </section>
-                            <section class="estadoInvitado">
-                                <span class="estadoInvitado">No socio (+3 €)</span>
-                                <i class="ph ph-dots-three-vertical" class="iconoSocio"></i>
-                            </section>
-                        </article>
-
-                        <!-- P2: Acompañante Invitado -->
-                        <article class="estadoInvitado">
-                            <section class="participanteInvitado">
-                                <figure class="figuraContenido">DR</figure>
-                                <section class="participanteInvitado">
-                                    <h5 class="participanteInvitado">Diego Ruiz <span class="datosInvitado">Acompañante</span></h5>
-                                    <p class="textoDescripcion">Invitado - Pago asumido por titular</p>
-                                </section>
-                            </section>
-                            <section class="estadoInvitado">
-                                <span class="estadoInvitado">No socio (+3 €)</span>
-                                <i class="ph ph-dots-three-vertical" class="iconoSocio"></i>
-                            </section>
-                        </article>
-
-                        <!-- P3: Plaza Libre -->
-                        <article class="plazaTres">
-                            <section class="plazaTres">
-                                <figure class="figuraContenido">?</figure>
-                                <section class="plazaTres">
-                                    <h5 class="plazaTres">Plaza libre 3</h5>
-                                    <input placeholder="Añadir email o nombre del compañero (opcional)" type="text" class="campoFormulario">
-                                </section>
-                            </section>
-                            <section class="estadoPendiente">
-                                <span class="estadoPendiente">Pendiente</span>
-                                <button type="button" class="botonAccion"><i class="ph ph-plus" class="iconoDecorativo"></i> Asignar</button>
-                            </section>
-                        </article>
-
-                        <!-- P4: Plaza Libre -->
-                        <article class="plazaCuatro">
-                            <section class="plazaCuatro">
-                                <figure class="figuraContenido">?</figure>
-                                <section class="plazaCuatro">
-                                    <h5 class="plazaCuatro">Plaza libre 4</h5>
-                                    <input placeholder="Añadir email o nombre del compañero (opcional)" type="text" class="campoFormulario">
-                                </section>
-                            </section>
-                            <section class="estadoPendiente">
-                                <span class="estadoPendiente">Pendiente</span>
-                                <button type="button" class="botonAccion"><i class="ph ph-plus" class="iconoDecorativo"></i> Asignar</button>
-                            </section>
-                        </article>
-                    </section>
-
-                    <aside class="estadoInvitado">
-                        <i class="ph-fill ph-shield-warning" class="iconoSocio"></i>
-                        <p class="estadoInvitado"><strong class="contenido">Política transparente de invitados:</strong> Los socios de Club de Pádel Sevilla tienen tarifa reducida (0 € suplemento). Para jugadores externos y no socios, se aplica un suplemento estándar de <strong class="contenido">+3,00 € por persona</strong> para mantenimiento de instalaciones y seguro deportivo puntual.</p>
-                    </aside>
-                </section>
-            </section>
-
-            <!-- Columna Derecha: Sidebar Resumen y Pago -->
-            <aside class="estadoInvitado">
-                <article class="estadoInvitado">
-                    <header class="estadoInvitado">
-                        <h3 class="resumenReserva">Resumen de reserva</h3>
-                        <span class="estadoInvitado">No socio</span>
-                    </header>
-
-                    <ul class="pistaDos">
-                        <li class="elementoLista">
-                            <i class="ph ph-calendar-blank" class="iconoDecorativo"></i>
-                            <strong class="contenido">Jueves, 1 de octubre · 19:30 - 21:00</strong>
+                    <ul class="reserva__participantes">
+                        <li class="reserva__participante">
+                            <span class="avatar">LM</span>
+                            <p class="reserva__participante-datos"><strong>Laura Martín</strong> Titular de la reserva</p>
+                            <span class="etiqueta etiqueta--terciario">No socio</span>
+                            <strong class="reserva__participante-precio">+3 €</strong>
+                            <button type="button" class="boton-icono" aria-label="Opciones de Laura Martín"><i class="ph ph-dots-three" aria-hidden="true"></i></button>
                         </li>
-                        <li class="pistaDos">
-                            <i class="ph ph-map-pin" class="iconoPista"></i>
-                            <span class="pistaDos">Pista 2 Panorámica (90 min)</span>
+                        <li class="reserva__participante">
+                            <span class="avatar">DR</span>
+                            <p class="reserva__participante-datos"><strong>Diego Ruiz</strong> Invitado · pago a cargo de la titular</p>
+                            <span class="etiqueta etiqueta--terciario">No socio</span>
+                            <strong class="reserva__participante-precio">+3 €</strong>
+                            <button type="button" class="boton-icono" aria-label="Opciones de Diego Ruiz"><i class="ph ph-dots-three" aria-hidden="true"></i></button>
                         </li>
-                        <li class="datosJugadores">
-                            <i class="ph ph-users" class="iconoDecorativo"></i>
-                            <span class="datosJugadores">2 jugadores confirmados (Laura + Diego)</span>
+                        <li class="reserva__participante">
+                            <span class="avatar">?</span>
+                            <p class="reserva__participante-datos"><strong>Plaza libre</strong> Invita por correo o comparte el enlace</p>
+                            <span class="etiqueta etiqueta--suave">Pendiente</span>
+                            <button type="button" class="boton-icono" aria-label="Opciones de la plaza libre"><i class="ph ph-dots-three" aria-hidden="true"></i></button>
+                        </li>
+                        <li class="reserva__participante">
+                            <span class="avatar">?</span>
+                            <p class="reserva__participante-datos"><strong>Plaza libre</strong> Invita por correo o comparte el enlace</p>
+                            <span class="etiqueta etiqueta--suave">Pendiente</span>
+                            <button type="button" class="boton-icono" aria-label="Opciones de la plaza libre"><i class="ph ph-dots-three" aria-hidden="true"></i></button>
                         </li>
                     </ul>
 
-                    <!-- Formulario con datos del usuario titular -->
-                    <form onsubmit="event.preventDefault();" class="estadoInvitado">
-                        <fieldset class="datosAcceso">
-                            <legend class="datosAcceso">DATOS PARA CÓDIGO QR DE ACCESO</legend>
-                            <fieldset class="grupoFormulario">
-                                <label class="etiquetaFormulario">Nombre y apellidos *</label>
-                                <input value="Laura Martín Serrano" type="text" class="campoFormulario">
-                            </fieldset>
-                            <fieldset class="grupoFormulario">
-                                <label class="etiquetaFormulario">Correo electrónico (envío de QR) *</label>
-                                <input value="laura.martin@email.com" type="email" class="campoFormulario">
-                            </fieldset>
-                            <fieldset class="grupoFormulario">
-                                <label class="etiquetaFormulario">Teléfono móvil (SMS de acceso) *</label>
-                                <input value="620 018 234" type="tel" class="campoFormulario">
-                            </fieldset>
-                        </fieldset>
+                    <p class="aviso">
+                        <i class="ph ph-info aviso__icono" aria-hidden="true"></i>
+                        <span class="aviso__texto">Los socios tienen tarifa reducida. Para jugadores no socios, este club aplica un suplemento de 3 € por persona.</span>
+                    </p>
+                </section>
+            </div>
 
-                        <!-- Servicios adicionales -->
-                        <fieldset class="serviciosExtra">
-                            <legend class="serviciosExtra">Servicios adicionales</legend>
-                            <label class="opcionParking">
-                                <section class="opcionParking">
-                                    <input checked type="checkbox" class="campoFormulario">
-                                    <figure class="figuraContenido"><i class="ph-bold ph-check" class="iconoDecorativo"></i></figure>
-                                    <span class="opcionParking">Plaza de parking cubierto</span>
-                                </section>
-                                <strong class="contenido">+5,00 €</strong>
-                            </label>
-                            <label class="opcionPelotas">
-                                <section class="opcionPelotas">
-                                    <input type="checkbox" class="campoFormulario">
-                                    <figure class="figuraContenido"><i class="ph-bold ph-check" class="iconoDecorativo"></i></figure>
-                                    <span class="opcionPelotas">Bote 3 bolas Head Pro S</span>
-                                </section>
-                                <strong class="contenido">+6,50 €</strong>
-                            </label>
-                        </fieldset>
+            <!-- Resumen de reserva -->
+            <aside class="tarjeta reserva__resumen" aria-labelledby="titulo-resumen">
+                <div class="tarjeta__cabecera">
+                    <h2 class="tarjeta__titulo" id="titulo-resumen">Resumen de reserva</h2>
+                    <span class="etiqueta etiqueta--suave">Sin confirmar</span>
+                </div>
 
-                        <!-- Desglose de precios -->
-                        <section class="estadoInvitado">
-                            <section class="pistaDos">
-                                <span class="pistaDos">Tarifa base Pista 2 (90 min)</span>
-                                <strong class="contenido">36,00 €</strong>
-                            </section>
-                            <section class="estadoInvitado">
-                                <span class="estadoInvitado">Suplemento no socio (2 jugadores x 3 €)</span>
-                                <strong class="contenido">+6,00 €</strong>
-                            </section>
-                            <section class="precioParking">
-                                <span class="precioParking">Parking club (no bonificado para invitado)</span>
-                                <strong class="contenido">+5,00 €</strong>
-                            </section>
-                            
-                            <footer class="totalPago">
-                                <section class="totalPago">TOTAL A PAGAR <span class="datosPago">IVA 21% incluido · Pago seguro</span></section>
-                                <strong class="contenido">47,00 €</strong>
-                            </footer>
-                        </section>
+                <ul class="reserva__resumen-lista">
+                    <li class="reserva__resumen-item">
+                        <i class="ph ph-calendar-blank" aria-hidden="true"></i>
+                        <p><strong>Jueves, 1 de octubre</strong> 19:30–21:00 · 90 min</p>
+                    </li>
+                    <li class="reserva__resumen-item">
+                        <i class="ph ph-map-pin" aria-hidden="true"></i>
+                        <p><strong>Pista 2 · Cubierta</strong> Club de Pádel Sevilla</p>
+                    </li>
+                    <li class="reserva__resumen-item">
+                        <i class="ph ph-users" aria-hidden="true"></i>
+                        <p><strong>2 de 4 jugadores</strong> 2 no socios</p>
+                    </li>
+                </ul>
 
-                        <!-- Métodos de pago -->
-                        <fieldset class="metodoPago">
-                            <legend class="metodoPago">MÉTODO DE PAGO EXPRÉS</legend>
-                            <menu class="menuAcciones">
-                                <button type="button" class="botonAccion">Tarjeta</button>
-                                <button type="button" class="botonAccion">Bizum</button>
-                                <button type="button" class="botonAccion">Apple Pay</button>
-                                <button type="button" class="botonAccion">G Pay</button>
-                            </menu>
-                        </fieldset>
+                <fieldset class="reserva__extras">
+                    <legend class="reserva__extras-titulo">Extras opcionales</legend>
+                    <label class="reserva__extra">
+                        <input type="checkbox" class="reserva__check" name="pelotas">
+                        <span>Bote de pelotas</span>
+                        <span class="reserva__extra-precio">+4 €</span>
+                    </label>
+                    <label class="reserva__extra">
+                        <input type="checkbox" class="reserva__check" name="parking" checked>
+                        <span>Reserva de parking</span>
+                        <span class="reserva__extra-precio">+5 €</span>
+                    </label>
+                    <p class="reserva__nota">Extras configurados por este club</p>
+                </fieldset>
 
-                        <button type="submit" class="botonPago">
-                            <span class="botonPago"><i class="ph ph-lock-key" class="iconoPista"></i> Pagar 47,00 € y confirmar pista</span>
-                            <i class="ph ph-arrow-right" class="iconoPista"></i>
-                        </button>
-                    </form>
-                    
-                    <footer class="seguridadPago">
-                        <i class="ph-fill ph-shield-check" class="iconoSeguridad"></i> Pasarela SSL 256 bits · Cancelación gratuita hasta 24h antes
-                    </footer>
-                    <p class="textoDescripcion">Recibirás el código QR de apertura de tornos en tu correo y WhatsApp tras finalizar el pago.</p>
+                <dl class="reserva__precios">
+                    <div class="reserva__precio"><dt>Pista · 90 min</dt><dd>36 €</dd></div>
+                    <div class="reserva__precio"><dt>Suplemento no socio</dt><dd>6 €</dd></div>
+                    <div class="reserva__precio"><dt>Parking</dt><dd>5 €</dd></div>
+                    <div class="reserva__precio reserva__precio--total"><dt>Total</dt><dd>47 €</dd></div>
+                </dl>
+                <p class="reserva__nota">Se cargará al método de pago guardado. Precio sujeto al número final de participantes.</p>
 
-                    <!-- Caja de asistencia -->
-                    <aside class="estadoDisponible">
-                        <section class="estadoDisponible">
-                            <i class="ph ph-headset" class="iconoReserva"></i>
-                            <section class="estadoDisponible">
-                                <h5 class="ayudaReserva">¿Dudas con tu reserva?</h5>
-                                <p class="estadoDisponible">Recepción disponible: 954 820 115</p>
-                            </section>
-                        </section>
-                        <button type="button" class="botonAccion">Llamar</button>
-                    </aside>
-
-                </article>
+                <button type="button" class="boton boton--primario boton--bloque">
+                    <i class="ph ph-lock-simple boton__icono" aria-hidden="true"></i>
+                    Confirmar y pagar 47 €
+                </button>
+                <p class="reserva__nota reserva__nota--centrada">Cancelación gratuita hasta 12 horas antes. Al confirmar aceptas las normas del club.</p>
             </aside>
-        </section>
 
-        <!-- Banner de Membresía y Ahorro -->
-        <section class="informacionSocio">
-            <article class="informacionSocio">
-                <span class="bannerSocios"><i class="ph-fill ph-star" class="iconoDecorativo"></i> AHORRO EXCLUSIVO PARA JUGADORES HABITUALES</span>
-                <h3 class="clubSevilla">¿Juegas con frecuencia en Club de Pádel Sevilla?</h3>
-                <p class="informacionSocio">Hazte socio desde <strong class="contenido">25 €/mes</strong> y ahorra en cada partida: <strong class="contenido">0 € de suplemento de invitado</strong>, parking cubierto gratuito incluido y reserva anticipada de pistas con <strong class="contenido">7 días de antelación</strong> frente al acceso público.</p>
-            </article>
-            <button type="button" class="botonAccion">Ver planes de membresía <i class="ph ph-arrow-right" class="iconoDecorativo"></i></button>
-        </section>
-
-        <!-- Preguntas Frecuentes -->
-        <section class="estadoInvitado">
-            <header class="preguntasFrecuentes">
-                <span class="enlaceInformacion">INFORMACIÓN DE INTERÉS</span>
-                <h3 class="preguntasFrecuentes">Preguntas frecuentes para invitados</h3>
-                <p class="textoDescripcion">Todo lo que necesitas saber antes de llegar al club con tu reserva pública.</p>
-            </header>
-            
-            <section class="estadoInvitado">
-                <article class="faqAcceso">
-                    <figure class="figuraContenido"><i class="ph ph-qr-code" class="iconoDecorativo"></i></figure>
-                    <h4 class="faqAcceso">¿Cómo accedo al recinto?</h4>
-                    <p class="textoDescripcion">Tras el pago, recibirás de forma instantánea un código QR digital por correo y SMS. Solo debes presentarlo en el lector de los tornos de entrada para abrir la puerta principal y las luces de tu pista se encenderán automáticamente 5 minutos antes del inicio.</p>
-                </article>
-                <article class="estadoInvitado">
-                    <figure class="figuraContenido"><i class="ph ph-calendar-x" class="iconoDecorativo"></i></figure>
-                    <h4 class="faqCancelacion">¿Puedo cancelar o modificar?</h4>
-                    <p class="estadoInvitado">Sí. Las reservas de no socios permiten <strong class="contenido">cancelación y reembolso del 100%</strong> de tu dinero hasta con 24 horas de antelación a la hora reservada mediante el enlace directo incluido en el email de confirmación.</p>
-                </article>
-                <article class="faqMaterial">
-                    <figure class="figuraContenido"><i class="ph ph-tennis-ball" class="iconoDecorativo"></i></figure>
-                    <h4 class="faqMaterial">¿Hay alquiler de palas y pelotas?</h4>
-                    <p class="faqMaterial">Nuestra recepción está abierta de 07:00 a 23:30 h con servicio de alquiler de palas Bullpadel y Babolat de gama alta (3 € por partido), vestuarios completos con taquillas gratuitas y cafetería con terraza panorámica.</p>
-                </article>
-            </section>
-        </section>
-
+        </div>
     </main>
 
-    <!-- Banner Inferior de Ayuda -->
-    <aside class="bannerAyuda">
-        <section class="bannerAyuda">
-            <section class="bannerAyuda">
-                <i class="ph ph-question" class="iconoReserva"></i> ¿Necesitas ayuda con tu reserva puntual? Consulta las normas o contacta con recepción.
-            </section>
-            <menu class="botonNormas">
-                <button type="button" class="botonNormas">Normas de reserva</button>
-                <button type="button" class="botonContacto">Contactar con el club</button>
-            </menu>
-        </section>
-    </aside>
+    <!-- ============ AYUDA ============ -->
+    <section class="reserva-ayuda">
+        <div class="reserva-ayuda__contenido">
+            <div>
+                <h2 class="reserva-ayuda__titulo">¿Necesitas ayuda con tu reserva?</h2>
+                <p>Consulta las normas, preguntas frecuentes o contacta con recepción.</p>
+            </div>
+            <div class="reserva-ayuda__acciones">
+                <a href="#" class="boton reserva-ayuda__boton">Normas de reserva</a>
+                <a href="#" class="boton reserva-ayuda__boton">Contactar con el club</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- Pie de Página Principal -->
-    <footer class="estadoInvitado">
-        <section class="estadoInvitado">
-            <section class="estadoInvitado">
-                
-                <!-- Columna 1: Marca -->
-                <section class="datosPista">
-                    <header class="cabeceraSeccion">
-                        <figure class="figuraContenido">P</figure> PadelSlot
-                    </header>
-                    <p class="textoDescripcion">Plataforma tecnológica marca blanca SaaS para clubes y centros deportivos de pádel. Permite a cada club personalizar y activar sus propios módulos de pistas, escuela, miembros y servicios.</p>
-                </section>
-                
-                <!-- Columna 2: Enlaces -->
-                <nav aria-label="Información" class="estadoInvitado">
-                    <h5 class="enlaceInformacion">INFORMACIÓN</h5>
-                    <ul class="estadoInvitado">
-                        <li class="elementoLista"><a href="#" class="enlaceContenido">Inicio del Club</a></li>
-                        <li class="estadoInvitado"><a href="#" class="estadoInvitado">Reservar pista (No socios)</a></li>
-                        <li class="elementoLista"><a href="#" class="enlaceContenido">Servicios del club</a></li>
-                        <li class="datosContacto"><a href="#" class="enlaceContenido">Contacto</a></li>
-                    </ul>
-                </nav>
-                
-                <!-- Columna 3: Atención -->
-                <nav aria-label="Atención y Centro" class="preguntasFrecuentes">
-                    <h5 class="enlaceAtencion">ATENCIÓN Y CENTRO</h5>
-                    <ul class="preguntasFrecuentes">
-                        <li class="preguntasFrecuentes"><a href="#" class="preguntasFrecuentes">Preguntas Frecuentes (FAQ)</a></li>
-                        <li class="datosContacto"><a href="#" class="enlaceContenido">Contacto de recepción</a></li>
-                        <li class="datosPista"><a href="#" class="enlaceContenido">Reglamento interno de pistas</a></li>
-                        <li class="elementoLista"><a href="#" class="enlaceContenido">Política de cancelaciones</a></li>
-                    </ul>
-                </nav>
-
-                <!-- Columna 4: Instalación -->
-                <section class="clubSevilla">
-                    <h5 class="instalacionActual">INSTALACIÓN ACTUAL</h5>
-                    <article class="clubSevilla">
-                        <h6 class="clubSevilla"><i class="ph-fill ph-map-pin" class="iconoClub"></i> Club de Pádel Sevilla</h6>
-                        <p class="textoDescripcion">Ctra. de Carmona, km 4, Sevilla</p>
-                        <p class="textoDescripcion">Horario: Lun - Dom | 07:00 - 23:30</p>
-                        <span class="textoInformacion">
-                            <span class="textoInformacion"></span> SaaS Ver. 2.4 Active
-                        </span>
-                    </article>
-                </section>
-            </section>
-
-            <!-- Copyright y Legales -->
-            <section class="enlaceLegal">
-                <p class="textoDescripcion">© 2026 PadelSlot SaaS. Diseñado para clubes de pádel. Todos los derechos reservados.</p>
-                <nav aria-label="Información legal" class="enlaceLegal">
-                    <a href="#" class="enlaceLegal">Aviso Legal</a>
-                    <a href="#" class="enlacePrivacidad">Privacidad</a>
-                    <a href="#" class="enlaceTerminos">Términos del Servicio</a>
-                    <a href="#" class="enlaceSoporte">Soporte</a>
-                </nav>
-            </section>
-        </section>
+    <!-- ============ PIE ============ -->
+    <footer class="pie reserva-pie">
+        <div class="pie__contenido">
+            <div class="pie-marca">
+                <strong class="pie-marca__titulo">PádelSlot</strong>
+                <p>Gestiona pistas, clases y servicios desde tu cuenta del club.</p>
+            </div>
+            <nav class="pie-enlaces" aria-label="Enlaces legales">
+                <a href="#">Ayuda</a>
+                <a href="#">Condiciones</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </div>
     </footer>
 
 </body>

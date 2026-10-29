@@ -1,612 +1,123 @@
 <!DOCTYPE html>
-<html lang="es" class="pagina">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión · Socios · PádelSlot</title>
 
-<head class="cabeceraPagina">
+    <!-- Fuentes: Space Grotesk (títulos) e Inter (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <meta charset="utf-8" class="configuracionMeta">
-    <meta
-        content="width=device-width, initial-scale=1.0"
-        name="viewport"
-        class="configuracionMeta"
-    >
+    <!-- Iconos Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 
-    <title class="tituloPagina">
-        Acceso Socios - PadelSlot Plataforma de Clubes
-    </title>
-
-    <!-- CDN de Tailwind CSS con plugins de formularios y contenedores -->
-    <script
-        src="https://cdn.tailwindcss.com?plugins=forms,container-queries"
-        class="scriptTailwind">
-    </script>
-
-    <!-- Configuración personalizada de Tailwind -->
-    <script data-purpose="tailwind-config" class="configuracionTailwind">
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                brand: {
-                  forest: '#134e3a',
-                  forestHover: '#0e3b2c',
-                  lime: '#d2f822',
-                  softLime: '#f2fce2',
-                  cardBg: '#f0f3fd',
-                  lightGray: '#f8fafc',
-                  borderLight: '#e4e7ec',
-                }
-              },
-              fontFamily: {
-                sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-              }
-            }
-          }
-        }
-    </script>
-
-    <!-- Estilos de decoración personalizada -->
-    <style data-purpose="custom-decorations" class="estilosDecoracion">
-        .crosshair-pattern {
-          background-image: 
-            radial-gradient(circle, #e2e8f0 1.5px, transparent 1.5px),
-            linear-gradient(to right, rgba(226, 232, 240, 0.4) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
-          background-size: 24px 24px, 48px 48px, 48px 48px;
-        }
-
-        .custom-shadow-panel {
-          box-shadow: 0 4px 25px -4px rgba(19, 78, 58, 0.05), 0 2px 10px -2px rgba(0, 0, 0, 0.03);
-        }
-
-        .custom-shadow-card {
-          box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04), 0 4px 12px -2px rgba(0, 0, 0, 0.02);
-        }
-    </style>
-
+    <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <link rel="stylesheet" href="scss/main.css">
 </head>
 
-<body class="cuerpoPagina">
+<body class="acceso acceso--simple fondo-suave">
 
-    <!-- Encabezado superior principal de la plataforma -->
-    <header data-purpose="site-header" class="cabeceraPrincipal">
+    <!-- ============ CABECERA ============ -->
+    <header class="cabecera">
+        <div class="cabecera__contenido">
+            <a href="inicio.html" class="cabecera__logo">
+                <span class="logotipo">P</span>
+                PádelSlot
+            </a>
 
-        <section class="contenedorCabecera">
-
-            <!-- Logotipo y nombre de la marca -->
-            <section class="marca">
-
-                <figure class="logoMarca">
-
-                    <figure class="iconoMarca">
-                        P
-                    </figure>
-
-                    <span class="nombreMarca">
-                        PadelSlot
-                    </span>
-
-                </figure>
-
-                <figure class="separadorMarca"></figure>
-
-                <span class="tipoPlataforma">
-                    Plataforma de Clubes
-                </span>
-
-            </section>
-
-            <!-- Menú de navegación principal -->
-            <nav
-                aria-label="Navegación principal"
-                class="menuPrincipal"
-            >
-
-                <a
-                    href="#portal-publico"
-                    class="enlaceMenu"
-                >
-                    Portal Público
-                </a>
-
-                <a
-                    href="#ayuda"
-                    class="enlaceMenu"
-                >
-                    Ayuda
-                </a>
-
-                <a
-                    aria-label="Perfil de usuario"
-                    href="#acceso"
-                    class="enlacePerfil"
-                >
-
-                    <svg
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        class="iconoPerfil"
-                    >
-
-                        <path
-                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            class="trazoIcono"
-                        ></path>
-
-                    </svg>
-
-                </a>
-
+            <nav class="cabecera__menu" aria-label="Enlaces de ayuda">
+                <a href="inicio.html" class="cabecera__enlace">Portal público</a>
+                <a href="#" class="cabecera__enlace">Ayuda</a>
             </nav>
-
-        </section>
-
+        </div>
     </header>
 
-    <!-- Área de contenido principal -->
-    <main class="contenidoPrincipal">
+    <main class="acceso__principal">
 
-        <!-- Barra superior de estado y migas de pan -->
-        <header
-            data-purpose="status-bar"
-            class="barraEstado"
-        >
+        <section class="tarjeta acceso__tarjeta" aria-labelledby="titulo-acceso">
+            <fieldset class="acceso__perfiles">
+                <legend class="solo-lector">Tipo de acceso</legend>
+                <label class="acceso__perfil">
+                    <input type="radio" class="acceso__perfil-control" name="perfil" value="socio" checked>
+                    <i class="ph ph-user" aria-hidden="true"></i> Socio del club
+                </label>
+                <label class="acceso__perfil">
+                    <input type="radio" class="acceso__perfil-control" name="perfil" value="staff">
+                    <i class="ph ph-shield-check" aria-hidden="true"></i> Administrador / Staff
+                </label>
+            </fieldset>
 
-            <nav
-                aria-label="Breadcrumb"
-                class="migasPan"
-            >
+            <div class="tarjeta__cabecera acceso__cabecera">
+                <div>
+                    <h1 class="acceso__titulo" id="titulo-acceso">Acceso socios del club</h1>
+                    <p class="acceso__subtitulo">Identificación de abonados y federados</p>
+                </div>
+                <span class="etiqueta etiqueta--suave">Portal v3.8</span>
+            </div>
 
-                <section class="ubicacionPortal">
-
-                    <svg
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        class="iconoBusqueda"
-                    >
-
-                        <path
-                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            class="trazoIcono"
-                        ></path>
-
-                    </svg>
-
-                    <strong class="nombrePortal">
-                        Portal Oficial
-                    </strong>
-
-                </section>
-
-                <span class="separadorRuta">
-                    /
+            <p class="aviso">
+                <i class="ph ph-info aviso__icono" aria-hidden="true"></i>
+                <span class="aviso__texto">
+                    <strong class="aviso__titulo">Área privada para socios con carnet en vigor</strong>
+                    Reserva anticipada con tarifa bonificada, acceso por matrícula al parking, recarga del monedero de pistas y partidos abiertos.
                 </span>
+            </p>
 
-                <span class="versionSistema">
-                    Sincronizado v2.4
-                </span>
+            <form class="formulario" action="inicioSocio.html">
+                <div class="formulario__grupo">
+                    <label class="formulario__etiqueta" for="usuario">Nº de socio o correo electrónico</label>
+                    <input class="formulario__campo" type="text" id="usuario" name="usuario" placeholder="socio@padelsevilla.es o Nº 1042" autocomplete="username" required>
+                </div>
 
+                <div class="formulario__grupo">
+                    <div class="acceso__fila-etiqueta">
+                        <label class="formulario__etiqueta" for="clave">Contraseña de socio</label>
+                        <a href="#" class="acceso__enlace">¿Olvidaste tu contraseña o PIN?</a>
+                    </div>
+                    <input class="formulario__campo" type="password" id="clave" name="clave" placeholder="••••••••" autocomplete="current-password" required>
+                </div>
+
+                <label class="acceso__recordar">
+                    <input type="checkbox" class="acceso__casilla" name="recordar">
+                    Mantener mi sesión iniciada en este equipo
+                </label>
+
+                <div class="acceso__qr">
+                    <span class="icono-caja"><i class="ph ph-qr-code" aria-hidden="true"></i></span>
+                    <p class="acceso__qr-texto">¿Prefieres entrar desde tu móvil?</p>
+                    <a href="#" class="acceso__enlace">Escanear carnet QR <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                </div>
+
+                <button type="submit" class="boton boton--primario boton--bloque">
+                    <i class="ph ph-sign-in boton__icono" aria-hidden="true"></i>
+                    Entrar a mi portal de socio
+                </button>
+            </form>
+
+            <p class="acceso__alternativa">
+                ¿No eres socio? <a href="reservaNoSocio.html" class="acceso__enlace">Reserva como invitado</a>
+            </p>
+        </section>
+
+    </main>
+
+    <!-- ============ PIE ============ -->
+    <footer class="pie acceso__pie">
+        <div class="pie__contenido">
+            <div class="pie-marca">
+                <strong class="pie-marca__titulo">PádelSlot</strong>
+                <p>© 2026 PadelSlot. Plataforma de gestión de clubes de pádel.</p>
+            </div>
+            <nav class="pie-enlaces" aria-label="Enlaces legales">
+                <a href="#">Soporte</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Términos de servicio</a>
+                <a href="#">Estado del sistema</a>
             </nav>
-
-            <section class="estadoSistema">
-
-                <figure class="indicadorEstado">
-
-                    <span class="puntoEstado"></span>
-
-                    <span class="textoEstado"></span>
-
-                </figure>
-
-            </section>
-
-        </header>
-
-        <!-- Distribución principal en dos columnas -->
-        <section class="contenidoDosColumnas">
-
-            <!-- COLUMNA IZQUIERDA: Formulario de inicio de sesión de socio -->
-            <section
-                aria-labelledby="member-login-title"
-                class="columnaAcceso"
-            >
-
-                <!-- Pestañas de conmutación: Socio vs Administrador -->
-                <menu
-                    data-purpose="role-selector-tabs"
-                    class="selectorRoles"
-                >
-
-                    <button
-                        aria-current="page"
-                        type="button"
-                        class="botonRolActivo"
-                    >
-
-                        <svg
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            viewBox="0 0 24 24"
-                            class="iconoRol"
-                        >
-
-                            <circle
-                                cx="12"
-                                cy="12"
-                                r="10"
-                                class="circuloIcono"
-                            ></circle>
-
-                            <path
-                                d="M5.3 5.3c3.5 3.5 3.5 9.9 0 13.4"
-                                class="trazoRol"
-                            ></path>
-
-                            <path
-                                d="M18.7 5.3c-3.5-3.5-3.5-9.9 0 13.4"
-                                class="trazoRol"
-                            ></path>
-
-                        </svg>
-
-                        <span class="nombreRol">
-                            Socio del Club
-                        </span>
-
-                        <span class="estadoRol">
-                            Activo
-                        </span>
-
-                    </button>
-
-                    <a
-                        href="#"
-                        class="enlaceAdministrador"
-                    >
-
-                        <svg
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            class="iconoAdministrador"
-                        >
-
-                            <path
-                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                class="trazoIcono"
-                            ></path>
-
-                        </svg>
-
-                        <span class="nombreAdministrador">
-                            Administrador / Staff
-                        </span>
-
-                        <span class="seguridadDosFactores">
-                            2FA
-                        </span>
-
-                    </a>
-
-                </menu>
-
-                <!-- Tarjeta contenedora del formulario -->
-                <article
-                    data-purpose="member-login-card"
-                    class="tarjetaAcceso"
-                >
-
-                    <!-- Encabezado del formulario -->
-                    <header class="cabeceraAcceso">
-
-                        <section class="tituloAcceso">
-
-                            <h1
-                                id="member-login-title"
-                                class="tituloFormulario"
-                            >
-                                Acceso Socios del Club
-                            </h1>
-
-                            <p class="subtituloFormulario">
-                                Identificación de abonados y federados
-                            </p>
-
-                        </section>
-
-                        <span class="versionPortal">
-                            Portal de Socios v3.8
-                        </span>
-
-                    </header>
-
-                    <!-- Aviso informativo sobre ventajas de socio -->
-                    <aside class="avisoSocio">
-
-                        <figure class="iconoAviso">
-
-                            <svg
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                class="iconoTarjeta"
-                            >
-
-                                <path
-                                    d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    class="trazoIcono"
-                                ></path>
-
-                            </svg>
-
-                        </figure>
-
-                        <section class="contenidoAviso">
-
-                            <strong class="tituloAviso">
-                                Área privada para socios con carnet en vigor
-                            </strong>
-
-                            Reserva anticipada con tarifa bonificada, acceso por matrícula a parking, recarga de monedero de pistas y partidos abiertos.
-
-                        </section>
-
-                    </aside>
-
-                    <!-- Formulario de autenticación -->
-                    <form
-                        action="#"
-                        data-purpose="member-auth-form"
-                        method="POST"
-                        class="formularioAcceso"
-                    >
-
-                        <!-- Campo 1: Identificador de socio -->
-                        <section class="grupoCampo">
-
-                            <label
-                                for="member-identifier"
-                                class="etiquetaCampo"
-                            >
-                                Nº de Socio o Correo Electrónico
-                            </label>
-
-                            <section class="contenedorCampo">
-
-                                <figure class="iconoCampo">
-
-                                    <svg
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        class="iconoUsuario"
-                                    >
-
-                                        <path
-                                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="1.8"
-                                            class="trazoIcono"
-                                        ></path>
-
-                                    </svg>
-
-                                </figure>
-
-                                <input
-                                    id="member-identifier"
-                                    name="member-identifier"
-                                    placeholder="socio@padelsevilla.es o Nº 1042"
-                                    required=""
-                                    type="text"
-                                    class="campoTexto"
-                                >
-
-                            </section>
-
-                        </section>
-
-                        <!-- Campo 2: Contraseña -->
-                        <section class="grupoCampo">
-
-                            <header class="cabeceraCampo">
-
-                                <label
-                                    for="member-password"
-                                    class="etiquetaCampo"
-                                >
-                                    Contraseña de Socio
-                                </label>
-
-                                <a
-                                    href="#recuperar-password"
-                                    class="enlaceRecuperar"
-                                >
-                                    ¿Olvidaste tu contraseña o PIN?
-                                </a>
-
-                            </header>
-
-                            <section class="contenedorCampo">
-
-                                <figure class="iconoCampo">
-
-                                    <svg
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        class="iconoPassword"
-                                    >
-
-                                        <path
-                                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="1.8"
-                                            class="trazoIcono"
-                                        ></path>
-
-                                    </svg>
-
-                                </figure>
-
-                                <input
-                                    id="member-password"
-                                    name="member-password"
-                                    placeholder="••••••••"
-                                    required=""
-                                    type="password"
-                                    value="password123"
-                                    class="campoPassword"
-                                >
-
-                                <button
-                                    aria-label="Mostrar contraseña"
-                                    type="button"
-                                    class="botonMostrarPassword"
-                                >
-
-                                    <svg
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        class="iconoMostrar"
-                                    >
-
-                                        <path
-                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="1.8"
-                                            class="trazoIcono"
-                                        ></path>
-
-                                        <path
-                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="1.8"
-                                            class="trazoIcono"
-                                        ></path>
-
-                                    </svg>
-
-                                </button>
-
-                            </section>
-
-                        </section>
-
-                        <!-- Opción de recordar sesión -->
-                        <section class="opcionSesion">
-
-                            <label class="etiquetaSesion">
-
-                                <input
-                                    checked=""
-                                    type="checkbox"
-                                    class="casillaSesion"
-                                >
-
-                                <span class="textoSesion">
-                                    Mantener mi sesión iniciada en este equipo
-                                </span>
-
-                            </label>
-
-                        </section>
-
-                        <!-- Aviso de acceso rápido mediante QR -->
-                        <aside class="avisoQr">
-
-                            <section class="contenidoQr">
-
-                                <svg
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    class="iconoQr"
-                                >
-
-                                    <path
-                                        d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        class="trazoQr"
-                                    ></path>
-
-                                </svg>
-
-                                <span class="textoQr">
-                                    ¿Prefieres entrar desde tu móvil?
-                                </span>
-
-                            </section>
-
-                            <a
-                                href="#qr-login"
-                                class="enlaceQr"
-                            >
-                                Escanear Carnet QR
-
-                                <span class="flechaQr">
-                                    →
-                                </span>
-
-                            </a>
-
-                        </aside>
-
-                        <!-- Botón de envío principal -->
-                        <button
-                            type="submit"
-                            class="botonAcceso"
-                        >
-
-                            <svg
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                viewBox="0 0 24 24"
-                                class="iconoAccesoBoton"
-                            >
-
-                                <circle
-                                    cx="12"
-                                    cy="12"
-                                    r="10"
-                                    class="circuloBoton"
-                                ></circle>
-
-                                <path
-                                    d="M12 8v8m-4-4h8"
-                                    class="trazoBoton"
-                                ></path>
-
-                            </svg>
-
-                            <span class="textoBoton">
-                                Entrar a mi Portal de Socio
-                            </span>
-
-                        </button>
-
-                    </form>
-
-                </article>
+        </div>
+    </footer>
+
+</body>
+</html>

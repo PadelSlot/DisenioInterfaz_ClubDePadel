@@ -1,613 +1,359 @@
 <!DOCTYPE html>
-<html lang="es" class="pagina">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio del club · Club de Pádel Sevilla · PádelSlot</title>
 
-<head class="cabeceraPagina">
-    <meta charset="UTF-8" class="configuracionMeta">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" class="configuracionMeta">
+    <!-- Fuentes: Space Grotesk (títulos) e Inter (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <title class="tituloPagina">Portal del Socio - PadelSlot</title>
+    <!-- Iconos Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 
-    <!-- Fuentes e iconos -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet"
-          class="fuentePrincipal">
-
-    <script src="https://unpkg.com/@phosphor-icons/web"
-            class="scriptIconos"></script>
+    <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <link rel="stylesheet" href="scss/main.css">
 </head>
 
-<body class="cuerpoPagina">
+<body class="fondo-suave">
 
-    <!-- Barra superior informativa del SaaS -->
-    <aside class="barraInformativa">
-
-        <section class="contenedorBarra">
-
-            <section class="informacionClub">
-                <span class="etiquetaSaas">SAAS MULTI-CLUB</span>
-
-                <span class="clubActivo">
-                    Instalación activa:
-                    <strong class="nombreClub">Club de Pádel Sevilla - Demo Club</strong>
-                </span>
-            </section>
-
-            <section class="informacionSaas">
-                <span class="descripcionSaas">
-                    Solución tecnológica marca blanca para clubes
-                </span>
-
-                <span class="modulosActivos">
-                    <i class="ph ph-squares-four iconoModulos"></i>
-                    4 módulos activados
-                </span>
-            </section>
-
-        </section>
-
-    </aside>
-
-    <!-- Encabezado y Navegación Principal -->
-    <header class="cabeceraPrincipal">
-
-        <section class="contenedorCabecera">
-
-            <a href="#" class="enlaceMarca">
-
-                <figure class="logoMarca">P</figure>
-
-                <section class="informacionMarca">
-                    <h1 class="nombreClubPrincipal">
-                        Club de Pádel Sevilla
-                    </h1>
-
-                    <p class="subtituloMarca">
-                        Portal Oficial - PadelSlot
-                    </p>
-                </section>
-
+    <!-- ============ CABECERA ============ -->
+    <header class="cabecera">
+        <div class="cabecera__contenido">
+            <a href="inicioSocio.html" class="cabecera__logo">
+                <span class="logotipo">P</span>
+                PádelSlot
             </a>
 
-            <!-- Menú de navegación principal -->
-            <nav class="menuPrincipal">
-
-                <a href="#" class="enlaceNavegacion">Inicio</a>
-                <a href="#" class="enlaceNavegacion">Reservar pista</a>
-                <a href="#" class="enlaceNavegacion">Escuela y clases</a>
-                <a href="#" class="enlaceNavegacion">Membresía</a>
-                <a href="#" class="enlaceNavegacion">Servicios del club</a>
-
+            <nav class="cabecera__menu navegacion-escritorio" aria-label="Navegación del socio">
+                <a href="inicioSocio.html" class="cabecera__enlace cabecera__enlace--activo">Inicio</a>
+                <a href="#" class="cabecera__enlace">Reservas y pistas</a>
+                <a href="clases.html" class="cabecera__enlace">Escuela y clases</a>
+                <a href="cuotas.html" class="cabecera__enlace">Membresía</a>
+                <a href="#" class="cabecera__enlace">Torneos y ligas</a>
             </nav>
 
-            <!-- Menú y perfil de usuario -->
-            <section class="zonaUsuario">
-
-                <button type="button" class="botonNotificaciones">
-                    <i class="ph ph-bell iconoNotificacion"></i>
-                    <span class="indicadorNotificacion"></span>
+            <div class="cabecera__acciones">
+                <label class="selector-club">
+                    <i class="ph ph-map-pin" aria-hidden="true"></i>
+                    <select class="selector-club__campo" aria-label="Club">
+                        <option>Club de Pádel Sevilla</option>
+                    </select>
+                </label>
+                <button type="button" class="boton-icono" aria-label="Notificaciones">
+                    <i class="ph ph-bell" aria-hidden="true"></i>
                 </button>
-
-                <section class="perfilUsuario">
-
-                    <section class="datosUsuario">
-                        <strong class="nombreUsuario">Laura Méndez</strong>
-                        <span class="numeroSocio">Socia activa #1042</span>
-                    </section>
-
-                    <figure class="avatarUsuario">LM</figure>
-
-                </section>
-
-                <button type="button" class="botonMenu">
-                    <i class="ph ph-list iconoMenu"></i>
-                </button>
-
-            </section>
-
-        </section>
-
+                <div class="usuario">
+                    <span class="avatar">LM</span>
+                    <p class="usuario__datos">
+                        <span class="usuario__nombre">Laura M.</span>
+                        <span class="usuario__rol">Socia activa</span>
+                    </p>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- Área de contenido principal -->
-    <main class="contenidoPrincipal">
+    <main class="inicio-socio">
 
-        <!-- Banner de bienvenida y aviso sobre políticas de acceso -->
-        <section class="bannerAcceso">
-
-            <figure class="iconoBanner">
-                <i class="ph-fill ph-shield-check iconoSeguridad"></i>
-            </figure>
-
-            <section class="contenidoBanner">
-
-                <header class="cabeceraBanner">
-                    <span class="tituloPolitica">
-                        Políticas de Acceso al Club
-                    </span>
-
-                    <span class="indicadorPolitica"></span>
-
-                    <span class="gestionSaas">
-                        Gestionado via PadelSlot SaaS
-                    </span>
-                </header>
-
-                <h2 class="tituloInvitado">
-                    ¿Eres jugador no socio o invitado?
-                </h2>
-
-                <p class="textoInvitado">
-                    Los
-                    <strong class="textoDestacado">no socios</strong>
-                    pueden realizar reserva puntual de pista con pago directo por uso.
-                    Hazte
-                    <strong class="textoDestacado">socio del club</strong>
-                    para desbloquear reserva anticipada prioritaria con descuento,
-                    inscripción a clases dirigidas de la escuela, monedero digital
-                    y reserva de servicios exclusivos del club.
+        <!-- ============ BIENVENIDA + CUENTA ============ -->
+        <section class="inicio-socio__intro">
+            <div>
+                <span class="etiqueta etiqueta--terciario">Club de Pádel Sevilla</span>
+                <h1 class="inicio-socio__titulo">Reserva en Club de Pádel Sevilla</h1>
+                <p class="inicio-socio__descripcion">
+                    Reserva pistas, apúntate a clases, revisa tu membresía y accede a servicios del club desde una sola app
+                    web integrada en Club de Pádel Sevilla.
                 </p>
+            </div>
 
-            </section>
-
-            <menu class="accionesBanner">
-
-                <button type="button" class="botonReservaInvitado">
-                    Reservar pista (No socio)
-                </button>
-
-                <button type="button" class="botonAltaSocio">
-                    Ventajas y alta de socio
-                </button>
-
-            </menu>
-
+            <aside class="tarjeta inicio-socio__cuenta" aria-labelledby="titulo-cuenta">
+                <div class="tarjeta__cabecera">
+                    <h2 class="tarjeta__titulo" id="titulo-cuenta">Tu cuenta</h2>
+                    <span class="etiqueta etiqueta--terciario">Socia activa</span>
+                </div>
+                <dl class="inicio-socio__cuenta-datos">
+                    <div>
+                        <dt class="inicio-socio__dato-etiqueta">Cuota</dt>
+                        <dd class="inicio-socio__dato-valor">Mensual · 45 €</dd>
+                    </div>
+                    <div class="inicio-socio__cuenta-derecha">
+                        <dt class="inicio-socio__dato-etiqueta">Renovación</dt>
+                        <dd class="inicio-socio__dato-valor">15 nov 2026</dd>
+                    </div>
+                </dl>
+                <a href="cuotas.html" class="inicio-socio__enlace">Gestionar membresía <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+            </aside>
         </section>
 
-        <!-- Bienvenida y resumen del estado de membresía -->
-        <section class="seccionBienvenida">
-
-            <header class="cabeceraBienvenida">
-
-                <span class="estadoModulos">
-                    Club de Pádel Sevilla - Módulos personalizados activos
-                </span>
-
-                <h1 class="tituloBienvenida">
-                    ¡Hola de nuevo, Laura!
-                </h1>
-
-                <p class="textoBienvenida">
-                    Bienvenida al portal oficial del club en PadelSlot.
-                    Desde aquí gestionas tus reservas prioritarias de pistas,
-                    inscripción a clases de la escuela, tu cuota de socia
-                    y servicios adicionales habilitados por la administración.
-                </p>
-
-            </header>
-
-            <!-- Tarjeta resumen de estado del socio -->
-            <article class="tarjetaMembresia">
-
-                <header class="cabeceraMembresia">
-
-                    <section class="tituloMembresia">
-                        <i class="ph ph-identification-card iconoMembresia"></i>
-                        Estado de Membresía
-                    </section>
-
-                    <span class="estadoSocio">
-                        Socia Activa
-                    </span>
-
-                </header>
-
-                <section class="datosMembresia">
-
-                    <article class="datoMembresia">
-                        <span class="etiquetaDato">Cuota</span>
-                        <strong class="valorDato">
-                            45 €
-                            <span class="periodoCuota">/mes</span>
-                        </strong>
-                    </article>
-
-                    <article class="datoMembresia">
-                        <span class="etiquetaDato">Renovación</span>
-                        <strong class="valorDato">
-                            15 Nov 2026
-                        </strong>
-                    </article>
-
-                    <article class="datoMembresia">
-                        <span class="etiquetaDato">Monedero</span>
-                        <strong class="valorDato">
-                            38,50 €
-                        </strong>
-                    </article>
-
-                </section>
-
-                <footer class="accionesMembresia">
-
-                    <button type="button" class="botonCarnet">
-                        <i class="ph ph-qr-code iconoQr"></i>
-                        Ver carnet digital
-                    </button>
-
-                    <button type="button" class="botonPagos">
-                        Gestionar cuota y pagos
-                        <i class="ph ph-caret-right iconoFlecha"></i>
-                    </button>
-
-                </footer>
-
+        <!-- ============ ACCESOS PRINCIPALES ============ -->
+        <section class="inicio-socio__accesos" aria-label="Accesos principales">
+            <article class="tarjeta inicio-socio__acceso inicio-socio__acceso--destacado">
+                <span class="icono-caja icono-caja--verde"><i class="ph ph-calendar-plus" aria-hidden="true"></i></span>
+                <h2 class="tarjeta__titulo">Reservar pista o clase</h2>
+                <p class="tarjeta__cuerpo">Reserva pistas, clases y servicios del club desde un solo panel.</p>
+                <a href="#" class="boton boton--disponibilidad boton--bloque">
+                    Ver disponibilidad <i class="ph ph-arrow-right boton__icono" aria-hidden="true"></i>
+                </a>
             </article>
 
+            <article class="tarjeta inicio-socio__acceso">
+                <span class="icono-caja"><i class="ph ph-graduation-cap" aria-hidden="true"></i></span>
+                <h2 class="tarjeta__titulo">Clases y escuela</h2>
+                <p class="tarjeta__cuerpo">Clases, grupos y escuela de padel para socios y clientes.</p>
+                <div class="inicio-socio__acceso-pie">
+                    <a href="clases.html" class="inicio-socio__enlace">Explorar clases</a>
+                    <span class="etiqueta etiqueta--suave">3 esta semana</span>
+                </div>
+            </article>
+
+            <article class="tarjeta inicio-socio__acceso">
+                <span class="icono-caja"><i class="ph ph-identification-card" aria-hidden="true"></i></span>
+                <h2 class="tarjeta__titulo">Membresía y perfil</h2>
+                <p class="tarjeta__cuerpo">Consulta tu alta, renovación, pagos y datos de socio.</p>
+                <div class="inicio-socio__acceso-pie">
+                    <a href="cuotas.html" class="inicio-socio__enlace">Ver mi perfil</a>
+                    <i class="ph ph-arrow-right" aria-hidden="true"></i>
+                </div>
+            </article>
         </section>
 
-        <!-- Módulos habilitados en el club -->
-        <section class="seccionModulos">
-
-            <header class="cabeceraSeccion">
-
-                <section class="tituloSeccion">
-                    <h3 class="tituloModulos">
-                        Módulos habilitados en este Club
-                    </h3>
-                </section>
-
-                <span class="configuracionMarca">
-                    Configuración marca blanca PadelSlot
-                </span>
-
+        <!-- ============ RESERVAS Y PISTAS ============ -->
+        <section class="inicio-socio__seccion">
+            <header class="encabezado-seccion">
+                <div>
+                    <span class="encabezado-seccion__antetitulo">Disponibilidad hoy</span>
+                    <h2 class="encabezado-seccion__titulo">Reservas y pistas</h2>
+                    <p class="encabezado-seccion__texto">Reserva pistas, clases y servicios del club desde una sola vista.</p>
+                </div>
+                <a href="#" class="encabezado-seccion__enlace">Ver todos los horarios <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
             </header>
 
-            <section class="listaModulos">
+            <div class="inicio-socio__disponibilidad">
+                <ul class="tarjeta inicio-socio__dias" aria-label="Día">
+                    <li>
+                        <button type="button" class="inicio-socio__dia inicio-socio__dia--activo" aria-pressed="true">
+                            <strong>Mié 30</strong> <span>Hoy</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="inicio-socio__dia" aria-pressed="false">
+                            <strong>Jue 1</strong> <span>Mañana</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="inicio-socio__dia" aria-pressed="false">
+                            <strong>Vie 2</strong> <span>Viernes</span>
+                        </button>
+                    </li>
+                </ul>
 
-                <!-- Módulo 1: Reserva de Pistas -->
-                <article class="tarjetaModulo">
-
-                    <header class="cabeceraModulo">
-
-                        <figure class="iconoModulo">
-                            <i class="ph ph-tennis-ball iconoPista"></i>
-                        </figure>
-
-                        <span class="numeroModulo">Pilar 1</span>
-
-                    </header>
-
-                    <h4 class="tituloModulo">
-                        Reserva de Pistas
-                    </h4>
-
-                    <p class="descripcionModulo">
-                        Disponibilidad en tiempo real de pistas de cristal
-                        y cubiertas con reserva anticipada para socios.
-                    </p>
-
-                    <footer class="pieModulo">
-                        Ver cuadrante de pistas
-                        <i class="ph ph-arrow-right iconoFlecha"></i>
-                    </footer>
-
-                </article>
-
-                <!-- Módulo 2: Escuela y Clases -->
-                <article class="tarjetaModulo">
-
-                    <header class="cabeceraModulo">
-
-                        <figure class="iconoModulo">
-                            <i class="ph ph-graduation-cap iconoEscuela"></i>
-                        </figure>
-
-                        <span class="numeroModulo">Pilar 2</span>
-
-                    </header>
-
-                    <h4 class="tituloModulo">
-                        Escuela y Clases
-                    </h4>
-
-                    <p class="descripcionModulo">
-                        Grupos dirigidos, entrenamientos técnicos por nivel
-                        y clases particulares con monitores oficiales.
-                    </p>
-
-                    <footer class="pieModulo">
-                        Explorar calendario
-                        <i class="ph ph-arrow-right iconoFlecha"></i>
-                    </footer>
-
-                </article>
-
-                <!-- Módulo 3: Membresía y Perfil -->
-                <article class="tarjetaModulo">
-
-                    <header class="cabeceraModulo">
-
-                        <figure class="iconoModulo">
-                            <i class="ph ph-user-circle iconoPerfil"></i>
-                        </figure>
-
-                        <span class="numeroModulo">Pilar 3</span>
-
-                    </header>
-
-                    <h4 class="tituloModulo">
-                        Membresía y Perfil
-                    </h4>
-
-                    <p class="descripcionModulo">
-                        Control de cuota mensual, recarga de saldo,
-                        facturación, estadísticas de juego y carnet digital.
-                    </p>
-
-                    <footer class="pieModulo">
-                        Gestionar mi cuenta
-                        <i class="ph ph-arrow-right iconoFlecha"></i>
-                    </footer>
-
-                </article>
-
-                <!-- Módulo 4: Servicios del Club -->
-                <article class="tarjetaModulo">
-
-                    <header class="cabeceraModulo">
-
-                        <figure class="iconoModulo">
-                            <i class="ph ph-coffee iconoServicios"></i>
-                        </figure>
-
-                        <span class="numeroModulo">Pilar 4</span>
-
-                    </header>
-
-                    <h4 class="tituloModulo">
-                        Servicios del Club
-                    </h4>
-
-                    <p class="descripcionModulo">
-                        Parking reservado, reserva de mesa en cafetería/bar,
-                        taquillas privadas y alquiler de material.
-                    </p>
-
-                    <footer class="pieModulo">
-                        Ver servicios activos
-                        <i class="ph ph-arrow-right iconoFlecha"></i>
-                    </footer>
-
-                </article>
-
-            </section>
-
+                <ul class="inicio-socio__franjas">
+                    <li>
+                        <a href="#" class="inicio-socio__franja">
+                            <span class="inicio-socio__franja-hora"><strong>18:00</strong> 90 min</span>
+                            <span class="inicio-socio__franja-pista"><strong>Pista 3 · exterior</strong> Cristal · Exterior</span>
+                            <span class="etiqueta etiqueta--terciario">Disponible</span>
+                            <strong class="inicio-socio__franja-precio">12 € / jug.</strong>
+                            <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="inicio-socio__franja">
+                            <span class="inicio-socio__franja-hora"><strong>19:30</strong> 90 min</span>
+                            <span class="inicio-socio__franja-pista"><strong>Pista 1 · exterior</strong> Cristal · Exterior</span>
+                            <span class="etiqueta etiqueta--terciario">Última libre</span>
+                            <strong class="inicio-socio__franja-precio">14 € / jug.</strong>
+                            <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="inicio-socio__franja">
+                            <span class="inicio-socio__franja-hora"><strong>21:00</strong> 90 min</span>
+                            <span class="inicio-socio__franja-pista"><strong>Pista 5 · exterior</strong> Cristal · Exterior</span>
+                            <span class="etiqueta etiqueta--terciario">Disponible</span>
+                            <strong class="inicio-socio__franja-precio">10 € / jug.</strong>
+                            <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </section>
 
-        <!-- Cuadrante de reservas del día -->
-        <section class="seccionReservas">
-
-            <header class="cabeceraReservas">
-
-                <section class="informacionReservas">
-
-                    <span class="estadoReservas">
-                        Disponibilidad en tiempo real
-                    </span>
-
-                    <h3 class="tituloReservas">
-                        Reservas y Cuadrante de Hoy
-                    </h3>
-
-                    <p class="descripcionReservas">
-                        Socios con 7 días de antelación y tarifa reducida.
-                        No socios con reserva puntual hasta 48h antes.
-                    </p>
-
-                </section>
-
-                <a href="#" class="enlaceCuadrante">
-                    Ver cuadrante completo
-                    <i class="ph ph-arrow-right iconoFlecha"></i>
-                </a>
-
+        <!-- ============ CLASES Y GRUPOS ============ -->
+        <section class="inicio-socio__seccion">
+            <header class="encabezado-seccion">
+                <div>
+                    <span class="encabezado-seccion__antetitulo">Escuela y clases</span>
+                    <h2 class="encabezado-seccion__titulo">Clases y grupos</h2>
+                    <p class="encabezado-seccion__texto">Clases, grupos y escuela de padel disponibles en Sevilla Provincial.</p>
+                </div>
+                <a href="clases.html" class="encabezado-seccion__enlace">Ver calendario de clases <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
             </header>
 
-            <section class="contenidoReservas">
+            <div class="inicio-socio__rejilla">
+                <article class="tarjeta inicio-socio__clase">
+                    <div class="tarjeta__cabecera">
+                        <span class="etiqueta etiqueta--suave">Jue 1 · 18:30</span>
+                        <button type="button" class="boton-icono" aria-label="Guardar clase"><i class="ph ph-bookmark-simple" aria-hidden="true"></i></button>
+                    </div>
+                    <h3 class="tarjeta__titulo">Clase de bandeja</h3>
+                    <p class="tarjeta__cuerpo">Intermedio · Carlos R.</p>
+                    <div class="inicio-socio__clase-pie">
+                        <span class="inicio-socio__plazas">2 plazas</span>
+                        <a href="#" class="inicio-socio__enlace">Apuntarme</a>
+                    </div>
+                </article>
 
-                <!-- Filtro de fechas laterales -->
-                <aside class="filtroFechas">
+                <article class="tarjeta inicio-socio__clase">
+                    <div class="tarjeta__cabecera">
+                        <span class="etiqueta etiqueta--suave">Sáb 3 · 10:00</span>
+                        <button type="button" class="boton-icono" aria-label="Guardar clase"><i class="ph ph-bookmark-simple" aria-hidden="true"></i></button>
+                    </div>
+                    <h3 class="tarjeta__titulo">Partido dirigido</h3>
+                    <p class="tarjeta__cuerpo">Intermedio · Marta S.</p>
+                    <div class="inicio-socio__clase-pie">
+                        <span class="inicio-socio__plazas">1 plaza</span>
+                        <a href="#" class="inicio-socio__enlace">Apuntarme</a>
+                    </div>
+                </article>
 
-                    <button type="button" class="fechaActiva">
-
-                        <section class="datosFecha">
-                            <strong class="diaFecha">Mié 30 Oct</strong>
-                            <span class="detalleFecha">
-                                Hoy · 6 pistas operativas
-                            </span>
-                        </section>
-
-                        <span class="estadoFecha">Activo</span>
-
-                    </button>
-
-                    <button type="button" class="fechaDisponible">
-
-                        <section class="datosFecha">
-                            <strong class="diaFecha">Jue 31 Oct</strong>
-                            <span class="detalleFecha">Mañana</span>
-                        </section>
-
-                        <span class="cantidadSlots">8 slots</span>
-
-                    </button>
-
-                    <button type="button" class="fechaDisponible">
-
-                        <section class="datosFecha">
-                            <strong class="diaFecha">Vie 1 Nov</strong>
-                            <span class="detalleFecha">Viernes</span>
-                        </section>
-
-                        <span class="cantidadSlots">12 slots</span>
-
-                    </button>
-
-                </aside>
-
-                <!-- Lista de franjas horarias libres -->
-                <section class="listaHorarios">
-
-                    <!-- Franja 1 -->
-                    <article class="tarjetaHorario">
-
-                        <section class="informacionHorario">
-
-                            <section class="horaReserva">
-                                <strong class="hora">18:00</strong>
-                                <span class="duracion">90 min</span>
-                            </section>
-
-                            <section class="datosPista">
-
-                                <header class="cabeceraPista">
-                                    <h4 class="nombrePista">
-                                        Pista 3 - Cristal panorámico
-                                    </h4>
-
-                                    <span class="tipoPista">Cubierta</span>
-                                </header>
-
-                                <footer class="detallePista">
-                                    <i class="ph-fill ph-star iconoPrioridad"></i>
-                                    Prioridad socios activa - 4 jugadores
-                                </footer>
-
-                            </section>
-
-                        </section>
-
-                        <section class="precioReserva">
-
-                            <section class="precios">
-                                <span class="precioNoSocio">
-                                    12 € no socio
-                                </span>
-
-                                <strong class="precioSocio">
-                                    8 €
-                                    <span class="textoSocio">/ socio</span>
-                                </strong>
-                            </section>
-
-                            <button type="button" class="botonReservar">
-                                Reservar
-                            </button>
-
-                        </section>
-
-                    </article>
-
-                    <!-- Franja 2 -->
-                    <article class="tarjetaHorario">
-
-                        <section class="informacionHorario">
-
-                            <section class="horaReserva">
-                                <strong class="hora">19:30</strong>
-                                <span class="duracion">60 min</span>
-                            </section>
-
-                            <section class="datosPista">
-
-                                <header class="cabeceraPista">
-                                    <h4 class="nombrePista">
-                                        Pista 1 - Central Pro
-                                    </h4>
-
-                                    <span class="tipoPista">Última plaza</span>
-                                </header>
-
-                                <footer class="detallePista">
-                                    Cristal templado - Iluminación LED TV
-                                </footer>
-
-                            </section>
-
-                        </section>
-
-                        <section class="precioReserva">
-
-                            <section class="precios">
-                                <span class="precioNoSocio">
-                                    14 € no socio
-                                </span>
-
-                                <strong class="precioSocio">
-                                    10 €
-                                    <span class="textoSocio">/ socio</span>
-                                </strong>
-                            </section>
-
-                            <button type="button" class="botonReservar">
-                                Reservar
-                            </button>
-
-                        </section>
-
-                    </article>
-
-                    <!-- Franja 3 -->
-                    <article class="tarjetaHorario">
-
-                        <section class="informacionHorario">
-
-                            <section class="horaReserva">
-                                <strong class="hora">21:00</strong>
-                                <span class="duracion">90 min</span>
-                            </section>
-
-                            <section class="datosPista">
-
-                                <header class="cabeceraPista">
-                                    <h4 class="nombrePista">
-                                        Pista 5 - Exterior Confort
-                                    </h4>
-
-                                    <span class="tipoPista">Disponible</span>
-                                </header>
-
-                                <footer class="detallePista">
-                                    Césped texturizado monofilamento
-                                </footer>
-
-                            </section>
-
-                        </section>
-
-                        <section class="precioReserva">
-
-                            <section class="precios">
-                                <span class="precioNoSocio">
-                                    11 € no socio
-                                </span>
-
-                                <strong class="precioSocio">
-                                    7,50 €
-                                    <span class="textoSocio">/ socio</span>
-                                </strong>
-                            </section>
-
-                            <button type="button" class="botonReservar">
-                                Reservar
-                            </button>
-
-                        </section>
-
-                    </article>
-
-                </section>
-
-            </section>
-
+                <article class="tarjeta inicio-socio__clase">
+                    <div class="tarjeta__cabecera">
+                        <span class="etiqueta etiqueta--suave">Dom 4 · 12:00</span>
+                        <button type="button" class="boton-icono" aria-label="Guardar clase"><i class="ph ph-bookmark-simple" aria-hidden="true"></i></button>
+                    </div>
+                    <h3 class="tarjeta__titulo">Defensa desde el fondo</h3>
+                    <p class="tarjeta__cuerpo">Todos los niveles · Álex P.</p>
+                    <div class="inicio-socio__clase-pie">
+                        <span class="inicio-socio__plazas inicio-socio__plazas--completo">Completo</span>
+                        <a href="#" class="inicio-socio__enlace inicio-socio__enlace--apagado">Ver lista</a>
+                    </div>
+                </article>
+            </div>
         </section>
+
+        <!-- ============ INFORMACIÓN DEL CLUB ============ -->
+        <section class="inicio-socio__seccion inicio-socio__club">
+            <article class="tarjeta inicio-socio__club-info">
+                <header class="encabezado-seccion">
+                    <div>
+                        <span class="encabezado-seccion__antetitulo">Sevilla Provincial</span>
+                        <h2 class="encabezado-seccion__titulo">Club de Pádel Sevilla</h2>
+                        <p class="encabezado-seccion__texto">Ctra. de Carmona, km 4 · 41500 Alcalá de Guadaíra, Sevilla</p>
+                    </div>
+                </header>
+
+                <dl class="inicio-socio__club-datos">
+                    <div class="inicio-socio__club-dato">
+                        <dt class="inicio-socio__dato-etiqueta"><i class="ph ph-clock inicio-socio__club-icono" aria-hidden="true"></i>Horario</dt>
+                        <dd class="inicio-socio__dato-valor">L–D · 07:00–23:30</dd>
+                    </div>
+                    <div class="inicio-socio__club-dato">
+                        <dt class="inicio-socio__dato-etiqueta"><i class="ph ph-stack inicio-socio__club-icono" aria-hidden="true"></i>Instalaciones</dt>
+                        <dd class="inicio-socio__dato-valor">6 pistas · 4 cubiertas</dd>
+                    </div>
+                    <div class="inicio-socio__club-dato">
+                        <dt class="inicio-socio__dato-etiqueta"><i class="ph ph-phone inicio-socio__club-icono" aria-hidden="true"></i>Recepción</dt>
+                        <dd class="inicio-socio__dato-valor">954 555 24 80</dd>
+                    </div>
+                </dl>
+
+                <div class="inicio-socio__club-acciones">
+                    <a href="#" class="boton boton--contorno">
+                        <i class="ph ph-navigation-arrow boton__icono" aria-hidden="true"></i>
+                        Ver en mapa
+                    </a>
+                    <a href="#" class="inicio-socio__enlace">Contactar con el club</a>
+                </div>
+            </article>
+
+            <div class="inicio-socio__mapa" role="img" aria-label="Mapa de Club de Pádel Sevilla">
+                <span class="inicio-socio__mapa-texto">Mapa de Club de Pádel Sevilla</span>
+                <span class="inicio-socio__mapa-pin"><i class="ph ph-map-pin" aria-hidden="true"></i></span>
+            </div>
+        </section>
+
+        <!-- ============ SERVICIOS DEL CLUB ============ -->
+        <section class="inicio-socio__seccion">
+            <header class="encabezado-seccion">
+                <div>
+                    <span class="encabezado-seccion__antetitulo">Servicios del club</span>
+                    <h2 class="encabezado-seccion__titulo">Servicios y gestión</h2>
+                    <p class="encabezado-seccion__texto">Servicios y gestión disponibles en Club de Pádel Sevilla.</p>
+                </div>
+                <span class="inicio-socio__nota">Servicios activos en Sevilla Provincial</span>
+            </header>
+
+            <div class="inicio-socio__servicios">
+                <article class="tarjeta inicio-socio__servicio">
+                    <div class="tarjeta__cabecera">
+                        <span class="icono-caja"><i class="ph ph-car" aria-hidden="true"></i></span>
+                        <span class="etiqueta etiqueta--suave">Disponible</span>
+                    </div>
+                    <h3 class="tarjeta__titulo">Parking y acceso</h3>
+                    <p class="tarjeta__cuerpo">Reserva parking y accede a servicios del club.</p>
+                    <a href="servicios.html" class="inicio-socio__enlace">Ver disponibilidad <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                </article>
+
+                <article class="tarjeta inicio-socio__servicio">
+                    <div class="tarjeta__cabecera">
+                        <span class="icono-caja"><i class="ph ph-fork-knife" aria-hidden="true"></i></span>
+                        <span class="etiqueta etiqueta--suave">Disponible</span>
+                    </div>
+                    <h3 class="tarjeta__titulo">Bar y restauración</h3>
+                    <p class="tarjeta__cuerpo">Reserva mesa en el bar o terraza del club.</p>
+                    <a href="servicios.html" class="inicio-socio__enlace">Ver horarios <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                </article>
+
+                <article class="tarjeta inicio-socio__servicio">
+                    <div class="tarjeta__cabecera">
+                        <span class="icono-caja"><i class="ph ph-trophy" aria-hidden="true"></i></span>
+                        <span class="etiqueta etiqueta--suave">3 abiertos</span>
+                    </div>
+                    <h3 class="tarjeta__titulo">Torneos y ligas</h3>
+                    <p class="tarjeta__cuerpo">Ver calendario de torneos y ligas del club.</p>
+                    <a href="#" class="inicio-socio__enlace">Ver calendario <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                </article>
+
+                <article class="tarjeta inicio-socio__servicio">
+                    <div class="tarjeta__cabecera">
+                        <span class="icono-caja"><i class="ph ph-briefcase" aria-hidden="true"></i></span>
+                    </div>
+                    <h3 class="tarjeta__titulo">Trabaja en el club</h3>
+                    <p class="tarjeta__cuerpo">Consulta ofertas laborales y envía tu currículum.</p>
+                    <a href="#" class="inicio-socio__enlace">Ver ofertas <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ PIE ============ -->
+    <footer class="pie">
+        <div class="pie__contenido">
+            <div class="pie-marca">
+                <strong class="pie-marca__titulo">PádelSlot</strong>
+                <p>Portal digital integrado para socios y clientes.</p>
+            </div>
+            <nav class="pie-enlaces" aria-label="Enlaces legales">
+                <a href="#">Ayuda</a>
+                <a href="#">Condiciones</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
+    <nav class="navegacion-movil" aria-label="Navegación del socio en móvil">
+        <a href="inicioSocio.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-house" aria-hidden="true"></i>Inicio</a>
+        <a href="#" class="navegacion-movil__enlace"><i class="ph ph-calendar-plus" aria-hidden="true"></i>Reservar</a>
+        <a href="clases.html" class="navegacion-movil__enlace"><i class="ph ph-graduation-cap" aria-hidden="true"></i>Clases</a>
+        <a href="cuotas.html" class="navegacion-movil__enlace"><i class="ph ph-user-circle" aria-hidden="true"></i>Perfil</a>
+    </nav>
+
+</body>
+</html>

@@ -3,612 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membresía y Cuotas - PadelSlot SaaS</title>
+    <title>Membresía y cuota · Club de Pádel Sevilla · PádelSlot</title>
 
-    <!-- Fuentes tipográficas e iconos -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Fuentes: Space Grotesk (títulos) e Inter (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <style>
-        /* Variables y Reset Base */
-        :root {
-            --brand-dark: #1e3c31;
-            --brand-dark-hover: #152b23;
-            --brand-accent: #d8f44d;
-            --brand-accent-hover: #c5df42;
-            --bg-body: #ffffff;
-            --bg-gray: #f8fafc;
-            --text-main: #1f2937;
-            --text-muted: #6b7280;
-            --border-color: #e5e7eb;
-            --border-color-light: #f3f4f6;
-            --radius-md: 12px;
-            --radius-lg: 24px;
-        }
+    <!-- Iconos Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-body); color: var(--text-main); line-height: 1.5; -webkit-font-smoothing: antialiased; }
-        a { text-decoration: none; color: inherit; }
-        button { border: none; background: none; font-family: inherit; cursor: pointer; }
-        ul, ol { list-style: none; }
-
-        .contenedor { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-        /* Utilidades Botones y Etiquetas */
-        .boton { display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; border-radius: 99px; font-size: 0.875rem; font-weight: 700; gap: 8px; transition: all 0.2s; }
-        .boton-oscuro { background: var(--brand-dark); color: #fff; }
-        .boton-acento { background: var(--brand-accent); color: var(--brand-dark); }
-        .boton-borde { border: 1px solid var(--border-color); color: var(--text-main); background: #fff; }
-        .boton-texto { color: var(--text-main); font-weight: 600; font-size: 0.875rem; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s; }
-        .boton-texto:hover { color: var(--brand-dark); }
-
-        .etiqueta { padding: 4px 10px; border-radius: 6px; font-size: 0.625rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 4px; }
-        .etiqueta-acento { background: var(--brand-accent); color: var(--brand-dark); }
-        .etiqueta-verde { background: #dcfce7; color: #166534; }
-
-        /* Barra superior y Cabecera */
-        .barra-info { background: var(--brand-dark); color: #fff; font-size: 0.75rem; padding: 8px 0; }
-        .barra-info .contenedor { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
-
-        .cabecera { border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: #fff; z-index: 100; }
-        .cabecera .contenedor { display: flex; justify-content: space-between; align-items: center; height: 72px; }
-        .marca { display: flex; align-items: center; gap: 12px; }
-        .marca-logo { width: 36px; height: 36px; background: var(--brand-dark); color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.25rem; }
-        .marca-texto h1 { font-size: 1rem; font-weight: 800; line-height: 1.1; }
-        .marca-texto p { font-size: 0.625rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
-
-        .menu { display: flex; gap: 4px; }
-        .menu a { padding: 8px 16px; border-radius: 99px; font-size: 0.875rem; font-weight: 600; color: var(--text-muted); transition: all 0.2s; }
-        .menu a:hover { background: var(--bg-gray); color: var(--text-main); }
-        .menu a.activo { background: var(--brand-dark); color: #fff; }
-
-        .usuario { display: flex; align-items: center; gap: 16px; }
-        .usuario-datos { text-align: right; line-height: 1.2; }
-        .usuario-datos strong { display: block; font-size: 0.875rem; }
-        .usuario-datos span { font-size: 0.625rem; color: var(--brand-dark); font-weight: 600; }
-        .avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
-
-        /* Cabecera de la página */
-        .encabezado { margin: 32px 0 40px 0; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px; }
-        .migas { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 12px; display: block; font-weight: 500; }
-        .titulo-fila { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }
-        .titulo-fila h2 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; }
-        .descripcion { font-size: 1rem; color: var(--text-muted); max-width: 600px; }
-
-        .renovacion { display: flex; align-items: center; gap: 12px; background: var(--bg-gray); padding: 12px 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); }
-        .renovacion i { font-size: 1.5rem; color: var(--text-muted); }
-        .renovacion-texto span { display: block; font-size: 0.625rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
-        .renovacion-texto strong { font-size: 0.875rem; font-weight: 800; }
-
-        /* Resumen (cuadrícula) */
-        .resumen { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; margin-bottom: 64px; }
-
-        .plan { border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; display: flex; flex-direction: column; }
-        .plan-cab { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; }
-        .plan-info span { font-size: 0.625rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
-        .plan-info h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
-        .plan-info p { font-size: 0.875rem; color: var(--text-muted); max-width: 250px; line-height: 1.4; }
-        .plan-precio { text-align: right; }
-        .plan-precio strong { font-size: 2.5rem; font-weight: 800; line-height: 1; }
-        .plan-precio span { font-size: 0.875rem; color: var(--text-muted); font-weight: 600; display: block; margin-top: 4px; }
-
-        .beneficios { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; flex: 1; }
-        .beneficio { background: var(--bg-gray); padding: 16px; border-radius: var(--radius-md); }
-        .beneficio header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-        .beneficio header i { color: var(--brand-dark); font-size: 1.25rem; }
-        .beneficio header h4 { font-size: 0.875rem; font-weight: 700; }
-        .beneficio p { font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; }
-
-        .plan-acciones { display: flex; align-items: center; gap: 24px; padding-top: 24px; border-top: 1px solid var(--border-color); flex-wrap: wrap; }
-
-        /* Carnet digital */
-        .carnet { display: flex; flex-direction: column; }
-        .carnet-cab { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
-        .carnet-cab h3 { font-size: 1rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
-
-        .pase { background: linear-gradient(135deg, var(--brand-dark) 0%, #0d1e18 100%); border-radius: 16px; padding: 24px; color: #fff; position: relative; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(30, 60, 49, 0.4); margin-bottom: 24px; }
-        .pase-sup { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
-        .pase-marca { display: flex; align-items: center; gap: 12px; }
-        .pase-logo { width: 32px; height: 32px; background: rgba(255,255,255,0.1); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 800; }
-        .pase-marca-texto strong { display: block; font-size: 0.875rem; }
-        .pase-marca-texto span { font-size: 0.625rem; color: #9ca3af; }
-        .pase-nfc i { font-size: 1.5rem; color: var(--brand-accent); }
-
-        .pase-medio { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 32px; }
-        .pase-titular span { font-size: 0.625rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px; }
-        .pase-titular strong { font-size: 1.25rem; font-weight: 700; display: block; margin-bottom: 12px; }
-        .pase-datos { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.625rem; color: var(--brand-accent); font-weight: 700; text-transform: uppercase; }
-
-        .pase-qr { background: #fff; padding: 8px; border-radius: 8px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .pase-qr img { width: 100%; height: 100%; }
-
-        .pase-pie { display: flex; justify-content: space-between; align-items: center; font-size: 0.625rem; color: #9ca3af; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; flex-wrap: wrap; gap: 8px; }
-
-        .wallets { display: flex; gap: 16px; flex-wrap: wrap; }
-        .wallets button { flex: 1; min-width: 140px; justify-content: center; border: 1px solid var(--border-color); border-radius: 8px; padding: 12px; font-size: 0.875rem; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: background 0.2s; }
-        .wallets button:hover { background: var(--bg-gray); }
-
-        /* Sección de condiciones */
-        .seccion-cab { margin-bottom: 32px; }
-        .seccion-etiqueta { font-size: 0.625rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px; }
-        .seccion-cab h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
-        .seccion-cab p { font-size: 0.875rem; color: var(--text-muted); max-width: 800px; }
-
-        .condiciones { display: grid; grid-template-columns: 300px 1fr; gap: 32px; margin-bottom: 64px; }
-
-        .precio-caja { border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 32px 24px; }
-        .precio-caja .etiqueta { margin-bottom: 16px; }
-        .precio-caja strong { display: block; font-size: 0.875rem; color: var(--text-muted); margin-bottom: 4px; }
-        .precio-caja h3 { font-size: 2.5rem; font-weight: 800; line-height: 1; margin-bottom: 16px; display: flex; align-items: baseline; gap: 4px; }
-        .precio-caja h3 span { font-size: 1rem; font-weight: 600; color: var(--text-muted); }
-        .precio-caja p { font-size: 0.75rem; font-weight: 600; line-height: 1.5; padding-bottom: 24px; border-bottom: 1px solid var(--border-color-light); margin-bottom: 24px; }
-        .nota-info { display: flex; gap: 12px; align-items: flex-start; font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; }
-        .nota-info i { font-size: 1.25rem; color: var(--brand-dark); flex-shrink: 0; }
-
-        .ventajas { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .ventaja { display: flex; gap: 16px; align-items: flex-start; }
-        .ventaja i { font-size: 1.5rem; color: var(--brand-dark); flex-shrink: 0; }
-        .ventaja h4 { font-size: 0.875rem; font-weight: 700; margin-bottom: 6px; }
-        .ventaja p { font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; }
-
-        /* Convenios y alianzas */
-        .alianzas { margin-bottom: 64px; }
-        .tarjetas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .promo { border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
-        .promo:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
-        .promo-img { height: 160px; position: relative; }
-        .promo-img img { width: 100%; height: 100%; object-fit: cover; }
-        .promo-img .etiqueta { position: absolute; top: 12px; left: 12px; }
-        .promo-cuerpo { padding: 24px; flex: 1; display: flex; flex-direction: column; }
-        .promo-cuerpo h4 { font-size: 1rem; font-weight: 800; margin-bottom: 8px; }
-        .promo-cuerpo p { font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 24px; flex: 1; }
-        .promo-enlace { font-size: 0.75rem; font-weight: 700; color: var(--brand-dark); display: flex; align-items: center; gap: 4px; transition: gap 0.2s; }
-        .promo-enlace:hover { gap: 8px; }
-
-        /* Preguntas frecuentes y soporte */
-        .faq-soporte { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; margin-bottom: 64px; }
-
-        .faq-cab { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
-        .faq-cab i { font-size: 1.5rem; color: var(--brand-dark); }
-        .faq-cab h2 { font-size: 1.25rem; font-weight: 800; }
-
-        .faq-lista { display: flex; flex-direction: column; gap: 12px; }
-        details { background: var(--bg-gray); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px 20px; transition: background 0.2s; }
-        details:hover { background: #f1f5f9; }
-        summary { font-size: 0.875rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; outline: none; }
-        summary::-webkit-details-marker { display: none; }
-        summary::after { content: "\25BC"; font-size: 0.625rem; color: var(--text-muted); transition: transform 0.2s; }
-        details[open] summary::after { transform: rotate(180deg); }
-        details p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.5; margin-top: 12px; }
-
-        .soporte { background: var(--brand-dark); color: #fff; border-radius: var(--radius-lg); padding: 40px; display: flex; flex-direction: column; }
-        .soporte-cab { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 700; color: var(--brand-accent); margin-bottom: 16px; }
-        .soporte h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
-        .soporte p { font-size: 0.875rem; color: #d1d5db; line-height: 1.5; margin-bottom: 32px; }
-        .soporte-datos { display: flex; flex-direction: column; gap: 12px; font-size: 0.75rem; margin-bottom: 32px; }
-        .soporte-datos span { display: flex; align-items: center; gap: 8px; color: #f3f4f6; }
-        .soporte-datos i { color: var(--brand-accent); font-size: 1rem; }
-
-        /* Pie de página */
-        .pie { background: var(--brand-dark); color: #fff; padding: 48px 0 24px; border-top: 8px solid var(--brand-accent); }
-        .pie-columnas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-bottom: 48px; }
-        .pie-marca { display: flex; align-items: center; gap: 8px; font-size: 1.125rem; font-weight: 800; margin-bottom: 16px; }
-        .pie-marca .pie-logo { width: 24px; height: 24px; background: var(--brand-accent); color: var(--brand-dark); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; }
-        .pie-col p { font-size: 0.75rem; color: #9ca3af; line-height: 1.6; }
-        .pie-col h4 { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 16px; color: #d1d5db; }
-        .pie-col ul { display: flex; flex-direction: column; gap: 12px; }
-        .pie-col a { font-size: 0.75rem; color: #9ca3af; transition: color 0.2s; }
-        .pie-col a:hover { color: #fff; }
-        .pie-direccion { font-style: normal; font-size: 0.75rem; color: #9ca3af; line-height: 1.6; }
-        .pie-direccion strong { display: flex; align-items: center; gap: 6px; color: #fff; font-size: 0.875rem; margin-bottom: 8px; }
-        .pie-direccion strong i { color: var(--brand-accent); }
-
-        .pie-legal { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: #9ca3af; flex-wrap: wrap; gap: 16px; }
-        .pie-enlaces { display: flex; gap: 16px; flex-wrap: wrap; }
-        .pie-enlaces a { transition: color 0.2s; }
-        .pie-enlaces a:hover { color: #fff; }
-
-        /* Media Queries Elementales */
-        @media (max-width: 992px) {
-            .resumen, .condiciones, .faq-soporte { grid-template-columns: 1fr; }
-            .tarjetas { grid-template-columns: repeat(2, 1fr); }
-            .pie-columnas { grid-template-columns: repeat(2, 1fr); }
-            .menu { display: none; }
-        }
-        @media (max-width: 768px) {
-            .tarjetas, .ventajas, .pie-columnas { grid-template-columns: 1fr; }
-            .titulo-fila h2 { font-size: 1.5rem; }
-            .plan-precio strong { font-size: 2rem; }
-        }
-    </style>
+    <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <link rel="stylesheet" href="scss/main.css">
 </head>
-<body class="cuerpo">
 
-    <!-- Barra informativa superior -->
-    <aside class="barra-info">
-        <section class="contenedor">
-            <span class="barra-etiqueta">SAAS MULTI-CLUB</span>
-            <span class="barra-texto">Instalación activa: <strong class="barra-club">Club de Pádel Sevilla</strong></span>
-            <span class="barra-lema">Solución tecnológica marca blanca para clubes</span>
-            <span class="barra-modulos"><i class="ph-fill ph-squares-four"></i> 4 módulos activados</span>
-        </section>
-    </aside>
+<body class="fondo-suave">
 
-    <!-- Encabezado y Navegación Principal -->
+    <!-- ============ CABECERA ============ -->
     <header class="cabecera">
-        <section class="contenedor">
-
-            <!-- Logotipo del club -->
-            <a href="#" class="marca">
-                <figure class="marca-logo">P</figure>
-                <section class="marca-texto">
-                    <h1 class="marca-nombre">Club de Pádel Sevilla</h1>
-                    <p class="marca-sub">Portal Oficial · PadelSlot</p>
-                </section>
+        <div class="cabecera__contenido">
+            <a href="inicioSocio.html" class="cabecera__logo">
+                <span class="logotipo">P</span>
+                PádelSlot
             </a>
 
-            <!-- Menú de enlaces principales -->
-            <nav class="menu">
-                <a href="#" class="menu-enlace">Inicio</a>
-                <a href="#" class="menu-enlace">Reservar pista</a>
-                <a href="#" class="menu-enlace">Escuela y clases</a>
-                <a href="#" class="menu-enlace activo">Membresía</a>
-                <a href="#" class="menu-enlace">Servicios del club</a>
+            <nav class="cabecera__menu navegacion-escritorio" aria-label="Navegación del socio">
+                <a href="inicioSocio.html" class="cabecera__enlace">Inicio</a>
+                <a href="#" class="cabecera__enlace">Reservas y pistas</a>
+                <a href="clases.html" class="cabecera__enlace">Escuela y clases</a>
+                <a href="cuotas.html" class="cabecera__enlace cabecera__enlace--activo" aria-current="page">Membresía</a>
+                <a href="#" class="cabecera__enlace">Torneos y ligas</a>
             </nav>
 
-            <!-- Perfil del socio -->
-            <aside class="usuario">
-                <button type="button" class="notif-boton">
-                    <i class="ph-fill ph-bell"></i>
-                    <span class="notif-punto"></span>
+            <div class="cabecera__acciones">
+                <label class="selector-club">
+                    <i class="ph ph-map-pin" aria-hidden="true"></i>
+                    <select class="selector-club__campo" aria-label="Club">
+                        <option>Club de Pádel Sevilla</option>
+                    </select>
+                </label>
+                <button type="button" class="boton-icono" aria-label="Notificaciones">
+                    <i class="ph ph-bell" aria-hidden="true"></i>
                 </button>
-                <section class="usuario-datos">
-                    <strong class="usuario-nombre">Laura Méndez</strong>
-                    <span class="usuario-estado"><span class="estado-punto">●</span> Socia activa #1042</span>
-                </section>
-                <img src="https://placehold.co/40x40/cbd5e1/475569?text=LM" alt="Avatar" class="avatar">
-            </aside>
-        </section>
+                <div class="usuario">
+                    <span class="avatar">LM</span>
+                    <p class="usuario__datos">
+                        <span class="usuario__nombre">Laura M.</span>
+                        <span class="usuario__rol">Socia activa</span>
+                    </p>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- Contenido Principal -->
-    <main class="contenedor principal">
+    <main class="membresia">
 
-        <!-- Cabecera de la Página -->
-        <header class="encabezado">
-            <section class="encabezado-texto">
-                <nav aria-label="breadcrumb" class="migas">
-                    <span class="miga">Portal del socio / <strong class="miga-actual">Membresía y Cuota</strong></span>
+        <!-- ============ CABECERA DE PÁGINA ============ -->
+        <header class="cabecera-pagina">
+            <div>
+                <nav class="cabecera-pagina__migas" aria-label="Estás aquí">
+                    <a href="inicioSocio.html" class="cabecera-pagina__miga">Portal del socio</a>
+                    <i class="ph ph-caret-right" aria-hidden="true"></i>
+                    <span class="cabecera-pagina__miga cabecera-pagina__miga--actual" aria-current="page">Membresía y cuota</span>
                 </nav>
-                <section class="titulo-fila">
-                    <h2 class="titulo">Gestión de Membresía y Cuota</h2>
-                    <span class="etiqueta etiqueta-acento">Socia Preferente Activa #1042</span>
-                </section>
-                <p class="descripcion">Consulta los privilegios de tu condición deportiva, renueva tus pases y gestiona tus formas de pago directas.</p>
-            </section>
-
-            <!-- Próxima fecha de renovación -->
-            <aside class="renovacion">
-                <i class="ph-fill ph-calendar-blank"></i>
-                <section class="renovacion-texto">
-                    <span class="renovacion-label">Próxima Renovación</span>
-                    <strong class="renovacion-fecha">15 Nov 2026</strong>
-                </section>
-            </aside>
+                <span class="etiqueta etiqueta--terciario">Socia preferente activa #1042</span>
+                <h1 class="cabecera-pagina__titulo">Gestión de membresía y cuota</h1>
+                <p class="cabecera-pagina__texto">Consulta los privilegios de tu condición deportiva, renueva tus pases y gestiona tus formas de pago directas.</p>
+            </div>
+            <div class="membresia__renovacion">
+                <i class="ph ph-calendar-check" aria-hidden="true"></i>
+                <p><span>Próxima renovación</span> <strong>15 nov 2026</strong></p>
+            </div>
         </header>
 
-        <!-- Resumen del Plan Actual y Carnet Digital -->
-        <section class="resumen">
+        <!-- ============ PLAN + CARNET ============ -->
+        <section class="membresia__principal">
 
-            <!-- Tarjeta del Plan Contratado -->
-            <article class="plan">
-                <header class="plan-cab">
-                    <section class="plan-info">
-                        <span class="plan-etiqueta"><i class="ph-fill ph-check-circle"></i> Membresía Titular</span>
-                        <h3 class="plan-titulo">Cuota Única de Socio</h3>
-                        <p class="plan-desc">Cobro mensual automatizado - Recibo domiciliado SEPA</p>
-                    </section>
-                    <section class="plan-precio">
-                        <strong class="plan-importe">45<span class="plan-moneda">€</span></strong>
-                        <span class="plan-periodo">/ mes IVA incluido</span>
-                    </section>
-                </header>
+            <article class="tarjeta membresia__plan" aria-labelledby="titulo-plan">
+                <div class="membresia__plan-cabecera">
+                    <div>
+                        <span class="membresia__antetitulo">Membresía titular</span>
+                        <h2 class="membresia__plan-titulo" id="titulo-plan">Cuota única de socio</h2>
+                        <p class="membresia__nota">Cobro mensual automatizado · Recibo domiciliado SEPA</p>
+                    </div>
+                    <p class="membresia__precio"><strong>45 €</strong> / mes <span>IVA incluido</span></p>
+                </div>
 
-                <!-- Beneficios clave -->
-                <ul class="beneficios">
-                    <li class="beneficio">
-                        <header><i class="ph-fill ph-tennis-ball"></i> <h4 class="beneficio-titulo">Pistas bonificadas</h4></header>
-                        <p class="beneficio-desc">100% en franja valle y 50% fines de semana.</p>
+                <ul class="membresia__ventajas">
+                    <li class="membresia__ventaja">
+                        <span class="icono-caja"><i class="ph ph-tennis-ball" aria-hidden="true"></i></span>
+                        <p><strong>Pistas bonificadas</strong> 100% en franja valle y 50% los fines de semana.</p>
                     </li>
-                    <li class="beneficio">
-                        <header><i class="ph-fill ph-parking"></i> <h4 class="beneficio-titulo">Parking del Club</h4></header>
-                        <p class="beneficio-desc">2h gratis por reserva con acceso por matrícula.</p>
+                    <li class="membresia__ventaja">
+                        <span class="icono-caja"><i class="ph ph-car" aria-hidden="true"></i></span>
+                        <p><strong>Parking del club</strong> 2 h gratis por reserva con acceso por matrícula.</p>
                     </li>
-                    <li class="beneficio">
-                        <header><i class="ph-fill ph-calendar-check"></i> <h4 class="beneficio-titulo">Reserva Prioritaria</h4></header>
-                        <p class="beneficio-desc">Agenda abierta con 14 días de antelación garantizada.</p>
+                    <li class="membresia__ventaja">
+                        <span class="icono-caja"><i class="ph ph-calendar-plus" aria-hidden="true"></i></span>
+                        <p><strong>Reserva prioritaria</strong> Agenda abierta con 14 días de antelación garantizada.</p>
                     </li>
-                    <li class="beneficio">
-                        <header><i class="ph-fill ph-wallet"></i> <h4 class="beneficio-titulo">Monedero Virtual</h4> <span class="etiqueta etiqueta-verde">Activo</span></header>
-                        <p class="beneficio-desc"><strong class="beneficio-valor">38,50 €</strong> disponible</p>
+                    <li class="membresia__ventaja">
+                        <span class="icono-caja"><i class="ph ph-wallet" aria-hidden="true"></i></span>
+                        <p><strong>Monedero virtual <span class="etiqueta etiqueta--terciario">Activo</span></strong> 38,50 € disponibles</p>
                     </li>
                 </ul>
 
-                <!-- Acciones del plan -->
-                <footer class="plan-acciones">
-                    <button class="boton boton-oscuro">Cambiar de plan</button>
-                    <button class="boton boton-acento"><i class="ph-fill ph-download-simple"></i> Descargar carnet digital</button>
-                    <button class="boton-texto"><i class="ph-fill ph-pause-circle"></i> Pausar temporalmente</button>
-                </footer>
+                <div class="membresia__acciones">
+                    <a href="#" class="boton boton--primario">Cambiar de plan</a>
+                    <a href="#" class="boton boton--contorno">
+                        <i class="ph ph-download-simple boton__icono" aria-hidden="true"></i>
+                        Descargar carnet digital
+                    </a>
+                    <a href="#" class="membresia__enlace">Pausar temporalmente</a>
+                </div>
             </article>
 
-            <!-- Carnet Digital de Socio (Pass) -->
-            <article class="carnet">
-                <header class="carnet-cab">
-                    <h3 class="carnet-titulo"><i class="ph-fill ph-identification-card"></i> PadelSlot Pass</h3>
-                    <span class="etiqueta etiqueta-verde">Tarjeta de Acceso</span>
-                </header>
+            <!-- Carnet digital -->
+            <article class="membresia__carnet" aria-labelledby="titulo-carnet">
+                <div class="membresia__carnet-cabecera">
+                    <span class="logotipo">P</span>
+                    <p class="membresia__carnet-club">
+                        <strong id="titulo-carnet">Club de Pádel Sevilla</strong>
+                        Carnet oficial de socio
+                    </p>
+                    <span class="etiqueta etiqueta--terciario">PadelSlot Pass</span>
+                </div>
 
-                <!-- Tarjeta visual interactiva -->
-                <figure class="pase">
-                    <header class="pase-sup">
-                        <section class="pase-marca">
-                            <figure class="pase-logo">P</figure>
-                            <section class="pase-marca-texto">
-                                <strong class="pase-club">Club de Pádel Sevilla</strong>
-                                <span class="pase-tipo">Carnet Oficial de Socio</span>
-                            </section>
-                        </section>
-                        <section class="pase-nfc"><i class="ph-fill ph-wifi-high"></i></section>
-                    </header>
+                <div class="membresia__carnet-cuerpo">
+                    <span class="membresia__carnet-etiqueta">Titular de la membresía</span>
+                    <strong class="membresia__carnet-nombre">Laura M. García</strong>
+                    <div class="membresia__carnet-datos">
+                        <span>Socia oficial <strong>#1042</strong></span>
+                        <span>Validez <strong>11/2026</strong></span>
+                    </div>
+                </div>
 
-                    <section class="pase-medio">
-                        <section class="pase-titular">
-                            <span class="pase-label">Titular de la Membresía</span>
-                            <strong class="pase-nombre">Laura M. García</strong>
-                            <section class="pase-datos">
-                                <span class="pase-dato">Socio Oficial #1042</span>
-                                <span class="pase-dato">Validez: 11/2026</span>
-                            </section>
-                        </section>
-                        <figure class="pase-qr">
-                            <img src="https://placehold.co/100x100/ffffff/000000?text=QR" alt="Código QR" class="pase-qr-img">
-                        </figure>
-                    </section>
+                <p class="membresia__carnet-pie">● Acceso a pistas 1-12 y gimnasio</p>
 
-                    <figcaption class="pase-pie">
-                        <span class="pase-acceso"><span class="pase-punto">●</span> Acceso a pistas 1-12 y gimnasio</span>
-                        <span class="pase-version">PADELSLOT PASS V2</span>
-                    </figcaption>
-                </figure>
-
-                <!-- Botones para wallets digitales -->
-                <footer class="wallets">
-                    <button><i class="ph-fill ph-apple-logo"></i> Añadir a Apple Wallet</button>
-                    <button><i class="ph-fill ph-google-logo"></i> Google Wallet</button>
-                </footer>
+                <div class="membresia__carnet-acciones">
+                    <a href="#" class="boton membresia__boton-claro"><i class="ph ph-apple-logo boton__icono" aria-hidden="true"></i> Apple Wallet</a>
+                    <a href="#" class="boton membresia__boton-claro"><i class="ph ph-google-logo boton__icono" aria-hidden="true"></i> Google Wallet</a>
+                </div>
             </article>
         </section>
 
-        <!-- Condiciones Detalladas de la Cuota Única -->
-        <section class="seccion-condiciones">
-            <header class="seccion-cab">
-                <span class="seccion-etiqueta">Tarifa Oficial Unificada</span>
-                <h2 class="seccion-titulo">Condiciones y Ventajas de tu Cuota Única</h2>
-                <p class="seccion-desc">Tarifa unificada oficial fijada por la dirección del club. Todos los socios registrados disfrutan de igualdad de privilegios y acceso íntegro a las instalaciones.</p>
+        <!-- ============ TARIFA OFICIAL ============ -->
+        <section class="membresia__seccion">
+            <header class="encabezado-seccion">
+                <div>
+                    <span class="encabezado-seccion__antetitulo">Tarifa oficial unificada</span>
+                    <h2 class="encabezado-seccion__titulo">Condiciones y ventajas de tu cuota única</h2>
+                    <p class="encabezado-seccion__texto">Tarifa fijada por la dirección del club. Todos los socios disfrutan de igualdad de privilegios y acceso íntegro a las instalaciones.</p>
+                </div>
             </header>
 
-            <section class="condiciones">
-
-                <!-- Tarjeta del precio unificado -->
-                <article class="precio-caja">
-                    <span class="etiqueta etiqueta-acento">Tarifa Única Establecida</span>
-                    <strong class="precio-label">Importe mensual unificado</strong>
-                    <h3 class="precio-importe">45<span class="precio-moneda">€</span> <span class="precio-periodo">/ mes</span></h3>
-                    <p class="precio-nota">Sin permanencia mínima obligatoria · Domiciliación SEPA directa</p>
-                    <aside class="nota-info">
-                        <i class="ph-fill ph-info"></i>
-                        <span class="nota-texto">Precio único fijado por la administración para el conjunto de socios.</span>
-                    </aside>
+            <div class="membresia__tarifa">
+                <article class="tarjeta membresia__tarifa-precio">
+                    <span class="membresia__antetitulo">Tarifa única establecida</span>
+                    <p class="membresia__precio membresia__precio--grande"><strong>45 €</strong> / mes</p>
+                    <p class="membresia__nota">Sin permanencia mínima · Domiciliación SEPA directa</p>
+                    <p class="membresia__aclaracion">Precio único fijado por la administración para el conjunto de socios.</p>
                 </article>
 
-                <!-- Cuadrícula de características -->
-                <ul class="ventajas">
-                    <li class="ventaja">
-                        <i class="ph-fill ph-key"></i>
-                        <section class="ventaja-texto">
-                            <h4 class="ventaja-titulo">Acceso Completo a Pistas Bonificadas</h4>
-                            <p class="ventaja-desc">100% de bonificación en franjas valle y 50% de descuento en fines de semana con 14 días de antelación.</p>
-                        </section>
+                <ul class="membresia__condiciones">
+                    <li class="tarjeta membresia__condicion">
+                        <span class="icono-caja"><i class="ph ph-tennis-ball" aria-hidden="true"></i></span>
+                        <p><strong>Acceso completo a pistas bonificadas</strong> 100% de bonificación en franjas valle y 50% de descuento en fines de semana con 14 días de antelación.</p>
                     </li>
-                    <li class="ventaja">
-                        <i class="ph-fill ph-car-profile"></i>
-                        <section class="ventaja-texto">
-                            <h4 class="ventaja-titulo">Parking Gratuito de Instalaciones</h4>
-                            <p class="ventaja-desc">2 horas de estacionamiento bonificado por partida con lectura automatizada de matrícula en barrera.</p>
-                        </section>
+                    <li class="tarjeta membresia__condicion">
+                        <span class="icono-caja"><i class="ph ph-car" aria-hidden="true"></i></span>
+                        <p><strong>Parking gratuito de instalaciones</strong> 2 horas de estacionamiento bonificado por partida con lectura automática de matrícula.</p>
                     </li>
-                    <li class="ventaja">
-                        <i class="ph-fill ph-lock-key"></i>
-                        <section class="ventaja-texto">
-                            <h4 class="ventaja-titulo">Taquillas y Vestuarios de Socios</h4>
-                            <p class="ventaja-desc">Uso libre de vestuarios premium y taquillas de uso diario incluidas en tu cuota sin coste extra.</p>
-                        </section>
+                    <li class="tarjeta membresia__condicion">
+                        <span class="icono-caja"><i class="ph ph-lockers" aria-hidden="true"></i></span>
+                        <p><strong>Taquillas y vestuarios de socios</strong> Uso libre de vestuarios y taquillas diarias incluidas en tu cuota sin coste extra.</p>
                     </li>
-                    <li class="ventaja">
-                        <i class="ph-fill ph-graduation-cap"></i>
-                        <section class="ventaja-texto">
-                            <h4 class="ventaja-titulo">Prioridad y Tarifas en Escuela</h4>
-                            <p class="ventaja-desc">Inscripción prioritaria en cursos trimestrales de adultos e infantiles con tarifa reducida especial de socio.</p>
-                        </section>
+                    <li class="tarjeta membresia__condicion">
+                        <span class="icono-caja"><i class="ph ph-graduation-cap" aria-hidden="true"></i></span>
+                        <p><strong>Prioridad y tarifas en escuela</strong> Inscripción prioritaria en cursos trimestrales de adultos e infantiles con tarifa especial de socio.</p>
                     </li>
                 </ul>
-            </section>
+            </div>
         </section>
 
-        <!-- Convenios y Alianzas Comerciales -->
-        <section class="alianzas">
-            <header class="seccion-cab">
-                <span class="seccion-etiqueta">Ventajas Adicionales</span>
-                <h2 class="seccion-titulo">Convenios y Alianzas por tu Condición de Socia</h2>
-                <p class="seccion-desc">Muestra tu PadelSlot Pass o abona con tu saldo de monedero para aplicar estos beneficios directos.</p>
+        <!-- ============ CONVENIOS ============ -->
+        <section class="membresia__seccion">
+            <header class="encabezado-seccion">
+                <div>
+                    <span class="encabezado-seccion__antetitulo">Ventajas adicionales</span>
+                    <h2 class="encabezado-seccion__titulo">Convenios y alianzas por tu condición de socia</h2>
+                    <p class="encabezado-seccion__texto">Muestra tu PadelSlot Pass o paga con tu saldo de monedero para aplicar estos beneficios.</p>
+                </div>
             </header>
 
-            <ul class="tarjetas">
-                <li class="tarjeta-item">
-                    <article class="promo">
-                        <figure class="promo-img">
-                            <span class="etiqueta etiqueta-acento">15% dto directo</span>
-                            <img src="https://placehold.co/400x200/e2e8f0/475569?text=Pro-Shop" alt="Tienda Pro-Shop" class="promo-foto">
-                        </figure>
-                        <section class="promo-cuerpo">
-                            <h4 class="promo-titulo">Tienda Pro-Shop del Club</h4>
-                            <p class="promo-desc">Descuento en palas, zapatillas, grips y equipaciones técnicas de temporada de primeras marcas oficiales.</p>
-                            <a href="#" class="promo-enlace">Presentar carnet en caja física <i class="ph-bold ph-arrow-right"></i></a>
-                        </section>
-                    </article>
+            <ul class="membresia__convenios">
+                <li class="tarjeta membresia__convenio">
+                    <span class="etiqueta etiqueta--terciario">15% dto. directo</span>
+                    <h3 class="tarjeta__titulo">Tienda Pro-Shop del club</h3>
+                    <p class="tarjeta__cuerpo">Descuento en palas, zapatillas, grips y equipaciones técnicas de temporada.</p>
+                    <p class="membresia__como"><i class="ph ph-identification-card" aria-hidden="true"></i> Presentar carnet en caja</p>
                 </li>
-                <li class="tarjeta-item">
-                    <article class="promo">
-                        <figure class="promo-img">
-                            <span class="etiqueta etiqueta-acento">10% dto en comandas</span>
-                            <img src="https://placehold.co/400x200/e2e8f0/475569?text=Restaurante" alt="Restaurante" class="promo-foto">
-                        </figure>
-                        <section class="promo-cuerpo">
-                            <h4 class="promo-titulo">Restaurante &amp; Terraza Panorámica</h4>
-                            <p class="promo-desc">Aplicable en desayunos, menú diario y aperitivos post-partido al pagar mediante el monedero virtual del portal.</p>
-                            <a href="#" class="promo-enlace">Pago directo con saldo <i class="ph-bold ph-arrow-right"></i></a>
-                        </section>
-                    </article>
+                <li class="tarjeta membresia__convenio">
+                    <span class="etiqueta etiqueta--terciario">10% dto. en comandas</span>
+                    <h3 class="tarjeta__titulo">Restaurante y terraza panorámica</h3>
+                    <p class="tarjeta__cuerpo">Aplicable en desayunos, menú diario y aperitivos post-partido al pagar con el monedero virtual.</p>
+                    <p class="membresia__como"><i class="ph ph-wallet" aria-hidden="true"></i> Pago directo con saldo</p>
                 </li>
-                <li class="tarjeta-item">
-                    <article class="promo">
-                        <figure class="promo-img">
-                            <span class="etiqueta etiqueta-acento">1 sesión bonificada / trimestre</span>
-                            <img src="https://placehold.co/400x200/e2e8f0/475569?text=Fisioterapia" alt="Clínica Fisioterapia" class="promo-foto">
-                        </figure>
-                        <section class="promo-cuerpo">
-                            <h4 class="promo-titulo">Clínica de Fisioterapia Deportiva</h4>
-                            <p class="promo-desc">Sesión de descarga muscular trimestral incluida y 20% de descuento en diagnósticos ecográficos de lesión.</p>
-                            <a href="#" class="promo-enlace">Pedir cita en recepción <i class="ph-bold ph-arrow-right"></i></a>
-                        </section>
-                    </article>
+                <li class="tarjeta membresia__convenio">
+                    <span class="etiqueta etiqueta--terciario">1 sesión / trimestre</span>
+                    <h3 class="tarjeta__titulo">Clínica de fisioterapia deportiva</h3>
+                    <p class="tarjeta__cuerpo">Sesión de descarga muscular trimestral incluida y 20% de descuento en diagnósticos ecográficos.</p>
+                    <p class="membresia__como"><i class="ph ph-phone" aria-hidden="true"></i> Pedir cita en recepción</p>
                 </li>
             </ul>
         </section>
 
-        <!-- Preguntas Frecuentes y Soporte al Socio -->
-        <section class="faq-soporte">
-            <article class="faq">
-                <header class="faq-cab">
-                    <i class="ph-fill ph-question-mark"></i>
-                    <h2 class="faq-titulo">Preguntas Frecuentes sobre la Membresía</h2>
-                </header>
-
-                <ul class="faq-lista">
-                    <li class="faq-item">
-                        <details open="" class="faq-detalle">
-                            <summary class="faq-pregunta">¿Cómo funciona la bonificación del 100% en franja valle?</summary>
-                            <p class="faq-respuesta">Las pistas de lunes a viernes entre las 08:00 y las 16:30 no tienen coste de reserva para el socio titular. Si tus acompañantes no son socios, solo abonarán su parte proporcional (3 € por jugador).</p>
-                        </details>
-                    </li>
-                    <li class="faq-item">
-                        <details class="faq-detalle">
-                            <summary class="faq-pregunta">¿Qué ocurre si necesito pausar mi cuota por lesión o viaje?</summary>
-                            <p class="faq-respuesta">Puedes pausar tu cuota desde tu panel temporalmente manteniendo tu estatus de socio sin cargos durante el periodo especificado.</p>
-                        </details>
-                    </li>
-                    <li class="faq-item">
-                        <details class="faq-detalle">
-                            <summary class="faq-pregunta">¿Cómo se valida el acceso con el carnet digital en los tornos?</summary>
-                            <p class="faq-respuesta">Acerca tu móvil con la tarjeta abierta en Apple Wallet o Google Wallet al lector NFC del torno para acceder automáticamente.</p>
-                        </details>
-                    </li>
-                    <li class="faq-item">
-                        <details class="faq-detalle">
-                            <summary class="faq-pregunta">¿Puedo añadir beneficiarios familiares a mi cuota actual?</summary>
-                            <p class="faq-respuesta">Sí, existe un suplemento para cuentas familiares que puedes gestionar directamente desde la administración del club.</p>
-                        </details>
-                    </li>
-                </ul>
+        <!-- ============ PREGUNTAS + ATENCIÓN ============ -->
+        <section class="membresia__seccion membresia__ayuda">
+            <article class="tarjeta membresia__preguntas" aria-labelledby="titulo-preguntas">
+                <h2 class="membresia__bloque-titulo" id="titulo-preguntas">Preguntas frecuentes sobre la membresía</h2>
+                <details class="pregunta" open>
+                    <summary class="pregunta__titulo">¿Cómo funciona la bonificación del 100% en franja valle?</summary>
+                    <p class="pregunta__respuesta">Las pistas de lunes a viernes entre las 08:00 y las 16:30 no tienen coste de reserva para el socio titular. Si tus acompañantes no son socios, solo abonarán su parte (3 € por jugador).</p>
+                </details>
+                <details class="pregunta">
+                    <summary class="pregunta__titulo">¿Qué ocurre si necesito pausar mi cuota por lesión o viaje?</summary>
+                    <p class="pregunta__respuesta">Puedes pausar tu cuota temporalmente desde tu panel y mantener tu condición de socio sin cargos durante ese periodo.</p>
+                </details>
+                <details class="pregunta">
+                    <summary class="pregunta__titulo">¿Cómo se valida el acceso con el carnet digital en los tornos?</summary>
+                    <p class="pregunta__respuesta">Acerca el móvil con la tarjeta abierta en Apple Wallet o Google Wallet al lector NFC del torno para acceder automáticamente.</p>
+                </details>
+                <details class="pregunta">
+                    <summary class="pregunta__titulo">¿Puedo añadir beneficiarios familiares a mi cuota?</summary>
+                    <p class="pregunta__respuesta">Sí, existe un suplemento para cuentas familiares que puedes gestionar con la administración del club.</p>
+                </details>
             </article>
 
-            <!-- Tarjeta de Atención al Socio -->
-            <aside class="soporte">
-                <header class="soporte-cab"><i class="ph-fill ph-headset"></i> Atención al Socio</header>
-                <h3 class="soporte-titulo">¿Tienes consultas específicas sobre tu cuota?</h3>
-                <p class="soporte-desc">El departamento de secretaría y administración del Club de Pádel Sevilla está a tu disposición para gestiones personalizadas, certificados y cambios de titularidad.</p>
-
-                <ul class="soporte-datos">
-                    <li class="soporte-dato"><span class="soporte-texto"><i class="ph-fill ph-clock"></i> Lunes a Viernes: 08:30 - 20:30 h</span></li>
-                    <li class="soporte-dato"><span class="soporte-texto"><i class="ph-fill ph-phone"></i> +34 954 123 456 - Extensión 2 (Socios)</span></li>
-                    <li class="soporte-dato"><span class="soporte-texto"><i class="ph-fill ph-envelope"></i> socios@clubpadelsevilla.com</span></li>
+            <aside class="tarjeta membresia__atencion" aria-labelledby="titulo-atencion">
+                <h2 class="membresia__bloque-titulo" id="titulo-atencion">Atención al socio</h2>
+                <p>La secretaría del Club de Pádel Sevilla está a tu disposición para gestiones personalizadas, certificados y cambios de titularidad.</p>
+                <ul class="membresia__contacto">
+                    <li><i class="ph ph-clock" aria-hidden="true"></i> Lunes a viernes: 08:30 – 20:30 h</li>
+                    <li><i class="ph ph-phone" aria-hidden="true"></i> <a href="tel:+34954123456">+34 954 123 456</a> (ext. 2, socios)</li>
+                    <li><i class="ph ph-envelope-simple" aria-hidden="true"></i> <a href="mailto:socios@clubpadelsevilla.com">socios@clubpadelsevilla.com</a></li>
                 </ul>
-
-                <button class="boton boton-acento"><i class="ph-bold ph-chat-teardrop-text"></i> Chat con Administración</button>
+                <a href="#" class="boton boton--primario boton--bloque">
+                    <i class="ph ph-chat-circle boton__icono" aria-hidden="true"></i>
+                    Chat con administración
+                </a>
             </aside>
         </section>
 
     </main>
 
-    <!-- Pie de página general -->
+    <!-- ============ PIE ============ -->
     <footer class="pie">
-        <section class="contenedor">
-            <section class="pie-columnas">
-
-                <!-- Columna Corporativa -->
-                <section class="pie-col">
-                    <header class="pie-marca">
-                        <figure class="pie-logo">P</figure> PadelSlot
-                    </header>
-                    <p class="pie-desc">Plataforma tecnológica marca blanca SaaS para clubes y centros deportivos de pádel. Permite a cada club personalizar y activar sus propios módulos de pistas, escuela, miembros y servicios.</p>
-                </section>
-
-                <!-- Menú del socio -->
-                <nav class="pie-col">
-                    <h4 class="pie-titulo">Portal del Socio</h4>
-                    <ul class="pie-lista">
-                        <li class="pie-item"><a href="#" class="pie-enlace">Inicio del Club</a></li>
-                        <li class="pie-item"><a href="#" class="pie-enlace">Reservar pista</a></li>
-                        <li class="pie-item"><a href="#" class="pie-enlace">Escuela y clases</a></li>
-                        <li class="pie-item"><a href="#" class="pie-enlace">Membresía y cuotas</a></li>
-                        <li class="pie-item"><a href="#" class="pie-enlace">Servicios del club</a></li>
-                    </ul>
-                </nav>
-
-                <!-- Menú de ayuda -->
-                <nav class="pie-col">
-                    <h4 class="pie-titulo">Atención y Centro</h4>
-                    <ul class="pie-lista">
-                        <li class="pie-item"><a href="#" class="pie-enlace">Preguntas Frecuentes (FAQ)</a></li>
-                        <li class="pie-item"><a href="#" class="pie-enlace">Contacto de recepción</a></li>
-                        <li class="pie-item"><a href="#" class="pie-enlace">Reglamento interno de pistas</a></li>
-                        <li class="pie-item"><a href="#" class="pie-enlace">Política de cancelaciones</a></li>
-                    </ul>
-                </nav>
-
-                <!-- Datos de la instalación activa -->
-                <address class="pie-col pie-direccion">
-                    <h4 class="pie-titulo">Instalación Actual</h4>
-                    <strong class="pie-sede"><i class="ph-fill ph-check-circle"></i> Club de Pádel Sevilla</strong>
-                    <p class="pie-texto">Ctra. de Carmona, km 4, Sevilla</p>
-                    <p class="pie-texto">Horario: Lun - Dom | 07:00 - 23:30</p>
-                    <span class="pie-version">SaaS Ver. 2.4 Activa</span>
-                </address>
-            </section>
-
-            <!-- Derechos y legales -->
-            <section class="pie-legal">
-                <p class="pie-copy">© 2026 PadelSlot SaaS. Diseñado para clubes de pádel. Todos los derechos reservados.</p>
-                <nav class="pie-enlaces">
-                    <a href="#" class="pie-enlace-legal">Aviso Legal</a>
-                    <a href="#" class="pie-enlace-legal">Privacidad</a>
-                    <a href="#" class="pie-enlace-legal">Términos del Servicio</a>
-                    <a href="#" class="pie-enlace-legal">Soporte</a>
-                </nav>
-            </section>
-        </section>
+        <div class="pie__contenido">
+            <div class="pie-marca">
+                <strong class="pie-marca__titulo">PádelSlot</strong>
+                <p>Portal digital integrado para socios y clientes.</p>
+            </div>
+            <nav class="pie-enlaces" aria-label="Enlaces legales">
+                <a href="#">Ayuda</a>
+                <a href="#">Condiciones</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </div>
     </footer>
+
+    <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
+    <nav class="navegacion-movil" aria-label="Navegación del socio en móvil">
+        <a href="inicioSocio.html" class="navegacion-movil__enlace"><i class="ph ph-house" aria-hidden="true"></i>Inicio</a>
+        <a href="#" class="navegacion-movil__enlace"><i class="ph ph-calendar-plus" aria-hidden="true"></i>Reservar</a>
+        <a href="clases.html" class="navegacion-movil__enlace"><i class="ph ph-graduation-cap" aria-hidden="true"></i>Clases</a>
+        <a href="cuotas.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-user-circle" aria-hidden="true"></i>Perfil</a>
+    </nav>
 
 </body>
 </html>

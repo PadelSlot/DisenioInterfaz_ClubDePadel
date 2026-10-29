@@ -1,677 +1,335 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Bloquear Pista - PadelSlot Admin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloquear pista · PádelSlot Manager</title>
 
-    <!-- Fuentes tipográficas -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <!-- Fuentes: Space Grotesk (títulos) e Inter (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+    <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <link rel="stylesheet" href="scss/main.css">
 </head>
-<body class="cuerpo">
 
-    <!-- Barra lateral de navegación del panel de administración -->
-    <aside class="barra-lateral">
-        <section class="barra-superior">
+<body class="panel-admin fondo-suave">
 
-            <!-- Logotipo y nombre del panel -->
-            <header class="marca">
-                <figure class="marca-logo">
-                    <span class="icono">sports_tennis</span>
-                </figure>
-                <section class="marca-texto">
-                    <strong class="marca-nombre">PadelSlot</strong>
-                    <span class="marca-sub">MANAGER</span>
-                </section>
-            </header>
+    <!-- ============ BARRA LATERAL (escritorio) ============ -->
+    <aside class="barra-lateral panel-admin__lateral" aria-label="Menú del administrador">
+        <a href="inicioAdmin.html" class="panel-admin__marca">
+            <span class="logotipo logotipo--verde">P</span>
+            PádelSlot
+        </a>
 
-            <section class="menu-titulo">
-                <span class="menu-titulo-texto">Gestión de Club</span>
-            </section>
+        <div class="panel-admin__club">
+            <span class="panel-admin__antetitulo">Club activo</span>
+            <strong class="panel-admin__club-nombre">Club de Pádel Sevilla</strong>
+            <span>Alcalá de Guadaíra</span>
+        </div>
 
-            <!-- Menú principal de navegación -->
-            <nav class="menu">
-                <a href="#" class="menu-enlace">
-                    <span class="icono">grid_view</span>
-                    <span class="menu-texto">Panel general</span>
-                </a>
-                <a href="#" class="menu-enlace">
-                    <span class="icono">calendar_today</span>
-                    <span class="menu-texto">Pistas y reservas</span>
-                </a>
-                <a href="#" class="menu-enlace">
-                    <span class="icono">school</span>
-                    <span class="menu-texto">Escuela deportiva</span>
-                </a>
-                <a href="#" class="menu-enlace">
-                    <span class="icono">groups</span>
-                    <span class="menu-texto">Socios y abonados</span>
-                </a>
-                <a href="#" class="menu-enlace">
-                    <span class="icono">payments</span>
-                    <span class="menu-texto">Cobros y cuotas</span>
-                </a>
-                <a href="#" class="menu-enlace">
-                    <span class="icono">local_convenience_store</span>
-                    <span class="menu-texto">Servicios (Parking, Bar, Tienda)</span>
-                </a>
-                <a href="#" class="menu-enlace">
-                    <span class="icono">report_problem</span>
-                    <span class="menu-texto">Incidencias</span>
-                </a>
-                <a href="#" class="menu-enlace">
-                    <span class="icono">tune</span>
-                    <span class="menu-texto">Configuración SaaS</span>
-                </a>
-            </nav>
-        </section>
+        <nav class="barra-lateral__menu">
+            <a href="inicioAdmin.html" class="barra-lateral__item">Inicio</a>
+            <a href="cuadranteAdmin.html" class="barra-lateral__item barra-lateral__item--activo" aria-current="page">Reservas y pistas</a>
+            <a href="progSemanalAdmin.html" class="barra-lateral__item">Escuela y clases</a>
+            <a href="sociosAdmin.html" class="barra-lateral__item">Socios</a>
+            <a href="cobroAdmin.html" class="barra-lateral__item">Pagos</a>
+            <a href="#" class="barra-lateral__item">Torneos y ligas</a>
+            <a href="serviciosAdmin.html" class="barra-lateral__item">Parking</a>
+            <a href="serviciosAdmin.html#bar" class="barra-lateral__item">Bar y restauración</a>
+            <a href="#" class="barra-lateral__item">Empleo</a>
+            <a href="incidenciasAdmin.html" class="barra-lateral__item">Incidencias</a>
+            <a href="#" class="barra-lateral__item">Informes</a>
+            <a href="configAdmin.html" class="barra-lateral__item">Configuración</a>
+        </nav>
 
-        <!-- Estado actual de la ocupación del club -->
-        <section class="ocupacion">
-            <header class="ocupacion-cab">
-                <section class="ocupacion-info">
-                    <figure class="ocupacion-punto">
-                        <span class="punto-onda"></span>
-                        <span class="punto-fijo"></span>
-                    </figure>
-                    <span class="ocupacion-titulo">Ocupación en vivo</span>
-                </section>
-                <strong class="ocupacion-valor">88%</strong>
-            </header>
-
-            <!-- Barra de progreso visual -->
-            <figure class="ocupacion-barra">
-                <section class="ocupacion-relleno"></section>
-            </figure>
-
-            <footer class="ocupacion-pie">
-                <span class="pie-texto">14 pistas activas</span>
-                <span class="pie-texto">2 libres</span>
-            </footer>
-        </section>
+        <div class="panel-admin__promo">
+            <i class="ph ph-sparkle panel-admin__promo-icono" aria-hidden="true"></i>
+            <strong class="panel-admin__promo-titulo">Una sola plataforma</strong>
+            <p>Activa solo los módulos que necesita tu club.</p>
+        </div>
     </aside>
 
-    <!-- Contenedor principal a la derecha de la barra lateral -->
-    <section class="contenedor">
+    <!-- ============ CONTENIDO ============ -->
+    <div class="panel-admin__contenido">
 
-        <!-- Encabezado superior (Buscador y Perfil) -->
-        <header class="cabecera">
+        <!-- Barra superior -->
+        <header class="panel-admin__barra-superior">
+            <a href="inicioAdmin.html" class="panel-admin__marca panel-admin__marca--movil">
+                <span class="logotipo logotipo--verde">P</span>
+                PádelSlot
+            </a>
 
-            <!-- Buscador general -->
-            <section class="buscador">
-                <section class="buscador-caja">
-                    <span class="icono">search</span>
-                    <input class="buscador-input" placeholder="Buscar reserva, socio, pista..." type="text">
-                    <kbd class="atajo">⌘K</kbd>
-                </section>
-            </section>
+            <form class="panel-admin__buscador" role="search">
+                <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" class="panel-admin__buscador-campo" placeholder="Buscar reserva, socio o pago…" aria-label="Buscar reserva, socio o pago">
+                <kbd class="panel-admin__atajo">⌘ K</kbd>
+            </form>
 
-            <!-- Notificaciones y perfil -->
-            <nav class="cabecera-acciones">
-                <section class="notif">
-                    <button class="notif-boton" type="button">
-                        <span class="icono">notifications</span>
-                    </button>
-                    <span class="notif-punto"></span>
-                </section>
-
-                <figure class="separador"></figure> <!-- Separador -->
-
-                <section class="usuario">
-                    <figure class="avatar">
-                        <span class="icono">person</span>
-                    </figure>
-                    <section class="usuario-datos">
-                        <strong class="usuario-nombre">Marta R.</strong>
-                        <span class="usuario-rol">Administradora</span>
-                    </section>
-                </section>
-            </nav>
+            <div class="panel-admin__barra-acciones">
+                <a href="crearReservaAdmin.html" class="boton boton--primario navegacion-escritorio">
+                    <i class="ph ph-plus boton__icono" aria-hidden="true"></i>
+                    Crear reserva
+                </a>
+                <button type="button" class="boton-icono" aria-label="Notificaciones">
+                    <i class="ph ph-bell" aria-hidden="true"></i>
+                </button>
+                <div class="usuario">
+                    <span class="avatar">MR</span>
+                    <p class="usuario__datos">
+                        <span class="usuario__nombre">Marta R.</span>
+                        <span class="usuario__rol">Administradora</span>
+                    </p>
+                </div>
+            </div>
         </header>
 
-        <!-- Área de trabajo de la página -->
-        <main class="principal">
-            <section class="pagina">
-                <section class="pagina-interior">
+        <main class="panel-admin__principal">
+            <header class="cabecera-pagina">
+                <div>
+                    <nav class="cabecera-pagina__migas" aria-label="Estás aquí">
+                        <a href="cuadranteAdmin.html" class="cabecera-pagina__miga">Pistas y reservas</a>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <a href="cuadranteAdmin.html" class="cabecera-pagina__miga">Cuadrante en vivo</a>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <span class="cabecera-pagina__miga cabecera-pagina__miga--actual" aria-current="page">Bloqueo de pistas</span>
+                    </nav>
+                    <h1 class="cabecera-pagina__titulo">Bloquear pista o franjas horarias</h1>
+                    <p class="cabecera-pagina__texto">Esta acción afecta al cuadrante en vivo y a las reservas que ya existen.</p>
+                </div>
+                <nav class="panel-admin__pestanas" aria-label="Secciones de bloqueo">
+                    <a href="bloquearPistaAdmin.html" class="panel-admin__pestana panel-admin__pestana--activa" aria-current="page"><i class="ph ph-lock-simple" aria-hidden="true"></i> Nuevo bloqueo</a>
+                    <a href="#" class="panel-admin__pestana"><i class="ph ph-clock-counter-clockwise" aria-hidden="true"></i> Historial (14)</a>
+                </nav>
+            </header>
 
-                    <!-- Navegación secundaria (Breadcrumb) y título principal -->
-                    <header class="migas-cab">
-                        <section class="titulo-bloque">
-                            <nav class="migas">
-                                <a href="#" class="miga">Pistas y reservas</a>
-                                <span class="miga-sep">/</span>
-                                <a href="#" class="miga">CUADRANTE EN VIVO</a>
-                                <span class="miga-sep">/</span>
-                                <strong class="miga-actual">Bloqueo Operativo de Pistas</strong>
-                            </nav>
-                            <section class="titulo-fila">
-                                <h1 class="titulo">Bloquear Pista o Franjas Horarias</h1>
-                                <span class="aviso-impacto">
-                                    <figure class="aviso-punto"></figure>
-                                    Acción con impacto en cuadrante en vivo
-                                </span>
-                            </section>
-                        </section>
+            <p class="aviso">
+                <i class="ph ph-lightning aviso__icono" aria-hidden="true"></i>
+                <span class="aviso__texto">
+                    <strong class="aviso__titulo">Avería reportada en pista 4 (focos torre B) · aviso #INC-2048</strong>
+                    Reportado por el encargado de pista hace 24 min. Hay 2 reservas activas en el turno de tarde. Operadora: Marta R.
+                </span>
+                <a href="incidenciasAdmin.html" class="boton boton--primario">Ver incidencia</a>
+            </p>
 
-                        <!-- Acceso a historial y botón cerrar -->
-                        <nav class="encabezado-acciones">
-                            <section class="acciones-grupo">
-                                <button class="boton-nuevo" type="button">
-                                    <span class="icono">lock</span>
-                                    <span class="boton-texto">Nuevo bloqueo</span>
-                                </button>
-                                <a href="#" class="enlace-historial">
-                                    <span class="icono">history</span>
-                                    <span class="enlace-texto">Historial (14)</span>
-                                </a>
-                            </section>
-                            <button class="boton-cerrar" title="Cerrar asistente" type="button">
-                                <span class="icono">close</span>
-                            </button>
-                        </nav>
-                    </header>
+            <form class="panel-admin__dos-columnas" action="cuadranteAdmin.html">
 
-                    <!-- Banner de alerta por incidencia previa -->
-                    <article class="alerta">
-                        <section class="alerta-info">
-                            <figure class="alerta-icono">
-                                <span class="icono">bolt</span>
-                            </figure>
-                            <section class="alerta-texto">
-                                <header class="alerta-cab">
-                                    <strong class="alerta-titulo">Avería reportada en Pista 4 (Focos torre B)</strong>
-                                    <span class="alerta-id">Aviso #INC-2048</span>
-                                </header>
-                                <p class="alerta-nota">Reportado por encargado de pista hace 24 min. 2 reservas activas para el turno de tarde.</p>
-                            </section>
-                        </section>
-                        <aside class="alerta-operador">
-                            <span class="alerta-operador-texto">Operador: Marta R. (Admin)</span>
-                        </aside>
-                    </article>
+                <div class="panel-admin__pila">
 
-                    <!-- Disposición en 2 columnas: Formulario y Vista previa -->
-                    <section class="columnas">
-
-                        <!-- COLUMNA IZQUIERDA: Formulario de bloqueo -->
-                        <section class="formulario">
-
-                            <!-- Paso 1: Selección de pistas -->
-                            <article class="bloque">
-                                <header class="bloque-cab">
-                                    <section class="bloque-titulo">
-                                        <figure class="bloque-num">1</figure>
-                                        <h2 class="bloque-h2">Pistas Afectadas</h2>
-                                    </section>
-                                    <nav class="filtros">
-                                        <button class="filtro-boton" onclick="selectOutdoorCourts()" type="button">Solo exteriores</button>
-                                        <button class="filtro-boton" onclick="selectIndoorCourts()" type="button">Solo cubiertas</button>
-                                    </nav>
-                                </header>
-
-                                <!-- Lista de pistas con casilla de selección -->
-                                <section class="pistas">
-                                    <!-- Pista 4 (Seleccionada por la avería) -->
-                                    <label class="pista">
-                                        <section class="pista-info">
-                                            <input checked="" class="casilla" id="court-4" type="checkbox">
-                                            <section class="pista-texto">
-                                                <header class="pista-cab">
-                                                    <strong class="pista-nombre">Pista 4</strong>
-                                                    <span class="pista-etiqueta">Avería</span>
-                                                </header>
-                                                <p class="pista-detalle">Exterior · Focos</p>
-                                            </section>
-                                        </section>
-                                        <span class="pista-estado">Técnico avisado</span>
-                                    </label>
-
-                                    <!-- Pista 1 -->
-                                    <label class="pista">
-                                        <section class="pista-info">
-                                            <input class="casilla" id="court-1" type="checkbox">
-                                            <section class="pista-texto">
-                                                <strong class="pista-nombre">Pista 1</strong>
-                                                <p class="pista-detalle">Panorámica · Cristal pro</p>
-                                            </section>
-                                        </section>
-                                        <span class="pista-estado">Operativa</span>
-                                    </label>
-
-                                    <!-- Pista 2 -->
-                                    <label class="pista">
-                                        <section class="pista-info">
-                                            <input class="casilla" id="court-2" type="checkbox">
-                                            <section class="pista-texto">
-                                                <strong class="pista-nombre">Pista 2</strong>
-                                                <p class="pista-detalle">Cubierta · Central Indoor</p>
-                                            </section>
-                                        </section>
-                                        <span class="pista-estado">Operativa</span>
-                                    </label>
-
-                                    <!-- Pista 3 -->
-                                    <label class="pista">
-                                        <section class="pista-info">
-                                            <input class="casilla" id="court-3" type="checkbox">
-                                            <section class="pista-texto">
-                                                <strong class="pista-nombre">Pista 3</strong>
-                                                <p class="pista-detalle">Cubierta · Estándar</p>
-                                            </section>
-                                        </section>
-                                        <span class="pista-estado">Operativa</span>
-                                    </label>
-
-                                    <!-- Pista 5 -->
-                                    <label class="pista">
-                                        <section class="pista-info">
-                                            <input class="casilla" id="court-5" type="checkbox">
-                                            <section class="pista-texto">
-                                                <strong class="pista-nombre">Pista 5</strong>
-                                                <p class="pista-detalle">Exterior · WPT Césped azul</p>
-                                            </section>
-                                        </section>
-                                        <span class="pista-estado">Operativa</span>
-                                    </label>
-
-                                    <!-- Pista 6 -->
-                                    <label class="pista">
-                                        <section class="pista-info">
-                                            <input class="casilla" id="court-6" type="checkbox">
-                                            <section class="pista-texto">
-                                                <strong class="pista-nombre">Pista 6</strong>
-                                                <p class="pista-detalle">Exterior · Estándar</p>
-                                            </section>
-                                        </section>
-                                        <span class="pista-estado">Operativa</span>
-                                    </label>
-                                </section>
-                            </article>
-
-                            <!-- Paso 2: Motivos del bloqueo -->
-                            <article class="bloque">
-                                <header class="bloque-cab">
-                                    <section class="bloque-titulo">
-                                        <figure class="bloque-num">2</figure>
-                                        <h2 class="bloque-h2">Motivo del Bloqueo</h2>
-                                    </section>
-                                    <span class="bloque-etiqueta">Requerido</span>
-                                </header>
-
-                                <menu class="motivos" id="reason-container">
-                                    <button class="motivo" type="button">
-                                        <span class="icono">build</span>
-                                        <span class="motivo-texto">Mantenimiento Técnico / Reparación</span>
-                                    </button>
-                                    <button class="motivo" type="button">
-                                        <span class="icono">emoji_events</span>
-                                        <span class="motivo-texto">Torneo Oficial FEP / Liga Social</span>
-                                    </button>
-                                    <button class="motivo" type="button">
-                                        <span class="icono">rainy</span>
-                                        <span class="motivo-texto">Climatología Adversa / Lluvia</span>
-                                    </button>
-                                    <button class="motivo" type="button">
-                                        <span class="icono">celebration</span>
-                                        <span class="motivo-texto">Evento Privado / Alquiler Corp.</span>
-                                    </button>
-                                    <button class="motivo" type="button">
-                                        <span class="icono">cleaning_services</span>
-                                        <span class="motivo-texto">Limpieza y Reposición de Arena</span>
-                                    </button>
-                                </menu>
-                            </article>
-
-                            <!-- Paso 3: Selección de horario -->
-                            <article class="bloque">
-                                <header class="bloque-cab">
-                                    <figure class="bloque-num">3</figure>
-                                    <h2 class="bloque-h2">Período y Franja Horaria de Bloqueo</h2>
-                                </header>
-
-                                <section class="periodos">
-                                    <label class="periodo">
-                                        <input checked="" name="block-period" type="radio">
-                                        <span class="periodo-texto">Hoy en curso</span>
-                                    </label>
-                                    <label class="periodo">
-                                        <input name="block-period" type="radio">
-                                        <span class="periodo-texto">Rango de fechas</span>
-                                    </label>
-                                    <label class="periodo">
-                                        <input name="block-period" type="radio">
-                                        <span class="periodo-texto">Indefinido</span>
-                                    </label>
-                                </section>
-
-                                <!-- Fecha de inicio y fin -->
-                                <section class="fechas">
-                                    <section class="campo">
-                                        <label class="campo-label">Desde (Fecha y Hora)</label>
-                                        <section class="fecha-fila">
-                                            <section class="fecha-caja">
-                                                <span class="icono">calendar_today</span>
-                                                <input type="text" value="Jueves, 1 Octubre" class="fecha-input">
-                                            </section>
-                                            <section class="fecha-caja">
-                                                <span class="icono">schedule</span>
-                                                <input type="text" value="18:30 h" class="fecha-input">
-                                            </section>
-                                        </section>
-                                    </section>
-
-                                    <section class="campo">
-                                        <label class="campo-label">Hasta (Fin de Bloqueo)</label>
-                                        <section class="fecha-fila">
-                                            <section class="fecha-caja">
-                                                <span class="icono">calendar_today</span>
-                                                <input type="text" value="Jueves, 1 Octubre" class="fecha-input">
-                                            </section>
-                                            <section class="fecha-caja">
-                                                <span class="icono">schedule</span>
-                                                <input type="text" value="23:00 h" class="fecha-input">
-                                            </section>
-                                        </section>
-                                    </section>
-                                </section>
-
-                                <footer class="total">
-                                    <span class="total-texto">Total estimado de inhabilitación: <strong class="total-valor">4 horas y 30 minutos (3 turnos completos)</strong></span>
-                                </footer>
-                            </article>
-
-                            <!-- Paso 4: Notas públicas e internas -->
-                            <article class="bloque">
-                                <header class="bloque-cab">
-                                    <figure class="bloque-num">4</figure>
-                                    <h2 class="bloque-h2">Comunicaciones y Notas</h2>
-                                </header>
-
-                                <!-- Nota para la app del usuario -->
-                                <section class="nota">
-                                    <header class="nota-cab">
-                                        <label class="nota-label">
-                                            <span class="icono">visibility</span>
-                                            <span class="nota-titulo">Aviso público para socios en la App Móvil</span>
-                                        </label>
-                                        <span class="nota-etiqueta">Visible en cuadrante de socios</span>
-                                    </header>
-                                    <textarea rows="2" class="nota-texto">Pista inhabilitada temporalmente por sustitución de transformador LED en torreta B. Disculpen las molestias ocasionadas.</textarea>
-                                </section>
-
-                                <!-- Nota interna -->
-                                <section class="nota">
-                                    <header class="nota-cab">
-                                        <label class="nota-label">
-                                            <span class="icono">lock</span>
-                                            <span class="nota-titulo">Notas técnicas internas (Solo Staff / Recepción)</span>
-                                        </label>
-                                        <span class="nota-etiqueta">Confidencial</span>
-                                    </header>
-                                    <textarea rows="2" class="nota-texto">Técnico de Iberdrola Electricidad llega a las 19:15 h. Repuesto de balasto y cableado ubicado en almacén general estante 3.</textarea>
-                                </section>
-                            </article>
-
-                            <!-- Paso 5: Reubicación de reservas activas -->
-                            <article class="bloque">
-                                <header class="bloque-cab">
-                                    <section class="bloque-titulo">
-                                        <figure class="bloque-num">5</figure>
-                                        <h2 class="bloque-h2">Gestión de Reservas Existentes</h2>
-                                    </section>
-                                    <span class="bloque-etiqueta">2 Reservas Detectadas</span>
-                                </header>
-
-                                <!-- Reservas afectadas -->
-                                <ul class="reservas">
-                                    <li class="reserva">
-                                        <section class="reserva-info">
-                                            <figure class="reserva-punto"></figure>
-                                            <time class="reserva-hora">19:00 - 20:30</time>
-                                            <span class="reserva-nombre">Carlos M. &amp; 3 jugadores</span>
-                                        </section>
-                                        <span class="reserva-destino">Reubicable en Pista 6</span>
-                                    </li>
-                                    <li class="reserva">
-                                        <section class="reserva-info">
-                                            <figure class="reserva-punto"></figure>
-                                            <time class="reserva-hora">20:30 - 22:00</time>
-                                            <span class="reserva-nombre">Clase Grupal Escuela Nivel 3</span>
-                                        </section>
-                                        <span class="reserva-destino">Reubicable en Pista 2</span>
-                                    </li>
-                                </ul>
-
-                                <!-- Automatizaciones -->
-                                <section class="automatismos">
-                                    <label class="automatismo">
-                                        <input checked="" type="checkbox" class="casilla">
-                                        <section class="automatismo-texto">
-                                            <strong class="automatismo-titulo">Reubicar automáticamente en pista equivalente libre</strong>
-                                            <p class="automatismo-nota">Se asignarán automáticamente las pistas 6 (Exterior) y 2 (Indoor).</p>
-                                        </section>
-                                    </label>
-
-                                    <label class="automatismo">
-                                        <input checked="" type="checkbox" class="casilla">
-                                        <section class="automatismo-texto">
-                                            <strong class="automatismo-titulo">Notificar a los socios de inmediato por WhatsApp / Notificación Push</strong>
-                                            <p class="automatismo-nota">Envía mensaje instantáneo con la nueva pista asignada y motivo de la incidencia.</p>
-                                        </section>
-                                    </label>
-
-                                    <label class="automatismo">
-                                        <input type="checkbox" class="casilla">
-                                        <section class="automatismo-texto">
-                                            <strong class="automatismo-titulo">Devolver cuota/importe al monedero virtual si rechazan la pista</strong>
-                                            <p class="automatismo-nota">Acreditación directa en balance de socio sin gastos de gestión.</p>
-                                        </section>
-                                    </label>
-                                </section>
-                            </article>
-
-                        </section>
-
-                        <!-- COLUMNA DERECHA: Vista en vivo e impacto -->
-                        <aside class="lateral">
-
-                            <!-- Simulación de cuadrante -->
-                            <article class="simulador">
-                                <header class="simulador-cab">
-                                    <section class="simulador-titulo">
-                                        <span class="simulador-etiqueta">Previsualización del Cuadrante</span>
-                                        <h3 class="simulador-h3">Simulación en Tiempo Real</h3>
-                                    </section>
-                                    <span class="simulador-fecha">Hoy, 1 Oct</span>
-                                </header>
-
-                                <!-- Matriz visual de franjas por pista -->
-                                <section class="cuadrante">
-                                    <!-- Cabecera de pistas -->
-                                    <header class="cuadrante-cab">
-                                        <span class="cuadrante-hora">Hora</span>
-                                        <span class="cuadrante-pista">P1</span>
-                                        <span class="cuadrante-pista">P2</span>
-                                        <span class="cuadrante-pista">P3</span>
-                                        <strong class="cuadrante-pista-activa">P4</strong>
-                                        <span class="cuadrante-pista">P5</span>
-                                        <span class="cuadrante-pista">P6</span>
-                                    </header>
-
-                                    <!-- Fila 17:00 -->
-                                    <section class="cuadrante-fila">
-                                        <time class="cuadrante-hora">17:00</time>
-                                        <span class="celda">Libre</span>
-                                        <span class="celda">Part.</span>
-                                        <span class="celda">Esc.</span>
-                                        <span class="celda">Libre</span>
-                                        <span class="celda">Part.</span>
-                                        <span class="celda">Libre</span>
-                                    </section>
-
-                                    <!-- Fila 18:30 -->
-                                    <section class="cuadrante-fila">
-                                        <time class="cuadrante-hora">18:30</time>
-                                        <span class="celda">Part.</span>
-                                        <span class="celda">Esc.</span>
-                                        <span class="celda">Part.</span>
-                                        <aside title="Bloqueado por técnico" class="celda-bloq">
-                                            <strong class="celda-bloq-texto">BLOQ</strong>
-                                            <figure class="celda-bloq-fondo"></figure>
-                                        </aside>
-                                        <span class="celda">Part.</span>
-                                        <strong class="celda-reub">Reub</strong>
-                                    </section>
-
-                                    <!-- Fila 20:00 -->
-                                    <section class="cuadrante-fila">
-                                        <time class="cuadrante-hora">20:00</time>
-                                        <span class="celda">Part.</span>
-                                        <strong class="celda-reub">Reub</strong>
-                                        <span class="celda">Part.</span>
-                                        <aside class="celda-bloq">
-                                            <strong class="celda-bloq-texto">BLOQ</strong>
-                                            <figure class="celda-bloq-fondo"></figure>
-                                        </aside>
-                                        <span class="celda">Part.</span>
-                                        <span class="celda">Libre</span>
-                                    </section>
-
-                                    <!-- Fila 21:30 -->
-                                    <section class="cuadrante-fila">
-                                        <time class="cuadrante-hora">21:30</time>
-                                        <span class="celda">Part.</span>
-                                        <span class="celda">Part.</span>
-                                        <span class="celda">Libre</span>
-                                        <aside class="celda-bloq">
-                                            <strong class="celda-bloq-texto">BLOQ</strong>
-                                            <figure class="celda-bloq-fondo"></figure>
-                                        </aside>
-                                        <span class="celda">Libre</span>
-                                        <span class="celda">Libre</span>
-                                    </section>
-                                </section>
-
-                                <!-- Resumen financiero y tiempo inhabilitado -->
-                                <section class="resumen">
-                                    <article class="resumen-dato">
-                                        <span class="resumen-label">Tiempo Inhabilitado</span>
-                                        <section class="resumen-fila">
-                                            <strong class="resumen-valor">4h 30m</strong>
-                                            <span class="resumen-nota">(3 turnos)</span>
-                                        </section>
-                                    </article>
-                                    <article class="resumen-dato">
-                                        <span class="resumen-label">Pérdida Facturación</span>
-                                        <section class="resumen-fila">
-                                            <strong class="resumen-valor">56,00 €</strong>
-                                            <span class="resumen-nota">estimada</span>
-                                        </section>
-                                    </article>
-                                </section>
-
-                                <!-- Estado de domótica vinculada -->
-                                <footer class="domotica">
-                                    <strong class="domotica-titulo">Acciones de domótica vinculadas:</strong>
-                                    <section class="domotica-fila">
-                                        <span class="domotica-nombre">
-                                            <span class="icono">sensor_door</span>
-                                            Tornos de acceso Pista 4
-                                        </span>
-                                        <span class="domotica-accion">Bloquear paso</span>
-                                    </section>
-                                    <section class="domotica-fila">
-                                        <span class="domotica-nombre">
-                                            <span class="icono">lightbulb</span>
-                                            Focos LED Torreta B
-                                        </span>
-                                        <span class="domotica-accion">Desconexión corte seg.</span>
-                                    </section>
-                                </footer>
-                            </article>
-
-                            <!-- Acciones finales de confirmación -->
-                            <section class="acciones">
-                                <button onclick="confirmCourtLock()" type="button" class="boton-confirmar">
-                                    <span class="icono">lock_clock</span>
-                                    <span class="boton-texto">Confirmar y Aplicar Bloqueo en Pista 4</span>
-                                </button>
-                                <button type="button" class="boton-borrador">
-                                    <span class="icono">save</span>
-                                    <span class="boton-texto">Guardar como borrador programado</span>
-                                </button>
-                                <a href="#" class="boton-enlace">
-                                    <span class="icono">manage_history</span>
-                                    <span class="boton-texto">Ver historial de bloqueos anteriores e incidencias</span>
-                                </a>
-                            </section>
-
-                            <!-- Aviso de ayuda -->
-                            <article class="ayuda">
-                                <span class="icono">support_agent</span>
-                                <section class="ayuda-texto">
-                                    <strong class="ayuda-titulo">¿Dudas con la reubicación de torneos?</strong>
-                                    <p class="ayuda-nota">Si necesitas desplazar un torneo FEP federado a otra sede asociada, utiliza la herramienta de reasignación masiva.</p>
-                                </section>
-                            </article>
-
-                        </aside>
-
+                    <!-- 1. Pistas -->
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="paso-pistas">
+                        <div class="panel-admin__seccion-cabecera">
+                            <h2 class="panel-admin__seccion-titulo" id="paso-pistas"><span class="paso-numero">1</span> Pistas afectadas</h2>
+                            <div class="chips" role="group" aria-label="Filtrar pistas">
+                                <label class="chips__opcion"><input type="checkbox" class="chips__control">Solo exteriores</label>
+                                <label class="chips__opcion"><input type="checkbox" class="chips__control">Solo cubiertas</label>
+                            </div>
+                        </div>
+                        <fieldset class="panel-admin__rejilla">
+                            <legend class="solo-lector">Pistas que se bloquean</legend>
+                            <label class="panel-admin__seleccionable">
+                                <input type="checkbox" class="panel-admin__control" name="pistas" value="4" checked>
+                                <p><strong>Pista 4 · avería</strong> Exterior · focos</p>
+                                <span class="etiqueta panel-admin__etiqueta-alerta">Técnico avisado</span>
+                            </label>
+                            <label class="panel-admin__seleccionable">
+                                <input type="checkbox" class="panel-admin__control" name="pistas" value="1">
+                                <p><strong>Pista 1</strong> Panorámica · cristal</p>
+                                <span class="etiqueta etiqueta--suave">Operativa</span>
+                            </label>
+                            <label class="panel-admin__seleccionable">
+                                <input type="checkbox" class="panel-admin__control" name="pistas" value="2">
+                                <p><strong>Pista 2</strong> Cubierta · central</p>
+                                <span class="etiqueta etiqueta--suave">Operativa</span>
+                            </label>
+                            <label class="panel-admin__seleccionable">
+                                <input type="checkbox" class="panel-admin__control" name="pistas" value="3">
+                                <p><strong>Pista 3</strong> Cubierta · estándar</p>
+                                <span class="etiqueta etiqueta--suave">Operativa</span>
+                            </label>
+                            <label class="panel-admin__seleccionable">
+                                <input type="checkbox" class="panel-admin__control" name="pistas" value="5">
+                                <p><strong>Pista 5</strong> Exterior · césped azul</p>
+                                <span class="etiqueta etiqueta--suave">Operativa</span>
+                            </label>
+                            <label class="panel-admin__seleccionable">
+                                <input type="checkbox" class="panel-admin__control" name="pistas" value="6">
+                                <p><strong>Pista 6</strong> Exterior · estándar</p>
+                                <span class="etiqueta etiqueta--suave">Operativa</span>
+                            </label>
+                        </fieldset>
                     </section>
-                </section>
-            </section>
 
-            <!-- Notificación emergente (Toast de éxito) -->
-            <aside id="toast-success" class="toast">
-                <figure class="toast-icono">
-                    <span class="icono">check</span>
-                </figure>
-                <section class="toast-texto">
-                    <strong class="toast-titulo">Pista 4 bloqueada con éxito</strong>
-                    <p class="toast-nota">2 socios reubicados y notificados por WhatsApp.</p>
-                </section>
-            </aside>
+                    <!-- 2. Motivo -->
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="paso-motivo">
+                        <div class="panel-admin__seccion-cabecera">
+                            <h2 class="panel-admin__seccion-titulo" id="paso-motivo"><span class="paso-numero">2</span> Motivo del bloqueo</h2>
+                            <span class="etiqueta etiqueta--terciario">Obligatorio</span>
+                        </div>
+                        <fieldset class="chips chips--cuadradas">
+                            <legend class="solo-lector">Motivo del bloqueo</legend>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="motivo" checked><i class="ph ph-wrench" aria-hidden="true"></i> Mantenimiento / reparación</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="motivo"><i class="ph ph-trophy" aria-hidden="true"></i> Torneo FEP / liga social</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="motivo"><i class="ph ph-cloud-rain" aria-hidden="true"></i> Lluvia / climatología</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="motivo"><i class="ph ph-confetti" aria-hidden="true"></i> Evento privado</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="motivo"><i class="ph ph-broom" aria-hidden="true"></i> Limpieza y arena</label>
+                        </fieldset>
+                    </section>
+
+                    <!-- 3. Periodo -->
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="paso-periodo">
+                        <div class="panel-admin__seccion-cabecera">
+                            <h2 class="panel-admin__seccion-titulo" id="paso-periodo"><span class="paso-numero">3</span> Periodo y franja horaria</h2>
+                        </div>
+                        <fieldset class="chips">
+                            <legend class="solo-lector">Tipo de periodo</legend>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="periodo" checked>Hoy</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="periodo">Rango de fechas</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="periodo">Indefinido</label>
+                        </fieldset>
+                        <div class="formulario panel-admin__campos">
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="desde-fecha">Desde (fecha)</label>
+                                <input class="formulario__campo" type="date" id="desde-fecha" value="2026-10-01">
+                            </div>
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="desde-hora">Desde (hora)</label>
+                                <input class="formulario__campo" type="time" id="desde-hora" value="18:30">
+                            </div>
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="hasta-fecha">Hasta (fecha)</label>
+                                <input class="formulario__campo" type="date" id="hasta-fecha" value="2026-10-01">
+                            </div>
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="hasta-hora">Hasta (hora)</label>
+                                <input class="formulario__campo" type="time" id="hasta-hora" value="23:00">
+                            </div>
+                        </div>
+                        <p class="panel-admin__confirmacion"><i class="ph ph-clock" aria-hidden="true"></i> Total estimado: <strong>4 h 30 min</strong> (3 turnos completos)</p>
+                    </section>
+
+                    <!-- 4. Comunicaciones -->
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="paso-notas">
+                        <div class="panel-admin__seccion-cabecera">
+                            <h2 class="panel-admin__seccion-titulo" id="paso-notas"><span class="paso-numero">4</span> Comunicaciones y notas</h2>
+                        </div>
+                        <div class="formulario">
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="aviso-publico"><i class="ph ph-eye" aria-hidden="true"></i> Aviso público en la app (visible para socios)</label>
+                                <textarea class="formulario__campo panel-admin__area" id="aviso-publico">Pista inhabilitada temporalmente por sustitución del transformador LED de la torreta B. Disculpad las molestias.</textarea>
+                            </div>
+                            <div class="formulario__grupo">
+                                <label class="formulario__etiqueta" for="notas-internas"><i class="ph ph-lock-simple" aria-hidden="true"></i> Notas internas (solo staff y recepción)</label>
+                                <textarea class="formulario__campo panel-admin__area" id="notas-internas">El técnico de electricidad llega a las 19:15. Repuesto de balasto y cableado en el almacén general, estante 3.</textarea>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 5. Reservas existentes -->
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="paso-reservas">
+                        <div class="panel-admin__seccion-cabecera">
+                            <h2 class="panel-admin__seccion-titulo" id="paso-reservas"><span class="paso-numero">5</span> Reservas afectadas</h2>
+                            <span class="etiqueta panel-admin__etiqueta-alerta">2 reservas detectadas</span>
+                        </div>
+                        <ul class="panel-admin__lista">
+                            <li class="panel-admin__evento">
+                                <span class="panel-admin__evento-hora">19:00</span>
+                                <p class="panel-admin__evento-texto"><strong>Carlos M. y 3 jugadores</strong> 19:00 – 20:30</p>
+                                <span class="etiqueta etiqueta--terciario">Reubicable en pista 6</span>
+                            </li>
+                            <li class="panel-admin__evento">
+                                <span class="panel-admin__evento-hora">20:30</span>
+                                <p class="panel-admin__evento-texto"><strong>Clase grupal escuela nivel 3</strong> 20:30 – 22:00</p>
+                                <span class="etiqueta etiqueta--terciario">Reubicable en pista 2</span>
+                            </li>
+                        </ul>
+                        <label class="casilla">
+                            <input type="checkbox" class="casilla__control" checked>
+                            <span class="casilla__texto"><strong>Reubicar automáticamente en una pista equivalente libre</strong> Se asignarán las pistas 6 (exterior) y 2 (cubierta).</span>
+                        </label>
+                        <label class="casilla">
+                            <input type="checkbox" class="casilla__control" checked>
+                            <span class="casilla__texto"><strong>Avisar a los socios por WhatsApp y notificación</strong> Mensaje con la nueva pista y el motivo de la incidencia.</span>
+                        </label>
+                        <label class="casilla">
+                            <input type="checkbox" class="casilla__control">
+                            <span class="casilla__texto"><strong>Devolver el importe al monedero si rechazan la pista</strong> Abono directo en el saldo del socio, sin gastos.</span>
+                        </label>
+                    </section>
+                </div>
+
+                <!-- Columna derecha -->
+                <aside class="panel-admin__pila panel-admin__lateral-fijo">
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="titulo-previa">
+                        <div class="tarjeta__cabecera">
+                            <div>
+                                <h2 class="tarjeta__titulo" id="titulo-previa">Vista previa del cuadrante</h2>
+                                <p class="panel-admin__subtitulo">Simulación en tiempo real</p>
+                            </div>
+                            <span class="etiqueta etiqueta--suave">Hoy, 1 oct</span>
+                        </div>
+                        <div class="panel-admin__tabla-scroll">
+                            <table class="panel-admin__cuadrante panel-admin__cuadrante--mini">
+                                <caption class="solo-lector">Estado de las pistas tras aplicar el bloqueo</caption>
+                                <thead>
+                                    <tr><th scope="col">Hora</th><th scope="col">P1</th><th scope="col">P2</th><th scope="col">P3</th><th scope="col">P4</th><th scope="col">P5</th><th scope="col">P6</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><th scope="row">17:00</th><td><span class="panel-admin__franja panel-admin__franja--disponible">Libre</span></td><td><span class="panel-admin__franja panel-admin__franja--reservada">Part.</span></td><td><span class="panel-admin__franja panel-admin__franja--clase">Esc.</span></td><td><span class="panel-admin__franja panel-admin__franja--disponible">Libre</span></td><td><span class="panel-admin__franja panel-admin__franja--reservada">Part.</span></td><td><span class="panel-admin__franja panel-admin__franja--disponible">Libre</span></td></tr>
+                                    <tr><th scope="row">18:30</th><td><span class="panel-admin__franja panel-admin__franja--reservada">Part.</span></td><td><span class="panel-admin__franja panel-admin__franja--clase">Esc.</span></td><td><span class="panel-admin__franja panel-admin__franja--reservada">Part.</span></td><td><span class="panel-admin__franja panel-admin__franja--bloqueada">Bloq.</span></td><td><span class="panel-admin__franja panel-admin__franja--reservada">Part.</span></td><td><span class="panel-admin__franja panel-admin__franja--reubicada">Reub.</span></td></tr>
+                                    <tr><th scope="row">20:00</th><td><span class="panel-admin__franja panel-admin__franja--reservada">Part.</span></td><td><span class="panel-admin__franja panel-admin__franja--reubicada">Reub.</span></td><td><span class="panel-admin__franja panel-admin__franja--reservada">Part.</span></td><td><span class="panel-admin__franja panel-admin__franja--bloqueada">Bloq.</span></td><td><span class="panel-admin__franja panel-admin__franja--reservada">Part.</span></td><td><span class="panel-admin__franja panel-admin__franja--disponible">Libre</span></td></tr>
+                                    <tr><th scope="row">21:30</th><td><span class="panel-admin__franja panel-admin__franja--reservada">Part.</span></td><td><span class="panel-admin__franja panel-admin__franja--reservada">Part.</span></td><td><span class="panel-admin__franja panel-admin__franja--disponible">Libre</span></td><td><span class="panel-admin__franja panel-admin__franja--bloqueada">Bloq.</span></td><td><span class="panel-admin__franja panel-admin__franja--disponible">Libre</span></td><td><span class="panel-admin__franja panel-admin__franja--disponible">Libre</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <dl class="lista-datos">
+                            <div class="lista-datos__fila"><dt>Tiempo inhabilitado</dt><dd>4 h 30 min (3 turnos)</dd></div>
+                            <div class="lista-datos__fila"><dt>Pérdida de facturación</dt><dd>56,00 € estimada</dd></div>
+                        </dl>
+
+                        <div>
+                            <p class="formulario__etiqueta">Acciones automáticas vinculadas</p>
+                            <div class="panel-admin__ajuste">
+                                <p class="panel-admin__ajuste-texto"><i class="ph ph-door" aria-hidden="true"></i> <span><strong>Torno de acceso pista 4</strong> Bloquear el paso</span></p>
+                                <input type="checkbox" class="interruptor" checked aria-label="Bloquear torno de la pista 4">
+                            </div>
+                            <div class="panel-admin__ajuste">
+                                <p class="panel-admin__ajuste-texto"><i class="ph ph-lightbulb" aria-hidden="true"></i> <span><strong>Focos LED torreta B</strong> Desconexión de seguridad</span></p>
+                                <input type="checkbox" class="interruptor" checked aria-label="Desconectar focos de la torreta B">
+                            </div>
+                        </div>
+
+                        <div class="panel-admin__botones">
+                            <button type="submit" class="boton boton--primario boton--bloque">
+                                <i class="ph ph-lock-simple boton__icono" aria-hidden="true"></i>
+                                Confirmar y bloquear pista 4
+                            </button>
+                            <button type="button" class="boton boton--contorno boton--bloque">Guardar como borrador</button>
+                            <a href="incidenciasAdmin.html" class="panel-admin__enlace-centrado">Ver historial de bloqueos e incidencias</a>
+                        </div>
+                    </section>
+
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="titulo-dudas">
+                        <h2 class="tarjeta__titulo" id="titulo-dudas"><i class="ph ph-headset" aria-hidden="true"></i> ¿Dudas con la reubicación de torneos?</h2>
+                        <p class="panel-admin__subtitulo">Si necesitas trasladar un torneo federado a otra sede asociada, usa la herramienta de reasignación masiva.</p>
+                    </section>
+                </aside>
+            </form>
         </main>
-    </section>
+    </div>
 
-    <!-- Scripts de la página -->
-    <script>
-      function confirmCourtLock() {
-        const toast = document.getElementById('toast-success');
-        toast.classList.add('visible');
-        setTimeout(() => {
-          toast.classList.remove('visible');
-        }, 4000);
-      }
-
-      function selectOutdoorCourts() {
-        document.getElementById('court-4').checked = true;
-        document.getElementById('court-5').checked = true;
-        document.getElementById('court-6').checked = true;
-        document.getElementById('court-1').checked = false;
-        document.getElementById('court-2').checked = false;
-        document.getElementById('court-3').checked = false;
-      }
-
-      function selectIndoorCourts() {
-        document.getElementById('court-4').checked = false;
-        document.getElementById('court-5').checked = false;
-        document.getElementById('court-6').checked = false;
-        document.getElementById('court-1').checked = true;
-        document.getElementById('court-2').checked = true;
-        document.getElementById('court-3').checked = true;
-      }
-
-      document.querySelectorAll('.motivo').forEach(motivo => {
-        motivo.addEventListener('click', function() {
-          document.querySelectorAll('.motivo').forEach(m => m.classList.remove('activo'));
-          this.classList.add('activo');
-        });
-      });
-    </script>
+    <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
+    <nav class="navegacion-movil" aria-label="Navegación del administrador en móvil">
+        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-squares-four" aria-hidden="true"></i>Inicio</a>
+        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar" aria-hidden="true"></i>Agenda</a>
+        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-calendar-check" aria-hidden="true"></i>Reservas</a>
+        <a href="configAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-sidebar" aria-hidden="true"></i>Gestión</a>
+    </nav>
 
 </body>
 </html>

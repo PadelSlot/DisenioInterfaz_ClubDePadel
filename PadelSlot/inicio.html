@@ -1,726 +1,588 @@
 <!DOCTYPE html>
-<html lang="es" class="pagina">
-<head class="cabeceraHtml">
-    <meta charset="UTF-8" class="configuracion">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" class="configuracion">
-    <title class="tituloPagina">Inicio Público - PadelSlot SaaS</title>
-    
-    <!-- Fuente principal -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" class="fuenteTexto">
-    
-    <!-- Iconos de la interfaz -->
-    <script src="https://unpkg.com/@phosphor-icons/web" class="iconos"></script>
-    
-    <!-- Hoja de estilos de la aplicación -->
-    <link href="estilo.css" rel="stylesheet" class="hojaEstilos">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PádelSlot · Reserva pista de pádel sin ser socio</title>
+
+    <!-- Fuentes: Space Grotesk (títulos) e Inter (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+    <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <link rel="stylesheet" href="scss/main.css">
 </head>
 
-<body class="cuerpo">
+<body class="inicio-publico">
 
-    <!-- Encabezado principal de la web -->
-    <header class="cabeceraPagina">
-        <section class="contenidoCabecera">
-            
-            <!-- Logotipo y nombre de la aplicación -->
-            <a href="#" class="logo">
-                <figure class="iconoLogo">P</figure>
-
-                <header class="nombreLogo">
-                    <h1 class="tituloLogo">PadelSlot</h1>
-                    <p class="subtituloLogo">SaaS Gestión Clubes</p>
-                </header>
+    <!-- ============ CABECERA ============ -->
+    <header class="cabecera">
+        <div class="cabecera__contenido">
+            <a href="inicio.html" class="cabecera__logo">
+                <span class="logotipo">P</span>
+                PádelSlot
             </a>
 
-            <!-- Menú de navegación principal -->
-            <nav class="menuPrincipal" aria-label="Navegación principal">
-                <a href="#" class="enlaceMenu">Inicio Público</a>
-                <a href="#" class="enlaceMenu">Reservar pista</a>
-                <a href="#" class="enlaceMenu">Escuela y clases</a>
-                <a href="#" class="enlaceMenu">Servicios del club</a>
+            <nav class="cabecera__menu navegacion-escritorio" aria-label="Navegación principal">
+                <a href="#buscar" class="cabecera__enlace cabecera__enlace--activo">Buscar pista</a>
+                <a href="#como-funciona" class="cabecera__enlace">Cómo funciona</a>
+                <a href="#para-clubes" class="cabecera__enlace">Para clubes</a>
+                <a href="#preguntas" class="cabecera__enlace">Preguntas frecuentes</a>
             </nav>
 
-            <!-- Botones de acceso y demo -->
-            <aside class="accionesCabecera">
-                <button class="botonDemo">Solicitar demo</button>
-
-                <button class="botonAcceso">
-                    <i class="ph ph-user" class="iconoAcceso"></i>
-                    Acceso de Socios
-                </button>
-            </aside>
-
-        </section>
+            <div class="cabecera__acciones">
+                <a href="landingPage.html" class="cabecera__enlace">Acceder</a>
+                <a href="#" class="boton boton--terciario navegacion-escritorio">Crear cuenta</a>
+            </div>
+        </div>
     </header>
 
-    <!-- Contenido principal de la página -->
-    <main class="contenidoPrincipal">
+    <main>
 
-        <!-- Sección 1: Presentación y reservas rápidas para hoy -->
-        <section class="seccionVentajas">
-            
-            <!-- Información sobre las ventajas para los socios -->
-            <article class="ventajasSocios">
-                <h2 class="tituloVentajas">¡Ventajas para socios del club!</h2>
+        <!-- ============ PORTADA + BUSCADOR ============ -->
+        <section class="inicio-publico__portada" id="buscar">
+            <div class="inicio-publico__hero">
 
-                <p class="textoVentajas">
-                    <strong class="textoDestacado">
-                        Reserva flexible, inscripciones a torneos y monedero virtual.
-                    </strong>
-                    <br class="saltoLinea"> 
-                    Hazte socio de PadelSlot SaaS para obtener acceso a la reserva anticipada con tarifa reducida, inscripción directa al sistema de escuela, recarga de monedero virtual y más.
-                </p>
-                
-                <!-- Lista de ventajas destacadas -->
-                <ul class="listaVentajas">
-                    <li class="ventaja">
-                        <i class="ph-fill ph-check-circle" class="iconoVentaja"></i>
-                        Reserva con 7 días de antelación
-                    </li>
+                <div class="inicio-publico__hero-rejilla">
+                    <div>
+                        <span class="etiqueta etiqueta--terciario">Solo provincia de Sevilla</span>
+                        <h1 class="inicio-publico__titulo">Encuentra pista de pádel para hoy, sin ser socio</h1>
+                        <p class="inicio-publico__descripcion">
+                            Compara clubes y horarios disponibles en Sevilla. Elige tu pista, reserva como
+                            invitado y paga online en pocos minutos.
+                        </p>
+                        <ul class="inicio-publico__puntos">
+                            <li class="inicio-publico__punto">Sin cuota</li>
+                            <li class="inicio-publico__punto">Precio claro</li>
+                            <li class="inicio-publico__punto">Confirmación inmediata</li>
+                        </ul>
+                    </div>
 
-                    <li class="ventaja">
-                        <i class="ph-fill ph-check-circle" class="iconoVentaja"></i>
-                        Monedero virtual de recarga segura
-                    </li>
+                    <!-- Pistas cerca de ti -->
+                    <aside class="tarjeta" aria-labelledby="titulo-cercanas">
+                        <div class="tarjeta__cabecera">
+                            <div>
+                                <h2 class="tarjeta__titulo" id="titulo-cercanas">Pistas cerca de ti</h2>
+                                <p class="inicio-publico__nota">Sevilla · disponibilidad real</p>
+                            </div>
+                            <span class="etiqueta etiqueta--terciario">Hoy</span>
+                        </div>
 
-                    <li class="ventaja">
-                        <i class="ph-fill ph-check-circle" class="iconoVentaja"></i>
-                        Inscripción a escuela y clases
-                    </li>
+                        <ul class="inicio-publico__lista-pistas">
+                            <li>
+                                <a href="reservaNoSocio.html" class="inicio-publico__pista">
+                                    <span class="inicio-publico__pista-hora">18:00</span>
+                                    <span class="inicio-publico__pista-info">
+                                        <strong class="inicio-publico__pista-club">Padel Itálica</strong>
+                                        Desde 8 € / jug.
+                                    </span>
+                                    <i class="ph ph-caret-right" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="reservaNoSocio.html" class="inicio-publico__pista">
+                                    <span class="inicio-publico__pista-hora">19:30</span>
+                                    <span class="inicio-publico__pista-info">
+                                        <strong class="inicio-publico__pista-club">Club Aljarafe</strong>
+                                        Desde 10 € / jug.
+                                    </span>
+                                    <i class="ph ph-caret-right" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="reservaNoSocio.html" class="inicio-publico__pista">
+                                    <span class="inicio-publico__pista-hora">21:00</span>
+                                    <span class="inicio-publico__pista-info">
+                                        <strong class="inicio-publico__pista-club">Pádel Nervión</strong>
+                                        Desde 9 € / jug.
+                                    </span>
+                                    <i class="ph ph-caret-right" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
 
-                    <li class="ventaja">
-                        <i class="ph-fill ph-check-circle" class="iconoVentaja"></i>
-                        Pago seguro pasarela Stripe 3D
-                    </li>
-                </ul>
+                        <p class="aviso">
+                            <i class="ph ph-user-check aviso__icono" aria-hidden="true"></i>
+                            <span class="aviso__texto">Puedes reservar como invitado. No necesitas pertenecer a un club.</span>
+                        </p>
+                    </aside>
+                </div>
 
-                <button class="botonVentajas">
-                    Explora todas las ventajas
-                    <i class="ph ph-arrow-right" class="iconoBoton"></i>
-                </button>
+                <!-- Buscador -->
+                <form class="formulario inicio-publico__buscador" action="reservaNoSocio.html">
+                    <div class="formulario__grupo">
+                        <label class="formulario__etiqueta" for="ubicacion">Ubicación o municipio</label>
+                        <select class="formulario__campo" id="ubicacion" name="ubicacion">
+                            <option>Sevilla</option>
+                            <option>Mairena del Aljarafe</option>
+                            <option>Santiponce</option>
+                            <option>Alcalá de Guadaíra</option>
+                        </select>
+                    </div>
+                    <div class="formulario__grupo">
+                        <label class="formulario__etiqueta" for="fecha">Fecha</label>
+                        <select class="formulario__campo" id="fecha" name="fecha">
+                            <option>Hoy, 4 de octubre</option>
+                            <option>Mañana, 5 de octubre</option>
+                        </select>
+                    </div>
+                    <div class="formulario__grupo">
+                        <label class="formulario__etiqueta" for="horario">Horario</label>
+                        <select class="formulario__campo" id="horario" name="horario">
+                            <option>Mañana · 08:00–14:00</option>
+                            <option selected>Tarde · 17:00–22:00</option>
+                            <option>Noche · 22:00–23:30</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="boton boton--primario">
+                        <i class="ph ph-magnifying-glass boton__icono" aria-hidden="true"></i>
+                        Buscar pistas
+                    </button>
+                </form>
 
-                <!-- Aviso importante para no socios -->
-                <aside class="avisoSocios">
-                    <i class="ph ph-warning-circle" class="iconoAviso"></i>
-                    Los no socios sólo pueden reservar pista con una antelación máxima de 48 horas.
-                </aside>
-            </article>
-
-            <!-- Panel lateral con pistas disponibles para el día de hoy -->
-            <aside class="pistasHoy">
-                <header class="cabeceraPistas">
-                    <span class="tituloPistas">Pistas de hoy</span>
-                    <span class="etiquetaHoy">HOY</span>
-                </header>
-                
-                <!-- Listado de horarios de pistas -->
-                <ul class="listaPistas">
-
-                    <li class="pista">
-                        <article class="tarjetaPista">
-                            <header class="cabeceraPista">
-                                <time class="horaPista">18:00</time>
-                            </header>
-
-                            <section class="infoPista">
-                                <h3 class="nombrePista">Pista Cubierta 1</h3>
-                                <p class="detallePista">4 Jugadores · Pista panorámica</p>
-                            </section>
-                        </article>
-                    </li>
-
-                    <li class="pista">
-                        <article class="tarjetaPista">
-                            <header class="cabeceraPista">
-                                <time class="horaPista">19:30</time>
-                            </header>
-
-                            <section class="infoPista">
-                                <h3 class="nombrePista">Cristal Panorámica</h3>
-                                <p class="detallePista">Outdoor · Césped texturizado</p>
-                            </section>
-                        </article>
-                    </li>
-
-                    <li class="pista">
-                        <article class="tarjetaPista">
-                            <header class="cabeceraPista">
-                                <time class="horaPista">21:00</time>
-                            </header>
-
-                            <section class="infoPista">
-                                <h3 class="nombrePista">Pista Exterior</h3>
-                                <p class="detallePista">Última Pista · Iluminación 200W</p>
-                            </section>
-                        </article>
-                    </li>
-
-                </ul>
-
-                <button class="botonHorarios">
-                    <i class="ph ph-magnifying-glass" class="iconoHorarios"></i>
-                    Ver horarios del cuadrante
-                </button>
-            </aside>
-
+            </div>
         </section>
 
-        <!-- Sección 2: Explicación de los 4 pilares clave del servicio -->
-        <section class="seccionPilares">
-            
-            <!-- Imagen ilustrativa de la aplicación -->
-            <figure class="imagenPilares">
-                <img 
-                    src="https://placehold.co/600x400/e2e8f0/64748b?text=App+Screenshot" 
-                    alt="Interfaz PadelSlot" 
-                    class="imagenApp"
-                >
-            </figure>
-            
-            <!-- Detalles de los 4 pilares -->
-            <article class="contenidoPilares">
-
-                <header class="cabeceraPilares">
-                    <span class="etiquetaPilares">Lo que hace único a PadelSlot</span>
-                    <h2 class="tituloPilares">Estos son los 4 pilares de valor</h2>
+        <!-- ============ CLUBES DESTACADOS ============ -->
+        <section class="banda">
+            <div class="banda__contenido">
+                <header class="encabezado-seccion">
+                    <div>
+                        <span class="encabezado-seccion__antetitulo">Disponibilidad próxima</span>
+                        <h2 class="encabezado-seccion__titulo">Clubes destacados en Sevilla</h2>
+                        <p class="encabezado-seccion__texto">Ejemplos con pistas libres para hoy. Consulta el precio final y las condiciones antes de reservar.</p>
+                    </div>
+                    <a href="#" class="encabezado-seccion__enlace">
+                        Ver todos los clubes <i class="ph ph-arrow-right" aria-hidden="true"></i>
+                    </a>
                 </header>
-                
-                <ol class="listaPilares">
 
-                    <li class="pilar">
-                        <h4 class="tituloPilar">Reserva de pista flexible y prioritaria</h4>
-                        <p class="textoPilar">
-                            Los socios disfrutan de un calendario de reservas extendido, prioridad de apertura de pista y notificaciones de huecos libres.
-                        </p>
+                <div class="inicio-publico__clubes">
+
+                    <article class="tarjeta inicio-publico__club">
+                        <div class="inicio-publico__club-imagen">Vista de pistas del club</div>
+                        <div class="tarjeta__cabecera">
+                            <h3 class="tarjeta__titulo">Padel Itálica</h3>
+                            <span class="inicio-publico__valoracion"><i class="ph ph-star" aria-hidden="true"></i> 4,8</span>
+                        </div>
+                        <div class="tarjeta__cuerpo">
+                            <p><i class="ph ph-map-pin" aria-hidden="true"></i> Santiponce · a 8 km</p>
+                            <p>8 pistas · 4 cubiertas · Parking</p>
+                        </div>
+                        <div class="inicio-publico__horarios-cabecera">
+                            <span>Próximos horarios</span>
+                            <span class="etiqueta etiqueta--terciario">Reserva invitado</span>
+                        </div>
+                        <div class="inicio-publico__horarios">
+                            <a href="reservaNoSocio.html" class="inicio-publico__horario inicio-publico__horario--destacado">18:00</a>
+                            <a href="reservaNoSocio.html" class="inicio-publico__horario">19:30</a>
+                            <a href="reservaNoSocio.html" class="inicio-publico__horario">21:00</a>
+                        </div>
+                        <div class="inicio-publico__club-pie">
+                            <p class="inicio-publico__precio">Desde <strong class="inicio-publico__precio-valor">8 € / jugador</strong></p>
+                            <a href="reservaNoSocio.html" class="boton boton--contorno">Ver disponibilidad</a>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta inicio-publico__club">
+                        <div class="inicio-publico__club-imagen">Vista de pistas del club</div>
+                        <div class="tarjeta__cabecera">
+                            <h3 class="tarjeta__titulo">Club Aljarafe Pádel</h3>
+                            <span class="inicio-publico__valoracion"><i class="ph ph-star" aria-hidden="true"></i> 4,7</span>
+                        </div>
+                        <div class="tarjeta__cuerpo">
+                            <p><i class="ph ph-map-pin" aria-hidden="true"></i> Mairena del Aljarafe · a 10 km</p>
+                            <p>12 pistas · Vestuarios · Cafetería</p>
+                        </div>
+                        <div class="inicio-publico__horarios-cabecera">
+                            <span>Próximos horarios</span>
+                            <span class="etiqueta etiqueta--terciario">Reserva invitado</span>
+                        </div>
+                        <div class="inicio-publico__horarios">
+                            <a href="reservaNoSocio.html" class="inicio-publico__horario inicio-publico__horario--destacado">17:30</a>
+                            <a href="reservaNoSocio.html" class="inicio-publico__horario">20:00</a>
+                            <a href="reservaNoSocio.html" class="inicio-publico__horario">22:00</a>
+                        </div>
+                        <div class="inicio-publico__club-pie">
+                            <p class="inicio-publico__precio">Desde <strong class="inicio-publico__precio-valor">10 € / jugador</strong></p>
+                            <a href="reservaNoSocio.html" class="boton boton--contorno">Ver disponibilidad</a>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta inicio-publico__club">
+                        <div class="inicio-publico__club-imagen">Vista de pistas del club</div>
+                        <div class="tarjeta__cabecera">
+                            <h3 class="tarjeta__titulo">Pádel Nervión</h3>
+                            <span class="inicio-publico__valoracion"><i class="ph ph-star" aria-hidden="true"></i> 4,6</span>
+                        </div>
+                        <div class="tarjeta__cuerpo">
+                            <p><i class="ph ph-map-pin" aria-hidden="true"></i> Sevilla · a 3 km</p>
+                            <p>6 pistas cubiertas · Alquiler de pala</p>
+                        </div>
+                        <div class="inicio-publico__horarios-cabecera">
+                            <span>Próximos horarios</span>
+                            <span class="etiqueta etiqueta--terciario">Reserva invitado</span>
+                        </div>
+                        <div class="inicio-publico__horarios">
+                            <a href="reservaNoSocio.html" class="inicio-publico__horario inicio-publico__horario--destacado">19:00</a>
+                            <a href="reservaNoSocio.html" class="inicio-publico__horario">20:30</a>
+                            <a href="reservaNoSocio.html" class="inicio-publico__horario">22:00</a>
+                        </div>
+                        <div class="inicio-publico__club-pie">
+                            <p class="inicio-publico__precio">Desde <strong class="inicio-publico__precio-valor">9 € / jugador</strong></p>
+                            <a href="reservaNoSocio.html" class="boton boton--contorno">Ver disponibilidad</a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Ventajas -->
+                <ul class="inicio-publico__beneficios">
+                    <li class="inicio-publico__beneficio">
+                        <span class="icono-caja"><i class="ph ph-scan" aria-hidden="true"></i></span>
+                        <div>
+                            <strong class="inicio-publico__beneficio-titulo">Compara en una sola vista</strong>
+                            <p>Horarios, precio por jugador y servicios de cada club.</p>
+                        </div>
                     </li>
-
-                    <li class="pilar">
-                        <h4 class="tituloPilar">Clases y escuela deportiva</h4>
-                        <p class="textoPilar">
-                            Inscripción directa a entrenamientos con monitores oficiales. Filtrado por niveles y plazas de suplente.
-                        </p>
+                    <li class="inicio-publico__beneficio">
+                        <span class="icono-caja"><i class="ph ph-user-check" aria-hidden="true"></i></span>
+                        <div>
+                            <strong class="inicio-publico__beneficio-titulo">Juega sin ser socio</strong>
+                            <p>Reserva puntual con tus datos básicos, sin cuotas ni permanencia.</p>
+                        </div>
                     </li>
-
-                    <li class="pilar">
-                        <h4 class="tituloPilar">Control de membresía y carnet digital</h4>
-                        <p class="textoPilar">
-                            Gestión del monedero virtual, historial de compras, pagos domiciliados y tu carnet virtual.
-                        </p>
+                    <li class="inicio-publico__beneficio">
+                        <span class="icono-caja"><i class="ph ph-shield-check" aria-hidden="true"></i></span>
+                        <div>
+                            <strong class="inicio-publico__beneficio-titulo">Pago y cancelación claros</strong>
+                            <p>Conoce las condiciones del club antes de confirmar.</p>
+                        </div>
                     </li>
+                </ul>
+            </div>
+        </section>
 
-                    <li class="pilar">
-                        <h4 class="tituloPilar">Servicios del club vinculados</h4>
-                        <p class="textoPilar">
-                            Reserva de parking, uso de taquillas o servicio de alquiler de material asociado a tu cuenta de usuario.
-                        </p>
+        <!-- ============ CÓMO FUNCIONA ============ -->
+        <section class="banda banda--suave" id="como-funciona">
+            <div class="banda__contenido">
+                <header class="encabezado-seccion">
+                    <div>
+                        <span class="encabezado-seccion__antetitulo">Cómo funciona</span>
+                        <h2 class="encabezado-seccion__titulo">Reserva sin ser socio en tres pasos</h2>
+                        <p class="encabezado-seccion__texto">Cada club mantiene sus propias tarifas y normas; PadelSlot te las muestra antes de pagar.</p>
+                    </div>
+                </header>
+
+                <ol class="inicio-publico__pasos">
+                    <li class="tarjeta inicio-publico__paso">
+                        <div class="tarjeta__cabecera">
+                            <span class="inicio-publico__paso-numero">1</span>
+                            <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="tarjeta__titulo">Busca dónde y cuándo</h3>
+                        <p class="tarjeta__cuerpo">Indica municipio, fecha y franja horaria para ver pistas libres en Sevilla.</p>
                     </li>
-
+                    <li class="tarjeta inicio-publico__paso">
+                        <div class="tarjeta__cabecera">
+                            <span class="inicio-publico__paso-numero">2</span>
+                            <i class="ph ph-cursor-click" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="tarjeta__titulo">Elige club y pista</h3>
+                        <p class="tarjeta__cuerpo">Compara precio, ubicación, tipo de pista y servicios incluidos.</p>
+                    </li>
+                    <li class="tarjeta inicio-publico__paso">
+                        <div class="tarjeta__cabecera">
+                            <span class="inicio-publico__paso-numero">3</span>
+                            <i class="ph ph-credit-card" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="tarjeta__titulo">Confirma como invitado</h3>
+                        <p class="tarjeta__cuerpo">Añade tus datos, paga online y recibe la reserva al instante.</p>
+                    </li>
                 </ol>
-            </article>
 
+                <div class="aviso">
+                    <i class="ph ph-info aviso__icono" aria-hidden="true"></i>
+                    <p class="aviso__texto">
+                        <strong class="aviso__titulo">No necesitas cuenta para empezar</strong>
+                        Podrás reservar como invitado. Crear una cuenta es opcional y solo sirve para guardar datos y consultar reservas.
+                    </p>
+                    <a href="#buscar" class="boton boton--primario">
+                        <i class="ph ph-magnifying-glass boton__icono" aria-hidden="true"></i>
+                        Buscar una pista
+                    </a>
+                </div>
+            </div>
         </section>
 
-        <!-- Sección 3: Opciones y tarjetas para alquilar pistas -->
-        <section class="seccionInstalaciones">
-            
-            <header class="cabeceraInstalaciones">
+        <!-- ============ OPINIONES ============ -->
+        <section class="banda">
+            <div class="banda__contenido">
+                <header class="encabezado-seccion">
+                    <div>
+                        <span class="encabezado-seccion__antetitulo">Opiniones de jugadores</span>
+                        <h2 class="encabezado-seccion__titulo">Reservar para un día, sin complicaciones</h2>
+                        <p class="encabezado-seccion__texto">Experiencias de jugadores ocasionales que reservaron en clubes de la provincia de Sevilla.</p>
+                    </div>
+                    <div class="inicio-publico__media">
+                        <p class="inicio-publico__media-valor">4,7 <span class="inicio-publico__estrellas" aria-label="5 estrellas">★★★★★</span></p>
+                        <p class="inicio-publico__nota">Basado en 326 reservas verificadas</p>
+                    </div>
+                </header>
 
-                <section class="textoCabecera">
-                    <span class="etiquetaInstalaciones">Alquiler de Instalaciones</span>
-                    <h2 class="tituloInstalaciones">Disponibilidad en tiempo real</h2>
-                    <p class="descripcionInstalaciones">
-                        Visualiza la ocupación de nuestras pistas. Reserva directamente desde tu dispositivo.
-                    </p>
-                </section>
-
-                <a href="#" class="enlaceInstalaciones">
-                    Ver todas las instalaciones
-                    <i class="ph ph-arrow-right" class="iconoEnlace"></i>
-                </a>
-
-            </header>
-
-            <!-- Catálogo de tarjetas de pistas -->
-            <section class="listaInstalaciones">
-                
-                <!-- Tarjeta 1 -->
-                <article class="tarjetaInstalacion">
-
-                    <figure class="imagenPista">
-                        <img 
-                            src="https://placehold.co/400x300/1e3c31/ffffff?text=Pista+Cubierta" 
-                            alt="Pista Panorámica" 
-                            class="imagen"
-                        >
-
-                        <figcaption class="valoracion">
-                            <i class="ph-fill ph-star" class="iconoEstrella"></i>
-                            4.8
-                        </figcaption>
-                    </figure>
-
-                    <section class="infoInstalacion">
-                        <h3 class="nombreInstalacion">Cristal panorámica</h3>
-                        <p class="descripcionPista">
-                            Iluminación LED PRO · Césped World Padel Tour
-                        </p>
-                        
-                        <!-- Etiquetas de la pista -->
-                        <aside class="etiquetasPista">
-                            <span class="etiquetaPista">Ranking Oficial</span>
-                            <span class="etiquetaPista">Cubierta</span>
-                        </aside>
-
-                        <!-- Horarios disponibles -->
-                        <nav class="horariosPista">
-                            <span class="horaDisponible">18:00</span>
-                            <span class="horaDisponible">19:30</span>
-                            <span class="horaDisponible">21:00</span>
-                        </nav>
-
-                        <footer class="pieInstalacion">
-                            <section class="precioPista">
-                                <span class="textoPrecio">Por jugador</span>
-                                <strong class="precio">Desde 5 €</strong>
-                            </section>
-
-                            <button class="botonDisponibilidad">
-                                Ver disponibilidad
-                            </button>
+                <div class="inicio-publico__opiniones">
+                    <article class="tarjeta inicio-publico__opinion">
+                        <div class="tarjeta__cabecera">
+                            <span class="inicio-publico__estrellas" aria-label="5 estrellas">★★★★★</span>
+                            <i class="ph ph-quotes" aria-hidden="true"></i>
+                        </div>
+                        <blockquote class="tarjeta__cuerpo inicio-publico__cita">“Quería jugar una tarde y encontré pista cerca de casa sin llamar a varios clubes.”</blockquote>
+                        <footer class="inicio-publico__autor">
+                            <span class="avatar">MG</span>
+                            <p class="inicio-publico__autor-datos">
+                                <strong class="inicio-publico__autor-nombre">Marta G.</strong>
+                                Jugó en Mairena del Aljarafe
+                            </p>
+                            <span class="etiqueta etiqueta--terciario">Reserva verificada</span>
                         </footer>
-                    </section>
-                </article>
-
-                <!-- Tarjeta 2 -->
-                <article class="tarjetaInstalacion">
-
-                    <figure class="imagenPista">
-                        <img 
-                            src="https://placehold.co/400x300/1e3c31/ffffff?text=Pista+Exterior" 
-                            alt="Pista Exterior" 
-                            class="imagen"
-                        >
-
-                        <figcaption class="valoracion">
-                            <i class="ph-fill ph-star" class="iconoEstrella"></i>
-                            4.9
-                        </figcaption>
-                    </figure>
-
-                    <section class="infoInstalacion">
-                        <h3 class="nombreInstalacion">12 pistas de cristal</h3>
-                        <p class="descripcionPista">
-                            Outdoor Pro · Temperatura controlada WPT
-                        </p>
-                        
-                        <aside class="etiquetasPista">
-                            <span class="etiquetaPista">Outdoor</span>
-                            <span class="etiquetaPista">Competición</span>
-                        </aside>
-
-                        <nav class="horariosPista">
-                            <span class="horaDisponible">18:00</span>
-                            <span class="horaDisponible">19:30</span>
-                            <span class="horaDisponible">21:00</span>
-                        </nav>
-
-                        <footer class="pieInstalacion">
-                            <section class="precioPista">
-                                <span class="textoPrecio">Por jugador</span>
-                                <strong class="precio">Desde 4 €</strong>
-                            </section>
-
-                            <button class="botonDisponibilidad">
-                                Ver disponibilidad
-                            </button>
-                        </footer>
-                    </section>
-                </article>
-
-                <!-- Tarjeta 3 -->
-                <article class="tarjetaInstalacion">
-
-                    <figure class="imagenPista">
-                        <img 
-                            src="https://placehold.co/400x300/1e3c31/ffffff?text=Club+Indoor" 
-                            alt="Pista Indoor" 
-                            class="imagen"
-                        >
-
-                        <figcaption class="valoracion">
-                            <i class="ph-fill ph-star" class="iconoEstrella"></i>
-                            5.0
-                        </figcaption>
-                    </figure>
-
-                    <section class="infoInstalacion">
-                        <h3 class="nombreInstalacion">6 pistas cubiertas</h3>
-                        <p class="descripcionPista">
-                            Indoor Premium · Altura libre de 14 metros
-                        </p>
-                        
-                        <aside class="etiquetasPista">
-                            <span class="etiquetaPista">Indoor VIP</span>
-                            <span class="etiquetaPista">Césped Texturizado</span>
-                        </aside>
-
-                        <nav class="horariosPista">
-                            <span class="horaDisponible">18:00</span>
-                            <span class="horaDisponible">19:30</span>
-                            <span class="horaDisponible">21:00</span>
-                        </nav>
-
-                        <footer class="pieInstalacion">
-                            <section class="precioPista">
-                                <span class="textoPrecio">Por jugador</span>
-                                <strong class="precio">Desde 6 €</strong>
-                            </section>
-
-                            <button class="botonDisponibilidad">
-                                Ver disponibilidad
-                            </button>
-                        </footer>
-                    </section>
-                </article>
-
-            </section>
-        </section>
-
-        <!-- Sección 4: Módulos del sistema SaaS -->
-        <section class="seccionModulos">
-            
-            <header class="cabeceraModulos">
-
-                <section class="textoModulos">
-                    <span class="etiquetaModulos">Arquitectura Modular SaaS</span>
-                    <h2 class="tituloModulos">Solución integral para gestión de clubes</h2>
-                    <p class="descripcionModulos">
-                        PadelSlot es la plataforma que se adapta a las necesidades operativas de tu club. Activa los módulos requeridos y configura la app para tus socios en minutos.
-                    </p>
-                </section>
-
-            </header>
-
-            <!-- Tarjetas de los diferentes módulos -->
-            <section class="listaModulos">
-                
-                <article class="modulo">
-                    <header class="cabeceraModulo">
-                        <figure class="iconoModulo">
-                            <i class="ph ph-tennis-ball" class="iconoModulo"></i>
-                        </figure>
-                    </header>
-
-                    <h3 class="tituloModulo">Reserva de Pistas</h3>
-                    <p class="descripcionModulo">
-                        Cuadrantes interactivos, turnos fijos, automatización de luces y control de acceso. Generación de abonos por zonas.
-                    </p>
-                    <span class="etiquetaModulo">Módulo Central</span>
-                </article>
-                
-                <article class="modulo">
-                    <header class="cabeceraModulo">
-                        <figure class="iconoModulo">
-                            <i class="ph ph-graduation-cap" class="iconoModulo"></i>
-                        </figure>
-                    </header>
-
-                    <h3 class="tituloModulo">Escuela Deportiva</h3>
-                    <p class="descripcionModulo">
-                        Gestión de inscripciones, control de asistencia en grupos, gestión de cobros y facturación de la escuela base.
-                    </p>
-                    <span class="etiquetaModulo">Módulo de Escuela</span>
-                </article>
-
-                <article class="modulo">
-                    <header class="cabeceraModulo">
-                        <figure class="iconoModulo">
-                            <i class="ph ph-users" class="iconoModulo"></i>
-                        </figure>
-                    </header>
-
-                    <h3 class="tituloModulo">Membresía y Socios</h3>
-                    <p class="descripcionModulo">
-                        Monedero virtual, tarifas especiales, control de morosidad, remesas SEPA y control de invitados del club.
-                    </p>
-                    <span class="etiquetaModulo">Módulo de Miembros</span>
-                </article>
-
-                <article class="modulo">
-                    <header class="cabeceraModulo">
-                        <figure class="iconoModulo">
-                            <i class="ph ph-storefront" class="iconoModulo"></i>
-                        </figure>
-                    </header>
-
-                    <h3 class="tituloModulo">Servicios de Club</h3>
-                    <p class="descripcionModulo">
-                        Gestión de puntos de venta (bar, cafetería, tienda de pádel), alquiler de material (palas, botes) y taquillas.
-                    </p>
-                    <span class="etiquetaModulo">Módulo de Servicios</span>
-                </article>
-
-            </section>
-        </section>
-
-        <!-- Sección 5: Información comercial para clubes de pádel -->
-        <section class="seccionComercial">
-            
-            <article class="contenidoComercial">
-                <span class="etiquetaComercial">SOFTWARE PARA CLUBES DE PÁDEL</span>
-                <h2 class="tituloComercial">Transforma la rentabilidad y gestión de tu club deportivo</h2>
-                <p class="textoComercial">
-                    PadelSlot no es solo una app de reservas, es un completo sistema en la nube enfocado en optimizar los recursos, automatizar tu contabilidad y brindar una experiencia premium sin complicaciones a tus socios.
-                </p>
-                
-                <!-- Beneficios clave -->
-                <section class="listaBeneficios">
-
-                    <article class="beneficio">
-                        <i class="ph-fill ph-chart-line-up" class="iconoBeneficio"></i>
-                        <strong class="tituloBeneficio">Reportes Financieros</strong>
-                        <span class="textoBeneficio">
-                            Control de caja en tiempo real y facturación conectada.
-                        </span>
                     </article>
 
-                    <article class="beneficio">
-                        <i class="ph-fill ph-shield-check" class="iconoBeneficio"></i>
-                        <strong class="tituloBeneficio">Seguridad y Domótica</strong>
-                        <span class="textoBeneficio">
-                            Sincronizado con domótica, luces y apertura de puertas.
-                        </span>
+                    <article class="tarjeta inicio-publico__opinion">
+                        <div class="tarjeta__cabecera">
+                            <span class="inicio-publico__estrellas" aria-label="5 estrellas">★★★★★</span>
+                            <i class="ph ph-quotes" aria-hidden="true"></i>
+                        </div>
+                        <blockquote class="tarjeta__cuerpo inicio-publico__cita">“Se veía el precio completo antes de pagar. Reservamos como invitados en menos de cinco minutos.”</blockquote>
+                        <footer class="inicio-publico__autor">
+                            <span class="avatar">PR</span>
+                            <p class="inicio-publico__autor-datos">
+                                <strong class="inicio-publico__autor-nombre">Pablo R.</strong>
+                                Jugó en Sevilla capital
+                            </p>
+                            <span class="etiqueta etiqueta--terciario">Reserva verificada</span>
+                        </footer>
                     </article>
 
-                </section>
+                    <article class="tarjeta inicio-publico__opinion">
+                        <div class="tarjeta__cabecera">
+                            <span class="inicio-publico__estrellas" aria-label="5 estrellas">★★★★★</span>
+                            <i class="ph ph-quotes" aria-hidden="true"></i>
+                        </div>
+                        <blockquote class="tarjeta__cuerpo inicio-publico__cita">“Muy útil para comparar cubiertas cuando llueve. La confirmación llegó al momento.”</blockquote>
+                        <footer class="inicio-publico__autor">
+                            <span class="avatar">LS</span>
+                            <p class="inicio-publico__autor-datos">
+                                <strong class="inicio-publico__autor-nombre">Lucía S.</strong>
+                                Jugó en Santiponce
+                            </p>
+                            <span class="etiqueta etiqueta--terciario">Reserva verificada</span>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-                <footer class="accionesComerciales">
-                    <button class="botonComercial">
-                        Solicitar demo gratuita del software
-                    </button>
+        <!-- ============ PARA CLUBES (MODO MANAGER) ============ -->
+        <section class="banda banda--verde" id="para-clubes">
+            <div class="banda__contenido inicio-publico__manager">
 
-                    <button class="botonComercial">
-                        Ver planes y precios SaaS
-                    </button>
-                </footer>
-            </article>
+                <div>
+                    <span class="etiqueta etiqueta--terciario">Para clubes · Modo Manager</span>
+                    <h2 class="inicio-publico__manager-titulo">Toda la gestión del club en un único sistema</h2>
+                    <p>
+                        Centraliza reservas de pistas, clases, socios, pagos y servicios opcionales. Evita coordinar
+                        varios programas y ofrece a tus clientes una experiencia integrada.
+                    </p>
 
-            <!-- Ejemplo visual del panel de control de administración -->
-            <aside class="panelControl">
-                <h4 class="tituloPanel">Panel de Control Club</h4>
-
-                <article class="estadoPistas">
-                    <header class="cabeceraEstado">
-                        <strong class="tituloEstado">Estado de Pistas en Tiempo Real</strong>
-                        <span class="estadoActualizado">Actualizado</span>
-                    </header>
-
-                    <ul class="listaEstado">
-                        <li class="estadoPista">
-                            <span class="nombreEstado">
-                                <i class="ph-fill ph-tennis-ball" class="iconoEstado"></i>
-                                Pista 1 (Cristal) - Ocupada
-                            </span>
-                            <strong class="accionEstado">Pago automático</strong>
+                    <ul class="inicio-publico__modulos">
+                        <li class="inicio-publico__modulo">
+                            <span class="icono-caja icono-caja--verde"><i class="ph ph-calendar-check" aria-hidden="true"></i></span>
+                            <p><strong class="inicio-publico__modulo-titulo">Pistas y reservas</strong> Agenda y disponibilidad en tiempo real</p>
                         </li>
-
-                        <li class="estadoPista">
-                            <span class="nombreEstado">
-                                <i class="ph-fill ph-tennis-ball" class="iconoEstado"></i>
-                                Pista 2 (Outdoor) - Libre
-                            </span>
-                            <strong class="accionEstado">Generar reserva manual</strong>
+                        <li class="inicio-publico__modulo">
+                            <span class="icono-caja icono-caja--verde"><i class="ph ph-graduation-cap" aria-hidden="true"></i></span>
+                            <p><strong class="inicio-publico__modulo-titulo">Clases y escuela</strong> Grupos, monitores e inscripciones</p>
+                        </li>
+                        <li class="inicio-publico__modulo">
+                            <span class="icono-caja icono-caja--verde"><i class="ph ph-users" aria-hidden="true"></i></span>
+                            <p><strong class="inicio-publico__modulo-titulo">Socios y clientes</strong> Altas, cuotas y comunicaciones</p>
+                        </li>
+                        <li class="inicio-publico__modulo">
+                            <span class="icono-caja icono-caja--verde"><i class="ph ph-receipt" aria-hidden="true"></i></span>
+                            <p><strong class="inicio-publico__modulo-titulo">Pagos y servicios</strong> Cobros, extras y facturación</p>
                         </li>
                     </ul>
-                </article>
-            </aside>
 
+                    <div class="inicio-publico__acciones">
+                        <a href="#" class="boton boton--solicitud">
+                            <i class="ph ph-presentation-chart boton__icono" aria-hidden="true"></i>
+                            Solicitar demostración
+                        </a>
+                        <a href="#" class="boton inicio-publico__boton-claro">Pedir información</a>
+                    </div>
+                </div>
+
+                <!-- Resumen ilustrativo del panel del club -->
+                <aside class="tarjeta inicio-publico__resumen" aria-labelledby="titulo-resumen">
+                    <div class="tarjeta__cabecera">
+                        <div>
+                            <h3 class="tarjeta__titulo" id="titulo-resumen">Resumen del club</h3>
+                            <p class="inicio-publico__nota">Hoy · Sevilla</p>
+                        </div>
+                        <span class="etiqueta etiqueta--terciario">Modo Manager</span>
+                    </div>
+
+                    <dl class="inicio-publico__cifras">
+                        <div class="inicio-publico__cifra">
+                            <dt>Reservas</dt>
+                            <dd class="inicio-publico__cifra-valor">42</dd>
+                            <dd>+8% esta semana</dd>
+                        </div>
+                        <div class="inicio-publico__cifra">
+                            <dt>Ocupación</dt>
+                            <dd class="inicio-publico__cifra-valor">76%</dd>
+                            <dd>+5% esta semana</dd>
+                        </div>
+                        <div class="inicio-publico__cifra">
+                            <dt>Ingresos</dt>
+                            <dd class="inicio-publico__cifra-valor">1.284 €</dd>
+                            <dd>+12% esta semana</dd>
+                        </div>
+                    </dl>
+
+                    <div class="inicio-publico__ocupacion">
+                        <div class="inicio-publico__ocupacion-cabecera">
+                            <strong>Ocupación de pistas</strong>
+                            <a href="#" class="inicio-publico__enlace">Ver agenda</a>
+                        </div>
+                        <ul class="inicio-publico__ocupacion-lista">
+                            <li class="inicio-publico__ocupacion-fila">
+                                <strong>Pista 1</strong><span>18:00–19:30</span>
+                                <span class="etiqueta etiqueta--suave">Reservada</span>
+                            </li>
+                            <li class="inicio-publico__ocupacion-fila">
+                                <strong>Pista 2</strong><span>19:30–21:00</span>
+                                <span class="etiqueta etiqueta--suave">Clase</span>
+                            </li>
+                            <li class="inicio-publico__ocupacion-fila">
+                                <strong>Pista 3</strong><span>21:00–22:30</span>
+                                <span class="etiqueta etiqueta--terciario">Disponible</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p class="inicio-publico__nota"><i class="ph ph-squares-four" aria-hidden="true"></i> Panel ilustrativo de gestión diaria del club</p>
+                </aside>
+            </div>
         </section>
 
-        <!-- Sección 6: Preguntas frecuentes -->
-        <section class="seccionPreguntas">
+        <!-- ============ PREGUNTAS FRECUENTES + LLAMADAS ============ -->
+        <section class="banda banda--suave" id="preguntas">
+            <div class="banda__contenido">
+                <header class="encabezado-seccion">
+                    <div>
+                        <span class="encabezado-seccion__antetitulo">Preguntas frecuentes</span>
+                        <h2 class="encabezado-seccion__titulo">Antes de reservar</h2>
+                        <p class="encabezado-seccion__texto">Respuestas rápidas para jugadores que no pertenecen a un club.</p>
+                    </div>
+                </header>
 
-            <header class="cabeceraPreguntas">
-                <section class="textoPreguntas">
-                    <span class="etiquetaPreguntas">Aclara tus dudas</span>
-                    <h2 class="tituloPreguntas">Preguntas Frecuentes de PadelSlot</h2>
-                </section>
-            </header>
+                <div class="inicio-publico__preguntas">
+                    <details class="inicio-publico__pregunta" open>
+                        <summary class="inicio-publico__pregunta-titulo">¿Puedo reservar si no soy socio de ningún club?</summary>
+                        <p class="inicio-publico__respuesta">Sí. Los clubes marcados con “Reserva invitado” aceptan reservas puntuales. Solo necesitarás tus datos de contacto y un método de pago.</p>
+                    </details>
+                    <details class="inicio-publico__pregunta" open>
+                        <summary class="inicio-publico__pregunta-titulo">¿Qué ocurre si tengo que cancelar?</summary>
+                        <p class="inicio-publico__respuesta">Cada club define su política. Verás el plazo de cancelación gratuita y posibles cargos antes de confirmar la reserva.</p>
+                    </details>
+                    <details class="inicio-publico__pregunta">
+                        <summary class="inicio-publico__pregunta-titulo">¿El precio es por pista o por jugador?</summary>
+                        <p class="inicio-publico__respuesta">Mostramos siempre el precio por jugador y el total de la pista antes de pagar.</p>
+                    </details>
+                    <details class="inicio-publico__pregunta">
+                        <summary class="inicio-publico__pregunta-titulo">¿Necesito crear una cuenta?</summary>
+                        <p class="inicio-publico__respuesta">No. Crear una cuenta es opcional y solo sirve para guardar tus datos y consultar tus reservas.</p>
+                    </details>
+                    <details class="inicio-publico__pregunta">
+                        <summary class="inicio-publico__pregunta-titulo">¿Puedo alquilar pala y pelotas?</summary>
+                        <p class="inicio-publico__respuesta">Depende del club. Los extras disponibles aparecen en el resumen de la reserva.</p>
+                    </details>
+                    <details class="inicio-publico__pregunta">
+                        <summary class="inicio-publico__pregunta-titulo">¿Hay clubes fuera de Sevilla?</summary>
+                        <p class="inicio-publico__respuesta">Por ahora el servicio está disponible solo en la provincia de Sevilla.</p>
+                    </details>
+                </div>
 
-            <!-- Lista desplegable de dudas -->
-            <section class="listaPreguntas">
+                <div class="inicio-publico__llamadas">
+                    <article class="inicio-publico__llamada inicio-publico__llamada--lima">
+                        <span class="icono-caja icono-caja--blanco"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></span>
+                        <div class="inicio-publico__llamada-texto">
+                            <span class="inicio-publico__llamada-antetitulo">Para jugadores</span>
+                            <h2 class="inicio-publico__llamada-titulo">¿Listo para jugar?</h2>
+                            <p>Busca una pista disponible en Sevilla y reserva como invitado.</p>
+                        </div>
+                        <a href="#buscar" class="boton inicio-publico__boton-claro">Buscar pista</a>
+                    </article>
 
-                <details class="pregunta">
-                    <summary class="tituloPregunta">
-                        ¿Es necesario estar registrado para reservar pista?
-                    </summary>
-                    <p class="respuesta">
-                        Sí, es necesario crear una cuenta gratuita en la plataforma para garantizar la trazabilidad de las reservas e identificarse a la hora de pagar.
-                    </p>
-                </details>
-
-                <details class="pregunta">
-                    <summary class="tituloPregunta">
-                        ¿Cuánto tiempo de antelación tiene un socio frente a un no socio?
-                    </summary>
-                    <p class="respuesta">
-                        Los socios del club pueden reservar con hasta 7 días de antelación garantizando su prioridad. Los no socios sólo disponen de 48 horas.
-                    </p>
-                </details>
-
-                <details class="pregunta">
-                    <summary class="tituloPregunta">
-                        ¿El monedero virtual es recargable desde mi Área de Socio?
-                    </summary>
-                    <p class="respuesta">
-                        Sí, puedes recargarlo usando tarjeta de crédito, Apple Pay o Google Pay con pasarela 100% segura (Stripe).
-                    </p>
-                </details>
-
-                <details class="pregunta">
-                    <summary class="tituloPregunta">
-                        ¿Cuentan con soporte técnico para incidencias del club?
-                    </summary>
-                    <p class="respuesta">
-                        Por supuesto, nuestra plataforma SaaS cuenta con soporte prioritario para administradores las 24 horas del día.
-                    </p>
-                </details>
-
-            </section>
-        </section>
-
-        <!-- Sección 7: Accesos directos para Jugadores y Gestores -->
-        <section class="seccionAccesos">
-            
-            <!-- Opción para Jugadores -->
-            <article class="accesoJugador">
-                <span class="etiquetaAcceso">Para Jugadores y Socios</span>
-                <h3 class="tituloAcceso">¿Eres un jugador?</h3>
-                <p class="descripcionAcceso">
-                    Date de alta, recarga tu monedero virtual, únete al sistema de escuela para perfeccionar tu juego y reserva pista hoy mismo.
-                </p>
-
-                <button class="botonSocio">
-                    <i class="ph ph-user" class="iconoBoton"></i>
-                    Alta como Socio
-                </button>
-            </article>
-
-            <!-- Opción para Gestores -->
-            <article class="accesoGestor">
-                <span class="etiquetaAcceso">Para Gestores de Clubes</span>
-                <h3 class="tituloAcceso">¿Gestionas un club de pádel?</h3>
-                <p class="descripcionAcceso">
-                    Digitaliza tu centro con nuestra tecnología marca blanca en la nube. Gestiona reservas, contabilidad, apertura de puertas y socios en un clic.
-                </p>
-
-                <button class="botonClub">
-                    <i class="ph ph-desktop" class="iconoBoton"></i>
-                    Solicitud para Clubes
-                </button>
-            </article>
-
+                    <article class="inicio-publico__llamada inicio-publico__llamada--verde">
+                        <span class="icono-caja icono-caja--verde"><i class="ph ph-squares-four" aria-hidden="true"></i></span>
+                        <div class="inicio-publico__llamada-texto">
+                            <span class="inicio-publico__llamada-antetitulo">Para clubes</span>
+                            <h2 class="inicio-publico__llamada-titulo">Descubre el modo Manager</h2>
+                            <p>Unifica reservas, clases, socios, pagos y servicios en una sola plataforma.</p>
+                        </div>
+                        <a href="#para-clubes" class="boton inicio-publico__boton-claro">Solicitar demo</a>
+                    </article>
+                </div>
+            </div>
         </section>
 
     </main>
 
-    <!-- Pie de página general -->
-    <footer class="piePagina">
-        <section class="contenidoPie">
-            
-            <section class="columnasPie">
-                
-                <!-- Columna 1: Información general de la plataforma -->
-                <section class="informacionPagina">
-                    <header class="cabeceraLogo">
-                        <figure class="logoPie">P</figure>
-                        PadelSlot
-                    </header>
+    <!-- ============ PIE ============ -->
+    <footer class="pie">
+        <div class="pie__contenido">
+            <div class="inicio-publico__pie-marca">
+                <strong class="inicio-publico__pie-titulo">PádelSlot</strong>
+                <p>Reserva pistas como invitado o gestiona tu club desde una sola app web.</p>
+                <p class="inicio-publico__pie-nota">Servicio disponible actualmente en la provincia de Sevilla.</p>
+            </div>
 
-                    <p class="descripcionPie">
-                        Plataforma tecnológica marca blanca SaaS para clubes y centros deportivos de pádel. Permite a cada club personalizar y activar sus propios módulos de pistas, escuela, miembros y servicios.
-                    </p>
-                </section>
-                
-                <!-- Columna 2: Enlaces del portal del socio -->
-                <nav class="enlacesSocio" aria-label="Navegación del Socio">
-                    <h2 class="tituloEnlaces">Portal del Socio</h2>
-
-                    <ul class="listaEnlaces">
-                        <li class="enlacePie">
-                            <a href="#" class="enlace">Inicio Público</a>
-                        </li>
-                        <li class="enlacePie">
-                            <a href="#" class="enlace">Reservar pista</a>
-                        </li>
-                        <li class="enlacePie">
-                            <a href="#" class="enlace">Escuela y clases</a>
-                        </li>
-                        <li class="enlacePie">
-                            <a href="#" class="enlace">Membresía y cuotas</a>
-                        </li>
-                        <li class="enlacePie">
-                            <a href="#" class="enlace">Servicios del club</a>
-                        </li>
+            <nav class="inicio-publico__pie-columnas" aria-label="Enlaces del pie">
+                <div>
+                    <h2 class="inicio-publico__pie-titulo">Jugadores</h2>
+                    <ul class="inicio-publico__pie-lista">
+                        <li><a href="#buscar">Buscar pista</a></li>
+                        <li><a href="#como-funciona">Cómo reservar</a></li>
+                        <li><a href="#">Mis reservas</a></li>
                     </ul>
-                </nav>
-                
-                <!-- Columna 3: Enlaces de atención y soporte -->
-                <nav class="enlacesSoporte" aria-label="Atención y Soporte">
-                    <h2 class="tituloEnlaces">Atención y Centro</h2>
-
-                    <ul class="listaEnlaces">
-                        <li class="enlacePie">
-                            <a href="#" class="enlace">Preguntas Frecuentes (FAQ)</a>
-                        </li>
-                        <li class="enlacePie">
-                            <a href="#" class="enlace">Contacto de recepción</a>
-                        </li>
-                        <li class="enlacePie">
-                            <a href="#" class="enlace">Reglamento interno de pistas</a>
-                        </li>
-                        <li class="enlacePie">
-                            <a href="#" class="enlace">Política de cancelaciones</a>
-                        </li>
+                </div>
+                <div>
+                    <h2 class="inicio-publico__pie-titulo">Clubes</h2>
+                    <ul class="inicio-publico__pie-lista">
+                        <li><a href="#para-clubes">Modo Manager</a></li>
+                        <li><a href="#">Solicitar demo</a></li>
+                        <li><a href="landingPage.html">Acceso clubes</a></li>
                     </ul>
-                </nav>
-                
-                <!-- Columna 4: Datos de contacto comercial -->
-                <address class="contactoComercial">
-                    <h2 class="tituloContacto">Contacto B2B</h2>
+                </div>
+                <div>
+                    <h2 class="inicio-publico__pie-titulo">Información</h2>
+                    <ul class="inicio-publico__pie-lista">
+                        <li><a href="#">Ayuda</a></li>
+                        <li><a href="#">Condiciones</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </nav>
 
-                    <p class="datoContacto">
-                        <i class="ph-fill ph-envelope-simple" class="iconoContacto"></i>
-                        comercial@padelslot.com
-                    </p>
-
-                    <p class="datoContacto">
-                        Av. de la Innovación, Edificio Beta, Sevilla
-                    </p>
-
-                    <p class="datoContacto">
-                        Soporte Gestores: Lun - Vie | 09:00 - 18:00
-                    </p>
-
-                    <span class="version">SaaS Ver. 2.4 Activa</span>
-                </address>
-
-            </section>
-
-            <!-- Enlaces legales y derechos de autor -->
-            <section class="pieLegal">
-                <p class="copyright">
-                    &copy; 2026 PadelSlot SaaS. Diseñado para clubes de pádel. Todos los derechos reservados.
-                </p>
-
-                <nav class="enlacesLegales" aria-label="Información legal y soporte">
-                    <a href="#" class="enlaceLegal">Aviso Legal</a>
-                    <a href="#" class="enlaceLegal">Privacidad</a>
-                    <a href="#" class="enlaceLegal">Términos del Servicio</a>
-                    <a href="#" class="enlaceLegal">Soporte</a>
-                </nav>
-            </section>
-
-        </section>
+            <p class="pie__legal inicio-publico__pie-legal">© 2026 PadelSlot · Ayuda para reservas: soporte@padelslot.es</p>
+        </div>
     </footer>
 
 </body>
