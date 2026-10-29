@@ -1,0 +1,316 @@
+// =====================================================================
+// NUEVO: página "Escuela y clases" del socio (clases.html)
+// Se carga desde _inicio-socio.scss con @use 'clases'
+// =====================================================================
+@use '../colores';
+@use '../espaciados';
+@use '../fuentes';
+@use '../mixins';
+@use 'comun';
+
+.clases {
+    @include mixins.contenedor;
+    padding-bottom: espaciados.$espacio-l;
+
+    &__antetitulo {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: fuentes.$peso-negrita;
+        text-transform: uppercase;
+        color: colores.$color-primario;
+    }
+
+    &__nota {
+        font-size: 0.75rem;
+        color: colores.$color-texto;
+    }
+
+    // ---------- Resumen ----------
+    &__resumen {
+        display: grid;
+        gap: espaciados.$espacio-m;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: 1.4fr 1fr 1fr;
+        }
+    }
+
+    &__perfil,
+    &__dato {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-s;
+        padding: espaciados.$espacio-l;
+    }
+
+    &__perfil-cabecera,
+    &__dato-fila {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+    }
+
+    &__perfil-datos {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.8rem;
+
+        strong {
+            font-size: fuentes.$tamano-base;
+            color: colores.$color-titulo;
+        }
+    }
+
+    &__nivel {
+        font-size: fuentes.$tamano-pequeno;
+
+        strong {
+            color: colores.$color-primario;
+        }
+    }
+
+    &__dato--destacado {
+        border-color: colores.$color-primario;
+        background-color: colores.$color-primario;
+        color: rgba(colores.$color-secundario, 0.8);
+
+        .clases__antetitulo {
+            color: colores.$color-terciario;
+        }
+
+        .clases__perfil-datos strong {
+            color: colores.$color-secundario;
+        }
+    }
+
+    // ---------- Grupos ----------
+    &__seccion {
+        padding-top: espaciados.$espacio-xl;
+    }
+
+    &__filtros {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+        margin-bottom: espaciados.$espacio-l;
+    }
+
+    &__buscador {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        flex: 1 1 16rem;
+        padding: espaciados.$espacio-xs espaciados.$espacio-s;
+        border: 1px solid rgba(colores.$color-titulo, 0.15);
+        border-radius: espaciados.$radio-s;
+        background-color: colores.$color-secundario;
+    }
+
+    &__buscador-campo {
+        flex: 1;
+        min-width: 0;
+        background-color: transparent;
+        font-size: fuentes.$tamano-pequeno;
+    }
+
+    &__grupos {
+        display: grid;
+        gap: espaciados.$espacio-m;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    &__grupo {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-s;
+        padding: espaciados.$espacio-l espaciados.$espacio-m;
+
+        .tarjeta__cabecera {
+            flex-wrap: wrap;
+            gap: espaciados.$espacio-xs;
+            margin-bottom: 0;
+        }
+
+        .tarjeta__cuerpo {
+            flex: 1;
+            font-size: fuentes.$tamano-pequeno;
+        }
+
+        &--completo {
+            background-color: comun.$fondo-suave;
+        }
+    }
+
+    &__demanda {
+        align-self: flex-start;
+    }
+
+    &__etiqueta-neutra {
+        border: 1px solid comun.$borde;
+        background-color: colores.$color-secundario;
+        color: colores.$color-texto;
+    }
+
+    &__detalles {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding-block: espaciados.$espacio-s;
+        border-top: 1px solid comun.$borde;
+        list-style: none;
+        font-size: 0.8rem;
+        color: colores.$color-titulo;
+
+        i {
+            color: colores.$color-primario;
+        }
+    }
+
+    // ---------- Clases particulares ----------
+    &__particular {
+        display: grid;
+        gap: espaciados.$espacio-m;
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: 1fr 1.3fr;
+            align-items: start;
+        }
+    }
+
+    &__paso {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-m;
+        padding: espaciados.$espacio-l;
+
+        &:hover {
+            transform: none;
+        }
+    }
+
+    &__paso-titulo {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        float: left;
+        width: 100%;
+        font-family: fuentes.$fuente-titulo;
+        font-size: fuentes.$tamano-h4;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-titulo;
+    }
+
+    &__monitores {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-xs;
+    }
+
+    &__monitor,
+    &__hueco {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+        padding: espaciados.$espacio-s;
+        border: 1px solid rgba(colores.$color-titulo, 0.12);
+        border-radius: espaciados.$radio-s;
+        cursor: pointer;
+        transition: border-color espaciados.$transicion;
+
+        &:hover {
+            border-color: colores.$color-primario;
+        }
+
+        &:has(:checked) {
+            border: 2px solid colores.$color-primario;
+            background-color: rgba(colores.$color-primario, 0.06);
+        }
+
+        &:has(:focus-visible) {
+            outline: 2px solid colores.$color-terciario;
+        }
+    }
+
+    &__huecos {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+        gap: espaciados.$espacio-xs;
+    }
+
+    &__hueco {
+        flex-direction: column;
+        gap: 0;
+        font-size: fuentes.$tamano-pequeno;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-titulo;
+
+        span {
+            font-size: 0.75rem;
+            font-weight: fuentes.$peso-normal;
+            color: colores.$color-texto;
+        }
+
+        &--ocupado {
+            background-color: rgba(colores.$color-titulo, 0.05);
+            color: colores.$color-texto;
+            cursor: not-allowed;
+
+            &:hover {
+                border-color: rgba(colores.$color-titulo, 0.12);
+            }
+        }
+    }
+
+    &__seleccion {
+        padding: espaciados.$espacio-m;
+        border-radius: espaciados.$radio-s;
+        background-color: comun.$fondo-suave;
+    }
+
+    // ---------- Garantías ----------
+    &__garantias {
+        display: grid;
+        gap: espaciados.$espacio-l;
+        margin-top: espaciados.$espacio-xl;
+        padding: espaciados.$espacio-l;
+        border-radius: espaciados.$radio-m;
+        background-color: colores.$color-primario;
+        color: rgba(colores.$color-secundario, 0.8);
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+        }
+    }
+
+    &__garantias-titulo {
+        font-size: fuentes.$tamano-h3;
+        color: colores.$color-secundario;
+    }
+
+    &__garantias-lista {
+        display: grid;
+        gap: espaciados.$espacio-m;
+        list-style: none;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__garantia {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+        font-size: fuentes.$tamano-pequeno;
+        color: colores.$color-secundario;
+    }
+}

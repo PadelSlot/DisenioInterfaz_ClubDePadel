@@ -1,5 +1,13 @@
 @use '../mixins';
 @use '../espaciados';
+// AÑADIDO: módulos que usan los estilos nuevos del final del archivo
+@use '../colores';
+@use '../fuentes';
+@use 'comun';
+// AÑADIDO: estilos propios de algunas páginas de administración
+@use 'cuadrante-admin';
+@use 'programacion-admin';
+@use 'servicios-admin';
 
 .panel-admin {
     display: flex;
@@ -12,5 +20,1044 @@
     &__contenido {
         flex: 1;
         padding: espaciados.$espacio-l;
+    }
+}
+
+// =====================================================================
+// AÑADIDO: estilos según el mockup "Inicio administrador"
+// (el bloque de arriba es vuestro código original, sin cambios)
+// =====================================================================
+.panel-admin {
+    min-height: 100vh;
+
+    // ---------- Barra lateral (se combina con .barra-lateral) ----------
+    &__lateral {
+        display: none;
+        flex-direction: column;
+        gap: espaciados.$espacio-l;
+
+        @include mixins.desde(escritorio) {
+            display: flex;
+            flex-shrink: 0;
+        }
+    }
+
+    &__marca {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        font-family: fuentes.$fuente-titulo;
+        font-size: fuentes.$tamano-h3;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-primario;
+
+        &--movil {
+            @include mixins.desde(escritorio) {
+                display: none;
+            }
+        }
+    }
+
+    &__club {
+        display: flex;
+        flex-direction: column;
+        padding: espaciados.$espacio-s;
+        border: 1px solid comun.$borde;
+        border-radius: espaciados.$radio-s;
+        background-color: comun.$fondo-suave;
+        font-size: 0.75rem;
+    }
+
+    &__club-nombre {
+        font-size: fuentes.$tamano-pequeno;
+        color: colores.$color-titulo;
+    }
+
+    &__antetitulo {
+        font-size: 0.75rem;
+        font-weight: fuentes.$peso-negrita;
+        text-transform: uppercase;
+        color: colores.$color-primario;
+    }
+
+    &__promo {
+        margin-top: auto;
+        padding: espaciados.$espacio-m;
+        border-radius: espaciados.$radio-m;
+        background-color: colores.$color-primario;
+        font-size: 0.8rem;
+        color: rgba(colores.$color-secundario, 0.8);
+    }
+
+    &__promo-icono {
+        font-size: 1.4rem;
+        color: colores.$color-terciario;
+    }
+
+    &__promo-titulo {
+        display: block;
+        margin-block: espaciados.$espacio-xs;
+        font-size: fuentes.$tamano-base;
+        color: colores.$color-secundario;
+    }
+
+    // ---------- Barra superior ----------
+    &__contenido {
+        min-width: 0;
+    }
+
+    &__barra-superior {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: espaciados.$espacio-m;
+        margin: (espaciados.$espacio-l * -1) (espaciados.$espacio-l * -1) espaciados.$espacio-l;
+        padding: espaciados.$espacio-s espaciados.$espacio-l;
+        border-bottom: 1px solid comun.$borde;
+        background-color: colores.$color-secundario;
+        color: colores.$color-titulo;
+    }
+
+    &__buscador {
+        display: none;
+        flex: 0 1 22rem;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        padding: espaciados.$espacio-xs espaciados.$espacio-s;
+        border: 1px solid rgba(colores.$color-titulo, 0.12);
+        border-radius: espaciados.$radio-s;
+        background-color: comun.$fondo-suave;
+        color: colores.$color-texto;
+
+        @include mixins.desde(tablet) {
+            display: flex;
+        }
+    }
+
+    &__buscador-campo {
+        flex: 1;
+        min-width: 0;
+        background-color: transparent;
+        font-size: fuentes.$tamano-pequeno;
+    }
+
+    &__atajo {
+        font-family: fuentes.$fuente-texto;
+        font-size: 0.7rem;
+    }
+
+    &__barra-acciones {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+    }
+
+    // ---------- Saludo ----------
+    &__principal {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-l;
+        max-width: espaciados.$ancho-maximo;
+        margin-inline: auto;
+    }
+
+    &__saludo {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-m;
+
+        @include mixins.desde(escritorio) {
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+    }
+
+    &__titulo {
+        margin-block: espaciados.$espacio-xs;
+        font-size: fuentes.$tamano-h2;
+    }
+
+    &__acciones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: espaciados.$espacio-xs;
+    }
+
+    // ---------- Indicadores ----------
+    &__kpis {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: espaciados.$espacio-s;
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: repeat(4, 1fr);
+            gap: espaciados.$espacio-m;
+        }
+    }
+
+    &__kpi {
+        padding: espaciados.$espacio-m;
+
+        &--destacado {
+            border-color: colores.$color-primario;
+            background-color: colores.$color-primario;
+
+            .panel-admin__kpi-titulo,
+            .panel-admin__kpi-valor {
+                color: colores.$color-secundario;
+            }
+
+            .panel-admin__kpi-icono,
+            .panel-admin__kpi-detalle {
+                color: colores.$color-terciario;
+            }
+        }
+    }
+
+    &__kpi-titulo {
+        font-family: fuentes.$fuente-texto;
+        font-size: fuentes.$tamano-pequeno;
+        font-weight: fuentes.$peso-medio;
+        color: colores.$color-titulo;
+    }
+
+    &__kpi-icono {
+        font-size: 1.25rem;
+        color: colores.$color-primario;
+    }
+
+    &__kpi-valor {
+        font-family: fuentes.$fuente-titulo;
+        font-size: fuentes.$tamano-h2;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-titulo;
+    }
+
+    &__kpi-detalle {
+        font-size: 0.75rem;
+        color: colores.$color-primario;
+    }
+
+    // ---------- Filas de bloques ----------
+    &__fila {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: espaciados.$espacio-l;
+        align-items: start;
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+        }
+    }
+
+    &__columna {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-l;
+    }
+
+    &__bloque {
+        padding: espaciados.$espacio-m espaciados.$espacio-l;
+
+        // Dentro del panel las tarjetas no se levantan al pasar el ratón
+        &:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .etiqueta {
+            white-space: nowrap;
+        }
+    }
+
+    &__enlace {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: fuentes.$tamano-pequeno;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-primario;
+
+        &--derecha {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: espaciados.$espacio-s;
+        }
+    }
+
+    &__tabla-scroll {
+        overflow-x: auto;
+    }
+
+    // Leyenda + cuadrante de ocupación
+    &__leyenda {
+        display: flex;
+        gap: espaciados.$espacio-m;
+        margin-bottom: espaciados.$espacio-s;
+        list-style: none;
+        font-size: 0.75rem;
+    }
+
+    &__leyenda-item::before {
+        content: '';
+        display: inline-block;
+        width: 0.6rem;
+        height: 0.6rem;
+        margin-right: 0.3rem;
+        border: 1px solid colores.$color-primario;
+        border-radius: 50%;
+    }
+
+    &__leyenda-item--reservada::before {
+        background-color: colores.$color-primario;
+    }
+
+    &__leyenda-item--clase::before {
+        border-radius: 2px;
+        background-color: colores.$color-terciario;
+    }
+
+    &__cuadrante {
+        width: 100%;
+        min-width: 32rem;
+        table-layout: fixed;
+        border-spacing: espaciados.$espacio-xs;
+        font-size: 0.75rem;
+
+        th {
+            width: 11rem;
+            padding-right: espaciados.$espacio-s;
+            text-align: left;
+            white-space: nowrap;
+            font-size: fuentes.$tamano-pequeno;
+            color: colores.$color-titulo;
+        }
+    }
+
+    &__franja {
+        display: block;
+        padding-block: espaciados.$espacio-xs;
+        border-radius: espaciados.$radio-s;
+        text-align: center;
+        font-weight: fuentes.$peso-medio;
+
+        &--reservada {
+            background-color: colores.$color-primario;
+            color: colores.$color-secundario;
+        }
+
+        &--disponible {
+            background-color: rgba(colores.$color-primario, 0.08);
+            color: colores.$color-titulo;
+        }
+
+        &--clase {
+            background-color: colores.$color-terciario;
+            color: colores.$color-titulo;
+        }
+    }
+
+    // Listas de agenda / alertas / renovaciones
+    &__lista {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-xs;
+        list-style: none;
+    }
+
+    &__evento {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-m;
+        padding: espaciados.$espacio-s;
+        border-radius: espaciados.$radio-s;
+        background-color: comun.$fondo-suave;
+
+        &--actual {
+            background-color: rgba(colores.$color-primario, 0.1);
+        }
+    }
+
+    &__evento-hora {
+        min-width: 2.75rem;
+        font-family: fuentes.$fuente-titulo;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-primario;
+    }
+
+    &__evento-texto {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.75rem;
+
+        strong {
+            font-size: fuentes.$tamano-pequeno;
+            color: colores.$color-titulo;
+        }
+    }
+
+    &__alerta-icono {
+        min-width: 2.75rem;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-primario;
+    }
+
+    &__etiqueta-neutra {
+        background-color: colores.$color-secundario;
+        border: 1px solid comun.$borde;
+        color: colores.$color-texto;
+    }
+
+    // Tabla de reservas recientes
+    &__tabla {
+        width: 100%;
+        min-width: 32rem;
+        border-collapse: collapse;
+        font-size: fuentes.$tamano-pequeno;
+
+        td {
+            padding-block: espaciados.$espacio-m;
+            border-bottom: 1px solid comun.$borde;
+            color: colores.$color-titulo;
+        }
+
+        td:last-child {
+            text-align: right;
+        }
+    }
+
+    &__celda-tenue {
+        color: colores.$color-texto;
+    }
+
+    &__celda-nombre {
+        font-weight: fuentes.$peso-negrita;
+    }
+
+    // ---------- Banner ----------
+    &__banner {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-m;
+        padding: espaciados.$espacio-l;
+        border-radius: espaciados.$radio-m;
+        background-color: colores.$color-primario;
+        color: rgba(colores.$color-secundario, 0.85);
+
+        @include mixins.desde(escritorio) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .boton {
+            flex-shrink: 0;
+        }
+    }
+
+    &__banner-antetitulo {
+        font-size: 0.75rem;
+        font-weight: fuentes.$peso-negrita;
+        text-transform: uppercase;
+        color: colores.$color-terciario;
+    }
+
+    &__banner-titulo {
+        margin-block: espaciados.$espacio-xs;
+        font-size: fuentes.$tamano-h3;
+        color: colores.$color-secundario;
+
+        @include mixins.desde(tablet) {
+            font-size: 1.5rem;
+        }
+    }
+
+    // ---------- Accesos directos ----------
+    &__accesos {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+        gap: espaciados.$espacio-s;
+    }
+
+    &__acceso {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+        color: colores.$color-texto;
+    }
+
+    &__acceso-texto {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.75rem;
+
+        strong {
+            font-size: fuentes.$tamano-pequeno;
+            color: colores.$color-titulo;
+        }
+    }
+}
+
+// =====================================================================
+// AÑADIDO: piezas comunes de las páginas internas de administración
+// (cuadrante, cobros, socios, incidencias, configuración, formularios...)
+// =====================================================================
+.panel-admin {
+
+    // Contenido principal + columna lateral fija a la derecha
+    &__dos-columnas {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: espaciados.$espacio-l;
+        align-items: start;
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: minmax(0, 1fr) 22rem;
+        }
+    }
+
+    &__pila {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-l;
+        min-width: 0;
+    }
+
+    &__lateral-fijo {
+        @include mixins.desde(escritorio) {
+            position: sticky;
+            top: espaciados.$espacio-l;
+        }
+    }
+
+    // Cabecera de una sección (número + título + subtítulo + extra)
+    &__seccion-cabecera {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: espaciados.$espacio-s;
+        margin-bottom: espaciados.$espacio-m;
+    }
+
+    &__seccion-titulo {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        font-size: fuentes.$tamano-h4;
+    }
+
+    &__subtitulo {
+        font-size: 0.8rem;
+        color: colores.$color-texto;
+    }
+
+    &__texto-pequeno {
+        font-size: 0.75rem;
+        color: colores.$color-texto;
+    }
+
+    // Formularios a dos columnas
+    &__campos {
+        display: grid;
+        gap: espaciados.$espacio-m;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__campo-ancho {
+        grid-column: 1 / -1;
+    }
+
+    &__campo-con-sufijo {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        font-size: fuentes.$tamano-pequeno;
+
+        .formulario__campo {
+            flex: 1;
+            min-width: 0;
+        }
+    }
+
+    // Pestañas (enlaces)
+    &__pestanas {
+        display: flex;
+        gap: espaciados.$espacio-l;
+        overflow-x: auto;
+        border-bottom: 1px solid comun.$borde;
+    }
+
+    &__pestana {
+        display: inline-flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        padding-block: espaciados.$espacio-s;
+        border-bottom: 2px solid transparent;
+        white-space: nowrap;
+        font-size: fuentes.$tamano-pequeno;
+        font-weight: fuentes.$peso-medio;
+
+        &:hover {
+            color: colores.$color-primario;
+        }
+
+        &--activa {
+            border-bottom-color: colores.$color-primario;
+            color: colores.$color-primario;
+        }
+    }
+
+    // Barra de filtros con buscador
+    &__filtros {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+    }
+
+    &__busqueda {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        flex: 1 1 14rem;
+        padding: espaciados.$espacio-xs espaciados.$espacio-s;
+        border: 1px solid rgba(colores.$color-titulo, 0.15);
+        border-radius: espaciados.$radio-s;
+        background-color: colores.$color-secundario;
+
+        input {
+            flex: 1;
+            min-width: 0;
+            background-color: transparent;
+            font-size: fuentes.$tamano-pequeno;
+        }
+    }
+
+    // Tabla con cabecera visible
+    &__tabla-cabecera th {
+        padding-bottom: espaciados.$espacio-s;
+        border-bottom: 1px solid comun.$borde;
+        text-align: left;
+        white-space: nowrap;
+        font-size: 0.7rem;
+        font-weight: fuentes.$peso-negrita;
+        text-transform: uppercase;
+        color: colores.$color-texto;
+    }
+
+    &__persona {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+
+        p {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.3;
+            font-size: 0.75rem;
+            color: colores.$color-texto;
+        }
+
+        strong {
+            font-size: fuentes.$tamano-pequeno;
+            color: colores.$color-titulo;
+        }
+    }
+
+    &__paginacion {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: espaciados.$espacio-s;
+        margin-top: espaciados.$espacio-m;
+        font-size: 0.8rem;
+    }
+
+    &__paginas {
+        display: flex;
+        gap: 0.25rem;
+    }
+
+    &__pagina {
+        min-width: 2rem;
+        padding: 0.25rem espaciados.$espacio-xs;
+        border: 1px solid comun.$borde;
+        border-radius: espaciados.$radio-s;
+        text-align: center;
+
+        &--actual {
+            border-color: colores.$color-primario;
+            background-color: colores.$color-primario;
+            color: colores.$color-secundario;
+        }
+    }
+
+    // Etiqueta de alerta (fondo oscuro)
+    &__etiqueta-alerta {
+        background-color: colores.$color-titulo;
+        color: colores.$color-secundario;
+    }
+
+    // Fila con texto a la izquierda y control a la derecha (ajustes, módulos...)
+    &__ajuste {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: espaciados.$espacio-m;
+        padding-block: espaciados.$espacio-s;
+        border-bottom: 1px solid comun.$borde;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__ajuste-texto {
+        display: flex;
+        align-items: flex-start;
+        gap: espaciados.$espacio-s;
+        font-size: 0.8rem;
+
+        p,
+        span {
+            display: flex;
+            flex-direction: column;
+        }
+
+        strong {
+            font-size: fuentes.$tamano-pequeno;
+            color: colores.$color-titulo;
+        }
+    }
+
+    // Rejilla de tarjetas pequeñas (reglas, módulos, pistas...)
+    &__rejilla {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+        gap: espaciados.$espacio-s;
+    }
+
+    &__mini {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-xs;
+        padding: espaciados.$espacio-m;
+        border: 1px solid comun.$borde;
+        border-radius: espaciados.$radio-s;
+        background-color: colores.$color-secundario;
+        font-size: 0.8rem;
+
+        strong {
+            color: colores.$color-titulo;
+        }
+
+        &--suave {
+            background-color: comun.$fondo-suave;
+        }
+    }
+
+    &__mini-cabecera {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: espaciados.$espacio-xs;
+    }
+
+    &__valor {
+        font-family: fuentes.$fuente-titulo;
+        font-size: fuentes.$tamano-h3;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-titulo;
+    }
+
+    // Tarjetas seleccionables (pistas, métodos de pago...) con radio/checkbox
+    &__seleccionable {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+        padding: espaciados.$espacio-s espaciados.$espacio-m;
+        border: 1px solid rgba(colores.$color-titulo, 0.12);
+        border-radius: espaciados.$radio-s;
+        background-color: colores.$color-secundario;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: border-color espaciados.$transicion;
+
+        &:hover {
+            border-color: colores.$color-primario;
+        }
+
+        &:has(:checked) {
+            border: 2px solid colores.$color-primario;
+            background-color: rgba(colores.$color-primario, 0.06);
+        }
+
+        &:has(:disabled) {
+            background-color: comun.$fondo-suave;
+            cursor: not-allowed;
+        }
+
+        p {
+            flex: 1 1 7rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        strong {
+            font-size: fuentes.$tamano-pequeno;
+            color: colores.$color-titulo;
+        }
+
+        .etiqueta {
+            white-space: nowrap;
+        }
+    }
+
+    &__control {
+        flex-shrink: 0;
+        width: 1.1rem;
+        height: 1.1rem;
+        accent-color: colores.$color-primario;
+    }
+
+    // Columna de botones a lo ancho
+    &__botones {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-xs;
+    }
+
+    &__enlace-centrado {
+        text-align: center;
+        font-size: fuentes.$tamano-pequeno;
+        color: colores.$color-texto;
+
+        &:hover {
+            color: colores.$color-primario;
+        }
+    }
+
+    // Mensaje de confirmación (role="status")
+    &__confirmacion {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+        padding: espaciados.$espacio-s espaciados.$espacio-m;
+        border-radius: espaciados.$radio-s;
+        background-color: rgba(colores.$color-primario, 0.1);
+        font-size: fuentes.$tamano-pequeno;
+        color: colores.$color-primario;
+
+        strong {
+            color: colores.$color-titulo;
+        }
+    }
+
+    // Área de texto grande
+    &__area {
+        min-height: 6rem;
+        resize: vertical;
+    }
+}
+
+// Ajustes de las piezas anteriores dentro de formularios
+.panel-admin {
+
+    // Bloque cuyos hijos van separados con el mismo hueco
+    &__bloque--apilado {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-m;
+
+        .tarjeta__cabecera,
+        .panel-admin__seccion-cabecera {
+            margin-bottom: 0;
+        }
+    }
+
+    &__rejilla,
+    &__botones {
+        border: none;
+    }
+
+    &__mini .etiqueta {
+        align-self: flex-start;
+    }
+}
+
+// Estados extra del mini cuadrante (bloqueo de pista)
+.panel-admin__franja {
+
+    &--bloqueada {
+        background-image: repeating-linear-gradient(45deg, rgba(colores.$color-secundario, 0.15) 0 5px, transparent 5px 10px);
+        background-color: colores.$color-titulo;
+        color: colores.$color-secundario;
+    }
+
+    &--reubicada {
+        border: 1px dashed colores.$color-primario;
+        background-color: colores.$color-secundario;
+        color: colores.$color-primario;
+    }
+}
+
+// Cuadrante pequeño (vista previa en la columna lateral)
+.panel-admin__cuadrante--mini {
+    min-width: 0;
+    table-layout: auto;
+    border-spacing: 0.2rem;
+    font-size: 0.65rem;
+
+    th {
+        width: auto;
+        padding-right: 0.25rem;
+        font-size: 0.7rem;
+    }
+
+    thead th {
+        text-align: center;
+    }
+
+    .panel-admin__franja {
+        padding-block: 0.3rem;
+    }
+}
+
+// Fila de 5 indicadores
+.panel-admin__kpis--cinco {
+    @include mixins.desde(escritorio) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+// Tablas con muchas columnas: ancho mínimo y aire entre columnas
+.panel-admin__tabla-cabecera {
+    min-width: 46rem;
+
+    th,
+    td {
+        padding-right: espaciados.$espacio-s;
+    }
+
+    td:last-child {
+        padding-right: 0;
+    }
+}
+
+// Fila destacada en una tabla (socio seleccionado...)
+.panel-admin__tabla-fila--seleccionada td {
+    background-color: rgba(colores.$color-primario, 0.06);
+}
+
+// Para que los textos .solo-lector de dentro de la tabla no amplíen la página
+.panel-admin__tabla-scroll {
+    position: relative;
+}
+
+// Tarjeta de incidencia (incidenciasAdmin.html)
+.panel-admin__incidencia {
+    display: flex;
+    flex-direction: column;
+    gap: espaciados.$espacio-s;
+    padding: espaciados.$espacio-m espaciados.$espacio-l;
+    border-left: 4px solid rgba(colores.$color-titulo, 0.15);
+
+    &:hover {
+        transform: none;
+    }
+
+    &--critica {
+        border-left-color: colores.$color-titulo;
+    }
+
+    &--media {
+        border-left-color: colores.$color-terciario;
+    }
+
+    &--baja {
+        border-left-color: colores.$color-primario;
+    }
+
+    .tarjeta__cabecera {
+        flex-wrap: wrap;
+        gap: espaciados.$espacio-xs;
+        margin-bottom: 0;
+    }
+
+    .tarjeta__cuerpo {
+        font-size: fuentes.$tamano-pequeno;
+    }
+}
+
+.panel-admin__incidencia-etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: espaciados.$espacio-xs;
+    font-size: 0.75rem;
+}
+
+.panel-admin__incidencia-datos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: espaciados.$espacio-xs espaciados.$espacio-l;
+    list-style: none;
+    font-size: 0.75rem;
+
+    i {
+        color: colores.$color-primario;
+    }
+}
+
+// Muestras de color de marca (configAdmin.html)
+.panel-admin__muestra {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid comun.$borde;
+    border-radius: espaciados.$radio-s;
+
+    &--primario {
+        background-color: colores.$color-primario;
+    }
+
+    &--terciario {
+        background-color: colores.$color-terciario;
+    }
+}
+
+// Datos dentro del banner verde
+.panel-admin__banner-datos {
+    min-width: 16rem;
+
+    dd {
+        color: colores.$color-terciario;
+    }
+}
+
+.panel-admin__tabla-fila:hover td {
+    background-color: comun.$fondo-suave;
+}
+
+// Los campos no deben ensanchar la tarjeta en móvil
+.panel-admin__campos {
+    grid-template-columns: minmax(0, 1fr);
+
+    @include mixins.desde(tablet) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .formulario__campo {
+        width: 100%;
+        min-width: 0;
     }
 }

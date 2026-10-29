@@ -1,0 +1,297 @@
+// =====================================================================
+// NUEVO: cuadrante de pistas en vivo (cuadranteAdmin.html)
+// Se carga desde _panel-admin.scss con @use 'cuadrante-admin'
+// =====================================================================
+@use '../colores';
+@use '../espaciados';
+@use '../fuentes';
+@use '../mixins';
+@use 'comun';
+
+.cuadrante-admin {
+    display: flex;
+    flex-direction: column;
+    gap: espaciados.$espacio-l;
+
+    &__fecha {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        padding: 0.25rem;
+        border: 1px solid comun.$borde;
+        border-radius: espaciados.$radio-s;
+        background-color: colores.$color-secundario;
+        font-size: fuentes.$tamano-pequeno;
+        color: colores.$color-titulo;
+    }
+
+    &__barra {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: espaciados.$espacio-m;
+    }
+
+    // Leyenda
+    &__leyenda {
+        display: flex;
+        flex-wrap: wrap;
+        gap: espaciados.$espacio-xs espaciados.$espacio-m;
+        list-style: none;
+        font-size: 0.75rem;
+    }
+
+    &__leyenda-item::before {
+        content: '';
+        display: inline-block;
+        width: 0.7rem;
+        height: 0.7rem;
+        margin-right: 0.3rem;
+        vertical-align: -0.1rem;
+        border-radius: 3px;
+    }
+
+    &__leyenda-item--libre::before {
+        border: 1px dashed rgba(colores.$color-titulo, 0.3);
+    }
+
+    &__leyenda-item--socio::before {
+        background-color: rgba(colores.$color-primario, 0.15);
+    }
+
+    &__leyenda-item--escuela::before {
+        background-color: colores.$color-terciario;
+    }
+
+    &__leyenda-item--torneo::before {
+        background-color: colores.$color-primario;
+    }
+
+    &__leyenda-item--bloqueo::before {
+        background-color: rgba(colores.$color-titulo, 0.15);
+    }
+
+    // Tabla
+    &__marco {
+        padding: espaciados.$espacio-s;
+    }
+
+    &__tabla {
+        width: 100%;
+        min-width: 62rem;
+        border-spacing: espaciados.$espacio-xs;
+        table-layout: fixed;
+    }
+
+    &__hora {
+        width: 4.5rem;
+        text-align: left;
+        vertical-align: top;
+        font-size: fuentes.$tamano-pequeno;
+        color: colores.$color-titulo;
+
+        span {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: fuentes.$peso-normal;
+            color: colores.$color-texto;
+        }
+    }
+
+    &__pista {
+        padding-bottom: espaciados.$espacio-xs;
+        text-align: left;
+        font-size: fuentes.$tamano-pequeno;
+        color: colores.$color-titulo;
+
+        .etiqueta {
+            margin-left: 0.25rem;
+            font-size: 0.6rem;
+        }
+
+        &--aviso {
+            color: colores.$color-primario;
+
+            .etiqueta {
+                background-color: colores.$color-titulo;
+                color: colores.$color-secundario;
+            }
+        }
+    }
+
+    &__pista-desc {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: fuentes.$peso-normal;
+        color: colores.$color-texto;
+    }
+
+    // Turno reservado
+    &__turno {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+        height: 100%;
+        min-height: 6.5rem;
+        padding: espaciados.$espacio-xs;
+        border-radius: espaciados.$radio-s;
+        font-size: 0.7rem;
+        line-height: 1.3;
+
+        &--socio {
+            background-color: rgba(colores.$color-primario, 0.08);
+            color: colores.$color-texto;
+        }
+
+        &--escuela {
+            background-color: colores.$color-terciario;
+            color: colores.$color-titulo;
+        }
+
+        &--torneo,
+        &--seleccionado {
+            background-color: colores.$color-primario;
+            color: rgba(colores.$color-secundario, 0.8);
+
+            .cuadrante-admin__turno-nombre {
+                color: colores.$color-secundario;
+            }
+        }
+
+        &--seleccionado {
+            outline: 3px solid colores.$color-terciario;
+            outline-offset: 1px;
+        }
+
+        &--bloqueo {
+            background-image: repeating-linear-gradient(45deg, rgba(colores.$color-titulo, 0.06) 0 6px, transparent 6px 12px);
+            background-color: rgba(colores.$color-titulo, 0.05);
+            color: colores.$color-texto;
+        }
+    }
+
+    &__turno-tipo {
+        font-size: 0.6rem;
+        font-weight: fuentes.$peso-negrita;
+        text-transform: uppercase;
+    }
+
+    &__turno-nombre {
+        font-size: 0.8rem;
+        color: colores.$color-titulo;
+    }
+
+    &__turno-detalle {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__turno-pie {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.25rem;
+        margin-top: auto;
+        padding-top: 0.25rem;
+        border-top: 1px solid rgba(colores.$color-titulo, 0.08);
+
+        strong {
+            white-space: nowrap;
+        }
+    }
+
+    // Hueco libre
+    &__libre {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 6.5rem;
+        border: 1px dashed rgba(colores.$color-titulo, 0.25);
+        border-radius: espaciados.$radio-s;
+        font-size: 0.8rem;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-primario;
+        transition: background-color espaciados.$transicion;
+
+        span {
+            font-size: 0.65rem;
+            font-weight: fuentes.$peso-normal;
+            color: colores.$color-texto;
+        }
+
+        &:hover {
+            border-color: colores.$color-primario;
+            background-color: rgba(colores.$color-primario, 0.05);
+        }
+    }
+
+    // Detalle de la reserva seleccionada
+    &__detalle {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-m;
+        padding: espaciados.$espacio-m espaciados.$espacio-l;
+        border-radius: espaciados.$radio-m;
+        background-color: colores.$color-primario;
+        color: rgba(colores.$color-secundario, 0.8);
+        font-size: fuentes.$tamano-pequeno;
+
+        @include mixins.desde(escritorio) {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__detalle-pista {
+        @include mixins.flex-centrado;
+        flex-shrink: 0;
+        width: 3rem;
+        height: 3rem;
+        border-radius: espaciados.$radio-s;
+        background-color: colores.$color-terciario;
+        font-family: fuentes.$fuente-titulo;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-titulo;
+    }
+
+    &__detalle-texto {
+        flex: 1;
+    }
+
+    &__detalle-titulo {
+        font-size: fuentes.$tamano-h4;
+        color: colores.$color-secundario;
+
+        span {
+            font-family: fuentes.$fuente-texto;
+            font-size: 0.8rem;
+            font-weight: fuentes.$peso-normal;
+            color: colores.$color-terciario;
+        }
+    }
+
+    &__detalle-estado {
+        display: flex;
+        flex-wrap: wrap;
+        gap: espaciados.$espacio-m;
+        margin-top: 0.25rem;
+        font-size: 0.75rem;
+    }
+
+    &__detalle-acciones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: espaciados.$espacio-xs;
+    }
+
+    &__boton-claro {
+        border-color: rgba(colores.$color-secundario, 0.4);
+        background-color: transparent;
+        color: colores.$color-secundario;
+
+        &:hover {
+            background-color: rgba(colores.$color-secundario, 0.1);
+        }
+    }
+}

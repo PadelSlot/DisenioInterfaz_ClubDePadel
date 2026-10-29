@@ -7,9 +7,10 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: colores.$color-primario;
-    color: colores.$color-secundario;
-    box-shadow: 0 2px 10px rgba(colores.$color-titulo, 0.1);
+    background-color: colores.$color-secundario;
+    color: colores.$color-titulo;
+    border-bottom: 1px solid rgba(colores.$color-titulo, 0.08);
+    box-shadow: 0 2px 10px rgba(colores.$color-titulo, 0.04);
 
     &__contenido {
         @include mixins.contenedor;
@@ -23,7 +24,7 @@
         display: flex;
         align-items: center;
         gap: espaciados.$espacio-xs;
-        color: colores.$color-secundario;
+        color: colores.$color-primario;
         font-family: fuentes.$fuente-titulo;
         font-weight: fuentes.$peso-negrita;
         font-size: fuentes.$tamano-h3;
@@ -36,12 +37,12 @@
     }
 
     &__enlace {
-        color: colores.$color-secundario;
+        color: colores.$color-texto;
         font-weight: fuentes.$peso-medio;
         transition: color espaciados.$transicion;
 
         &:hover, &--activo {
-            color: colores.$color-terciario;
+            color: colores.$color-primario;
         }
     }
 

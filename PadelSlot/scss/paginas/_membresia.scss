@@ -1,0 +1,362 @@
+// =====================================================================
+// NUEVO: página "Membresía y cuota" del socio (cuotas.html)
+// Se carga desde _inicio-socio.scss con @use 'membresia'
+// =====================================================================
+@use '../colores';
+@use '../espaciados';
+@use '../fuentes';
+@use '../mixins';
+@use 'comun';
+
+.membresia {
+    @include mixins.contenedor;
+    padding-bottom: espaciados.$espacio-l;
+
+    &__antetitulo {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: fuentes.$peso-negrita;
+        text-transform: uppercase;
+        color: colores.$color-primario;
+    }
+
+    &__nota {
+        font-size: 0.8rem;
+        color: colores.$color-texto;
+    }
+
+    &__enlace {
+        font-size: fuentes.$tamano-pequeno;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-primario;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    // ---------- Cabecera ----------
+    &__renovacion {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+        padding: espaciados.$espacio-m espaciados.$espacio-l;
+        border: 1px solid comun.$borde;
+        border-radius: espaciados.$radio-m;
+        background-color: colores.$color-secundario;
+
+        i {
+            font-size: 1.5rem;
+            color: colores.$color-primario;
+        }
+
+        p {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.75rem;
+        }
+
+        strong {
+            font-family: fuentes.$fuente-titulo;
+            font-size: fuentes.$tamano-h3;
+            color: colores.$color-titulo;
+        }
+    }
+
+    // ---------- Plan + carnet ----------
+    &__principal {
+        display: grid;
+        gap: espaciados.$espacio-m;
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: 1.6fr 1fr;
+        }
+    }
+
+    &__plan {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-l;
+        padding: espaciados.$espacio-l;
+
+        &:hover {
+            transform: none;
+        }
+    }
+
+    &__plan-cabecera {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: espaciados.$espacio-m;
+    }
+
+    &__plan-titulo {
+        margin-block: 0.25rem;
+        font-size: fuentes.$tamano-h3;
+    }
+
+    &__precio {
+        font-size: fuentes.$tamano-pequeno;
+
+        strong {
+            font-family: fuentes.$fuente-titulo;
+            font-size: fuentes.$tamano-h2;
+            color: colores.$color-primario;
+        }
+
+        span {
+            display: block;
+            font-size: 0.75rem;
+        }
+
+        &--grande strong {
+            font-size: fuentes.$tamano-h1;
+        }
+    }
+
+    &__ventajas {
+        display: grid;
+        gap: espaciados.$espacio-m;
+        list-style: none;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__ventaja,
+    &__condicion {
+        display: flex;
+        gap: espaciados.$espacio-s;
+        font-size: fuentes.$tamano-pequeno;
+
+        p {
+            display: flex;
+            flex-direction: column;
+        }
+
+        strong {
+            display: flex;
+            align-items: center;
+            gap: espaciados.$espacio-xs;
+            color: colores.$color-titulo;
+        }
+    }
+
+    &__acciones {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+        padding-top: espaciados.$espacio-m;
+        border-top: 1px solid comun.$borde;
+    }
+
+    // Carnet digital
+    &__carnet {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-l;
+        padding: espaciados.$espacio-l;
+        border-radius: espaciados.$radio-l;
+        background-color: colores.$color-primario;
+        color: rgba(colores.$color-secundario, 0.8);
+        box-shadow: 0 12px 30px rgba(colores.$color-primario, 0.25);
+    }
+
+    &__carnet-cabecera {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+    }
+
+    &__carnet-club {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.75rem;
+
+        strong {
+            font-size: fuentes.$tamano-pequeno;
+            color: colores.$color-secundario;
+        }
+    }
+
+    &__carnet-cuerpo {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    &__carnet-etiqueta {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+    }
+
+    &__carnet-nombre {
+        font-family: fuentes.$fuente-titulo;
+        font-size: 1.5rem;
+        color: colores.$color-secundario;
+    }
+
+    &__carnet-datos {
+        display: flex;
+        gap: espaciados.$espacio-l;
+        font-size: 0.8rem;
+
+        strong {
+            color: colores.$color-terciario;
+        }
+    }
+
+    &__carnet-pie {
+        font-size: 0.75rem;
+    }
+
+    &__carnet-acciones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: espaciados.$espacio-xs;
+        margin-top: auto;
+    }
+
+    &__boton-claro {
+        background-color: colores.$color-secundario;
+        color: colores.$color-titulo;
+
+        &:hover {
+            background-color: colores.$color-terciario;
+        }
+    }
+
+    // ---------- Tarifa ----------
+    &__seccion {
+        padding-top: espaciados.$espacio-xl;
+    }
+
+    &__tarifa {
+        display: grid;
+        gap: espaciados.$espacio-m;
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: 1fr 2fr;
+        }
+    }
+
+    &__tarifa-precio {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-s;
+        padding: espaciados.$espacio-l;
+        border-color: colores.$color-primario;
+    }
+
+    &__aclaracion {
+        margin-top: auto;
+        padding: espaciados.$espacio-s;
+        border-radius: espaciados.$radio-s;
+        background-color: comun.$fondo-suave;
+        font-size: 0.75rem;
+    }
+
+    &__condiciones {
+        display: grid;
+        gap: espaciados.$espacio-m;
+        list-style: none;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__condicion {
+        padding: espaciados.$espacio-m;
+    }
+
+    // ---------- Convenios ----------
+    &__convenios {
+        display: grid;
+        gap: espaciados.$espacio-m;
+        list-style: none;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__convenio {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-s;
+        padding: espaciados.$espacio-l;
+
+        .etiqueta {
+            align-self: flex-start;
+        }
+
+        .tarjeta__cuerpo {
+            flex: 1;
+            font-size: fuentes.$tamano-pequeno;
+        }
+    }
+
+    &__como {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        padding-top: espaciados.$espacio-s;
+        border-top: 1px solid comun.$borde;
+        font-size: 0.8rem;
+        font-weight: fuentes.$peso-medio;
+        color: colores.$color-primario;
+    }
+
+    // ---------- Preguntas + atención ----------
+    &__ayuda {
+        display: grid;
+        gap: espaciados.$espacio-m;
+        align-items: start;
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: 2fr 1fr;
+        }
+    }
+
+    &__preguntas,
+    &__atencion {
+        padding: espaciados.$espacio-l;
+
+        &:hover {
+            transform: none;
+        }
+    }
+
+    &__atencion {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-m;
+        font-size: fuentes.$tamano-pequeno;
+    }
+
+    &__bloque-titulo {
+        font-size: fuentes.$tamano-h3;
+    }
+
+    &__contacto {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-xs;
+        list-style: none;
+        color: colores.$color-titulo;
+
+        i {
+            margin-right: espaciados.$espacio-xs;
+            color: colores.$color-primario;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}

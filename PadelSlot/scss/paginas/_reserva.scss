@@ -1,6 +1,9 @@
 @use '../mixins';
 @use '../espaciados';
 @use '../colores';
+// AÑADIDO: módulos que usan los estilos nuevos del final del archivo
+@use '../fuentes';
+@use 'comun';
 
 .reserva {
     @include mixins.contenedor;
@@ -11,4 +14,581 @@
         gap: espaciados.$espacio-m;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
+}
+
+// =====================================================================
+// AÑADIDO: estilos según los mockups "Reserva de pistas (no socios)"
+// (el bloque de arriba es vuestro código original, sin cambios)
+// =====================================================================
+
+// ---------- Banda superior: migas, título y pasos ----------
+.reserva-intro {
+    border-bottom: 1px solid comun.$borde;
+    background-color: colores.$color-secundario;
+
+    &__contenido {
+        @include mixins.contenedor;
+        padding-block: espaciados.$espacio-l;
+    }
+
+    &__migas {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        font-size: 0.8rem;
+    }
+
+    &__miga:hover {
+        color: colores.$color-primario;
+    }
+
+    &__miga--actual {
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-titulo;
+    }
+
+    &__cabecera {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-m;
+        margin-block: espaciados.$espacio-m espaciados.$espacio-l;
+
+        @include mixins.desde(tablet) {
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+    }
+
+    &__titulo {
+        margin-bottom: espaciados.$espacio-xs;
+        font-size: fuentes.$tamano-h2;
+    }
+
+    &__acciones {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: espaciados.$espacio-l;
+    }
+
+    &__enlace {
+        display: inline-flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        font-weight: fuentes.$peso-medio;
+        color: colores.$color-titulo;
+    }
+
+    &__pasos {
+        display: flex;
+        justify-content: space-between;
+        gap: espaciados.$espacio-s;
+        list-style: none;
+        font-size: 0.8rem;
+    }
+
+    &__paso {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+
+        &--hecho,
+        &--actual {
+            color: colores.$color-titulo;
+        }
+
+        &--actual {
+            font-weight: fuentes.$peso-negrita;
+        }
+    }
+
+    &__paso-numero {
+        @include mixins.flex-centrado;
+        flex-shrink: 0;
+        width: 1.75rem;
+        height: 1.75rem;
+        border: 1px solid rgba(colores.$color-titulo, 0.2);
+        border-radius: 50%;
+        font-size: 0.75rem;
+        font-weight: fuentes.$peso-negrita;
+
+        .reserva-intro__paso--hecho &,
+        .reserva-intro__paso--actual & {
+            border-color: colores.$color-primario;
+            background-color: colores.$color-primario;
+            color: colores.$color-secundario;
+        }
+    }
+}
+
+// ---------- Contenido principal ----------
+.reserva {
+
+    &__rejilla {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: espaciados.$espacio-l;
+        align-items: start;
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: minmax(0, 1fr) 22rem;
+        }
+    }
+
+    &__pasos {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-l;
+    }
+
+    &__bloque {
+        padding: espaciados.$espacio-l;
+
+        &:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        &--actual {
+            border: 2px solid colores.$color-primario;
+        }
+    }
+
+    &__bloque-cabecera {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-m;
+        margin-bottom: espaciados.$espacio-m;
+
+        @include mixins.desde(tablet) {
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        .boton {
+            flex-shrink: 0;
+        }
+    }
+
+    &__antetitulo {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: fuentes.$peso-negrita;
+        text-transform: uppercase;
+        color: colores.$color-primario;
+    }
+
+    &__titulo {
+        margin-block: espaciados.$espacio-xs espaciados.$espacio-m;
+        font-size: fuentes.$tamano-h3;
+
+        @include mixins.desde(tablet) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__subtitulo {
+        margin-top: espaciados.$espacio-xs * -1;
+        margin-bottom: espaciados.$espacio-m;
+    }
+
+    &__bloque-cabecera &__subtitulo {
+        margin-bottom: 0;
+    }
+
+    &__nota {
+        font-size: 0.75rem;
+        color: colores.$color-texto;
+
+        &--centrada {
+            text-align: center;
+        }
+    }
+
+    // Duración / tipo de pista / franja en tres columnas
+    &__filtros {
+        display: grid;
+        gap: espaciados.$espacio-m;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    // Selector de días
+    &__fechas-cabecera {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__mes {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        font-size: fuentes.$tamano-pequeno;
+        color: colores.$color-titulo;
+    }
+
+    &__dias {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(3rem, 1fr));
+        gap: espaciados.$espacio-xs;
+        margin-top: espaciados.$espacio-s;
+        overflow-x: auto;
+    }
+
+    &__dia {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-block: espaciados.$espacio-xs;
+        border: 1px solid rgba(colores.$color-titulo, 0.15);
+        border-radius: espaciados.$radio-s;
+        background-color: colores.$color-secundario;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        color: colores.$color-titulo;
+        cursor: pointer;
+
+        strong {
+            font-family: fuentes.$fuente-titulo;
+            font-size: fuentes.$tamano-h3;
+        }
+
+        &:hover {
+            border-color: colores.$color-primario;
+        }
+
+        &--seleccionado {
+            border-color: colores.$color-primario;
+            background-color: colores.$color-primario;
+            color: colores.$color-secundario;
+        }
+
+        &--pasado,
+        &:disabled {
+            color: colores.$color-texto;
+            cursor: not-allowed;
+        }
+    }
+
+    // Leyenda + tabla de disponibilidad
+    &__leyenda {
+        display: flex;
+        flex-wrap: wrap;
+        gap: espaciados.$espacio-xs espaciados.$espacio-m;
+        margin-block: espaciados.$espacio-m;
+        list-style: none;
+        font-size: 0.75rem;
+    }
+
+    &__leyenda-item::before {
+        content: '';
+        display: inline-block;
+        width: 0.7rem;
+        height: 0.7rem;
+        margin-right: 0.3rem;
+        vertical-align: -0.1rem;
+        border: 1px solid rgba(colores.$color-titulo, 0.25);
+        border-radius: 2px;
+        background-color: colores.$color-secundario;
+    }
+
+    &__leyenda-item--seleccionada::before {
+        border-color: colores.$color-primario;
+        background-color: colores.$color-primario;
+    }
+
+    &__leyenda-item--ocupada::before {
+        background-color: rgba(colores.$color-titulo, 0.08);
+    }
+
+    &__leyenda-item--nota::before {
+        width: 0.35rem;
+        height: 0.35rem;
+        border: none;
+        border-radius: 50%;
+        background-color: colores.$color-texto;
+    }
+
+    &__tabla-scroll {
+        overflow-x: auto;
+    }
+
+    &__horario {
+        width: 100%;
+        min-width: 34rem;
+        border-spacing: espaciados.$espacio-xs;
+        table-layout: fixed;
+
+        th {
+            font-size: fuentes.$tamano-pequeno;
+            color: colores.$color-titulo;
+
+            span {
+                display: block;
+                font-size: 0.75rem;
+                font-weight: fuentes.$peso-normal;
+                color: colores.$color-texto;
+            }
+        }
+
+        tbody th {
+            text-align: left;
+        }
+    }
+
+    &__horario-hora {
+        width: 4.5rem;
+        text-align: left;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+    }
+
+    &__hueco {
+        width: 100%;
+        min-height: 3rem;
+        padding: espaciados.$espacio-xs;
+        border: 1px solid rgba(colores.$color-titulo, 0.15);
+        border-radius: espaciados.$radio-s;
+        background-color: colores.$color-secundario;
+        font-size: 0.75rem;
+        color: colores.$color-texto;
+        cursor: pointer;
+        transition: border-color espaciados.$transicion;
+
+        span {
+            display: block;
+            font-size: 0.65rem;
+        }
+
+        &:hover {
+            border-color: colores.$color-primario;
+        }
+
+        &--solicitado {
+            border-color: rgba(colores.$color-titulo, 0.5);
+            font-weight: fuentes.$peso-negrita;
+            color: colores.$color-titulo;
+        }
+
+        &--seleccionado {
+            border-color: colores.$color-primario;
+            background-color: colores.$color-primario;
+            font-weight: fuentes.$peso-negrita;
+            color: colores.$color-secundario;
+        }
+
+        &--ocupado,
+        &:disabled {
+            border-color: comun.$borde;
+            background-color: rgba(colores.$color-titulo, 0.06);
+            cursor: not-allowed;
+        }
+    }
+
+    // Participantes
+    &__participantes {
+        margin-bottom: espaciados.$espacio-m;
+        list-style: none;
+    }
+
+    &__participante {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+        padding-block: espaciados.$espacio-s;
+        border-bottom: 1px solid comun.$borde;
+
+        .etiqueta {
+            white-space: nowrap;
+        }
+    }
+
+    &__participante-datos {
+        flex: 1 1 10rem;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.75rem;
+
+        strong {
+            font-size: fuentes.$tamano-base;
+            font-weight: fuentes.$peso-medio;
+            color: colores.$color-titulo;
+        }
+    }
+
+    &__participante-precio {
+        font-size: fuentes.$tamano-pequeno;
+        color: colores.$color-titulo;
+    }
+
+    // ---------- Resumen ----------
+    &__resumen {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-m;
+        padding: espaciados.$espacio-l;
+
+        @include mixins.desde(escritorio) {
+            position: sticky;
+            top: 5rem;
+        }
+
+        &:hover {
+            transform: none;
+        }
+
+        .tarjeta__cabecera {
+            margin-bottom: 0;
+            padding-bottom: espaciados.$espacio-m;
+            border-bottom: 1px solid comun.$borde;
+        }
+    }
+
+    &__resumen-lista {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-s;
+        list-style: none;
+    }
+
+    &__resumen-item {
+        display: flex;
+        gap: espaciados.$espacio-s;
+        font-size: 0.8rem;
+
+        i {
+            font-size: 1.15rem;
+            color: colores.$color-texto;
+        }
+
+        p {
+            display: flex;
+            flex-direction: column;
+        }
+
+        strong {
+            font-size: fuentes.$tamano-base;
+            font-weight: fuentes.$peso-medio;
+            color: colores.$color-titulo;
+        }
+    }
+
+    &__extras {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-xs;
+        padding-block: espaciados.$espacio-m;
+        border: none;
+        border-block: 1px solid comun.$borde;
+    }
+
+    &__extras-titulo {
+        margin-bottom: espaciados.$espacio-xs;
+        font-size: fuentes.$tamano-pequeno;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-titulo;
+    }
+
+    &__extra {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        font-size: fuentes.$tamano-pequeno;
+        cursor: pointer;
+    }
+
+    &__check {
+        width: 1rem;
+        height: 1rem;
+        accent-color: colores.$color-primario;
+    }
+
+    &__extra-precio {
+        margin-left: auto;
+        color: colores.$color-titulo;
+    }
+
+    &__precios {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-xs;
+        font-size: fuentes.$tamano-pequeno;
+    }
+
+    &__precio {
+        display: flex;
+        justify-content: space-between;
+
+        dd {
+            font-weight: fuentes.$peso-negrita;
+            color: colores.$color-titulo;
+        }
+
+        &--total {
+            margin-top: espaciados.$espacio-xs;
+            padding-top: espaciados.$espacio-s;
+            border-top: 1px solid comun.$borde;
+            font-weight: fuentes.$peso-negrita;
+            color: colores.$color-titulo;
+
+            dd {
+                font-family: fuentes.$fuente-titulo;
+                font-size: fuentes.$tamano-h3;
+            }
+        }
+    }
+}
+
+// ---------- Banda de ayuda (lima) ----------
+.reserva-ayuda {
+    margin-top: espaciados.$espacio-xl;
+    background-color: colores.$color-terciario;
+    color: colores.$color-primario;
+    font-size: fuentes.$tamano-pequeno;
+
+    &__contenido {
+        @include mixins.contenedor;
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-m;
+        padding-block: espaciados.$espacio-l;
+
+        @include mixins.desde(tablet) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__titulo {
+        font-size: fuentes.$tamano-base;
+        color: colores.$color-titulo;
+    }
+
+    &__acciones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: espaciados.$espacio-xs;
+    }
+
+    &__boton {
+        background-color: colores.$color-secundario;
+        border-color: rgba(colores.$color-titulo, 0.12);
+        color: colores.$color-titulo;
+
+        &:hover {
+            border-color: colores.$color-primario;
+        }
+    }
+}
+
+// El pie va pegado a la banda de ayuda (anula el margen superior de .pie)
+.reserva-pie {
+    margin-top: 0;
 }

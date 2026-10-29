@@ -1,0 +1,609 @@
+// =====================================================================
+// Piezas compartidas por las páginas (logotipo, bandas, encabezados de
+// sección, avatares...). No hace falta importarlo en main.scss: cada
+// parcial de paginas/ lo carga con @use 'comun' y Sass solo lo incluye
+// una vez en el CSS final.
+// =====================================================================
+@use 'sass:color';
+@use '../colores';
+@use '../espaciados';
+@use '../fuentes';
+@use '../mixins';
+
+// Fondo gris muy suave que usan los mockups (derivado de la paleta)
+$fondo-suave: color.mix(colores.$color-primario, colores.$color-secundario, 4%);
+$borde: rgba(colores.$color-titulo, 0.08);
+
+// Cuadrado con la "P" del logotipo
+.logotipo {
+    @include mixins.flex-centrado;
+    width: 2rem;
+    height: 2rem;
+    border-radius: espaciados.$radio-s;
+    background-color: colores.$color-primario;
+    color: colores.$color-secundario;
+    font-size: fuentes.$tamano-base;
+
+    &--verde {
+        background-color: colores.$color-primario;
+        color: colores.$color-secundario;
+    }
+}
+
+// Banda a todo el ancho con el contenido centrado
+.banda {
+    padding-block: espaciados.$espacio-xl;
+
+    @include mixins.desde(tablet) {
+        padding-block: espaciados.$espacio-xxl;
+    }
+
+    &--suave {
+        background-color: $fondo-suave;
+    }
+
+    &--verde {
+        background-color: colores.$color-primario;
+        color: colores.$color-secundario;
+    }
+
+    &__contenido {
+        @include mixins.contenedor;
+    }
+}
+
+// Encabezado de sección: antetítulo + título + texto (+ enlace a la derecha)
+.encabezado-seccion {
+    display: flex;
+    flex-direction: column;
+    gap: espaciados.$espacio-s;
+    margin-bottom: espaciados.$espacio-l;
+
+    @include mixins.desde(tablet) {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    &__antetitulo {
+        display: block;
+        margin-bottom: espaciados.$espacio-xs;
+        font-size: 0.75rem;
+        font-weight: fuentes.$peso-negrita;
+        text-transform: uppercase;
+        color: colores.$color-primario;
+    }
+
+    &__titulo {
+        font-size: 1.6rem;
+        color: colores.$color-primario;
+
+        @include mixins.desde(tablet) {
+            font-size: fuentes.$tamano-h2;
+        }
+    }
+
+    &__texto {
+        margin-top: espaciados.$espacio-xs;
+    }
+
+    &__enlace {
+        display: inline-flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        flex-shrink: 0;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-primario;
+    }
+
+    &--claro &__antetitulo,
+    &--claro &__titulo,
+    &--claro &__texto {
+        color: colores.$color-secundario;
+    }
+}
+
+// Círculo con iniciales
+.avatar {
+    @include mixins.flex-centrado;
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    border: 1px solid $borde;
+    background-color: $fondo-suave;
+    color: colores.$color-titulo;
+    font-size: 0.75rem;
+    font-weight: fuentes.$peso-negrita;
+}
+
+// Caja cuadrada para un icono
+.icono-caja {
+    @include mixins.flex-centrado;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: espaciados.$radio-s;
+    background-color: $fondo-suave;
+    color: colores.$color-primario;
+    font-size: 1.25rem;
+
+    &--verde {
+        background-color: rgba(colores.$color-secundario, 0.12);
+        color: colores.$color-secundario;
+    }
+
+    &--blanco {
+        background-color: colores.$color-secundario;
+        color: colores.$color-primario;
+    }
+}
+
+// Aviso destacado (fondo lima)
+.aviso {
+    display: flex;
+    flex-direction: column;
+    gap: espaciados.$espacio-m;
+    padding: espaciados.$espacio-m espaciados.$espacio-l;
+    border-radius: espaciados.$radio-m;
+    background-color: colores.$color-terciario;
+    color: colores.$color-titulo;
+    font-size: fuentes.$tamano-pequeno;
+
+    @include mixins.desde(tablet) {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__icono {
+        font-size: 1.25rem;
+    }
+
+    &__texto {
+        flex: 1;
+    }
+
+    &__titulo {
+        display: block;
+        font-family: fuentes.$fuente-titulo;
+        font-size: fuentes.$tamano-base;
+        color: colores.$color-titulo;
+    }
+}
+
+// Se oculta en móvil y aparece desde escritorio (p. ej. el menú de la cabecera)
+.navegacion-escritorio {
+    display: none;
+
+    @include mixins.desde(escritorio) {
+        display: flex;
+    }
+}
+
+// Fondo gris claro para páginas internas (se pone en el <body>)
+.fondo-suave {
+    background-color: $fondo-suave;
+}
+
+// Usuario conectado (avatar + nombre + rol) en cabeceras
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: espaciados.$espacio-xs;
+
+    &__datos {
+        display: none;
+        flex-direction: column;
+        line-height: 1.2;
+
+        @include mixins.desde(tablet) {
+            display: flex;
+        }
+    }
+
+    &__nombre {
+        font-size: fuentes.$tamano-pequeno;
+        font-weight: fuentes.$peso-negrita;
+    }
+
+    &__rol {
+        font-size: 0.75rem;
+        opacity: 0.8;
+    }
+}
+
+// Botón redondo solo con icono (campana de notificaciones, menú...)
+.boton-icono {
+    @include mixins.flex-centrado;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background-color: transparent;
+    color: inherit;
+    font-size: 1.25rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(colores.$color-titulo, 0.08);
+    }
+}
+
+// Selector de club (icono + desplegable)
+.selector-club {
+    display: none;
+    align-items: center;
+    gap: espaciados.$espacio-xs;
+    padding: espaciados.$espacio-xs espaciados.$espacio-s;
+    border: 1px solid rgba(colores.$color-secundario, 0.3);
+    border-radius: espaciados.$radio-s;
+    font-size: fuentes.$tamano-pequeno;
+
+    @include mixins.desde(tablet) {
+        display: flex;
+    }
+
+    &__campo {
+        background-color: transparent;
+        color: inherit;
+        cursor: pointer;
+
+        option {
+            color: colores.$color-titulo;
+        }
+    }
+}
+
+// Pie sencillo: marca a la izquierda y enlaces a la derecha
+.pie-marca {
+    font-size: fuentes.$tamano-pequeno;
+
+    &__titulo {
+        display: block;
+        font-size: fuentes.$tamano-base;
+        color: colores.$color-secundario;
+    }
+}
+
+.pie-enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: espaciados.$espacio-l;
+    font-size: fuentes.$tamano-pequeno;
+
+    @include mixins.desde(tablet) {
+        grid-column: span 2;
+        justify-content: flex-end;
+    }
+}
+
+// Barra de navegación inferior en móvil (se oculta en escritorio)
+.navegacion-movil {
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: espaciados.$espacio-xs;
+    border-top: 1px solid $borde;
+    background-color: colores.$color-secundario;
+
+    @include mixins.desde(escritorio) {
+        display: none;
+    }
+
+    &__enlace {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-block: espaciados.$espacio-xs;
+        border-radius: espaciados.$radio-s;
+        font-size: 0.7rem;
+        color: colores.$color-texto;
+
+        i {
+            font-size: 1.25rem;
+        }
+
+        &--activo {
+            background-color: rgba(colores.$color-primario, 0.08);
+            color: colores.$color-primario;
+            font-weight: fuentes.$peso-negrita;
+        }
+    }
+}
+
+// Texto oculto a la vista pero leído por lectores de pantalla
+.solo-lector {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+// =====================================================================
+// Piezas añadidas para el resto de páginas (socio y administración)
+// =====================================================================
+
+// Cabecera de página interna: migas + título + texto + acciones
+.cabecera-pagina {
+    display: flex;
+    flex-direction: column;
+    gap: espaciados.$espacio-m;
+    padding-block: espaciados.$espacio-l;
+
+    @include mixins.desde(escritorio) {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    &__migas {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        margin-bottom: espaciados.$espacio-s;
+        font-size: 0.8rem;
+    }
+
+    &__miga {
+        &:hover {
+            color: colores.$color-primario;
+        }
+
+        &--actual {
+            font-weight: fuentes.$peso-negrita;
+            color: colores.$color-titulo;
+        }
+    }
+
+    &__titulo {
+        margin-block: espaciados.$espacio-xs;
+        font-size: 1.6rem;
+
+        @include mixins.desde(tablet) {
+            font-size: fuentes.$tamano-h2;
+        }
+    }
+
+    &__texto {
+        max-width: 46rem;
+    }
+
+    &__acciones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: espaciados.$espacio-xs;
+        flex-shrink: 0;
+    }
+}
+
+// Opciones tipo "chip" hechas con radio/checkbox (sin JavaScript)
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: espaciados.$espacio-xs;
+    border: none;
+
+    &__opcion {
+        display: inline-flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        padding: espaciados.$espacio-xs espaciados.$espacio-s;
+        border: 1px solid rgba(colores.$color-titulo, 0.15);
+        border-radius: espaciados.$radio-pastilla;
+        background-color: colores.$color-secundario;
+        font-size: fuentes.$tamano-pequeno;
+        color: colores.$color-titulo;
+        cursor: pointer;
+        transition: border-color espaciados.$transicion;
+
+        &:hover {
+            border-color: colores.$color-primario;
+        }
+
+        &:has(:checked) {
+            border-color: colores.$color-primario;
+            background-color: colores.$color-primario;
+            color: colores.$color-secundario;
+        }
+
+        &:has(:focus-visible) {
+            outline: 2px solid colores.$color-terciario;
+            outline-offset: 2px;
+        }
+    }
+
+    &__control {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    // Variante cuadrada (tarjetitas seleccionables)
+    &--cuadradas &__opcion {
+        border-radius: espaciados.$radio-s;
+    }
+}
+
+// Círculo con el número de un paso
+.paso-numero {
+    @include mixins.flex-centrado;
+    flex-shrink: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background-color: colores.$color-primario;
+    color: colores.$color-secundario;
+    font-size: 0.8rem;
+    font-weight: fuentes.$peso-negrita;
+}
+
+// Barra de progreso con <progress>
+.progreso {
+    width: 100%;
+    height: 0.5rem;
+    border: none;
+    border-radius: espaciados.$radio-pastilla;
+    overflow: hidden;
+    background-color: rgba(colores.$color-primario, 0.1);
+    appearance: none;
+
+    &::-webkit-progress-bar {
+        background-color: rgba(colores.$color-primario, 0.1);
+    }
+
+    &::-webkit-progress-value {
+        background-color: colores.$color-primario;
+    }
+
+    &::-moz-progress-bar {
+        background-color: colores.$color-primario;
+    }
+
+    &--lima::-webkit-progress-value {
+        background-color: colores.$color-terciario;
+    }
+
+    &--lima::-moz-progress-bar {
+        background-color: colores.$color-terciario;
+    }
+}
+
+// Interruptor on/off hecho con un checkbox
+.interruptor {
+    position: relative;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 1.4rem;
+    border-radius: espaciados.$radio-pastilla;
+    background-color: rgba(colores.$color-titulo, 0.2);
+    appearance: none;
+    cursor: pointer;
+    transition: background-color espaciados.$transicion;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0.2rem;
+        left: 0.2rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: colores.$color-secundario;
+        transition: transform espaciados.$transicion;
+    }
+
+    &:checked {
+        background-color: colores.$color-primario;
+
+        &::after {
+            transform: translateX(1.1rem);
+        }
+    }
+
+    &:focus-visible {
+        outline: 2px solid colores.$color-terciario;
+        outline-offset: 2px;
+    }
+}
+
+// Lista de pares dato / valor (resúmenes, importes...)
+.lista-datos {
+    display: flex;
+    flex-direction: column;
+    gap: espaciados.$espacio-xs;
+    font-size: fuentes.$tamano-pequeno;
+
+    &__fila {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        column-gap: espaciados.$espacio-m;
+
+        dd {
+            margin-left: auto;
+            text-align: right;
+            white-space: nowrap;
+            font-weight: fuentes.$peso-negrita;
+            color: colores.$color-titulo;
+        }
+
+        &--total {
+            margin-top: espaciados.$espacio-xs;
+            padding-top: espaciados.$espacio-s;
+            border-top: 1px solid $borde;
+            font-weight: fuentes.$peso-negrita;
+            color: colores.$color-titulo;
+
+            dd {
+                font-family: fuentes.$fuente-titulo;
+                font-size: fuentes.$tamano-h3;
+            }
+        }
+    }
+}
+
+// Casilla de verificación con texto (checkbox + título + descripción)
+.casilla {
+    display: flex;
+    align-items: flex-start;
+    gap: espaciados.$espacio-s;
+    font-size: fuentes.$tamano-pequeno;
+    cursor: pointer;
+
+    &__control {
+        flex-shrink: 0;
+        width: 1.1rem;
+        height: 1.1rem;
+        margin-top: 0.15rem;
+        accent-color: colores.$color-primario;
+    }
+
+    &__texto {
+        display: flex;
+        flex-direction: column;
+
+        strong {
+            color: colores.$color-titulo;
+        }
+    }
+}
+
+// Pregunta frecuente desplegable con <details> / <summary>
+.pregunta {
+    padding-block: espaciados.$espacio-m;
+    border-bottom: 1px solid rgba(colores.$color-titulo, 0.12);
+
+    &__titulo {
+        display: flex;
+        justify-content: space-between;
+        gap: espaciados.$espacio-m;
+        cursor: pointer;
+        list-style: none;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-primario;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &::after {
+            content: '+';
+            font-weight: fuentes.$peso-normal;
+            color: colores.$color-texto;
+        }
+    }
+
+    &[open] &__titulo::after {
+        content: '−';
+    }
+
+    &__respuesta {
+        margin-top: espaciados.$espacio-xs;
+        font-size: fuentes.$tamano-pequeno;
+    }
+}

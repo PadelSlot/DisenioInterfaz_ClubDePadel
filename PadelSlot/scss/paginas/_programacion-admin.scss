@@ -1,0 +1,128 @@
+// =====================================================================
+// NUEVO: programación semanal de la escuela (progSemanalAdmin.html)
+// Se carga desde _panel-admin.scss con @use 'programacion-admin'
+// =====================================================================
+@use '../colores';
+@use '../espaciados';
+@use '../fuentes';
+@use '../mixins';
+@use 'comun';
+
+.programacion-admin {
+
+    &__filtros {
+        display: grid;
+        gap: espaciados.$espacio-m;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    &__semana {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+    }
+
+    // Columnas de días (en móvil se desplazan en horizontal)
+    &__calendario {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(11rem, 1fr);
+        gap: espaciados.$espacio-s;
+        overflow-x: auto;
+        padding-bottom: espaciados.$espacio-xs;
+    }
+
+    &__dia {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-xs;
+    }
+
+    &__dia-titulo {
+        padding: espaciados.$espacio-xs;
+        border-radius: espaciados.$radio-s;
+        background-color: comun.$fondo-suave;
+        text-align: center;
+        font-family: fuentes.$fuente-texto;
+        font-size: fuentes.$tamano-pequeno;
+    }
+
+    &__clases {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-xs;
+        list-style: none;
+    }
+
+    &__clase {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        padding: espaciados.$espacio-s;
+        border: 1px solid comun.$borde;
+        border-left: 4px solid colores.$color-terciario;
+        border-radius: espaciados.$radio-s;
+        background-color: colores.$color-secundario;
+        font-size: 0.75rem;
+
+        &--completa {
+            border-left-color: colores.$color-primario;
+        }
+    }
+
+    &__clase-cabecera {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.25rem;
+    }
+
+    &__hora {
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-titulo;
+    }
+
+    &__nombre {
+        font-size: fuentes.$tamano-pequeno;
+        color: colores.$color-primario;
+    }
+
+    &__datos {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+
+        i {
+            color: colores.$color-primario;
+        }
+    }
+
+    &__grupo {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        padding-block: espaciados.$espacio-s;
+        border-bottom: 1px solid comun.$borde;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__recomendacion {
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include mixins.desde(tablet) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}

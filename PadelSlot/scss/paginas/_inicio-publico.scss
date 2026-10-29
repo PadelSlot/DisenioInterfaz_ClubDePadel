@@ -1,10 +1,618 @@
 @use '../mixins';
 @use '../espaciados';
+// AÑADIDO: módulos que usan los estilos nuevos del final del archivo
+@use '../colores';
+@use '../fuentes';
+@use 'comun';
+// AÑADIDO: estilos de las páginas de acceso (landingPage, inicioSesionSocio)
+@use 'acceso';
 
 .inicio-publico {
     &__hero {
         @include mixins.contenedor;
         padding-block: espaciados.$espacio-xxl;
         text-align: center;
+    }
+}
+
+// =====================================================================
+// AÑADIDO: estilos según el mockup "Inicio público de PadelSlot"
+// (todo lo de arriba es vuestro código original, sin cambios)
+// =====================================================================
+.inicio-publico {
+
+    // ---------- Portada ----------
+    &__portada {
+        background-color: comun.$fondo-suave;
+    }
+
+    &__hero-rejilla {
+        display: grid;
+        gap: espaciados.$espacio-xl;
+        align-items: center;
+        text-align: left;
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: 1fr 22rem;
+        }
+    }
+
+    &__titulo {
+        margin-block: espaciados.$espacio-m;
+        font-size: fuentes.$tamano-h2;
+        color: colores.$color-primario;
+
+        @include mixins.desde(tablet) {
+            font-size: fuentes.$tamano-h1;
+        }
+    }
+
+    &__descripcion {
+        max-width: 38rem;
+        font-size: 1.05rem;
+    }
+
+    &__puntos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: espaciados.$espacio-l;
+        margin-top: espaciados.$espacio-m;
+        list-style: none;
+        font-size: fuentes.$tamano-pequeno;
+    }
+
+    &__punto::before {
+        content: '•';
+        margin-right: espaciados.$espacio-xs;
+        color: colores.$color-primario;
+    }
+
+    &__nota {
+        font-size: 0.8rem;
+        color: colores.$color-texto;
+    }
+
+    &__lista-pistas {
+        list-style: none;
+        margin-bottom: espaciados.$espacio-m;
+        border-top: 1px solid comun.$borde;
+    }
+
+    &__pista {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+        padding-block: espaciados.$espacio-s;
+        border-bottom: 1px solid comun.$borde;
+        color: colores.$color-primario;
+    }
+
+    &__pista-hora {
+        padding: espaciados.$espacio-xs;
+        border-radius: espaciados.$radio-s;
+        background-color: comun.$fondo-suave;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-titulo;
+    }
+
+    &__pista-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.8rem;
+        color: colores.$color-texto;
+    }
+
+    &__pista-club {
+        font-size: fuentes.$tamano-base;
+        color: colores.$color-primario;
+    }
+
+    // Buscador: el componente formulario es una columna; aquí lo ponemos en fila
+    &__buscador {
+        margin-top: espaciados.$espacio-xl;
+        padding: espaciados.$espacio-l;
+        border: 1px solid comun.$borde;
+        border-radius: espaciados.$radio-m;
+        background-color: colores.$color-secundario;
+        box-shadow: 0 8px 24px rgba(colores.$color-titulo, 0.05);
+        text-align: left;
+
+        @include mixins.desde(tablet) {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr auto;
+            align-items: end;
+        }
+    }
+
+    // ---------- Clubes destacados ----------
+    &__clubes {
+        display: grid;
+        gap: espaciados.$espacio-m;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__club {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-s;
+        overflow: hidden;
+        padding: 0 0 espaciados.$espacio-m;
+
+        > *:not(:first-child) {
+            margin-inline: espaciados.$espacio-m;
+        }
+    }
+
+    &__club-imagen {
+        height: 7.5rem;
+        padding: espaciados.$espacio-s;
+        background-color: comun.$fondo-suave;
+        font-size: 0.75rem;
+        color: colores.$color-texto;
+    }
+
+    &__valoracion {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: fuentes.$tamano-pequeno;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-primario;
+    }
+
+    &__horarios-cabecera {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: espaciados.$espacio-s;
+        border-top: 1px solid comun.$borde;
+        font-size: 0.75rem;
+        font-weight: fuentes.$peso-negrita;
+        text-transform: uppercase;
+        color: colores.$color-titulo;
+    }
+
+    &__horarios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: espaciados.$espacio-xs;
+    }
+
+    &__horario {
+        padding: espaciados.$espacio-xs;
+        border: 1px solid comun.$borde;
+        border-radius: espaciados.$radio-s;
+        background-color: comun.$fondo-suave;
+        text-align: center;
+        font-size: fuentes.$tamano-pequeno;
+        font-weight: fuentes.$peso-medio;
+        color: colores.$color-titulo;
+
+        &:hover,
+        &--destacado {
+            background-color: colores.$color-terciario;
+            border-color: colores.$color-primario;
+        }
+    }
+
+    &__club-pie {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+    }
+
+    &__precio {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.75rem;
+    }
+
+    &__precio-valor {
+        font-size: fuentes.$tamano-base;
+        color: colores.$color-primario;
+    }
+
+    &__beneficios {
+        display: grid;
+        gap: espaciados.$espacio-l;
+        margin-top: espaciados.$espacio-l;
+        padding: espaciados.$espacio-l;
+        border: 1px solid comun.$borde;
+        border-radius: espaciados.$radio-m;
+        background-color: comun.$fondo-suave;
+        list-style: none;
+        font-size: fuentes.$tamano-pequeno;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__beneficio {
+        display: flex;
+        gap: espaciados.$espacio-s;
+    }
+
+    &__beneficio-titulo {
+        color: colores.$color-primario;
+    }
+
+    // ---------- Cómo funciona ----------
+    &__pasos {
+        display: grid;
+        gap: espaciados.$espacio-m;
+        margin-bottom: espaciados.$espacio-l;
+        list-style: none;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__paso {
+        padding: espaciados.$espacio-l;
+        color: colores.$color-primario;
+
+        .tarjeta__titulo {
+            margin-bottom: espaciados.$espacio-xs;
+            color: colores.$color-primario;
+        }
+    }
+
+    &__paso-numero {
+        @include mixins.flex-centrado;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: colores.$color-primario;
+        color: colores.$color-secundario;
+        font-size: fuentes.$tamano-pequeno;
+        font-weight: fuentes.$peso-negrita;
+    }
+
+    // ---------- Opiniones ----------
+    &__media {
+        padding: espaciados.$espacio-m;
+        border: 1px solid comun.$borde;
+        border-radius: espaciados.$radio-s;
+        background-color: comun.$fondo-suave;
+    }
+
+    &__media-valor {
+        font-family: fuentes.$fuente-titulo;
+        font-size: fuentes.$tamano-h2;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-primario;
+    }
+
+    &__estrellas {
+        font-size: fuentes.$tamano-pequeno;
+        letter-spacing: 0.15em;
+        color: colores.$color-primario;
+    }
+
+    &__opiniones {
+        display: grid;
+        gap: espaciados.$espacio-m;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__opinion {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-m;
+        padding: espaciados.$espacio-l;
+        color: colores.$color-texto;
+    }
+
+    &__cita {
+        flex: 1;
+        color: colores.$color-titulo;
+    }
+
+    &__autor {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+    }
+
+    &__autor-datos {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.75rem;
+    }
+
+    &__autor-nombre {
+        font-size: fuentes.$tamano-pequeno;
+        color: colores.$color-titulo;
+    }
+
+    // ---------- Para clubes (Modo Manager) ----------
+    &__manager {
+        display: grid;
+        gap: espaciados.$espacio-xl;
+        align-items: center;
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: 1.2fr 1fr;
+        }
+    }
+
+    &__manager-titulo {
+        margin-block: espaciados.$espacio-m;
+        font-size: fuentes.$tamano-h2;
+        color: colores.$color-secundario;
+    }
+
+    &__modulos {
+        display: grid;
+        gap: espaciados.$espacio-xs;
+        margin-block: espaciados.$espacio-l;
+        list-style: none;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__modulo {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-s;
+        padding: espaciados.$espacio-s;
+        border-radius: espaciados.$radio-s;
+        background-color: rgba(colores.$color-secundario, 0.06);
+        font-size: 0.8rem;
+        color: rgba(colores.$color-secundario, 0.8);
+    }
+
+    &__modulo-titulo {
+        display: block;
+        font-size: fuentes.$tamano-pequeno;
+        color: colores.$color-secundario;
+    }
+
+    &__acciones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: espaciados.$espacio-s;
+    }
+
+    // Botón blanco para fondos de color (verde o lima)
+    &__boton-claro {
+        background-color: colores.$color-secundario;
+        border-color: rgba(colores.$color-titulo, 0.12);
+        color: colores.$color-primario;
+
+        &:hover {
+            border-color: colores.$color-primario;
+        }
+    }
+
+    &__resumen {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-m;
+        padding: espaciados.$espacio-l;
+    }
+
+    &__cifras {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: espaciados.$espacio-xs;
+        font-size: 0.75rem;
+    }
+
+    &__cifra {
+        padding: espaciados.$espacio-s;
+        border-radius: espaciados.$radio-s;
+        background-color: comun.$fondo-suave;
+        color: colores.$color-primario;
+
+        dt {
+            color: colores.$color-texto;
+        }
+    }
+
+    &__cifra-valor {
+        font-family: fuentes.$fuente-titulo;
+        font-size: fuentes.$tamano-h3;
+        font-weight: fuentes.$peso-negrita;
+    }
+
+    &__ocupacion {
+        padding: espaciados.$espacio-s espaciados.$espacio-m;
+        border: 1px solid comun.$borde;
+        border-radius: espaciados.$radio-s;
+        font-size: fuentes.$tamano-pequeno;
+        color: colores.$color-titulo;
+    }
+
+    &__ocupacion-cabecera {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: espaciados.$espacio-xs;
+    }
+
+    &__enlace {
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-primario;
+    }
+
+    &__ocupacion-lista {
+        list-style: none;
+    }
+
+    &__ocupacion-fila {
+        display: grid;
+        grid-template-columns: 4.5rem 1fr auto;
+        align-items: center;
+        padding-block: espaciados.$espacio-s;
+        border-bottom: 1px solid comun.$borde;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    // ---------- Preguntas frecuentes ----------
+    &__preguntas {
+        display: grid;
+        column-gap: espaciados.$espacio-xl;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__pregunta {
+        padding-block: espaciados.$espacio-m;
+        border-bottom: 1px solid rgba(colores.$color-titulo, 0.12);
+
+        &[open] .inicio-publico__pregunta-titulo::after {
+            content: '−';
+        }
+    }
+
+    &__pregunta-titulo {
+        display: flex;
+        justify-content: space-between;
+        gap: espaciados.$espacio-m;
+        cursor: pointer;
+        list-style: none;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-primario;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &::after {
+            content: '+';
+            font-weight: fuentes.$peso-normal;
+            color: colores.$color-texto;
+        }
+    }
+
+    &__respuesta {
+        margin-top: espaciados.$espacio-xs;
+        font-size: fuentes.$tamano-pequeno;
+    }
+
+    // ---------- Llamadas finales ----------
+    &__llamadas {
+        display: grid;
+        gap: espaciados.$espacio-m;
+        margin-top: espaciados.$espacio-xxl;
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__llamada {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-m;
+        padding: espaciados.$espacio-xl espaciados.$espacio-l;
+        border-radius: espaciados.$radio-m;
+        font-size: fuentes.$tamano-pequeno;
+
+        @include mixins.desde(tablet) {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        &--lima {
+            background-color: colores.$color-terciario;
+            color: colores.$color-primario;
+        }
+
+        &--verde {
+            background-color: colores.$color-primario;
+            color: rgba(colores.$color-secundario, 0.85);
+
+            .inicio-publico__llamada-titulo,
+            .inicio-publico__llamada-antetitulo {
+                color: colores.$color-secundario;
+            }
+        }
+    }
+
+    &__llamada-texto {
+        flex: 1;
+    }
+
+    &__llamada-antetitulo {
+        font-size: 0.75rem;
+        font-weight: fuentes.$peso-negrita;
+        text-transform: uppercase;
+    }
+
+    &__llamada-titulo {
+        margin-block: espaciados.$espacio-xs;
+        font-size: fuentes.$tamano-h3;
+        color: colores.$color-primario;
+
+        @include mixins.desde(tablet) {
+            font-size: 1.6rem;
+        }
+    }
+
+    // ---------- Pie (se combina con el componente .pie) ----------
+    &__pie-marca {
+        max-width: 24rem;
+        font-size: fuentes.$tamano-pequeno;
+    }
+
+    &__pie-titulo {
+        display: block;
+        margin-bottom: espaciados.$espacio-xs;
+        font-family: fuentes.$fuente-texto;
+        font-size: fuentes.$tamano-pequeno;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-secundario;
+    }
+
+    &__pie-nota {
+        margin-top: espaciados.$espacio-xs;
+        font-size: 0.75rem;
+        color: rgba(colores.$color-secundario, 0.6);
+    }
+
+    &__pie-columnas {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: espaciados.$espacio-l;
+        font-size: fuentes.$tamano-pequeno;
+
+        @include mixins.desde(tablet) {
+            grid-column: span 2;
+            justify-content: end;
+            gap: espaciados.$espacio-xxl;
+        }
+    }
+
+    &__pie-lista {
+        list-style: none;
+        line-height: 2;
+    }
+
+    &__pie-legal {
+        grid-column: 1 / -1;
+        color: rgba(colores.$color-secundario, 0.6);
     }
 }

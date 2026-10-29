@@ -1,7 +1,405 @@
 @use '../mixins';
 @use '../espaciados';
+// AÑADIDO: módulos que usan los estilos nuevos del final del archivo
+@use '../colores';
+@use '../fuentes';
+@use 'comun';
+// AÑADIDO: estilos de las otras páginas del socio
+@use 'clases';
+@use 'membresia';
+@use 'servicios-club';
 
 .inicio-socio {
     @include mixins.contenedor;
     padding-block: espaciados.$espacio-l;
+}
+
+// =====================================================================
+// AÑADIDO: estilos según el mockup "Inicio del club" (socio)
+// (el bloque de arriba es vuestro código original, sin cambios)
+// =====================================================================
+.inicio-socio {
+
+    // ---------- Bienvenida ----------
+    &__intro {
+        display: grid;
+        gap: espaciados.$espacio-l;
+        align-items: start;
+        padding-block: espaciados.$espacio-l;
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: 1fr 21rem;
+            gap: espaciados.$espacio-xxl;
+        }
+    }
+
+    &__titulo {
+        margin-block: espaciados.$espacio-m;
+        font-size: fuentes.$tamano-h2;
+
+        @include mixins.desde(tablet) {
+            font-size: 2.4rem;
+        }
+    }
+
+    &__descripcion {
+        max-width: 44rem;
+    }
+
+    &__cuenta {
+        padding: espaciados.$espacio-m espaciados.$espacio-l;
+    }
+
+    &__cuenta-datos {
+        display: flex;
+        justify-content: space-between;
+        padding-block: espaciados.$espacio-s;
+        border-top: 1px solid comun.$borde;
+    }
+
+    &__cuenta-derecha {
+        text-align: right;
+    }
+
+    &__dato-etiqueta {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-xs;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        color: colores.$color-texto;
+    }
+
+    &__dato-valor {
+        font-size: fuentes.$tamano-pequeno;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-titulo;
+    }
+
+    &__enlace {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: fuentes.$tamano-pequeno;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-primario;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &--apagado {
+            color: colores.$color-texto;
+        }
+    }
+
+    &__nota {
+        font-size: 0.75rem;
+        color: colores.$color-texto;
+    }
+
+    // ---------- Accesos principales ----------
+    &__accesos {
+        display: grid;
+        gap: espaciados.$espacio-m;
+        padding-block: espaciados.$espacio-l;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__acceso {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-s;
+        padding: espaciados.$espacio-l;
+
+        .tarjeta__titulo {
+            margin-top: espaciados.$espacio-xs;
+        }
+
+        .tarjeta__cuerpo {
+            flex: 1;
+            font-size: fuentes.$tamano-pequeno;
+        }
+
+        &--destacado {
+            border-color: colores.$color-primario;
+            background-color: colores.$color-primario;
+
+            .tarjeta__titulo {
+                color: colores.$color-secundario;
+            }
+
+            .tarjeta__cuerpo {
+                color: rgba(colores.$color-secundario, 0.8);
+            }
+        }
+    }
+
+    &__acceso-pie {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: colores.$color-primario;
+    }
+
+    // ---------- Secciones ----------
+    &__seccion {
+        padding-block: espaciados.$espacio-xl 0;
+    }
+
+    // Días + lista de franjas libres
+    &__disponibilidad {
+        display: grid;
+        gap: espaciados.$espacio-m;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: 11rem 1fr;
+            align-items: start;
+        }
+    }
+
+    &__dias {
+        display: flex;
+        gap: espaciados.$espacio-xs;
+        padding: espaciados.$espacio-s;
+        list-style: none;
+
+        @include mixins.desde(tablet) {
+            flex-direction: column;
+        }
+    }
+
+    &__dia {
+        display: flex;
+        justify-content: space-between;
+        gap: espaciados.$espacio-s;
+        width: 100%;
+        padding: espaciados.$espacio-s;
+        border-radius: espaciados.$radio-s;
+        background-color: transparent;
+        font-size: fuentes.$tamano-pequeno;
+        color: colores.$color-texto;
+        cursor: pointer;
+
+        strong {
+            color: colores.$color-titulo;
+        }
+
+        &:hover,
+        &--activo {
+            background-color: colores.$color-terciario;
+            color: colores.$color-titulo;
+        }
+    }
+
+    &__franjas {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-s;
+        list-style: none;
+    }
+
+    &__franja {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: espaciados.$espacio-s espaciados.$espacio-m;
+        padding: espaciados.$espacio-s espaciados.$espacio-m;
+        border: 1px solid comun.$borde;
+        border-radius: espaciados.$radio-s;
+        background-color: colores.$color-secundario;
+        font-size: 0.75rem;
+        transition: border-color espaciados.$transicion;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: 4.5rem 1fr auto auto auto;
+        }
+
+        &:hover {
+            border-color: colores.$color-primario;
+        }
+
+        > i {
+            display: none;
+
+            @include mixins.desde(tablet) {
+                display: block;
+            }
+        }
+    }
+
+    &__franja-hora,
+    &__franja-pista {
+        display: flex;
+        flex-direction: column;
+
+        strong {
+            font-size: fuentes.$tamano-pequeno;
+            color: colores.$color-titulo;
+        }
+    }
+
+    &__franja-hora {
+        padding-right: espaciados.$espacio-m;
+        border-right: 1px solid comun.$borde;
+
+        strong {
+            font-size: fuentes.$tamano-base;
+        }
+    }
+
+    &__franja-precio {
+        grid-column: 2 / -1;
+        justify-self: end;
+        font-size: fuentes.$tamano-base;
+        color: colores.$color-titulo;
+
+        @include mixins.desde(tablet) {
+            grid-column: auto;
+        }
+    }
+
+    // ---------- Clases ----------
+    &__rejilla {
+        display: grid;
+        gap: espaciados.$espacio-m;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__clase {
+        padding: espaciados.$espacio-m espaciados.$espacio-l;
+        color: colores.$color-texto;
+
+        .tarjeta__cuerpo {
+            font-size: fuentes.$tamano-pequeno;
+        }
+    }
+
+    &__clase-pie {
+        display: flex;
+        justify-content: space-between;
+        margin-top: espaciados.$espacio-m;
+    }
+
+    &__plazas {
+        font-size: fuentes.$tamano-pequeno;
+        color: colores.$color-titulo;
+
+        &::before {
+            content: '●';
+            margin-right: espaciados.$espacio-xs;
+            font-size: 0.6rem;
+            vertical-align: middle;
+            color: colores.$color-primario;
+        }
+
+        &--completo {
+            color: colores.$color-texto;
+
+            &::before {
+                color: colores.$color-texto;
+            }
+        }
+    }
+
+    // ---------- Información del club ----------
+    &__club {
+        display: grid;
+        gap: espaciados.$espacio-m;
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: 1.6fr 1fr;
+        }
+    }
+
+    &__club-info {
+        padding: espaciados.$espacio-l;
+    }
+
+    &__club-datos {
+        display: grid;
+        gap: espaciados.$espacio-s;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__club-dato {
+        padding: espaciados.$espacio-m;
+        border-radius: espaciados.$radio-s;
+        background-color: comun.$fondo-suave;
+    }
+
+    &__club-icono {
+        font-size: 1.25rem;
+        color: colores.$color-primario;
+    }
+
+    &__club-acciones {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: espaciados.$espacio-l;
+        margin-top: espaciados.$espacio-l;
+    }
+
+    &__mapa {
+        position: relative;
+        min-height: 14rem;
+        padding: espaciados.$espacio-m;
+        border: 1px solid rgba(colores.$color-titulo, 0.15);
+        border-radius: espaciados.$radio-m;
+        background-color: rgba(colores.$color-primario, 0.08);
+    }
+
+    &__mapa-texto {
+        font-size: 0.75rem;
+        color: colores.$color-texto;
+    }
+
+    &__mapa-pin {
+        @include mixins.flex-centrado;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid colores.$color-primario;
+        border-radius: 50%;
+        background-color: colores.$color-secundario;
+        color: colores.$color-primario;
+        font-size: 1.4rem;
+    }
+
+    // ---------- Servicios ----------
+    &__servicios {
+        display: grid;
+        gap: espaciados.$espacio-m;
+
+        @include mixins.desde(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mixins.desde(escritorio) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    &__servicio {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-xs;
+
+        .tarjeta__cuerpo {
+            flex: 1;
+            font-size: fuentes.$tamano-pequeno;
+        }
+    }
 }

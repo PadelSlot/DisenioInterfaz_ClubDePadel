@@ -1,0 +1,141 @@
+// =====================================================================
+// NUEVO: servicios del club en administración (serviciosAdmin.html)
+// Se carga desde _panel-admin.scss con @use 'servicios-admin'
+// =====================================================================
+@use '../colores';
+@use '../espaciados';
+@use '../fuentes';
+@use '../mixins';
+@use 'comun';
+
+.servicios-admin {
+
+    &__seccion {
+        scroll-margin-top: espaciados.$espacio-l;
+    }
+
+    &__fila {
+        @include mixins.desde(escritorio) {
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        }
+    }
+
+    &__matricula {
+        display: inline-block;
+        padding: 0.1rem espaciados.$espacio-xs;
+        border: 2px solid colores.$color-titulo;
+        border-radius: 4px;
+        background-color: colores.$color-secundario;
+        font-family: fuentes.$fuente-titulo;
+        font-weight: fuentes.$peso-negrita;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+    }
+
+    // Botones de venta rápida
+    &__productos {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+        gap: espaciados.$espacio-xs;
+    }
+
+    &__producto {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: espaciados.$espacio-s;
+        border: 1px solid comun.$borde;
+        border-radius: espaciados.$radio-s;
+        background-color: comun.$fondo-suave;
+        text-align: left;
+        font-size: 0.75rem;
+        color: colores.$color-texto;
+        cursor: pointer;
+        transition: border-color espaciados.$transicion;
+
+        strong {
+            font-size: 0.8rem;
+            color: colores.$color-titulo;
+        }
+
+        span {
+            margin-top: espaciados.$espacio-xs;
+            font-weight: fuentes.$peso-negrita;
+            color: colores.$color-primario;
+        }
+
+        &:hover {
+            border-color: colores.$color-primario;
+        }
+    }
+
+    // Taquillas
+    &__leyenda {
+        display: flex;
+        flex-wrap: wrap;
+        gap: espaciados.$espacio-xs espaciados.$espacio-m;
+        list-style: none;
+        font-size: 0.75rem;
+    }
+
+    &__leyenda-item::before {
+        content: '';
+        display: inline-block;
+        width: 0.7rem;
+        height: 0.7rem;
+        margin-right: 0.3rem;
+        vertical-align: -0.1rem;
+        border: 1px solid rgba(colores.$color-titulo, 0.25);
+        border-radius: 3px;
+    }
+
+    &__leyenda-item--asignada::before {
+        border-color: colores.$color-primario;
+        background-color: colores.$color-primario;
+    }
+
+    &__leyenda-item--fija::before {
+        border-color: colores.$color-terciario;
+        background-color: colores.$color-terciario;
+    }
+
+    &__taquillas {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));
+        gap: espaciados.$espacio-xs;
+        list-style: none;
+    }
+
+    &__taquilla {
+        display: flex;
+        flex-direction: column;
+        min-height: 4.5rem;
+        padding: espaciados.$espacio-xs;
+        border: 1px solid rgba(colores.$color-titulo, 0.12);
+        border-radius: espaciados.$radio-s;
+        background-color: colores.$color-secundario;
+        font-size: 0.7rem;
+
+        strong {
+            font-family: fuentes.$fuente-titulo;
+            font-size: fuentes.$tamano-base;
+            color: colores.$color-titulo;
+        }
+
+        &--asignada {
+            border-color: colores.$color-primario;
+            background-color: colores.$color-primario;
+            color: rgba(colores.$color-secundario, 0.85);
+
+            strong {
+                color: colores.$color-secundario;
+            }
+        }
+
+        &--fija {
+            border-color: colores.$color-terciario;
+            background-color: colores.$color-terciario;
+            color: colores.$color-titulo;
+        }
+    }
+}
