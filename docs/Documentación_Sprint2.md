@@ -7,11 +7,11 @@
 # Coevalución
 Javier Oliveros Lepe - 70% (Todos estamos de acuerdo)
 
-Pablo Márquez López - 100% (Todos puntúan el 100%)
+Pablo Márquez López - 100% (Todos estamos de acuerdo)
 
-Ismael Frías Fernández - 85% (Todos puntúan el 100%)
+Ismael Frías Fernández - 85% (Todos estamos de acuerdo)
 
-Alberto Rueda Romero - 100% (Todos puntúan el 100%)
+Alberto Rueda Romero - 100% (Todos estamos de acuerdo)
 
 ## **1\. Arquitectura de Módulos y Estructura HTML5**
 
