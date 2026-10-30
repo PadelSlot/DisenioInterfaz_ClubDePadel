@@ -4,9 +4,14 @@
 
 # **Documentación del Sprint 2 de Diseño de Interfaces**
 
-#  **PadelSlot**
+# Coevalución
+Javier Oliveros Lepe - 100% (Todos puntúan el 100%)
 
-Pablo Marquez, Javier Oliveros, Alberto Rueda e Ismael Frías
+Pablo Márquez López - 100% (Todos puntúan el 100%)
+
+Ismael Frías Fernández - 100% (Todos puntúan el 100%)
+
+Alberto Rueda Romero - 100% (Todos puntúan el 100%)
 
 ## **1\. Arquitectura de Módulos y Estructura HTML5**
 
