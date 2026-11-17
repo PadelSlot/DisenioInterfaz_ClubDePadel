@@ -26,7 +26,7 @@
             color: colores.$color-secundario;
 
             &:hover {
-                background-color: darken(colores.$color-primario, 5%);
+                background-color: color.adjust(colores.$color-primario, $lightness: -5%);
             }
         }
 

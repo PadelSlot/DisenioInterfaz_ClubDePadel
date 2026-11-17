@@ -13,6 +13,10 @@
     <!-- Iconos Phosphor -->
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 
+    <!-- Código original de qrcode.js y nuestro generador de QR -->
+    <script src="assets/js/vendor/qrcode.js" defer></script>
+    <script src="assets/js/generadorQR.js" defer></script>
+    
     <!-- Hoja de estilos compilada desde scss/main.scss -->
     <link rel="stylesheet" href="scss/main.css">
 </head>
@@ -130,7 +134,6 @@
                 </div>
 
                 <div class="membresia__carnet-cuerpo">
-                    <span class="membresia__carnet-etiqueta">Titular de la membresía</span>
                     <strong class="membresia__carnet-nombre">Laura M. García</strong>
                     <div class="membresia__carnet-datos">
                         <span>Socia oficial <strong>#1042</strong></span>
@@ -138,7 +141,17 @@
                     </div>
                 </div>
 
-                <p class="membresia__carnet-pie">● Acceso a pistas 1-12 y gimnasio</p>
+                <div class="membresia__carnet-qr">
+                    <div id="qr-carnet" class="membresia__carnet-qr-codigo"
+                        data-qr="PADELSLOT-SOCIO-1042"
+                        role="img"
+                        aria-label="Código QR de acceso de la socia número 1042"></div>
+                    <p class="membresia__carnet-qr-texto">
+                        <strong>Tu acceso al club</strong>
+                        Muéstralo en recepción o acércalo al lector de los tornos.
+                        <span class="membresia__carnet-qr-numero">Nº de socia: 1042</span> <!--Número escrito a mano de prueba como dato de ejemplo, cuando haya servidor se hará automaticamente-->
+                    </p>
+                </div>
 
                 <div class="membresia__carnet-acciones">
                     <a href="#" class="boton membresia__boton-claro"><i class="ph ph-apple-logo boton__icono" aria-hidden="true"></i> Apple Wallet</a>

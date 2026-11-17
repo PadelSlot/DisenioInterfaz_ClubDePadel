@@ -1998,10 +1998,6 @@ ul, ol {
   flex-direction: column;
   gap: 0.25rem;
 }
-.membresia__carnet-etiqueta {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-}
 .membresia__carnet-nombre {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.5rem;
@@ -2015,14 +2011,46 @@ ul, ol {
 .membresia__carnet-datos strong {
   color: #DEF127;
 }
-.membresia__carnet-pie {
-  font-size: 0.75rem;
-}
 .membresia__carnet-acciones {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: auto;
+}
+.membresia__carnet-qr {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+}
+.membresia__carnet-qr + .membresia__carnet-acciones {
+  margin-top: 0;
+}
+.membresia__carnet-qr-codigo {
+  flex-shrink: 0;
+  width: 9rem;
+  aspect-ratio: 1/1;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+}
+.membresia__carnet-qr-codigo svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.membresia__carnet-qr-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+.membresia__carnet-qr-texto strong {
+  font-size: 1rem;
+}
+.membresia__carnet-qr-numero {
+  color: #DEF127;
+  font-weight: 600;
 }
 .membresia__boton-claro {
   background-color: #ffffff;

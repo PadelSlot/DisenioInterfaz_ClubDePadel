@@ -189,11 +189,6 @@
         gap: 0.25rem;
     }
 
-    &__carnet-etiqueta {
-        font-size: 0.7rem;
-        text-transform: uppercase;
-    }
-
     &__carnet-nombre {
         font-family: fuentes.$fuente-titulo;
         font-size: 1.5rem;
@@ -210,15 +205,54 @@
         }
     }
 
-    &__carnet-pie {
-        font-size: 0.75rem;
-    }
-
     &__carnet-acciones {
         display: flex;
         flex-wrap: wrap;
         gap: espaciados.$espacio-xs;
         margin-top: auto;
+    }
+
+    // Código QR del carnet: encima de los botones de Wallet
+    &__carnet-qr {
+        display: flex;
+        align-items: center;
+        gap: espaciados.$espacio-m;
+        margin-top: auto;                         // Ocupa el hueco libre de la tarjeta
+
+        & + .membresia__carnet-acciones {
+            margin-top: 0;                        // Los botones quedan pegados al QR
+        }
+    }
+
+    &__carnet-qr-codigo {
+        flex-shrink: 0;
+        width: 9rem;
+        aspect-ratio: 1 / 1;                      // Reserva el hueco: sin saltos (CLS)
+        padding: espaciados.$espacio-m;           // Zona de silencio: unos 4 módulos
+        background-color: colores.$color-secundario;
+        border-radius: espaciados.$radio-s;
+
+        svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__carnet-qr-texto {
+        display: flex;
+        flex-direction: column;
+        gap: espaciados.$espacio-xs;
+        font-size: fuentes.$tamano-pequeno;
+
+        strong {
+            font-size: fuentes.$tamano-base;
+        }
+    }
+
+    &__carnet-qr-numero {
+        color: colores.$color-terciario;          // Lima sobre verde: 6,45:1
+        font-weight: 600;
     }
 
     &__boton-claro {

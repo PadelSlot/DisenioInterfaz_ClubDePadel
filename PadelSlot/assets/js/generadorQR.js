@@ -2,6 +2,8 @@
  * generadorQR.js · PadelSlot
  * Genera el código QR del carnet digital del socio con la librería QRCode.js (MIT).
  * Se carga en cuotas.html después de assets/js/vendor/qrcodejs/qrcode.js
+ * NOTA: el número de socio (1042) es un dato de ejemplo de la maqueta. Cuando haya servidor, será él quien genere el contenido del QR 
+ * para cada socio (idealmente un código temporal, no el número tal cual), y también el texto "Nº de socia" y el aria-label.
  */
 
 // Esperamos a que el HTML esté cargado para que exista el contenedor del QR.
