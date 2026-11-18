@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Multimedia de PadelSlot (Sprint 3 · T-3.2, T-3.3 y T-3.4)
+   Estilos del logotipo, las fotos y el vídeo integrados con <picture>,
+   <video> y <audio>. Se carga después de scss/main.css para no tocar el SCSS.
+   ========================================================================== */
+
+/* ---------- Logotipo (SVG con respaldo AVIF/WebP) ---------- */
+.logotipo {
+  display: block;
+  width: auto;
+  height: 2rem;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+/* Sobre fondo verde (carnet de socio) se muestra sobre una placa blanca */
+.logotipo--carnet {
+  height: 2.5rem;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+}
+
+/* ---------- Fotos de las pistas (inicio.html) ---------- */
+.inicio-publico__club-imagen {
+  display: block;
+  height: auto;
+  padding: 0;
+  margin-bottom: 0.75rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* ---------- Fotos de los convenios (cuotas.html) ---------- */
+.membresia__convenio-imagen {
+  display: block;
+  margin: -1.5rem -1.5rem 0;
+  border-radius: 0.75rem 0.75rem 0 0;
+  overflow: hidden;
+  background-color: rgb(246.28, 248.36, 247.56);
+}
+
+.inicio-publico__club-imagen img,
+.membresia__convenio-imagen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* ---------- Vídeo y música del club (inicio.html) ---------- */
+.inicio-publico__video {
+  margin: 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: #255945;
+}
+
+.inicio-publico__video-reproductor {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.inicio-publico__video-audio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+}
+
+.inicio-publico__video-audio audio {
+  width: 100%;
+  max-width: 20rem;
+  height: 2.5rem;
+}
+
+.inicio-publico__video-etiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
