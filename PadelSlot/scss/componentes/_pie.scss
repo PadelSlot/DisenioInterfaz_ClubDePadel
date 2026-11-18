@@ -1,5 +1,6 @@
 @use '../colores';
 @use '../espaciados';
+@use '../fuentes';
 @use '../mixins';
 
 .pie {
@@ -23,6 +24,6 @@
         border-top: 1px solid rgba(colores.$color-titulo,0.1);
         padding-top: espaciados.$espacio-m;
         margin-top: espaciados.$espacio-l;
-        font-size: 0.875rem;
+        font-size: fuentes.$tamano-pequeno;
     }
 }

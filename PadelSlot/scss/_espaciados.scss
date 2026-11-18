@@ -8,6 +8,8 @@ $espacio-l: 1.5rem;
 $espacio-xl: 2.5rem;
 $espacio-xxl: 4rem;
 
+// Radios
+$radio-xs: 0.25rem;
 $radio-s: 0.5rem;
 $radio-m: 0.75rem;
 $radio-l: 1.25rem;
@@ -15,3 +17,8 @@ $radio-pastilla: 999px;
 
 $ancho-maximo: 75rem;
 $transicion: 0.2s ease-in-out;
+
+// Sombras suaves
+$sombra-s: 0 2px 8px rgba(colores.$color-titulo, 0.06); // Cabecera, campos
+$sombra-m: 0 8px 24px rgba(colores.$color-titulo, 0.06); // Tarjetas
+$sombra-destacada: 0 12px 30px rgba(colores.$color-primario, 0.25); // Plan destacado

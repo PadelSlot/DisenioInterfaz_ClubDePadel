@@ -10,7 +10,7 @@
     background-color: colores.$color-secundario;
     color: colores.$color-titulo;
     border-bottom: 1px solid rgba(colores.$color-titulo, 0.08);
-    box-shadow: 0 2px 10px rgba(colores.$color-titulo, 0.04);
+    box-shadow: espaciados.$sombra-s;
 
     &__contenido {
         @include mixins.contenedor;

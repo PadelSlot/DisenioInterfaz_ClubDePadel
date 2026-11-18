@@ -68,14 +68,14 @@ $borde: rgba(colores.$color-titulo, 0.08);
     &__antetitulo {
         display: block;
         margin-bottom: espaciados.$espacio-xs;
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
         font-weight: fuentes.$peso-negrita;
         text-transform: uppercase;
         color: colores.$color-primario;
     }
 
     &__titulo {
-        font-size: 1.6rem;
+        font-size: fuentes.$tamano-destacado;
         color: colores.$color-primario;
 
         @include mixins.desde(tablet) {
@@ -113,7 +113,7 @@ $borde: rgba(colores.$color-titulo, 0.08);
     border: 1px solid $borde;
     background-color: $fondo-suave;
     color: colores.$color-titulo;
-    font-size: 0.75rem;
+    font-size: fuentes.$tamano-mini;
     font-weight: fuentes.$peso-negrita;
 }
 
@@ -126,7 +126,7 @@ $borde: rgba(colores.$color-titulo, 0.08);
     border-radius: espaciados.$radio-s;
     background-color: $fondo-suave;
     color: colores.$color-primario;
-    font-size: 1.25rem;
+    font-size: fuentes.$tamano-h3;
 
     &--verde {
         background-color: rgba(colores.$color-secundario, 0.12);
@@ -156,7 +156,7 @@ $borde: rgba(colores.$color-titulo, 0.08);
     }
 
     &__icono {
-        font-size: 1.25rem;
+        font-size: fuentes.$tamano-h3;
     }
 
     &__texto {
@@ -207,7 +207,7 @@ $borde: rgba(colores.$color-titulo, 0.08);
     }
 
     &__rol {
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
         opacity: 0.8;
     }
 }
@@ -220,7 +220,7 @@ $borde: rgba(colores.$color-titulo, 0.08);
     border-radius: 50%;
     background-color: transparent;
     color: inherit;
-    font-size: 1.25rem;
+    font-size: fuentes.$tamano-h3;
     cursor: pointer;
 
     &:hover {
@@ -298,11 +298,11 @@ $borde: rgba(colores.$color-titulo, 0.08);
         align-items: center;
         padding-block: espaciados.$espacio-xs;
         border-radius: espaciados.$radio-s;
-        font-size: 0.7rem;
+        font-size: fuentes.$tamano-mini;
         color: colores.$color-texto;
 
         i {
-            font-size: 1.25rem;
+            font-size: fuentes.$tamano-h3;
         }
 
         &--activo {
@@ -346,7 +346,7 @@ $borde: rgba(colores.$color-titulo, 0.08);
         align-items: center;
         gap: espaciados.$espacio-xs;
         margin-bottom: espaciados.$espacio-s;
-        font-size: 0.8rem;
+        font-size: fuentes.$tamano-mini;
     }
 
     &__miga {
@@ -362,7 +362,7 @@ $borde: rgba(colores.$color-titulo, 0.08);
 
     &__titulo {
         margin-block: espaciados.$espacio-xs;
-        font-size: 1.6rem;
+        font-size: fuentes.$tamano-destacado;
 
         @include mixins.desde(tablet) {
             font-size: fuentes.$tamano-h2;
@@ -438,7 +438,7 @@ $borde: rgba(colores.$color-titulo, 0.08);
     border-radius: 50%;
     background-color: colores.$color-primario;
     color: colores.$color-secundario;
-    font-size: 0.8rem;
+    font-size: fuentes.$tamano-mini;
     font-weight: fuentes.$peso-negrita;
 }
 

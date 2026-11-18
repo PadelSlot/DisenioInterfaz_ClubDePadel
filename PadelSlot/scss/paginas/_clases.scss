@@ -14,14 +14,14 @@
 
     &__antetitulo {
         display: block;
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
         font-weight: fuentes.$peso-negrita;
         text-transform: uppercase;
         color: colores.$color-primario;
     }
 
     &__nota {
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
         color: colores.$color-texto;
     }
 
@@ -53,7 +53,7 @@
     &__perfil-datos {
         display: flex;
         flex-direction: column;
-        font-size: 0.8rem;
+        font-size: fuentes.$tamano-mini;
 
         strong {
             font-size: fuentes.$tamano-base;
@@ -166,7 +166,7 @@
         padding-block: espaciados.$espacio-s;
         border-top: 1px solid comun.$borde;
         list-style: none;
-        font-size: 0.8rem;
+        font-size: fuentes.$tamano-mini;
         color: colores.$color-titulo;
 
         i {
@@ -253,7 +253,7 @@
         color: colores.$color-titulo;
 
         span {
-            font-size: 0.75rem;
+            font-size: fuentes.$tamano-mini;
             font-weight: fuentes.$peso-normal;
             color: colores.$color-texto;
         }

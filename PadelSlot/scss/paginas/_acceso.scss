@@ -77,7 +77,7 @@
 
         &:has(:checked) {
             background-color: colores.$color-secundario;
-            box-shadow: 0 1px 4px rgba(colores.$color-titulo, 0.1);
+            box-shadow: espaciados.$sombra-s;
             color: colores.$color-primario;
         }
 
@@ -103,7 +103,7 @@
         font-size: fuentes.$tamano-h3;
 
         @include mixins.desde(tablet) {
-            font-size: 1.6rem;
+            font-size: fuentes.$tamano-destacado;
         }
     }
 
@@ -203,7 +203,7 @@
     }
 
     &__panel-titulo {
-        font-size: 1.6rem;
+        font-size: fuentes.$tamano-destacado;
         color: colores.$color-secundario;
 
         @include mixins.desde(tablet) {
@@ -247,7 +247,7 @@
     }
 
     &__mini-pie {
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
         color: rgba(colores.$color-secundario, 0.7);
     }
 
@@ -291,7 +291,7 @@
         gap: espaciados.$espacio-xs;
         padding-top: espaciados.$espacio-m;
         border-top: 1px solid rgba(colores.$color-secundario, 0.15);
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
     }
 
     // El pie va justo debajo (anula el margen superior de .pie)

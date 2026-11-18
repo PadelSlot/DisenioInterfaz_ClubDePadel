@@ -58,7 +58,7 @@ ul, ol {
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 .boton__icono {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
 }
 .boton--primario {
   background-color: #255945;
@@ -97,7 +97,7 @@ ul, ol {
 }
 .tarjeta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 .tarjeta__cabecera {
   display: flex;
@@ -166,7 +166,7 @@ ul, ol {
   background-color: #ffffff;
   color: #000000;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 .cabecera__contenido {
   width: 100%;
@@ -321,7 +321,7 @@ ul, ol {
   color: #255945;
 }
 .encabezado-seccion__titulo {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #255945;
 }
 @media (min-width: 48rem) {
@@ -529,7 +529,7 @@ ul, ol {
   align-items: center;
   padding-block: 0.5rem;
   border-radius: 0.5rem;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: #9f9898;
 }
 .navegacion-movil__enlace i {
@@ -569,7 +569,7 @@ ul, ol {
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 0.75rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .cabecera-pagina__miga:hover {
   color: #255945;
@@ -580,7 +580,7 @@ ul, ol {
 }
 .cabecera-pagina__titulo {
   margin-block: 0.5rem;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 @media (min-width: 48rem) {
   .cabecera-pagina__titulo {
@@ -647,7 +647,7 @@ ul, ol {
   border-radius: 50%;
   background-color: #255945;
   color: #ffffff;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
 }
 
@@ -862,7 +862,7 @@ ul, ol {
 }
 .acceso__perfil:has(:checked) {
   background-color: #ffffff;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   color: #255945;
 }
 .acceso__perfil:has(:focus-visible) {
@@ -883,7 +883,7 @@ ul, ol {
 }
 @media (min-width: 48rem) {
   .acceso__titulo {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
 .acceso__subtitulo {
@@ -965,7 +965,7 @@ ul, ol {
   align-self: flex-start;
 }
 .acceso__panel-titulo {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #ffffff;
 }
 @media (min-width: 48rem) {
@@ -1082,7 +1082,7 @@ ul, ol {
 }
 .inicio-publico__descripcion {
   max-width: 38rem;
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
 .inicio-publico__puntos {
   display: flex;
@@ -1098,7 +1098,7 @@ ul, ol {
   color: #255945;
 }
 .inicio-publico__nota {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #9f9898;
 }
 .inicio-publico__lista-pistas {
@@ -1125,7 +1125,7 @@ ul, ol {
   flex: 1;
   display: flex;
   flex-direction: column;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #9f9898;
 }
 .inicio-publico__pista-club {
@@ -1138,7 +1138,7 @@ ul, ol {
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 0.75rem;
   background-color: #ffffff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   text-align: left;
 }
 @media (min-width: 48rem) {
@@ -1371,7 +1371,7 @@ ul, ol {
   padding: 0.75rem;
   border-radius: 0.5rem;
   background-color: rgba(255, 255, 255, 0.06);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.8);
 }
 .inicio-publico__modulo-titulo {
@@ -1536,7 +1536,7 @@ ul, ol {
 }
 @media (min-width: 48rem) {
   .inicio-publico__llamada-titulo {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
 .inicio-publico__pie-marca {
@@ -1619,7 +1619,7 @@ ul, ol {
 .clases__perfil-datos {
   display: flex;
   flex-direction: column;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .clases__perfil-datos strong {
   font-size: 1rem;
@@ -1715,7 +1715,7 @@ ul, ol {
   padding-block: 0.75rem;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   list-style: none;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #000000;
 }
 .clases__detalles i {
@@ -1858,7 +1858,7 @@ ul, ol {
   color: #255945;
 }
 .membresia__nota {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #9f9898;
 }
 .membresia__enlace {
@@ -2006,7 +2006,7 @@ ul, ol {
 .membresia__carnet-datos {
   display: flex;
   gap: 1.5rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .membresia__carnet-datos strong {
   color: #DEF127;
@@ -2127,7 +2127,7 @@ ul, ol {
   gap: 0.5rem;
   padding-top: 0.75rem;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 500;
   color: #255945;
 }
@@ -2269,13 +2269,13 @@ ul, ol {
 .servicios-club__elemento p {
   display: flex;
   flex-direction: column;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .servicios-club__nota {
   padding: 0.75rem;
   border-radius: 0.5rem;
   background-color: rgb(246.28, 248.36, 247.56);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .servicios-club__nota strong {
   color: #000000;
@@ -2291,7 +2291,7 @@ ul, ol {
 .servicios-club__taquilla p {
   display: flex;
   flex-direction: column;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .servicios-club__taquilla strong {
   color: #000000;
@@ -2344,7 +2344,7 @@ ul, ol {
 }
 @media (min-width: 48rem) {
   .inicio-socio__titulo {
-    font-size: 2.4rem;
+    font-size: 2.75rem;
   }
 }
 .inicio-socio__descripcion {
@@ -2563,7 +2563,7 @@ ul, ol {
 .inicio-socio__plazas::before {
   content: "●";
   margin-right: 0.5rem;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   vertical-align: middle;
   color: #255945;
 }
@@ -2635,7 +2635,7 @@ ul, ol {
   border-radius: 50%;
   background-color: #ffffff;
   color: #255945;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 .inicio-socio__servicios {
   display: grid;
@@ -2698,7 +2698,7 @@ ul, ol {
   height: 0.7rem;
   margin-right: 0.3rem;
   vertical-align: -0.1rem;
-  border-radius: 3px;
+  border-radius: 0.25rem;
 }
 .cuadrante-admin__leyenda-item--libre::before {
   border: 1px dashed rgba(0, 0, 0, 0.3);
@@ -2733,7 +2733,7 @@ ul, ol {
 }
 .cuadrante-admin__hora span {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 400;
   color: #9f9898;
 }
@@ -2745,7 +2745,7 @@ ul, ol {
 }
 .cuadrante-admin__pista .etiqueta {
   margin-left: 0.25rem;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
 }
 .cuadrante-admin__pista--aviso {
   color: #255945;
@@ -2756,7 +2756,7 @@ ul, ol {
 }
 .cuadrante-admin__pista-desc {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 400;
   color: #9f9898;
 }
@@ -2768,7 +2768,7 @@ ul, ol {
   min-height: 6.5rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   line-height: 1.3;
 }
 .cuadrante-admin__turno--socio {
@@ -2796,12 +2796,12 @@ ul, ol {
   color: #9f9898;
 }
 .cuadrante-admin__turno-tipo {
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 .cuadrante-admin__turno-nombre {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #000000;
 }
 .cuadrante-admin__turno-detalle {
@@ -2827,13 +2827,13 @@ ul, ol {
   min-height: 6.5rem;
   border: 1px dashed rgba(0, 0, 0, 0.25);
   border-radius: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: #255945;
   transition: background-color 0.2s ease-in-out;
 }
 .cuadrante-admin__libre span {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 400;
   color: #9f9898;
 }
@@ -2879,7 +2879,7 @@ ul, ol {
 }
 .cuadrante-admin__detalle-titulo span {
   font-family: "Inter", sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 400;
   color: #DEF127;
 }
@@ -3019,7 +3019,7 @@ ul, ol {
   display: inline-block;
   padding: 0.1rem 0.5rem;
   border: 2px solid #000000;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   background-color: #ffffff;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
@@ -3046,7 +3046,7 @@ ul, ol {
   transition: border-color 0.2s ease-in-out;
 }
 .servicios-admin__producto strong {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #000000;
 }
 .servicios-admin__producto span {
@@ -3072,7 +3072,7 @@ ul, ol {
   margin-right: 0.3rem;
   vertical-align: -0.1rem;
   border: 1px solid rgba(0, 0, 0, 0.25);
-  border-radius: 3px;
+  border-radius: 0.25rem;
 }
 .servicios-admin__leyenda-item--asignada::before {
   border-color: #255945;
@@ -3096,7 +3096,7 @@ ul, ol {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 0.5rem;
   background-color: #ffffff;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
 }
 .servicios-admin__taquilla strong {
   font-family: "Space Grotesk", sans-serif;
@@ -3183,11 +3183,11 @@ ul, ol {
   padding: 1rem;
   border-radius: 0.75rem;
   background-color: #255945;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.8);
 }
 .panel-admin__promo-icono {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #DEF127;
 }
 .panel-admin__promo-titulo {
@@ -3234,7 +3234,7 @@ ul, ol {
 }
 .panel-admin__atajo {
   font-family: "Inter", sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
 }
 .panel-admin__barra-acciones {
   display: flex;
@@ -3377,7 +3377,7 @@ ul, ol {
   background-color: #255945;
 }
 .panel-admin__leyenda-item--clase::before {
-  border-radius: 2px;
+  border-radius: 0.25rem;
   background-color: #DEF127;
 }
 .panel-admin__cuadrante {
@@ -3572,7 +3572,7 @@ ul, ol {
   font-size: 1.1rem;
 }
 .panel-admin__subtitulo {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #9f9898;
 }
 .panel-admin__texto-pequeno {
@@ -3651,7 +3651,7 @@ ul, ol {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   text-align: left;
   white-space: nowrap;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   color: #9f9898;
@@ -3679,7 +3679,7 @@ ul, ol {
   justify-content: space-between;
   gap: 0.75rem;
   margin-top: 1rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .panel-admin__paginas {
   display: flex;
@@ -3716,7 +3716,7 @@ ul, ol {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .panel-admin__ajuste-texto p,
 .panel-admin__ajuste-texto span {
@@ -3740,7 +3740,7 @@ ul, ol {
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 0.5rem;
   background-color: #ffffff;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .panel-admin__mini strong {
   color: #000000;
@@ -3769,7 +3769,7 @@ ul, ol {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 0.5rem;
   background-color: #ffffff;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   cursor: pointer;
   transition: border-color 0.2s ease-in-out;
 }
@@ -3864,12 +3864,12 @@ ul, ol {
   min-width: 0;
   table-layout: auto;
   border-spacing: 0.2rem;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
 }
 .panel-admin__cuadrante--mini th {
   width: auto;
   padding-right: 0.25rem;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
 }
 .panel-admin__cuadrante--mini thead th {
   text-align: center;
@@ -4016,7 +4016,7 @@ ul, ol {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .reserva-intro__miga:hover {
   color: #255945;
@@ -4060,7 +4060,7 @@ ul, ol {
   justify-content: space-between;
   gap: 0.75rem;
   list-style: none;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .reserva-intro__paso {
   display: flex;
@@ -4199,7 +4199,7 @@ ul, ol {
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.5rem;
   background-color: #ffffff;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   color: #000000;
   cursor: pointer;
@@ -4236,7 +4236,7 @@ ul, ol {
   margin-right: 0.3rem;
   vertical-align: -0.1rem;
   border: 1px solid rgba(0, 0, 0, 0.25);
-  border-radius: 2px;
+  border-radius: 0.25rem;
   background-color: #ffffff;
 }
 .reserva__leyenda-item--seleccionada::before {
@@ -4278,7 +4278,7 @@ ul, ol {
 .reserva__horario-hora {
   width: 4.5rem;
   text-align: left;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
 }
 .reserva__hueco {
@@ -4295,7 +4295,7 @@ ul, ol {
 }
 .reserva__hueco span {
   display: block;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
 }
 .reserva__hueco:hover {
   border-color: #255945;
@@ -4375,10 +4375,10 @@ ul, ol {
 .reserva__resumen-item {
   display: flex;
   gap: 0.75rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 .reserva__resumen-item i {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: #9f9898;
 }
 .reserva__resumen-item p {

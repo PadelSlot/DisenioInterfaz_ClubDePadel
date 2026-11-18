@@ -11,7 +11,7 @@
 
     &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(colores.$color-titulo,0.06);
+        box-shadow: espaciados.$sombra-m;
     }
 
     &__cabecera {

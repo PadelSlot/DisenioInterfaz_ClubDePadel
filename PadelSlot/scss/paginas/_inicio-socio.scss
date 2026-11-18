@@ -38,7 +38,7 @@
         font-size: fuentes.$tamano-h2;
 
         @include mixins.desde(tablet) {
-            font-size: 2.4rem;
+            font-size: fuentes.$tamano-h1;
         }
     }
 
@@ -65,7 +65,7 @@
         display: flex;
         flex-direction: column;
         gap: espaciados.$espacio-xs;
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
         text-transform: uppercase;
         color: colores.$color-texto;
     }
@@ -94,7 +94,7 @@
     }
 
     &__nota {
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
         color: colores.$color-texto;
     }
 
@@ -211,7 +211,7 @@
         border: 1px solid comun.$borde;
         border-radius: espaciados.$radio-s;
         background-color: colores.$color-secundario;
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
         transition: border-color espaciados.$transicion;
 
         @include mixins.desde(tablet) {
@@ -294,7 +294,7 @@
         &::before {
             content: '●';
             margin-right: espaciados.$espacio-xs;
-            font-size: 0.6rem;
+            font-size: fuentes.$tamano-mini;
             vertical-align: middle;
             color: colores.$color-primario;
         }
@@ -338,7 +338,7 @@
     }
 
     &__club-icono {
-        font-size: 1.25rem;
+        font-size: fuentes.$tamano-h3;
         color: colores.$color-primario;
     }
 
@@ -360,7 +360,7 @@
     }
 
     &__mapa-texto {
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
         color: colores.$color-texto;
     }
 
@@ -375,7 +375,7 @@
         border-radius: 50%;
         background-color: colores.$color-secundario;
         color: colores.$color-primario;
-        font-size: 1.4rem;
+        font-size: fuentes.$tamano-destacado;
     }
 
     // ---------- Servicios ----------

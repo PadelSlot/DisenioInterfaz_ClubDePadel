@@ -70,7 +70,7 @@
         border-left: 4px solid colores.$color-terciario;
         border-radius: espaciados.$radio-s;
         background-color: colores.$color-secundario;
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
 
         &--completa {
             border-left-color: colores.$color-primario;

@@ -35,7 +35,7 @@
         display: flex;
         align-items: center;
         gap: espaciados.$espacio-xs;
-        font-size: 0.8rem;
+        font-size: fuentes.$tamano-mini;
     }
 
     &__miga:hover {
@@ -85,7 +85,7 @@
         justify-content: space-between;
         gap: espaciados.$espacio-s;
         list-style: none;
-        font-size: 0.8rem;
+        font-size: fuentes.$tamano-mini;
     }
 
     &__paso {
@@ -110,7 +110,7 @@
         height: 1.75rem;
         border: 1px solid rgba(colores.$color-titulo, 0.2);
         border-radius: 50%;
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
         font-weight: fuentes.$peso-negrita;
 
         .reserva-intro__paso--hecho &,
@@ -174,7 +174,7 @@
 
     &__antetitulo {
         display: block;
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
         font-weight: fuentes.$peso-negrita;
         text-transform: uppercase;
         color: colores.$color-primario;
@@ -185,7 +185,7 @@
         font-size: fuentes.$tamano-h3;
 
         @include mixins.desde(tablet) {
-            font-size: 1.5rem;
+            font-size: fuentes.$tamano-destacado;
         }
     }
 
@@ -199,7 +199,7 @@
     }
 
     &__nota {
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
         color: colores.$color-texto;
 
         &--centrada {
@@ -248,7 +248,7 @@
         border: 1px solid rgba(colores.$color-titulo, 0.15);
         border-radius: espaciados.$radio-s;
         background-color: colores.$color-secundario;
-        font-size: 0.7rem;
+        font-size: fuentes.$tamano-mini;
         text-transform: uppercase;
         color: colores.$color-titulo;
         cursor: pointer;
@@ -282,7 +282,7 @@
         gap: espaciados.$espacio-xs espaciados.$espacio-m;
         margin-block: espaciados.$espacio-m;
         list-style: none;
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
     }
 
     &__leyenda-item::before {
@@ -293,7 +293,7 @@
         margin-right: 0.3rem;
         vertical-align: -0.1rem;
         border: 1px solid rgba(colores.$color-titulo, 0.25);
-        border-radius: 2px;
+        border-radius: espaciados.$radio-xs;
         background-color: colores.$color-secundario;
     }
 
@@ -330,7 +330,7 @@
 
             span {
                 display: block;
-                font-size: 0.75rem;
+                font-size: fuentes.$tamano-mini;
                 font-weight: fuentes.$peso-normal;
                 color: colores.$color-texto;
             }
@@ -344,7 +344,7 @@
     &__horario-hora {
         width: 4.5rem;
         text-align: left;
-        font-size: 0.7rem;
+        font-size: fuentes.$tamano-mini;
         text-transform: uppercase;
     }
 
@@ -355,14 +355,14 @@
         border: 1px solid rgba(colores.$color-titulo, 0.15);
         border-radius: espaciados.$radio-s;
         background-color: colores.$color-secundario;
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
         color: colores.$color-texto;
         cursor: pointer;
         transition: border-color espaciados.$transicion;
 
         span {
             display: block;
-            font-size: 0.65rem;
+            font-size: fuentes.$tamano-mini;
         }
 
         &:hover {
@@ -413,7 +413,7 @@
         flex: 1 1 10rem;
         display: flex;
         flex-direction: column;
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
 
         strong {
             font-size: fuentes.$tamano-base;
@@ -460,10 +460,10 @@
     &__resumen-item {
         display: flex;
         gap: espaciados.$espacio-s;
-        font-size: 0.8rem;
+        font-size: fuentes.$tamano-mini;
 
         i {
-            font-size: 1.15rem;
+            font-size: fuentes.$tamano-h4;
             color: colores.$color-texto;
         }
 
