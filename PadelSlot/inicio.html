@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PadelSlot · Reserva pista de pádel sin ser socio</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo-padelslot.svg">
 
     <!-- Fuentes: Space Grotesk (títulos) e Inter (texto) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +16,7 @@
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
     <link rel="stylesheet" href="scss/main.css">
+    <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
 
 <body class="inicio-publico">
@@ -23,7 +25,11 @@
     <header class="cabecera">
         <div class="cabecera__contenido">
             <a href="inicio.html" class="cabecera__logo">
-                <span class="logotipo">P</span>
+                <picture>
+                    <source type="image/svg+xml" srcset="assets/logo-padelslot.svg">
+                    <source type="image/avif" srcset="assets/img/logo/logo-padelslot-64.avif 1x, assets/img/logo/logo-padelslot-128.avif 2x">
+                    <img src="assets/img/logo/logo-padelslot-64.webp" srcset="assets/img/logo/logo-padelslot-128.webp 2x" alt="" width="35" height="32" class="logotipo">
+                </picture>
                 PadelSlot
             </a>
 
@@ -148,6 +154,39 @@
             </div>
         </section>
 
+        <!-- ============ VÍDEO DEL CLUB ============ -->
+        <section class="banda" aria-labelledby="titulo-video">
+            <div class="banda__contenido">
+                <header class="encabezado-seccion">
+                    <div>
+                        <span class="encabezado-seccion__antetitulo">Vista aérea</span>
+                        <h2 class="encabezado-seccion__titulo" id="titulo-video">Así se juega en el Aljarafe</h2>
+                        <p class="encabezado-seccion__texto">Partidos reales en pistas exteriores. Activa la música si quieres verlo con sonido.</p>
+                    </div>
+                </header>
+
+                <figure class="inicio-publico__video">
+                    <video class="inicio-publico__video-reproductor" autoplay muted loop playsinline preload="metadata"
+                        poster="assets/media/video-partido-poster.webp" width="1280" height="720"
+                        aria-label="Vista aérea con dron de un partido de pádel en una pista exterior">
+                        <source src="assets/media/video-partido.webm" type="video/webm">
+                        <source src="assets/media/video-partido.mp4" type="video/mp4">
+                        Tu navegador no admite vídeo HTML5.
+                    </video>
+                    <figcaption class="inicio-publico__video-audio">
+                        <span class="inicio-publico__video-etiqueta">
+                            <i class="ph ph-music-notes" aria-hidden="true"></i> Música del vídeo
+                        </span>
+                        <audio controls preload="none">
+                            <source src="assets/media/musica-fondo.ogg" type="audio/ogg">
+                            <source src="assets/media/musica-fondo.mp3" type="audio/mpeg">
+                            Tu navegador no admite audio HTML5.
+                        </audio>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
         <!-- ============ CLUBES DESTACADOS ============ -->
         <section class="banda">
             <div class="banda__contenido">
@@ -165,7 +204,11 @@
                 <div class="inicio-publico__clubes">
 
                     <article class="tarjeta inicio-publico__club">
-                        <div class="inicio-publico__club-imagen">Vista de pistas del club</div>
+                        <picture class="inicio-publico__club-imagen">
+                            <source type="image/avif" srcset="assets/img/pistas/pista-club-1-480.avif 480w, assets/img/pistas/pista-club-1-960.avif 960w, assets/img/pistas/pista-club-1-1280.avif 1280w" sizes="(min-width: 48rem) 33vw, 100vw">
+                            <source type="image/webp" srcset="assets/img/pistas/pista-club-1-480.webp 480w, assets/img/pistas/pista-club-1-960.webp 960w, assets/img/pistas/pista-club-1-1280.webp 1280w" sizes="(min-width: 48rem) 33vw, 100vw">
+                            <img src="assets/img/pistas/pista-club-1-960.webp" alt="Pistas de pádel exteriores con cerramiento de malla" width="1280" height="853" loading="lazy" decoding="async">
+                        </picture>
                         <div class="tarjeta__cabecera">
                             <h3 class="tarjeta__titulo">Padel Itálica</h3>
                             <span class="inicio-publico__valoracion"><i class="ph ph-star" aria-hidden="true"></i> 4,8</span>
@@ -190,7 +233,11 @@
                     </article>
 
                     <article class="tarjeta inicio-publico__club">
-                        <div class="inicio-publico__club-imagen">Vista de pistas del club</div>
+                        <picture class="inicio-publico__club-imagen">
+                            <source type="image/avif" srcset="assets/img/pistas/pista-club-2-480.avif 480w, assets/img/pistas/pista-club-2-960.avif 960w, assets/img/pistas/pista-club-2-1280.avif 1280w" sizes="(min-width: 48rem) 33vw, 100vw">
+                            <source type="image/webp" srcset="assets/img/pistas/pista-club-2-480.webp 480w, assets/img/pistas/pista-club-2-960.webp 960w, assets/img/pistas/pista-club-2-1280.webp 1280w" sizes="(min-width: 48rem) 33vw, 100vw">
+                            <img src="assets/img/pistas/pista-club-2-960.webp" alt="Pista de pádel de cristal rodeada de césped" width="1280" height="853" loading="lazy" decoding="async">
+                        </picture>
                         <div class="tarjeta__cabecera">
                             <h3 class="tarjeta__titulo">Club Aljarafe Pádel</h3>
                             <span class="inicio-publico__valoracion"><i class="ph ph-star" aria-hidden="true"></i> 4,7</span>
@@ -215,7 +262,11 @@
                     </article>
 
                     <article class="tarjeta inicio-publico__club">
-                        <div class="inicio-publico__club-imagen">Vista de pistas del club</div>
+                        <picture class="inicio-publico__club-imagen">
+                            <source type="image/avif" srcset="assets/img/pistas/pista-club-3-480.avif 480w, assets/img/pistas/pista-club-3-960.avif 960w, assets/img/pistas/pista-club-3-1280.avif 1280w" sizes="(min-width: 48rem) 33vw, 100vw">
+                            <source type="image/webp" srcset="assets/img/pistas/pista-club-3-480.webp 480w, assets/img/pistas/pista-club-3-960.webp 960w, assets/img/pistas/pista-club-3-1280.webp 1280w" sizes="(min-width: 48rem) 33vw, 100vw">
+                            <img src="assets/img/pistas/pista-club-3-960.webp" alt="Pistas de pádel cubiertas con suelo azul" width="1280" height="853" loading="lazy" decoding="async">
+                        </picture>
                         <div class="tarjeta__cabecera">
                             <h3 class="tarjeta__titulo">Racket Club Sevilla</h3>
                             <span class="inicio-publico__valoracion"><i class="ph ph-star" aria-hidden="true"></i> 4,6</span>

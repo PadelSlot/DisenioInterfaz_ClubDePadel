@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Membresía y cuota · Racket Club Sevilla · PadelSlot</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo-padelslot.svg">
 
     <!-- Fuentes: Space Grotesk (títulos) e Inter (texto) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +20,7 @@
     
     <!-- Hoja de estilos compilada desde scss/main.scss -->
     <link rel="stylesheet" href="scss/main.css">
+    <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
 
 <body class="fondo-suave">
@@ -27,7 +29,11 @@
     <header class="cabecera">
         <div class="cabecera__contenido">
             <a href="inicioSocio.html" class="cabecera__logo">
-                <span class="logotipo">P</span>
+                <picture>
+                    <source type="image/svg+xml" srcset="assets/logo-padelslot.svg">
+                    <source type="image/avif" srcset="assets/img/logo/logo-padelslot-64.avif 1x, assets/img/logo/logo-padelslot-128.avif 2x">
+                    <img src="assets/img/logo/logo-padelslot-64.webp" srcset="assets/img/logo/logo-padelslot-128.webp 2x" alt="" width="35" height="32" class="logotipo">
+                </picture>
                 PadelSlot
             </a>
 
@@ -125,7 +131,11 @@
             <!-- Carnet digital -->
             <article class="membresia__carnet" aria-labelledby="titulo-carnet">
                 <div class="membresia__carnet-cabecera">
-                    <span class="logotipo">P</span>
+                    <picture>
+                        <source type="image/svg+xml" srcset="assets/logo-padelslot.svg">
+                        <source type="image/avif" srcset="assets/img/logo/logo-padelslot-64.avif 1x, assets/img/logo/logo-padelslot-128.avif 2x">
+                        <img src="assets/img/logo/logo-padelslot-64.webp" srcset="assets/img/logo/logo-padelslot-128.webp 2x" alt="PadelSlot" width="35" height="32" class="logotipo logotipo--carnet">
+                    </picture>
                     <p class="membresia__carnet-club">
                         <strong id="titulo-carnet">Racket Club Sevilla</strong>
                         Carnet oficial de socio
@@ -211,18 +221,33 @@
 
             <ul class="membresia__convenios">
                 <li class="tarjeta membresia__convenio">
+                    <picture class="membresia__convenio-imagen">
+                        <source type="image/avif" srcset="assets/img/convenios/tienda-480.avif 480w, assets/img/convenios/tienda-960.avif 960w, assets/img/convenios/tienda-1280.avif 1280w" sizes="(min-width: 48rem) 33vw, 100vw">
+                        <source type="image/webp" srcset="assets/img/convenios/tienda-480.webp 480w, assets/img/convenios/tienda-960.webp 960w, assets/img/convenios/tienda-1280.webp 1280w" sizes="(min-width: 48rem) 33vw, 100vw">
+                        <img src="assets/img/convenios/tienda-960.webp" alt="Palas de pádel y pelotas sobre una pista azul" width="1280" height="853" loading="lazy" decoding="async">
+                    </picture>
                     <span class="etiqueta etiqueta--terciario">15% dto. directo</span>
                     <h3 class="tarjeta__titulo">Tienda Pro-Shop del club</h3>
                     <p class="tarjeta__cuerpo">Descuento en palas, zapatillas, grips y equipaciones técnicas de temporada.</p>
                     <p class="membresia__como"><i class="ph ph-identification-card" aria-hidden="true"></i> Presentar carnet en caja</p>
                 </li>
                 <li class="tarjeta membresia__convenio">
+                    <picture class="membresia__convenio-imagen">
+                        <source type="image/avif" srcset="assets/img/convenios/terraza-480.avif 480w, assets/img/convenios/terraza-960.avif 960w, assets/img/convenios/terraza-1280.avif 1280w" sizes="(min-width: 48rem) 33vw, 100vw">
+                        <source type="image/webp" srcset="assets/img/convenios/terraza-480.webp 480w, assets/img/convenios/terraza-960.webp 960w, assets/img/convenios/terraza-1280.webp 1280w" sizes="(min-width: 48rem) 33vw, 100vw">
+                        <img src="assets/img/convenios/terraza-960.webp" alt="Terraza exterior con sombrillas, mesas y sillas" width="1280" height="853" loading="lazy" decoding="async">
+                    </picture>
                     <span class="etiqueta etiqueta--terciario">10% dto. en comandas</span>
                     <h3 class="tarjeta__titulo">Restaurante y terraza panorámica</h3>
                     <p class="tarjeta__cuerpo">Aplicable en desayunos, menú diario y aperitivos post-partido al pagar con el monedero virtual.</p>
                     <p class="membresia__como"><i class="ph ph-wallet" aria-hidden="true"></i> Pago directo con saldo</p>
                 </li>
                 <li class="tarjeta membresia__convenio">
+                    <picture class="membresia__convenio-imagen">
+                        <source type="image/avif" srcset="assets/img/convenios/fisioterapia-480.avif 480w, assets/img/convenios/fisioterapia-960.avif 960w, assets/img/convenios/fisioterapia-1280.avif 1280w" sizes="(min-width: 48rem) 33vw, 100vw">
+                        <source type="image/webp" srcset="assets/img/convenios/fisioterapia-480.webp 480w, assets/img/convenios/fisioterapia-960.webp 960w, assets/img/convenios/fisioterapia-1280.webp 1280w" sizes="(min-width: 48rem) 33vw, 100vw">
+                        <img src="assets/img/convenios/fisioterapia-960.webp" alt="Fisioterapeuta realizando un masaje de espalda a un paciente" width="1280" height="853" loading="lazy" decoding="async">
+                    </picture>
                     <span class="etiqueta etiqueta--terciario">1 sesión / trimestre</span>
                     <h3 class="tarjeta__titulo">Clínica de fisioterapia deportiva</h3>
                     <p class="tarjeta__cuerpo">Sesión de descarga muscular trimestral incluida y 20% de descuento en diagnósticos ecográficos.</p>
