@@ -11,10 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Iconos Phosphor -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <!-- Iconos: sprite SVG propio en assets/svg/iconos.svg (Phosphor Icons, MIT) -->
+    
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <script src="assets/js/iconos.js" defer></script>
     <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
@@ -43,13 +44,13 @@
 
             <div class="cabecera__acciones">
                 <label class="selector-club">
-                    <i class="ph ph-map-pin" aria-hidden="true"></i>
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i>
                     <select class="selector-club__campo" aria-label="Club">
                         <option>Racket Club Sevilla</option>
                     </select>
                 </label>
                 <button type="button" class="boton-icono" aria-label="Notificaciones">
-                    <i class="ph ph-bell" aria-hidden="true"></i>
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bell"></use></svg></i>
                 </button>
                 <div class="usuario">
                     <span class="avatar">LM</span>
@@ -90,23 +91,23 @@
                         <dd class="inicio-socio__dato-valor">15 nov 2026</dd>
                     </div>
                 </dl>
-                <a href="cuotas.html" class="inicio-socio__enlace">Gestionar membresía <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                <a href="cuotas.html" class="inicio-socio__enlace">Gestionar membresía <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#arrow-right"></use></svg></i></a>
             </aside>
         </section>
 
         <!-- ============ ACCESOS PRINCIPALES ============ -->
         <section class="inicio-socio__accesos" aria-label="Accesos principales">
             <article class="tarjeta inicio-socio__acceso inicio-socio__acceso--destacado">
-                <span class="icono-caja icono-caja--verde"><i class="ph ph-calendar-plus" aria-hidden="true"></i></span>
+                <span class="icono-caja icono-caja--verde"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-plus"></use></svg></i></span>
                 <h2 class="tarjeta__titulo">Reservar pista o clase</h2>
                 <p class="tarjeta__cuerpo">Reserva pistas, clases y servicios del club desde un solo panel.</p>
                 <a href="#" class="boton boton--disponibilidad boton--bloque">
-                    Ver disponibilidad <i class="ph ph-arrow-right boton__icono" aria-hidden="true"></i>
+                    Ver disponibilidad <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#arrow-right"></use></svg></i>
                 </a>
             </article>
 
             <article class="tarjeta inicio-socio__acceso">
-                <span class="icono-caja"><i class="ph ph-graduation-cap" aria-hidden="true"></i></span>
+                <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#graduation-cap"></use></svg></i></span>
                 <h2 class="tarjeta__titulo">Clases y escuela</h2>
                 <p class="tarjeta__cuerpo">Clases, grupos y escuela de pádel para socios y clientes.</p>
                 <div class="inicio-socio__acceso-pie">
@@ -116,12 +117,12 @@
             </article>
 
             <article class="tarjeta inicio-socio__acceso">
-                <span class="icono-caja"><i class="ph ph-identification-card" aria-hidden="true"></i></span>
+                <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#identification-card"></use></svg></i></span>
                 <h2 class="tarjeta__titulo">Membresía y perfil</h2>
                 <p class="tarjeta__cuerpo">Consulta tu alta, renovación, pagos y datos de socio.</p>
                 <div class="inicio-socio__acceso-pie">
                     <a href="cuotas.html" class="inicio-socio__enlace">Ver mi perfil</a>
-                    <i class="ph ph-arrow-right" aria-hidden="true"></i>
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#arrow-right"></use></svg></i>
                 </div>
             </article>
         </section>
@@ -134,7 +135,7 @@
                     <h2 class="encabezado-seccion__titulo">Reservas y pistas</h2>
                     <p class="encabezado-seccion__texto">Reserva pistas, clases y servicios del club desde una sola vista.</p>
                 </div>
-                <a href="#" class="encabezado-seccion__enlace">Ver todos los horarios <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                <a href="#" class="encabezado-seccion__enlace">Ver todos los horarios <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#arrow-right"></use></svg></i></a>
             </header>
 
             <div class="inicio-socio__disponibilidad">
@@ -163,7 +164,7 @@
                             <span class="inicio-socio__franja-pista"><strong>Pista 3 · exterior</strong> Cristal · Exterior</span>
                             <span class="etiqueta etiqueta--terciario">Disponible</span>
                             <strong class="inicio-socio__franja-precio">12 € / jug.</strong>
-                            <i class="ph ph-caret-right" aria-hidden="true"></i>
+                            <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                         </a>
                     </li>
                     <li>
@@ -172,7 +173,7 @@
                             <span class="inicio-socio__franja-pista"><strong>Pista 1 · exterior</strong> Cristal · Exterior</span>
                             <span class="etiqueta etiqueta--terciario">Última libre</span>
                             <strong class="inicio-socio__franja-precio">14 € / jug.</strong>
-                            <i class="ph ph-caret-right" aria-hidden="true"></i>
+                            <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                         </a>
                     </li>
                     <li>
@@ -181,7 +182,7 @@
                             <span class="inicio-socio__franja-pista"><strong>Pista 5 · exterior</strong> Cristal · Exterior</span>
                             <span class="etiqueta etiqueta--terciario">Disponible</span>
                             <strong class="inicio-socio__franja-precio">10 € / jug.</strong>
-                            <i class="ph ph-caret-right" aria-hidden="true"></i>
+                            <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                         </a>
                     </li>
                 </ul>
@@ -196,14 +197,14 @@
                     <h2 class="encabezado-seccion__titulo">Clases y grupos</h2>
                     <p class="encabezado-seccion__texto">Clases, grupos y escuela de pádel disponibles en el Aljarafe.</p>
                 </div>
-                <a href="clases.html" class="encabezado-seccion__enlace">Ver calendario de clases <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                <a href="clases.html" class="encabezado-seccion__enlace">Ver calendario de clases <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#arrow-right"></use></svg></i></a>
             </header>
 
             <div class="inicio-socio__rejilla">
                 <article class="tarjeta inicio-socio__clase">
                     <div class="tarjeta__cabecera">
                         <span class="etiqueta etiqueta--suave">Jue 1 · 18:30</span>
-                        <button type="button" class="boton-icono" aria-label="Guardar clase"><i class="ph ph-bookmark-simple" aria-hidden="true"></i></button>
+                        <button type="button" class="boton-icono" aria-label="Guardar clase"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bookmark-simple"></use></svg></i></button>
                     </div>
                     <h3 class="tarjeta__titulo">Clase de bandeja</h3>
                     <p class="tarjeta__cuerpo">Intermedio · Carlos R.</p>
@@ -216,7 +217,7 @@
                 <article class="tarjeta inicio-socio__clase">
                     <div class="tarjeta__cabecera">
                         <span class="etiqueta etiqueta--suave">Sáb 3 · 10:00</span>
-                        <button type="button" class="boton-icono" aria-label="Guardar clase"><i class="ph ph-bookmark-simple" aria-hidden="true"></i></button>
+                        <button type="button" class="boton-icono" aria-label="Guardar clase"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bookmark-simple"></use></svg></i></button>
                     </div>
                     <h3 class="tarjeta__titulo">Partido dirigido</h3>
                     <p class="tarjeta__cuerpo">Intermedio · Marta S.</p>
@@ -229,7 +230,7 @@
                 <article class="tarjeta inicio-socio__clase">
                     <div class="tarjeta__cabecera">
                         <span class="etiqueta etiqueta--suave">Dom 4 · 12:00</span>
-                        <button type="button" class="boton-icono" aria-label="Guardar clase"><i class="ph ph-bookmark-simple" aria-hidden="true"></i></button>
+                        <button type="button" class="boton-icono" aria-label="Guardar clase"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bookmark-simple"></use></svg></i></button>
                     </div>
                     <h3 class="tarjeta__titulo">Defensa desde el fondo</h3>
                     <p class="tarjeta__cuerpo">Todos los niveles · Álex P.</p>
@@ -254,22 +255,22 @@
 
                 <dl class="inicio-socio__club-datos">
                     <div class="inicio-socio__club-dato">
-                        <dt class="inicio-socio__dato-etiqueta"><i class="ph ph-clock inicio-socio__club-icono" aria-hidden="true"></i>Horario</dt>
+                        <dt class="inicio-socio__dato-etiqueta"><i class="icono inicio-socio__club-icono" aria-hidden="true"><svg focusable="false"><use href="#clock"></use></svg></i>Horario</dt>
                         <dd class="inicio-socio__dato-valor">L–D · 09:00–23:30</dd>
                     </div>
                     <div class="inicio-socio__club-dato">
-                        <dt class="inicio-socio__dato-etiqueta"><i class="ph ph-stack inicio-socio__club-icono" aria-hidden="true"></i>Instalaciones</dt>
+                        <dt class="inicio-socio__dato-etiqueta"><i class="icono inicio-socio__club-icono" aria-hidden="true"><svg focusable="false"><use href="#stack"></use></svg></i>Instalaciones</dt>
                         <dd class="inicio-socio__dato-valor">6 pistas · 4 semicubiertas</dd>
                     </div>
                     <div class="inicio-socio__club-dato">
-                        <dt class="inicio-socio__dato-etiqueta"><i class="ph ph-phone inicio-socio__club-icono" aria-hidden="true"></i>Recepción</dt>
+                        <dt class="inicio-socio__dato-etiqueta"><i class="icono inicio-socio__club-icono" aria-hidden="true"><svg focusable="false"><use href="#phone"></use></svg></i>Recepción</dt>
                         <dd class="inicio-socio__dato-valor">954 555 24 80</dd>
                     </div>
                 </dl>
 
                 <div class="inicio-socio__club-acciones">
                     <a href="#" class="boton boton--contorno">
-                        <i class="ph ph-navigation-arrow boton__icono" aria-hidden="true"></i>
+                        <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#navigation-arrow"></use></svg></i>
                         Ver en mapa
                     </a>
                     <a href="#" class="inicio-socio__enlace">Contactar con el club</a>
@@ -278,7 +279,7 @@
 
             <div class="inicio-socio__mapa" role="img" aria-label="Mapa de Racket Club Sevilla">
                 <span class="inicio-socio__mapa-texto">Mapa de Racket Club Sevilla</span>
-                <span class="inicio-socio__mapa-pin"><i class="ph ph-map-pin" aria-hidden="true"></i></span>
+                <span class="inicio-socio__mapa-pin"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i></span>
             </div>
         </section>
 
@@ -296,41 +297,41 @@
             <div class="inicio-socio__servicios">
                 <article class="tarjeta inicio-socio__servicio">
                     <div class="tarjeta__cabecera">
-                        <span class="icono-caja"><i class="ph ph-car" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#car"></use></svg></i></span>
                         <span class="etiqueta etiqueta--suave">Disponible</span>
                     </div>
                     <h3 class="tarjeta__titulo">Parking y acceso</h3>
                     <p class="tarjeta__cuerpo">Reserva parking y accede a servicios del club.</p>
-                    <a href="servicios.html" class="inicio-socio__enlace">Ver disponibilidad <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                    <a href="servicios.html" class="inicio-socio__enlace">Ver disponibilidad <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#arrow-right"></use></svg></i></a>
                 </article>
 
                 <article class="tarjeta inicio-socio__servicio">
                     <div class="tarjeta__cabecera">
-                        <span class="icono-caja"><i class="ph ph-fork-knife" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#fork-knife"></use></svg></i></span>
                         <span class="etiqueta etiqueta--suave">Disponible</span>
                     </div>
                     <h3 class="tarjeta__titulo">Bar y restauración</h3>
                     <p class="tarjeta__cuerpo">Reserva mesa en el bar o terraza del club.</p>
-                    <a href="servicios.html" class="inicio-socio__enlace">Ver horarios <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                    <a href="servicios.html" class="inicio-socio__enlace">Ver horarios <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#arrow-right"></use></svg></i></a>
                 </article>
 
                 <article class="tarjeta inicio-socio__servicio">
                     <div class="tarjeta__cabecera">
-                        <span class="icono-caja"><i class="ph ph-trophy" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#trophy"></use></svg></i></span>
                         <span class="etiqueta etiqueta--suave">3 abiertos</span>
                     </div>
                     <h3 class="tarjeta__titulo">Torneos y ligas</h3>
                     <p class="tarjeta__cuerpo">Ver calendario de torneos y ligas del club.</p>
-                    <a href="#" class="inicio-socio__enlace">Ver calendario <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                    <a href="#" class="inicio-socio__enlace">Ver calendario <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#arrow-right"></use></svg></i></a>
                 </article>
 
                 <article class="tarjeta inicio-socio__servicio">
                     <div class="tarjeta__cabecera">
-                        <span class="icono-caja"><i class="ph ph-briefcase" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#briefcase"></use></svg></i></span>
                     </div>
                     <h3 class="tarjeta__titulo">Trabaja en el club</h3>
                     <p class="tarjeta__cuerpo">Consulta ofertas laborales y envía tu currículum.</p>
-                    <a href="#" class="inicio-socio__enlace">Ver ofertas <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                    <a href="#" class="inicio-socio__enlace">Ver ofertas <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#arrow-right"></use></svg></i></a>
                 </article>
             </div>
         </section>
@@ -355,10 +356,10 @@
 
     <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
     <nav class="navegacion-movil" aria-label="Navegación del socio en móvil">
-        <a href="inicioSocio.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-house" aria-hidden="true"></i>Inicio</a>
-        <a href="#" class="navegacion-movil__enlace"><i class="ph ph-calendar-plus" aria-hidden="true"></i>Reservar</a>
-        <a href="clases.html" class="navegacion-movil__enlace"><i class="ph ph-graduation-cap" aria-hidden="true"></i>Clases</a>
-        <a href="cuotas.html" class="navegacion-movil__enlace"><i class="ph ph-user-circle" aria-hidden="true"></i>Perfil</a>
+        <a href="inicioSocio.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#house"></use></svg></i>Inicio</a>
+        <a href="#" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-plus"></use></svg></i>Reservar</a>
+        <a href="clases.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#graduation-cap"></use></svg></i>Clases</a>
+        <a href="cuotas.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user-circle"></use></svg></i>Perfil</a>
     </nav>
 
 </body>

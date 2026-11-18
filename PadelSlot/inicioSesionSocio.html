@@ -11,10 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Iconos Phosphor -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <!-- Iconos: sprite SVG propio en assets/svg/iconos.svg (Phosphor Icons, MIT) -->
+    
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <script src="assets/js/iconos.js" defer></script>
     <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
@@ -47,11 +48,11 @@
                 <legend class="solo-lector">Tipo de acceso</legend>
                 <label class="acceso__perfil">
                     <input type="radio" class="acceso__perfil-control" name="perfil" value="socio" checked>
-                    <i class="ph ph-user" aria-hidden="true"></i> Socio del club
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user"></use></svg></i> Socio del club
                 </label>
                 <label class="acceso__perfil">
                     <input type="radio" class="acceso__perfil-control" name="perfil" value="staff">
-                    <i class="ph ph-shield-check" aria-hidden="true"></i> Administrador / Staff
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#shield-check"></use></svg></i> Administrador / Staff
                 </label>
             </fieldset>
 
@@ -64,7 +65,7 @@
             </div>
 
             <p class="aviso">
-                <i class="ph ph-info aviso__icono" aria-hidden="true"></i>
+                <i class="icono aviso__icono" aria-hidden="true"><svg focusable="false"><use href="#info"></use></svg></i>
                 <span class="aviso__texto">
                     <strong class="aviso__titulo">Área privada para socios con carnet en vigor</strong>
                     Reserva anticipada con tarifa bonificada, acceso por matrícula al parking, recarga del monedero de pistas y partidos abiertos.
@@ -91,13 +92,13 @@
                 </label>
 
                 <div class="acceso__qr">
-                    <span class="icono-caja"><i class="ph ph-qr-code" aria-hidden="true"></i></span>
+                    <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#qr-code"></use></svg></i></span>
                     <p class="acceso__qr-texto">¿Prefieres entrar desde tu móvil?</p>
-                    <a href="#" class="acceso__enlace">Escanear carnet QR <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                    <a href="#" class="acceso__enlace">Escanear carnet QR <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#arrow-right"></use></svg></i></a>
                 </div>
 
                 <button type="submit" class="boton boton--primario boton--bloque">
-                    <i class="ph ph-sign-in boton__icono" aria-hidden="true"></i>
+                    <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#sign-in"></use></svg></i>
                     Entrar a mi portal de socio
                 </button>
             </form>

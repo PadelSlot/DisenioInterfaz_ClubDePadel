@@ -11,10 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Iconos Phosphor -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <!-- Iconos: sprite SVG propio en assets/svg/iconos.svg (Phosphor Icons, MIT) -->
+    
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <script src="assets/js/iconos.js" defer></script>
     <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
@@ -54,7 +55,7 @@
         </nav>
 
         <div class="panel-admin__promo">
-            <i class="ph ph-sparkle panel-admin__promo-icono" aria-hidden="true"></i>
+            <i class="icono panel-admin__promo-icono" aria-hidden="true"><svg focusable="false"><use href="#sparkle"></use></svg></i>
             <strong class="panel-admin__promo-titulo">Una sola plataforma</strong>
             <p>Activa solo los módulos que necesita tu club.</p>
         </div>
@@ -75,18 +76,18 @@
             </a>
 
             <form class="panel-admin__buscador" role="search">
-                <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#magnifying-glass"></use></svg></i>
                 <input type="search" class="panel-admin__buscador-campo" placeholder="Buscar reserva, socio o pago…" aria-label="Buscar reserva, socio o pago">
                 <kbd class="panel-admin__atajo">⌘ K</kbd>
             </form>
 
             <div class="panel-admin__barra-acciones">
                 <a href="crearReservaAdmin.html" class="boton boton--primario navegacion-escritorio">
-                    <i class="ph ph-plus boton__icono" aria-hidden="true"></i>
+                    <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#plus"></use></svg></i>
                     Crear reserva
                 </a>
                 <button type="button" class="boton-icono" aria-label="Notificaciones">
-                    <i class="ph ph-bell" aria-hidden="true"></i>
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bell"></use></svg></i>
                 </button>
                 <div class="usuario">
                     <span class="avatar">MR</span>
@@ -109,15 +110,15 @@
                 </div>
                 <div class="panel-admin__acciones">
                     <a href="bloquearPistaAdmin.html" class="boton boton--contorno">
-                        <i class="ph ph-prohibit boton__icono" aria-hidden="true"></i>
+                        <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#prohibit"></use></svg></i>
                         Bloquear pista
                     </a>
                     <a href="añadirClaseAdmin.html" class="boton boton--contorno">
-                        <i class="ph ph-graduation-cap boton__icono" aria-hidden="true"></i>
+                        <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#graduation-cap"></use></svg></i>
                         Añadir clase
                     </a>
                     <a href="sociosAdmin.html" class="boton boton--terciario">
-                        <i class="ph ph-user-plus boton__icono" aria-hidden="true"></i>
+                        <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#user-plus"></use></svg></i>
                         Nuevo socio
                     </a>
                 </div>
@@ -128,7 +129,7 @@
                 <article class="tarjeta panel-admin__kpi panel-admin__kpi--destacado">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Reservas de hoy</h2>
-                        <i class="ph ph-calendar-check panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-check"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">42</p>
                     <p class="panel-admin__kpi-detalle">+8 esta mañana</p>
@@ -136,7 +137,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Ocupación</h2>
-                        <i class="ph ph-chart-bar panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#chart-bar"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">76%</p>
                     <p class="panel-admin__kpi-detalle">+5% vs. semana anterior</p>
@@ -144,7 +145,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Ingresos</h2>
-                        <i class="ph ph-currency-eur panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#currency-eur"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">1.284 €</p>
                     <p class="panel-admin__kpi-detalle">92% cobrado</p>
@@ -152,7 +153,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Socios activos</h2>
-                        <i class="ph ph-users panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">486</p>
                     <p class="panel-admin__kpi-detalle">9 renuevan esta semana</p>
@@ -224,7 +225,7 @@
                         </table>
                     </div>
 
-                    <a href="cuadranteAdmin.html" class="panel-admin__enlace panel-admin__enlace--derecha">Abrir cuadrante de pistas <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                    <a href="cuadranteAdmin.html" class="panel-admin__enlace panel-admin__enlace--derecha">Abrir cuadrante de pistas <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#arrow-right"></use></svg></i></a>
                 </section>
 
                 <section class="tarjeta panel-admin__bloque">
@@ -353,7 +354,7 @@
                                 <span class="etiqueta panel-admin__etiqueta-neutra">Automática</span>
                             </li>
                         </ul>
-                        <a href="cobroAdmin.html" class="panel-admin__enlace panel-admin__enlace--derecha">Gestionar renovaciones <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                        <a href="cobroAdmin.html" class="panel-admin__enlace panel-admin__enlace--derecha">Gestionar renovaciones <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#arrow-right"></use></svg></i></a>
                     </section>
                 </div>
             </div>
@@ -366,7 +367,7 @@
                     <p>Una única ficha por socio, una agenda compartida y datos financieros en tiempo real.</p>
                 </div>
                 <a href="configAdmin.html" class="boton boton--terciario">
-                    <i class="ph ph-sliders-horizontal boton__icono" aria-hidden="true"></i>
+                    <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#sliders-horizontal"></use></svg></i>
                     Configurar módulos
                 </a>
             </section>
@@ -383,54 +384,54 @@
 
                 <nav class="panel-admin__accesos" aria-label="Accesos directos">
                     <a href="cuadranteAdmin.html" class="tarjeta panel-admin__acceso">
-                        <span class="icono-caja"><i class="ph ph-squares-four" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#squares-four"></use></svg></i></span>
                         <span class="panel-admin__acceso-texto"><strong>Pistas</strong> 6 activas · 1 incidencia</span>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                     </a>
                     <a href="progSemanalAdmin.html" class="tarjeta panel-admin__acceso">
-                        <span class="icono-caja"><i class="ph ph-graduation-cap" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#graduation-cap"></use></svg></i></span>
                         <span class="panel-admin__acceso-texto"><strong>Clases</strong> 7 hoy · 46 alumnos</span>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                     </a>
                     <a href="sociosAdmin.html" class="tarjeta panel-admin__acceso">
-                        <span class="icono-caja"><i class="ph ph-users" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i></span>
                         <span class="panel-admin__acceso-texto"><strong>Socios</strong> 486 activos</span>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                     </a>
                     <a href="cobroAdmin.html" class="tarjeta panel-admin__acceso">
-                        <span class="icono-caja"><i class="ph ph-credit-card" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#credit-card"></use></svg></i></span>
                         <span class="panel-admin__acceso-texto"><strong>Pagos</strong> 1.284 € hoy</span>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                     </a>
                     <a href="#" class="tarjeta panel-admin__acceso">
-                        <span class="icono-caja"><i class="ph ph-trophy" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#trophy"></use></svg></i></span>
                         <span class="panel-admin__acceso-texto"><strong>Torneos</strong> 3 abiertos</span>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                     </a>
                     <a href="serviciosAdmin.html" class="tarjeta panel-admin__acceso">
-                        <span class="icono-caja"><i class="ph ph-car" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#car"></use></svg></i></span>
                         <span class="panel-admin__acceso-texto"><strong>Parking</strong> 28/40 plazas</span>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                     </a>
                     <a href="serviciosAdmin.html" class="tarjeta panel-admin__acceso">
-                        <span class="icono-caja"><i class="ph ph-fork-knife" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#fork-knife"></use></svg></i></span>
                         <span class="panel-admin__acceso-texto"><strong>Bar</strong> 1.126 € hoy</span>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                     </a>
                     <a href="#" class="tarjeta panel-admin__acceso">
-                        <span class="icono-caja"><i class="ph ph-briefcase" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#briefcase"></use></svg></i></span>
                         <span class="panel-admin__acceso-texto"><strong>Empleo</strong> 2 vacantes</span>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                     </a>
                     <a href="incidenciasAdmin.html" class="tarjeta panel-admin__acceso">
-                        <span class="icono-caja"><i class="ph ph-warning" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#warning"></use></svg></i></span>
                         <span class="panel-admin__acceso-texto"><strong>Incidencias</strong> 1 abierta</span>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                     </a>
                     <a href="configAdmin.html" class="tarjeta panel-admin__acceso">
-                        <span class="icono-caja"><i class="ph ph-sliders-horizontal" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#sliders-horizontal"></use></svg></i></span>
                         <span class="panel-admin__acceso-texto"><strong>Configuración</strong> Club y permisos</span>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                     </a>
                 </nav>
             </section>
@@ -440,10 +441,10 @@
 
     <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
     <nav class="navegacion-movil" aria-label="Navegación del administrador en móvil">
-        <a href="inicioAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-squares-four" aria-hidden="true"></i>Inicio</a>
-        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar" aria-hidden="true"></i>Agenda</a>
-        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar-check" aria-hidden="true"></i>Reservas</a>
-        <a href="configAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-sidebar" aria-hidden="true"></i>Gestión</a>
+        <a href="inicioAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#squares-four"></use></svg></i>Inicio</a>
+        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar"></use></svg></i>Agenda</a>
+        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-check"></use></svg></i>Reservas</a>
+        <a href="configAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#sidebar"></use></svg></i>Gestión</a>
     </nav>
 
 </body>

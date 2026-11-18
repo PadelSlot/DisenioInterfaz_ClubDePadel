@@ -11,10 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Iconos Phosphor -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <!-- Iconos: sprite SVG propio en assets/svg/iconos.svg (Phosphor Icons, MIT) -->
+    
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <script src="assets/js/iconos.js" defer></script>
     <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
@@ -54,7 +55,7 @@
         </nav>
 
         <div class="panel-admin__promo">
-            <i class="ph ph-sparkle panel-admin__promo-icono" aria-hidden="true"></i>
+            <i class="icono panel-admin__promo-icono" aria-hidden="true"><svg focusable="false"><use href="#sparkle"></use></svg></i>
             <strong class="panel-admin__promo-titulo">Una sola plataforma</strong>
             <p>Activa solo los módulos que necesita tu club.</p>
         </div>
@@ -75,18 +76,18 @@
             </a>
 
             <form class="panel-admin__buscador" role="search">
-                <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#magnifying-glass"></use></svg></i>
                 <input type="search" class="panel-admin__buscador-campo" placeholder="Buscar reserva, socio o pago…" aria-label="Buscar reserva, socio o pago">
                 <kbd class="panel-admin__atajo">⌘ K</kbd>
             </form>
 
             <div class="panel-admin__barra-acciones">
                 <a href="crearReservaAdmin.html" class="boton boton--primario navegacion-escritorio">
-                    <i class="ph ph-plus boton__icono" aria-hidden="true"></i>
+                    <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#plus"></use></svg></i>
                     Crear reserva
                 </a>
                 <button type="button" class="boton-icono" aria-label="Notificaciones">
-                    <i class="ph ph-bell" aria-hidden="true"></i>
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bell"></use></svg></i>
                 </button>
                 <div class="usuario">
                     <span class="avatar">MR</span>
@@ -103,22 +104,22 @@
                 <div>
                     <nav class="cabecera-pagina__migas" aria-label="Estás aquí">
                         <a href="cuadranteAdmin.html" class="cabecera-pagina__miga">Pistas y reservas</a>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                         <a href="cuadranteAdmin.html" class="cabecera-pagina__miga">Cuadrante en vivo</a>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                         <span class="cabecera-pagina__miga cabecera-pagina__miga--actual" aria-current="page">Bloqueo de pistas</span>
                     </nav>
                     <h1 class="cabecera-pagina__titulo">Bloquear pista o franjas horarias</h1>
                     <p class="cabecera-pagina__texto">Esta acción afecta al cuadrante en vivo y a las reservas que ya existen.</p>
                 </div>
                 <nav class="panel-admin__pestanas" aria-label="Secciones de bloqueo">
-                    <a href="bloquearPistaAdmin.html" class="panel-admin__pestana panel-admin__pestana--activa" aria-current="page"><i class="ph ph-lock-simple" aria-hidden="true"></i> Nuevo bloqueo</a>
-                    <a href="#" class="panel-admin__pestana"><i class="ph ph-clock-counter-clockwise" aria-hidden="true"></i> Historial (14)</a>
+                    <a href="bloquearPistaAdmin.html" class="panel-admin__pestana panel-admin__pestana--activa" aria-current="page"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#lock-simple"></use></svg></i> Nuevo bloqueo</a>
+                    <a href="#" class="panel-admin__pestana"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#clock-counter-clockwise"></use></svg></i> Historial (14)</a>
                 </nav>
             </header>
 
             <p class="aviso">
-                <i class="ph ph-lightning aviso__icono" aria-hidden="true"></i>
+                <i class="icono aviso__icono" aria-hidden="true"><svg focusable="false"><use href="#lightning"></use></svg></i>
                 <span class="aviso__texto">
                     <strong class="aviso__titulo">Avería reportada en pista 4 (focos torre B) · aviso #INC-2048</strong>
                     Reportado por el encargado de pista hace 24 min. Hay 2 reservas activas en el turno de tarde. Operadora: Marta R.
@@ -182,11 +183,11 @@
                         </div>
                         <fieldset class="chips chips--cuadradas">
                             <legend class="solo-lector">Motivo del bloqueo</legend>
-                            <label class="chips__opcion"><input type="radio" class="chips__control" name="motivo" checked><i class="ph ph-wrench" aria-hidden="true"></i> Mantenimiento / reparación</label>
-                            <label class="chips__opcion"><input type="radio" class="chips__control" name="motivo"><i class="ph ph-trophy" aria-hidden="true"></i> Torneo FEP / liga social</label>
-                            <label class="chips__opcion"><input type="radio" class="chips__control" name="motivo"><i class="ph ph-cloud-rain" aria-hidden="true"></i> Lluvia / climatología</label>
-                            <label class="chips__opcion"><input type="radio" class="chips__control" name="motivo"><i class="ph ph-confetti" aria-hidden="true"></i> Evento privado</label>
-                            <label class="chips__opcion"><input type="radio" class="chips__control" name="motivo"><i class="ph ph-broom" aria-hidden="true"></i> Limpieza y arena</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="motivo" checked><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#wrench"></use></svg></i> Mantenimiento / reparación</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="motivo"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#trophy"></use></svg></i> Torneo FEP / liga social</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="motivo"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#cloud-rain"></use></svg></i> Lluvia / climatología</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="motivo"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#confetti"></use></svg></i> Evento privado</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="motivo"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#broom"></use></svg></i> Limpieza y arena</label>
                         </fieldset>
                     </section>
 
@@ -219,7 +220,7 @@
                                 <input class="formulario__campo" type="time" id="hasta-hora" value="23:00">
                             </div>
                         </div>
-                        <p class="panel-admin__confirmacion"><i class="ph ph-clock" aria-hidden="true"></i> Total estimado: <strong>4 h 30 min</strong> (3 turnos completos)</p>
+                        <p class="panel-admin__confirmacion"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#clock"></use></svg></i> Total estimado: <strong>4 h 30 min</strong> (3 turnos completos)</p>
                     </section>
 
                     <!-- 4. Comunicaciones -->
@@ -229,11 +230,11 @@
                         </div>
                         <div class="formulario">
                             <div class="formulario__grupo">
-                                <label class="formulario__etiqueta" for="aviso-publico"><i class="ph ph-eye" aria-hidden="true"></i> Aviso público en la app (visible para socios)</label>
+                                <label class="formulario__etiqueta" for="aviso-publico"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#eye"></use></svg></i> Aviso público en la app (visible para socios)</label>
                                 <textarea class="formulario__campo panel-admin__area" id="aviso-publico">Pista inhabilitada temporalmente por sustitución del transformador LED de la torreta B. Disculpad las molestias.</textarea>
                             </div>
                             <div class="formulario__grupo">
-                                <label class="formulario__etiqueta" for="notas-internas"><i class="ph ph-lock-simple" aria-hidden="true"></i> Notas internas (solo staff y recepción)</label>
+                                <label class="formulario__etiqueta" for="notas-internas"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#lock-simple"></use></svg></i> Notas internas (solo staff y recepción)</label>
                                 <textarea class="formulario__campo panel-admin__area" id="notas-internas">El técnico de electricidad llega a las 19:15. Repuesto de balasto y cableado en el almacén general, estante 3.</textarea>
                             </div>
                         </div>
@@ -305,18 +306,18 @@
                         <div>
                             <p class="formulario__etiqueta">Acciones automáticas vinculadas</p>
                             <div class="panel-admin__ajuste">
-                                <p class="panel-admin__ajuste-texto"><i class="ph ph-door" aria-hidden="true"></i> <span><strong>Torno de acceso pista 4</strong> Bloquear el paso</span></p>
+                                <p class="panel-admin__ajuste-texto"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#door"></use></svg></i> <span><strong>Torno de acceso pista 4</strong> Bloquear el paso</span></p>
                                 <input type="checkbox" class="interruptor" checked aria-label="Bloquear torno de la pista 4">
                             </div>
                             <div class="panel-admin__ajuste">
-                                <p class="panel-admin__ajuste-texto"><i class="ph ph-lightbulb" aria-hidden="true"></i> <span><strong>Focos LED torreta B</strong> Desconexión de seguridad</span></p>
+                                <p class="panel-admin__ajuste-texto"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#lightbulb"></use></svg></i> <span><strong>Focos LED torreta B</strong> Desconexión de seguridad</span></p>
                                 <input type="checkbox" class="interruptor" checked aria-label="Desconectar focos de la torreta B">
                             </div>
                         </div>
 
                         <div class="panel-admin__botones">
                             <button type="submit" class="boton boton--primario boton--bloque">
-                                <i class="ph ph-lock-simple boton__icono" aria-hidden="true"></i>
+                                <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#lock-simple"></use></svg></i>
                                 Confirmar y bloquear pista 4
                             </button>
                             <button type="button" class="boton boton--contorno boton--bloque">Guardar como borrador</button>
@@ -325,7 +326,7 @@
                     </section>
 
                     <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="titulo-dudas">
-                        <h2 class="tarjeta__titulo" id="titulo-dudas"><i class="ph ph-headset" aria-hidden="true"></i> ¿Dudas con la reubicación de torneos?</h2>
+                        <h2 class="tarjeta__titulo" id="titulo-dudas"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#headset"></use></svg></i> ¿Dudas con la reubicación de torneos?</h2>
                         <p class="panel-admin__subtitulo">Si necesitas trasladar un torneo federado a otra sede asociada, usa la herramienta de reasignación masiva.</p>
                     </section>
                 </aside>
@@ -335,10 +336,10 @@
 
     <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
     <nav class="navegacion-movil" aria-label="Navegación del administrador en móvil">
-        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-squares-four" aria-hidden="true"></i>Inicio</a>
-        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar" aria-hidden="true"></i>Agenda</a>
-        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-calendar-check" aria-hidden="true"></i>Reservas</a>
-        <a href="configAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-sidebar" aria-hidden="true"></i>Gestión</a>
+        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#squares-four"></use></svg></i>Inicio</a>
+        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar"></use></svg></i>Agenda</a>
+        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-check"></use></svg></i>Reservas</a>
+        <a href="configAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#sidebar"></use></svg></i>Gestión</a>
     </nav>
 
 </body>

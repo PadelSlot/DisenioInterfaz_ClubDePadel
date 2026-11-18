@@ -11,10 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Iconos Phosphor -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <!-- Iconos: sprite SVG propio en assets/svg/iconos.svg (Phosphor Icons, MIT) -->
+    
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <script src="assets/js/iconos.js" defer></script>
     <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
@@ -54,7 +55,7 @@
         </nav>
 
         <div class="panel-admin__promo">
-            <i class="ph ph-sparkle panel-admin__promo-icono" aria-hidden="true"></i>
+            <i class="icono panel-admin__promo-icono" aria-hidden="true"><svg focusable="false"><use href="#sparkle"></use></svg></i>
             <strong class="panel-admin__promo-titulo">Una sola plataforma</strong>
             <p>Activa solo los módulos que necesita tu club.</p>
         </div>
@@ -75,18 +76,18 @@
             </a>
 
             <form class="panel-admin__buscador" role="search">
-                <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#magnifying-glass"></use></svg></i>
                 <input type="search" class="panel-admin__buscador-campo" placeholder="Buscar reserva, socio o pago…" aria-label="Buscar reserva, socio o pago">
                 <kbd class="panel-admin__atajo">⌘ K</kbd>
             </form>
 
             <div class="panel-admin__barra-acciones">
                 <a href="crearReservaAdmin.html" class="boton boton--primario navegacion-escritorio">
-                    <i class="ph ph-plus boton__icono" aria-hidden="true"></i>
+                    <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#plus"></use></svg></i>
                     Crear reserva
                 </a>
                 <button type="button" class="boton-icono" aria-label="Notificaciones">
-                    <i class="ph ph-bell" aria-hidden="true"></i>
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bell"></use></svg></i>
                 </button>
                 <div class="usuario">
                     <span class="avatar">MR</span>
@@ -103,9 +104,9 @@
                 <div>
                     <nav class="cabecera-pagina__migas" aria-label="Estás aquí">
                         <a href="progSemanalAdmin.html" class="cabecera-pagina__miga">Escuela deportiva</a>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                         <a href="progSemanalAdmin.html" class="cabecera-pagina__miga">Programación semanal</a>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                         <span class="cabecera-pagina__miga cabecera-pagina__miga--actual" aria-current="page">Añadir clase o grupo</span>
                     </nav>
                     <span class="etiqueta etiqueta--suave">Temporada 2025/2026 · Código ESC-2025-VIB</span>
@@ -123,8 +124,8 @@
 
                     <fieldset class="chips">
                         <legend class="solo-lector">Tipo de clase</legend>
-                        <label class="chips__opcion"><input type="radio" class="chips__control" name="tipo-clase" checked><i class="ph ph-users-three" aria-hidden="true"></i> Clase grupal abierta</label>
-                        <label class="chips__opcion"><input type="radio" class="chips__control" name="tipo-clase"><i class="ph ph-user" aria-hidden="true"></i> Particular 1 a 1</label>
+                        <label class="chips__opcion"><input type="radio" class="chips__control" name="tipo-clase" checked><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#users-three"></use></svg></i> Clase grupal abierta</label>
+                        <label class="chips__opcion"><input type="radio" class="chips__control" name="tipo-clase"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user"></use></svg></i> Particular 1 a 1</label>
                     </fieldset>
 
                     <!-- 1. Información -->
@@ -148,9 +149,9 @@
                         </fieldset>
                         <fieldset class="chips chips--cuadradas">
                             <legend class="formulario__etiqueta">Enfoque principal</legend>
-                            <label class="chips__opcion"><input type="radio" class="chips__control" name="enfoque" checked><i class="ph ph-target" aria-hidden="true"></i> Técnico de golpeo</label>
-                            <label class="chips__opcion"><input type="radio" class="chips__control" name="enfoque"><i class="ph ph-strategy" aria-hidden="true"></i> Táctico y posicionamiento</label>
-                            <label class="chips__opcion"><input type="radio" class="chips__control" name="enfoque"><i class="ph ph-barbell" aria-hidden="true"></i> Físico específico</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="enfoque" checked><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#target"></use></svg></i> Técnico de golpeo</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="enfoque"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#strategy"></use></svg></i> Táctico y posicionamiento</label>
+                            <label class="chips__opcion"><input type="radio" class="chips__control" name="enfoque"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#barbell"></use></svg></i> Físico específico</label>
                         </fieldset>
                     </section>
 
@@ -176,7 +177,7 @@
                                     <option>Pista 1 · panorámica</option>
                                     <option>Pista 3 · cubierta estándar</option>
                                 </select>
-                                <p class="panel-admin__texto-pequeno"><i class="ph ph-seal-check" aria-hidden="true"></i> Pista libre y climatizada en este horario</p>
+                                <p class="panel-admin__texto-pequeno"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#seal-check"></use></svg></i> Pista libre y climatizada en este horario</p>
                             </div>
                         </div>
                     </section>
@@ -187,8 +188,8 @@
                             <h2 class="panel-admin__seccion-titulo" id="paso-calendario"><span class="paso-numero">3</span> Calendario y horario</h2>
                             <fieldset class="chips">
                                 <legend class="solo-lector">Frecuencia</legend>
-                                <label class="chips__opcion"><input type="radio" class="chips__control" name="frecuencia"><i class="ph ph-calendar-blank" aria-hidden="true"></i> Sesión única</label>
-                                <label class="chips__opcion"><input type="radio" class="chips__control" name="frecuencia" checked><i class="ph ph-repeat" aria-hidden="true"></i> Semanal</label>
+                                <label class="chips__opcion"><input type="radio" class="chips__control" name="frecuencia"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-blank"></use></svg></i> Sesión única</label>
+                                <label class="chips__opcion"><input type="radio" class="chips__control" name="frecuencia" checked><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#repeat"></use></svg></i> Semanal</label>
                             </fieldset>
                         </div>
                         <div class="formulario panel-admin__campos">
@@ -272,16 +273,16 @@
                             </li>
                         </ul>
                         <button type="button" class="boton boton--contorno boton--bloque">
-                            <i class="ph ph-user-plus boton__icono" aria-hidden="true"></i>
+                            <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#user-plus"></use></svg></i>
                             Inscribir socio (DNI o apellidos)
                         </button>
-                        <p class="panel-admin__texto-pequeno"><i class="ph ph-device-mobile" aria-hidden="true"></i> Plazas 3 y 4: disponibles para reserva pública en la app.</p>
+                        <p class="panel-admin__texto-pequeno"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#device-mobile"></use></svg></i> Plazas 3 y 4: disponibles para reserva pública en la app.</p>
                     </section>
 
                     <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="titulo-vista">
                         <div class="tarjeta__cabecera">
                             <h2 class="tarjeta__titulo" id="titulo-vista">Vista en la app del socio</h2>
-                            <i class="ph ph-eye" aria-hidden="true"></i>
+                            <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#eye"></use></svg></i>
                         </div>
                         <div class="panel-admin__mini panel-admin__mini--suave">
                             <div class="panel-admin__mini-cabecera">
@@ -289,7 +290,7 @@
                                 <strong>14,00 €</strong>
                             </div>
                             <strong>Técnica de víbora, bandeja y aceleración</strong>
-                            <span><i class="ph ph-clock" aria-hidden="true"></i> Jueves 1 octubre · 18:30 – 20:00</span>
+                            <span><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#clock"></use></svg></i> Jueves 1 octubre · 18:30 – 20:00</span>
                             <div class="panel-admin__mini-cabecera">
                                 <span class="panel-admin__persona"><span class="avatar">CR</span> Carlos Rodríguez (FEP)</span>
                                 <span class="etiqueta etiqueta--terciario">2 plazas libres</span>
@@ -300,7 +301,7 @@
                     <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="titulo-balance">
                         <div class="tarjeta__cabecera">
                             <h2 class="tarjeta__titulo" id="titulo-balance">Balance de rentabilidad</h2>
-                            <i class="ph ph-trend-up" aria-hidden="true"></i>
+                            <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#trend-up"></use></svg></i>
                         </div>
                         <dl class="lista-datos">
                             <div class="lista-datos__fila"><dt>Ingresos (aforo completo)</dt><dd>64,00 €</dd></div>
@@ -313,7 +314,7 @@
 
                     <div class="panel-admin__botones">
                         <button type="submit" class="boton boton--primario boton--bloque">
-                            <i class="ph ph-upload-simple boton__icono" aria-hidden="true"></i>
+                            <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#upload-simple"></use></svg></i>
                             Publicar clase y abrir inscripciones
                         </button>
                         <button type="button" class="boton boton--contorno boton--bloque">Guardar borrador</button>
@@ -326,10 +327,10 @@
 
     <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
     <nav class="navegacion-movil" aria-label="Navegación del administrador en móvil">
-        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-squares-four" aria-hidden="true"></i>Inicio</a>
-        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-calendar" aria-hidden="true"></i>Agenda</a>
-        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar-check" aria-hidden="true"></i>Reservas</a>
-        <a href="configAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-sidebar" aria-hidden="true"></i>Gestión</a>
+        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#squares-four"></use></svg></i>Inicio</a>
+        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar"></use></svg></i>Agenda</a>
+        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-check"></use></svg></i>Reservas</a>
+        <a href="configAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#sidebar"></use></svg></i>Gestión</a>
     </nav>
 
 </body>

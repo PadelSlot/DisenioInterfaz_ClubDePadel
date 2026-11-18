@@ -11,10 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Iconos Phosphor -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <!-- Iconos: sprite SVG propio en assets/svg/iconos.svg (Phosphor Icons, MIT) -->
+    
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <script src="assets/js/iconos.js" defer></script>
     <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
@@ -54,7 +55,7 @@
         </nav>
 
         <div class="panel-admin__promo">
-            <i class="ph ph-sparkle panel-admin__promo-icono" aria-hidden="true"></i>
+            <i class="icono panel-admin__promo-icono" aria-hidden="true"><svg focusable="false"><use href="#sparkle"></use></svg></i>
             <strong class="panel-admin__promo-titulo">Una sola plataforma</strong>
             <p>Activa solo los módulos que necesita tu club.</p>
         </div>
@@ -75,18 +76,18 @@
             </a>
 
             <form class="panel-admin__buscador" role="search">
-                <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#magnifying-glass"></use></svg></i>
                 <input type="search" class="panel-admin__buscador-campo" placeholder="Buscar reserva, socio o pago…" aria-label="Buscar reserva, socio o pago">
                 <kbd class="panel-admin__atajo">⌘ K</kbd>
             </form>
 
             <div class="panel-admin__barra-acciones">
                 <a href="crearReservaAdmin.html" class="boton boton--primario navegacion-escritorio">
-                    <i class="ph ph-plus boton__icono" aria-hidden="true"></i>
+                    <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#plus"></use></svg></i>
                     Crear reserva
                 </a>
                 <button type="button" class="boton-icono" aria-label="Notificaciones">
-                    <i class="ph ph-bell" aria-hidden="true"></i>
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bell"></use></svg></i>
                 </button>
                 <div class="usuario">
                     <span class="avatar">MR</span>
@@ -103,32 +104,32 @@
                 <div>
                     <nav class="cabecera-pagina__migas" aria-label="Estás aquí">
                         <a href="inicioAdmin.html" class="cabecera-pagina__miga">Gestión del club</a>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                         <span class="cabecera-pagina__miga cabecera-pagina__miga--actual" aria-current="page">Configuración y reglas</span>
                     </nav>
                     <h1 class="cabecera-pagina__titulo">Configuración del club</h1>
                     <p class="cabecera-pagina__texto">Tarifas, reglas de reserva anticipada, pasarelas de pago, domótica de focos y módulos activos en Racket Club Sevilla.</p>
                 </div>
                 <div class="cabecera-pagina__acciones">
-                    <a href="#" class="boton boton--contorno"><i class="ph ph-clock-counter-clockwise boton__icono" aria-hidden="true"></i> Ver cambios</a>
+                    <a href="#" class="boton boton--contorno"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#clock-counter-clockwise"></use></svg></i> Ver cambios</a>
                     <button type="reset" form="formulario-config" class="boton boton--contorno">Restablecer</button>
-                    <button type="submit" form="formulario-config" class="boton boton--primario"><i class="ph ph-check-circle boton__icono" aria-hidden="true"></i> Guardar cambios</button>
+                    <button type="submit" form="formulario-config" class="boton boton--primario"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#check-circle"></use></svg></i> Guardar cambios</button>
                 </div>
             </header>
 
             <nav class="panel-admin__pestanas" aria-label="Apartados de configuración">
-                <a href="#marca" class="panel-admin__pestana panel-admin__pestana--activa" aria-current="true"><i class="ph ph-identification-badge" aria-hidden="true"></i> General y marca</a>
-                <a href="#reglas" class="panel-admin__pestana"><i class="ph ph-calendar-check" aria-hidden="true"></i> Reglas de reserva</a>
-                <a href="#domotica" class="panel-admin__pestana"><i class="ph ph-lightning" aria-hidden="true"></i> Integraciones</a>
-                <a href="#pagos" class="panel-admin__pestana"><i class="ph ph-credit-card" aria-hidden="true"></i> Pagos</a>
-                <a href="#modulos" class="panel-admin__pestana"><i class="ph ph-squares-four" aria-hidden="true"></i> Módulos</a>
+                <a href="#marca" class="panel-admin__pestana panel-admin__pestana--activa" aria-current="true"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#identification-badge"></use></svg></i> General y marca</a>
+                <a href="#reglas" class="panel-admin__pestana"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-check"></use></svg></i> Reglas de reserva</a>
+                <a href="#domotica" class="panel-admin__pestana"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#lightning"></use></svg></i> Integraciones</a>
+                <a href="#pagos" class="panel-admin__pestana"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#credit-card"></use></svg></i> Pagos</a>
+                <a href="#modulos" class="panel-admin__pestana"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#squares-four"></use></svg></i> Módulos</a>
             </nav>
 
             <section class="panel-admin__banner" aria-label="Resumen del club">
                 <div>
                     <span class="panel-admin__banner-antetitulo">Plan Enterprise</span>
                     <h2 class="panel-admin__banner-titulo">Racket Club Sevilla</h2>
-                    <p><i class="ph ph-map-pin" aria-hidden="true"></i> Tomares · <i class="ph ph-shield-check" aria-hidden="true"></i> Certificado SSL activo · <i class="ph ph-tennis-ball" aria-hidden="true"></i> 6 pistas</p>
+                    <p><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i> Tomares · <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#shield-check"></use></svg></i> Certificado SSL activo · <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#tennis-ball"></use></svg></i> 6 pistas</p>
                 </div>
                 <dl class="lista-datos panel-admin__banner-datos">
                     <div class="lista-datos__fila"><dt>Hardware sincronizado</dt><dd>100% online</dd></div>
@@ -248,19 +249,19 @@
                         </div>
                         <div>
                             <div class="panel-admin__ajuste">
-                                <p class="panel-admin__ajuste-texto"><i class="ph ph-lightbulb" aria-hidden="true"></i> <span><strong>Encendido anticipado de focos</strong> Antes de la hora de inicio</span></p>
+                                <p class="panel-admin__ajuste-texto"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#lightbulb"></use></svg></i> <span><strong>Encendido anticipado de focos</strong> Antes de la hora de inicio</span></p>
                                 <select class="formulario__campo" aria-label="Encendido anticipado de focos"><option>5 min antes</option><option>10 min antes</option><option>Al inicio</option></select>
                             </div>
                             <div class="panel-admin__ajuste">
-                                <p class="panel-admin__ajuste-texto"><i class="ph ph-power" aria-hidden="true"></i> <span><strong>Apagado de cortesía</strong> Para recoger y salir de pista</span></p>
+                                <p class="panel-admin__ajuste-texto"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#power"></use></svg></i> <span><strong>Apagado de cortesía</strong> Para recoger y salir de pista</span></p>
                                 <select class="formulario__campo" aria-label="Apagado de cortesía"><option>5 min con aviso</option><option>8 min</option><option>Inmediato</option></select>
                             </div>
                             <label class="panel-admin__ajuste">
-                                <span class="panel-admin__ajuste-texto"><i class="ph ph-qr-code" aria-hidden="true"></i> <span><strong>Tornos con QR / NFC</strong> Se abren 20 min antes</span></span>
+                                <span class="panel-admin__ajuste-texto"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#qr-code"></use></svg></i> <span><strong>Tornos con QR / NFC</strong> Se abren 20 min antes</span></span>
                                 <input type="checkbox" class="interruptor" checked>
                             </label>
                             <label class="panel-admin__ajuste">
-                                <span class="panel-admin__ajuste-texto"><i class="ph ph-car" aria-hidden="true"></i> <span><strong>Barrera del parking</strong> Matrícula registrada · 30 min antes</span></span>
+                                <span class="panel-admin__ajuste-texto"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#car"></use></svg></i> <span><strong>Barrera del parking</strong> Matrícula registrada · 30 min antes</span></span>
                                 <input type="checkbox" class="interruptor" checked>
                             </label>
                         </div>
@@ -273,7 +274,7 @@
                         </div>
                         <div class="panel-admin__mini panel-admin__mini--suave">
                             <div class="panel-admin__mini-cabecera">
-                                <strong><i class="ph ph-credit-card" aria-hidden="true"></i> Pago con tarjeta y Redsys</strong>
+                                <strong><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#credit-card"></use></svg></i> Pago con tarjeta y Redsys</strong>
                                 <span class="etiqueta etiqueta--terciario">Producción</span>
                             </div>
                             <span>Comisión acordada: 0,35% (asume el club)</span>
@@ -281,13 +282,13 @@
                         </div>
                         <div class="panel-admin__mini panel-admin__mini--suave">
                             <div class="panel-admin__mini-cabecera">
-                                <strong><i class="ph ph-bank" aria-hidden="true"></i> Remesas SEPA</strong>
+                                <strong><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bank"></use></svg></i> Remesas SEPA</strong>
                                 <span class="etiqueta etiqueta--suave">Conectado</span>
                             </div>
                             <span>Banco Santander · ID emisor ES88000B82910384</span>
                             <a href="cobroAdmin.html" class="panel-admin__enlace">Ver mandatos</a>
                         </div>
-                        <p class="panel-admin__texto-pequeno"><i class="ph ph-arrows-clockwise" aria-hidden="true"></i> Conciliación automática diaria a las 03:00.</p>
+                        <p class="panel-admin__texto-pequeno"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#arrows-clockwise"></use></svg></i> Conciliación automática diaria a las 03:00.</p>
                     </section>
                 </div>
 
@@ -302,27 +303,27 @@
                     </div>
                     <div class="panel-admin__rejilla">
                         <label class="panel-admin__mini">
-                            <span class="panel-admin__mini-cabecera"><strong><i class="ph ph-squares-four" aria-hidden="true"></i> Cuadrante en tiempo real</strong><input type="checkbox" class="interruptor" checked></span>
+                            <span class="panel-admin__mini-cabecera"><strong><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#squares-four"></use></svg></i> Cuadrante en tiempo real</strong><input type="checkbox" class="interruptor" checked></span>
                             <span class="panel-admin__texto-pequeno">6 pistas en vivo con turnos de 60, 90 y 120 minutos.</span>
                         </label>
                         <label class="panel-admin__mini">
-                            <span class="panel-admin__mini-cabecera"><strong><i class="ph ph-graduation-cap" aria-hidden="true"></i> Escuela y clases</strong><input type="checkbox" class="interruptor" checked></span>
+                            <span class="panel-admin__mini-cabecera"><strong><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#graduation-cap"></use></svg></i> Escuela y clases</strong><input type="checkbox" class="interruptor" checked></span>
                             <span class="panel-admin__texto-pequeno">Grupos por nivel, matrículas y control de asistencia.</span>
                         </label>
                         <label class="panel-admin__mini">
-                            <span class="panel-admin__mini-cabecera"><strong><i class="ph ph-users" aria-hidden="true"></i> Fichas de socio</strong><input type="checkbox" class="interruptor" checked></span>
+                            <span class="panel-admin__mini-cabecera"><strong><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i> Fichas de socio</strong><input type="checkbox" class="interruptor" checked></span>
                             <span class="panel-admin__texto-pequeno">Historial, monedero, preferencias y RGPD.</span>
                         </label>
                         <label class="panel-admin__mini">
-                            <span class="panel-admin__mini-cabecera"><strong><i class="ph ph-bank" aria-hidden="true"></i> Cobros SEPA</strong><input type="checkbox" class="interruptor" checked></span>
+                            <span class="panel-admin__mini-cabecera"><strong><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bank"></use></svg></i> Cobros SEPA</strong><input type="checkbox" class="interruptor" checked></span>
                             <span class="panel-admin__texto-pequeno">Ficheros bancarios ISO 20022 en un clic a final de mes.</span>
                         </label>
                         <label class="panel-admin__mini">
-                            <span class="panel-admin__mini-cabecera"><strong><i class="ph ph-door" aria-hidden="true"></i> Parking y tornos</strong><input type="checkbox" class="interruptor" checked></span>
+                            <span class="panel-admin__mini-cabecera"><strong><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#door"></use></svg></i> Parking y tornos</strong><input type="checkbox" class="interruptor" checked></span>
                             <span class="panel-admin__texto-pequeno">Barreras automáticas y relés de pista sin llave.</span>
                         </label>
                         <label class="panel-admin__mini">
-                            <span class="panel-admin__mini-cabecera"><strong><i class="ph ph-shopping-bag" aria-hidden="true"></i> Tienda y cafetería</strong><input type="checkbox" class="interruptor"></span>
+                            <span class="panel-admin__mini-cabecera"><strong><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#shopping-bag"></use></svg></i> Tienda y cafetería</strong><input type="checkbox" class="interruptor"></span>
                             <span class="panel-admin__texto-pequeno">TPV táctil para bar, venta de bolas y grips.</span>
                         </label>
                     </div>
@@ -333,10 +334,10 @@
 
     <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
     <nav class="navegacion-movil" aria-label="Navegación del administrador en móvil">
-        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-squares-four" aria-hidden="true"></i>Inicio</a>
-        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar" aria-hidden="true"></i>Agenda</a>
-        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar-check" aria-hidden="true"></i>Reservas</a>
-        <a href="configAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-sidebar" aria-hidden="true"></i>Gestión</a>
+        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#squares-four"></use></svg></i>Inicio</a>
+        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar"></use></svg></i>Agenda</a>
+        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-check"></use></svg></i>Reservas</a>
+        <a href="configAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#sidebar"></use></svg></i>Gestión</a>
     </nav>
 
 </body>

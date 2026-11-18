@@ -11,10 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Iconos Phosphor -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <!-- Iconos: sprite SVG propio en assets/svg/iconos.svg (Phosphor Icons, MIT) -->
+    
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <script src="assets/js/iconos.js" defer></script>
     <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
@@ -54,7 +55,7 @@
         </nav>
 
         <div class="panel-admin__promo">
-            <i class="ph ph-sparkle panel-admin__promo-icono" aria-hidden="true"></i>
+            <i class="icono panel-admin__promo-icono" aria-hidden="true"><svg focusable="false"><use href="#sparkle"></use></svg></i>
             <strong class="panel-admin__promo-titulo">Una sola plataforma</strong>
             <p>Activa solo los módulos que necesita tu club.</p>
         </div>
@@ -75,18 +76,18 @@
             </a>
 
             <form class="panel-admin__buscador" role="search">
-                <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#magnifying-glass"></use></svg></i>
                 <input type="search" class="panel-admin__buscador-campo" placeholder="Buscar reserva, socio o pago…" aria-label="Buscar reserva, socio o pago">
                 <kbd class="panel-admin__atajo">⌘ K</kbd>
             </form>
 
             <div class="panel-admin__barra-acciones">
                 <a href="crearReservaAdmin.html" class="boton boton--primario navegacion-escritorio">
-                    <i class="ph ph-plus boton__icono" aria-hidden="true"></i>
+                    <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#plus"></use></svg></i>
                     Crear reserva
                 </a>
                 <button type="button" class="boton-icono" aria-label="Notificaciones">
-                    <i class="ph ph-bell" aria-hidden="true"></i>
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bell"></use></svg></i>
                 </button>
                 <div class="usuario">
                     <span class="avatar">MR</span>
@@ -103,16 +104,16 @@
                 <div>
                     <nav class="cabecera-pagina__migas" aria-label="Estás aquí">
                         <a href="inicioAdmin.html" class="cabecera-pagina__miga">Gestión del club</a>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                         <span class="cabecera-pagina__miga cabecera-pagina__miga--actual" aria-current="page">Cobros y cuotas</span>
                     </nav>
                     <h1 class="cabecera-pagina__titulo">Control financiero, cuotas y remesas SEPA</h1>
                     <p class="cabecera-pagina__texto">Facturación mensual de abonados, cobros online y en TPV, ficheros bancarios ISO 20022 e incidencias de pago.</p>
                 </div>
                 <div class="cabecera-pagina__acciones">
-                    <a href="#" class="boton boton--contorno"><i class="ph ph-download-simple boton__icono" aria-hidden="true"></i> Exportar contabilidad</a>
-                    <a href="#" class="boton boton--contorno"><i class="ph ph-cash-register boton__icono" aria-hidden="true"></i> Cobro manual</a>
-                    <a href="#" class="boton boton--primario"><i class="ph ph-plus boton__icono" aria-hidden="true"></i> Generar remesa mensual</a>
+                    <a href="#" class="boton boton--contorno"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#download-simple"></use></svg></i> Exportar contabilidad</a>
+                    <a href="#" class="boton boton--contorno"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#cash-register"></use></svg></i> Cobro manual</a>
+                    <a href="#" class="boton boton--primario"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#plus"></use></svg></i> Generar remesa mensual</a>
                 </div>
             </header>
 
@@ -120,7 +121,7 @@
                 <article class="tarjeta panel-admin__kpi panel-admin__kpi--destacado">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Facturación octubre</h2>
-                        <i class="ph ph-trend-up panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#trend-up"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">21.870 €</p>
                     <p class="panel-admin__kpi-detalle">+8,4% vs. septiembre</p>
@@ -128,7 +129,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Cuotas SEPA</h2>
-                        <i class="ph ph-users panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">17.460 €</p>
                     <p class="panel-admin__kpi-detalle">486 socios · 80% del total</p>
@@ -136,7 +137,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Pistas y extras</h2>
-                        <i class="ph ph-tennis-ball panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#tennis-ball"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">4.410 €</p>
                     <p class="panel-admin__kpi-detalle">Partidas sueltas, botes, bar</p>
@@ -144,7 +145,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Recibos devueltos</h2>
-                        <i class="ph ph-warning panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#warning"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">178 €</p>
                     <p class="panel-admin__kpi-detalle">2 recibos · 0,8% morosidad</p>
@@ -152,7 +153,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Monederos</h2>
-                        <i class="ph ph-wallet panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#wallet"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">6.420 €</p>
                     <p class="panel-admin__kpi-detalle">Saldo de 314 socios</p>
@@ -160,11 +161,11 @@
             </section>
 
             <nav class="panel-admin__pestanas" aria-label="Secciones de cobros">
-                <a href="cobroAdmin.html" class="panel-admin__pestana panel-admin__pestana--activa" aria-current="page"><i class="ph ph-bank" aria-hidden="true"></i> Remesas SEPA</a>
-                <a href="#" class="panel-admin__pestana"><i class="ph ph-receipt" aria-hidden="true"></i> Historial de transacciones</a>
-                <a href="#" class="panel-admin__pestana"><i class="ph ph-warning-circle" aria-hidden="true"></i> Recibos devueltos (2)</a>
-                <a href="#" class="panel-admin__pestana"><i class="ph ph-wallet" aria-hidden="true"></i> Monederos virtuales</a>
-                <a href="#" class="panel-admin__pestana"><i class="ph ph-handshake" aria-hidden="true"></i> Liquidación a monitores</a>
+                <a href="cobroAdmin.html" class="panel-admin__pestana panel-admin__pestana--activa" aria-current="page"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bank"></use></svg></i> Remesas SEPA</a>
+                <a href="#" class="panel-admin__pestana"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#receipt"></use></svg></i> Historial de transacciones</a>
+                <a href="#" class="panel-admin__pestana"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#warning-circle"></use></svg></i> Recibos devueltos (2)</a>
+                <a href="#" class="panel-admin__pestana"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#wallet"></use></svg></i> Monederos virtuales</a>
+                <a href="#" class="panel-admin__pestana"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#handshake"></use></svg></i> Liquidación a monitores</a>
             </nav>
 
             <!-- Remesa del mes -->
@@ -176,14 +177,14 @@
                         <p class="panel-admin__subtitulo">Generada automáticamente el 01/10/2025 a las 06:00 por el planificador de PadelSlot.</p>
                     </div>
                     <div class="panel-admin__acciones">
-                        <a href="#" class="boton boton--contorno"><i class="ph ph-download-simple boton__icono" aria-hidden="true"></i> Descargar XML</a>
-                        <a href="#" class="boton boton--contorno"><i class="ph ph-list-bullets boton__icono" aria-hidden="true"></i> Ver órdenes</a>
+                        <a href="#" class="boton boton--contorno"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#download-simple"></use></svg></i> Descargar XML</a>
+                        <a href="#" class="boton boton--contorno"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#list-bullets"></use></svg></i> Ver órdenes</a>
                     </div>
                 </div>
                 <div class="panel-admin__rejilla">
                     <div class="panel-admin__mini panel-admin__mini--suave">
                         <span class="panel-admin__texto-pequeno">Entidad receptora</span>
-                        <strong><i class="ph ph-bank" aria-hidden="true"></i> Banco Santander</strong>
+                        <strong><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bank"></use></svg></i> Banco Santander</strong>
                         <span>ES91 0049 1500 •••• •••• 8912</span>
                     </div>
                     <div class="panel-admin__mini panel-admin__mini--suave">
@@ -214,11 +215,11 @@
                     </div>
                     <div class="panel-admin__filtros">
                         <label class="panel-admin__busqueda">
-                            <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                            <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#magnifying-glass"></use></svg></i>
                             <input type="search" placeholder="Buscar por socio o referencia…" aria-label="Buscar transacciones">
                         </label>
-                        <button type="button" class="boton-icono" aria-label="Filtrar"><i class="ph ph-funnel" aria-hidden="true"></i></button>
-                        <button type="button" class="boton-icono" aria-label="Descargar"><i class="ph ph-download-simple" aria-hidden="true"></i></button>
+                        <button type="button" class="boton-icono" aria-label="Filtrar"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#funnel"></use></svg></i></button>
+                        <button type="button" class="boton-icono" aria-label="Descargar"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#download-simple"></use></svg></i></button>
                     </div>
                     <div class="panel-admin__tabla-scroll">
                         <table class="panel-admin__tabla panel-admin__tabla-cabecera">
@@ -307,7 +308,7 @@
                 <aside class="panel-admin__pila">
                     <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="titulo-recobro">
                         <div class="tarjeta__cabecera">
-                            <h2 class="tarjeta__titulo" id="titulo-recobro"><i class="ph ph-warning" aria-hidden="true"></i> Centro de recobro</h2>
+                            <h2 class="tarjeta__titulo" id="titulo-recobro"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#warning"></use></svg></i> Centro de recobro</h2>
                             <span class="panel-admin__valor">178 €</span>
                         </div>
                         <p class="panel-admin__subtitulo">2 recibos devueltos en la remesa de octubre.</p>
@@ -317,7 +318,7 @@
                                 <strong>89 €</strong>
                             </div>
                             <div class="panel-admin__acciones">
-                                <a href="#" class="boton boton--contorno"><i class="ph ph-whatsapp-logo boton__icono" aria-hidden="true"></i> Enlace por WhatsApp</a>
+                                <a href="#" class="boton boton--contorno"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#whatsapp-logo"></use></svg></i> Enlace por WhatsApp</a>
                                 <a href="#" class="boton boton--contorno">Cargar al monedero</a>
                             </div>
                         </div>
@@ -331,7 +332,7 @@
                                 <a href="#" class="boton boton--contorno">Cobro en mostrador</a>
                             </div>
                         </div>
-                        <p class="panel-admin__texto-pequeno"><i class="ph ph-lock-simple" aria-hidden="true"></i> Bloqueo automático de reservas activado (regla de 48 h).</p>
+                        <p class="panel-admin__texto-pequeno"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#lock-simple"></use></svg></i> Bloqueo automático de reservas activado (regla de 48 h).</p>
                     </section>
 
                     <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="titulo-comisiones">
@@ -350,10 +351,10 @@
 
     <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
     <nav class="navegacion-movil" aria-label="Navegación del administrador en móvil">
-        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-squares-four" aria-hidden="true"></i>Inicio</a>
-        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar" aria-hidden="true"></i>Agenda</a>
-        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar-check" aria-hidden="true"></i>Reservas</a>
-        <a href="configAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-sidebar" aria-hidden="true"></i>Gestión</a>
+        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#squares-four"></use></svg></i>Inicio</a>
+        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar"></use></svg></i>Agenda</a>
+        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-check"></use></svg></i>Reservas</a>
+        <a href="configAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#sidebar"></use></svg></i>Gestión</a>
     </nav>
 
 </body>

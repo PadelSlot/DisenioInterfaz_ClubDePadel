@@ -11,10 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Iconos Phosphor -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <!-- Iconos: sprite SVG propio en assets/svg/iconos.svg (Phosphor Icons, MIT) -->
+    
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <script src="assets/js/iconos.js" defer></script>
     <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
@@ -54,7 +55,7 @@
         </nav>
 
         <div class="panel-admin__promo">
-            <i class="ph ph-sparkle panel-admin__promo-icono" aria-hidden="true"></i>
+            <i class="icono panel-admin__promo-icono" aria-hidden="true"><svg focusable="false"><use href="#sparkle"></use></svg></i>
             <strong class="panel-admin__promo-titulo">Una sola plataforma</strong>
             <p>Activa solo los módulos que necesita tu club.</p>
         </div>
@@ -75,18 +76,18 @@
             </a>
 
             <form class="panel-admin__buscador" role="search">
-                <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#magnifying-glass"></use></svg></i>
                 <input type="search" class="panel-admin__buscador-campo" placeholder="Buscar reserva, socio o pago…" aria-label="Buscar reserva, socio o pago">
                 <kbd class="panel-admin__atajo">⌘ K</kbd>
             </form>
 
             <div class="panel-admin__barra-acciones">
                 <a href="crearReservaAdmin.html" class="boton boton--primario navegacion-escritorio">
-                    <i class="ph ph-plus boton__icono" aria-hidden="true"></i>
+                    <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#plus"></use></svg></i>
                     Crear reserva
                 </a>
                 <button type="button" class="boton-icono" aria-label="Notificaciones">
-                    <i class="ph ph-bell" aria-hidden="true"></i>
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bell"></use></svg></i>
                 </button>
                 <div class="usuario">
                     <span class="avatar">MR</span>
@@ -103,7 +104,7 @@
                 <div>
                     <nav class="cabecera-pagina__migas" aria-label="Estás aquí">
                         <a href="inicioAdmin.html" class="cabecera-pagina__miga">Gestión del club</a>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                         <span class="cabecera-pagina__miga cabecera-pagina__miga--actual" aria-current="page">Servicios e instalaciones</span>
                     </nav>
                     <span class="etiqueta etiqueta--terciario">Sincronización en vivo</span>
@@ -111,9 +112,9 @@
                     <p class="cabecera-pagina__texto">Accesos al parking por matrícula, cafetería, stock de la tienda y asignación de taquillas en tiempo real.</p>
                 </div>
                 <div class="cabecera-pagina__acciones">
-                    <a href="#" class="boton boton--contorno"><i class="ph ph-download-simple boton__icono" aria-hidden="true"></i> Exportar informe</a>
-                    <a href="#" class="boton boton--contorno"><i class="ph ph-cash-register boton__icono" aria-hidden="true"></i> Cierre de caja</a>
-                    <a href="#" class="boton boton--primario"><i class="ph ph-plus boton__icono" aria-hidden="true"></i> Nuevo servicio</a>
+                    <a href="#" class="boton boton--contorno"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#download-simple"></use></svg></i> Exportar informe</a>
+                    <a href="#" class="boton boton--contorno"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#cash-register"></use></svg></i> Cierre de caja</a>
+                    <a href="#" class="boton boton--primario"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#plus"></use></svg></i> Nuevo servicio</a>
                 </div>
             </header>
 
@@ -121,7 +122,7 @@
                 <article class="tarjeta panel-admin__kpi panel-admin__kpi--destacado">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Ingresos servicios hoy</h2>
-                        <i class="ph ph-trend-up panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#trend-up"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">1.126 €</p>
                     <p class="panel-admin__kpi-detalle">+14,2% · bar 684 € · tienda 342 € · parking 100 €</p>
@@ -129,7 +130,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Parking</h2>
-                        <i class="ph ph-car panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#car"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">28 / 40</p>
                     <progress class="progreso" max="40" value="28">28 de 40</progress>
@@ -138,7 +139,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Taquillas</h2>
-                        <i class="ph ph-lock-key panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#lock-key"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">34 / 48</p>
                     <progress class="progreso" max="48" value="34">34 de 48</progress>
@@ -147,7 +148,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Alertas Pro-Shop</h2>
-                        <i class="ph ph-bell-ringing panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#bell-ringing"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">2</p>
                     <p class="panel-admin__kpi-detalle">productos en stock mínimo</p>
@@ -158,12 +159,12 @@
             <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado servicios-admin__seccion" id="parking" aria-labelledby="titulo-parking">
                 <div class="panel-admin__seccion-cabecera">
                     <div>
-                        <h2 class="panel-admin__seccion-titulo" id="titulo-parking"><i class="ph ph-car" aria-hidden="true"></i> Accesos al parking en tiempo real</h2>
+                        <h2 class="panel-admin__seccion-titulo" id="titulo-parking"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#car"></use></svg></i> Accesos al parking en tiempo real</h2>
                         <p class="panel-admin__subtitulo">Lectura de matrículas conectada a las reservas de pista y a las membresías.</p>
                     </div>
                     <div class="panel-admin__acciones">
-                        <button type="button" class="boton boton--contorno"><i class="ph ph-arrow-up boton__icono" aria-hidden="true"></i> Abrir entrada</button>
-                        <button type="button" class="boton boton--contorno"><i class="ph ph-arrow-down boton__icono" aria-hidden="true"></i> Abrir salida</button>
+                        <button type="button" class="boton boton--contorno"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#arrow-up"></use></svg></i> Abrir entrada</button>
+                        <button type="button" class="boton boton--contorno"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#arrow-down"></use></svg></i> Abrir salida</button>
                         <button type="button" class="boton boton--terciario">Modo evento</button>
                     </div>
                 </div>
@@ -219,7 +220,7 @@
                 <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado servicios-admin__seccion" id="bar" aria-labelledby="titulo-bar">
                     <div class="panel-admin__seccion-cabecera">
                         <div>
-                            <h2 class="panel-admin__seccion-titulo" id="titulo-bar"><i class="ph ph-fork-knife" aria-hidden="true"></i> Cafetería «Tercer Tiempo»</h2>
+                            <h2 class="panel-admin__seccion-titulo" id="titulo-bar"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#fork-knife"></use></svg></i> Cafetería «Tercer Tiempo»</h2>
                             <p class="panel-admin__subtitulo">Comandas sincronizadas con el saldo de cada socio.</p>
                         </div>
                         <span class="etiqueta etiqueta--suave">8 mesas en terraza</span>
@@ -247,7 +248,7 @@
                         </ul>
                     </div>
                     <p class="aviso">
-                        <i class="ph ph-star aviso__icono" aria-hidden="true"></i>
+                        <i class="icono aviso__icono" aria-hidden="true"><svg focusable="false"><use href="#star"></use></svg></i>
                         <span class="aviso__texto">Bonificación activa: +10% de saldo en recargas de más de 50 €.</span>
                         <button type="button" class="boton boton--primario">Recargar saldo</button>
                     </p>
@@ -255,7 +256,7 @@
 
                 <!-- ============ PRO-SHOP ============ -->
                 <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado servicios-admin__seccion" id="tienda" aria-labelledby="titulo-tienda">
-                    <h2 class="panel-admin__seccion-titulo" id="titulo-tienda"><i class="ph ph-shopping-bag" aria-hidden="true"></i> Pro-Shop y préstamos</h2>
+                    <h2 class="panel-admin__seccion-titulo" id="titulo-tienda"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#shopping-bag"></use></svg></i> Pro-Shop y préstamos</h2>
                     <div>
                         <p class="formulario__etiqueta">Venta rápida de mostrador</p>
                         <div class="servicios-admin__productos">
@@ -269,22 +270,22 @@
                         <p class="formulario__etiqueta">Palas de test en pista</p>
                         <ul class="panel-admin__lista">
                             <li class="panel-admin__evento">
-                                <i class="ph ph-tennis-ball" aria-hidden="true"></i>
+                                <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#tennis-ball"></use></svg></i>
                                 <p class="panel-admin__evento-texto"><strong>Bullpadel Hack 03</strong> En test: Laura Méndez (#1042)</p>
                                 <span class="etiqueta panel-admin__etiqueta-neutra">Vuelve 20:00</span>
                             </li>
                             <li class="panel-admin__evento">
-                                <i class="ph ph-check-circle" aria-hidden="true"></i>
+                                <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#check-circle"></use></svg></i>
                                 <p class="panel-admin__evento-texto"><strong>Nox AT10 Genius 18K</strong> Disponible en mostrador</p>
                                 <button type="button" class="boton boton--contorno">Prestar</button>
                             </li>
                         </ul>
                     </div>
                     <p class="aviso">
-                        <i class="ph ph-warning aviso__icono" aria-hidden="true"></i>
+                        <i class="icono aviso__icono" aria-hidden="true"><svg focusable="false"><use href="#warning"></use></svg></i>
                         <span class="aviso__texto"><strong class="aviso__titulo">Stock mínimo</strong> Head Padel Pro: 6 tubos · Overgrips Bullpadel: 8 paquetes.</span>
                     </p>
-                    <a href="#" class="panel-admin__enlace"><i class="ph ph-package" aria-hidden="true"></i> Inventario completo de la tienda</a>
+                    <a href="#" class="panel-admin__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#package"></use></svg></i> Inventario completo de la tienda</a>
                 </section>
             </div>
 
@@ -292,7 +293,7 @@
             <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado servicios-admin__seccion" id="taquillas" aria-labelledby="titulo-taquillas">
                 <div class="panel-admin__seccion-cabecera">
                     <div>
-                        <h2 class="panel-admin__seccion-titulo" id="titulo-taquillas"><i class="ph ph-lock-key" aria-hidden="true"></i> Taquillas y vestuarios</h2>
+                        <h2 class="panel-admin__seccion-titulo" id="titulo-taquillas"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#lock-key"></use></svg></i> Taquillas y vestuarios</h2>
                         <p class="panel-admin__subtitulo">Códigos de apertura dinámicos y abonados de cuota fija.</p>
                     </div>
                     <ul class="servicios-admin__leyenda" aria-label="Leyenda">
@@ -328,7 +329,7 @@
                     <li class="servicios-admin__taquilla servicios-admin__taquilla--asignada"><strong>24</strong><span>S. #0954</span><span>Hasta 21:00</span></li>
                 </ul>
                 <div class="panel-admin__seccion-cabecera">
-                    <p class="panel-admin__texto-pequeno"><i class="ph ph-device-mobile" aria-hidden="true"></i> Desbloqueo maestro NFC disponible para recepción desde el móvil de conserjería.</p>
+                    <p class="panel-admin__texto-pequeno"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#device-mobile"></use></svg></i> Desbloqueo maestro NFC disponible para recepción desde el móvil de conserjería.</p>
                     <div class="panel-admin__acciones">
                         <button type="button" class="boton boton--contorno">Liberar caducadas</button>
                         <button type="button" class="boton boton--primario">Asignar taquilla</button>
@@ -340,10 +341,10 @@
 
     <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
     <nav class="navegacion-movil" aria-label="Navegación del administrador en móvil">
-        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-squares-four" aria-hidden="true"></i>Inicio</a>
-        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar" aria-hidden="true"></i>Agenda</a>
-        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar-check" aria-hidden="true"></i>Reservas</a>
-        <a href="configAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-sidebar" aria-hidden="true"></i>Gestión</a>
+        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#squares-four"></use></svg></i>Inicio</a>
+        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar"></use></svg></i>Agenda</a>
+        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-check"></use></svg></i>Reservas</a>
+        <a href="configAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#sidebar"></use></svg></i>Gestión</a>
     </nav>
 
 </body>

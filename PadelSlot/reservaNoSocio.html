@@ -11,10 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Iconos Phosphor -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <!-- Iconos: sprite SVG propio en assets/svg/iconos.svg (Phosphor Icons, MIT) -->
+    
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <script src="assets/js/iconos.js" defer></script>
     <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
@@ -40,7 +41,7 @@
 
             <div class="cabecera__acciones">
                 <button type="button" class="boton-icono" aria-label="Notificaciones">
-                    <i class="ph ph-bell" aria-hidden="true"></i>
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bell"></use></svg></i>
                 </button>
                 <span class="avatar">DR</span>
             </div>
@@ -52,7 +53,7 @@
         <div class="reserva-intro__contenido">
             <nav class="reserva-intro__migas" aria-label="Estás aquí">
                 <a href="inicio.html" class="reserva-intro__miga">Portal del club</a>
-                <i class="ph ph-caret-right" aria-hidden="true"></i>
+                <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                 <span class="reserva-intro__miga reserva-intro__miga--actual" aria-current="page">Reservar</span>
             </nav>
 
@@ -63,11 +64,11 @@
                 </div>
                 <div class="reserva-intro__acciones">
                     <a href="#" class="boton boton--contorno">
-                        <i class="ph ph-calendar-blank boton__icono" aria-hidden="true"></i>
+                        <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-blank"></use></svg></i>
                         Mis reservas
                     </a>
                     <a href="#" class="reserva-intro__enlace">
-                        <i class="ph ph-repeat" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#repeat"></use></svg></i>
                         Reserva recurrente
                     </a>
                 </div>
@@ -126,9 +127,9 @@
                             <div class="reserva__fechas-cabecera">
                                 <span class="formulario__etiqueta" id="etiqueta-fecha">Fecha</span>
                                 <div class="reserva__mes">
-                                    <button type="button" class="boton-icono" aria-label="Semana anterior"><i class="ph ph-caret-left" aria-hidden="true"></i></button>
+                                    <button type="button" class="boton-icono" aria-label="Semana anterior"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-left"></use></svg></i></button>
                                     <strong>Octubre 2026</strong>
-                                    <button type="button" class="boton-icono" aria-label="Semana siguiente"><i class="ph ph-caret-right" aria-hidden="true"></i></button>
+                                    <button type="button" class="boton-icono" aria-label="Semana siguiente"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i></button>
                                 </div>
                             </div>
                             <div class="reserva__dias">
@@ -208,7 +209,7 @@
                                 <tr>
                                     <th scope="row">19:30</th>
                                     <td><button type="button" class="reserva__hueco">Libre</button></td>
-                                    <td><button type="button" class="reserva__hueco reserva__hueco--seleccionado" aria-pressed="true"><i class="ph ph-check" aria-hidden="true"></i> 19:30 · 36 €</button></td>
+                                    <td><button type="button" class="reserva__hueco reserva__hueco--seleccionado" aria-pressed="true"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#check"></use></svg></i> 19:30 · 36 €</button></td>
                                     <td><button type="button" class="reserva__hueco reserva__hueco--ocupado" disabled>Ocupada</button></td>
                                     <td><button type="button" class="reserva__hueco reserva__hueco--solicitado">Libre <span>Muy solicitada</span></button></td>
                                 </tr>
@@ -240,7 +241,7 @@
                             <p class="reserva__subtitulo">Invita a socios, jugadores externos o comparte el enlace para completar la reserva.</p>
                         </div>
                         <button type="button" class="boton boton--contorno">
-                            <i class="ph ph-user-plus boton__icono" aria-hidden="true"></i>
+                            <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#user-plus"></use></svg></i>
                             Añadir participante
                         </button>
                     </div>
@@ -251,31 +252,31 @@
                             <p class="reserva__participante-datos"><strong>Laura Martín</strong> Titular de la reserva</p>
                             <span class="etiqueta etiqueta--terciario">No socio</span>
                             <strong class="reserva__participante-precio">+3 €</strong>
-                            <button type="button" class="boton-icono" aria-label="Opciones de Laura Martín"><i class="ph ph-dots-three" aria-hidden="true"></i></button>
+                            <button type="button" class="boton-icono" aria-label="Opciones de Laura Martín"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#dots-three"></use></svg></i></button>
                         </li>
                         <li class="reserva__participante">
                             <span class="avatar">DR</span>
                             <p class="reserva__participante-datos"><strong>Diego Ruiz</strong> Invitado · pago a cargo de la titular</p>
                             <span class="etiqueta etiqueta--terciario">No socio</span>
                             <strong class="reserva__participante-precio">+3 €</strong>
-                            <button type="button" class="boton-icono" aria-label="Opciones de Diego Ruiz"><i class="ph ph-dots-three" aria-hidden="true"></i></button>
+                            <button type="button" class="boton-icono" aria-label="Opciones de Diego Ruiz"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#dots-three"></use></svg></i></button>
                         </li>
                         <li class="reserva__participante">
                             <span class="avatar">?</span>
                             <p class="reserva__participante-datos"><strong>Plaza libre</strong> Invita por correo o comparte el enlace</p>
                             <span class="etiqueta etiqueta--suave">Pendiente</span>
-                            <button type="button" class="boton-icono" aria-label="Opciones de la plaza libre"><i class="ph ph-dots-three" aria-hidden="true"></i></button>
+                            <button type="button" class="boton-icono" aria-label="Opciones de la plaza libre"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#dots-three"></use></svg></i></button>
                         </li>
                         <li class="reserva__participante">
                             <span class="avatar">?</span>
                             <p class="reserva__participante-datos"><strong>Plaza libre</strong> Invita por correo o comparte el enlace</p>
                             <span class="etiqueta etiqueta--suave">Pendiente</span>
-                            <button type="button" class="boton-icono" aria-label="Opciones de la plaza libre"><i class="ph ph-dots-three" aria-hidden="true"></i></button>
+                            <button type="button" class="boton-icono" aria-label="Opciones de la plaza libre"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#dots-three"></use></svg></i></button>
                         </li>
                     </ul>
 
                     <p class="aviso">
-                        <i class="ph ph-info aviso__icono" aria-hidden="true"></i>
+                        <i class="icono aviso__icono" aria-hidden="true"><svg focusable="false"><use href="#info"></use></svg></i>
                         <span class="aviso__texto">Los socios tienen tarifa reducida. Para jugadores no socios, este club aplica un suplemento de 3 € por persona.</span>
                     </p>
                 </section>
@@ -290,15 +291,15 @@
 
                 <ul class="reserva__resumen-lista">
                     <li class="reserva__resumen-item">
-                        <i class="ph ph-calendar-blank" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-blank"></use></svg></i>
                         <p><strong>Jueves, 1 de octubre</strong> 19:30–21:00 · 90 min</p>
                     </li>
                     <li class="reserva__resumen-item">
-                        <i class="ph ph-map-pin" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i>
                         <p><strong>Pista 2 · Cubierta</strong> Racket Club Sevilla</p>
                     </li>
                     <li class="reserva__resumen-item">
-                        <i class="ph ph-users" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i>
                         <p><strong>2 de 4 jugadores</strong> 2 no socios</p>
                     </li>
                 </ul>
@@ -327,7 +328,7 @@
                 <p class="reserva__nota">Se cargará al método de pago guardado. Precio sujeto al número final de participantes.</p>
 
                 <button type="button" class="boton boton--primario boton--bloque">
-                    <i class="ph ph-lock-simple boton__icono" aria-hidden="true"></i>
+                    <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#lock-simple"></use></svg></i>
                     Confirmar y pagar 47 €
                 </button>
                 <p class="reserva__nota reserva__nota--centrada">Cancelación gratuita hasta 12 horas antes. Al confirmar aceptas las normas del club.</p>

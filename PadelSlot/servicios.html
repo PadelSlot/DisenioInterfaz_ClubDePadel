@@ -11,10 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Iconos Phosphor -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <!-- Iconos: sprite SVG propio en assets/svg/iconos.svg (Phosphor Icons, MIT) -->
+    
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <script src="assets/js/iconos.js" defer></script>
     <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
@@ -43,13 +44,13 @@
 
             <div class="cabecera__acciones">
                 <label class="selector-club">
-                    <i class="ph ph-map-pin" aria-hidden="true"></i>
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i>
                     <select class="selector-club__campo" aria-label="Club">
                         <option>Racket Club Sevilla</option>
                     </select>
                 </label>
                 <button type="button" class="boton-icono" aria-label="Notificaciones">
-                    <i class="ph ph-bell" aria-hidden="true"></i>
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bell"></use></svg></i>
                 </button>
                 <div class="usuario">
                     <span class="avatar">LM</span>
@@ -69,7 +70,7 @@
             <div>
                 <nav class="cabecera-pagina__migas" aria-label="Estás aquí">
                     <a href="inicioSocio.html" class="cabecera-pagina__miga">Portal del socio</a>
-                    <i class="ph ph-caret-right" aria-hidden="true"></i>
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                     <span class="cabecera-pagina__miga cabecera-pagina__miga--actual" aria-current="page">Servicios del club</span>
                 </nav>
                 <span class="etiqueta etiqueta--terciario">6 servicios activos</span>
@@ -77,14 +78,14 @@
                 <p class="cabecera-pagina__texto">Parking, cafetería, tienda, taquillas, torneos y empleo de Racket Club Sevilla, vinculados a tu cuenta de socia.</p>
             </div>
             <div class="servicios-club__monedero">
-                <span class="icono-caja icono-caja--verde"><i class="ph ph-wallet" aria-hidden="true"></i></span>
+                <span class="icono-caja icono-caja--verde"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#wallet"></use></svg></i></span>
                 <p class="servicios-club__monedero-texto"><span>Monedero virtual</span> <strong>38,50 €</strong></p>
                 <a href="#" class="boton boton--terciario">Recargar</a>
             </div>
         </header>
 
         <p class="aviso servicios-club__aviso">
-            <i class="ph ph-star aviso__icono" aria-hidden="true"></i>
+            <i class="icono aviso__icono" aria-hidden="true"><svg focusable="false"><use href="#star"></use></svg></i>
             <span class="aviso__texto">Bonificación activa: <strong>+10% de saldo extra</strong> en recargas del monedero de más de 50 €.</span>
         </p>
 
@@ -93,7 +94,7 @@
             <!-- Parking -->
             <section class="tarjeta servicios-club__servicio" id="parking" aria-labelledby="titulo-parking">
                 <div class="tarjeta__cabecera">
-                    <span class="icono-caja"><i class="ph ph-car" aria-hidden="true"></i></span>
+                    <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#car"></use></svg></i></span>
                     <span class="etiqueta etiqueta--suave">Disponible</span>
                 </div>
                 <h2 class="tarjeta__titulo" id="titulo-parking">Parking y acceso</h2>
@@ -112,7 +113,7 @@
             <!-- Cafetería -->
             <section class="tarjeta servicios-club__servicio" id="bar" aria-labelledby="titulo-bar">
                 <div class="tarjeta__cabecera">
-                    <span class="icono-caja"><i class="ph ph-fork-knife" aria-hidden="true"></i></span>
+                    <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#fork-knife"></use></svg></i></span>
                     <span class="etiqueta etiqueta--suave">Abierto</span>
                 </div>
                 <h2 class="tarjeta__titulo" id="titulo-bar">Cafetería «Tercer Tiempo»</h2>
@@ -128,7 +129,7 @@
             <!-- Pro-Shop -->
             <section class="tarjeta servicios-club__servicio" id="tienda" aria-labelledby="titulo-tienda">
                 <div class="tarjeta__cabecera">
-                    <span class="icono-caja"><i class="ph ph-shopping-bag" aria-hidden="true"></i></span>
+                    <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#shopping-bag"></use></svg></i></span>
                     <span class="etiqueta etiqueta--terciario">15% socios</span>
                 </div>
                 <h2 class="tarjeta__titulo" id="titulo-tienda">Pro-Shop y alquiler</h2>
@@ -146,7 +147,7 @@
             <!-- Taquillas -->
             <section class="tarjeta servicios-club__servicio" id="taquillas" aria-labelledby="titulo-taquillas">
                 <div class="tarjeta__cabecera">
-                    <span class="icono-caja"><i class="ph ph-lock-key" aria-hidden="true"></i></span>
+                    <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#lock-key"></use></svg></i></span>
                     <span class="etiqueta etiqueta--suave">14 libres</span>
                 </div>
                 <h2 class="tarjeta__titulo" id="titulo-taquillas">Taquillas y vestuarios</h2>
@@ -161,7 +162,7 @@
             <!-- Torneos -->
             <section class="tarjeta servicios-club__servicio" id="torneos" aria-labelledby="titulo-torneos">
                 <div class="tarjeta__cabecera">
-                    <span class="icono-caja"><i class="ph ph-trophy" aria-hidden="true"></i></span>
+                    <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#trophy"></use></svg></i></span>
                     <span class="etiqueta etiqueta--suave">3 abiertos</span>
                 </div>
                 <h2 class="tarjeta__titulo" id="titulo-torneos">Torneos y ligas</h2>
@@ -184,7 +185,7 @@
             <!-- Empleo -->
             <section class="tarjeta servicios-club__servicio" id="empleo" aria-labelledby="titulo-empleo">
                 <div class="tarjeta__cabecera">
-                    <span class="icono-caja"><i class="ph ph-briefcase" aria-hidden="true"></i></span>
+                    <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#briefcase"></use></svg></i></span>
                     <span class="etiqueta etiqueta--suave">2 vacantes</span>
                 </div>
                 <h2 class="tarjeta__titulo" id="titulo-empleo">Trabaja en el club</h2>
@@ -197,7 +198,7 @@
                     </li>
                 </ul>
                 <a href="#" class="boton boton--contorno boton--bloque">
-                    <i class="ph ph-paper-plane-tilt boton__icono" aria-hidden="true"></i>
+                    <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#paper-plane-tilt"></use></svg></i>
                     Enviar currículum
                 </a>
             </section>
@@ -223,10 +224,10 @@
 
     <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
     <nav class="navegacion-movil" aria-label="Navegación del socio en móvil">
-        <a href="inicioSocio.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-house" aria-hidden="true"></i>Inicio</a>
-        <a href="#" class="navegacion-movil__enlace"><i class="ph ph-calendar-plus" aria-hidden="true"></i>Reservar</a>
-        <a href="clases.html" class="navegacion-movil__enlace"><i class="ph ph-graduation-cap" aria-hidden="true"></i>Clases</a>
-        <a href="cuotas.html" class="navegacion-movil__enlace"><i class="ph ph-user-circle" aria-hidden="true"></i>Perfil</a>
+        <a href="inicioSocio.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#house"></use></svg></i>Inicio</a>
+        <a href="#" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-plus"></use></svg></i>Reservar</a>
+        <a href="clases.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#graduation-cap"></use></svg></i>Clases</a>
+        <a href="cuotas.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user-circle"></use></svg></i>Perfil</a>
     </nav>
 
 </body>

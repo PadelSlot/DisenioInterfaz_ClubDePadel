@@ -11,10 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Iconos Phosphor -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <!-- Iconos: sprite SVG propio en assets/svg/iconos.svg (Phosphor Icons, MIT) -->
+    
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <script src="assets/js/iconos.js" defer></script>
     <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
@@ -54,7 +55,7 @@
         </nav>
 
         <div class="panel-admin__promo">
-            <i class="ph ph-sparkle panel-admin__promo-icono" aria-hidden="true"></i>
+            <i class="icono panel-admin__promo-icono" aria-hidden="true"><svg focusable="false"><use href="#sparkle"></use></svg></i>
             <strong class="panel-admin__promo-titulo">Una sola plataforma</strong>
             <p>Activa solo los módulos que necesita tu club.</p>
         </div>
@@ -75,18 +76,18 @@
             </a>
 
             <form class="panel-admin__buscador" role="search">
-                <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#magnifying-glass"></use></svg></i>
                 <input type="search" class="panel-admin__buscador-campo" placeholder="Buscar reserva, socio o pago…" aria-label="Buscar reserva, socio o pago">
                 <kbd class="panel-admin__atajo">⌘ K</kbd>
             </form>
 
             <div class="panel-admin__barra-acciones">
                 <a href="crearReservaAdmin.html" class="boton boton--primario navegacion-escritorio">
-                    <i class="ph ph-plus boton__icono" aria-hidden="true"></i>
+                    <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#plus"></use></svg></i>
                     Crear reserva
                 </a>
                 <button type="button" class="boton-icono" aria-label="Notificaciones">
-                    <i class="ph ph-bell" aria-hidden="true"></i>
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bell"></use></svg></i>
                 </button>
                 <div class="usuario">
                     <span class="avatar">MR</span>
@@ -103,7 +104,7 @@
                 <div>
                     <nav class="cabecera-pagina__migas" aria-label="Estás aquí">
                         <a href="inicioAdmin.html" class="cabecera-pagina__miga">Gestión del club</a>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                         <span class="cabecera-pagina__miga cabecera-pagina__miga--actual" aria-current="page">Escuela del club</span>
                     </nav>
                     <h1 class="cabecera-pagina__titulo">Programación semanal de clases</h1>
@@ -111,11 +112,11 @@
                 </div>
                 <div class="cabecera-pagina__acciones">
                     <a href="#" class="boton boton--contorno">
-                        <i class="ph ph-download-simple boton__icono" aria-hidden="true"></i>
+                        <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#download-simple"></use></svg></i>
                         Exportar
                     </a>
                     <a href="añadirClaseAdmin.html" class="boton boton--primario">
-                        <i class="ph ph-plus boton__icono" aria-hidden="true"></i>
+                        <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#plus"></use></svg></i>
                         Crear grupo
                     </a>
                 </div>
@@ -125,7 +126,7 @@
                 <article class="tarjeta panel-admin__kpi panel-admin__kpi--destacado">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Grupos activos</h2>
-                        <i class="ph ph-users-three panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#users-three"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">18</p>
                     <p class="panel-admin__kpi-detalle">Temporada 2026</p>
@@ -133,7 +134,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Alumnos inscritos</h2>
-                        <i class="ph ph-user panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#user"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">126</p>
                     <p class="panel-admin__kpi-detalle">Adultos e infantiles</p>
@@ -141,7 +142,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Clases esta semana</h2>
-                        <i class="ph ph-calendar-check panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-check"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">42</p>
                     <p class="panel-admin__kpi-detalle">28 oct – 3 nov</p>
@@ -149,7 +150,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Ocupación media</h2>
-                        <i class="ph ph-percent panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#percent"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">84%</p>
                     <p class="panel-admin__kpi-detalle">de las plazas</p>
@@ -184,9 +185,9 @@
             <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="titulo-semana">
                     <div class="tarjeta__cabecera">
                         <div class="programacion-admin__semana">
-                            <button type="button" class="boton-icono" aria-label="Semana anterior"><i class="ph ph-caret-left" aria-hidden="true"></i></button>
+                            <button type="button" class="boton-icono" aria-label="Semana anterior"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-left"></use></svg></i></button>
                             <h2 class="tarjeta__titulo" id="titulo-semana">28 octubre – 3 noviembre 2026</h2>
-                            <button type="button" class="boton-icono" aria-label="Semana siguiente"><i class="ph ph-caret-right" aria-hidden="true"></i></button>
+                            <button type="button" class="boton-icono" aria-label="Semana siguiente"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i></button>
                         </div>
                         <button type="button" class="boton boton--contorno">Hoy</button>
                     </div>
@@ -201,9 +202,9 @@
                             </div>
                             <strong class="programacion-admin__nombre">Iniciación adultos</strong>
                             <ul class="programacion-admin__datos">
-                                <li><i class="ph ph-user" aria-hidden="true"></i> Marta Sánchez</li>
-                                <li><i class="ph ph-map-pin" aria-hidden="true"></i> Pista 2</li>
-                                <li><i class="ph ph-users" aria-hidden="true"></i> 6 / 6 alumnos</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user"></use></svg></i> Marta Sánchez</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i> Pista 2</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i> 6 / 6 alumnos</li>
                             </ul>
                             <progress class="progreso" max="6" value="6">6 de 6</progress>
                         </li>
@@ -214,9 +215,9 @@
                             </div>
                             <strong class="programacion-admin__nombre">Intermedio adultos</strong>
                             <ul class="programacion-admin__datos">
-                                <li><i class="ph ph-user" aria-hidden="true"></i> David López</li>
-                                <li><i class="ph ph-map-pin" aria-hidden="true"></i> Pista 3</li>
-                                <li><i class="ph ph-users" aria-hidden="true"></i> 4 / 6 alumnos</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user"></use></svg></i> David López</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i> Pista 3</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i> 4 / 6 alumnos</li>
                             </ul>
                             <progress class="progreso" max="6" value="4">4 de 6</progress>
                         </li>
@@ -232,9 +233,9 @@
                             </div>
                             <strong class="programacion-admin__nombre">Iniciación adultos</strong>
                             <ul class="programacion-admin__datos">
-                                <li><i class="ph ph-user" aria-hidden="true"></i> Álvaro García</li>
-                                <li><i class="ph ph-map-pin" aria-hidden="true"></i> Pista 1</li>
-                                <li><i class="ph ph-users" aria-hidden="true"></i> 5 / 6 alumnos</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user"></use></svg></i> Álvaro García</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i> Pista 1</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i> 5 / 6 alumnos</li>
                             </ul>
                             <progress class="progreso" max="6" value="5">5 de 6</progress>
                         </li>
@@ -245,9 +246,9 @@
                             </div>
                             <strong class="programacion-admin__nombre">Avanzado competición</strong>
                             <ul class="programacion-admin__datos">
-                                <li><i class="ph ph-user" aria-hidden="true"></i> Marta Sánchez</li>
-                                <li><i class="ph ph-map-pin" aria-hidden="true"></i> Pista 4</li>
-                                <li><i class="ph ph-users" aria-hidden="true"></i> 6 / 6 alumnos</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user"></use></svg></i> Marta Sánchez</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i> Pista 4</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i> 6 / 6 alumnos</li>
                             </ul>
                             <progress class="progreso" max="6" value="6">6 de 6</progress>
                         </li>
@@ -263,9 +264,9 @@
                             </div>
                             <strong class="programacion-admin__nombre">Intermedio adultos</strong>
                             <ul class="programacion-admin__datos">
-                                <li><i class="ph ph-user" aria-hidden="true"></i> David López</li>
-                                <li><i class="ph ph-map-pin" aria-hidden="true"></i> Pista 2</li>
-                                <li><i class="ph ph-users" aria-hidden="true"></i> 6 / 6 alumnos</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user"></use></svg></i> David López</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i> Pista 2</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i> 6 / 6 alumnos</li>
                             </ul>
                             <progress class="progreso" max="6" value="6">6 de 6</progress>
                         </li>
@@ -276,9 +277,9 @@
                             </div>
                             <strong class="programacion-admin__nombre">Iniciación infantil</strong>
                             <ul class="programacion-admin__datos">
-                                <li><i class="ph ph-user" aria-hidden="true"></i> Álvaro García</li>
-                                <li><i class="ph ph-map-pin" aria-hidden="true"></i> Pista 3</li>
-                                <li><i class="ph ph-users" aria-hidden="true"></i> 4 / 8 alumnos</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user"></use></svg></i> Álvaro García</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i> Pista 3</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i> 4 / 8 alumnos</li>
                             </ul>
                             <progress class="progreso" max="8" value="4">4 de 8</progress>
                         </li>
@@ -294,9 +295,9 @@
                             </div>
                             <strong class="programacion-admin__nombre">Intermedio adultos</strong>
                             <ul class="programacion-admin__datos">
-                                <li><i class="ph ph-user" aria-hidden="true"></i> Marta Sánchez</li>
-                                <li><i class="ph ph-map-pin" aria-hidden="true"></i> Pista 2</li>
-                                <li><i class="ph ph-users" aria-hidden="true"></i> 6 / 6 alumnos</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user"></use></svg></i> Marta Sánchez</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i> Pista 2</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i> 6 / 6 alumnos</li>
                             </ul>
                             <progress class="progreso" max="6" value="6">6 de 6</progress>
                         </li>
@@ -307,9 +308,9 @@
                             </div>
                             <strong class="programacion-admin__nombre">Avanzado competición</strong>
                             <ul class="programacion-admin__datos">
-                                <li><i class="ph ph-user" aria-hidden="true"></i> David López</li>
-                                <li><i class="ph ph-map-pin" aria-hidden="true"></i> Pista 4</li>
-                                <li><i class="ph ph-users" aria-hidden="true"></i> 5 / 6 alumnos</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user"></use></svg></i> David López</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i> Pista 4</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i> 5 / 6 alumnos</li>
                             </ul>
                             <progress class="progreso" max="6" value="5">5 de 6</progress>
                         </li>
@@ -325,9 +326,9 @@
                             </div>
                             <strong class="programacion-admin__nombre">Iniciación adultos</strong>
                             <ul class="programacion-admin__datos">
-                                <li><i class="ph ph-user" aria-hidden="true"></i> Álvaro García</li>
-                                <li><i class="ph ph-map-pin" aria-hidden="true"></i> Pista 1</li>
-                                <li><i class="ph ph-users" aria-hidden="true"></i> 3 / 6 alumnos</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user"></use></svg></i> Álvaro García</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i> Pista 1</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i> 3 / 6 alumnos</li>
                             </ul>
                             <progress class="progreso" max="6" value="3">3 de 6</progress>
                         </li>
@@ -338,9 +339,9 @@
                             </div>
                             <strong class="programacion-admin__nombre">Intermedio adultos</strong>
                             <ul class="programacion-admin__datos">
-                                <li><i class="ph ph-user" aria-hidden="true"></i> Marta Sánchez</li>
-                                <li><i class="ph ph-map-pin" aria-hidden="true"></i> Pista 3</li>
-                                <li><i class="ph ph-users" aria-hidden="true"></i> 6 / 6 alumnos</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user"></use></svg></i> Marta Sánchez</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i> Pista 3</li>
+                                <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i> 6 / 6 alumnos</li>
                             </ul>
                             <progress class="progreso" max="6" value="6">6 de 6</progress>
                         </li>
@@ -387,7 +388,7 @@
                     </section>
 
                     <section class="aviso programacion-admin__recomendacion" aria-labelledby="titulo-recomendacion">
-                        <i class="ph ph-lightbulb aviso__icono" aria-hidden="true"></i>
+                        <i class="icono aviso__icono" aria-hidden="true"><svg focusable="false"><use href="#lightbulb"></use></svg></i>
                         <div class="aviso__texto">
                             <h2 class="aviso__titulo" id="titulo-recomendacion">Nuevo grupo recomendado</h2>
                             Hay margen para abrir un segundo grupo los miércoles a las 19:00 en la pista 4 con Marta Sánchez. Aportaría unos 128 € netos a la semana.
@@ -400,10 +401,10 @@
 
     <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
     <nav class="navegacion-movil" aria-label="Navegación del administrador en móvil">
-        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-squares-four" aria-hidden="true"></i>Inicio</a>
-        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-calendar" aria-hidden="true"></i>Agenda</a>
-        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar-check" aria-hidden="true"></i>Reservas</a>
-        <a href="configAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-sidebar" aria-hidden="true"></i>Gestión</a>
+        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#squares-four"></use></svg></i>Inicio</a>
+        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar"></use></svg></i>Agenda</a>
+        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-check"></use></svg></i>Reservas</a>
+        <a href="configAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#sidebar"></use></svg></i>Gestión</a>
     </nav>
 
 </body>

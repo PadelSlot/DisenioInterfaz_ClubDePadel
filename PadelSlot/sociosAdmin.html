@@ -11,10 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Iconos Phosphor -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <!-- Iconos: sprite SVG propio en assets/svg/iconos.svg (Phosphor Icons, MIT) -->
+    
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <script src="assets/js/iconos.js" defer></script>
     <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
@@ -54,7 +55,7 @@
         </nav>
 
         <div class="panel-admin__promo">
-            <i class="ph ph-sparkle panel-admin__promo-icono" aria-hidden="true"></i>
+            <i class="icono panel-admin__promo-icono" aria-hidden="true"><svg focusable="false"><use href="#sparkle"></use></svg></i>
             <strong class="panel-admin__promo-titulo">Una sola plataforma</strong>
             <p>Activa solo los módulos que necesita tu club.</p>
         </div>
@@ -75,18 +76,18 @@
             </a>
 
             <form class="panel-admin__buscador" role="search">
-                <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#magnifying-glass"></use></svg></i>
                 <input type="search" class="panel-admin__buscador-campo" placeholder="Buscar reserva, socio o pago…" aria-label="Buscar reserva, socio o pago">
                 <kbd class="panel-admin__atajo">⌘ K</kbd>
             </form>
 
             <div class="panel-admin__barra-acciones">
                 <a href="crearReservaAdmin.html" class="boton boton--primario navegacion-escritorio">
-                    <i class="ph ph-plus boton__icono" aria-hidden="true"></i>
+                    <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#plus"></use></svg></i>
                     Crear reserva
                 </a>
                 <button type="button" class="boton-icono" aria-label="Notificaciones">
-                    <i class="ph ph-bell" aria-hidden="true"></i>
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bell"></use></svg></i>
                 </button>
                 <div class="usuario">
                     <span class="avatar">MR</span>
@@ -103,15 +104,15 @@
                 <div>
                     <nav class="cabecera-pagina__migas" aria-label="Estás aquí">
                         <a href="inicioAdmin.html" class="cabecera-pagina__miga">Gestión del club</a>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                         <span class="cabecera-pagina__miga cabecera-pagina__miga--actual" aria-current="page">Socios y abonados</span>
                     </nav>
                     <h1 class="cabecera-pagina__titulo">Socios y abonados</h1>
                     <p class="cabecera-pagina__texto">Fichas de socio, cuotas, monedero, nivel de juego y estado de pago de todos los abonados del club.</p>
                 </div>
                 <div class="cabecera-pagina__acciones">
-                    <a href="#" class="boton boton--contorno"><i class="ph ph-download-simple boton__icono" aria-hidden="true"></i> Exportar listado</a>
-                    <a href="#nuevo-socio" class="boton boton--terciario"><i class="ph ph-user-plus boton__icono" aria-hidden="true"></i> Nuevo socio</a>
+                    <a href="#" class="boton boton--contorno"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#download-simple"></use></svg></i> Exportar listado</a>
+                    <a href="#nuevo-socio" class="boton boton--terciario"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#user-plus"></use></svg></i> Nuevo socio</a>
                 </div>
             </header>
 
@@ -119,7 +120,7 @@
                 <article class="tarjeta panel-admin__kpi panel-admin__kpi--destacado">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Socios activos</h2>
-                        <i class="ph ph-users panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">486</p>
                     <p class="panel-admin__kpi-detalle">+12 altas este mes</p>
@@ -127,7 +128,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Renuevan esta semana</h2>
-                        <i class="ph ph-arrows-clockwise panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#arrows-clockwise"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">9</p>
                     <p class="panel-admin__kpi-detalle">5 automáticas · 4 pendientes</p>
@@ -135,7 +136,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Recibos devueltos</h2>
-                        <i class="ph ph-warning panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#warning"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">2</p>
                     <p class="panel-admin__kpi-detalle"><a href="cobroAdmin.html">178 € pendientes</a></p>
@@ -143,7 +144,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Monederos con saldo</h2>
-                        <i class="ph ph-wallet panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#wallet"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">314</p>
                     <p class="panel-admin__kpi-detalle">6.420 € en custodia</p>
@@ -159,7 +160,7 @@
                     </div>
                     <div class="panel-admin__filtros">
                         <label class="panel-admin__busqueda">
-                            <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                            <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#magnifying-glass"></use></svg></i>
                             <input type="search" placeholder="Buscar por nombre, DNI o nº de socio…" aria-label="Buscar socios">
                         </label>
                         <fieldset class="chips">
@@ -306,14 +307,14 @@
                             </ul>
                         </div>
                         <div class="panel-admin__acciones">
-                            <a href="#" class="boton boton--primario"><i class="ph ph-pencil-simple boton__icono" aria-hidden="true"></i> Editar ficha</a>
-                            <a href="#" class="boton boton--contorno"><i class="ph ph-chat-circle boton__icono" aria-hidden="true"></i> Mensaje</a>
+                            <a href="#" class="boton boton--primario"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#pencil-simple"></use></svg></i> Editar ficha</a>
+                            <a href="#" class="boton boton--contorno"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#chat-circle"></use></svg></i> Mensaje</a>
                         </div>
                     </section>
 
                     <!-- Alta rápida -->
                     <form class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" id="nuevo-socio" aria-labelledby="titulo-alta">
-                        <h2 class="tarjeta__titulo" id="titulo-alta"><i class="ph ph-user-plus" aria-hidden="true"></i> Alta rápida de socio</h2>
+                        <h2 class="tarjeta__titulo" id="titulo-alta"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user-plus"></use></svg></i> Alta rápida de socio</h2>
                         <div class="formulario">
                             <div class="formulario__grupo">
                                 <label class="formulario__etiqueta" for="alta-nombre">Nombre y apellidos</label>
@@ -345,10 +346,10 @@
 
     <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
     <nav class="navegacion-movil" aria-label="Navegación del administrador en móvil">
-        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-squares-four" aria-hidden="true"></i>Inicio</a>
-        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar" aria-hidden="true"></i>Agenda</a>
-        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar-check" aria-hidden="true"></i>Reservas</a>
-        <a href="configAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-sidebar" aria-hidden="true"></i>Gestión</a>
+        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#squares-four"></use></svg></i>Inicio</a>
+        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar"></use></svg></i>Agenda</a>
+        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-check"></use></svg></i>Reservas</a>
+        <a href="configAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#sidebar"></use></svg></i>Gestión</a>
     </nav>
 
 </body>

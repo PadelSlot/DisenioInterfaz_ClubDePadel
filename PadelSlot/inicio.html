@@ -11,10 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Iconos Phosphor -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <!-- Iconos: sprite SVG propio en assets/svg/iconos.svg (Phosphor Icons, MIT) -->
+    
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <script src="assets/js/iconos.js" defer></script>
     <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="assets/css/multimedia.css">
         <script src="assets/js/cargador.js" defer></script>
@@ -87,7 +88,7 @@
                                         <strong class="inicio-publico__pista-club">Padel Itálica</strong>
                                         Desde 8 € / jug.
                                     </span>
-                                    <i class="ph ph-caret-right" aria-hidden="true"></i>
+                                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                                 </a>
                             </li>
                             <li>
@@ -97,7 +98,7 @@
                                         <strong class="inicio-publico__pista-club">Club Aljarafe</strong>
                                         Desde 10 € / jug.
                                     </span>
-                                    <i class="ph ph-caret-right" aria-hidden="true"></i>
+                                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                                 </a>
                             </li>
                             <li>
@@ -107,13 +108,13 @@
                                         <strong class="inicio-publico__pista-club">Racket Club Sevilla</strong>
                                         Desde 9 € / jug.
                                     </span>
-                                    <i class="ph ph-caret-right" aria-hidden="true"></i>
+                                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                                 </a>
                             </li>
                         </ul>
 
                         <p class="aviso">
-                            <i class="ph ph-user-check aviso__icono" aria-hidden="true"></i>
+                            <i class="icono aviso__icono" aria-hidden="true"><svg focusable="false"><use href="#user-check"></use></svg></i>
                             <span class="aviso__texto">Puedes reservar como invitado. No necesitas pertenecer a un club.</span>
                         </p>
                     </aside>
@@ -147,7 +148,7 @@
                         </select>
                     </div>
                     <button type="submit" class="boton boton--primario" data-cargador>
-    <i class="ph ph-magnifying-glass boton__icono" aria-hidden="true"></i>
+    <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#magnifying-glass"></use></svg></i>
     <span class="boton__texto">Buscar pistas</span>
     <span class="pelota-cargando" aria-hidden="true"></span>
 </button>
@@ -178,7 +179,7 @@
                     </video>
                     <figcaption class="inicio-publico__video-audio">
                         <span class="inicio-publico__video-etiqueta">
-                            <i class="ph ph-music-notes" aria-hidden="true"></i> Música del vídeo
+                            <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#music-notes"></use></svg></i> Música del vídeo
                         </span>
                         <audio controls preload="none">
                             <source src="assets/media/musica-fondo.ogg" type="audio/ogg">
@@ -200,7 +201,7 @@
                         <p class="encabezado-seccion__texto">Ejemplos con pistas libres para hoy. Consulta el precio final y las condiciones antes de reservar.</p>
                     </div>
                     <a href="#" class="encabezado-seccion__enlace">
-                        Ver todos los clubes <i class="ph ph-arrow-right" aria-hidden="true"></i>
+                        Ver todos los clubes <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#arrow-right"></use></svg></i>
                     </a>
                 </header>
 
@@ -214,10 +215,10 @@
                         </picture>
                         <div class="tarjeta__cabecera">
                             <h3 class="tarjeta__titulo">Padel Itálica</h3>
-                            <span class="inicio-publico__valoracion"><i class="ph ph-star" aria-hidden="true"></i> 4,8</span>
+                            <span class="inicio-publico__valoracion"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#star"></use></svg></i> 4,8</span>
                         </div>
                         <div class="tarjeta__cuerpo">
-                            <p><i class="ph ph-map-pin" aria-hidden="true"></i> Santiponce · a 8 km</p>
+                            <p><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i> Santiponce · a 8 km</p>
                             <p>8 pistas · 4 cubiertas · Parking</p>
                         </div>
                         <div class="inicio-publico__horarios-cabecera">
@@ -243,10 +244,10 @@
                         </picture>
                         <div class="tarjeta__cabecera">
                             <h3 class="tarjeta__titulo">Club Aljarafe Pádel</h3>
-                            <span class="inicio-publico__valoracion"><i class="ph ph-star" aria-hidden="true"></i> 4,7</span>
+                            <span class="inicio-publico__valoracion"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#star"></use></svg></i> 4,7</span>
                         </div>
                         <div class="tarjeta__cuerpo">
-                            <p><i class="ph ph-map-pin" aria-hidden="true"></i> Mairena del Aljarafe · a 10 km</p>
+                            <p><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i> Mairena del Aljarafe · a 10 km</p>
                             <p>12 pistas · Vestuarios · Cafetería</p>
                         </div>
                         <div class="inicio-publico__horarios-cabecera">
@@ -272,10 +273,10 @@
                         </picture>
                         <div class="tarjeta__cabecera">
                             <h3 class="tarjeta__titulo">Racket Club Sevilla</h3>
-                            <span class="inicio-publico__valoracion"><i class="ph ph-star" aria-hidden="true"></i> 4,6</span>
+                            <span class="inicio-publico__valoracion"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#star"></use></svg></i> 4,6</span>
                         </div>
                         <div class="tarjeta__cuerpo">
-                            <p><i class="ph ph-map-pin" aria-hidden="true"></i> Racket Club Sevilla</p>
+                            <p><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#map-pin"></use></svg></i> Racket Club Sevilla</p>
                             <p>6 pistas · Parking gratuito</p>
                         </div>
                         <div class="inicio-publico__horarios-cabecera">
@@ -298,21 +299,21 @@
                 <!-- Ventajas -->
                 <ul class="inicio-publico__beneficios">
                     <li class="inicio-publico__beneficio">
-                        <span class="icono-caja"><i class="ph ph-scan" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#scan"></use></svg></i></span>
                         <div>
                             <strong class="inicio-publico__beneficio-titulo">Compara en una sola vista</strong>
                             <p>Horarios, precio por jugador y servicios de cada club.</p>
                         </div>
                     </li>
                     <li class="inicio-publico__beneficio">
-                        <span class="icono-caja"><i class="ph ph-user-check" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user-check"></use></svg></i></span>
                         <div>
                             <strong class="inicio-publico__beneficio-titulo">Juega sin ser socio</strong>
                             <p>Reserva puntual con tus datos básicos, sin cuotas ni permanencia.</p>
                         </div>
                     </li>
                     <li class="inicio-publico__beneficio">
-                        <span class="icono-caja"><i class="ph ph-shield-check" aria-hidden="true"></i></span>
+                        <span class="icono-caja"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#shield-check"></use></svg></i></span>
                         <div>
                             <strong class="inicio-publico__beneficio-titulo">Pago y cancelación claros</strong>
                             <p>Conoce las condiciones del club antes de confirmar.</p>
@@ -337,7 +338,7 @@
                     <li class="tarjeta inicio-publico__paso">
                         <div class="tarjeta__cabecera">
                             <span class="inicio-publico__paso-numero">1</span>
-                            <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                            <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#magnifying-glass"></use></svg></i>
                         </div>
                         <h3 class="tarjeta__titulo">Busca dónde y cuándo</h3>
                         <p class="tarjeta__cuerpo">Indica municipio, fecha y franja horaria para ver pistas libres en el Aljarafe.</p>
@@ -345,7 +346,7 @@
                     <li class="tarjeta inicio-publico__paso">
                         <div class="tarjeta__cabecera">
                             <span class="inicio-publico__paso-numero">2</span>
-                            <i class="ph ph-cursor-click" aria-hidden="true"></i>
+                            <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#cursor-click"></use></svg></i>
                         </div>
                         <h3 class="tarjeta__titulo">Elige club y pista</h3>
                         <p class="tarjeta__cuerpo">Compara precio, ubicación, tipo de pista y servicios incluidos.</p>
@@ -353,7 +354,7 @@
                     <li class="tarjeta inicio-publico__paso">
                         <div class="tarjeta__cabecera">
                             <span class="inicio-publico__paso-numero">3</span>
-                            <i class="ph ph-credit-card" aria-hidden="true"></i>
+                            <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#credit-card"></use></svg></i>
                         </div>
                         <h3 class="tarjeta__titulo">Confirma como invitado</h3>
                         <p class="tarjeta__cuerpo">Añade tus datos, paga online y recibe la reserva al instante.</p>
@@ -361,13 +362,13 @@
                 </ol>
 
                 <div class="aviso">
-                    <i class="ph ph-info aviso__icono" aria-hidden="true"></i>
+                    <i class="icono aviso__icono" aria-hidden="true"><svg focusable="false"><use href="#info"></use></svg></i>
                     <p class="aviso__texto">
                         <strong class="aviso__titulo">No necesitas cuenta para empezar</strong>
                         Podrás reservar como invitado. Crear una cuenta es opcional y solo sirve para guardar datos y consultar reservas.
                     </p>
                     <a href="#buscar" class="boton boton--primario">
-                        <i class="ph ph-magnifying-glass boton__icono" aria-hidden="true"></i>
+                        <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#magnifying-glass"></use></svg></i>
                         Buscar una pista
                     </a>
                 </div>
@@ -393,7 +394,7 @@
                     <article class="tarjeta inicio-publico__opinion">
                         <div class="tarjeta__cabecera">
                             <span class="inicio-publico__estrellas" aria-label="5 estrellas">★★★★★</span>
-                            <i class="ph ph-quotes" aria-hidden="true"></i>
+                            <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#quotes"></use></svg></i>
                         </div>
                         <blockquote class="tarjeta__cuerpo inicio-publico__cita">“Quería jugar una tarde y encontré pista cerca de casa sin llamar a varios clubes.”</blockquote>
                         <footer class="inicio-publico__autor">
@@ -409,7 +410,7 @@
                     <article class="tarjeta inicio-publico__opinion">
                         <div class="tarjeta__cabecera">
                             <span class="inicio-publico__estrellas" aria-label="5 estrellas">★★★★★</span>
-                            <i class="ph ph-quotes" aria-hidden="true"></i>
+                            <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#quotes"></use></svg></i>
                         </div>
                         <blockquote class="tarjeta__cuerpo inicio-publico__cita">“Se veía el precio completo antes de pagar. Reservamos como invitados en menos de cinco minutos.”</blockquote>
                         <footer class="inicio-publico__autor">
@@ -425,7 +426,7 @@
                     <article class="tarjeta inicio-publico__opinion">
                         <div class="tarjeta__cabecera">
                             <span class="inicio-publico__estrellas" aria-label="5 estrellas">★★★★★</span>
-                            <i class="ph ph-quotes" aria-hidden="true"></i>
+                            <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#quotes"></use></svg></i>
                         </div>
                         <blockquote class="tarjeta__cuerpo inicio-publico__cita">“Muy útil para comparar cubiertas cuando llueve. La confirmación llegó al momento.”</blockquote>
                         <footer class="inicio-publico__autor">
@@ -455,26 +456,26 @@
 
                     <ul class="inicio-publico__modulos">
                         <li class="inicio-publico__modulo">
-                            <span class="icono-caja icono-caja--verde"><i class="ph ph-calendar-check" aria-hidden="true"></i></span>
+                            <span class="icono-caja icono-caja--verde"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-check"></use></svg></i></span>
                             <p><strong class="inicio-publico__modulo-titulo">Pistas y reservas</strong> Agenda y disponibilidad en tiempo real</p>
                         </li>
                         <li class="inicio-publico__modulo">
-                            <span class="icono-caja icono-caja--verde"><i class="ph ph-graduation-cap" aria-hidden="true"></i></span>
+                            <span class="icono-caja icono-caja--verde"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#graduation-cap"></use></svg></i></span>
                             <p><strong class="inicio-publico__modulo-titulo">Clases y escuela</strong> Grupos, monitores e inscripciones</p>
                         </li>
                         <li class="inicio-publico__modulo">
-                            <span class="icono-caja icono-caja--verde"><i class="ph ph-users" aria-hidden="true"></i></span>
+                            <span class="icono-caja icono-caja--verde"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#users"></use></svg></i></span>
                             <p><strong class="inicio-publico__modulo-titulo">Socios y clientes</strong> Altas, cuotas y comunicaciones</p>
                         </li>
                         <li class="inicio-publico__modulo">
-                            <span class="icono-caja icono-caja--verde"><i class="ph ph-receipt" aria-hidden="true"></i></span>
+                            <span class="icono-caja icono-caja--verde"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#receipt"></use></svg></i></span>
                             <p><strong class="inicio-publico__modulo-titulo">Pagos y servicios</strong> Cobros, extras y facturación</p>
                         </li>
                     </ul>
 
                     <div class="inicio-publico__acciones">
                         <a href="#" class="boton boton--solicitud">
-                            <i class="ph ph-presentation-chart boton__icono" aria-hidden="true"></i>
+                            <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#presentation-chart"></use></svg></i>
                             Solicitar demostración
                         </a>
                         <a href="#" class="boton inicio-publico__boton-claro">Pedir información</a>
@@ -530,7 +531,7 @@
                         </ul>
                     </div>
 
-                    <p class="inicio-publico__nota"><i class="ph ph-squares-four" aria-hidden="true"></i> Panel ilustrativo de gestión diaria del club</p>
+                    <p class="inicio-publico__nota"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#squares-four"></use></svg></i> Panel ilustrativo de gestión diaria del club</p>
                 </aside>
             </div>
         </section>
@@ -575,7 +576,7 @@
 
                 <div class="inicio-publico__llamadas">
                     <article class="inicio-publico__llamada inicio-publico__llamada--lima">
-                        <span class="icono-caja icono-caja--blanco"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></span>
+                        <span class="icono-caja icono-caja--blanco"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#magnifying-glass"></use></svg></i></span>
                         <div class="inicio-publico__llamada-texto">
                             <span class="inicio-publico__llamada-antetitulo">Para jugadores</span>
                             <h2 class="inicio-publico__llamada-titulo">¿Listo para jugar?</h2>
@@ -585,7 +586,7 @@
                     </article>
 
                     <article class="inicio-publico__llamada inicio-publico__llamada--verde">
-                        <span class="icono-caja icono-caja--verde"><i class="ph ph-squares-four" aria-hidden="true"></i></span>
+                        <span class="icono-caja icono-caja--verde"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#squares-four"></use></svg></i></span>
                         <div class="inicio-publico__llamada-texto">
                             <span class="inicio-publico__llamada-antetitulo">Para clubes</span>
                             <h2 class="inicio-publico__llamada-titulo">Descubre el modo Manager</h2>

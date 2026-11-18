@@ -11,10 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Iconos Phosphor -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <!-- Iconos: sprite SVG propio en assets/svg/iconos.svg (Phosphor Icons, MIT) -->
+    
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <script src="assets/js/iconos.js" defer></script>
     <link rel="stylesheet" href="scss/main.css">
     <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
@@ -54,7 +55,7 @@
         </nav>
 
         <div class="panel-admin__promo">
-            <i class="ph ph-sparkle panel-admin__promo-icono" aria-hidden="true"></i>
+            <i class="icono panel-admin__promo-icono" aria-hidden="true"><svg focusable="false"><use href="#sparkle"></use></svg></i>
             <strong class="panel-admin__promo-titulo">Una sola plataforma</strong>
             <p>Activa solo los módulos que necesita tu club.</p>
         </div>
@@ -75,18 +76,18 @@
             </a>
 
             <form class="panel-admin__buscador" role="search">
-                <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#magnifying-glass"></use></svg></i>
                 <input type="search" class="panel-admin__buscador-campo" placeholder="Buscar reserva, socio o pago…" aria-label="Buscar reserva, socio o pago">
                 <kbd class="panel-admin__atajo">⌘ K</kbd>
             </form>
 
             <div class="panel-admin__barra-acciones">
                 <a href="crearReservaAdmin.html" class="boton boton--primario navegacion-escritorio">
-                    <i class="ph ph-plus boton__icono" aria-hidden="true"></i>
+                    <i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#plus"></use></svg></i>
                     Crear reserva
                 </a>
                 <button type="button" class="boton-icono" aria-label="Notificaciones">
-                    <i class="ph ph-bell" aria-hidden="true"></i>
+                    <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#bell"></use></svg></i>
                 </button>
                 <div class="usuario">
                     <span class="avatar">MR</span>
@@ -103,16 +104,16 @@
                 <div>
                     <nav class="cabecera-pagina__migas" aria-label="Estás aquí">
                         <a href="inicioAdmin.html" class="cabecera-pagina__miga">Gestión del club</a>
-                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#caret-right"></use></svg></i>
                         <span class="cabecera-pagina__miga cabecera-pagina__miga--actual" aria-current="page">Incidencias y mantenimiento</span>
                     </nav>
                     <h1 class="cabecera-pagina__titulo">Gestión de incidencias técnicas</h1>
                     <p class="cabecera-pagina__texto">Averías en pistas, domótica y tornos, iluminación LED, mantenimiento de pistas y siniestros en un solo sitio.</p>
                 </div>
                 <div class="cabecera-pagina__acciones">
-                    <a href="#mantenimiento" class="boton boton--contorno"><i class="ph ph-wrench boton__icono" aria-hidden="true"></i> Programar mantenimiento</a>
-                    <a href="#proveedores" class="boton boton--contorno"><i class="ph ph-headset boton__icono" aria-hidden="true"></i> Soporte 24/7</a>
-                    <a href="#" class="boton boton--primario"><i class="ph ph-plus boton__icono" aria-hidden="true"></i> Reportar incidencia</a>
+                    <a href="#mantenimiento" class="boton boton--contorno"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#wrench"></use></svg></i> Programar mantenimiento</a>
+                    <a href="#proveedores" class="boton boton--contorno"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#headset"></use></svg></i> Soporte 24/7</a>
+                    <a href="#" class="boton boton--primario"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#plus"></use></svg></i> Reportar incidencia</a>
                 </div>
             </header>
 
@@ -120,7 +121,7 @@
                 <article class="tarjeta panel-admin__kpi panel-admin__kpi--destacado">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Incidencias activas</h2>
-                        <i class="ph ph-warning panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#warning"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">3</p>
                     <p class="panel-admin__kpi-detalle">1 crítica · 2 leves · 1 bloqueo parcial</p>
@@ -128,7 +129,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Pistas afectadas</h2>
-                        <i class="ph ph-tennis-ball panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#tennis-ball"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">Pista 4</p>
                     <p class="panel-admin__kpi-detalle">Inhabilitada de noche (torre B)</p>
@@ -136,7 +137,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Tiempo medio de resolución</h2>
-                        <i class="ph ph-timer panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#timer"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">3 h 15 min</p>
                     <p class="panel-admin__kpi-detalle">−40 min respecto a 2024</p>
@@ -144,7 +145,7 @@
                 <article class="tarjeta panel-admin__kpi">
                     <div class="tarjeta__cabecera">
                         <h2 class="panel-admin__kpi-titulo">Gasto del mes</h2>
-                        <i class="ph ph-receipt panel-admin__kpi-icono" aria-hidden="true"></i>
+                        <i class="icono panel-admin__kpi-icono" aria-hidden="true"><svg focusable="false"><use href="#receipt"></use></svg></i>
                     </div>
                     <p class="panel-admin__kpi-valor">420 €</p>
                     <progress class="progreso" max="1200" value="420">35%</progress>
@@ -175,18 +176,18 @@
                         <h2 class="tarjeta__titulo" id="inc-2048">Fallo eléctrico en la torreta B de focos LED · pista 4</h2>
                         <p class="tarjeta__cuerpo">Salta el diferencial tras el encendido automático de las 18:00. La mitad oeste de la pista se queda sin luz.</p>
                         <p class="panel-admin__confirmacion">
-                            <i class="ph ph-arrows-left-right" aria-hidden="true"></i>
+                            <i class="icono" aria-hidden="true"><svg focusable="false"><use href="#arrows-left-right"></use></svg></i>
                             <span><strong>Plan de contingencia aplicado:</strong> las reservas de las 19:00 y las 20:30 se han movido a las pistas 6 y 2. Socios avisados por SMS · 0 reclamaciones.</span>
                         </p>
                         <ul class="panel-admin__incidencia-datos">
-                            <li><i class="ph ph-user" aria-hidden="true"></i> Avisado: Marta R. (hace 45 min)</li>
-                            <li><i class="ph ph-clock" aria-hidden="true"></i> Llegada estimada: 19:15</li>
-                            <li><i class="ph ph-buildings" aria-hidden="true"></i> Empresa de electricidad homologada</li>
+                            <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#user"></use></svg></i> Avisado: Marta R. (hace 45 min)</li>
+                            <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#clock"></use></svg></i> Llegada estimada: 19:15</li>
+                            <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#buildings"></use></svg></i> Empresa de electricidad homologada</li>
                         </ul>
                         <div class="panel-admin__acciones">
                             <a href="#" class="boton boton--contorno">Ver orden de trabajo</a>
                             <a href="#" class="boton boton--contorno">Actualizar estado</a>
-                            <a href="bloquearPistaAdmin.html" class="boton boton--primario"><i class="ph ph-check-circle boton__icono" aria-hidden="true"></i> Resolver y desbloquear pista</a>
+                            <a href="bloquearPistaAdmin.html" class="boton boton--primario"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#check-circle"></use></svg></i> Resolver y desbloquear pista</a>
                         </div>
                     </article>
 
@@ -202,11 +203,11 @@
                         <h2 class="tarjeta__titulo" id="inc-2047">Lector NFC descalibrado en el torno de vestuarios masculinos</h2>
                         <p class="tarjeta__cuerpo">El lector rechaza las pulseras de silicona y parpadea en ámbar. Acceso provisional garantizado con el QR del carnet digital.</p>
                         <ul class="panel-admin__incidencia-datos">
-                            <li><i class="ph ph-clock" aria-hidden="true"></i> Reportado por limpieza / recepción (hoy 14:10)</li>
-                            <li><i class="ph ph-wrench" aria-hidden="true"></i> Asignado: soporte de hardware PadelSlot</li>
+                            <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#clock"></use></svg></i> Reportado por limpieza / recepción (hoy 14:10)</li>
+                            <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#wrench"></use></svg></i> Asignado: soporte de hardware PadelSlot</li>
                         </ul>
                         <div class="panel-admin__acciones">
-                            <a href="#" class="boton boton--contorno"><i class="ph ph-arrow-clockwise boton__icono" aria-hidden="true"></i> Reiniciar lector en remoto</a>
+                            <a href="#" class="boton boton--contorno"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#arrow-clockwise"></use></svg></i> Reiniciar lector en remoto</a>
                             <a href="#" class="boton boton--contorno">Asignar técnico</a>
                         </div>
                     </article>
@@ -223,14 +224,14 @@
                         <h2 class="tarjeta__titulo" id="inc-2045">Tensor de red flojo y roce en la malla metálica · pista 3</h2>
                         <p class="tarjeta__cuerpo">Tornillería del cabestrante desgastada. El cable interno está bien: la pista sirve para partidos que no sean de competición oficial.</p>
                         <ul class="panel-admin__incidencia-datos">
-                            <li><i class="ph ph-identification-card" aria-hidden="true"></i> Avisó: Carlos Rodríguez (monitor) · ayer 19:40</li>
-                            <li><i class="ph ph-truck" aria-hidden="true"></i> Repuesto en tránsito</li>
+                            <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#identification-card"></use></svg></i> Avisó: Carlos Rodríguez (monitor) · ayer 19:40</li>
+                            <li><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#truck"></use></svg></i> Repuesto en tránsito</li>
                         </ul>
                     </article>
 
                     <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="titulo-historial">
                         <div class="tarjeta__cabecera">
-                            <h2 class="tarjeta__titulo" id="titulo-historial"><i class="ph ph-clock-counter-clockwise" aria-hidden="true"></i> Resueltas recientemente</h2>
+                            <h2 class="tarjeta__titulo" id="titulo-historial"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#clock-counter-clockwise"></use></svg></i> Resueltas recientemente</h2>
                             <a href="#" class="panel-admin__enlace">Ver registro completo</a>
                         </div>
                         <div class="panel-admin__tabla-scroll">
@@ -264,46 +265,46 @@
                         </div>
                         <div>
                             <div class="panel-admin__ajuste">
-                                <p class="panel-admin__ajuste-texto"><i class="ph ph-wifi-high" aria-hidden="true"></i> <span><strong>Gateway central</strong> Fibra del club</span></p>
+                                <p class="panel-admin__ajuste-texto"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#wifi-high"></use></svg></i> <span><strong>Gateway central</strong> Fibra del club</span></p>
                                 <span class="etiqueta etiqueta--suave">Online · 18 ms</span>
                             </div>
                             <div class="panel-admin__ajuste">
-                                <p class="panel-admin__ajuste-texto"><i class="ph ph-door" aria-hidden="true"></i> <span><strong>Tornos de acceso</strong> 6 unidades en red</span></p>
+                                <p class="panel-admin__ajuste-texto"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#door"></use></svg></i> <span><strong>Tornos de acceso</strong> 6 unidades en red</span></p>
                                 <span class="etiqueta etiqueta--terciario">5/6 OK</span>
                             </div>
                             <div class="panel-admin__ajuste">
-                                <p class="panel-admin__ajuste-texto"><i class="ph ph-lightning" aria-hidden="true"></i> <span><strong>Cuadros de focos LED</strong> Control de relés</span></p>
+                                <p class="panel-admin__ajuste-texto"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#lightning"></use></svg></i> <span><strong>Cuadros de focos LED</strong> Control de relés</span></p>
                                 <span class="etiqueta panel-admin__etiqueta-alerta">Alerta cuadro 2</span>
                             </div>
                             <div class="panel-admin__ajuste">
-                                <p class="panel-admin__ajuste-texto"><i class="ph ph-car" aria-hidden="true"></i> <span><strong>Barreras del parking</strong> Lectura de matrículas</span></p>
+                                <p class="panel-admin__ajuste-texto"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#car"></use></svg></i> <span><strong>Barreras del parking</strong> Lectura de matrículas</span></p>
                                 <span class="etiqueta etiqueta--suave">99,4% éxito</span>
                             </div>
                         </div>
-                        <button type="button" class="boton boton--contorno boton--bloque"><i class="ph ph-broadcast boton__icono" aria-hidden="true"></i> Test general de conectividad</button>
+                        <button type="button" class="boton boton--contorno boton--bloque"><i class="icono boton__icono" aria-hidden="true"><svg focusable="false"><use href="#broadcast"></use></svg></i> Test general de conectividad</button>
                     </section>
 
                     <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" id="proveedores" aria-labelledby="titulo-proveedores">
-                        <h2 class="tarjeta__titulo" id="titulo-proveedores"><i class="ph ph-phone" aria-hidden="true"></i> Proveedores homologados 24/7</h2>
+                        <h2 class="tarjeta__titulo" id="titulo-proveedores"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#phone"></use></svg></i> Proveedores homologados 24/7</h2>
                         <p class="panel-admin__subtitulo">Llamada directa para incidencias que paren la actividad del club.</p>
                         <ul class="panel-admin__lista">
                             <li class="panel-admin__evento">
                                 <p class="panel-admin__evento-texto"><strong>Cristalería templada exprés</strong> Vidrios 10/12 mm · reposición en menos de 6 h</p>
-                                <a href="tel:+34954000001" class="boton-icono" aria-label="Llamar a la cristalería"><i class="ph ph-phone" aria-hidden="true"></i></a>
+                                <a href="tel:+34954000001" class="boton-icono" aria-label="Llamar a la cristalería"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#phone"></use></svg></i></a>
                             </li>
                             <li class="panel-admin__evento">
                                 <p class="panel-admin__evento-texto"><strong>Electricidad y focos 24 h</strong> Balastos e iluminación</p>
-                                <a href="tel:+34954000002" class="boton-icono" aria-label="Llamar al servicio de electricidad"><i class="ph ph-phone" aria-hidden="true"></i></a>
+                                <a href="tel:+34954000002" class="boton-icono" aria-label="Llamar al servicio de electricidad"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#phone"></use></svg></i></a>
                             </li>
                             <li class="panel-admin__evento">
                                 <p class="panel-admin__evento-texto"><strong>Césped deportivo y malla</strong> Sílice y fibras</p>
-                                <a href="tel:+34954000003" class="boton-icono" aria-label="Llamar al servicio de césped"><i class="ph ph-phone" aria-hidden="true"></i></a>
+                                <a href="tel:+34954000003" class="boton-icono" aria-label="Llamar al servicio de césped"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#phone"></use></svg></i></a>
                             </li>
                         </ul>
                     </section>
 
                     <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" id="mantenimiento" aria-labelledby="titulo-mantenimiento">
-                        <h2 class="tarjeta__titulo" id="titulo-mantenimiento"><i class="ph ph-calendar-blank" aria-hidden="true"></i> Mantenimiento programado</h2>
+                        <h2 class="tarjeta__titulo" id="titulo-mantenimiento"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-blank"></use></svg></i> Mantenimiento programado</h2>
                         <p class="panel-admin__evento-texto"><strong>Cepillado de césped</strong> Pistas 1 a 6 · lunes próximo (07:00 – 09:00). Agenda ya bloqueada.</p>
                         <div class="panel-admin__mini-cabecera">
                             <span class="etiqueta etiqueta--suave">Cada 15 días</span>
@@ -317,10 +318,10 @@
 
     <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
     <nav class="navegacion-movil" aria-label="Navegación del administrador en móvil">
-        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-squares-four" aria-hidden="true"></i>Inicio</a>
-        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar" aria-hidden="true"></i>Agenda</a>
-        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar-check" aria-hidden="true"></i>Reservas</a>
-        <a href="configAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-sidebar" aria-hidden="true"></i>Gestión</a>
+        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#squares-four"></use></svg></i>Inicio</a>
+        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar"></use></svg></i>Agenda</a>
+        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#calendar-check"></use></svg></i>Reservas</a>
+        <a href="configAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="icono" aria-hidden="true"><svg focusable="false"><use href="#sidebar"></use></svg></i>Gestión</a>
     </nav>
 
 </body>
