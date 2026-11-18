@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Socios y abonados · PadelSlot Manager</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo-padelslot.svg">
 
     <!-- Fuentes: Space Grotesk (títulos) e Inter (texto) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +16,7 @@
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
     <link rel="stylesheet" href="scss/main.css">
+    <link rel="stylesheet" href="assets/css/multimedia.css">
 </head>
 
 <body class="panel-admin fondo-suave">
@@ -22,7 +24,11 @@
     <!-- ============ BARRA LATERAL (escritorio) ============ -->
     <aside class="barra-lateral panel-admin__lateral" aria-label="Menú del administrador">
         <a href="inicioAdmin.html" class="panel-admin__marca">
-            <span class="logotipo logotipo--verde">P</span>
+            <picture>
+                <source type="image/svg+xml" srcset="assets/logo-padelslot.svg">
+                <source type="image/avif" srcset="assets/img/logo/logo-padelslot-64.avif 1x, assets/img/logo/logo-padelslot-128.avif 2x">
+                <img src="assets/img/logo/logo-padelslot-64.webp" srcset="assets/img/logo/logo-padelslot-128.webp 2x" alt="" width="35" height="32" class="logotipo">
+            </picture>
             PadelSlot
         </a>
 
@@ -60,7 +66,11 @@
         <!-- Barra superior -->
         <header class="panel-admin__barra-superior">
             <a href="inicioAdmin.html" class="panel-admin__marca panel-admin__marca--movil">
-                <span class="logotipo logotipo--verde">P</span>
+                <picture>
+                    <source type="image/svg+xml" srcset="assets/logo-padelslot.svg">
+                    <source type="image/avif" srcset="assets/img/logo/logo-padelslot-64.avif 1x, assets/img/logo/logo-padelslot-128.avif 2x">
+                    <img src="assets/img/logo/logo-padelslot-64.webp" srcset="assets/img/logo/logo-padelslot-128.webp 2x" alt="" width="35" height="32" class="logotipo">
+                </picture>
                 PadelSlot
             </a>
 

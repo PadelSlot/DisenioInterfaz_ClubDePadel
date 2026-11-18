@@ -24,7 +24,7 @@
         display: inline-block;
         padding: 0.1rem espaciados.$espacio-xs;
         border: 2px solid colores.$color-titulo;
-        border-radius: 4px;
+        border-radius: espaciados.$radio-xs;
         background-color: colores.$color-secundario;
         font-family: fuentes.$fuente-titulo;
         font-weight: fuentes.$peso-negrita;
@@ -48,13 +48,13 @@
         border-radius: espaciados.$radio-s;
         background-color: comun.$fondo-suave;
         text-align: left;
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
         color: colores.$color-texto;
         cursor: pointer;
         transition: border-color espaciados.$transicion;
 
         strong {
-            font-size: 0.8rem;
+            font-size: fuentes.$tamano-mini;
             color: colores.$color-titulo;
         }
 
@@ -75,7 +75,7 @@
         flex-wrap: wrap;
         gap: espaciados.$espacio-xs espaciados.$espacio-m;
         list-style: none;
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
     }
 
     &__leyenda-item::before {
@@ -86,7 +86,7 @@
         margin-right: 0.3rem;
         vertical-align: -0.1rem;
         border: 1px solid rgba(colores.$color-titulo, 0.25);
-        border-radius: 3px;
+        border-radius: espaciados.$radio-xs;
     }
 
     &__leyenda-item--asignada::before {
@@ -114,7 +114,7 @@
         border: 1px solid rgba(colores.$color-titulo, 0.12);
         border-radius: espaciados.$radio-s;
         background-color: colores.$color-secundario;
-        font-size: 0.7rem;
+        font-size: fuentes.$tamano-mini;
 
         strong {
             font-family: fuentes.$fuente-titulo;

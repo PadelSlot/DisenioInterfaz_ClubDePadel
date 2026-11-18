@@ -24,7 +24,7 @@
     &__monedero-texto {
         display: flex;
         flex-direction: column;
-        font-size: 0.75rem;
+        font-size: fuentes.$tamano-mini;
         color: rgba(colores.$color-secundario, 0.8);
 
         strong {
@@ -120,14 +120,14 @@
     &__elemento p {
         display: flex;
         flex-direction: column;
-        font-size: 0.8rem;
+        font-size: fuentes.$tamano-mini;
     }
 
     &__nota {
         padding: espaciados.$espacio-s;
         border-radius: espaciados.$radio-s;
         background-color: comun.$fondo-suave;
-        font-size: 0.8rem;
+        font-size: fuentes.$tamano-mini;
 
         strong {
             color: colores.$color-titulo;
@@ -145,7 +145,7 @@
         p {
             display: flex;
             flex-direction: column;
-            font-size: 0.8rem;
+            font-size: fuentes.$tamano-mini;
         }
 
         strong {
