@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración del club · PadelSlot Manager</title>
+    <link rel="icon" type="image/svg+xml" href="assets/svg/logo-padelslot.svg">
+
+    <!-- Fuentes: Space Grotesk (títulos) e Inter (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+    <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <link rel="stylesheet" href="scss/main.css">
+</head>
+
+<body class="panel-admin fondo-suave">
+
+    <!-- ============ BARRA LATERAL (escritorio) ============ -->
+    <aside class="barra-lateral panel-admin__lateral" aria-label="Menú del administrador">
+        <a href="inicioAdmin.html" class="panel-admin__marca">
+            <picture>
+                <source type="image/svg+xml" srcset="assets/svg/logo-padelslot.svg">
+                <source type="image/avif" srcset="assets/img/logo/logo-padelslot-64.avif 1x, assets/img/logo/logo-padelslot-128.avif 2x">
+                <img src="assets/img/logo/logo-padelslot-64.webp" srcset="assets/img/logo/logo-padelslot-128.webp 2x" alt="" width="35" height="32" class="logotipo">
+            </picture>
+            PadelSlot
+        </a>
+
+        <div class="panel-admin__club">
+            <span class="panel-admin__antetitulo">Club activo</span>
+            <strong class="panel-admin__club-nombre">Racket Club Sevilla</strong>
+            <span>Tomares</span>
+        </div>
+
+        <nav class="barra-lateral__menu">
+            <a href="inicioAdmin.html" class="barra-lateral__item">Inicio</a>
+            <a href="cuadranteAdmin.html" class="barra-lateral__item">Reservas y pistas</a>
+            <a href="progSemanalAdmin.html" class="barra-lateral__item">Escuela y clases</a>
+            <a href="sociosAdmin.html" class="barra-lateral__item">Socios</a>
+            <a href="cobroAdmin.html" class="barra-lateral__item">Pagos</a>
+            <a href="#" class="barra-lateral__item">Torneos y ligas</a>
+            <a href="serviciosAdmin.html" class="barra-lateral__item">Parking</a>
+            <a href="serviciosAdmin.html#bar" class="barra-lateral__item">Bar y restauración</a>
+            <a href="#" class="barra-lateral__item">Empleo</a>
+            <a href="incidenciasAdmin.html" class="barra-lateral__item">Incidencias</a>
+            <a href="#" class="barra-lateral__item">Informes</a>
+            <a href="configAdmin.html" class="barra-lateral__item barra-lateral__item--activo" aria-current="page">Configuración</a>
+        </nav>
+
+        <div class="panel-admin__promo">
+            <i class="ph ph-sparkle panel-admin__promo-icono" aria-hidden="true"></i>
+            <strong class="panel-admin__promo-titulo">Una sola plataforma</strong>
+            <p>Activa solo los módulos que necesita tu club.</p>
+        </div>
+    </aside>
+
+    <!-- ============ CONTENIDO ============ -->
+    <div class="panel-admin__contenido">
+
+        <!-- Barra superior -->
+        <header class="panel-admin__barra-superior">
+            <a href="inicioAdmin.html" class="panel-admin__marca panel-admin__marca--movil">
+                <picture>
+                    <source type="image/svg+xml" srcset="assets/svg/logo-padelslot.svg">
+                    <source type="image/avif" srcset="assets/img/logo/logo-padelslot-64.avif 1x, assets/img/logo/logo-padelslot-128.avif 2x">
+                    <img src="assets/img/logo/logo-padelslot-64.webp" srcset="assets/img/logo/logo-padelslot-128.webp 2x" alt="" width="35" height="32" class="logotipo">
+                </picture>
+                PadelSlot
+            </a>
+
+            <form class="panel-admin__buscador" role="search">
+                <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" class="panel-admin__buscador-campo" placeholder="Buscar reserva, socio o pago…" aria-label="Buscar reserva, socio o pago">
+                <kbd class="panel-admin__atajo">⌘ K</kbd>
+            </form>
+
+            <div class="panel-admin__barra-acciones">
+                <a href="crearReservaAdmin.html" class="boton boton--primario navegacion-escritorio">
+                    <i class="ph ph-plus boton__icono" aria-hidden="true"></i>
+                    Crear reserva
+                </a>
+                <button type="button" class="boton-icono" aria-label="Notificaciones">
+                    <i class="ph ph-bell" aria-hidden="true"></i>
+                </button>
+                <div class="usuario">
+                    <span class="avatar">MR</span>
+                    <p class="usuario__datos">
+                        <span class="usuario__nombre">Marta R.</span>
+                        <span class="usuario__rol">Administradora</span>
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <main class="panel-admin__principal">
+            <header class="cabecera-pagina">
+                <div>
+                    <nav class="cabecera-pagina__migas" aria-label="Estás aquí">
+                        <a href="inicioAdmin.html" class="cabecera-pagina__miga">Gestión del club</a>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <span class="cabecera-pagina__miga cabecera-pagina__miga--actual" aria-current="page">Configuración y reglas</span>
+                    </nav>
+                    <h1 class="cabecera-pagina__titulo">Configuración del club</h1>
+                    <p class="cabecera-pagina__texto">Tarifas, reglas de reserva anticipada, pasarelas de pago, domótica de focos y módulos activos en Racket Club Sevilla.</p>
+                </div>
+                <div class="cabecera-pagina__acciones">
+                    <a href="#" class="boton boton--contorno"><i class="ph ph-clock-counter-clockwise boton__icono" aria-hidden="true"></i> Ver cambios</a>
+                    <button type="reset" form="formulario-config" class="boton boton--contorno">Restablecer</button>
+                    <button type="submit" form="formulario-config" class="boton boton--primario"><i class="ph ph-check-circle boton__icono" aria-hidden="true"></i> Guardar cambios</button>
+                </div>
+            </header>
+
+            <nav class="panel-admin__pestanas" aria-label="Apartados de configuración">
+                <a href="#marca" class="panel-admin__pestana panel-admin__pestana--activa" aria-current="true"><i class="ph ph-identification-badge" aria-hidden="true"></i> General y marca</a>
+                <a href="#reglas" class="panel-admin__pestana"><i class="ph ph-calendar-check" aria-hidden="true"></i> Reglas de reserva</a>
+                <a href="#domotica" class="panel-admin__pestana"><i class="ph ph-lightning" aria-hidden="true"></i> Integraciones</a>
+                <a href="#pagos" class="panel-admin__pestana"><i class="ph ph-credit-card" aria-hidden="true"></i> Pagos</a>
+                <a href="#modulos" class="panel-admin__pestana"><i class="ph ph-squares-four" aria-hidden="true"></i> Módulos</a>
+            </nav>
+
+            <section class="panel-admin__banner" aria-label="Resumen del club">
+                <div>
+                    <span class="panel-admin__banner-antetitulo">Plan Enterprise</span>
+                    <h2 class="panel-admin__banner-titulo">Racket Club Sevilla</h2>
+                    <p><i class="ph ph-map-pin" aria-hidden="true"></i> Tomares · <i class="ph ph-shield-check" aria-hidden="true"></i> Certificado SSL activo · <i class="ph ph-tennis-ball" aria-hidden="true"></i> 6 pistas</p>
+                </div>
+                <dl class="lista-datos panel-admin__banner-datos">
+                    <div class="lista-datos__fila"><dt>Hardware sincronizado</dt><dd>100% online</dd></div>
+                    <div class="lista-datos__fila"><dt>Última revisión</dt><dd>Hoy 09:42 · Marta R.</dd></div>
+                </dl>
+            </section>
+
+            <form class="panel-admin__pila" id="formulario-config">
+
+                <!-- 1. Marca -->
+                <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" id="marca" aria-labelledby="titulo-marca">
+                    <div class="panel-admin__seccion-cabecera">
+                        <div>
+                            <h2 class="panel-admin__seccion-titulo" id="titulo-marca"><span class="paso-numero">1</span> Datos del club y marca blanca</h2>
+                            <p class="panel-admin__subtitulo">Dominios públicos, portal de socios e identidad visual.</p>
+                        </div>
+                        <span class="etiqueta etiqueta--suave">Web y app móvil</span>
+                    </div>
+                    <div class="formulario panel-admin__campos">
+                        <div class="formulario__grupo panel-admin__campo-ancho">
+                            <label class="formulario__etiqueta" for="nombre-club">Nombre comercial</label>
+                            <input class="formulario__campo" type="text" id="nombre-club" value="Racket Club Sevilla">
+                        </div>
+                        <div class="formulario__grupo">
+                            <label class="formulario__etiqueta" for="subdominio">Subdominio PadelSlot</label>
+                            <div class="panel-admin__campo-con-sufijo">
+                                <input class="formulario__campo" type="text" id="subdominio" value="sevilla"> .padelslot.com
+                            </div>
+                        </div>
+                        <div class="formulario__grupo">
+                            <label class="formulario__etiqueta" for="dominio">Dominio propio</label>
+                            <input class="formulario__campo" type="text" id="dominio" value="www.clubpadelsevilla.es">
+                        </div>
+                    </div>
+
+                    <div class="panel-admin__rejilla">
+                        <div class="panel-admin__mini panel-admin__mini--suave">
+                            <div class="panel-admin__persona">
+                                <span class="panel-admin__muestra panel-admin__muestra--primario"></span>
+                                <p><strong>Verde principal</strong> #255945 · pistas y botones</p>
+                            </div>
+                        </div>
+                        <div class="panel-admin__mini panel-admin__mini--suave">
+                            <div class="panel-admin__persona">
+                                <span class="panel-admin__muestra panel-admin__muestra--terciario"></span>
+                                <p><strong>Acento lima</strong> #DEF127 · avisos y destacados</p>
+                            </div>
+                        </div>
+                        <div class="panel-admin__mini panel-admin__mini--suave">
+                            <label class="panel-admin__ajuste">
+                                <span class="panel-admin__ajuste-texto"><span><strong>Tema oscuro</strong> Para las pantallas táctiles del club</span></span>
+                                <input type="checkbox" class="interruptor">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="formulario">
+                        <div class="formulario__grupo">
+                            <label class="formulario__etiqueta" for="logotipo">Logotipo (SVG)</label>
+                            <input class="formulario__campo" type="file" id="logotipo" accept=".svg,image/svg+xml">
+                            <p class="panel-admin__texto-pequeno">Actual: logo-padel-sevilla-oficial.svg · 256 KB</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. Reglas -->
+                <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" id="reglas" aria-labelledby="titulo-reglas">
+                    <div class="panel-admin__seccion-cabecera">
+                        <div>
+                            <h2 class="panel-admin__seccion-titulo" id="titulo-reglas"><span class="paso-numero">2</span> Reglas automáticas de reserva</h2>
+                            <p class="panel-admin__subtitulo">Antelación, reservas simultáneas y penalizaciones.</p>
+                        </div>
+                    </div>
+                    <div class="panel-admin__rejilla">
+                        <div class="panel-admin__mini formulario__grupo">
+                            <label class="formulario__etiqueta" for="antelacion-socio">Antelación para socios</label>
+                            <div class="panel-admin__campo-con-sufijo"><input class="formulario__campo" type="number" id="antelacion-socio" value="14" min="1"> días</div>
+                            <p class="panel-admin__texto-pequeno">Los socios pueden reservar con hasta 2 semanas de margen.</p>
+                        </div>
+                        <div class="panel-admin__mini formulario__grupo">
+                            <label class="formulario__etiqueta" for="antelacion-publico">Antelación no socios</label>
+                            <div class="panel-admin__campo-con-sufijo"><input class="formulario__campo" type="number" id="antelacion-publico" value="48" min="1"> horas</div>
+                            <p class="panel-admin__texto-pequeno">Huecos liberados para jugadores ocasionales e invitados.</p>
+                        </div>
+                        <div class="panel-admin__mini formulario__grupo">
+                            <label class="formulario__etiqueta" for="reservas-activas">Reservas activas por socio</label>
+                            <div class="panel-admin__campo-con-sufijo"><input class="formulario__campo" type="number" id="reservas-activas" value="3" min="1"> turnos</div>
+                            <p class="panel-admin__texto-pequeno">Evita que un socio acapare pistas que luego no usa.</p>
+                        </div>
+                        <div class="panel-admin__mini formulario__grupo">
+                            <label class="formulario__etiqueta" for="cancelacion">Cancelación gratuita</label>
+                            <div class="panel-admin__campo-con-sufijo"><input class="formulario__campo" type="number" id="cancelacion" value="12" min="0"> horas antes</div>
+                            <p class="panel-admin__texto-pequeno">Devolución completa al monedero si se anula a tiempo.</p>
+                        </div>
+                        <fieldset class="panel-admin__mini">
+                            <legend class="formulario__etiqueta">Penalización por no presentarse</legend>
+                            <label class="casilla"><input type="radio" class="casilla__control" name="penalizacion" checked><span class="casilla__texto">100% del importe</span></label>
+                            <label class="casilla"><input type="radio" class="casilla__control" name="penalizacion"><span class="casilla__texto">50% al monedero</span></label>
+                        </fieldset>
+                        <div class="panel-admin__mini formulario__grupo">
+                            <label class="formulario__etiqueta" for="suplemento">Suplemento no socio</label>
+                            <div class="panel-admin__campo-con-sufijo"><input class="formulario__campo" type="number" id="suplemento" value="3.00" step="0.5"> € / jugador</div>
+                            <p class="panel-admin__texto-pequeno">Se suma cuando un socio invita a un jugador externo.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="panel-admin__fila">
+                    <!-- 3. Domótica -->
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" id="domotica" aria-labelledby="titulo-domotica">
+                        <div class="panel-admin__seccion-cabecera">
+                            <div>
+                                <h2 class="panel-admin__seccion-titulo" id="titulo-domotica"><span class="paso-numero">3</span> Domótica y tornos</h2>
+                                <p class="panel-admin__subtitulo">Encendido de luces, accesos y lectura de matrículas.</p>
+                            </div>
+                            <span class="etiqueta etiqueta--terciario">Conectado</span>
+                        </div>
+                        <div>
+                            <div class="panel-admin__ajuste">
+                                <p class="panel-admin__ajuste-texto"><i class="ph ph-lightbulb" aria-hidden="true"></i> <span><strong>Encendido anticipado de focos</strong> Antes de la hora de inicio</span></p>
+                                <select class="formulario__campo" aria-label="Encendido anticipado de focos"><option>5 min antes</option><option>10 min antes</option><option>Al inicio</option></select>
+                            </div>
+                            <div class="panel-admin__ajuste">
+                                <p class="panel-admin__ajuste-texto"><i class="ph ph-power" aria-hidden="true"></i> <span><strong>Apagado de cortesía</strong> Para recoger y salir de pista</span></p>
+                                <select class="formulario__campo" aria-label="Apagado de cortesía"><option>5 min con aviso</option><option>8 min</option><option>Inmediato</option></select>
+                            </div>
+                            <label class="panel-admin__ajuste">
+                                <span class="panel-admin__ajuste-texto"><i class="ph ph-qr-code" aria-hidden="true"></i> <span><strong>Tornos con QR / NFC</strong> Se abren 20 min antes</span></span>
+                                <input type="checkbox" class="interruptor" checked>
+                            </label>
+                            <label class="panel-admin__ajuste">
+                                <span class="panel-admin__ajuste-texto"><i class="ph ph-car" aria-hidden="true"></i> <span><strong>Barrera del parking</strong> Matrícula registrada · 30 min antes</span></span>
+                                <input type="checkbox" class="interruptor" checked>
+                            </label>
+                        </div>
+                    </section>
+
+                    <!-- 4. Pagos -->
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" id="pagos" aria-labelledby="titulo-pagos">
+                        <div class="panel-admin__seccion-cabecera">
+                            <h2 class="panel-admin__seccion-titulo" id="titulo-pagos"><span class="paso-numero">4</span> Pasarelas de cobro</h2>
+                        </div>
+                        <div class="panel-admin__mini panel-admin__mini--suave">
+                            <div class="panel-admin__mini-cabecera">
+                                <strong><i class="ph ph-credit-card" aria-hidden="true"></i> Pago con tarjeta y Redsys</strong>
+                                <span class="etiqueta etiqueta--terciario">Producción</span>
+                            </div>
+                            <span>Comisión acordada: 0,35% (asume el club)</span>
+                            <a href="#" class="panel-admin__enlace">Gestionar claves API</a>
+                        </div>
+                        <div class="panel-admin__mini panel-admin__mini--suave">
+                            <div class="panel-admin__mini-cabecera">
+                                <strong><i class="ph ph-bank" aria-hidden="true"></i> Remesas SEPA</strong>
+                                <span class="etiqueta etiqueta--suave">Conectado</span>
+                            </div>
+                            <span>Banco Santander · ID emisor ES88000B82910384</span>
+                            <a href="cobroAdmin.html" class="panel-admin__enlace">Ver mandatos</a>
+                        </div>
+                        <p class="panel-admin__texto-pequeno"><i class="ph ph-arrows-clockwise" aria-hidden="true"></i> Conciliación automática diaria a las 03:00.</p>
+                    </section>
+                </div>
+
+                <!-- 5. Módulos -->
+                <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" id="modulos" aria-labelledby="titulo-modulos">
+                    <div class="panel-admin__seccion-cabecera">
+                        <div>
+                            <h2 class="panel-admin__seccion-titulo" id="titulo-modulos"><span class="paso-numero">5</span> Módulos activos</h2>
+                            <p class="panel-admin__subtitulo">Activa o suspende funciones de la plataforma sin reinstalar nada.</p>
+                        </div>
+                        <a href="#" class="boton boton--contorno">Gestionar suscripción</a>
+                    </div>
+                    <div class="panel-admin__rejilla">
+                        <label class="panel-admin__mini">
+                            <span class="panel-admin__mini-cabecera"><strong><i class="ph ph-squares-four" aria-hidden="true"></i> Cuadrante en tiempo real</strong><input type="checkbox" class="interruptor" checked></span>
+                            <span class="panel-admin__texto-pequeno">6 pistas en vivo con turnos de 60, 90 y 120 minutos.</span>
+                        </label>
+                        <label class="panel-admin__mini">
+                            <span class="panel-admin__mini-cabecera"><strong><i class="ph ph-graduation-cap" aria-hidden="true"></i> Escuela y clases</strong><input type="checkbox" class="interruptor" checked></span>
+                            <span class="panel-admin__texto-pequeno">Grupos por nivel, matrículas y control de asistencia.</span>
+                        </label>
+                        <label class="panel-admin__mini">
+                            <span class="panel-admin__mini-cabecera"><strong><i class="ph ph-users" aria-hidden="true"></i> Fichas de socio</strong><input type="checkbox" class="interruptor" checked></span>
+                            <span class="panel-admin__texto-pequeno">Historial, monedero, preferencias y RGPD.</span>
+                        </label>
+                        <label class="panel-admin__mini">
+                            <span class="panel-admin__mini-cabecera"><strong><i class="ph ph-bank" aria-hidden="true"></i> Cobros SEPA</strong><input type="checkbox" class="interruptor" checked></span>
+                            <span class="panel-admin__texto-pequeno">Ficheros bancarios ISO 20022 en un clic a final de mes.</span>
+                        </label>
+                        <label class="panel-admin__mini">
+                            <span class="panel-admin__mini-cabecera"><strong><i class="ph ph-door" aria-hidden="true"></i> Parking y tornos</strong><input type="checkbox" class="interruptor" checked></span>
+                            <span class="panel-admin__texto-pequeno">Barreras automáticas y relés de pista sin llave.</span>
+                        </label>
+                        <label class="panel-admin__mini">
+                            <span class="panel-admin__mini-cabecera"><strong><i class="ph ph-shopping-bag" aria-hidden="true"></i> Tienda y cafetería</strong><input type="checkbox" class="interruptor"></span>
+                            <span class="panel-admin__texto-pequeno">TPV táctil para bar, venta de bolas y grips.</span>
+                        </label>
+                    </div>
+                </section>
+            </form>
+        </main>
+    </div>
+
+    <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
+    <nav class="navegacion-movil" aria-label="Navegación del administrador en móvil">
+        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-squares-four" aria-hidden="true"></i>Inicio</a>
+        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar" aria-hidden="true"></i>Agenda</a>
+        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar-check" aria-hidden="true"></i>Reservas</a>
+        <a href="configAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-sidebar" aria-hidden="true"></i>Gestión</a>
+    </nav>
+
+</body>
+</html>

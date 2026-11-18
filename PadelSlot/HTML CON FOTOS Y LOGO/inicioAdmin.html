@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del administrador · PadelSlot Manager</title>
+    <link rel="icon" type="image/svg+xml" href="assets/svg/logo-padelslot.svg">
+
+    <!-- Fuentes: Space Grotesk (títulos) e Inter (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+    <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <link rel="stylesheet" href="scss/main.css">
+</head>
+
+<body class="panel-admin fondo-suave">
+
+    <!-- ============ BARRA LATERAL (escritorio) ============ -->
+    <aside class="barra-lateral panel-admin__lateral" aria-label="Menú del administrador">
+        <a href="inicioAdmin.html" class="panel-admin__marca">
+            <picture>
+                <source type="image/svg+xml" srcset="assets/svg/logo-padelslot.svg">
+                <source type="image/avif" srcset="assets/img/logo/logo-padelslot-64.avif 1x, assets/img/logo/logo-padelslot-128.avif 2x">
+                <img src="assets/img/logo/logo-padelslot-64.webp" srcset="assets/img/logo/logo-padelslot-128.webp 2x" alt="" width="35" height="32" class="logotipo">
+            </picture>
+            PadelSlot
+        </a>
+
+        <div class="panel-admin__club">
+            <span class="panel-admin__antetitulo">Club activo</span>
+            <strong class="panel-admin__club-nombre">Racket Club Sevilla</strong>
+            <span>Tomares</span>
+        </div>
+
+        <nav class="barra-lateral__menu">
+            <a href="inicioAdmin.html" class="barra-lateral__item barra-lateral__item--activo" aria-current="page">Inicio</a>
+            <a href="cuadranteAdmin.html" class="barra-lateral__item">Reservas y pistas</a>
+            <a href="progSemanalAdmin.html" class="barra-lateral__item">Escuela y clases</a>
+            <a href="sociosAdmin.html" class="barra-lateral__item">Socios</a>
+            <a href="cobroAdmin.html" class="barra-lateral__item">Pagos</a>
+            <a href="#" class="barra-lateral__item">Torneos y ligas</a>
+            <a href="serviciosAdmin.html" class="barra-lateral__item">Parking</a>
+            <a href="serviciosAdmin.html" class="barra-lateral__item">Bar y restauración</a>
+            <a href="#" class="barra-lateral__item">Empleo</a>
+            <a href="incidenciasAdmin.html" class="barra-lateral__item">Incidencias</a>
+            <a href="#" class="barra-lateral__item">Informes</a>
+            <a href="configAdmin.html" class="barra-lateral__item">Configuración</a>
+        </nav>
+
+        <div class="panel-admin__promo">
+            <i class="ph ph-sparkle panel-admin__promo-icono" aria-hidden="true"></i>
+            <strong class="panel-admin__promo-titulo">Una sola plataforma</strong>
+            <p>Activa solo los módulos que necesita tu club.</p>
+        </div>
+    </aside>
+
+    <!-- ============ CONTENIDO ============ -->
+    <div class="panel-admin__contenido">
+
+        <!-- Barra superior -->
+        <header class="panel-admin__barra-superior">
+            <a href="inicioAdmin.html" class="panel-admin__marca panel-admin__marca--movil">
+                <picture>
+                    <source type="image/svg+xml" srcset="assets/svg/logo-padelslot.svg">
+                    <source type="image/avif" srcset="assets/img/logo/logo-padelslot-64.avif 1x, assets/img/logo/logo-padelslot-128.avif 2x">
+                    <img src="assets/img/logo/logo-padelslot-64.webp" srcset="assets/img/logo/logo-padelslot-128.webp 2x" alt="" width="35" height="32" class="logotipo">
+                </picture>
+                PadelSlot
+            </a>
+
+            <form class="panel-admin__buscador" role="search">
+                <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" class="panel-admin__buscador-campo" placeholder="Buscar reserva, socio o pago…" aria-label="Buscar reserva, socio o pago">
+                <kbd class="panel-admin__atajo">⌘ K</kbd>
+            </form>
+
+            <div class="panel-admin__barra-acciones">
+                <a href="crearReservaAdmin.html" class="boton boton--primario navegacion-escritorio">
+                    <i class="ph ph-plus boton__icono" aria-hidden="true"></i>
+                    Crear reserva
+                </a>
+                <button type="button" class="boton-icono" aria-label="Notificaciones">
+                    <i class="ph ph-bell" aria-hidden="true"></i>
+                </button>
+                <div class="usuario">
+                    <span class="avatar">MR</span>
+                    <p class="usuario__datos">
+                        <span class="usuario__nombre">Marta R.</span>
+                        <span class="usuario__rol">Administradora</span>
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <main class="panel-admin__principal">
+
+            <!-- Saludo + acciones rápidas -->
+            <section class="panel-admin__saludo">
+                <div>
+                    <p class="panel-admin__antetitulo">Lunes, 5 de octubre · Actualizado 18:20</p>
+                    <h1 class="panel-admin__titulo">Buenas tardes, Marta</h1>
+                    <p>La operación de Racket Club Sevilla está bajo control.</p>
+                </div>
+                <div class="panel-admin__acciones">
+                    <a href="bloquearPistaAdmin.html" class="boton boton--contorno">
+                        <i class="ph ph-prohibit boton__icono" aria-hidden="true"></i>
+                        Bloquear pista
+                    </a>
+                    <a href="añadirClaseAdmin.html" class="boton boton--contorno">
+                        <i class="ph ph-graduation-cap boton__icono" aria-hidden="true"></i>
+                        Añadir clase
+                    </a>
+                    <a href="sociosAdmin.html" class="boton boton--terciario">
+                        <i class="ph ph-user-plus boton__icono" aria-hidden="true"></i>
+                        Nuevo socio
+                    </a>
+                </div>
+            </section>
+
+            <!-- Indicadores -->
+            <section class="panel-admin__kpis" aria-label="Indicadores de hoy">
+                <article class="tarjeta panel-admin__kpi panel-admin__kpi--destacado">
+                    <div class="tarjeta__cabecera">
+                        <h2 class="panel-admin__kpi-titulo">Reservas de hoy</h2>
+                        <i class="ph ph-calendar-check panel-admin__kpi-icono" aria-hidden="true"></i>
+                    </div>
+                    <p class="panel-admin__kpi-valor">42</p>
+                    <p class="panel-admin__kpi-detalle">+8 esta mañana</p>
+                </article>
+                <article class="tarjeta panel-admin__kpi">
+                    <div class="tarjeta__cabecera">
+                        <h2 class="panel-admin__kpi-titulo">Ocupación</h2>
+                        <i class="ph ph-chart-bar panel-admin__kpi-icono" aria-hidden="true"></i>
+                    </div>
+                    <p class="panel-admin__kpi-valor">76%</p>
+                    <p class="panel-admin__kpi-detalle">+5% vs. semana anterior</p>
+                </article>
+                <article class="tarjeta panel-admin__kpi">
+                    <div class="tarjeta__cabecera">
+                        <h2 class="panel-admin__kpi-titulo">Ingresos</h2>
+                        <i class="ph ph-currency-eur panel-admin__kpi-icono" aria-hidden="true"></i>
+                    </div>
+                    <p class="panel-admin__kpi-valor">1.284 €</p>
+                    <p class="panel-admin__kpi-detalle">92% cobrado</p>
+                </article>
+                <article class="tarjeta panel-admin__kpi">
+                    <div class="tarjeta__cabecera">
+                        <h2 class="panel-admin__kpi-titulo">Socios activos</h2>
+                        <i class="ph ph-users panel-admin__kpi-icono" aria-hidden="true"></i>
+                    </div>
+                    <p class="panel-admin__kpi-valor">486</p>
+                    <p class="panel-admin__kpi-detalle">9 renuevan esta semana</p>
+                </article>
+            </section>
+
+            <!-- Fila 1: ocupación por franja + agenda -->
+            <div class="panel-admin__fila">
+
+                <section class="tarjeta panel-admin__bloque">
+                    <div class="tarjeta__cabecera">
+                        <h2 class="tarjeta__titulo">Ocupación por franja</h2>
+                        <span class="etiqueta etiqueta--suave">6 pistas</span>
+                    </div>
+
+                    <ul class="panel-admin__leyenda">
+                        <li class="panel-admin__leyenda-item panel-admin__leyenda-item--reservada">Reservada</li>
+                        <li class="panel-admin__leyenda-item">Disponible</li>
+                        <li class="panel-admin__leyenda-item panel-admin__leyenda-item--clase">Clase</li>
+                    </ul>
+
+                    <div class="panel-admin__tabla-scroll">
+                        <table class="panel-admin__cuadrante">
+                            <caption class="solo-lector">Ocupación de las pistas por franja horaria</caption>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Pista 1 · Cubierta</th>
+                                    <td><span class="panel-admin__franja panel-admin__franja--clase">17:00</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--reservada">18:30</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--disponible">20:00</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--clase">21:30</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Pista 2 · Cubierta</th>
+                                    <td><span class="panel-admin__franja panel-admin__franja--reservada">17:00</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--disponible">18:30</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--clase">20:00</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--disponible">21:30</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Pista 3 · Exterior</th>
+                                    <td><span class="panel-admin__franja panel-admin__franja--disponible">17:00</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--clase">18:30</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--disponible">20:00</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--reservada">21:30</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Pista 4 · Exterior</th>
+                                    <td><span class="panel-admin__franja panel-admin__franja--clase">17:00</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--disponible">18:30</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--reservada">20:00</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--clase">21:30</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Pista 5 · Panorámica</th>
+                                    <td><span class="panel-admin__franja panel-admin__franja--disponible">17:00</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--reservada">18:30</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--clase">20:00</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--reservada">21:30</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Pista 6 · Central</th>
+                                    <td><span class="panel-admin__franja panel-admin__franja--reservada">17:00</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--clase">18:30</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--reservada">20:00</span></td>
+                                    <td><span class="panel-admin__franja panel-admin__franja--disponible">21:30</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <a href="cuadranteAdmin.html" class="panel-admin__enlace panel-admin__enlace--derecha">Abrir cuadrante de pistas <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                </section>
+
+                <section class="tarjeta panel-admin__bloque">
+                    <div class="tarjeta__cabecera">
+                        <h2 class="tarjeta__titulo">Agenda de hoy</h2>
+                        <a href="cuadranteAdmin.html" class="panel-admin__enlace">Ver agenda</a>
+                    </div>
+                    <ul class="panel-admin__lista">
+                        <li class="panel-admin__evento panel-admin__evento--actual">
+                            <span class="panel-admin__evento-hora">18:30</span>
+                            <p class="panel-admin__evento-texto"><strong>Clase de bandeja</strong> Carlos R. · 5/6 alumnos</p>
+                            <span class="etiqueta etiqueta--suave">Clase</span>
+                        </li>
+                        <li class="panel-admin__evento">
+                            <span class="panel-admin__evento-hora">19:30</span>
+                            <p class="panel-admin__evento-texto"><strong>Pista 2 · Cubierta</strong> Laura Martín · Pagada</p>
+                            <span class="etiqueta panel-admin__etiqueta-neutra">Reserva</span>
+                        </li>
+                        <li class="panel-admin__evento">
+                            <span class="panel-admin__evento-hora">20:00</span>
+                            <p class="panel-admin__evento-texto"><strong>Pista 5 · Panorámica</strong> Empresa Solvia · 4 jug.</p>
+                            <span class="etiqueta panel-admin__etiqueta-neutra">Evento</span>
+                        </li>
+                        <li class="panel-admin__evento">
+                            <span class="panel-admin__evento-hora">21:00</span>
+                            <p class="panel-admin__evento-texto"><strong>Liga comarcal mixta</strong> Pistas 1 y 2</p>
+                            <span class="etiqueta panel-admin__etiqueta-neutra">Torneo</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Fila 2: reservas recientes + alertas y renovaciones -->
+            <div class="panel-admin__fila">
+
+                <section class="tarjeta panel-admin__bloque">
+                    <div class="tarjeta__cabecera">
+                        <h2 class="tarjeta__titulo">Reservas recientes</h2>
+                        <a href="cuadranteAdmin.html" class="panel-admin__enlace">Ver todas</a>
+                    </div>
+                    <div class="panel-admin__tabla-scroll">
+                        <table class="panel-admin__tabla">
+                            <caption class="solo-lector">Últimas reservas registradas</caption>
+                            <thead class="solo-lector">
+                                <tr>
+                                    <th scope="col">Nº</th>
+                                    <th scope="col">Hora</th>
+                                    <th scope="col">Cliente</th>
+                                    <th scope="col">Pista y fecha</th>
+                                    <th scope="col">Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="panel-admin__celda-tenue">#1052</td>
+                                    <td>18:22</td>
+                                    <td class="panel-admin__celda-nombre">María Gil</td>
+                                    <td>Pista 3 · Hoy 21:00</td>
+                                    <td><span class="etiqueta etiqueta--suave">Pagada</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="panel-admin__celda-tenue">#1051</td>
+                                    <td>18:06</td>
+                                    <td class="panel-admin__celda-nombre">Diego Ruiz</td>
+                                    <td>Pista 1 · Mañana 19:30</td>
+                                    <td><span class="etiqueta panel-admin__etiqueta-neutra">Pendiente</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="panel-admin__celda-tenue">#1050</td>
+                                    <td>17:48</td>
+                                    <td class="panel-admin__celda-nombre">Lucía Vega</td>
+                                    <td>Clase iniciación · Sáb 10:00</td>
+                                    <td><span class="etiqueta etiqueta--suave">Pagada</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="panel-admin__celda-tenue">#1049</td>
+                                    <td>17:32</td>
+                                    <td class="panel-admin__celda-nombre">Jorge Molina</td>
+                                    <td>Pista 6 · Vie 20:00</td>
+                                    <td><span class="etiqueta panel-admin__etiqueta-neutra">Invitado</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <div class="panel-admin__columna">
+                    <section class="tarjeta panel-admin__bloque">
+                        <div class="tarjeta__cabecera">
+                            <h2 class="tarjeta__titulo">Alertas</h2>
+                            <span class="etiqueta etiqueta--terciario">3</span>
+                        </div>
+                        <ul class="panel-admin__lista">
+                            <li class="panel-admin__evento">
+                                <span class="panel-admin__alerta-icono" aria-hidden="true">!</span>
+                                <p class="panel-admin__evento-texto"><strong>2 pagos rechazados</strong> 178 € pendientes</p>
+                                <a href="cobroAdmin.html" class="etiqueta panel-admin__etiqueta-neutra">Revisar</a>
+                            </li>
+                            <li class="panel-admin__evento">
+                                <span class="panel-admin__alerta-icono" aria-hidden="true">!</span>
+                                <p class="panel-admin__evento-texto"><strong>Incidencia de iluminación</strong> Pista 4 · técnico 19:00</p>
+                                <a href="incidenciasAdmin.html" class="etiqueta panel-admin__etiqueta-neutra">Abierta</a>
+                            </li>
+                            <li class="panel-admin__evento">
+                                <span class="panel-admin__alerta-icono" aria-hidden="true">!</span>
+                                <p class="panel-admin__evento-texto"><strong>Stock bajo en bar</strong> Bebidas isotónicas</p>
+                                <span class="etiqueta panel-admin__etiqueta-neutra">Aviso</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="tarjeta panel-admin__bloque">
+                        <div class="tarjeta__cabecera">
+                            <h2 class="tarjeta__titulo">Renovaciones pendientes</h2>
+                            <span class="etiqueta etiqueta--terciario">9 esta semana</span>
+                        </div>
+                        <ul class="panel-admin__lista">
+                            <li class="panel-admin__evento">
+                                <span class="panel-admin__evento-hora">HOY</span>
+                                <p class="panel-admin__evento-texto"><strong>Ana Torres</strong> Plan familiar · 89 €</p>
+                                <span class="etiqueta panel-admin__etiqueta-neutra">Pendiente</span>
+                            </li>
+                            <li class="panel-admin__evento">
+                                <span class="panel-admin__evento-hora">MAR</span>
+                                <p class="panel-admin__evento-texto"><strong>Javier León</strong> Plan mensual · 45 €</p>
+                                <span class="etiqueta panel-admin__etiqueta-neutra">Automática</span>
+                            </li>
+                        </ul>
+                        <a href="cobroAdmin.html" class="panel-admin__enlace panel-admin__enlace--derecha">Gestionar renovaciones <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Banner -->
+            <section class="panel-admin__banner">
+                <div>
+                    <span class="panel-admin__banner-antetitulo">Todo conectado</span>
+                    <h2 class="panel-admin__banner-titulo">Sustituye reservas, CRM, cobros y hojas de cálculo por una sola plataforma.</h2>
+                    <p>Una única ficha por socio, una agenda compartida y datos financieros en tiempo real.</p>
+                </div>
+                <a href="configAdmin.html" class="boton boton--terciario">
+                    <i class="ph ph-sliders-horizontal boton__icono" aria-hidden="true"></i>
+                    Configurar módulos
+                </a>
+            </section>
+
+            <!-- Accesos directos -->
+            <section>
+                <header class="encabezado-seccion">
+                    <div>
+                        <span class="encabezado-seccion__antetitulo">Accesos directos</span>
+                        <h2 class="encabezado-seccion__titulo">Gestiona cada área del club</h2>
+                        <p class="encabezado-seccion__texto">Los módulos comparten clientes, pagos, permisos y actividad.</p>
+                    </div>
+                </header>
+
+                <nav class="panel-admin__accesos" aria-label="Accesos directos">
+                    <a href="cuadranteAdmin.html" class="tarjeta panel-admin__acceso">
+                        <span class="icono-caja"><i class="ph ph-squares-four" aria-hidden="true"></i></span>
+                        <span class="panel-admin__acceso-texto"><strong>Pistas</strong> 6 activas · 1 incidencia</span>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="progSemanalAdmin.html" class="tarjeta panel-admin__acceso">
+                        <span class="icono-caja"><i class="ph ph-graduation-cap" aria-hidden="true"></i></span>
+                        <span class="panel-admin__acceso-texto"><strong>Clases</strong> 7 hoy · 46 alumnos</span>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="sociosAdmin.html" class="tarjeta panel-admin__acceso">
+                        <span class="icono-caja"><i class="ph ph-users" aria-hidden="true"></i></span>
+                        <span class="panel-admin__acceso-texto"><strong>Socios</strong> 486 activos</span>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="cobroAdmin.html" class="tarjeta panel-admin__acceso">
+                        <span class="icono-caja"><i class="ph ph-credit-card" aria-hidden="true"></i></span>
+                        <span class="panel-admin__acceso-texto"><strong>Pagos</strong> 1.284 € hoy</span>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="tarjeta panel-admin__acceso">
+                        <span class="icono-caja"><i class="ph ph-trophy" aria-hidden="true"></i></span>
+                        <span class="panel-admin__acceso-texto"><strong>Torneos</strong> 3 abiertos</span>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="serviciosAdmin.html" class="tarjeta panel-admin__acceso">
+                        <span class="icono-caja"><i class="ph ph-car" aria-hidden="true"></i></span>
+                        <span class="panel-admin__acceso-texto"><strong>Parking</strong> 28/40 plazas</span>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="serviciosAdmin.html" class="tarjeta panel-admin__acceso">
+                        <span class="icono-caja"><i class="ph ph-fork-knife" aria-hidden="true"></i></span>
+                        <span class="panel-admin__acceso-texto"><strong>Bar</strong> 1.126 € hoy</span>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="tarjeta panel-admin__acceso">
+                        <span class="icono-caja"><i class="ph ph-briefcase" aria-hidden="true"></i></span>
+                        <span class="panel-admin__acceso-texto"><strong>Empleo</strong> 2 vacantes</span>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="incidenciasAdmin.html" class="tarjeta panel-admin__acceso">
+                        <span class="icono-caja"><i class="ph ph-warning" aria-hidden="true"></i></span>
+                        <span class="panel-admin__acceso-texto"><strong>Incidencias</strong> 1 abierta</span>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="configAdmin.html" class="tarjeta panel-admin__acceso">
+                        <span class="icono-caja"><i class="ph ph-sliders-horizontal" aria-hidden="true"></i></span>
+                        <span class="panel-admin__acceso-texto"><strong>Configuración</strong> Club y permisos</span>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                    </a>
+                </nav>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
+    <nav class="navegacion-movil" aria-label="Navegación del administrador en móvil">
+        <a href="inicioAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-squares-four" aria-hidden="true"></i>Inicio</a>
+        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar" aria-hidden="true"></i>Agenda</a>
+        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar-check" aria-hidden="true"></i>Reservas</a>
+        <a href="configAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-sidebar" aria-hidden="true"></i>Gestión</a>
+    </nav>
+
+</body>
+</html>

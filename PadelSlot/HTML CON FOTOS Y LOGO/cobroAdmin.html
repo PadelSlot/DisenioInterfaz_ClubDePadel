@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobros y cuotas · PadelSlot Manager</title>
+    <link rel="icon" type="image/svg+xml" href="assets/svg/logo-padelslot.svg">
+
+    <!-- Fuentes: Space Grotesk (títulos) e Inter (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+    <!-- Hoja de estilos compilada desde scss/main.scss -->
+    <link rel="stylesheet" href="scss/main.css">
+</head>
+
+<body class="panel-admin fondo-suave">
+
+    <!-- ============ BARRA LATERAL (escritorio) ============ -->
+    <aside class="barra-lateral panel-admin__lateral" aria-label="Menú del administrador">
+        <a href="inicioAdmin.html" class="panel-admin__marca">
+            <picture>
+                <source type="image/svg+xml" srcset="assets/svg/logo-padelslot.svg">
+                <source type="image/avif" srcset="assets/img/logo/logo-padelslot-64.avif 1x, assets/img/logo/logo-padelslot-128.avif 2x">
+                <img src="assets/img/logo/logo-padelslot-64.webp" srcset="assets/img/logo/logo-padelslot-128.webp 2x" alt="" width="35" height="32" class="logotipo">
+            </picture>
+            PadelSlot
+        </a>
+
+        <div class="panel-admin__club">
+            <span class="panel-admin__antetitulo">Club activo</span>
+            <strong class="panel-admin__club-nombre">Racket Club Sevilla</strong>
+            <span>Tomares</span>
+        </div>
+
+        <nav class="barra-lateral__menu">
+            <a href="inicioAdmin.html" class="barra-lateral__item">Inicio</a>
+            <a href="cuadranteAdmin.html" class="barra-lateral__item">Reservas y pistas</a>
+            <a href="progSemanalAdmin.html" class="barra-lateral__item">Escuela y clases</a>
+            <a href="sociosAdmin.html" class="barra-lateral__item">Socios</a>
+            <a href="cobroAdmin.html" class="barra-lateral__item barra-lateral__item--activo" aria-current="page">Pagos</a>
+            <a href="#" class="barra-lateral__item">Torneos y ligas</a>
+            <a href="serviciosAdmin.html" class="barra-lateral__item">Parking</a>
+            <a href="serviciosAdmin.html#bar" class="barra-lateral__item">Bar y restauración</a>
+            <a href="#" class="barra-lateral__item">Empleo</a>
+            <a href="incidenciasAdmin.html" class="barra-lateral__item">Incidencias</a>
+            <a href="#" class="barra-lateral__item">Informes</a>
+            <a href="configAdmin.html" class="barra-lateral__item">Configuración</a>
+        </nav>
+
+        <div class="panel-admin__promo">
+            <i class="ph ph-sparkle panel-admin__promo-icono" aria-hidden="true"></i>
+            <strong class="panel-admin__promo-titulo">Una sola plataforma</strong>
+            <p>Activa solo los módulos que necesita tu club.</p>
+        </div>
+    </aside>
+
+    <!-- ============ CONTENIDO ============ -->
+    <div class="panel-admin__contenido">
+
+        <!-- Barra superior -->
+        <header class="panel-admin__barra-superior">
+            <a href="inicioAdmin.html" class="panel-admin__marca panel-admin__marca--movil">
+                <picture>
+                    <source type="image/svg+xml" srcset="assets/svg/logo-padelslot.svg">
+                    <source type="image/avif" srcset="assets/img/logo/logo-padelslot-64.avif 1x, assets/img/logo/logo-padelslot-128.avif 2x">
+                    <img src="assets/img/logo/logo-padelslot-64.webp" srcset="assets/img/logo/logo-padelslot-128.webp 2x" alt="" width="35" height="32" class="logotipo">
+                </picture>
+                PadelSlot
+            </a>
+
+            <form class="panel-admin__buscador" role="search">
+                <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" class="panel-admin__buscador-campo" placeholder="Buscar reserva, socio o pago…" aria-label="Buscar reserva, socio o pago">
+                <kbd class="panel-admin__atajo">⌘ K</kbd>
+            </form>
+
+            <div class="panel-admin__barra-acciones">
+                <a href="crearReservaAdmin.html" class="boton boton--primario navegacion-escritorio">
+                    <i class="ph ph-plus boton__icono" aria-hidden="true"></i>
+                    Crear reserva
+                </a>
+                <button type="button" class="boton-icono" aria-label="Notificaciones">
+                    <i class="ph ph-bell" aria-hidden="true"></i>
+                </button>
+                <div class="usuario">
+                    <span class="avatar">MR</span>
+                    <p class="usuario__datos">
+                        <span class="usuario__nombre">Marta R.</span>
+                        <span class="usuario__rol">Administradora</span>
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <main class="panel-admin__principal">
+            <header class="cabecera-pagina">
+                <div>
+                    <nav class="cabecera-pagina__migas" aria-label="Estás aquí">
+                        <a href="inicioAdmin.html" class="cabecera-pagina__miga">Gestión del club</a>
+                        <i class="ph ph-caret-right" aria-hidden="true"></i>
+                        <span class="cabecera-pagina__miga cabecera-pagina__miga--actual" aria-current="page">Cobros y cuotas</span>
+                    </nav>
+                    <h1 class="cabecera-pagina__titulo">Control financiero, cuotas y remesas SEPA</h1>
+                    <p class="cabecera-pagina__texto">Facturación mensual de abonados, cobros online y en TPV, ficheros bancarios ISO 20022 e incidencias de pago.</p>
+                </div>
+                <div class="cabecera-pagina__acciones">
+                    <a href="#" class="boton boton--contorno"><i class="ph ph-download-simple boton__icono" aria-hidden="true"></i> Exportar contabilidad</a>
+                    <a href="#" class="boton boton--contorno"><i class="ph ph-cash-register boton__icono" aria-hidden="true"></i> Cobro manual</a>
+                    <a href="#" class="boton boton--primario"><i class="ph ph-plus boton__icono" aria-hidden="true"></i> Generar remesa mensual</a>
+                </div>
+            </header>
+
+            <section class="panel-admin__kpis panel-admin__kpis--cinco" aria-label="Indicadores financieros de octubre">
+                <article class="tarjeta panel-admin__kpi panel-admin__kpi--destacado">
+                    <div class="tarjeta__cabecera">
+                        <h2 class="panel-admin__kpi-titulo">Facturación octubre</h2>
+                        <i class="ph ph-trend-up panel-admin__kpi-icono" aria-hidden="true"></i>
+                    </div>
+                    <p class="panel-admin__kpi-valor">21.870 €</p>
+                    <p class="panel-admin__kpi-detalle">+8,4% vs. septiembre</p>
+                </article>
+                <article class="tarjeta panel-admin__kpi">
+                    <div class="tarjeta__cabecera">
+                        <h2 class="panel-admin__kpi-titulo">Cuotas SEPA</h2>
+                        <i class="ph ph-users panel-admin__kpi-icono" aria-hidden="true"></i>
+                    </div>
+                    <p class="panel-admin__kpi-valor">17.460 €</p>
+                    <p class="panel-admin__kpi-detalle">486 socios · 80% del total</p>
+                </article>
+                <article class="tarjeta panel-admin__kpi">
+                    <div class="tarjeta__cabecera">
+                        <h2 class="panel-admin__kpi-titulo">Pistas y extras</h2>
+                        <i class="ph ph-tennis-ball panel-admin__kpi-icono" aria-hidden="true"></i>
+                    </div>
+                    <p class="panel-admin__kpi-valor">4.410 €</p>
+                    <p class="panel-admin__kpi-detalle">Partidas sueltas, botes, bar</p>
+                </article>
+                <article class="tarjeta panel-admin__kpi">
+                    <div class="tarjeta__cabecera">
+                        <h2 class="panel-admin__kpi-titulo">Recibos devueltos</h2>
+                        <i class="ph ph-warning panel-admin__kpi-icono" aria-hidden="true"></i>
+                    </div>
+                    <p class="panel-admin__kpi-valor">178 €</p>
+                    <p class="panel-admin__kpi-detalle">2 recibos · 0,8% morosidad</p>
+                </article>
+                <article class="tarjeta panel-admin__kpi">
+                    <div class="tarjeta__cabecera">
+                        <h2 class="panel-admin__kpi-titulo">Monederos</h2>
+                        <i class="ph ph-wallet panel-admin__kpi-icono" aria-hidden="true"></i>
+                    </div>
+                    <p class="panel-admin__kpi-valor">6.420 €</p>
+                    <p class="panel-admin__kpi-detalle">Saldo de 314 socios</p>
+                </article>
+            </section>
+
+            <nav class="panel-admin__pestanas" aria-label="Secciones de cobros">
+                <a href="cobroAdmin.html" class="panel-admin__pestana panel-admin__pestana--activa" aria-current="page"><i class="ph ph-bank" aria-hidden="true"></i> Remesas SEPA</a>
+                <a href="#" class="panel-admin__pestana"><i class="ph ph-receipt" aria-hidden="true"></i> Historial de transacciones</a>
+                <a href="#" class="panel-admin__pestana"><i class="ph ph-warning-circle" aria-hidden="true"></i> Recibos devueltos (2)</a>
+                <a href="#" class="panel-admin__pestana"><i class="ph ph-wallet" aria-hidden="true"></i> Monederos virtuales</a>
+                <a href="#" class="panel-admin__pestana"><i class="ph ph-handshake" aria-hidden="true"></i> Liquidación a monitores</a>
+            </nav>
+
+            <!-- Remesa del mes -->
+            <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="titulo-remesa">
+                <div class="panel-admin__seccion-cabecera">
+                    <div>
+                        <span class="etiqueta etiqueta--suave">SEPA Core ISO 20022 · fichero cerrado y procesado</span>
+                        <h2 class="panel-admin__seccion-titulo" id="titulo-remesa">Remesa octubre 2025 · cuotas mensuales</h2>
+                        <p class="panel-admin__subtitulo">Generada automáticamente el 01/10/2025 a las 06:00 por el planificador de PadelSlot.</p>
+                    </div>
+                    <div class="panel-admin__acciones">
+                        <a href="#" class="boton boton--contorno"><i class="ph ph-download-simple boton__icono" aria-hidden="true"></i> Descargar XML</a>
+                        <a href="#" class="boton boton--contorno"><i class="ph ph-list-bullets boton__icono" aria-hidden="true"></i> Ver órdenes</a>
+                    </div>
+                </div>
+                <div class="panel-admin__rejilla">
+                    <div class="panel-admin__mini panel-admin__mini--suave">
+                        <span class="panel-admin__texto-pequeno">Entidad receptora</span>
+                        <strong><i class="ph ph-bank" aria-hidden="true"></i> Banco Santander</strong>
+                        <span>ES91 0049 1500 •••• •••• 8912</span>
+                    </div>
+                    <div class="panel-admin__mini panel-admin__mini--suave">
+                        <span class="panel-admin__texto-pequeno">ID emisor / sufijo</span>
+                        <strong>ES88000B82910384</strong>
+                        <span>Sufijo comercial: 000</span>
+                    </div>
+                    <div class="panel-admin__mini panel-admin__mini--suave">
+                        <span class="panel-admin__texto-pequeno">Identificador de mensaje</span>
+                        <strong>PADEL-20251001-REM01</strong>
+                        <span>Firma SHA-256 validada</span>
+                    </div>
+                    <div class="panel-admin__mini">
+                        <span class="panel-admin__texto-pequeno">Volumen total remesado</span>
+                        <span class="panel-admin__valor">17.460,00 €</span>
+                        <span>484 cobrados (17.282 €) · 2 devueltos (178 €)</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="panel-admin__dos-columnas">
+
+                <!-- Transacciones -->
+                <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="titulo-transacciones">
+                    <div class="panel-admin__seccion-cabecera">
+                        <h2 class="panel-admin__seccion-titulo" id="titulo-transacciones">Transacciones y recibos recientes</h2>
+                        <span class="etiqueta etiqueta--suave">6 de 512</span>
+                    </div>
+                    <div class="panel-admin__filtros">
+                        <label class="panel-admin__busqueda">
+                            <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                            <input type="search" placeholder="Buscar por socio o referencia…" aria-label="Buscar transacciones">
+                        </label>
+                        <button type="button" class="boton-icono" aria-label="Filtrar"><i class="ph ph-funnel" aria-hidden="true"></i></button>
+                        <button type="button" class="boton-icono" aria-label="Descargar"><i class="ph ph-download-simple" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="panel-admin__tabla-scroll">
+                        <table class="panel-admin__tabla panel-admin__tabla-cabecera">
+                            <caption class="solo-lector">Transacciones de este mes</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Referencia</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Socio / cliente</th>
+                                    <th scope="col">Concepto</th>
+                                    <th scope="col">Método</th>
+                                    <th scope="col">Importe</th>
+                                    <th scope="col">Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="panel-admin__celda-tenue">#REC-2025-1042</td>
+                                    <td>Hoy, 08:30</td>
+                                    <td><span class="panel-admin__persona"><span class="avatar">LM</span><p><strong>Laura Méndez</strong>#1042</p></span></td>
+                                    <td>Cuota preferente octubre</td>
+                                    <td>SEPA</td>
+                                    <td class="panel-admin__celda-nombre">45,00 €</td>
+                                    <td><span class="etiqueta etiqueta--suave">Cobrado</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="panel-admin__celda-tenue">#REC-2025-1043</td>
+                                    <td>Hoy, 08:30</td>
+                                    <td><span class="panel-admin__persona"><span class="avatar">AR</span><p><strong>Alejandro Ramos</strong>#1043</p></span></td>
+                                    <td>Cuota matrícula promo</td>
+                                    <td>SEPA</td>
+                                    <td class="panel-admin__celda-nombre">45,00 €</td>
+                                    <td><span class="etiqueta etiqueta--suave">Cobrado</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="panel-admin__celda-tenue">#REC-2025-0312</td>
+                                    <td>Ayer, 14:15</td>
+                                    <td><span class="panel-admin__persona"><span class="avatar">GM</span><p><strong>Gonzalo Morales</strong>#0312</p></span></td>
+                                    <td>Cuota oro + pista 2</td>
+                                    <td>SEPA (rechazado)</td>
+                                    <td class="panel-admin__celda-nombre">89,00 €</td>
+                                    <td><span class="etiqueta panel-admin__etiqueta-alerta">Devuelto</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="panel-admin__celda-tenue">#REC-2025-0780</td>
+                                    <td>Ayer, 11:20</td>
+                                    <td><span class="panel-admin__persona"><span class="avatar">AT</span><p><strong>Ana Torres Gil</strong>#0780</p></span></td>
+                                    <td>Cuota plan familiar</td>
+                                    <td>SEPA</td>
+                                    <td class="panel-admin__celda-nombre">89,00 €</td>
+                                    <td><span class="etiqueta panel-admin__etiqueta-neutra">Pendiente banco</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="panel-admin__celda-tenue">#TPV-9821</td>
+                                    <td>Hoy, 18:02</td>
+                                    <td><span class="panel-admin__persona"><span class="avatar">DR</span><p><strong>Diego Ruiz</strong>Invitado</p></span></td>
+                                    <td>Pista 5 + suplemento luz</td>
+                                    <td>TPV mostrador</td>
+                                    <td class="panel-admin__celda-nombre">25,00 €</td>
+                                    <td><span class="etiqueta etiqueta--suave">Cobrado</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="panel-admin__celda-tenue">#MON-4412</td>
+                                    <td>Hoy, 17:49</td>
+                                    <td><span class="panel-admin__persona"><span class="avatar">LV</span><p><strong>Lucía Vega</strong>#0412</p></span></td>
+                                    <td>Recarga de monedero</td>
+                                    <td>Bizum</td>
+                                    <td class="panel-admin__celda-nombre">50,00 €</td>
+                                    <td><span class="etiqueta etiqueta--terciario">Completado</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <nav class="panel-admin__paginacion" aria-label="Paginación">
+                        <span>Mostrando 6 de 512 transacciones este mes</span>
+                        <div class="panel-admin__paginas">
+                            <a href="#" class="panel-admin__pagina">Anterior</a>
+                            <a href="#" class="panel-admin__pagina panel-admin__pagina--actual" aria-current="page">1</a>
+                            <a href="#" class="panel-admin__pagina">2</a>
+                            <a href="#" class="panel-admin__pagina">3</a>
+                            <a href="#" class="panel-admin__pagina">Siguiente</a>
+                        </div>
+                    </nav>
+                </section>
+
+                <aside class="panel-admin__pila">
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="titulo-recobro">
+                        <div class="tarjeta__cabecera">
+                            <h2 class="tarjeta__titulo" id="titulo-recobro"><i class="ph ph-warning" aria-hidden="true"></i> Centro de recobro</h2>
+                            <span class="panel-admin__valor">178 €</span>
+                        </div>
+                        <p class="panel-admin__subtitulo">2 recibos devueltos en la remesa de octubre.</p>
+                        <div class="panel-admin__mini panel-admin__mini--suave">
+                            <div class="panel-admin__mini-cabecera">
+                                <p class="panel-admin__evento-texto"><strong>Gonzalo Morales (#0312)</strong> Devolución por falta de fondos</p>
+                                <strong>89 €</strong>
+                            </div>
+                            <div class="panel-admin__acciones">
+                                <a href="#" class="boton boton--contorno"><i class="ph ph-whatsapp-logo boton__icono" aria-hidden="true"></i> Enlace por WhatsApp</a>
+                                <a href="#" class="boton boton--contorno">Cargar al monedero</a>
+                            </div>
+                        </div>
+                        <div class="panel-admin__mini panel-admin__mini--suave">
+                            <div class="panel-admin__mini-cabecera">
+                                <p class="panel-admin__evento-texto"><strong>Carlos Benítez (#0914)</strong> Cuenta cancelada o IBAN erróneo</p>
+                                <strong>89 €</strong>
+                            </div>
+                            <div class="panel-admin__acciones">
+                                <a href="#" class="boton boton--contorno">Pedir nuevo IBAN</a>
+                                <a href="#" class="boton boton--contorno">Cobro en mostrador</a>
+                            </div>
+                        </div>
+                        <p class="panel-admin__texto-pequeno"><i class="ph ph-lock-simple" aria-hidden="true"></i> Bloqueo automático de reservas activado (regla de 48 h).</p>
+                    </section>
+
+                    <section class="tarjeta panel-admin__bloque panel-admin__bloque--apilado" aria-labelledby="titulo-comisiones">
+                        <h2 class="tarjeta__titulo" id="titulo-comisiones">Comisiones y pasarelas</h2>
+                        <dl class="lista-datos">
+                            <div class="lista-datos__fila"><dt>SEPA Banco Santander · 486 recibos (0,15 €/orden)</dt><dd>72,90 €</dd></div>
+                            <div class="lista-datos__fila"><dt>TPV mostrador · 2.840 € (0,35%)</dt><dd>9,94 €</dd></div>
+                            <div class="lista-datos__fila"><dt>Pago web y Bizum · 1.570 € (1,2% + 0,18 €)</dt><dd>18,84 €</dd></div>
+                            <div class="lista-datos__fila lista-datos__fila--total"><dt>Total octubre (0,46%)</dt><dd>101,68 €</dd></div>
+                        </dl>
+                    </section>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <!-- ============ NAVEGACIÓN INFERIOR (solo móvil) ============ -->
+    <nav class="navegacion-movil" aria-label="Navegación del administrador en móvil">
+        <a href="inicioAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-squares-four" aria-hidden="true"></i>Inicio</a>
+        <a href="progSemanalAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar" aria-hidden="true"></i>Agenda</a>
+        <a href="cuadranteAdmin.html" class="navegacion-movil__enlace"><i class="ph ph-calendar-check" aria-hidden="true"></i>Reservas</a>
+        <a href="configAdmin.html" class="navegacion-movil__enlace navegacion-movil__enlace--activo"><i class="ph ph-sidebar" aria-hidden="true"></i>Gestión</a>
+    </nav>
+
+</body>
+</html>
