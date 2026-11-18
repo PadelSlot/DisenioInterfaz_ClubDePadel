@@ -1,0 +1,25 @@
+// ============================================================
+// Iconos SVG de PadelSlot (T-3.3)
+// Todos los iconos salen del sprite assets/svg/iconos.svg
+// (Phosphor Icons, licencia MIT, optimizados por el Equipo 04).
+// Uso en HTML:
+//   <i class="icono" aria-hidden="true">
+//       <svg focusable="false"><use href="assets/svg/iconos.svg#bell"></use></svg>
+//   </i>
+// ============================================================
+
+.icono {
+    display: inline-block;
+    flex-shrink: 0;            // Que no se encoja dentro de botones y filas flex
+    width: 1em;                // 1em = el font-size del elemento: los estilos
+    height: 1em;               // de tamaño que ya teníamos siguen funcionando
+    line-height: 0;
+    vertical-align: -0.125em;  // Alineado con el texto, como la fuente de Phosphor
+
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: currentColor;    // El icono toma el color del texto (también en :hover)
+    }
+}
