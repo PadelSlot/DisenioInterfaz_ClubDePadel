@@ -65,7 +65,7 @@ ul, ol {
   color: #ffffff;
 }
 .boton--primario:hover {
-  background-color: rgb(29.5119047619, 70.9880952381, 55.0357142857);
+  background-color: rgb(11.5732959851%, 27.8384687208%, 21.5826330532%);
 }
 .boton--terciario, .boton--disponibilidad, .boton--solicitud {
   background-color: #DEF127;
@@ -73,7 +73,7 @@ ul, ol {
   font-weight: 700;
 }
 .boton--terciario:hover, .boton--disponibilidad:hover, .boton--solicitud:hover {
-  background-color: rgb(204.88, 224.64, 14.56);
+  background-color: rgb(80.3450980392%, 88.0941176471%, 5.7098039216%);
 }
 .boton--contorno {
   background-color: transparent;
@@ -261,6 +261,44 @@ ul, ol {
   font-size: 0.875rem;
 }
 
+.pelota-cargando {
+  display: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url("../assets/anim/pelota-sprite.svg") 0 0/12rem 1.5rem no-repeat;
+}
+
+.boton--cargando {
+  pointer-events: none;
+}
+.boton--cargando .boton__icono {
+  display: none;
+}
+.boton--cargando .pelota-cargando {
+  display: inline-block;
+  animation: pelota-botar 0.8s steps(8) infinite;
+}
+
+@keyframes pelota-botar {
+  to {
+    background-position: -12rem 0;
+  }
+}
+.check-animado {
+  width: 1rem;
+  height: 1rem;
+}
+.check-animado path {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  animation: check-dibujar 0.6s ease-out 0.3s forwards;
+}
+
+@keyframes check-dibujar {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 .logotipo {
   display: flex;
   align-items: center;
@@ -286,7 +324,7 @@ ul, ol {
   }
 }
 .banda--suave {
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
 }
 .banda--verde {
   background-color: #255945;
@@ -353,7 +391,7 @@ ul, ol {
   height: 2.25rem;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
   color: #000000;
   font-size: 0.75rem;
   font-weight: 700;
@@ -367,7 +405,7 @@ ul, ol {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 0.5rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
   color: #255945;
   font-size: 1.25rem;
 }
@@ -419,7 +457,7 @@ ul, ol {
 }
 
 .fondo-suave {
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
 }
 
 .usuario {
@@ -658,9 +696,7 @@ ul, ol {
   border-radius: 999px;
   overflow: hidden;
   background-color: rgba(37, 89, 69, 0.1);
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 .progreso::-webkit-progress-bar {
   background-color: rgba(37, 89, 69, 0.1);
@@ -685,9 +721,7 @@ ul, ol {
   height: 1.4rem;
   border-radius: 999px;
   background-color: rgba(0, 0, 0, 0.2);
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
 }
@@ -723,8 +757,7 @@ ul, ol {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
+  column-gap: 1rem;
 }
 .lista-datos__fila dd {
   margin-left: auto;
@@ -847,7 +880,7 @@ ul, ol {
   padding: 0.25rem;
   border: none;
   border-radius: 0.5rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
 }
 .acceso__perfil {
   display: flex;
@@ -1013,9 +1046,7 @@ ul, ol {
   border-radius: 999px;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.15);
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 .acceso__progreso::-webkit-progress-bar {
   background-color: rgba(255, 255, 255, 0.15);
@@ -1057,7 +1088,7 @@ ul, ol {
 }
 
 .inicio-publico__portada {
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
 }
 .inicio-publico__hero-rejilla {
   display: grid;
@@ -1117,7 +1148,7 @@ ul, ol {
 .inicio-publico__pista-hora {
   padding: 0.5rem;
   border-radius: 0.5rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
   font-weight: 700;
   color: #000000;
 }
@@ -1175,7 +1206,7 @@ ul, ol {
 .inicio-publico__club-imagen {
   height: 7.5rem;
   padding: 0.75rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
   font-size: 0.75rem;
   color: #9f9898;
 }
@@ -1207,7 +1238,7 @@ ul, ol {
   padding: 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 0.5rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
   text-align: center;
   font-size: 0.875rem;
   font-weight: 500;
@@ -1239,7 +1270,7 @@ ul, ol {
   padding: 1.5rem;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 0.75rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
   list-style: none;
   font-size: 0.875rem;
 }
@@ -1290,7 +1321,7 @@ ul, ol {
   padding: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 0.5rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
 }
 .inicio-publico__media-valor {
   font-family: "Space Grotesk", sans-serif;
@@ -1407,7 +1438,7 @@ ul, ol {
 .inicio-publico__cifra {
   padding: 0.75rem;
   border-radius: 0.5rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
   color: #255945;
 }
 .inicio-publico__cifra dt {
@@ -1449,8 +1480,7 @@ ul, ol {
 }
 .inicio-publico__preguntas {
   display: grid;
-  -moz-column-gap: 2.5rem;
-       column-gap: 2.5rem;
+  column-gap: 2.5rem;
 }
 @media (min-width: 48rem) {
   .inicio-publico__preguntas {
@@ -1698,7 +1728,7 @@ ul, ol {
   font-size: 0.875rem;
 }
 .clases__grupo--completo {
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
 }
 .clases__demanda {
   align-self: flex-start;
@@ -1804,7 +1834,7 @@ ul, ol {
 .clases__seleccion {
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
 }
 .clases__garantias {
   display: grid;
@@ -2082,7 +2112,7 @@ ul, ol {
   margin-top: auto;
   padding: 0.75rem;
   border-radius: 0.5rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
   font-size: 0.75rem;
 }
 .membresia__condiciones {
@@ -2274,7 +2304,7 @@ ul, ol {
 .servicios-club__nota {
   padding: 0.75rem;
   border-radius: 0.5rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
   font-size: 0.8rem;
 }
 .servicios-club__nota strong {
@@ -2286,7 +2316,7 @@ ul, ol {
   gap: 1rem;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
 }
 .servicios-club__taquilla p {
   display: flex;
@@ -2597,7 +2627,7 @@ ul, ol {
 .inicio-socio__club-dato {
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
 }
 .inicio-socio__club-icono {
   font-size: 1.25rem;
@@ -2939,7 +2969,7 @@ ul, ol {
 .programacion-admin__dia-titulo {
   padding: 0.5rem;
   border-radius: 0.5rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
   text-align: center;
   font-family: "Inter", sans-serif;
   font-size: 0.875rem;
@@ -3038,7 +3068,7 @@ ul, ol {
   padding: 0.75rem;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 0.5rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
   text-align: left;
   font-size: 0.75rem;
   color: #9f9898;
@@ -3165,7 +3195,7 @@ ul, ol {
   padding: 0.75rem;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 0.5rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
   font-size: 0.75rem;
 }
 .panel-admin__club-nombre {
@@ -3218,7 +3248,7 @@ ul, ol {
   padding: 0.5rem 0.75rem;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 0.5rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
   color: #9f9898;
 }
 @media (min-width: 48rem) {
@@ -3426,7 +3456,7 @@ ul, ol {
   gap: 1rem;
   padding: 0.75rem;
   border-radius: 0.5rem;
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
 }
 .panel-admin__evento--actual {
   background-color: rgba(37, 89, 69, 0.1);
@@ -3746,7 +3776,7 @@ ul, ol {
   color: #000000;
 }
 .panel-admin__mini--suave {
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
 }
 .panel-admin__mini-cabecera {
   display: flex;
@@ -3781,7 +3811,7 @@ ul, ol {
   background-color: rgba(37, 89, 69, 0.06);
 }
 .panel-admin__seleccionable:has(:disabled) {
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
   cursor: not-allowed;
 }
 .panel-admin__seleccionable p {
@@ -3972,7 +4002,7 @@ ul, ol {
 }
 
 .panel-admin__tabla-fila:hover td {
-  background-color: rgb(246.28, 248.36, 247.56);
+  background-color: rgb(96.5803921569%, 97.3960784314%, 97.0823529412%);
 }
 
 .panel-admin__campos {
@@ -4489,4 +4519,6 @@ ul, ol {
 
 .reserva-pie {
   margin-top: 0;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */

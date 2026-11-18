@@ -15,6 +15,7 @@
 
     <!-- Hoja de estilos compilada desde scss/main.scss -->
     <link rel="stylesheet" href="scss/main.css">
+        <script src="assets/js/cargador.js" defer></script>
 </head>
 
 <body class="inicio-publico">
@@ -139,10 +140,12 @@
                             <option>Noche · 22:00–23:30</option>
                         </select>
                     </div>
-                    <button type="submit" class="boton boton--primario">
-                        <i class="ph ph-magnifying-glass boton__icono" aria-hidden="true"></i>
-                        Buscar pistas
-                    </button>
+                    <button type="submit" class="boton boton--primario" data-cargador>
+    <i class="ph ph-magnifying-glass boton__icono" aria-hidden="true"></i>
+    <span class="boton__texto">Buscar pistas</span>
+    <span class="pelota-cargando" aria-hidden="true"></span>
+</button>
+<p class="solo-lector" role="status" aria-live="polite" data-cargador-estado></p>
                 </form>
 
             </div>
