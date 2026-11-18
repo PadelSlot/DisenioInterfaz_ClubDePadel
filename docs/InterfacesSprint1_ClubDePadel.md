@@ -101,7 +101,7 @@ Los objetivos de la interfaz (UI/UX) del proyecto se estructuran en torno a sus 
 
 ### Referencia 1 \- Racket Club Padel.  
 
-Racket Club es uno de los clubes de pádel más modernos del Aljarafe, solo hay que ver su aplicación web. Este club ofrece reservas a cualquiera de sus 6 pistas de pádel: 2 panorámicas al aire libre y 4 semicubiertas con césped profesional y vestuarios completos. Además de integrar una tienda de pádel y una cafetería para hacer luego un buen rato después del partido, también tiene su propia escuela de padel con entrenadores profesionales para cualquier edad y categoría, teniendo una app exclusiva para socios.
+Racket Club es uno de los clubes de pádel más modernos del Aljarafe, solo hay que ver su aplicación web. Este club ofrece reservas a cualquiera de sus 6 pistas de pádel: 2 panorámicas al aire libre y 4 semicubiertas con césped profesional y vestuarios completos. Además de integrar una tienda de pádel y una cafetería para hacer luego un buen rato después del partido, también tiene su propia escuela de pádel con entrenadores profesionales para cualquier edad y categoría, teniendo una app exclusiva para socios.
 
 Una vez viendo lo que tiene dicha aplicación web, nos gustaría aplicar a nuestra aplicación web para mejorarla lo siguiente:
 
