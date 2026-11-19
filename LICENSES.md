@@ -88,3 +88,8 @@ Este documento registra la autoría, la fuente y la licencia de todos los recurs
 ## 7. Audio, vídeo y animaciones
 
 En este sprint **no se utilizan** archivos de audio, vídeo ni animaciones. Si se incorporan, se registrarán en este documento con su autoría, fuente y licencia.
+
+| Archivo | Autor | Fuente | Licencia |
+|---|---|---|---|
+| `video-partido.*` | Gianluca Guidi | [Pexels · vídeo 13737627](https://www.pexels.com/video/13737627/) | [Licencia Pexels](https://www.pexels.com/license/) |
+| `musica-fondo.*` | MarkJuly | [Pixabay · Stylish Sport Rock (Powerful)](https://pixabay.com/music/rock-stylish-sport-rock-powerful-114261/) | [Licencia de contenido de Pixabay](https://pixabay.com/service/license-summary/) |
