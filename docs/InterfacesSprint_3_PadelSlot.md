@@ -1,8 +1,13 @@
-Coevaluación
+**Coevaluación**
+
 Javier Oliveros Lepe:80%
+
 Alberto Rueda Romero:90%
+
 Pablo Márquez López: 100%
+
 Ismael Frías Fernández:85%
+
 # Memoria Técnica - Sprint 3: Multimedia, Interactividad y Verificación Visual (`PadelSlot`)
 
 Con el fin de enriquecer la experiencia visual y dotar de dinamismo a la interfaz sin penalizar los tiempos de carga, se han generado secuencias animadas y microinteracciones partiendo de ilustraciones y gráficos vectoriales estáticos. Mediante el uso de fotogramas clave en CSS (`@keyframes`), sprites vectoriales y manipulación de propiedades gráficas ligeras, se logra una respuesta visual fluida y de bajo coste de renderizado que guía la interacción del usuario a través de la plataforma.
