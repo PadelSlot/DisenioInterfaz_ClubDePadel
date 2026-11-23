@@ -1,0 +1,105 @@
+// =====================================================================
+// _multimedia.scss · PadelSlot (Equipo 04)
+// Estilos del logotipo, fotos, vídeo y audio (<picture>, <video>, <audio>).
+// Antes estaban en assets/css/multimedia.css; ese archivo se borró el
+// 19/11 pero las páginas lo seguían enlazando (error 404) y estos estilos
+// se perdieron. Se recuperan aquí para que todo salga en scss/main.css.
+// =====================================================================
+@use 'sass:color';
+@use '../colores';
+@use '../espaciados';
+@use '../fuentes';
+
+// ---------- Logotipo ----------
+.logotipo {
+    display: block;
+    width: auto;
+    height: 2rem;
+    border-radius: 0;
+    background-color: transparent;
+
+    // Sobre fondo verde (carnet de socio) va sobre una placa blanca
+    &--carnet {
+        height: 2.5rem;
+        padding: 0.25rem;
+        border-radius: espaciados.$radio-s;
+        background-color: colores.$color-secundario;
+    }
+}
+
+// ---------- Fotos de pistas (index.html) y convenios (cuotas.html) ----------
+.inicio-publico__club-imagen {
+    display: block;
+    height: auto;
+    padding: 0;
+    margin-bottom: espaciados.$espacio-s;
+    border-radius: espaciados.$radio-s;
+    overflow: hidden;
+}
+
+.membresia__convenio-imagen {
+    display: block;
+    margin: (-(espaciados.$espacio-l)) (-(espaciados.$espacio-l)) 0;
+    border-radius: espaciados.$radio-m espaciados.$radio-m 0 0;
+    overflow: hidden;
+    background-color: color.mix(colores.$color-primario, colores.$color-secundario, 4%);
+}
+
+.inicio-publico__club-imagen img,
+.membresia__convenio-imagen img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2; // reserva el hueco antes de cargar (evita CLS)
+    object-fit: cover;
+}
+
+// ---------- Vídeo y música del club (index.html) ----------
+.inicio-publico__video {
+    margin: 0;
+    border-radius: espaciados.$radio-m;
+    overflow: hidden;
+    background-color: colores.$color-primario;
+
+    &-reproductor {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+
+    &-audio {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: espaciados.$espacio-s;
+        padding: espaciados.$espacio-s espaciados.$espacio-m;
+        color: colores.$color-secundario;
+
+        audio {
+            width: 100%;
+            max-width: 20rem;
+            height: 2.5rem;
+        }
+
+        // La transcripción ocupa una fila entera y usa colores claros
+        // porque el fondo es verde oscuro
+        .transcripcion {
+            flex-basis: 100%;
+            margin-top: 0;
+        }
+
+        .transcripcion__titulo {
+            color: colores.$color-terciario;
+        }
+    }
+
+    &-etiqueta {
+        display: inline-flex;
+        align-items: center;
+        gap: espaciados.$espacio-xs;
+        font-weight: fuentes.$peso-negrita;
+    }
+}

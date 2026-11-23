@@ -4552,4 +4552,87 @@ ul, ol {
 
 .reserva-pie {
   margin-top: 0;
+}
+
+.logotipo {
+  display: block;
+  width: auto;
+  height: 2rem;
+  border-radius: 0;
+  background-color: transparent;
+}
+.logotipo--carnet {
+  height: 2.5rem;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+}
+
+.inicio-publico__club-imagen {
+  display: block;
+  height: auto;
+  padding: 0;
+  margin-bottom: 0.75rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.membresia__convenio-imagen {
+  display: block;
+  margin: -1.5rem -1.5rem 0;
+  border-radius: 0.75rem 0.75rem 0 0;
+  overflow: hidden;
+  background-color: rgb(246.28, 248.36, 247.56);
+}
+
+.inicio-publico__club-imagen img,
+.membresia__convenio-imagen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/2;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.inicio-publico__video {
+  margin: 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: #255945;
+}
+.inicio-publico__video-reproductor {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.inicio-publico__video-audio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+}
+.inicio-publico__video-audio audio {
+  width: 100%;
+  max-width: 20rem;
+  height: 2.5rem;
+}
+.inicio-publico__video-audio .transcripcion {
+  flex-basis: 100%;
+  margin-top: 0;
+}
+.inicio-publico__video-audio .transcripcion__titulo {
+  color: #DEF127;
+}
+.inicio-publico__video-etiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
 }/*# sourceMappingURL=main.css.map */
