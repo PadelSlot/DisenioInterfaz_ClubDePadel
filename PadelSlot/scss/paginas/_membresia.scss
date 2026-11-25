@@ -10,6 +10,8 @@
 
     &__antetitulo {
         display: block;
+        font-family: inherit;
+        line-height: inherit;
         font-size: fuentes.$tamano-mini;
         font-weight: fuentes.$peso-negrita;
         text-transform: uppercase;

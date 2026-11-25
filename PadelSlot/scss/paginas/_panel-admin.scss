@@ -806,7 +806,7 @@
             cursor: not-allowed;
         }
 
-        p {
+        p, &-texto {
             flex: 1 1 7rem;
             display: flex;
             flex-direction: column;

@@ -1650,6 +1650,8 @@ ul, ol {
 }
 .clases__antetitulo {
   display: block;
+  font-family: inherit;
+  line-height: inherit;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1915,6 +1917,8 @@ ul, ol {
 }
 .membresia__antetitulo {
   display: block;
+  font-family: inherit;
+  line-height: inherit;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -3847,7 +3851,7 @@ ul, ol {
   background-color: rgb(246.28, 248.36, 247.56);
   cursor: not-allowed;
 }
-.panel-admin__seleccionable p {
+.panel-admin__seleccionable p, .panel-admin__seleccionable-texto {
   flex: 1 1 7rem;
   display: flex;
   flex-direction: column;

@@ -1,7 +1,3 @@
-// =====================================================================
-// NUEVO: página "Escuela y clases" del socio (clases.html)
-// Se carga desde _inicio-socio.scss con @use 'clases'
-// =====================================================================
 @use '../colores';
 @use '../espaciados';
 @use '../fuentes';
@@ -14,6 +10,8 @@
 
     &__antetitulo {
         display: block;
+        font-family: inherit;
+        line-height: inherit;
         font-size: fuentes.$tamano-mini;
         font-weight: fuentes.$peso-negrita;
         text-transform: uppercase;
