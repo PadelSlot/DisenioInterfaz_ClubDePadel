@@ -14,7 +14,7 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  color: #9f9898;
+  color: #6b6565;
   background-color: #ffffff;
 }
 
@@ -120,7 +120,7 @@ ul, ol {
   color: #000000;
 }
 .tarjeta__cuerpo {
-  color: #9f9898;
+  color: #6b6565;
 }
 
 .etiqueta {
@@ -203,7 +203,7 @@ ul, ol {
   gap: 1.5rem;
 }
 .cabecera__enlace {
-  color: #9f9898;
+  color: #6b6565;
   font-weight: 500;
   transition: color 0.2s ease-in-out;
 }
@@ -236,7 +236,7 @@ ul, ol {
 .barra-lateral__item {
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .barra-lateral__item:hover, .barra-lateral__item--activo {
   background-color: rgba(37, 89, 69, 0.08);
@@ -593,7 +593,7 @@ ul, ol {
   padding-block: 0.5rem;
   border-radius: 0.5rem;
   font-size: 0.75rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .navegacion-movil__enlace i {
   font-size: 1.25rem;
@@ -849,7 +849,7 @@ ul, ol {
 .pregunta__titulo::after {
   content: "+";
   font-weight: 400;
-  color: #9f9898;
+  color: #6b6565;
 }
 .pregunta[open] .pregunta__titulo::after {
   content: "−";
@@ -1162,7 +1162,7 @@ ul, ol {
 }
 .inicio-publico__nota {
   font-size: 0.75rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .inicio-publico__lista-pistas {
   list-style: none;
@@ -1189,7 +1189,7 @@ ul, ol {
   display: flex;
   flex-direction: column;
   font-size: 0.75rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .inicio-publico__pista-club {
   font-size: 1rem;
@@ -1240,7 +1240,7 @@ ul, ol {
   padding: 0.75rem;
   background-color: rgb(246.28, 248.36, 247.56);
   font-size: 0.75rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .inicio-publico__valoracion {
   display: inline-flex;
@@ -1380,7 +1380,7 @@ ul, ol {
   flex-direction: column;
   gap: 1rem;
   padding: 1.5rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .inicio-publico__cita {
   flex: 1;
@@ -1474,7 +1474,7 @@ ul, ol {
   color: #255945;
 }
 .inicio-publico__cifra dt {
-  color: #9f9898;
+  color: #6b6565;
 }
 .inicio-publico__cifra-valor {
   font-family: "Space Grotesk", sans-serif;
@@ -1542,7 +1542,7 @@ ul, ol {
 .inicio-publico__pregunta-titulo::after {
   content: "+";
   font-weight: 400;
-  color: #9f9898;
+  color: #6b6565;
 }
 .inicio-publico__respuesta {
   margin-top: 0.5rem;
@@ -1657,7 +1657,7 @@ ul, ol {
 }
 .clases__nota {
   font-size: 0.75rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .clases__resumen {
   display: grid;
@@ -1769,7 +1769,7 @@ ul, ol {
 .clases__etiqueta-neutra {
   border: 1px solid rgba(0, 0, 0, 0.08);
   background-color: #ffffff;
-  color: #9f9898;
+  color: #6b6565;
 }
 .clases__detalles {
   display: flex;
@@ -1854,11 +1854,11 @@ ul, ol {
 .clases__hueco span {
   font-size: 0.75rem;
   font-weight: 400;
-  color: #9f9898;
+  color: #6b6565;
 }
 .clases__hueco--ocupado {
   background-color: rgba(0, 0, 0, 0.05);
-  color: #9f9898;
+  color: #6b6565;
   cursor: not-allowed;
 }
 .clases__hueco--ocupado:hover {
@@ -1922,7 +1922,7 @@ ul, ol {
 }
 .membresia__nota {
   font-size: 0.75rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .membresia__enlace {
   font-size: 0.875rem;
@@ -2431,7 +2431,7 @@ ul, ol {
   gap: 0.5rem;
   font-size: 0.75rem;
   text-transform: uppercase;
-  color: #9f9898;
+  color: #6b6565;
 }
 .inicio-socio__dato-valor {
   font-size: 0.875rem;
@@ -2450,11 +2450,11 @@ ul, ol {
   text-decoration: underline;
 }
 .inicio-socio__enlace--apagado {
-  color: #9f9898;
+  color: #6b6565;
 }
 .inicio-socio__nota {
   font-size: 0.75rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .inicio-socio__accesos {
   display: grid;
@@ -2528,7 +2528,7 @@ ul, ol {
   border-radius: 0.5rem;
   background-color: transparent;
   font-size: 0.875rem;
-  color: #9f9898;
+  color: #6b6565;
   cursor: pointer;
 }
 .inicio-socio__dia strong {
@@ -2609,7 +2609,7 @@ ul, ol {
 }
 .inicio-socio__clase {
   padding: 1rem 1.5rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .inicio-socio__clase .tarjeta__cuerpo {
   font-size: 0.875rem;
@@ -2631,10 +2631,10 @@ ul, ol {
   color: #255945;
 }
 .inicio-socio__plazas--completo {
-  color: #9f9898;
+  color: #6b6565;
 }
 .inicio-socio__plazas--completo::before {
-  color: #9f9898;
+  color: #6b6565;
 }
 .inicio-socio__club {
   display: grid;
@@ -2683,7 +2683,7 @@ ul, ol {
 }
 .inicio-socio__mapa-texto {
   font-size: 0.75rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .inicio-socio__mapa-pin {
   display: flex;
@@ -2798,7 +2798,7 @@ ul, ol {
   display: block;
   font-size: 0.75rem;
   font-weight: 400;
-  color: #9f9898;
+  color: #6b6565;
 }
 .cuadrante-admin__pista {
   padding-bottom: 0.5rem;
@@ -2821,7 +2821,7 @@ ul, ol {
   display: block;
   font-size: 0.75rem;
   font-weight: 400;
-  color: #9f9898;
+  color: #6b6565;
 }
 .cuadrante-admin__turno {
   display: flex;
@@ -2836,7 +2836,7 @@ ul, ol {
 }
 .cuadrante-admin__turno--socio {
   background-color: rgba(37, 89, 69, 0.08);
-  color: #9f9898;
+  color: #6b6565;
 }
 .cuadrante-admin__turno--escuela {
   background-color: #DEF127;
@@ -2856,7 +2856,7 @@ ul, ol {
 .cuadrante-admin__turno--bloqueo {
   background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.06) 0 6px, transparent 6px 12px);
   background-color: rgba(0, 0, 0, 0.05);
-  color: #9f9898;
+  color: #6b6565;
 }
 .cuadrante-admin__turno-tipo {
   font-size: 0.75rem;
@@ -2898,7 +2898,7 @@ ul, ol {
 .cuadrante-admin__libre span {
   font-size: 0.75rem;
   font-weight: 400;
-  color: #9f9898;
+  color: #6b6565;
 }
 .cuadrante-admin__libre:hover {
   border-color: #255945;
@@ -3104,7 +3104,7 @@ ul, ol {
   background-color: rgb(246.28, 248.36, 247.56);
   text-align: left;
   font-size: 0.75rem;
-  color: #9f9898;
+  color: #6b6565;
   cursor: pointer;
   transition: border-color 0.2s ease-in-out;
 }
@@ -3282,7 +3282,7 @@ ul, ol {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 0.5rem;
   background-color: rgb(246.28, 248.36, 247.56);
-  color: #9f9898;
+  color: #6b6565;
 }
 @media (min-width: 48rem) {
   .panel-admin__buscador {
@@ -3518,7 +3518,7 @@ ul, ol {
 .panel-admin__etiqueta-neutra {
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  color: #9f9898;
+  color: #6b6565;
 }
 .panel-admin__tabla {
   width: 100%;
@@ -3535,7 +3535,7 @@ ul, ol {
   text-align: right;
 }
 .panel-admin__celda-tenue {
-  color: #9f9898;
+  color: #6b6565;
 }
 .panel-admin__celda-nombre {
   font-weight: 700;
@@ -3584,7 +3584,7 @@ ul, ol {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .panel-admin__acceso-texto {
   flex: 1;
@@ -3636,11 +3636,11 @@ ul, ol {
 }
 .panel-admin__subtitulo {
   font-size: 0.75rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .panel-admin__texto-pequeno {
   font-size: 0.75rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .panel-admin__campos {
   display: grid;
@@ -3717,7 +3717,7 @@ ul, ol {
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #9f9898;
+  color: #6b6565;
 }
 .panel-admin__persona {
   display: flex;
@@ -3729,7 +3729,7 @@ ul, ol {
   flex-direction: column;
   line-height: 1.3;
   font-size: 0.75rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .panel-admin__persona strong {
   font-size: 0.875rem;
@@ -3873,7 +3873,7 @@ ul, ol {
 .panel-admin__enlace-centrado {
   text-align: center;
   font-size: 0.875rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .panel-admin__enlace-centrado:hover {
   color: #255945;
@@ -4221,7 +4221,7 @@ ul, ol {
 }
 .reserva__nota {
   font-size: 0.75rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .reserva__nota--centrada {
   text-align: center;
@@ -4280,7 +4280,7 @@ ul, ol {
   color: #ffffff;
 }
 .reserva__dia--pasado, .reserva__dia:disabled {
-  color: #9f9898;
+  color: #6b6565;
   cursor: not-allowed;
 }
 .reserva__leyenda {
@@ -4314,7 +4314,7 @@ ul, ol {
   height: 0.35rem;
   border: none;
   border-radius: 50%;
-  background-color: #9f9898;
+  background-color: #6b6565;
 }
 .reserva__tabla-scroll {
   overflow-x: auto;
@@ -4333,7 +4333,7 @@ ul, ol {
   display: block;
   font-size: 0.75rem;
   font-weight: 400;
-  color: #9f9898;
+  color: #6b6565;
 }
 .reserva__horario tbody th {
   text-align: left;
@@ -4352,7 +4352,7 @@ ul, ol {
   border-radius: 0.5rem;
   background-color: #ffffff;
   font-size: 0.75rem;
-  color: #9f9898;
+  color: #6b6565;
   cursor: pointer;
   transition: border-color 0.2s ease-in-out;
 }
@@ -4442,7 +4442,7 @@ ul, ol {
 }
 .reserva__resumen-item i {
   font-size: 1.1rem;
-  color: #9f9898;
+  color: #6b6565;
 }
 .reserva__resumen-item p {
   display: flex;
