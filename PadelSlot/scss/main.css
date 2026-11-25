@@ -4635,4 +4635,34 @@ ul, ol {
   align-items: center;
   gap: 0.5rem;
   font-weight: 700;
+}
+
+:focus-visible {
+  outline: 3px solid #255945;
+  outline-offset: 2px;
+}
+
+.pie :focus-visible, .pie:focus-visible,
+.banda--verde :focus-visible,
+.banda--verde:focus-visible,
+.boton--primario :focus-visible,
+.boton--primario:focus-visible,
+.inicio-publico__llamada--verde :focus-visible,
+.inicio-publico__llamada--verde:focus-visible,
+.inicio-publico__video-audio :focus-visible,
+.inicio-publico__video-audio:focus-visible {
+  outline-color: #DEF127;
+}
+
+.transcripcion {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+}
+.transcripcion__titulo {
+  cursor: pointer;
+  font-weight: 700;
+  color: #255945;
+}
+.transcripcion__texto {
+  margin-top: 0.5rem;
 }/*# sourceMappingURL=main.css.map */

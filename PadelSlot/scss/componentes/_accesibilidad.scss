@@ -1,0 +1,40 @@
+// Foco visible al navegar con teclado (WCAG 2.4.7)
+@use '../colores';
+@use '../espaciados';
+@use '../fuentes';
+
+// El reseteo quita el outline a botones y campos. Aquí lo devolvemos
+// solo cuando se navega con teclado (:focus-visible), no al hacer clic.
+// Verde oscuro sobre blanco: contraste 8,1:1 (mínimo 3:1).
+:focus-visible {
+    outline: 3px solid colores.$color-primario;
+    outline-offset: 2px;
+}
+
+// Sobre fondos verde oscuro el contorno verde no se vería: usamos el lima.
+.pie,
+.banda--verde,
+.boton--primario,
+.inicio-publico__llamada--verde,
+.inicio-publico__video-audio {
+    :focus-visible,
+    &:focus-visible {
+        outline-color: colores.$color-terciario;
+    }
+}
+
+// Estilos base del desplegable de descripción
+.transcripcion {
+    margin-top: espaciados.$espacio-s;
+    font-size: fuentes.$tamano-pequeno;
+
+    &__titulo {
+        cursor: pointer;
+        font-weight: fuentes.$peso-negrita;
+        color: colores.$color-primario;
+    }
+
+    &__texto {
+        margin-top: espaciados.$espacio-xs;
+    }
+}
